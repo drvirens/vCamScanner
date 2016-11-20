@@ -341,20 +341,37 @@ void _post_render_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 void create_buttons_in_main_window(appdata_s *ad)
 {
     // Create the window with camera preview and buttons for manipulating the camera and taking the photo.
-    cam_data.display = _create_new_cd_display(ad, "Camera", NULL);
+    //cam_data.display = _create_new_cd_display(ad, "Camera", NULL);
+	cam_data.display = _create_new_cd_display(ad, "", NULL);
 
+    //viren+
+    //original
     // Create a box for the camera preview.
+//    cam_data.cam_display_box = elm_box_add(cam_data.display);
+//    elm_box_horizontal_set(cam_data.cam_display_box, EINA_FALSE);
+//    evas_object_size_hint_align_set(cam_data.cam_display_box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+//    evas_object_size_hint_weight_set(cam_data.cam_display_box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+//    elm_box_pack_end(cam_data.display, cam_data.cam_display_box);
+//    evas_object_show(cam_data.cam_display_box);
+
+    //modified
     cam_data.cam_display_box = elm_box_add(cam_data.display);
-    elm_box_horizontal_set(cam_data.cam_display_box, EINA_FALSE);
-    evas_object_size_hint_align_set(cam_data.cam_display_box, EVAS_HINT_FILL, EVAS_HINT_FILL);
-    evas_object_size_hint_weight_set(cam_data.cam_display_box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
-    elm_box_pack_end(cam_data.display, cam_data.cam_display_box);
-    evas_object_show(cam_data.cam_display_box);
+	elm_box_horizontal_set(cam_data.cam_display_box, EINA_FALSE);
+	evas_object_size_hint_align_set(cam_data.cam_display_box, EVAS_HINT_FILL, EVAS_HINT_FILL);
+	evas_object_size_hint_weight_set(cam_data.cam_display_box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+	elm_box_pack_end(cam_data.display, cam_data.cam_display_box);
+	evas_object_show(cam_data.cam_display_box);
+
+        //viren-
+
+
 
     Evas *evas = evas_object_evas_get(cam_data.cam_display_box);
     cam_data.cam_display = evas_object_image_add(evas);
     evas_object_event_callback_add(cam_data.cam_display_box, EVAS_CALLBACK_RESIZE, _post_render_cb,
                                    &(cam_data.cam_display));
+
+#if 0 //viren+
 
     // Create buttons for the Camera.
     cam_data.preview_bt = _new_button(ad, cam_data.display, "Start preview", __camera_cb_preview);
@@ -366,6 +383,7 @@ void create_buttons_in_main_window(appdata_s *ad)
     elm_object_disabled_set(cam_data.zoom_bt, EINA_TRUE);
     elm_object_disabled_set(cam_data.brightness_bt, EINA_TRUE);
     elm_object_disabled_set(cam_data.photo_bt, EINA_TRUE);
+#endif //viren-
 
     // Create the camera handle for the main camera of the device.
     int error_code = camera_create(CAMERA_DEVICE_CAMERA0, &(cam_data.g_camera));

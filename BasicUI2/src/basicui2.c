@@ -47,15 +47,19 @@ Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb)
     Evas_Object *scroller = elm_scroller_add(ad->win);
     evas_object_size_hint_weight_set(scroller, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 
+
     // Create a new item
-    Elm_Object_Item *item =
-        elm_naviframe_item_push(ad->navi, "Multimedia", NULL, NULL, scroller, NULL);
-    elm_object_item_part_text_set(item, "subtitle", name);
+//    Elm_Object_Item *item = elm_naviframe_item_push(ad->navi, "Multimedia remove this title", NULL, NULL, scroller, NULL);
+//    elm_object_item_part_text_set(item, "subtitle", name);
+
+    Elm_Object_Item *item = elm_naviframe_item_push(ad->navi, "", NULL, NULL, scroller, NULL);
+        elm_object_item_part_text_set(item, "", name);
 
     if (cb != NULL)
         elm_naviframe_item_pop_cb_set(item, (Elm_Naviframe_Item_Pop_Cb) cb, (void *)ad);
     else
         elm_naviframe_item_pop_cb_set(item, _pop_cb, (void *)ad);
+
 
     // Create main box
     Evas_Object *box = elm_box_add(scroller);
@@ -75,6 +79,7 @@ Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb)
     elm_box_pack_end(box, bbox);
     evas_object_show(bbox);
 
+#if 0 //viren+
     // Create a box for entry
     Evas_Object *ebox = elm_box_add(box);
     elm_box_horizontal_set(ebox, EINA_FALSE);
@@ -95,7 +100,7 @@ Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb)
 
     // Create "Clear" button
     _new_button(NULL, box, "Clear", _btn_clear_cb);
-
+#endif //viren-
     return bbox;
 }
 
@@ -119,8 +124,8 @@ static void create_base_gui(appdata_s *ad)
 
     // Create a naviframe
     ad->navi = elm_naviframe_add(conform);
-    evas_object_size_hint_align_set(ad->navi, EVAS_HINT_FILL, EVAS_HINT_FILL);
-    evas_object_size_hint_weight_set(ad->navi, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+//    evas_object_size_hint_align_set(ad->navi, EVAS_HINT_FILL, EVAS_HINT_FILL);
+//    evas_object_size_hint_weight_set(ad->navi, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     eext_object_event_callback_add(ad->navi, EEXT_CALLBACK_BACK, eext_naviframe_back_cb, NULL);
     elm_object_content_set(conform, ad->navi);
     evas_object_show(ad->navi);
