@@ -470,4 +470,8 @@ void create_buttons_in_main_window(appdata_s *ad)
         DLOG_PRINT_ERROR("storage_get_directory()", error_code);
         PRINT_MSG("Could not get the path to the Camera directory.");
     }
+
+    //viren+
+    __camera_cb_preview(0, 0, 0);
+    //viren-
 }
