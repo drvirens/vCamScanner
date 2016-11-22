@@ -41,29 +41,32 @@ static void _btn_clear_cb(void *data, Evas_Object *btn, void *ev)
     elm_entry_entry_set(GLOBAL_DEBUG_BOX, "");
 }
 
-Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb)
+Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb, Evas_Object *conform)
 {
     // Create a scroller
-    Evas_Object *scroller = elm_scroller_add(ad->win);
-    evas_object_size_hint_weight_set(scroller, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
+    //Evas_Object *scroller = elm_scroller_add(ad->win);
+//	Evas_Object *scroller = elm_scroller_add(conform);
+//    evas_object_size_hint_weight_set(scroller, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 
 
     // Create a new item
 //    Elm_Object_Item *item = elm_naviframe_item_push(ad->navi, "Multimedia remove this title", NULL, NULL, scroller, NULL);
 //    elm_object_item_part_text_set(item, "subtitle", name);
 
-    Elm_Object_Item *item = elm_naviframe_item_push(ad->navi, "", NULL, NULL, scroller, NULL);
-        elm_object_item_part_text_set(item, "", name);
-
-    if (cb != NULL)
-        elm_naviframe_item_pop_cb_set(item, (Elm_Naviframe_Item_Pop_Cb) cb, (void *)ad);
-    else
-        elm_naviframe_item_pop_cb_set(item, _pop_cb, (void *)ad);
+//    Elm_Object_Item *item = elm_naviframe_item_push(ad->navi, "", NULL, NULL, scroller, NULL);
+//        elm_object_item_part_text_set(item, "", name);
+//
+//    if (cb != NULL)
+//        elm_naviframe_item_pop_cb_set(item, (Elm_Naviframe_Item_Pop_Cb) cb, (void *)ad);
+//    else
+//        elm_naviframe_item_pop_cb_set(item, _pop_cb, (void *)ad);
 
 
     // Create main box
-    Evas_Object *box = elm_box_add(scroller);
-    elm_object_content_set(scroller, box);
+//    Evas_Object *box = elm_box_add(scroller);
+    Evas_Object *box = elm_box_add(conform);
+    elm_object_content_set(conform, box);
+
     elm_box_horizontal_set(box, EINA_FALSE);
     evas_object_size_hint_align_set(box, EVAS_HINT_FILL, EVAS_HINT_FILL);
     evas_object_size_hint_weight_set(box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
@@ -101,7 +104,8 @@ Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb)
     // Create "Clear" button
     _new_button(NULL, box, "Clear", _btn_clear_cb);
 #endif //viren-
-    return bbox;
+//    return bbox;
+    return box;
 }
 
 static void create_base_gui(appdata_s *ad)
@@ -120,8 +124,9 @@ static void create_base_gui(appdata_s *ad)
     Evas_Object *conform = elm_conformant_add(ad->win);
     evas_object_size_hint_weight_set(conform, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
     elm_win_resize_object_add(ad->win, conform);
-    evas_object_show(conform);
+//    evas_object_show(conform);
 
+#if 0
     // Create a naviframe
     ad->navi = elm_naviframe_add(conform);
 //    evas_object_size_hint_align_set(ad->navi, EVAS_HINT_FILL, EVAS_HINT_FILL);
@@ -129,9 +134,15 @@ static void create_base_gui(appdata_s *ad)
     eext_object_event_callback_add(ad->navi, EEXT_CALLBACK_BACK, eext_naviframe_back_cb, NULL);
     elm_object_content_set(conform, ad->navi);
     evas_object_show(ad->navi);
+#endif
 
     // Fill the list with items
-    create_buttons_in_main_window(ad);
+    Evas_Object* mainBox = create_buttons_in_main_window(ad, conform);
+
+    //viren+
+    elm_object_content_set(conform, mainBox);
+    evas_object_show(conform);
+    //viren-
 
     // Show the window after base gui is set up
     evas_object_show(ad->win);

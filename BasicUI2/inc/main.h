@@ -35,7 +35,7 @@ typedef struct {
 
 void _add_entry_text(const char *text);
 Evas_Object *_new_button(void *data, Evas_Object *display, char *name, void *cb);
-Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb);
+Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb, Evas_Object *conform);
 
 #ifndef PACKAGE
 #define PACKAGE "$(packageName)"

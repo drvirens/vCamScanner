@@ -338,11 +338,11 @@ void _post_render_cb(void *data, Evas *e, Evas_Object *obj, void *event_info)
 }
 
 // Camera menu creation.
-void create_buttons_in_main_window(appdata_s *ad)
+Evas_Object* create_buttons_in_main_window(appdata_s *ad, Evas_Object *conform)
 {
     // Create the window with camera preview and buttons for manipulating the camera and taking the photo.
     //cam_data.display = _create_new_cd_display(ad, "Camera", NULL);
-	cam_data.display = _create_new_cd_display(ad, "", NULL);
+	cam_data.display = _create_new_cd_display(ad, "", NULL, conform);
 
     //viren+
     //original
@@ -390,7 +390,7 @@ void create_buttons_in_main_window(appdata_s *ad)
     if (CAMERA_ERROR_NONE != error_code) {
         DLOG_PRINT_ERROR("camera_create()", error_code);
         PRINT_MSG("Could not create a handle to the camera.");
-        return;
+        return 0;
     }
 
     // Check the camera state after creating the handle.
@@ -399,7 +399,7 @@ void create_buttons_in_main_window(appdata_s *ad)
     if (CAMERA_ERROR_NONE != error_code || CAMERA_STATE_CREATED != state) {
         dlog_print(DLOG_ERROR, LOG_TAG, "camera_get_state() failed! Error code = %d, state = %s",
                    error_code, _camera_state_to_string(state));
-        return;
+        return 0;
     }
 
     // Enable EXIF data storing during taking picture. This is required to edit the orientation of the image.
@@ -431,7 +431,7 @@ void create_buttons_in_main_window(appdata_s *ad)
     if (CAMERA_ERROR_NONE != error_code) {
         DLOG_PRINT_ERROR("camera_set_display()", error_code);
         PRINT_MSG("Could not set the camera display.");
-        return;
+        return 0;
     }
 
     // Set the resolution of the camera preview:
@@ -444,7 +444,7 @@ void create_buttons_in_main_window(appdata_s *ad)
     if (CAMERA_ERROR_NONE != error_code) {
         DLOG_PRINT_ERROR("camera_foreach_supported_preview_resolution()", error_code);
         PRINT_MSG("Could not find the best resolution for the camera preview.");
-        return;
+        return 0;
     }
 
     // 2. Set found supported resolution for the camera preview.
@@ -478,7 +478,7 @@ void create_buttons_in_main_window(appdata_s *ad)
     if (STORAGE_ERROR_NONE != error_code) {
         DLOG_PRINT_ERROR("storage_foreach_device_supported()", error_code);
         PRINT_MSG("Could not get internal storage id.");
-        return;
+        return 0;
     }
 
     // 2. Get the path to the Camera directory.
@@ -492,4 +492,6 @@ void create_buttons_in_main_window(appdata_s *ad)
     //viren+
     __camera_cb_preview(0, 0, 0);
     //viren-
+
+    return cam_data.display;
 }

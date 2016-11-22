@@ -19,7 +19,7 @@
 
 #include "main.h"
 
-void create_buttons_in_main_window(appdata_s *ad);
+Evas_Object*  create_buttons_in_main_window(appdata_s *ad, Evas_Object *conform);
 void camera_pop_cb();
 
 #endif                           /* USR_CB_H */
