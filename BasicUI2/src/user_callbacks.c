@@ -21,6 +21,8 @@
 #include <camera.h>
 #include <storage.h>
 
+#include "test.h"
+
 #define BUFLEN 512
 
 typedef struct _camdata {
@@ -103,6 +105,12 @@ static void _camera_completed_cb(void *user_data)
 
 static void _image_saved(void *data)
 {
+	char *file_path = (char*)data;
+	if (file_path) {
+		PRINT_MSG("read the saved file here and do opencv processing on it");
+		testpleaseScan(file_path);
+	}
+
     PRINT_MSG("Image stored in the %s", (char *)data);
     free(data);
 }
@@ -361,10 +369,7 @@ Evas_Object* create_buttons_in_main_window(appdata_s *ad, Evas_Object *conform)
 	evas_object_size_hint_weight_set(cam_data.cam_display_box, EVAS_HINT_EXPAND, EVAS_HINT_EXPAND);
 	elm_box_pack_end(cam_data.display, cam_data.cam_display_box);
 	evas_object_show(cam_data.cam_display_box);
-
         //viren-
-
-
 
     Evas *evas = evas_object_evas_get(cam_data.cam_display_box);
     cam_data.cam_display = evas_object_image_add(evas);
@@ -384,6 +389,122 @@ Evas_Object* create_buttons_in_main_window(appdata_s *ad, Evas_Object *conform)
     elm_object_disabled_set(cam_data.brightness_bt, EINA_TRUE);
     elm_object_disabled_set(cam_data.photo_bt, EINA_TRUE);
 #endif //viren-
+
+    cam_data.photo_bt = _new_button(ad, cam_data.display, "Take a photo", __camera_cb_photo);
+
+//
+//    // Create the camera handle for the main camera of the device.
+//    int error_code = camera_create(CAMERA_DEVICE_CAMERA0, &(cam_data.g_camera));
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_create()", error_code);
+//        PRINT_MSG("Could not create a handle to the camera.");
+//        return 0;
+//    }
+//
+//    // Check the camera state after creating the handle.
+//    camera_state_e state;
+//    error_code = camera_get_state(cam_data.g_camera, &state);
+//    if (CAMERA_ERROR_NONE != error_code || CAMERA_STATE_CREATED != state) {
+//        dlog_print(DLOG_ERROR, LOG_TAG, "camera_get_state() failed! Error code = %d, state = %s",
+//                   error_code, _camera_state_to_string(state));
+//        return 0;
+//    }
+//
+//    // Enable EXIF data storing during taking picture. This is required to edit the orientation of the image.
+//    error_code = camera_attr_enable_tag(cam_data.g_camera, true);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_attr_enable_tag()", error_code);
+//        PRINT_MSG("Could not enable the camera tag.");
+//    }
+//
+//    // Set the camera image orientation. Required (on Kiran device) to save the image in regular orientation (without any rotation).
+//    error_code =
+//        camera_attr_set_tag_orientation(cam_data.g_camera, CAMERA_ATTR_TAG_ORIENTATION_RIGHT_TOP);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_attr_set_tag_orientation()", error_code);
+//        PRINT_MSG("Could not set the camera image orientation.");
+//    }
+//
+//    // Set the picture quality attribute of the camera to maximum.
+//    error_code = camera_attr_set_image_quality(cam_data.g_camera, 100);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_attr_set_image_quality()", error_code);
+//        PRINT_MSG("Could not set the picture quality.");
+//    }
+//
+//    // Set the display for the camera preview.
+//    error_code =
+//        camera_set_display(cam_data.g_camera, CAMERA_DISPLAY_TYPE_EVAS,
+//                           GET_DISPLAY(cam_data.cam_display));
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_set_display()", error_code);
+//        PRINT_MSG("Could not set the camera display.");
+//        return 0;
+//    }
+//
+//    // Set the resolution of the camera preview:
+//    int resolution[2];
+//
+//    // 1. Find the best resolution that is supported by the device.
+//    error_code =
+//        camera_foreach_supported_preview_resolution(cam_data.g_camera, _preview_resolution_cb,
+//                resolution);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_foreach_supported_preview_resolution()", error_code);
+//        PRINT_MSG("Could not find the best resolution for the camera preview.");
+//        return 0;
+//    }
+//
+//    // 2. Set found supported resolution for the camera preview.
+//    error_code = camera_set_preview_resolution(cam_data.g_camera, resolution[0], resolution[1]);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_set_preview_resolution()", error_code);
+//        PRINT_MSG("Could not set the camera preview resolution.");
+//    } else
+//        PRINT_MSG("Camera resolution set to: %d %d", resolution[0], resolution[1]);
+//
+//    // Set the capture format for the camera.
+//    error_code = camera_set_capture_format(cam_data.g_camera, CAMERA_PIXEL_FORMAT_JPEG);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_set_capture_format()", error_code);
+//        PRINT_MSG("Could not set the capturing format.");
+//    }
+//
+//    // Set the focusing callback function.
+//    error_code = camera_set_focus_changed_cb(cam_data.g_camera, _camera_focus_cb, NULL);
+//    if (CAMERA_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("camera_set_focus_changed_cb()", error_code);
+//        PRINT_MSG("Could not set a callback for the focus changes.");
+//    }
+//
+//    // Get the path to the Camera directory:
+//
+//    // 1. Get internal storage id.
+//    int internal_storage_id = -1;
+//
+//    error_code = storage_foreach_device_supported(_storage_cb, &internal_storage_id);
+//    if (STORAGE_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("storage_foreach_device_supported()", error_code);
+//        PRINT_MSG("Could not get internal storage id.");
+//        return 0;
+//    }
+//
+//    // 2. Get the path to the Camera directory.
+//    error_code =
+//        storage_get_directory(internal_storage_id, STORAGE_DIRECTORY_CAMERA, &camera_directory);
+//    if (STORAGE_ERROR_NONE != error_code) {
+//        DLOG_PRINT_ERROR("storage_get_directory()", error_code);
+//        PRINT_MSG("Could not get the path to the Camera directory.");
+//    }
+//
+//    //viren+
+//    __camera_cb_preview(0, 0, 0);
+//    //viren-
+
+    return cam_data.display;
+}
+
+int startCamera(appdata_s *ad) {
 
     // Create the camera handle for the main camera of the device.
     int error_code = camera_create(CAMERA_DEVICE_CAMERA0, &(cam_data.g_camera));
@@ -493,5 +614,5 @@ Evas_Object* create_buttons_in_main_window(appdata_s *ad, Evas_Object *conform)
     __camera_cb_preview(0, 0, 0);
     //viren-
 
-    return cam_data.display;
+    return 1;
 }

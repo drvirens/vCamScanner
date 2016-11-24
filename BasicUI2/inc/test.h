@@ -13,7 +13,7 @@
 extern "C" {
 #endif
 
-extern int testpleaseScan();
+extern int testpleaseScan(char* sample_file_path);
 
 #ifdef __cplusplus
 }

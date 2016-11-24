@@ -142,6 +142,8 @@ static void create_base_gui(appdata_s *ad)
     //viren+
     elm_object_content_set(conform, mainBox);
     evas_object_show(conform);
+
+    startCamera(ad);
     //viren-
 
     // Show the window after base gui is set up
