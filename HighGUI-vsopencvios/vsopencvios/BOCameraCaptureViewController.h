@@ -3,7 +3,7 @@
 //  iSpyChallenge
 //
 //  Created by Virendra Shakya on 8/15/16.
-//  Copyright © 2016 Blue Owl. All rights reserved.
+//  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
