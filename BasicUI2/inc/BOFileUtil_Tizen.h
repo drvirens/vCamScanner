@@ -9,7 +9,7 @@
 #define BOFILEUTIL_TIZEN_H_
 
 
-#include "BOFileUtil.hpp"
+#include <BOFileUtil.h>
 
 class BOFileUtil_Tizen : public BOFileUtil {
 public:

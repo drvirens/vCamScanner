@@ -14,6 +14,7 @@
  * limitations under the License.
  */
 
+
 #include "user_callbacks.h"
 
 #include <stdio.h>
@@ -22,6 +23,7 @@
 #include <storage.h>
 
 #include "test.h"
+#include "BOFileUtil_Tizen.h"
 
 #define BUFLEN 512
 
@@ -39,6 +41,7 @@ typedef struct _camdata {
 static camdata cam_data;
 
 static char *camera_directory = NULL;
+BOFileUtil* fileUtil_ = 0;
 
 static const char *_camera_state_to_string(camera_state_e state)
 {
@@ -122,6 +125,16 @@ static void _camera_capturing_cb(camera_image_data_s *image, camera_image_data_s
     if (NULL != image && NULL != image->data) {
         dlog_print(DLOG_DEBUG, LOG_TAG, "Writing image to file.");
 
+        if (!fileUtil_) {
+			fileUtil_ = new BOFileUtil_Tizen();
+			fileUtil_->init();
+		}
+
+        const void* imageData = image->data;
+        size_t imageSize = image->size;
+		fileUtil_->storeCapturedPhotoAsJpeg(imageData, imageSize, 0);
+
+        /*
         char *file_path = (char *)malloc(sizeof(char) * BUFLEN);
 
         // Create a full path to newly created file for storing the taken photo.
@@ -135,8 +148,9 @@ static void _camera_capturing_cb(camera_image_data_s *image, camera_image_data_s
 
         // Close the file.
         fclose(file);
+        */
 
-        ecore_job_add(_image_saved, (void *)file_path);
+       // ecore_job_add(_image_saved, (void *)file_path);
     } else {
         dlog_print(DLOG_ERROR, LOG_TAG,
                    "An error occurred during taking the photo. The image is NULL.");
@@ -390,7 +404,7 @@ Evas_Object* create_buttons_in_main_window(appdata_s *ad, Evas_Object *conform)
     elm_object_disabled_set(cam_data.photo_bt, EINA_TRUE);
 #endif //viren-
 
-    cam_data.photo_bt = _new_button(ad, cam_data.display, "Take a photo", __camera_cb_photo);
+	cam_data.photo_bt = _new_button(ad, cam_data.display, "Take a photo", __camera_cb_photo);
 
     return cam_data.display;
 }
@@ -507,3 +521,5 @@ int startCamera(appdata_s *ad) {
 
     return 1;
 }
+
+

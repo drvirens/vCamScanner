@@ -6,11 +6,11 @@
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
+#include "BOFileUtil.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
 
-#include "BOFileUtil.hpp"
 
 
 #define BUFLEN 512
@@ -37,4 +37,8 @@ void BOFileUtil::storeCapturedPhotoAsJpeg(const void* image_data, size_t image_s
 	
 		// Close the file.
 	fclose(file);
+}
+
+BOFileUtil::~BOFileUtil() {
+	
 }

@@ -21,6 +21,7 @@ public:
 	void storeCapturedPhotoAsJpeg(const void* image_data, size_t image_size, void *user_data);
 	
 	virtual string getWritablePath() const = 0;
+	virtual ~BOFileUtil();
 	
 protected:
 	string cameraDirectory_;

@@ -9,7 +9,7 @@
 #ifndef BOFileUtil_iOS_hpp
 #define BOFileUtil_iOS_hpp
 
-#include "BOFileUtil.hpp"
+#include "BOFileUtil.h"
 
 class BOFileUtil_iOS : public BOFileUtil {
 public:

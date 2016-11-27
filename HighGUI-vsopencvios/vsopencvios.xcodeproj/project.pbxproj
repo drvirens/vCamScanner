@@ -628,10 +628,10 @@
 		B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLocationController.m; sourceTree = "<group>"; };
 		B621FE0E1DEABBE100E54A51 /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
 		B621FE0F1DEABBE100E54A51 /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
-		B621FE141DEAD1FF00E54A51 /* BOFileUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BOFileUtil.hpp; path = ../../BasicUI2/inc/BOFileUtil.hpp; sourceTree = "<group>"; };
 		B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BOFileUtil.cpp; path = ../../BasicUI2/src/BOFileUtil.cpp; sourceTree = "<group>"; };
 		B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil_iOS.hpp; sourceTree = "<group>"; };
 		B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFileUtil_iOS.mm; sourceTree = "<group>"; };
+		B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOFileUtil.h; path = ../../BasicUI2/inc/BOFileUtil.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -724,10 +724,10 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
 				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
 				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
 				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
-				B621FE141DEAD1FF00E54A51 /* BOFileUtil.hpp */,
 				B621FE0E1DEABBE100E54A51 /* PhotoController.h */,
 				B621FE0F1DEABBE100E54A51 /* PhotoController.m */,
 				B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */,
