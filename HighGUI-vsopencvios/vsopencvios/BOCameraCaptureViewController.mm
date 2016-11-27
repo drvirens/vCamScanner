@@ -8,9 +8,8 @@
 
 #import "BOCameraCaptureViewController.h"
 #import "BOCameraController.h"
-//#import "BOAddChallengeTableViewController.h"
 
-#include "BOCameraUtil.hpp"
+#include "BOFileUtil.hpp"
 
 static void* gUserLoadContext = &gUserLoadContext;
 
@@ -55,7 +54,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 		NSData *theImageData = UIImageJPEGRepresentation(image, 0.7); // 0.7 is JPG quality;
 		const void* imageData = [theImageData bytes];
 		size_t imageSize = [theImageData length];
-		didCapturePhoto(imageData, imageSize, 0);
+		BOFileUtil::storeCapturedPhotoAsJpeg(imageData, imageSize, 0);
 		
 		[self gotoAddScreen];
 	}];

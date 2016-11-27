@@ -1,5 +1,5 @@
 //
-//  BOCameraUtil.cpp
+//  BOFileUtil.cpp
 //  vsopencvios
 //
 //  Created by Virendra Shakya on 11/26/16.
@@ -10,7 +10,7 @@
 #include <stdlib.h>
 #include <time.h>
 
-#include "BOCameraUtil.hpp"
+#include "BOFileUtil.hpp"
 
 
 #define BUFLEN 512
@@ -18,7 +18,7 @@
 static char *camera_directory = NULL;
 
 	// Callback function invoked for every captured frame.
-void didCapturePhoto(const void* image_data, size_t image_size, void *user_data)
+void BOFileUtil::storeCapturedPhotoAsJpeg(const void* image_data, size_t image_size, void *user_data)
 {
 	if (NULL == image_data) {
 		return;
