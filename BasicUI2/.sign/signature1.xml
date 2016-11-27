@@ -4,11 +4,11 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>RHvCRZ9LbXq+5SxohQwcMvetZm1JPnS0ZvG+5t1D5uc=</DigestValue>
+<DigestValue>X9AA+jivJwpFobbOieVucbbkY9uge/5Q138TXnZc6LA=</DigestValue>
 </Reference>
 <Reference URI="bin%2Fbasicui2">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>F7QNtUOC8kD+qtJ+Ffn6mH+PsOUIk+iiTlJ9mVzVPXE=</DigestValue>
+<DigestValue>/zOyp5ATtO0x4p+dVWw1bfQz30db4KArXO1+uIV09jM=</DigestValue>
 </Reference>
 <Reference URI="lib%2Farm%2Flibjpeg.a">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -51,9 +51,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-Pt2OC7pQwHLpq0P+Fo5hG60buAz8neo5uBt4orQFO+nh0RnkFf9A0MM+jpD9EVR0riULfF7xbZV8
-dBYpvze5zzmYCxvIDBRPCoy7XZUvLl3Im4Q1hALujxEKRpZ39rbyCZaXqe310k0FrVZFzj+LlfK4
-XeMwUtD8QNYyJkqviYI=
+kbrBSWB2q1x0zNRIN3q/jTL+JS9ralrRpWxPZS720uqYRvwRMjcCXiELMGTHGZ+QGE0NmOgYT0nU
+pYdwb5DbtmaGXP9vqbPGleKefBPoZkuItxxu4Bc7xjNk9UZWjCtLbY3NND8MPL55wd6h73wkscCS
+T7Au2RPFwAJB1l8tId0=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
