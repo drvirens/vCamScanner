@@ -231,6 +231,10 @@
 		B621FE021DEAA29E00E54A51 /* simpleflow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FD2A1DEAA29D00E54A51 /* simpleflow.cpp */; };
 		B621FE031DEAA29E00E54A51 /* tvl1flow.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FD2C1DEAA29D00E54A51 /* tvl1flow.cpp */; };
 		B621FE041DEAA29E00E54A51 /* video_init.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FD2D1DEAA29D00E54A51 /* video_init.cpp */; };
+		B621FE091DEABAF400E54A51 /* BOCameraCaptureViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE061DEABAF400E54A51 /* BOCameraCaptureViewController.mm */; };
+		B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE081DEABAF400E54A51 /* BOCameraController.mm */; };
+		B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */; };
+		B621FE101DEABBE100E54A51 /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* PhotoController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -614,6 +618,14 @@
 		B621FD2B1DEAA29D00E54A51 /* simpleflow.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = simpleflow.hpp; sourceTree = "<group>"; };
 		B621FD2C1DEAA29D00E54A51 /* tvl1flow.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = tvl1flow.cpp; sourceTree = "<group>"; };
 		B621FD2D1DEAA29D00E54A51 /* video_init.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = video_init.cpp; sourceTree = "<group>"; };
+		B621FE051DEABAF400E54A51 /* BOCameraCaptureViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCameraCaptureViewController.h; sourceTree = "<group>"; };
+		B621FE061DEABAF400E54A51 /* BOCameraCaptureViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOCameraCaptureViewController.mm; sourceTree = "<group>"; };
+		B621FE071DEABAF400E54A51 /* BOCameraController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCameraController.h; sourceTree = "<group>"; };
+		B621FE081DEABAF400E54A51 /* BOCameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOCameraController.mm; sourceTree = "<group>"; };
+		B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOLocationController.h; sourceTree = "<group>"; };
+		B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLocationController.m; sourceTree = "<group>"; };
+		B621FE0E1DEABBE100E54A51 /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
+		B621FE0F1DEABBE100E54A51 /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -706,6 +718,14 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				B621FE0E1DEABBE100E54A51 /* PhotoController.h */,
+				B621FE0F1DEABBE100E54A51 /* PhotoController.m */,
+				B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */,
+				B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */,
+				B621FE051DEABAF400E54A51 /* BOCameraCaptureViewController.h */,
+				B621FE061DEABAF400E54A51 /* BOCameraCaptureViewController.mm */,
+				B621FE071DEABAF400E54A51 /* BOCameraController.h */,
+				B621FE081DEABAF400E54A51 /* BOCameraController.mm */,
 				B621FB961DEAA29D00E54A51 /* modules */,
 				1119732F1DDFDF350042C520 /* jpeg */,
 				11B75AE61DDFD0E1004EAB65 /* cvconfig.h */,
@@ -1747,11 +1767,13 @@
 				B621FD991DEAA29E00E54A51 /* cap_ios_photo_camera.mm in Sources */,
 				B621FD771DEAA29D00E54A51 /* bagofwords.cpp in Sources */,
 				B621FD371DEAA29D00E54A51 /* posit.cpp in Sources */,
+				B621FE091DEABAF400E54A51 /* BOCameraCaptureViewController.mm in Sources */,
 				B621FD591DEAA29D00E54A51 /* selfsimilarity.cpp in Sources */,
 				B621FD651DEAA29D00E54A51 /* dxt.cpp in Sources */,
 				B621FD661DEAA29D00E54A51 /* gl_core_3_1.cpp in Sources */,
 				B621FDC61DEAA29E00E54A51 /* matchcontours.cpp in Sources */,
 				B621FDAC1DEAA29E00E54A51 /* window_cocoa.mm in Sources */,
+				B621FE101DEABBE100E54A51 /* PhotoController.m in Sources */,
 				B621FDE61DEAA29E00E54A51 /* tree.cpp in Sources */,
 				B621FDC71DEAA29E00E54A51 /* moments.cpp in Sources */,
 				B621FD361DEAA29D00E54A51 /* polynom_solver.cpp in Sources */,
@@ -1847,12 +1869,14 @@
 				B621FD581DEAA29D00E54A51 /* rgbdodometry.cpp in Sources */,
 				B621FE001DEAA29E00E54A51 /* motempl.cpp in Sources */,
 				B621FD7B1DEAA29D00E54A51 /* descriptors.cpp in Sources */,
+				B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */,
 				B621FD9A1DEAA29E00E54A51 /* cap_ios_video_camera.mm in Sources */,
 				B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */,
 				B621FDAE1DEAA29E00E54A51 /* window_w32.cpp in Sources */,
 				B621FDFA1DEAA29E00E54A51 /* bgfg_gaussmix.cpp in Sources */,
 				B621FDE91DEAA29E00E54A51 /* distancetransform.cpp in Sources */,
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
+				B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */,
 				B621FDB01DEAA29E00E54A51 /* approx.cpp in Sources */,
 				B621FD521DEAA29D00E54A51 /* openfabmap.cpp in Sources */,
 				11B75AD11DDFD08D004EAB65 /* main.m in Sources */,
