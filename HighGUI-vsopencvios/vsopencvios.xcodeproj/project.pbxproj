@@ -235,7 +235,8 @@
 		B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE081DEABAF400E54A51 /* BOCameraController.mm */; };
 		B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */; };
 		B621FE101DEABBE100E54A51 /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* PhotoController.m */; };
-		B621FE131DEAC0B200E54A51 /* BOFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE111DEAC0B200E54A51 /* BOFileUtil.cpp */; };
+		B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */; };
+		B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -627,8 +628,10 @@
 		B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLocationController.m; sourceTree = "<group>"; };
 		B621FE0E1DEABBE100E54A51 /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
 		B621FE0F1DEABBE100E54A51 /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
-		B621FE111DEAC0B200E54A51 /* BOFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BOFileUtil.cpp; sourceTree = "<group>"; };
-		B621FE121DEAC0B200E54A51 /* BOFileUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil.hpp; sourceTree = "<group>"; };
+		B621FE141DEAD1FF00E54A51 /* BOFileUtil.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = BOFileUtil.hpp; path = ../../BasicUI2/inc/BOFileUtil.hpp; sourceTree = "<group>"; };
+		B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BOFileUtil.cpp; path = ../../BasicUI2/src/BOFileUtil.cpp; sourceTree = "<group>"; };
+		B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil_iOS.hpp; sourceTree = "<group>"; };
+		B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFileUtil_iOS.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -721,6 +724,10 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
+				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
+				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
+				B621FE141DEAD1FF00E54A51 /* BOFileUtil.hpp */,
 				B621FE0E1DEABBE100E54A51 /* PhotoController.h */,
 				B621FE0F1DEABBE100E54A51 /* PhotoController.m */,
 				B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */,
@@ -745,8 +752,6 @@
 				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
-				B621FE111DEAC0B200E54A51 /* BOFileUtil.cpp */,
-				B621FE121DEAC0B200E54A51 /* BOFileUtil.hpp */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1693,6 +1698,7 @@
 				B621FD751DEAA29D00E54A51 /* system.cpp in Sources */,
 				B621FD481DEAA29D00E54A51 /* featuretracker.cpp in Sources */,
 				B621FD791DEAA29D00E54A51 /* brief.cpp in Sources */,
+				B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */,
 				B621FD6C1DEAA29D00E54A51 /* matop.cpp in Sources */,
 				B621FD331DEAA29D00E54A51 /* fundam.cpp in Sources */,
 				B621FDE71DEAA29E00E54A51 /* cascadedetect.cpp in Sources */,
@@ -1815,6 +1821,7 @@
 				B621FD411DEAA29D00E54A51 /* chamfermatching.cpp in Sources */,
 				B621FD4D1DEAA29D00E54A51 /* inputoutput.cpp in Sources */,
 				B621FDA51DEAA29E00E54A51 /* grfmt_pxm.cpp in Sources */,
+				B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */,
 				B621FDA11DEAA29E00E54A51 /* grfmt_exr.cpp in Sources */,
 				B621FD691DEAA29D00E54A51 /* lapack.cpp in Sources */,
 				B621FD2F1DEAA29D00E54A51 /* calibration.cpp in Sources */,
@@ -1891,7 +1898,6 @@
 				B621FDB31DEAA29E00E54A51 /* color.cpp in Sources */,
 				B621FD5F1DEAA29D00E54A51 /* array.cpp in Sources */,
 				B621FD6E1DEAA29D00E54A51 /* opengl_interop.cpp in Sources */,
-				B621FE131DEAC0B200E54A51 /* BOFileUtil.cpp in Sources */,
 				B621FDCB1DEAA29E00E54A51 /* rotcalipers.cpp in Sources */,
 				B621FDBD1DEAA29E00E54A51 /* floodfill.cpp in Sources */,
 				B621FD491DEAA29D00E54A51 /* fuzzymeanshifttracker.cpp in Sources */,
