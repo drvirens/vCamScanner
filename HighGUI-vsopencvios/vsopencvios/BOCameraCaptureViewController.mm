@@ -6,36 +6,11 @@
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
-#include <stdio.h>
-
 #import "BOCameraCaptureViewController.h"
 #import "BOCameraController.h"
 //#import "BOAddChallengeTableViewController.h"
 
-#define BUFLEN 512
-
-static char *camera_directory = NULL;
-
-	// Callback function invoked for every captured frame.
-static void _camera_capturing_cb(const void* image_data, size_t image_size, void *user_data)
-{
-	if (NULL == image_data) {
-		return;
-	}
-	char *file_path = (char *)malloc(sizeof(char) * BUFLEN);
-	
-		// Create a full path to newly created file for storing the taken photo.
-	snprintf(file_path, BUFLEN, "%s/cam%d.jpg", camera_directory, (int)time(NULL));
-	
-		// Open the file for writing.
-	FILE *file = fopen(file_path, "w+");
-	
-		// Write the image to a file.
-	fwrite(image_data, 1, image_size, file);
-	
-		// Close the file.
-	fclose(file);
-}
+#include "BOCameraUtil.hpp"
 
 static void* gUserLoadContext = &gUserLoadContext;
 
@@ -75,6 +50,12 @@ static void* gUserLoadContext = &gUserLoadContext;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {
 		NSLog(@"did capture ");
 		welf.image = image;
+		
+			//XXX - do this on background thread
+		NSData *theImageData = UIImageJPEGRepresentation(image, 0.7); // 0.7 is JPG quality;
+		const void* imageData = [theImageData bytes];
+		size_t imageSize = [theImageData length];
+		didCapturePhoto(imageData, imageSize, 0);
 		
 		[self gotoAddScreen];
 	}];
