@@ -97,6 +97,8 @@
 /* IJG JPEG codec */
 #define HAVE_JPEG
 
+#define HAVE_TIZEN
+
 /* libpng/png.h needs to be included */
 //#define HAVE_LIBPNG_PNG_H
 
