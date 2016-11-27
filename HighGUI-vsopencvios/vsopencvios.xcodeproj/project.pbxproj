@@ -2030,6 +2030,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = FJ585C7YHN;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
@@ -2053,17 +2054,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/arm64-v8a",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/armeabi",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/armeabi-v7a",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/x86",
 					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/ios",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/linux/32-bit",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/linux/64-bit",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/mac",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/tizen/arm",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/tizen/x86",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/win32",
 				);
 				OTHER_LDFLAGS = (
 					"-ljpeg",
@@ -2078,6 +2069,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
 				DEVELOPMENT_TEAM = FJ585C7YHN;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
@@ -2101,17 +2093,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/arm64-v8a",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/armeabi",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/armeabi-v7a",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/android/x86",
 					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/ios",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/linux/32-bit",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/linux/64-bit",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/mac",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/tizen/arm",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/tizen/x86",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/win32",
 				);
 				OTHER_LDFLAGS = (
 					"-ljpeg",
