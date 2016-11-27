@@ -464,12 +464,16 @@ int cv::createButton(const string&, ButtonCallback, void*, int , bool )
 
 //viren+
 
+#if (TARGET_OS_IPHONE || TARGET_IPHONE_SIMULATOR)
+
 // No windowing system present at compile time ;-(
 //
 // We will build place holders that don't break the API but give an error
 // at runtime. This way people can choose to replace an installed HighGUI
 // version with a more capable one without a need to recompile dependent
 // applications or libraries.
+#if 0
+
 
 
 
@@ -623,6 +627,9 @@ CV_IMPL int cvCreateButton(const char*, void (*)(int, void*), void*, int, int)
     CV_NO_GUI_ERROR("cvCreateButton");
     return -1;
 }
+#endif
+
+#endif
 
 //viren-
 
