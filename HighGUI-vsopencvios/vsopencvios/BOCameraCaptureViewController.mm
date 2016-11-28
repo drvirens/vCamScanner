@@ -16,6 +16,12 @@ static void* gUserLoadContext = &gUserLoadContext;
 @interface BOCameraCaptureViewController ()
 @property (nonatomic) BOCameraController* cameraController;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCameraCapture;
+
+@property (weak, nonatomic) IBOutlet UIView *containerCapturedView;
+@property (weak, nonatomic) IBOutlet UIImageView *capturedImageView;
+@property (weak, nonatomic) IBOutlet UIView *lowerContainerCapturedView;
+
+
 @property (nonatomic) UIImage* image;
 //@property (nonatomic) User* user;
 @end
@@ -33,7 +39,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-	
+	[self setupContainerView];
 	[self setupButton];
 	
 //	if (self.dataController.authenticatedUser != nil) { //already loaded
@@ -47,7 +53,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 //	[self unregisterKVO];
 	
 }
-
+- (void)setupContainerView {
+	self.containerCapturedView.hidden = YES;
+}
 - (void)setupButton {
 	self.buttonCameraCapture.layer.borderColor = [UIColor whiteColor].CGColor;
 	self.buttonCameraCapture.layer.borderWidth = 6.f;
@@ -55,10 +63,13 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (IBAction)didTapCapturePhoto:(id)sender {
+	
 	typeof (self) __weak welf = self;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {
 		NSLog(@"did capture ");
 		welf.image = image;
+		
+		[welf showCapturedImage];
 		
 			//XXX - do this on background thread
 		NSData *theImageData = UIImageJPEGRepresentation(image, 0.7); // 0.7 is JPG quality;
@@ -69,6 +80,20 @@ static void* gUserLoadContext = &gUserLoadContext;
 		
 		[self gotoAddScreen];
 	}];
+}
+
+- (void)showCapturedImage {
+	typeof (self) __weak welf = self;
+	dispatch_async(dispatch_get_main_queue(), ^{
+		typeof (self) __strong strongSelf = welf;
+		if (strongSelf) {
+			[strongSelf doShowCapturedImage];
+		}
+	});
+}
+- (void)doShowCapturedImage {
+	self.containerCapturedView.hidden = NO;
+	self.capturedImageView.image = self.image;
 }
 
 
@@ -97,6 +122,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 		_cameraController = cc;
 	}
 	return _cameraController;
+}
+
+- (BOOL)prefersStatusBarHidden {
+	return YES;
 }
 
 #pragma mark - KVO
