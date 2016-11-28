@@ -9,7 +9,7 @@
 #import "BOCameraCaptureViewController.h"
 #import "BOCameraController.h"
 
-#include "BOFileUtil_iOS.hpp"
+#include "file_utils_wrapper.hpp"
 
 static void* gUserLoadContext = &gUserLoadContext;
 
@@ -21,12 +21,12 @@ static void* gUserLoadContext = &gUserLoadContext;
 @end
 
 @implementation BOCameraCaptureViewController {
-	BOFileUtil* fileUtil_;
+	
 }
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		fileUtil_ = new BOFileUtil_iOS();
+		
 	}
 	return self;
 }
@@ -45,7 +45,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)dealloc {
 //	[self unregisterKVO];
-	delete fileUtil_;
+	
 }
 
 - (void)setupButton {
@@ -65,12 +65,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 		const void* imageData = [theImageData bytes];
 		size_t imageSize = [theImageData length];
 		
-		if (!fileUtil_) {
-			fileUtil_ = new BOFileUtil_iOS();
-			fileUtil_->init();
-		}
-		NSAssert(fileUtil_ != 0, @"File util cant be nil");
-		fileUtil_->storeCapturedPhotoAsJpeg(imageData, imageSize, 0);
+		storeCapturedImage(imageData, imageSize);
 		
 		[self gotoAddScreen];
 	}];
