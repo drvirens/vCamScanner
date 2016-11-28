@@ -124,7 +124,7 @@ static void _camera_capturing_cb(camera_image_data_s *image, camera_image_data_s
     if (NULL != image && NULL != image->data) {
         dlog_print(DLOG_DEBUG, LOG_TAG, "Writing image to file.");
 
-               const void* imageData = image->data;
+        const void* imageData = image->data;
         size_t imageSize = image->size;
         storeCapturedImage(imageData, imageSize);
 

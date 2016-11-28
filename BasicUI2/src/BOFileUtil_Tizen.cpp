@@ -20,7 +20,7 @@ void BOFileUtil_Tizen::init() {
 
 string BOFileUtil_Tizen::getWritablePath() const {
 	std::string strRet = app_get_data_path();
-	strRet.append("/");
+	//strRet.append("/");
 	return strRet;
 }
 
