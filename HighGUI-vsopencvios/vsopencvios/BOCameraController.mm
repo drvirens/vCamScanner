@@ -159,7 +159,6 @@
 	
 	AVCaptureVideoPreviewLayer* video = [AVCaptureVideoPreviewLayer layerWithSession:session];
 	
-	
 	dispatch_async(dispatch_get_main_queue(), ^{
 		CGRect r = [[UIScreen mainScreen] bounds];
 			r.size.height = r.size.height - 120 - 64 - 60;
@@ -169,9 +168,9 @@
 		
 		[cameraview.layer addSublayer:video];
 		
-			video.videoGravity = AVLayerVideoGravityResizeAspectFill;
-			video.frame = view.bounds;
-			video.bounds = view.bounds;
+		video.videoGravity = AVLayerVideoGravityResizeAspectFill;
+		video.frame = view.bounds;
+//		video.bounds = view.bounds;
 		video.position=CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
 		
 		[view sendSubviewToBack:cameraview];

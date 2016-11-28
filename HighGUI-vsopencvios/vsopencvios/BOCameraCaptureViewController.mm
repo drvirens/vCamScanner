@@ -10,6 +10,7 @@
 #import "BOCameraController.h"
 
 #include "file_utils_wrapper.h"
+#include "scannerLite.h"
 
 static void* gUserLoadContext = &gUserLoadContext;
 
@@ -21,37 +22,23 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet UIImageView *capturedImageView;
 @property (weak, nonatomic) IBOutlet UIView *lowerContainerCapturedView;
 
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
 
 @property (nonatomic) UIImage* image;
-//@property (nonatomic) User* user;
 @end
 
-@implementation BOCameraCaptureViewController {
-	
-}
-
+@implementation BOCameraCaptureViewController
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
 	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
 		
 	}
 	return self;
 }
-
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self setupContainerView];
 	[self setupButton];
-	
-//	if (self.dataController.authenticatedUser != nil) { //already loaded
-		[self startCamera];
-//	} else { //not laoded - wait for it it load
-//		[self registerKVO];
-//	}
-}
-
-- (void)dealloc {
-//	[self unregisterKVO];
-	
+	[self startCamera];
 }
 - (void)setupContainerView {
 	self.containerCapturedView.hidden = YES;
@@ -61,9 +48,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 	self.buttonCameraCapture.layer.borderWidth = 6.f;
 	self.buttonCameraCapture.layer.cornerRadius = 50.f; //XXX hardcoded for now
 }
-
 - (IBAction)didTapCapturePhoto:(id)sender {
-	
 	typeof (self) __weak welf = self;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {
 		NSLog(@"did capture ");
@@ -81,7 +66,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 		[self gotoAddScreen];
 	}];
 }
-
 - (void)showCapturedImage {
 	typeof (self) __weak welf = self;
 	dispatch_async(dispatch_get_main_queue(), ^{
@@ -93,28 +77,15 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)doShowCapturedImage {
 	self.containerCapturedView.hidden = NO;
-	self.capturedImageView.image = self.image;
+		//self.capturedImageView.image = self.image;
+	self.activityIndicator.hidden = NO;
 }
-
-
-
 - (void)gotoAddScreen {
-//	UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-//	BOAddChallengeTableViewController* destVC = (BOAddChallengeTableViewController*)[sb instantiateViewControllerWithIdentifier:@"BOAddChallengeTableViewController"];
-//	destVC.capturedPic = self.image;
-//	destVC.dataController = self.dataController;
-//	destVC.photoController = self.photoController;
-//	destVC.locationController = self.locationController;
-//	destVC.user = self.user;
-//		//[self presentViewController:destVC animated:YES completion:nil];
-//	[self.navigationController pushViewController:destVC animated:YES];
 }
-
 #pragma mark - show camera
 - (void)startCamera {
 	[self.cameraController startCameraInView:self.view];
 }
-
 - (BOCameraController*)cameraController {
 	if (!_cameraController) {
 		BOCameraController* cc = [[BOCameraController alloc] init];
@@ -123,34 +94,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 	}
 	return _cameraController;
 }
-
 - (BOOL)prefersStatusBarHidden {
 	return YES;
 }
-
-#pragma mark - KVO
-//- (void)registerKVO {
-//	[self.dataController addObserver:self forKeyPath:NSStringFromSelector(@selector(authenticatedUser)) options:0 context:gUserLoadContext];
-//}
-//- (void)unregisterKVO {
-//	@try {
-//		[self.dataController removeObserver:self forKeyPath:NSStringFromSelector(@selector(authenticatedUser)) context:gUserLoadContext];
-//	} @catch (NSException *exception) {
-//		
-//	}
-//}
-//- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary<NSKeyValueChangeKey,id> *)change context:(void *)context {
-//	if (
-//		[keyPath isEqualToString:NSStringFromSelector(@selector(authenticatedUser))] &&
-//		[object isKindOfClass:[DataController class]] &&
-//		context == gUserLoadContext
-//		) {
-//		self.user = [self.dataController authenticatedUser];
-//		[self startCamera];
-//	} else {
-//		[super observeValueForKeyPath:keyPath ofObject:object change:change context:context];
-//	}
-//}
-
-
 @end
