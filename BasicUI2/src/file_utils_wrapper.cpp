@@ -29,5 +29,12 @@ void storeCapturedImage(const void* imageData, size_t imageSize) {
 	fileUtil_->storeCapturedPhotoAsJpeg(imageData, imageSize, 0);
 }
 
+const char* storedJpegImageFullPath(void) {
+	string ret = fileUtil_->getLastCapturedJpegFullpath();
+	char* s = new char[ret.length()];
+	strcpy(s, ret.c_str());
+	return s;
+}
+
 
 

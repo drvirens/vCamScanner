@@ -37,6 +37,12 @@ void BOFileUtil::storeCapturedPhotoAsJpeg(const void* image_data, size_t image_s
 	
 		// Close the file.
 	fclose(file);
+	
+	lastCapturedJpegFullpath_ = file_path;
+}
+
+string BOFileUtil::getLastCapturedJpegFullpath() const {
+	return lastCapturedJpegFullpath_;
 }
 
 BOFileUtil::~BOFileUtil() {

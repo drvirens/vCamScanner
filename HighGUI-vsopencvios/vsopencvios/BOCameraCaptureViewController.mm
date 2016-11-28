@@ -54,7 +54,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 		NSLog(@"did capture ");
 		welf.image = image;
 		
-		[welf showCapturedImage];
+		[welf showCapturedImageLoading];
 		
 			//XXX - do this on background thread
 		NSData *theImageData = UIImageJPEGRepresentation(image, 0.7); // 0.7 is JPG quality;
@@ -62,11 +62,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 		size_t imageSize = [theImageData length];
 		
 		storeCapturedImage(imageData, imageSize);
-		
-		[self gotoAddScreen];
+		[self processStoredImage];
 	}];
 }
-- (void)showCapturedImage {
+- (void)showCapturedImageLoading {
 	typeof (self) __weak welf = self;
 	dispatch_async(dispatch_get_main_queue(), ^{
 		typeof (self) __strong strongSelf = welf;
@@ -80,8 +79,28 @@ static void* gUserLoadContext = &gUserLoadContext;
 		//self.capturedImageView.image = self.image;
 	self.activityIndicator.hidden = NO;
 }
-- (void)gotoAddScreen {
+- (void)processStoredImage {
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString *documentsDirectory = [paths objectAtIndex:0];
+	
+	NSString *outputPath = [documentsDirectory stringByAppendingPathComponent:@"viren.jpg"];
+	NSLog(@"fileName to write = %@", outputPath);
+	
+	const char* thepath = storedJpegImageFullPath();
+	const char* theOutputPath = [outputPath UTF8String];
+	pleaseScan(thepath, theOutputPath);
+	
+	UIImage* processedImage = [UIImage imageWithContentsOfFile:outputPath];
+	self.image = processedImage;
+	[self showProcessedImage];
 }
+- (void)showProcessedImage {
+	typeof (self) __weak welf = self;
+	dispatch_async(dispatch_get_main_queue(), ^{
+		welf.capturedImageView.image = welf.image;
+	});
+}
+
 #pragma mark - show camera
 - (void)startCamera {
 	[self.cameraController startCameraInView:self.view];
@@ -89,7 +108,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (BOCameraController*)cameraController {
 	if (!_cameraController) {
 		BOCameraController* cc = [[BOCameraController alloc] init];
-		
 		_cameraController = cc;
 	}
 	return _cameraController;

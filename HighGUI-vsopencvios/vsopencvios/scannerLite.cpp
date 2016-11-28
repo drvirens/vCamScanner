@@ -64,7 +64,7 @@ Point2f computeIntersect(Line l1, Line l2) {
   return Point2f(-1, -1);
 }
 
-void scan(String file, String dstFile, bool debug = true) {
+vector<Point> scan(String file, String dstFile, bool debug = true) {
 
   /* get input image */
   Mat img = imread(file);
@@ -167,13 +167,11 @@ void scan(String file, String dstFile, bool debug = true) {
   // apply perspective transformation
   warpPerspective(img, dst, transmtx, dst.size());
 
+  vector<Point> edges;
   // save dst img
-  //string storepath = "/var/mobile/Containers/Data/Application/11F93491-8630-4D24-8945-71A35308095D/Documents/viren.jpg";
   imwrite(dstFile, dst);
-//  imwrite("dst.jpg", dst);
-    
     {
-        vector<Point> edges = getPoints(dst);
+        edges = getPoints(dst);
         if (edges.size() == 0) {
             printf("did not get edge points");
         } else {
@@ -190,7 +188,7 @@ void scan(String file, String dstFile, bool debug = true) {
 //    imshow("dst", dst);
 //    waitKey(0);
   }
-//#endif
+	return edges;
 }
 
 //viren+
@@ -316,12 +314,10 @@ Point2f computePoint(int p1, int p2) {
 //viren-
 
 static int _pleaseScan(const char* path, const char* theOutputPath) {
-  string img_path[] = {"images/doc1.jpg", "images/doc2.jpg", "images/doc3.jpg"};
-//  scan(img_path[2]);
     string thepath = path;
     string andtheOutputPath = theOutputPath;
-    scan(thepath, andtheOutputPath);
-  return 0;
+    vector<Point> ret = scan(thepath, andtheOutputPath);
+	return 0;
 }
 
 #ifdef __cplusplus
