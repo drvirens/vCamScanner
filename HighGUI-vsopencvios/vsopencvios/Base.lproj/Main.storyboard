@@ -1,14 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NaZ-yU-sAN">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,6 +25,48 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+        </scene>
+        <!--Camera Capture View Controller-->
+        <scene sceneID="iSw-Jt-EDd">
+            <objects>
+                <viewController storyboardIdentifier="BOCameraCaptureViewController" id="NaZ-yU-sAN" customClass="BOCameraCaptureViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RjG-Sa-oTm"/>
+                        <viewControllerLayoutGuide type="bottom" id="QQf-p6-fY7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ByB-Qw-I9X">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-ZO-dQy">
+                                <rect key="frame" x="138" y="547" width="100" height="100"/>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="UWk-hR-1gj"/>
+                                    <constraint firstAttribute="height" constant="100" id="ngj-q7-1wg"/>
+                                </constraints>
+                                <state key="normal" title="Take Pic">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="didTapCapturePhoto:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="Eaq-ZU-XDE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="UYI-ZO-dQy" secondAttribute="bottom" constant="20" id="3Vb-Lh-yKy"/>
+                            <constraint firstItem="UYI-ZO-dQy" firstAttribute="centerX" secondItem="ByB-Qw-I9X" secondAttribute="centerX" id="O0x-Fl-zJn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="0qb-vi-8hz"/>
+                    <connections>
+                        <outlet property="buttonCameraCapture" destination="UYI-ZO-dQy" id="mHd-Mh-FQY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="01L-b3-vww" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2661.5999999999999" y="-327.88605697151428"/>
         </scene>
     </scenes>
 </document>

@@ -46,4 +46,6 @@ Evas_Object *_create_new_cd_display(appdata_s *ad, char *name, void *cb, Evas_Ob
 #endif
 #define LOG_TAG "$(appName)"
 
+
+
 #endif                           /* __MAIN_H__ */
