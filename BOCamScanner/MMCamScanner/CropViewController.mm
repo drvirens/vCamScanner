@@ -200,9 +200,7 @@
     cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:_sourceImageView.image];
     CGSize targetSize = _sourceImageView.contentSize;
     cv::resize(original, original, cvSize(targetSize.width, targetSize.height));
-    
-    
-    
+        
     std::vector<std::vector<cv::Point>>squares;
     std::vector<cv::Point> largest_square;
     
