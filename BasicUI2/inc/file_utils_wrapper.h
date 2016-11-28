@@ -16,6 +16,7 @@ extern "C" {
 #endif
 	
 void storeCapturedImage(const void* imageData, size_t imageSize);
+const char* storedJpegImageFullPath(void);
 
 #ifdef __cplusplus
 }

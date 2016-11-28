@@ -24,22 +24,7 @@
     
     NSString *outputPath = [documentsDirectory stringByAppendingPathComponent:@"viren.jpg"];
     NSLog(@"fileName to write = %@", outputPath);
-    
-    //make a file name to write the data to using the documents directory:
-//    NSString *fileName = [NSString stringWithFormat:@"%@/dst1.jpg",
-//                          documentsDirectory];
-//    if (fileName) {
-//        NSLog(@"fileName to write = %@", fileName);
-//        //create content - four lines of text
-//        NSString *content = @" ";
-//        //save content to the documents directory
-//        [content writeToFile:fileName
-//                  atomically:NO
-//                    encoding:NSStringEncodingConversionAllowLossy
-//                       error:nil];
-//    }
-    
-    //test-
+     //test-
     
     NSBundle* bundle = [NSBundle bundleForClass:[self class]];
     NSString* path = [bundle pathForResource:@"doc2" ofType:@"jpg"];
