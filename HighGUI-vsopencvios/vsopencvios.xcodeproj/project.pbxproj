@@ -237,7 +237,7 @@
 		B621FE101DEABBE100E54A51 /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* PhotoController.m */; };
 		B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */; };
 		B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */; };
-		B621FE1F1DEBC36C00E54A51 /* file_utils_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE1D1DEBC36C00E54A51 /* file_utils_wrapper.cpp */; };
+		B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -633,8 +633,8 @@
 		B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil_iOS.hpp; sourceTree = "<group>"; };
 		B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFileUtil_iOS.mm; sourceTree = "<group>"; };
 		B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOFileUtil.h; path = ../../BasicUI2/inc/BOFileUtil.h; sourceTree = "<group>"; };
-		B621FE1D1DEBC36C00E54A51 /* file_utils_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = file_utils_wrapper.cpp; sourceTree = "<group>"; };
-		B621FE1E1DEBC36C00E54A51 /* file_utils_wrapper.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = file_utils_wrapper.hpp; sourceTree = "<group>"; };
+		B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_utils_wrapper.h; path = ../../BasicUI2/inc/file_utils_wrapper.h; sourceTree = "<group>"; };
+		B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file_utils_wrapper.cpp; path = ../../BasicUI2/src/file_utils_wrapper.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -727,6 +727,8 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
+				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
 				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
 				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
 				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
@@ -755,8 +757,6 @@
 				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
-				B621FE1D1DEBC36C00E54A51 /* file_utils_wrapper.cpp */,
-				B621FE1E1DEBC36C00E54A51 /* file_utils_wrapper.hpp */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1761,7 +1761,7 @@
 				B621FD6F1DEAA29D00E54A51 /* opengl_interop_deprecated.cpp in Sources */,
 				B621FD471DEAA29D00E54A51 /* facerec.cpp in Sources */,
 				B621FD921DEAA29E00E54A51 /* cap_cmu.cpp in Sources */,
-				B621FE1F1DEBC36C00E54A51 /* file_utils_wrapper.cpp in Sources */,
+				B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */,
 				B621FDE11DEAA29E00E54A51 /* ml_init.cpp in Sources */,
 				B621FDFD1DEAA29E00E54A51 /* camshift.cpp in Sources */,
 				B621FD3D1DEAA29D00E54A51 /* adaptiveskindetector.cpp in Sources */,

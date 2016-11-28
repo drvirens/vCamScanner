@@ -23,7 +23,7 @@
 #include <storage.h>
 
 #include "test.h"
-#include "BOFileUtil_Tizen.h"
+#include "file_utils_wrapper.h"
 
 #define BUFLEN 512
 
@@ -41,7 +41,6 @@ typedef struct _camdata {
 static camdata cam_data;
 
 static char *camera_directory = NULL;
-BOFileUtil* fileUtil_ = 0;
 
 static const char *_camera_state_to_string(camera_state_e state)
 {
@@ -125,14 +124,9 @@ static void _camera_capturing_cb(camera_image_data_s *image, camera_image_data_s
     if (NULL != image && NULL != image->data) {
         dlog_print(DLOG_DEBUG, LOG_TAG, "Writing image to file.");
 
-        if (!fileUtil_) {
-			fileUtil_ = new BOFileUtil_Tizen();
-			fileUtil_->init();
-		}
-
-        const void* imageData = image->data;
+               const void* imageData = image->data;
         size_t imageSize = image->size;
-		fileUtil_->storeCapturedPhotoAsJpeg(imageData, imageSize, 0);
+        storeCapturedImage(imageData, imageSize);
 
         /*
         char *file_path = (char *)malloc(sizeof(char) * BUFLEN);

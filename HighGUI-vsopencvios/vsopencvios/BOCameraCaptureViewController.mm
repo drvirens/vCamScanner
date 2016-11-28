@@ -9,7 +9,7 @@
 #import "BOCameraCaptureViewController.h"
 #import "BOCameraController.h"
 
-#include "file_utils_wrapper.hpp"
+#include "file_utils_wrapper.h"
 
 static void* gUserLoadContext = &gUserLoadContext;
 
