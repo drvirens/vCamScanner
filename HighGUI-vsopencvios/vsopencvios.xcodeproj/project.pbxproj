@@ -15,6 +15,7 @@
 		11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */; };
 		11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */; };
 		11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB11DED3B3800371BD5 /* BOConstants.mm */; };
+		11303BB51DED5DA800371BD5 /* BOEnterDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB41DED5DA800371BD5 /* BOEnterDetailsTableViewController.m */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -265,6 +266,8 @@
 		11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentFrame.m"; sourceTree = "<group>"; };
 		11303BB01DED3B3800371BD5 /* BOConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOConstants.h; sourceTree = "<group>"; };
 		11303BB11DED3B3800371BD5 /* BOConstants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOConstants.mm; sourceTree = "<group>"; };
+		11303BB31DED5DA800371BD5 /* BOEnterDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOEnterDetailsTableViewController.h; sourceTree = "<group>"; };
+		11303BB41DED5DA800371BD5 /* BOEnterDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOEnterDetailsTableViewController.m; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -803,6 +806,8 @@
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
 				11303BB01DED3B3800371BD5 /* BOConstants.h */,
 				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
+				11303BB31DED5DA800371BD5 /* BOEnterDetailsTableViewController.h */,
+				11303BB41DED5DA800371BD5 /* BOEnterDetailsTableViewController.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1902,6 +1907,7 @@
 				B621FDD61DEAA29E00E54A51 /* utils.cpp in Sources */,
 				B621FD4C1DEAA29D00E54A51 /* imagelogpolprojection.cpp in Sources */,
 				B621FD9B1DEAA29E00E54A51 /* cap_libv4l.cpp in Sources */,
+				11303BB51DED5DA800371BD5 /* BOEnterDetailsTableViewController.m in Sources */,
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
 				B621FDE01DEAA29E00E54A51 /* knearest.cpp in Sources */,
