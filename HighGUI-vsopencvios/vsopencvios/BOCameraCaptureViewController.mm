@@ -229,6 +229,14 @@ static void* gUserLoadContext = &gUserLoadContext;
     UIImageView* imageview = (UIImageView*)[cell viewWithTag:200];
     imageview.image = filter.menuThumbnail;
     
+    if (self.currentlySelectedFilterMenu == nil) {
+        if (indexPath.item == 0) { //put first as selected
+            self.currentlySelectedFilterMenu = cell;
+            cell.backgroundColor = SELECTED_FILTER_BACKGROUND_COLOR;
+            cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
+        }
+    }
+    
     return cell;
 }
 #pragma mark - UICollectionViewDataSource
@@ -263,6 +271,13 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self hideFiltersView];
     }
     self.state = BONotCroppedState;
+    
+    if (self.currentlySelectedFilterMenu) {
+        self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
+        self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+    }
+    self.currentlySelectedFilterMenu = nil;
+    
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
