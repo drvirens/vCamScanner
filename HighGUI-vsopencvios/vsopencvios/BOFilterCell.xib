@@ -33,12 +33,12 @@
                     </imageView>
                 </subviews>
             </view>
-            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="Yzr-Hq-ohE" secondAttribute="trailing" id="BMv-Xb-uUr"/>
+                <constraint firstAttribute="trailing" secondItem="Yzr-Hq-ohE" secondAttribute="trailing" constant="5" id="BMv-Xb-uUr"/>
                 <constraint firstItem="Yzr-Hq-ohE" firstAttribute="top" secondItem="v4k-G5-as6" secondAttribute="top" constant="10" id="DVh-As-gW6"/>
                 <constraint firstAttribute="bottom" secondItem="BTS-Sa-NDf" secondAttribute="bottom" id="cGf-0a-TrF"/>
-                <constraint firstItem="Yzr-Hq-ohE" firstAttribute="leading" secondItem="v4k-G5-as6" secondAttribute="leading" id="eG2-zU-zXO"/>
+                <constraint firstItem="Yzr-Hq-ohE" firstAttribute="leading" secondItem="v4k-G5-as6" secondAttribute="leading" constant="5" id="eG2-zU-zXO"/>
                 <constraint firstItem="BTS-Sa-NDf" firstAttribute="top" secondItem="Yzr-Hq-ohE" secondAttribute="bottom" id="gd2-gQ-psL"/>
                 <constraint firstItem="BTS-Sa-NDf" firstAttribute="top" secondItem="Yzr-Hq-ohE" secondAttribute="bottom" id="j1U-Ck-KXy"/>
                 <constraint firstItem="BTS-Sa-NDf" firstAttribute="leading" secondItem="v4k-G5-as6" secondAttribute="leading" id="lVW-n4-Gex"/>

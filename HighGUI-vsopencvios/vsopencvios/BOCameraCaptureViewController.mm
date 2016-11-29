@@ -15,6 +15,7 @@
 #import "BOFiltersView.h"
 #import "BOFilterMenuModel.h"
 
+
 typedef enum BOState {
     BONotCroppedState,
     BOCroppedPreviewState
@@ -62,6 +63,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet BOFiltersView *filtersMenuView;
 
 @property (nonatomic) NSMutableArray* dataSource;
+
+@property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
 
 //upper view with scroll view in it - NOT USED CURRENTLY
 @property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
@@ -215,6 +218,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
+    cell.layer.cornerRadius = 5.f;
+    cell.layer.borderWidth = 1.f;
+    cell.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+    
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
     label.text = filter.menuDisplayName;
@@ -225,6 +232,19 @@ static void* gUserLoadContext = &gUserLoadContext;
     return cell;
 }
 #pragma mark - UICollectionViewDataSource
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.currentlySelectedFilterMenu) {
+        self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
+        self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+    }
+    UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
+    self.currentlySelectedFilterMenu = cell;
+    cell.backgroundColor = SELECTED_FILTER_BACKGROUND_COLOR;
+    cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
+    
+    BOFilterMenuModel* filter = self.dataSource[indexPath.item];
+    self.capturedImageView.image = filter.menuThumbnail;
+}
 
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
