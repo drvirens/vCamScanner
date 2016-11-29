@@ -169,9 +169,17 @@
                                     <constraint firstItem="Lwh-H6-yp5" firstAttribute="centerY" secondItem="waf-oh-nvb" secondAttribute="centerY" id="ffi-8A-lmF"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mID-cY-RcA" customClass="BOFiltersView">
+                                <rect key="frame" x="38" y="298" width="102" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="e9L-kT-FmP"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="mID-cY-RcA" firstAttribute="leading" secondItem="ByB-Qw-I9X" secondAttribute="leading" id="0OM-XM-7TZ"/>
                             <constraint firstItem="yop-xH-tsR" firstAttribute="leading" secondItem="ByB-Qw-I9X" secondAttribute="leading" id="9Aa-wP-lfX"/>
                             <constraint firstItem="yop-xH-tsR" firstAttribute="top" secondItem="RjG-Sa-oTm" secondAttribute="bottom" id="LS8-GR-c72"/>
                             <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="waf-oh-nvb" secondAttribute="bottom" id="S2n-b5-hOu"/>
@@ -179,16 +187,19 @@
                             <constraint firstItem="gss-S8-HRN" firstAttribute="leading" secondItem="ByB-Qw-I9X" secondAttribute="leading" id="SlD-QI-jQd"/>
                             <constraint firstItem="waf-oh-nvb" firstAttribute="height" secondItem="qzy-hf-ive" secondAttribute="height" id="Vfo-80-vFH"/>
                             <constraint firstAttribute="trailing" secondItem="yop-xH-tsR" secondAttribute="trailing" id="chV-z6-PBx"/>
+                            <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="mID-cY-RcA" secondAttribute="bottom" constant="-300" id="dXr-Q9-DPa"/>
                             <constraint firstAttribute="trailing" secondItem="gss-S8-HRN" secondAttribute="trailing" id="nbW-W3-bep"/>
                             <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="bottom" id="pKC-VL-WbP"/>
                             <constraint firstItem="waf-oh-nvb" firstAttribute="top" secondItem="yop-xH-tsR" secondAttribute="bottom" id="rtr-kG-1SZ"/>
                             <constraint firstItem="gss-S8-HRN" firstAttribute="top" secondItem="RjG-Sa-oTm" secondAttribute="bottom" id="sXS-C3-4iq"/>
                             <constraint firstAttribute="trailing" secondItem="waf-oh-nvb" secondAttribute="trailing" id="uEa-b0-064"/>
+                            <constraint firstAttribute="trailing" secondItem="mID-cY-RcA" secondAttribute="trailing" id="vh7-gU-sZw"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0qb-vi-8hz"/>
                     <connections>
                         <outlet property="activityIndicator" destination="xnd-F8-YHU" id="V6Y-6I-QTA"/>
+                        <outlet property="bottomFiltersViewConstraint" destination="dXr-Q9-DPa" id="s4S-Ph-FmE"/>
                         <outlet property="buttonCameraCapture" destination="8iD-3x-d4J" id="tns-ji-O5I"/>
                         <outlet property="buttonCameraCaptureBottomConstraint" destination="S2n-b5-hOu" id="AdP-Cs-PTm"/>
                         <outlet property="buttonFlash" destination="Lwh-H6-yp5" id="ZLl-bX-od4"/>

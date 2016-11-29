@@ -12,6 +12,7 @@
 #import "UIImageView+ContentFrame.h"
 #import "MMOpenCVHelper.h"
 #import "BOConstants.h"
+#import "BOFiltersView.h"
 
 typedef enum BOState {
     BONotCroppedState,
@@ -55,6 +56,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (strong, nonatomic) MMCropView* croppedView;
 
 @property (nonatomic) BOState state;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomFiltersViewConstraint;
+
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -149,6 +153,20 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     [self detectEdgesOnImageAndDisplay:self.image];
 }
+- (void)hideFiltersView {
+    [self.view layoutIfNeeded];
+    self.bottomFiltersViewConstraint.constant = -(kFiltersViewBottomMargin + kHeightLowerView);
+    [UIView animateWithDuration:.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+- (void)showFiltersView {
+    [self.view layoutIfNeeded];
+    self.bottomFiltersViewConstraint.constant = kHeightLowerView;
+    [UIView animateWithDuration:.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
     [self hideBottomMenu];
@@ -171,6 +189,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuSelect:(id)sender {
     if (self.state == BOCroppedPreviewState) {
         NSLog(@"BOCroppedPreviewState - present view controller for entering name and category");
+        [self showFiltersView];
     } else {
         [self doCropImage];
         [self transitMenuItemsToPreviewMode];

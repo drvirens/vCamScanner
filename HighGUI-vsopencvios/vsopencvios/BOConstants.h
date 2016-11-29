@@ -10,4 +10,4 @@
 
 FOUNDATION_EXPORT const CGFloat kHeightLowerView;
 FOUNDATION_EXPORT const CGFloat kHeightCapturePhotoButton;
-//FOUNDATION_EXPORT const CGFloat kCaptureButtonBottomMargin;
+FOUNDATION_EXPORT const CGFloat kFiltersViewBottomMargin;

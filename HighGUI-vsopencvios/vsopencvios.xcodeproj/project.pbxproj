@@ -16,6 +16,8 @@
 		11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */; };
 		11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB11DED3B3800371BD5 /* BOConstants.mm */; };
 		11303BB51DED5DA800371BD5 /* BOEnterDetailsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB41DED5DA800371BD5 /* BOEnterDetailsTableViewController.m */; };
+		11303BB81DED749700371BD5 /* BOFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BB61DED749700371BD5 /* BOFiltersView.xib */; };
+		11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBA1DED74DF00371BD5 /* BOFiltersView.m */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -268,6 +270,9 @@
 		11303BB11DED3B3800371BD5 /* BOConstants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOConstants.mm; sourceTree = "<group>"; };
 		11303BB31DED5DA800371BD5 /* BOEnterDetailsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOEnterDetailsTableViewController.h; sourceTree = "<group>"; };
 		11303BB41DED5DA800371BD5 /* BOEnterDetailsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOEnterDetailsTableViewController.m; sourceTree = "<group>"; };
+		11303BB71DED749700371BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BOFiltersView.xib; sourceTree = "<group>"; };
+		11303BB91DED74DF00371BD5 /* BOFiltersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFiltersView.h; sourceTree = "<group>"; };
+		11303BBA1DED74DF00371BD5 /* BOFiltersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOFiltersView.m; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -808,6 +813,9 @@
 				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
 				11303BB31DED5DA800371BD5 /* BOEnterDetailsTableViewController.h */,
 				11303BB41DED5DA800371BD5 /* BOEnterDetailsTableViewController.m */,
+				11303BB61DED749700371BD5 /* BOFiltersView.xib */,
+				11303BB91DED74DF00371BD5 /* BOFiltersView.h */,
+				11303BBA1DED74DF00371BD5 /* BOFiltersView.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1732,6 +1740,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */,
+				11303BB81DED749700371BD5 /* BOFiltersView.xib in Resources */,
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
 				1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
@@ -1949,6 +1958,7 @@
 				B621FD9A1DEAA29E00E54A51 /* cap_ios_video_camera.mm in Sources */,
 				B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */,
 				B621FDAE1DEAA29E00E54A51 /* window_w32.cpp in Sources */,
+				11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */,
 				B621FDFA1DEAA29E00E54A51 /* bgfg_gaussmix.cpp in Sources */,
 				B621FDE91DEAA29E00E54A51 /* distancetransform.cpp in Sources */,
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
@@ -1981,6 +1991,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		11303BB61DED749700371BD5 /* BOFiltersView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11303BB71DED749700371BD5 /* Base */,
+			);
+			name = BOFiltersView.xib;
+			sourceTree = "<group>";
+		};
 		11B75AD81DDFD08D004EAB65 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
