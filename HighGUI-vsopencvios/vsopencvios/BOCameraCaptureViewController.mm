@@ -13,6 +13,10 @@
 #import "MMOpenCVHelper.h"
 #import "BOConstants.h"
 
+typedef enum BOState {
+    BONotCroppedState,
+    BOCroppedPreviewState
+} BOState;
 
 static void* gUserLoadContext = &gUserLoadContext;
 
@@ -49,6 +53,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) UIImage* cropImage;
 
 @property (strong, nonatomic) MMCropView* croppedView;
+
+@property (nonatomic) BOState state;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -58,6 +64,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.state = BONotCroppedState;
 	[self setupContainerView];
 	[self setupButton];
 	[self startCamera];
@@ -153,14 +160,41 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     [self.croppedView removeFromSuperview];
     self.croppedView = nil;
+    
+    [self transitMenuItemsToNotCroppedMode];
+    self.state = BONotCroppedState;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
 - (IBAction)didSelectMenuRotateRight:(id)sender {
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
-    [self doCropImage];
+    if (self.state == BOCroppedPreviewState) {
+        NSLog(@"BOCroppedPreviewState - present view controller for entering name and category");
+    } else {
+        [self doCropImage];
+        [self transitMenuItemsToPreviewMode];
+    }
 }
+- (void)transitMenuItemsToPreviewMode {
+    self.menuButtonRotateLeft.hidden = YES;
+    self.menuButtonRotateRight.hidden = YES;
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_arrow_forward_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
+    self.menuButtonSelect.tintColor = [UIColor whiteColor];
+    self.state = BOCroppedPreviewState;
+}
+- (void)transitMenuItemsToNotCroppedMode {
+    self.menuButtonRotateLeft.hidden = NO;
+    self.menuButtonRotateRight.hidden = NO;
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_check_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
+    self.menuButtonSelect.tintColor = [UIColor whiteColor];
+    self.state = BOCroppedPreviewState;
+}
+
 #pragma mark - image crop view
 - (void)prepareCropView {
     CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
