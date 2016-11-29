@@ -9,4 +9,4 @@
 #import "BOConstants.h"
 
 const CGFloat kHeightLowerView = 100.f;
-const CGFloat kHeightCapturePhotoButton = 90.f;
+const CGFloat kHeightCapturePhotoButton = 80.f;

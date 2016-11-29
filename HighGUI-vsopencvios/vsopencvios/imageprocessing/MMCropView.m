@@ -3,7 +3,8 @@
 
 #define kCropButtonSize 30
 
-#define COLOR_EDGE_DOTS [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f]
+//#define COLOR_EDGE_DOTS [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f] //red
+#define COLOR_EDGE_DOTS [UIColor colorWithRed:16.f/255.f green:160.f/255.f blue:208.f/255.f alpha:1.f]
 
 @implementation MMCropView
 @synthesize pointD = _pointD;
