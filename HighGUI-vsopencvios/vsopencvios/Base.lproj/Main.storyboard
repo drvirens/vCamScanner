@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -129,45 +130,56 @@
                                     <constraint firstItem="xnd-F8-YHU" firstAttribute="centerX" secondItem="gss-S8-HRN" secondAttribute="centerX" id="scQ-VL-ALM"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UYI-ZO-dQy">
-                                <rect key="frame" x="42" y="611" width="24" height="24"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="UWk-hR-1gj"/>
-                                    <constraint firstAttribute="height" constant="80" id="ngj-q7-1wg"/>
-                                </constraints>
-                                <state key="normal" image="ic_photo_camera_white">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="didTapCapturePhoto:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="Eaq-ZU-XDE"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yop-xH-tsR">
                                 <rect key="frame" x="9" y="20" width="60" height="498"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="waf-oh-nvb">
+                                <rect key="frame" x="9" y="531" width="214" height="107"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iD-3x-d4J">
+                                        <rect key="frame" x="114" y="52" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="8iD-3x-d4J" secondAttribute="height" multiplier="1:1" id="IUT-jp-lju"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_photo_camera_white"/>
+                                        <connections>
+                                            <action selector="didTapCapturePhoto:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="7Su-Ci-j29"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="8iD-3x-d4J" secondAttribute="bottom" constant="10" id="0lt-B5-dhR"/>
+                                    <constraint firstItem="8iD-3x-d4J" firstAttribute="centerY" secondItem="waf-oh-nvb" secondAttribute="centerY" id="8rV-qF-hqH"/>
+                                    <constraint firstItem="8iD-3x-d4J" firstAttribute="top" secondItem="waf-oh-nvb" secondAttribute="top" constant="10" id="9PK-9w-7pZ"/>
+                                    <constraint firstItem="8iD-3x-d4J" firstAttribute="centerX" secondItem="waf-oh-nvb" secondAttribute="centerX" id="D9y-2J-fD4"/>
+                                </constraints>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="UYI-ZO-dQy" secondAttribute="bottom" constant="10" id="3Vb-Lh-yKy"/>
                             <constraint firstItem="yop-xH-tsR" firstAttribute="leading" secondItem="ByB-Qw-I9X" secondAttribute="leading" id="9Aa-wP-lfX"/>
-                            <constraint firstItem="UYI-ZO-dQy" firstAttribute="top" secondItem="yop-xH-tsR" secondAttribute="bottom" constant="10" id="JL2-md-ZzP"/>
                             <constraint firstItem="yop-xH-tsR" firstAttribute="top" secondItem="RjG-Sa-oTm" secondAttribute="bottom" id="LS8-GR-c72"/>
-                            <constraint firstItem="UYI-ZO-dQy" firstAttribute="centerX" secondItem="ByB-Qw-I9X" secondAttribute="centerX" id="O0x-Fl-zJn"/>
+                            <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="waf-oh-nvb" secondAttribute="bottom" id="S2n-b5-hOu"/>
+                            <constraint firstItem="waf-oh-nvb" firstAttribute="leading" secondItem="ByB-Qw-I9X" secondAttribute="leading" id="SCh-CB-iF8"/>
                             <constraint firstItem="gss-S8-HRN" firstAttribute="leading" secondItem="ByB-Qw-I9X" secondAttribute="leading" id="SlD-QI-jQd"/>
+                            <constraint firstItem="waf-oh-nvb" firstAttribute="height" secondItem="qzy-hf-ive" secondAttribute="height" id="Vfo-80-vFH"/>
                             <constraint firstAttribute="trailing" secondItem="yop-xH-tsR" secondAttribute="trailing" id="chV-z6-PBx"/>
                             <constraint firstAttribute="trailing" secondItem="gss-S8-HRN" secondAttribute="trailing" id="nbW-W3-bep"/>
                             <constraint firstItem="QQf-p6-fY7" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="bottom" id="pKC-VL-WbP"/>
+                            <constraint firstItem="waf-oh-nvb" firstAttribute="top" secondItem="yop-xH-tsR" secondAttribute="bottom" id="rtr-kG-1SZ"/>
                             <constraint firstItem="gss-S8-HRN" firstAttribute="top" secondItem="RjG-Sa-oTm" secondAttribute="bottom" id="sXS-C3-4iq"/>
+                            <constraint firstAttribute="trailing" secondItem="waf-oh-nvb" secondAttribute="trailing" id="uEa-b0-064"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="0qb-vi-8hz"/>
                     <connections>
                         <outlet property="activityIndicator" destination="xnd-F8-YHU" id="V6Y-6I-QTA"/>
-                        <outlet property="buttonCameraCapture" destination="UYI-ZO-dQy" id="mHd-Mh-FQY"/>
-                        <outlet property="buttonCameraCaptureBottomConstraint" destination="3Vb-Lh-yKy" id="2mN-VI-FfX"/>
+                        <outlet property="buttonCameraCapture" destination="8iD-3x-d4J" id="tns-ji-O5I"/>
+                        <outlet property="buttonCameraCaptureBottomConstraint" destination="S2n-b5-hOu" id="AdP-Cs-PTm"/>
                         <outlet property="cameraView" destination="yop-xH-tsR" id="wEh-lP-sJ9"/>
+                        <outlet property="cameraViewBottomMenuContainer" destination="waf-oh-nvb" id="CYT-oC-O9a"/>
                         <outlet property="capturedImageView" destination="qAz-4v-fvp" id="Aep-Ab-A5b"/>
                         <outlet property="containerCapturedView" destination="gss-S8-HRN" id="2JY-HO-V4h"/>
                         <outlet property="lowerContainerCapturedView" destination="qzy-hf-ive" id="Ht3-dR-g7G"/>

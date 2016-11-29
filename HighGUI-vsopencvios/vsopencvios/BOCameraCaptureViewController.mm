@@ -21,6 +21,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCameraCapture;
+@property (weak, nonatomic) IBOutlet UIView *cameraViewBottomMenuContainer;
 
 @property (weak, nonatomic) IBOutlet UIView *upperContainerCapturedView;
 
@@ -109,7 +110,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)showCameraOverlay {
     [self.view layoutIfNeeded];
-    self.buttonCameraCaptureBottomConstraint.constant = kCaptureButtonBottomMargin;
+    self.buttonCameraCaptureBottomConstraint.constant = 0;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
