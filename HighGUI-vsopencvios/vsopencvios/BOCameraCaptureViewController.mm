@@ -198,7 +198,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
-
+    UILabel* label = (UILabel*)[cell viewWithTag:100];
+    NSString* filterName = self.dataSource[indexPath.item];
+    label.text = filterName;
     return cell;
 }
 #pragma mark - UICollectionViewDataSource
