@@ -73,10 +73,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {
 		NSLog(@"did capture ");
 		welf.image = image;
-        self.capturedImageView.image = image;
-        
+        welf.capturedImageView.image = image;
 		[welf showCapturedImageLoading];
-//        [welf detectEdgesOnImageAndDisplay:image];
 	}];
 }
 - (void)detectEdgesOnImageAndDisplay:(UIImage*)image {
@@ -94,11 +92,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)doShowCapturedImage {
     [self hideCameraOverlay];
-//    [self showBottomMenu];
-    
-//	self.containerCapturedView.hidden = NO;
-//	self.activityIndicator.hidden = NO;
-//    self.cameraView.hidden = YES;
 }
 - (void)hideCameraOverlay {
     [self.view layoutIfNeeded];
@@ -203,9 +196,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 	return YES;
 }
 
-#pragma mark - OpenCV
-
-
 #pragma mark OpenCV
 - (void)detectEdges
 {
@@ -294,7 +284,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     }
     original.release();
 }
-
 
 // http://stackoverflow.com/questions/8667818/opencv-c-obj-c-detecting-a-sheet-of-paper-square-detection
 static void find_squares(cv::Mat& image, std::vector<std::vector<cv::Point>>&squares) {
@@ -395,7 +384,6 @@ static void find_largest_square(const std::vector<std::vector<cv::Point> >& squa
     
     biggest_square = squares[max_square_idx];
 }
-
 
 static double angle( cv::Point pt1, cv::Point pt2, cv::Point pt0 ) {
     double dx1 = pt1.x - pt0.x;
