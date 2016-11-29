@@ -147,13 +147,26 @@
                                             <action selector="didTapCapturePhoto:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="7Su-Ci-j29"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-H6-yp5">
+                                        <rect key="frame" x="26" y="49" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="CoV-Vt-qK3"/>
+                                            <constraint firstAttribute="width" constant="24" id="i0G-xC-RMs"/>
+                                        </constraints>
+                                        <state key="normal" image="ic_flash_off_white"/>
+                                        <connections>
+                                            <action selector="didTapOnToggleFlashButton:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="EdN-OR-gZa"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="8iD-3x-d4J" secondAttribute="bottom" constant="10" id="0lt-B5-dhR"/>
                                     <constraint firstItem="8iD-3x-d4J" firstAttribute="centerY" secondItem="waf-oh-nvb" secondAttribute="centerY" id="8rV-qF-hqH"/>
                                     <constraint firstItem="8iD-3x-d4J" firstAttribute="top" secondItem="waf-oh-nvb" secondAttribute="top" constant="10" id="9PK-9w-7pZ"/>
                                     <constraint firstItem="8iD-3x-d4J" firstAttribute="centerX" secondItem="waf-oh-nvb" secondAttribute="centerX" id="D9y-2J-fD4"/>
+                                    <constraint firstItem="Lwh-H6-yp5" firstAttribute="leading" secondItem="waf-oh-nvb" secondAttribute="leading" constant="20" id="bfp-7t-fNE"/>
+                                    <constraint firstItem="Lwh-H6-yp5" firstAttribute="centerY" secondItem="waf-oh-nvb" secondAttribute="centerY" id="ffi-8A-lmF"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -178,6 +191,7 @@
                         <outlet property="activityIndicator" destination="xnd-F8-YHU" id="V6Y-6I-QTA"/>
                         <outlet property="buttonCameraCapture" destination="8iD-3x-d4J" id="tns-ji-O5I"/>
                         <outlet property="buttonCameraCaptureBottomConstraint" destination="S2n-b5-hOu" id="AdP-Cs-PTm"/>
+                        <outlet property="buttonFlash" destination="Lwh-H6-yp5" id="ZLl-bX-od4"/>
                         <outlet property="cameraView" destination="yop-xH-tsR" id="wEh-lP-sJ9"/>
                         <outlet property="cameraViewBottomMenuContainer" destination="waf-oh-nvb" id="CYT-oC-O9a"/>
                         <outlet property="capturedImageView" destination="qAz-4v-fvp" id="Aep-Ab-A5b"/>
@@ -199,6 +213,7 @@
     <resources>
         <image name="ic_arrow_back_white" width="24" height="24"/>
         <image name="ic_check_white" width="24" height="24"/>
+        <image name="ic_flash_off_white" width="24" height="24"/>
         <image name="ic_photo_camera_white" width="24" height="24"/>
         <image name="ic_rotate_left_white" width="24" height="24"/>
         <image name="ic_rotate_right_white" width="24" height="24"/>

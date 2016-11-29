@@ -16,5 +16,6 @@ typedef void(^CapturePhotoCompletion)(UIImage*);
 - (void)startCameraInView:(UIView*)view;
 - (void)stopCamera;
 - (void)capturePhotoWithCompletion:(CapturePhotoCompletion)completion;
+- (BOOL)toggleCameraFlash; // returns on/off. YES = on, NO = off
 @end
 

@@ -21,6 +21,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCameraCapture;
+@property (weak, nonatomic) IBOutlet UIButton *buttonFlash;
+
 @property (weak, nonatomic) IBOutlet UIView *cameraViewBottomMenuContainer;
 
 @property (weak, nonatomic) IBOutlet UIView *upperContainerCapturedView;
@@ -76,6 +78,18 @@ static void* gUserLoadContext = &gUserLoadContext;
         welf.capturedImageView.image = image;
 		[welf showCapturedImageLoading];
 	}];
+}
+- (IBAction)didTapOnToggleFlashButton:(id)sender {
+    BOOL on = [self.cameraController toggleCameraFlash];
+    UIImage* onicon = [UIImage imageNamed:@"ic_flash_on_white"];
+    UIImage* officon = [UIImage imageNamed:@"ic_flash_off_white"];
+    UIImage* curr = nil;
+    if (on) {
+        curr = onicon;
+    } else {
+        curr = officon;
+    }
+    [self.buttonFlash setImage:curr forState:UIControlStateNormal];
 }
 - (void)detectEdgesOnImageAndDisplay:(UIImage*)image {
     [self prepareCropView];

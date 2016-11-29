@@ -16,6 +16,8 @@
 @property (nonatomic) AVCaptureSession* session;
 @property (nonatomic) AVCaptureStillImageOutput* output;
 @property (nonatomic, copy) CapturePhotoCompletion completion;
+@property (nonatomic) AVCaptureDevice* device;
+@property (nonatomic) BOOL toogleFlash;
 @end
 
 @implementation BOCameraController
@@ -130,9 +132,9 @@
 	}
 	
 	AVCaptureSession* session = nil;
-	AVCaptureDevice* device = [self cameraForPosition:AVCaptureDevicePositionBack];
-	NSAssert(device != nil, @"device was nil");
-	if (!device) {
+	self.device = [self cameraForPosition:AVCaptureDevicePositionBack];
+	NSAssert(self.device != nil, @"device was nil");
+	if (!self.device) {
 		return session;
 	}
 	
@@ -140,7 +142,7 @@
 	
 		//create input
 	NSError* err = nil;
-	AVCaptureDeviceInput* input = [[AVCaptureDeviceInput alloc] initWithDevice:device error:&err];
+	AVCaptureDeviceInput* input = [[AVCaptureDeviceInput alloc] initWithDevice:self.device error:&err];
 	if (err) {
 		NSLog(@"could not get input device ");
 		return session;
@@ -194,5 +196,22 @@
 	return camera;
 }
 
+- (BOOL)toggleCameraFlash {
+    if ([self.device hasTorch] && [self.device position] == AVCaptureDevicePositionBack) {
+        [self.device lockForConfiguration:nil];
+        
+        if(self.toogleFlash){
+            [self.device setTorchMode:AVCaptureTorchModeOff];
+        }
+        else{
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+        }
+        
+        [self.device unlockForConfiguration];
+    }
+    
+    self.toogleFlash =! self.toogleFlash;
+    return self.toogleFlash;
+}
 
 @end
