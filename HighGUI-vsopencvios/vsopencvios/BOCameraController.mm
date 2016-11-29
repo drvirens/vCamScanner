@@ -8,6 +8,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "BOCameraController.h"
+#import "BOConstants.h"
 
 #define return_from_block return
 
@@ -161,7 +162,7 @@
 	
 	dispatch_async(dispatch_get_main_queue(), ^{
 //		CGRect r = [[UIScreen mainScreen] bounds];
-//        r.size.height = r.size.height - 120 - 64 - 60;
+//        r.size.height = r.size.height - kHeightLowerView;
 //        UIView* cameraview = [[UIView alloc] initWithFrame:r];
         
         UIView* cameraview = [[UIView alloc] init];

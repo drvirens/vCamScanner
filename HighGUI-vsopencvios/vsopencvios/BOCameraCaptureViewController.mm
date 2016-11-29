@@ -11,15 +11,15 @@
 #import "MMCropView.h"
 #import "UIImageView+ContentFrame.h"
 #import "MMOpenCVHelper.h"
-
-//#include "file_utils_wrapper.h"
-//#include "scannerLite.h"
+#import "BOConstants.h"
 
 
 static void* gUserLoadContext = &gUserLoadContext;
 
 @interface BOCameraCaptureViewController ()
 @property (nonatomic) BOCameraController* cameraController;
+
+@property (weak, nonatomic) IBOutlet UIView *cameraView;
 @property (weak, nonatomic) IBOutlet UIButton *buttonCameraCapture;
 
 @property (weak, nonatomic) IBOutlet UIView *upperContainerCapturedView;
@@ -52,12 +52,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     CGRect _initialRect;
     CGRect final_Rect;
 }
-- (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
-	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-		
-	}
-	return self;
-}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
 	[self setupContainerView];
@@ -70,7 +65,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)setupButton {
 	self.buttonCameraCapture.layer.borderColor = [UIColor whiteColor].CGColor;
 	self.buttonCameraCapture.layer.borderWidth = 6.f;
-	self.buttonCameraCapture.layer.cornerRadius = 50.f; //XXX hardcoded for now
+	self.buttonCameraCapture.layer.cornerRadius = kHeightCapturePhotoButton/2.f; //XXX hardcoded for now
 }
 - (IBAction)didTapCapturePhoto:(id)sender {
 	typeof (self) __weak welf = self;
@@ -80,7 +75,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         self.capturedImageView.image = image;
         
 		[welf showCapturedImageLoading];
-        [welf detectEdgesOnImageAndDisplay:image];
+//        [welf detectEdgesOnImageAndDisplay:image];
 	}];
 }
 - (void)detectEdgesOnImageAndDisplay:(UIImage*)image {
@@ -98,17 +93,19 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)doShowCapturedImage {
     [self hideCameraOverlay];
-    [self showBottomMenu];
+//    [self showBottomMenu];
     
-	self.containerCapturedView.hidden = NO;
-	self.activityIndicator.hidden = NO;
+//	self.containerCapturedView.hidden = NO;
+//	self.activityIndicator.hidden = NO;
+//    self.cameraView.hidden = YES;
 }
 - (void)hideCameraOverlay {
     [self.view layoutIfNeeded];
-    self.buttonCameraCaptureBottomConstraint.constant = -(100 + 10);
+    self.buttonCameraCaptureBottomConstraint.constant = -(kHeightLowerView);
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    [self showBottomMenu];
 }
 - (void)showCameraOverlay {
     [self.view layoutIfNeeded];
@@ -119,7 +116,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)hideBottomMenu {
     [self.containerCapturedView layoutIfNeeded];
-    self.lowerContainerCapturedViewBottomLayout.constant = -(120);
+    self.lowerContainerCapturedViewBottomLayout.constant = -(kHeightLowerView);
     [UIView animateWithDuration:.25 animations:^{
         [self.containerCapturedView layoutIfNeeded];
     }];
@@ -130,6 +127,12 @@ static void* gUserLoadContext = &gUserLoadContext;
     [UIView animateWithDuration:.25 animations:^{
         [self.containerCapturedView layoutIfNeeded];
     }];
+    
+    self.containerCapturedView.hidden = NO;
+    self.activityIndicator.hidden = NO;
+    self.cameraView.hidden = YES;
+    
+    [self detectEdgesOnImageAndDisplay:self.image];
 }
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
@@ -138,6 +141,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     self.containerCapturedView.hidden = YES;
     self.activityIndicator.hidden = YES;
+    self.cameraView.hidden = NO;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
@@ -149,9 +153,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 #pragma mark - image crop view
 - (void)prepareCropView {
     CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
-                                self.capturedImageView.contentFrame.origin.y + 30,
+                                self.capturedImageView.contentFrame.origin.y,
                                 self.capturedImageView.contentFrame.size.width,
-                                self.capturedImageView.contentFrame.size.height - 30 - 30 - 60);
+                                self.capturedImageView.contentFrame.size.height - kHeightLowerView);
     _cropRect= [[MMCropView alloc] initWithFrame:cropFrame];
     [self.upperContainerCapturedView addSubview:_cropRect];
     
@@ -182,7 +186,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark - show camera
 - (void)startCamera {
-	[self.cameraController startCameraInView:self.view];
+	[self.cameraController startCameraInView:self.cameraView];
 }
 - (BOCameraController*)cameraController {
 	if (!_cameraController) {

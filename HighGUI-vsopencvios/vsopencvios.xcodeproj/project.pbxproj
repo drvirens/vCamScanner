@@ -14,6 +14,7 @@
 		11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA41DED0BB800371BD5 /* MTGeometry.c */; };
 		11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */; };
 		11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */; };
+		11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB11DED3B3800371BD5 /* BOConstants.mm */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -262,6 +263,8 @@
 		11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
 		11303BAC1DED0D8900371BD5 /* UIImageView+ContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContentFrame.h"; sourceTree = "<group>"; };
 		11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentFrame.m"; sourceTree = "<group>"; };
+		11303BB01DED3B3800371BD5 /* BOConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOConstants.h; sourceTree = "<group>"; };
+		11303BB11DED3B3800371BD5 /* BOConstants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOConstants.mm; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -798,6 +801,8 @@
 				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
+				11303BB01DED3B3800371BD5 /* BOConstants.h */,
+				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1839,6 +1844,7 @@
 				B621FDC71DEAA29E00E54A51 /* moments.cpp in Sources */,
 				B621FD361DEAA29D00E54A51 /* polynom_solver.cpp in Sources */,
 				B621FD761DEAA29D00E54A51 /* tables.cpp in Sources */,
+				11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */,
 				B621FD431DEAA29D00E54A51 /* colormap.cpp in Sources */,
 				B621FD9C1DEAA29E00E54A51 /* cap_openni.cpp in Sources */,
 				B621FD4B1DEAA29D00E54A51 /* hybridtracker.cpp in Sources */,
