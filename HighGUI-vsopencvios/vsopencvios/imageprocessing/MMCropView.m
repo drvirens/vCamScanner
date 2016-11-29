@@ -3,7 +3,7 @@
 
 #define kCropButtonSize 30
 
-#define COLOR_EDGE_DOTS [UIColor colorWithRed:9.f/255.f green:63.f/255.f blue:52.f/255.f alpha:1.f]
+#define COLOR_EDGE_DOTS [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f]
 
 @implementation MMCropView
 @synthesize pointD = _pointD;
@@ -31,7 +31,14 @@
          _pointG=[[UIView alloc] init];
          _pointH=[[UIView alloc] init];
         
-        _pointA.alpha=0.5;_pointB.alpha=0.5;_pointC.alpha=0.5;_pointD.alpha=0.5,_pointE.alpha=0.5,_pointF.alpha=0.5,_pointG.alpha=0.5,_pointH.alpha=0.5;
+//        _pointA.alpha=0.5;
+//        _pointB.alpha=0.5;
+//        _pointC.alpha=0.5;
+//        _pointD.alpha=0.5;
+//        _pointE.alpha=0.5;
+//        _pointF.alpha=0.5;
+//        _pointG.alpha=0.5;
+//        _pointH.alpha=0.5;
         
         _pointA.layer.cornerRadius = kCropButtonSize/2;
         _pointB.layer.cornerRadius = kCropButtonSize/2;
@@ -68,16 +75,6 @@
          [self.points addObject:_pointH];
         
         //COLOR
-//        _pointA.backgroundColor=[UIColor grayColor];
-//         _pointB.backgroundColor=[UIColor grayColor];
-//         _pointC.backgroundColor=[UIColor grayColor];
-//         _pointD.backgroundColor=[UIColor grayColor];
-//        
-//        //middle
-//        _pointE.backgroundColor=[UIColor grayColor];
-//        _pointF.backgroundColor=[UIColor grayColor];
-//        _pointG.backgroundColor=[UIColor grayColor];
-//        _pointH.backgroundColor=[UIColor grayColor];
         
         _pointA.backgroundColor=COLOR_EDGE_DOTS;
         _pointB.backgroundColor=COLOR_EDGE_DOTS;
@@ -236,20 +233,14 @@
     CGContextRef context = UIGraphicsGetCurrentContext();
     if (context)
     {
-        
-        // [UIColor colorWithRed:0.52f green:0.65f blue:0.80f alpha:1.00f];
-        
-//        CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 0.7f);
         CGContextSetRGBFillColor(context, 0.0f, 0.0f, 0.0f, 0.0f);
         if([self checkForNeighbouringPoints:currentIndex]>=0 ){
             frameMoved=YES;
              CGContextSetRGBStrokeColor(context, 0.1294f, 0.588f, 0.9529f, 1.0f);
-            
         }
         else{
             frameMoved=NO;
              CGContextSetRGBStrokeColor(context, 0.9568f, 0.262f, 0.211f, 1.0f);
-           
         }
         CGContextSetLineJoin(context, kCGLineJoinRound);
         CGContextSetLineWidth(context, 4.0f);
