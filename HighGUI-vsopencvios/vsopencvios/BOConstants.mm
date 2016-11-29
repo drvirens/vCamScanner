@@ -10,3 +10,4 @@
 
 const CGFloat kHeightLowerView = 100.f;
 const CGFloat kHeightCapturePhotoButton = 80.f;
+const CGFloat kCaptureButtonBottomMargin = 10.f;

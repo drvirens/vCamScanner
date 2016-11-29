@@ -109,7 +109,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)showCameraOverlay {
     [self.view layoutIfNeeded];
-    self.buttonCameraCaptureBottomConstraint.constant = 0;
+    self.buttonCameraCaptureBottomConstraint.constant = kCaptureButtonBottomMargin;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
@@ -217,9 +217,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     if (largest_square.size() == 4)
     {
-        
         // Manually sorting points, needs major improvement. Sorry.
-        
         NSMutableArray *points = [NSMutableArray array];
         NSMutableDictionary *sortedPoints = [NSMutableDictionary dictionary];
         
@@ -289,18 +287,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         [_cropRect bottomLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"3"] CGPointValue]];
         
         NSLog(@"%@ Sorted Points",sortedPoints);
-        
-        
-        
     }
-    else{
-        
-    }
-    
     original.release();
-    
-    
-    
 }
 
 
@@ -391,9 +379,7 @@ static void find_largest_square(const std::vector<std::vector<cv::Point> >& squa
     {
         // Convert a set of 4 unordered Points into a meaningful cv::Rect structure.
         cv::Rect rectangle = boundingRect(cv::Mat(squares[i]));
-        
-        //        cout << "find_largest_square: #" << i << " rectangle x:" << rectangle.x << " y:" << rectangle.y << " " << rectangle.width << "x" << rectangle.height << endl;
-        
+
         // Store the index position of the biggest square found
         if ((rectangle.width >= max_width) && (rectangle.height >= max_height))
         {
@@ -416,13 +402,10 @@ static double angle( cv::Point pt1, cv::Point pt2, cv::Point pt0 ) {
 }
 
 static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::Mat image ){
-    
     NSLog(@"DEBUG!/?!");
     for ( unsigned int i = 0; i< squares.size(); i++ ) {
         // draw contour
-        
         NSLog(@"LOOP!");
-        
         cv::drawContours(image, squares, i, cv::Scalar(255,0,0), 1, 8, std::vector<cv::Vec4i>(), 0, cv::Point());
         
         // draw bounding rect
@@ -437,32 +420,24 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
             cv::line( image, rect_points[j], rect_points[(j+1)%4], cv::Scalar(0,0,255), 1, 8 ); // blue
         }
     }
-    
     return image;
 }
 
 - (void)doCropImage {
     if([_cropRect frameEdited]){
-        
-        //Thanks To stackOverflow
         CGFloat scaleFactor =  [self.capturedImageView contentScale];
         CGPoint ptBottomLeft = [_cropRect coordinatesForPoint:1 withScaleFactor:scaleFactor];
         CGPoint ptBottomRight = [_cropRect coordinatesForPoint:2 withScaleFactor:scaleFactor];
         CGPoint ptTopRight = [_cropRect coordinatesForPoint:3 withScaleFactor:scaleFactor];
         CGPoint ptTopLeft = [_cropRect coordinatesForPoint:4 withScaleFactor:scaleFactor];
         
-        
-        
         CGFloat w1 = sqrt( pow(ptBottomRight.x - ptBottomLeft.x , 2) + pow(ptBottomRight.x - ptBottomLeft.x, 2));
         CGFloat w2 = sqrt( pow(ptTopRight.x - ptTopLeft.x , 2) + pow(ptTopRight.x - ptTopLeft.x, 2));
-        
         CGFloat h1 = sqrt( pow(ptTopRight.y - ptBottomRight.y , 2) + pow(ptTopRight.y - ptBottomRight.y, 2));
         CGFloat h2 = sqrt( pow(ptTopLeft.y - ptBottomLeft.y , 2) + pow(ptTopLeft.y - ptBottomLeft.y, 2));
         
         CGFloat maxWidth = (w1 < w2) ? w1 : w2;
         CGFloat maxHeight = (h1 < h2) ? h1 : h2;
-        
-        
         
         cv::Point2f src[4], dst[4];
         src[0].x = ptTopLeft.x;
@@ -484,43 +459,25 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
         dst[3].y = maxHeight - 1;
         
         cv::Mat undistorted = cv::Mat( cvSize(maxWidth,maxHeight), CV_8UC4);
-//        cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:_adjustedImage];
         cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:self.image];
         
         NSLog(@"%f %f %f %f",ptBottomLeft.x,ptBottomRight.x,ptTopRight.x,ptTopLeft.x);
         cv::warpPerspective(original, undistorted, cv::getPerspectiveTransform(src, dst), cvSize(maxWidth, maxHeight));
         
         [UIView transitionWithView:self.capturedImageView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
-            
-            
-            
             self.capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:undistorted];
             self.cropImage = self.capturedImageView.image;
-            
             //         _sourceImageView.image = [MMOpenCVHelper UIImageFromCVMat:grayImage];//For gray image
-            
         } completion:^(BOOL finished) {
             _cropRect.hidden=YES;
-//            [UIView animateWithDuration:0.5 animations:^{
-//                scrollView.frame=CGRectMake(0, 0, self.view.bounds.size.width, 64);
-//                
-//            }];
-            
         }];
-        
         original.release();
         undistorted.release();
-        
-        
-        
     }
     else{
         UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"MMCamScanner" message:@"Invalid Rect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
-        
     }
-    
-
 }
 
 @end
