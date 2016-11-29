@@ -133,7 +133,7 @@
 	
 	AVCaptureSession* session = nil;
 	self.device = [self cameraForPosition:AVCaptureDevicePositionBack];
-	NSAssert(self.device != nil, @"device was nil");
+	//NSAssert(self.device != nil, @"device was nil");
 	if (!self.device) {
 		return session;
 	}
