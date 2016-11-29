@@ -45,7 +45,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) UIImage* image;
 @property (nonatomic) UIImage* cropImage;
 
-@property (strong, nonatomic) MMCropView *cropRect;
+@property (strong, nonatomic) MMCropView* croppedView;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -142,6 +142,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.containerCapturedView.hidden = YES;
     self.activityIndicator.hidden = YES;
     self.cameraView.hidden = NO;
+    
+    [self.croppedView removeFromSuperview];
+    self.croppedView = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
@@ -156,31 +159,31 @@ static void* gUserLoadContext = &gUserLoadContext;
                                 self.capturedImageView.contentFrame.origin.y,
                                 self.capturedImageView.contentFrame.size.width,
                                 self.capturedImageView.contentFrame.size.height - kHeightLowerView);
-    _cropRect= [[MMCropView alloc] initWithFrame:cropFrame];
-    [self.upperContainerCapturedView addSubview:_cropRect];
+    self.croppedView= [[MMCropView alloc] initWithFrame:cropFrame];
+    [self.upperContainerCapturedView addSubview:self.croppedView];
     
     UIPanGestureRecognizer *singlePan = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(singlePan:)];
     singlePan.maximumNumberOfTouches = 1;
-    [_cropRect addGestureRecognizer:singlePan];
+    [self.croppedView addGestureRecognizer:singlePan];
     
     //[self setCropUI];
-    [self.upperContainerCapturedView bringSubviewToFront:_cropRect];
+    [self.upperContainerCapturedView bringSubviewToFront:self.croppedView];
     
     [self detectEdges];
     _initialRect = self.capturedImageView.frame;
     final_Rect =self.capturedImageView.frame;
 }
 -(void)singlePan:(UIPanGestureRecognizer *)gesture{
-    CGPoint posInStretch = [gesture locationInView:_cropRect];
+    CGPoint posInStretch = [gesture locationInView:self.croppedView];
     if(gesture.state==UIGestureRecognizerStateBegan){
-        [_cropRect findPointAtLocation:posInStretch];
+        [self.croppedView findPointAtLocation:posInStretch];
     }
     if(gesture.state==UIGestureRecognizerStateEnded){
-        _cropRect.activePoint.backgroundColor = [UIColor grayColor];
-        _cropRect.activePoint = nil;
-        [_cropRect checkangle:0];
+        self.croppedView.activePoint.backgroundColor = [UIColor grayColor];
+        self.croppedView.activePoint = nil;
+        [self.croppedView checkangle:0];
     }
-    [_cropRect moveActivePointToLocation:posInStretch];
+    [self.croppedView moveActivePointToLocation:posInStretch];
 }
 
 
@@ -281,10 +284,10 @@ static void* gUserLoadContext = &gUserLoadContext;
             [sortedPoints setObject:[[points objectAtIndex:missingIndexTwo] objectForKey:@"point"] forKey:@"3"];
         }
         
-        [_cropRect topLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"0"] CGPointValue]];
-        [_cropRect topRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"1"] CGPointValue]];
-        [_cropRect bottomRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"2"] CGPointValue]];
-        [_cropRect bottomLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"3"] CGPointValue]];
+        [self.croppedView topLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"0"] CGPointValue]];
+        [self.croppedView topRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"1"] CGPointValue]];
+        [self.croppedView bottomRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"2"] CGPointValue]];
+        [self.croppedView bottomLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"3"] CGPointValue]];
         
         NSLog(@"%@ Sorted Points",sortedPoints);
     }
@@ -424,12 +427,12 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
 }
 
 - (void)doCropImage {
-    if([_cropRect frameEdited]){
+    if([self.croppedView frameEdited]){
         CGFloat scaleFactor =  [self.capturedImageView contentScale];
-        CGPoint ptBottomLeft = [_cropRect coordinatesForPoint:1 withScaleFactor:scaleFactor];
-        CGPoint ptBottomRight = [_cropRect coordinatesForPoint:2 withScaleFactor:scaleFactor];
-        CGPoint ptTopRight = [_cropRect coordinatesForPoint:3 withScaleFactor:scaleFactor];
-        CGPoint ptTopLeft = [_cropRect coordinatesForPoint:4 withScaleFactor:scaleFactor];
+        CGPoint ptBottomLeft = [self.croppedView coordinatesForPoint:1 withScaleFactor:scaleFactor];
+        CGPoint ptBottomRight = [self.croppedView coordinatesForPoint:2 withScaleFactor:scaleFactor];
+        CGPoint ptTopRight = [self.croppedView coordinatesForPoint:3 withScaleFactor:scaleFactor];
+        CGPoint ptTopLeft = [self.croppedView coordinatesForPoint:4 withScaleFactor:scaleFactor];
         
         CGFloat w1 = sqrt( pow(ptBottomRight.x - ptBottomLeft.x , 2) + pow(ptBottomRight.x - ptBottomLeft.x, 2));
         CGFloat w2 = sqrt( pow(ptTopRight.x - ptTopLeft.x , 2) + pow(ptTopRight.x - ptTopLeft.x, 2));
@@ -469,7 +472,7 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
             self.cropImage = self.capturedImageView.image;
             //         _sourceImageView.image = [MMOpenCVHelper UIImageFromCVMat:grayImage];//For gray image
         } completion:^(BOOL finished) {
-            _cropRect.hidden=YES;
+            self.croppedView.hidden=YES;
         }];
         original.release();
         undistorted.release();
