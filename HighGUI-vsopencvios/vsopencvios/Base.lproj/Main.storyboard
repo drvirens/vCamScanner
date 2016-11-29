@@ -42,8 +42,8 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gss-S8-HRN">
                                 <rect key="frame" x="104" y="28" width="255" height="631"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xnd-F8-YHU">
-                                        <rect key="frame" x="169" y="305" width="37" height="37"/>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xnd-F8-YHU">
+                                        <rect key="frame" x="201" y="350" width="37" height="37"/>
                                     </activityIndicatorView>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-hf-ive">
                                         <rect key="frame" x="33" y="427" width="290" height="111"/>
@@ -100,11 +100,53 @@
                                             <constraint firstItem="6wW-au-21S" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="wlu-GV-Gbh"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-ue-fpU">
+                                        <rect key="frame" x="44" y="156" width="194" height="177"/>
+                                        <subviews>
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2w-Tu-QXC">
+                                                <rect key="frame" x="25" y="29" width="150" height="128"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CES-mh-Lhp">
+                                                        <rect key="frame" x="27" y="22" width="100" height="84"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-gK-me6">
+                                                                <rect key="frame" x="24" y="23" width="43" height="44"/>
+                                                                <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="0.50196081400000003" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstItem="iNT-gK-me6" firstAttribute="leading" secondItem="CES-mh-Lhp" secondAttribute="leading" id="mgr-vr-0zu"/>
+                                                            <constraint firstAttribute="bottom" secondItem="iNT-gK-me6" secondAttribute="bottom" id="pMR-BT-qCd"/>
+                                                            <constraint firstAttribute="trailing" secondItem="iNT-gK-me6" secondAttribute="trailing" id="y2B-re-cVF"/>
+                                                            <constraint firstItem="iNT-gK-me6" firstAttribute="top" secondItem="CES-mh-Lhp" secondAttribute="top" id="z1p-2V-1l5"/>
+                                                        </constraints>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstItem="CES-mh-Lhp" firstAttribute="top" secondItem="N2w-Tu-QXC" secondAttribute="top" id="DGx-zx-BO5"/>
+                                                    <constraint firstItem="CES-mh-Lhp" firstAttribute="centerY" secondItem="N2w-Tu-QXC" secondAttribute="centerY" id="FkP-BW-ehN"/>
+                                                    <constraint firstItem="CES-mh-Lhp" firstAttribute="leading" secondItem="N2w-Tu-QXC" secondAttribute="leading" id="Rqq-et-PLv"/>
+                                                    <constraint firstItem="CES-mh-Lhp" firstAttribute="centerX" secondItem="N2w-Tu-QXC" secondAttribute="centerX" id="XWC-yL-KqV"/>
+                                                    <constraint firstAttribute="bottom" secondItem="CES-mh-Lhp" secondAttribute="bottom" id="cyb-et-WIl"/>
+                                                    <constraint firstAttribute="trailing" secondItem="CES-mh-Lhp" secondAttribute="trailing" id="lGv-CC-hxO"/>
+                                                </constraints>
+                                            </scrollView>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstItem="N2w-Tu-QXC" firstAttribute="top" secondItem="U4u-ue-fpU" secondAttribute="top" id="DVz-Bx-0ju"/>
+                                            <constraint firstAttribute="bottom" secondItem="N2w-Tu-QXC" secondAttribute="bottom" id="LKJ-Ef-XNa"/>
+                                            <constraint firstItem="N2w-Tu-QXC" firstAttribute="leading" secondItem="U4u-ue-fpU" secondAttribute="leading" id="dSI-YI-8e2"/>
+                                            <constraint firstAttribute="trailing" secondItem="N2w-Tu-QXC" secondAttribute="trailing" id="iFU-mf-zH4"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UsK-Ud-WaM">
-                                        <rect key="frame" x="41" y="63" width="271" height="199"/>
+                                        <rect key="frame" x="69" y="21" width="134" height="117"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qAz-4v-fvp">
-                                                <rect key="frame" x="71" y="26" width="188" height="128"/>
+                                                <rect key="frame" x="38" y="29" width="58" height="58"/>
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </imageView>
                                         </subviews>
@@ -119,15 +161,19 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="U4u-ue-fpU" secondAttribute="trailing" id="MAN-rR-tpM"/>
                                     <constraint firstAttribute="trailing" secondItem="UsK-Ud-WaM" secondAttribute="trailing" id="MHn-IO-Iwb"/>
                                     <constraint firstAttribute="bottom" secondItem="qzy-hf-ive" secondAttribute="bottom" constant="-120" id="Mx7-GE-0hq"/>
                                     <constraint firstItem="xnd-F8-YHU" firstAttribute="centerY" secondItem="gss-S8-HRN" secondAttribute="centerY" id="Nxo-Ws-kJh"/>
+                                    <constraint firstItem="qzy-hf-ive" firstAttribute="top" secondItem="U4u-ue-fpU" secondAttribute="bottom" id="PBM-20-Lfl"/>
                                     <constraint firstItem="qzy-hf-ive" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="Qi4-mZ-CE8"/>
+                                    <constraint firstItem="U4u-ue-fpU" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="top" id="XOq-5p-RMi"/>
                                     <constraint firstItem="UsK-Ud-WaM" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="top" id="hoH-fV-uss"/>
                                     <constraint firstAttribute="trailing" secondItem="qzy-hf-ive" secondAttribute="trailing" id="nct-fg-a99"/>
                                     <constraint firstItem="qzy-hf-ive" firstAttribute="top" secondItem="UsK-Ud-WaM" secondAttribute="bottom" id="pi8-Vv-S3c"/>
                                     <constraint firstItem="UsK-Ud-WaM" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="sTa-Pz-lS2"/>
                                     <constraint firstItem="xnd-F8-YHU" firstAttribute="centerX" secondItem="gss-S8-HRN" secondAttribute="centerX" id="scQ-VL-ALM"/>
+                                    <constraint firstItem="U4u-ue-fpU" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="vLd-JT-Hpj"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yop-xH-tsR">
@@ -135,7 +181,7 @@
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="waf-oh-nvb">
-                                <rect key="frame" x="9" y="531" width="214" height="107"/>
+                                <rect key="frame" x="9" y="542" width="214" height="96"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iD-3x-d4J">
                                         <rect key="frame" x="114" y="52" width="24" height="24"/>
@@ -207,6 +253,7 @@
                         <outlet property="cameraViewBottomMenuContainer" destination="waf-oh-nvb" id="CYT-oC-O9a"/>
                         <outlet property="capturedImageView" destination="qAz-4v-fvp" id="Aep-Ab-A5b"/>
                         <outlet property="containerCapturedView" destination="gss-S8-HRN" id="2JY-HO-V4h"/>
+                        <outlet property="contentView" destination="CES-mh-Lhp" id="eWb-jv-5hK"/>
                         <outlet property="filtersMenuView" destination="mID-cY-RcA" id="bDX-L4-iB8"/>
                         <outlet property="lowerContainerCapturedView" destination="qzy-hf-ive" id="Ht3-dR-g7G"/>
                         <outlet property="lowerContainerCapturedViewBottomLayout" destination="Mx7-GE-0hq" id="YWu-BI-6DF"/>
@@ -214,7 +261,10 @@
                         <outlet property="menuButtonRotateLeft" destination="TES-53-N2P" id="nIo-o4-FJv"/>
                         <outlet property="menuButtonRotateRight" destination="6wW-au-21S" id="7EN-cS-Vmf"/>
                         <outlet property="menuButtonSelect" destination="dJb-o9-jb2" id="iMe-rZ-dmP"/>
+                        <outlet property="scrollView" destination="N2w-Tu-QXC" id="XLU-vU-wr5"/>
+                        <outlet property="scrollableImageView" destination="iNT-gK-me6" id="GwT-cF-nVK"/>
                         <outlet property="upperContainerCapturedView" destination="UsK-Ud-WaM" id="B1Z-j7-6Ht"/>
+                        <outlet property="upperContainerWithScroller" destination="U4u-ue-fpU" id="xRO-TL-dQJ"/>
                         <segue destination="ETr-of-Zi9" kind="presentation" identifier="enterDetails" id="qR2-Fb-Ep6"/>
                     </connections>
                 </viewController>

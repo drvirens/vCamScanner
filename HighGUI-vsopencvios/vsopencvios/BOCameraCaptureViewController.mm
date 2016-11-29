@@ -30,9 +30,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraViewBottomMenuContainer;
 
+//upper view with imageview inside it
 @property (weak, nonatomic) IBOutlet UIView *upperContainerCapturedView;
-
-
 @property (weak, nonatomic) IBOutlet UIView *containerCapturedView;
 @property (weak, nonatomic) IBOutlet UIImageView *capturedImageView;
 @property (weak, nonatomic) IBOutlet UIView *lowerContainerCapturedView;
@@ -61,6 +60,14 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet BOFiltersView *filtersMenuView;
 
 @property (nonatomic) NSMutableArray* dataSource;
+
+//upper view with scroll view in it
+@property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
+@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (weak, nonatomic) IBOutlet UIImageView *scrollableImageView;
+
+
 @end
 
 @implementation BOCameraCaptureViewController {
