@@ -19,6 +19,7 @@
 		11303BB81DED749700371BD5 /* BOFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BB61DED749700371BD5 /* BOFiltersView.xib */; };
 		11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBA1DED74DF00371BD5 /* BOFiltersView.m */; };
 		11303BBD1DED7FB800371BD5 /* BOFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */; };
+		11303BC01DEE276500371BD5 /* BOFilterMenuModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -275,6 +276,8 @@
 		11303BB91DED74DF00371BD5 /* BOFiltersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFiltersView.h; sourceTree = "<group>"; };
 		11303BBA1DED74DF00371BD5 /* BOFiltersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOFiltersView.m; sourceTree = "<group>"; };
 		11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOFilterCell.xib; sourceTree = "<group>"; };
+		11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFilterMenuModel.h; sourceTree = "<group>"; };
+		11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFilterMenuModel.mm; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -819,6 +822,8 @@
 				11303BB91DED74DF00371BD5 /* BOFiltersView.h */,
 				11303BBA1DED74DF00371BD5 /* BOFiltersView.m */,
 				11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */,
+				11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */,
+				11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1881,6 +1886,7 @@
 				11303BA71DED0BB800371BD5 /* MMOpenCVHelper.mm in Sources */,
 				B621FD8A1DEAA29D00E54A51 /* orb.cpp in Sources */,
 				B621FDF51DEAA29E00E54A51 /* objdetect_init.cpp in Sources */,
+				11303BC01DEE276500371BD5 /* BOFilterMenuModel.mm in Sources */,
 				B621FDCA1DEAA29E00E54A51 /* pyramids.cpp in Sources */,
 				B621FD7C1DEAA29D00E54A51 /* detectors.cpp in Sources */,
 				B621FDA71DEAA29E00E54A51 /* grfmt_tiff.cpp in Sources */,

@@ -13,6 +13,7 @@
 #import "MMOpenCVHelper.h"
 #import "BOConstants.h"
 #import "BOFiltersView.h"
+#import "BOFilterMenuModel.h"
 
 typedef enum BOState {
     BONotCroppedState,
@@ -21,7 +22,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -47,6 +48,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonCameraCaptureBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lowerContainerCapturedViewBottomLayout;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *marginBetweenFiltersViewAndImageView; //initially it is 200
 
 
 @property (nonatomic) UIImage* image;
@@ -166,6 +168,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)hideFiltersView {
     [self.view layoutIfNeeded];
     self.bottomFiltersViewConstraint.constant = -(kFiltersViewBottomMargin + kHeightLowerView);
+    self.marginBetweenFiltersViewAndImageView.constant = kMarginBetweenFiltersViewAndImageView;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
@@ -173,13 +176,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)showFiltersView {
     [self.view layoutIfNeeded];
     self.bottomFiltersViewConstraint.constant = kHeightLowerView;
+    self.marginBetweenFiltersViewAndImageView.constant = 0.f;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
-    
-   // [self setupFitersMenu];
 }
-
 - (void)setupFitersMenu {
     UINib* nib = [UINib nibWithNibName:@"BOFilterCell" bundle:nil];
     [self.filtersMenuView.collectionView registerNib:nib forCellWithReuseIdentifier:@"BOFilterCell"];
@@ -188,11 +189,20 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.filtersMenuView.collectionView.dataSource = self;
     
     self.dataSource = [NSMutableArray array];
+}
+- (void)populateFiltersMenu {
+    [self.dataSource removeAllObjects];
     //test+
-    [self.dataSource addObject:@"original"];
-    [self.dataSource addObject:@"black-white"];
-    [self.dataSource addObject:@"gray"];
-    [self.dataSource addObject:@"magic"];
+    //XXX - do on background thread
+    BOFilterMenuModel* original = [[BOFilterMenuModel alloc] initWithFilterType:BOFilterTypeOriginal image:self.cropImage];
+    BOFilterMenuModel* bw = [[BOFilterMenuModel alloc] initWithFilterType:BOFilterTypeBlackWhite image:self.cropImage];
+    BOFilterMenuModel* gray = [[BOFilterMenuModel alloc] initWithFilterType:BOFilterTypeGray image:self.cropImage];
+    BOFilterMenuModel* magic = [[BOFilterMenuModel alloc] initWithFilterType:BOFilterTypeMagic image:self.cropImage];
+    
+    [self.dataSource addObject:original];
+    [self.dataSource addObject:bw];
+    [self.dataSource addObject:gray];
+    [self.dataSource addObject:magic];
     //test-
     [self.filtersMenuView.collectionView reloadData];
 }
@@ -206,8 +216,12 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
     UILabel* label = (UILabel*)[cell viewWithTag:100];
-    NSString* filterName = self.dataSource[indexPath.item];
-    label.text = filterName;
+    BOFilterMenuModel* filter = self.dataSource[indexPath.item];
+    label.text = filter.menuDisplayName;
+    
+    UIImageView* imageview = (UIImageView*)[cell viewWithTag:200];
+    imageview.image = filter.menuThumbnail;
+    
     return cell;
 }
 #pragma mark - UICollectionViewDataSource
@@ -241,6 +255,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     } else {
         [self doCropImage];
         [self transitMenuItemsToPreviewMode];
+        [self populateFiltersMenu];
         [self showFiltersView];
     }
 }
@@ -600,16 +615,16 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
 }
 
 #pragma mark - UIScrollViewDelegate
-- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    if (scrollView.tag == 69) {
-        return self.contentView;
-    }
-    return nil;
-}
-- (void) scrollViewDidZoom:(UIScrollView *)scrollView {
-    if (scrollView.tag == 69) {
-        NSLog(@"did zoom");
-    }
-}
+//- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+//    if (scrollView.tag == 69) {
+//        return self.contentView;
+//    }
+//    return nil;
+//}
+//- (void) scrollViewDidZoom:(UIScrollView *)scrollView {
+//    if (scrollView.tag == 69) {
+//        NSLog(@"did zoom");
+//    }
+//}
 
 @end
