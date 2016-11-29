@@ -192,7 +192,7 @@ vector<Point> scan(String file, String dstFile, bool debug = true) {
 }
 
 //viren+
-double angle( cv::Point pt1, cv::Point pt2, cv::Point pt0 ) {
+static double angle( cv::Point pt1, cv::Point pt2, cv::Point pt0 ) {
     double dx1 = pt1.x - pt0.x;
     double dy1 = pt1.y - pt0.y;
     double dx2 = pt2.x - pt0.x;

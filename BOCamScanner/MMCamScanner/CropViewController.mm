@@ -162,9 +162,6 @@
 //    self.cropBut.clipsToBounds=YES;
     
     [self.cropBut setImage:[UIImage renderImage:@"Crop"] forState:UIControlStateNormal];
-    
-   
-
 }
 
 
@@ -290,8 +287,6 @@
     }
     
     original.release();
-    
-    
    
 }
 

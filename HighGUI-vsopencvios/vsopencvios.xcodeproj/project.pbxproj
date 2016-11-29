@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1119732D1DDFDD1F0042C520 /* doc2.jpg */; };
 		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
+		11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA11DED0BB800371BD5 /* MMCropView.m */; };
+		11303BA71DED0BB800371BD5 /* MMOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */; };
+		11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA41DED0BB800371BD5 /* MTGeometry.c */; };
+		11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */; };
+		11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -247,6 +252,16 @@
 		1119733A1DDFDF350042C520 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
 		1119733B1DDFDF350042C520 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
 		111973581DDFDF350042C520 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		11303BA01DED0BB800371BD5 /* MMCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCropView.h; sourceTree = "<group>"; };
+		11303BA11DED0BB800371BD5 /* MMCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCropView.m; sourceTree = "<group>"; };
+		11303BA21DED0BB800371BD5 /* MMOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOpenCVHelper.h; sourceTree = "<group>"; };
+		11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMOpenCVHelper.mm; sourceTree = "<group>"; };
+		11303BA41DED0BB800371BD5 /* MTGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MTGeometry.c; sourceTree = "<group>"; };
+		11303BA51DED0BB800371BD5 /* MTGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGeometry.h; sourceTree = "<group>"; };
+		11303BAA1DED0D8900371BD5 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		11303BAC1DED0D8900371BD5 /* UIImageView+ContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContentFrame.h"; sourceTree = "<group>"; };
+		11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentFrame.m"; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -696,6 +711,30 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
+		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
+			isa = PBXGroup;
+			children = (
+				11303BA01DED0BB800371BD5 /* MMCropView.h */,
+				11303BA11DED0BB800371BD5 /* MMCropView.m */,
+				11303BA21DED0BB800371BD5 /* MMOpenCVHelper.h */,
+				11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */,
+				11303BA41DED0BB800371BD5 /* MTGeometry.c */,
+				11303BA51DED0BB800371BD5 /* MTGeometry.h */,
+			);
+			path = imageprocessing;
+			sourceTree = "<group>";
+		};
+		11303BA91DED0D8900371BD5 /* UIImageViewCategories */ = {
+			isa = PBXGroup;
+			children = (
+				11303BAA1DED0D8900371BD5 /* UIImage+fixOrientation.h */,
+				11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */,
+				11303BAC1DED0D8900371BD5 /* UIImageView+ContentFrame.h */,
+				11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */,
+			);
+			path = UIImageViewCategories;
+			sourceTree = "<group>";
+		};
 		117F1D0A1DE02939007233B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +766,8 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				11303BA91DED0D8900371BD5 /* UIImageViewCategories */,
+				11303B9F1DED0BB800371BD5 /* imageprocessing */,
 				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
 				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
 				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
@@ -1652,7 +1693,7 @@
 				TargetAttributes = {
 					11B75ACB1DDFD08D004EAB65 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = FJ585C7YHN;
+						DevelopmentTeam = F38H382JLK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1746,6 +1787,7 @@
 				B621FDFB1DEAA29E00E54A51 /* bgfg_gaussmix2.cpp in Sources */,
 				B621FD3E1DEAA29D00E54A51 /* ba.cpp in Sources */,
 				B621FDBA1DEAA29E00E54A51 /* emd.cpp in Sources */,
+				11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */,
 				B621FDF61DEAA29E00E54A51 /* resizeimg.cpp in Sources */,
 				B621FD441DEAA29D00E54A51 /* colortracker.cpp in Sources */,
 				B621FD5B1DEAA29D00E54A51 /* stereovar.cpp in Sources */,
@@ -1767,6 +1809,7 @@
 				B621FD3D1DEAA29D00E54A51 /* adaptiveskindetector.cpp in Sources */,
 				B621FDB11DEAA29E00E54A51 /* canny.cpp in Sources */,
 				B621FDDD1DEAA29E00E54A51 /* estimate.cpp in Sources */,
+				11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */,
 				B621FDDA1DEAA29E00E54A51 /* data.cpp in Sources */,
 				B621FDCC1DEAA29E00E54A51 /* samplers.cpp in Sources */,
 				B621FDBF1DEAA29E00E54A51 /* generalized_hough.cpp in Sources */,
@@ -1774,6 +1817,7 @@
 				B621FD551DEAA29D00E54A51 /* retina.cpp in Sources */,
 				B621FD931DEAA29E00E54A51 /* cap_dc1394.cpp in Sources */,
 				B621FD781DEAA29D00E54A51 /* blobdetector.cpp in Sources */,
+				11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */,
 				B621FD4F1DEAA29D00E54A51 /* logpolar_bsm.cpp in Sources */,
 				B621FDE31DEAA29E00E54A51 /* rtrees.cpp in Sources */,
 				B621FD631DEAA29D00E54A51 /* datastructs.cpp in Sources */,
@@ -1810,6 +1854,7 @@
 				B621FDE41DEAA29E00E54A51 /* svm.cpp in Sources */,
 				B621FD971DEAA29E00E54A51 /* cap_images.cpp in Sources */,
 				B621FD941DEAA29E00E54A51 /* cap_dc1394_v2.cpp in Sources */,
+				11303BA71DED0BB800371BD5 /* MMOpenCVHelper.mm in Sources */,
 				B621FD8A1DEAA29D00E54A51 /* orb.cpp in Sources */,
 				B621FDF51DEAA29E00E54A51 /* objdetect_init.cpp in Sources */,
 				B621FDCA1DEAA29E00E54A51 /* pyramids.cpp in Sources */,
@@ -1878,6 +1923,7 @@
 				B621FD4E1DEAA29D00E54A51 /* lda.cpp in Sources */,
 				B621FD891DEAA29D00E54A51 /* mser.cpp in Sources */,
 				B621FDDE1DEAA29E00E54A51 /* gbt.cpp in Sources */,
+				11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */,
 				B621FD531DEAA29D00E54A51 /* parvoretinafilter.cpp in Sources */,
 				B621FD381DEAA29D00E54A51 /* quadsubpix.cpp in Sources */,
 				B621FDBE1DEAA29E00E54A51 /* gabor.cpp in Sources */,
@@ -2037,7 +2083,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				DEVELOPMENT_TEAM = FJ585C7YHN;
+				DEVELOPMENT_TEAM = F38H382JLK;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/vsopencvios/",
@@ -2076,7 +2122,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				DEVELOPMENT_TEAM = FJ585C7YHN;
+				DEVELOPMENT_TEAM = F38H382JLK;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/vsopencvios/",

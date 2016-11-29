@@ -160,18 +160,18 @@
 	AVCaptureVideoPreviewLayer* video = [AVCaptureVideoPreviewLayer layerWithSession:session];
 	
 	dispatch_async(dispatch_get_main_queue(), ^{
-		CGRect r = [[UIScreen mainScreen] bounds];
-			r.size.height = r.size.height - 120 - 64 - 60;
-			UIView* cameraview = [[UIView alloc] initWithFrame:r];
-			//UIView* cameraview = [[UIView alloc] init];
+//		CGRect r = [[UIScreen mainScreen] bounds];
+//        r.size.height = r.size.height - 120 - 64 - 60;
+//        UIView* cameraview = [[UIView alloc] initWithFrame:r];
+        
+        UIView* cameraview = [[UIView alloc] init];
 		[view addSubview:cameraview];
 		
 		[cameraview.layer addSublayer:video];
 		
 		video.videoGravity = AVLayerVideoGravityResizeAspectFill;
 		video.frame = view.bounds;
-//		video.bounds = view.bounds;
-		video.position=CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
+//		video.position=CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
 		
 		[view sendSubviewToBack:cameraview];
 	});
