@@ -10,4 +10,5 @@
 
 @interface BOFiltersView : UIView
 
+@property (weak, nonatomic) IBOutlet UICollectionView *collectionView;
 @end

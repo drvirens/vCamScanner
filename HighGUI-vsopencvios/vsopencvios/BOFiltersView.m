@@ -22,7 +22,10 @@
 }
 
 - (void)commonInit:(NSCoder *)aDecoder {
-    
+    NSString* nib = NSStringFromClass([self class]);
+    BOFiltersView* weakView = (BOFiltersView*)[[[NSBundle mainBundle] loadNibNamed:nib owner:self options:nil] firstObject];
+    weakView.frame = self.bounds;
+    [self addSubview:weakView];
 }
 
 @end

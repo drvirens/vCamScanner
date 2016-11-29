@@ -21,7 +21,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController ()
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -58,7 +58,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) BOState state;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomFiltersViewConstraint;
+@property (weak, nonatomic) IBOutlet BOFiltersView *filtersMenuView;
 
+@property (nonatomic) NSMutableArray* dataSource;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -68,6 +70,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self setupFitersMenu];
     self.state = BONotCroppedState;
 	[self setupContainerView];
 	[self setupButton];
@@ -166,7 +169,40 @@ static void* gUserLoadContext = &gUserLoadContext;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    
+   // [self setupFitersMenu];
 }
+
+- (void)setupFitersMenu {
+    UINib* nib = [UINib nibWithNibName:@"BOFilterCell" bundle:nil];
+    [self.filtersMenuView.collectionView registerNib:nib forCellWithReuseIdentifier:@"BOFilterCell"];
+    
+    self.filtersMenuView.collectionView.delegate = self;
+    self.filtersMenuView.collectionView.dataSource = self;
+    
+    self.dataSource = [NSMutableArray array];
+    //test+
+    [self.dataSource addObject:@"original"];
+    [self.dataSource addObject:@"black-white"];
+    [self.dataSource addObject:@"gray"];
+    [self.dataSource addObject:@"magic"];
+    //test-
+    [self.filtersMenuView.collectionView reloadData];
+}
+#pragma mark - UICollectionViewDelegate
+- (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView {
+    return 1;
+}
+- (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
+    return self.dataSource.count;
+}
+- (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
+    UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
+
+    return cell;
+}
+#pragma mark - UICollectionViewDataSource
+
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
     [self hideBottomMenu];

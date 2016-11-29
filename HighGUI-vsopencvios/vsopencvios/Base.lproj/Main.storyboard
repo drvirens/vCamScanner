@@ -207,6 +207,7 @@
                         <outlet property="cameraViewBottomMenuContainer" destination="waf-oh-nvb" id="CYT-oC-O9a"/>
                         <outlet property="capturedImageView" destination="qAz-4v-fvp" id="Aep-Ab-A5b"/>
                         <outlet property="containerCapturedView" destination="gss-S8-HRN" id="2JY-HO-V4h"/>
+                        <outlet property="filtersMenuView" destination="mID-cY-RcA" id="bDX-L4-iB8"/>
                         <outlet property="lowerContainerCapturedView" destination="qzy-hf-ive" id="Ht3-dR-g7G"/>
                         <outlet property="lowerContainerCapturedViewBottomLayout" destination="Mx7-GE-0hq" id="YWu-BI-6DF"/>
                         <outlet property="menuButtonBack" destination="JfM-UP-FHL" id="gKI-zT-dAm"/>
