@@ -103,13 +103,13 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="U4u-ue-fpU">
                                         <rect key="frame" x="44" y="156" width="194" height="177"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2w-Tu-QXC">
+                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" tag="69" contentMode="redraw" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="N2w-Tu-QXC">
                                                 <rect key="frame" x="25" y="29" width="150" height="128"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CES-mh-Lhp">
                                                         <rect key="frame" x="27" y="22" width="100" height="84"/>
                                                         <subviews>
-                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-gK-me6">
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iNT-gK-me6">
                                                                 <rect key="frame" x="24" y="23" width="43" height="44"/>
                                                                 <color key="backgroundColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             </imageView>

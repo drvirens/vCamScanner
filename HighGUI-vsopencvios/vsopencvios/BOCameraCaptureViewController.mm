@@ -21,7 +21,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UIScrollViewDelegate>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -61,7 +61,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (nonatomic) NSMutableArray* dataSource;
 
-//upper view with scroll view in it
+//upper view with scroll view in it - NOT USED CURRENTLY
 @property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) IBOutlet UIView *contentView;
@@ -225,6 +225,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.croppedView = nil;
     
     [self transitMenuItemsToNotCroppedMode];
+    if (self.state == BOCroppedPreviewState) {
+        [self hideFiltersView];
+    }
     self.state = BONotCroppedState;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
@@ -234,10 +237,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuSelect:(id)sender {
     if (self.state == BOCroppedPreviewState) {
         NSLog(@"BOCroppedPreviewState - present view controller for entering name and category");
-        [self showFiltersView];
+        //[self showFiltersView];
     } else {
         [self doCropImage];
         [self transitMenuItemsToPreviewMode];
+        [self showFiltersView];
     }
 }
 - (void)transitMenuItemsToPreviewMode {
@@ -572,8 +576,12 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
             self.capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:undistorted];
             self.cropImage = self.capturedImageView.image;
             //         _sourceImageView.image = [MMOpenCVHelper UIImageFromCVMat:grayImage];//For gray image
+            
+            //viren+
+            //[self showCroppedImageinScrollView:self.cropImage];
+            //viren-
         } completion:^(BOOL finished) {
-            self.croppedView.hidden=YES;
+            self.croppedView.hidden = YES;
         }];
         original.release();
         undistorted.release();
@@ -581,6 +589,26 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
     else{
         UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"MMCamScanner" message:@"Invalid Rect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
+    }
+}
+
+- (void)showCroppedImageinScrollView:(UIImage*)croppedImage {
+    //hide the other imageView
+    self.upperContainerCapturedView.hidden = YES;
+    self.upperContainerWithScroller.hidden = NO;
+    self.scrollableImageView.image = self.cropImage;
+}
+
+#pragma mark - UIScrollViewDelegate
+- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    if (scrollView.tag == 69) {
+        return self.contentView;
+    }
+    return nil;
+}
+- (void) scrollViewDidZoom:(UIScrollView *)scrollView {
+    if (scrollView.tag == 69) {
+        NSLog(@"did zoom");
     }
 }
 
