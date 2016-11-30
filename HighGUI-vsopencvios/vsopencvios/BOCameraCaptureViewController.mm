@@ -174,17 +174,17 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self detectEdgesOnImageAndDisplay:self.image];
 }
 - (void)hideInfoEntryView {
-    [self.upperContainerCapturedView layoutIfNeeded];
+    [self.view layoutIfNeeded];
     self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView);
     [UIView animateWithDuration:.25 animations:^{
-        [self.upperContainerCapturedView layoutIfNeeded];
+        [self.view layoutIfNeeded];
     }];
 }
 - (void)showInfoEntryView {
-    [self.upperContainerCapturedView layoutIfNeeded];
+    [self.view layoutIfNeeded];
     self.infoViewTopMarginLayoutConstraint.constant = 0;
     [UIView animateWithDuration:.25 animations:^{
-        [self.upperContainerCapturedView layoutIfNeeded];
+        [self.view layoutIfNeeded];
     }];
 }
 - (void)hideFiltersView {
