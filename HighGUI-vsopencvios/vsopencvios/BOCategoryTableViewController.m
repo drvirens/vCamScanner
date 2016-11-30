@@ -13,6 +13,7 @@
 @interface BOCategoryTableViewController ()
 @property (nonatomic) NSMutableArray* dataSource;
 @property (nonatomic) BOCategoryTableViewCell* currSelected;
+@property (nonatomic, copy) NSString* selectedCategory;
 @end
 
 @implementation BOCategoryTableViewController
@@ -44,6 +45,9 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)didTapOnSelectCateogryButton:(id)sender {
+    if ([self.delegateCategory respondsToSelector:@selector(viewController:didSelectCategory:)]) {
+        [self.delegateCategory viewController:self didSelectCategory:self.selectedCategory];
+    }
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)setupDataSource {
@@ -107,6 +111,8 @@
     BOCategoryTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
     self.currSelected = cell;
     [cell showIcon];
+    BOCategoryModel* model = self.dataSource[indexPath.row];
+    self.selectedCategory = model.categoryName;
 }
 
 - (BOOL)prefersStatusBarHidden {

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BOCategoryTableViewController : UITableViewController
+@class BOCategoryTableViewController;
+@protocol BOCategoryTableViewControllerDelegate <NSObject>
+- (void)viewController:(BOCategoryTableViewController*)vc didSelectCategory:(NSString*)category;
+@end
 
+@interface BOCategoryTableViewController : UITableViewController
+@property (nonatomic, weak) id<BOCategoryTableViewControllerDelegate> delegateCategory;
 @end

@@ -18,5 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIView *dragContainerView;
 @property (weak, nonatomic) IBOutlet UIView *dragView;
+@property (weak, nonatomic) IBOutlet UIView *dragViewSmaller;
 
 @end

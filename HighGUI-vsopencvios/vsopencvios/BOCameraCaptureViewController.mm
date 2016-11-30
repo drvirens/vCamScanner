@@ -15,6 +15,7 @@
 #import "BOFiltersView.h"
 #import "BOFilterMenuModel.h"
 #import "BOInfoEntryView.h"
+#import "BOCategoryTableViewController.h"
 
 
 typedef enum BOState {
@@ -24,7 +25,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, BOCategoryTableViewControllerDelegate>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -96,7 +97,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
     
     //drag view
-    self.infoEntryView.dragView.layer.cornerRadius = 3.f;
+    self.infoEntryView.dragView.layer.cornerRadius = 2.5f;
+    self.infoEntryView.dragViewSmaller.layer.cornerRadius = 2.f;
     //drag container tap event (Phase 2 = Pan gesture)
     UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
     singleTapDragView.numberOfTapsRequired = 1;
@@ -459,6 +461,19 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (BOOL)prefersStatusBarHidden {
 	return YES;
+}
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([@"category" isEqualToString:segue.identifier]) {
+        
+        UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
+        BOCategoryTableViewController* destVC = (BOCategoryTableViewController*)[[navVC viewControllers] firstObject];
+        destVC.delegateCategory = self;
+    }
+}
+#pragma mark - BOCategoryTableViewControllerDelegate
+- (void)viewController:(BOCategoryTableViewController*)vc didSelectCategory:(NSString*)category {
+    NSLog(@"didSelectCategory");
+    self.infoEntryView.labelSelectedCategoryName.text = category;
 }
 
 #pragma mark OpenCV

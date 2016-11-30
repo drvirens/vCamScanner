@@ -14,6 +14,7 @@
                 <outlet property="categoryView" destination="QSU-lK-ySH" id="P2o-JS-fle"/>
                 <outlet property="dragContainerView" destination="ZY3-3U-9ew" id="FUd-Qd-eFT"/>
                 <outlet property="dragView" destination="WUv-lJ-vGd" id="nf6-G4-Vyi"/>
+                <outlet property="dragViewSmaller" destination="kJz-cG-r0E" id="W2y-5W-ZbH"/>
                 <outlet property="imageViewIcon" destination="wZL-rm-fhl" id="ae6-ni-LTj"/>
                 <outlet property="labelSelectedCategoryName" destination="fCr-fp-Dvu" id="9Q3-L7-xi9"/>
                 <outlet property="seperatorLineView" destination="6Nz-A1-jh3" id="QBd-Py-KWl"/>
@@ -51,15 +52,14 @@
                                     <constraints>
                                         <constraint firstAttribute="width" constant="100" id="aKa-d7-L3Q"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                    <nil key="textColor"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <color key="textColor" red="0.76357984290000003" green="0.76357984290000003" blue="0.76357984290000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="None" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCr-fp-Dvu">
                                     <rect key="frame" x="143" y="54" width="73" height="34"/>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ic_chevron_right" translatesAutoresizingMaskIntoConstraints="NO" id="wZL-rm-fhl">
@@ -84,7 +84,7 @@
                                 <constraint firstItem="wZL-rm-fhl" firstAttribute="centerY" secondItem="QSU-lK-ySH" secondAttribute="centerY" id="hou-pY-fxp"/>
                             </constraints>
                         </view>
-                        <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Y1-Ry-4LX">
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Y1-Ry-4LX">
                             <rect key="frame" x="39" y="339" width="240" height="18"/>
                             <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         </view>
@@ -92,11 +92,19 @@
                             <rect key="frame" x="32" y="393" width="240" height="128"/>
                             <subviews>
                                 <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUv-lJ-vGd">
-                                    <rect key="frame" x="62" y="28" width="116" height="47"/>
+                                    <rect key="frame" x="62" y="28" width="116" height="28"/>
                                     <color key="backgroundColor" red="0.76357984290000003" green="0.76357984290000003" blue="0.76357984290000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="eFZ-BN-yO6"/>
-                                        <constraint firstAttribute="height" constant="6" id="tCY-U7-ln5"/>
+                                        <constraint firstAttribute="height" constant="5" id="tCY-U7-ln5"/>
+                                    </constraints>
+                                </view>
+                                <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kJz-cG-r0E">
+                                    <rect key="frame" x="62" y="72" width="116" height="27"/>
+                                    <color key="backgroundColor" red="0.76357984290000003" green="0.76357984290000003" blue="0.76357984290000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="4" id="DJ1-zN-xzx"/>
+                                        <constraint firstAttribute="width" constant="36" id="qfc-jW-XFe"/>
                                     </constraints>
                                 </view>
                             </subviews>
@@ -104,7 +112,9 @@
                             <constraints>
                                 <constraint firstItem="WUv-lJ-vGd" firstAttribute="centerX" secondItem="ZY3-3U-9ew" secondAttribute="centerX" id="D3a-4A-Is8"/>
                                 <constraint firstAttribute="height" constant="30" id="DYT-8n-EVl"/>
-                                <constraint firstItem="WUv-lJ-vGd" firstAttribute="top" secondItem="ZY3-3U-9ew" secondAttribute="top" constant="5" id="ndF-CT-xTy"/>
+                                <constraint firstItem="kJz-cG-r0E" firstAttribute="centerX" secondItem="ZY3-3U-9ew" secondAttribute="centerX" id="OKL-eh-5jI"/>
+                                <constraint firstItem="kJz-cG-r0E" firstAttribute="top" secondItem="WUv-lJ-vGd" secondAttribute="bottom" constant="3" id="dQL-gq-g88"/>
+                                <constraint firstItem="WUv-lJ-vGd" firstAttribute="top" secondItem="ZY3-3U-9ew" secondAttribute="top" constant="10" id="ndF-CT-xTy"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k88-XT-d1i">
