@@ -342,9 +342,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
     
-    cell.layer.cornerRadius = 3.f;
-    cell.layer.borderWidth = 1.f;
-    cell.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+    cell.layer.cornerRadius = 0.f;
+    cell.layer.borderWidth = 0.f;
+//    cell.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+    cell.layer.borderColor = [UIColor clearColor].CGColor;
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
@@ -360,6 +361,7 @@ static void* gUserLoadContext = &gUserLoadContext;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
             label.textColor = [UIColor blackColor];
             cell.layer.borderWidth = 3.f;
+            cell.layer.cornerRadius = 3.f;
         }
     }
     
@@ -370,9 +372,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     //unselect current selection first
     UILabel* label = nil;
     if (self.currentlySelectedFilterMenu) {
-        self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
-        self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
-        self.currentlySelectedFilterMenu.layer.borderWidth = 1.f;
+        //self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
+        //self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+        self.currentlySelectedFilterMenu.layer.borderColor = [UIColor clearColor].CGColor;
+        self.currentlySelectedFilterMenu.layer.borderWidth = 0.f;
+        self.currentlySelectedFilterMenu.layer.cornerRadius = 0.f;
         
         label = (UILabel*)[self.currentlySelectedFilterMenu viewWithTag:100];
         label.textColor = [UIColor lightGrayColor];
@@ -381,6 +385,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.currentlySelectedFilterMenu = cell;
     cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
     cell.layer.borderWidth = 3.f;
+    cell.layer.cornerRadius = 3.f;
     
     label = (UILabel*)[cell viewWithTag:100];
     label.textColor = [UIColor blackColor];
