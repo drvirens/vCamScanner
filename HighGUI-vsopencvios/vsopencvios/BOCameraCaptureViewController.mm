@@ -129,6 +129,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self showInfoEntryViewPartially];
     } else {
         [self hideInfoEntryViewPartially];
+        [self.infoEntryView.textFieldTitle resignFirstResponder];
     }
 }
 - (IBAction)didTapCapturePhoto:(id)sender {

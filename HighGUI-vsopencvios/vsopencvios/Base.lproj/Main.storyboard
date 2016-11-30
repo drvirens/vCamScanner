@@ -104,7 +104,7 @@
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
                                                 <rect key="frame" x="8" y="36" width="24" height="24"/>
-                                                <state key="normal" backgroundImage="ic_arrow_back_white"/>
+                                                <state key="normal" backgroundImage="ic_close_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuGoBack:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="AbR-Aa-95r"/>
                                                 </connections>
@@ -331,8 +331,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="ic_arrow_back_white" width="24" height="24"/>
         <image name="ic_check_white" width="24" height="24"/>
+        <image name="ic_close_white" width="24" height="24"/>
         <image name="ic_flash_off_white" width="24" height="24"/>
         <image name="ic_photo_camera_white" width="24" height="24"/>
         <image name="ic_rotate_left_white" width="24" height="24"/>
