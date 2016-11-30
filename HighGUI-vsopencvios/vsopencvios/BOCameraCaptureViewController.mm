@@ -237,6 +237,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
+    
     cell.layer.cornerRadius = 5.f;
     cell.layer.borderWidth = 1.f;
     cell.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
@@ -249,12 +250,18 @@ static void* gUserLoadContext = &gUserLoadContext;
     UIImageView* imageview = (UIImageView*)[cell viewWithTag:200];
     imageview.image = filter.menuThumbnail;
     
+    UIImageView* selectedIcon = (UIImageView*)[cell viewWithTag:300];
+    selectedIcon.hidden = YES;
+    
     if (self.currentlySelectedFilterMenu == nil) {
         if (indexPath.item == 0) { //put first cell as selected by default
             self.currentlySelectedFilterMenu = cell;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
             label.textColor = [UIColor blackColor];
             cell.layer.borderWidth = 3.f;
+            selectedIcon.hidden = NO;
+            selectedIcon.layer.cornerRadius = 12.f;
+            selectedIcon.backgroundColor = SELECTED_FILTER_BACKGROUND_COLOR;
         }
     }
     
@@ -264,6 +271,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //unselect current selection first
     UILabel* label = nil;
+    UIImageView* selectedIcon = nil;
+    selectedIcon.hidden = YES;
     if (self.currentlySelectedFilterMenu) {
         self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
         self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
@@ -271,6 +280,9 @@ static void* gUserLoadContext = &gUserLoadContext;
         
         label = (UILabel*)[self.currentlySelectedFilterMenu viewWithTag:100];
         label.textColor = [UIColor lightGrayColor];
+        
+        selectedIcon = (UIImageView*)[self.currentlySelectedFilterMenu viewWithTag:300];
+        selectedIcon.hidden = YES;
     }
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     self.currentlySelectedFilterMenu = cell;
@@ -279,6 +291,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     label = (UILabel*)[cell viewWithTag:100];
     label.textColor = [UIColor blackColor];
+    
+    selectedIcon = (UIImageView*)[cell viewWithTag:300];
+    selectedIcon.hidden = NO;
+    selectedIcon.layer.cornerRadius = 12.f;
+    selectedIcon.backgroundColor = SELECTED_FILTER_BACKGROUND_COLOR;
     
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
     self.capturedImageView.image = filter.menuThumbnail;
