@@ -246,6 +246,7 @@
                         <outlet property="buttonCameraCapture" destination="8iD-3x-d4J" id="tns-ji-O5I"/>
                         <outlet property="buttonCameraCaptureBottomConstraint" destination="S2n-b5-hOu" id="AdP-Cs-PTm"/>
                         <outlet property="buttonFlash" destination="Lwh-H6-yp5" id="ZLl-bX-od4"/>
+                        <outlet property="buttonSettings" destination="eXs-fW-DHV" id="Rfa-LG-Bzf"/>
                         <outlet property="cameraView" destination="yop-xH-tsR" id="wEh-lP-sJ9"/>
                         <outlet property="cameraViewBottomMenuContainer" destination="waf-oh-nvb" id="CYT-oC-O9a"/>
                         <outlet property="capturedImageView" destination="qAz-4v-fvp" id="Aep-Ab-A5b"/>

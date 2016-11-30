@@ -74,6 +74,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewTopMarginLayoutConstraint;
 @property (weak, nonatomic) IBOutlet BOInfoEntryView *infoEntryView;
 
+@property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
+
+
 @property (nonatomic) BOOL entryInfoPartiallyHidden;
 
 //camera permissions
@@ -164,6 +167,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (IBAction)didTapCapturePhoto:(id)sender {
+    //hide settings button
+    self.buttonSettings.hidden = YES;
 	typeof (self) __weak welf = self;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {
 		NSLog(@"did capture ");
@@ -412,6 +417,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     }
     self.currentlySelectedFilterMenu = nil;
     
+    self.buttonSettings.hidden = NO;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }

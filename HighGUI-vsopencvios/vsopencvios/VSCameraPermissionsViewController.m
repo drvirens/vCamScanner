@@ -66,20 +66,7 @@
 	[self.cameraController requestPermissionsWithCompletion:^(BOOL granted) {
 		dispatch_async(dispatch_get_main_queue(), ^{
 			typeof (self) __strong strongSelf = welf;
-			if (strongSelf) {
-//					if (granted) {
-//							//show camera vc
-//						//[strongSelf performSegueWithIdentifier:@"segueShowCamera" sender:strongSelf];
-//                        
-//                        if ([self.delegate respondsToSelector:@selector(vc:hasCameraPermissions:)]) {
-//                            [self.delegate vc:self hasCameraPermissions:YES];
-//                        }
-//                        [self dismissViewControllerAnimated:YES completion:nil];
-//					} else { //permission not granted
-//							 //update the message that permission is needed
-//						[strongSelf dismissViewControllerAnimated:YES completion:nil];
-//					}
-        
+			if (strongSelf) {        
                 if ([self.delegate respondsToSelector:@selector(vc:hasCameraPermissions:)]) {
                     [self.delegate vc:self hasCameraPermissions:granted];
                 }
