@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "PhotoController.h"
 #import "BOLocationController.h"
-
+ 
 @interface BOCameraCaptureViewController : UIViewController
 //@property (nonatomic, strong) DataController *dataController;
 @property (nonatomic, strong) PhotoController *photoController;
