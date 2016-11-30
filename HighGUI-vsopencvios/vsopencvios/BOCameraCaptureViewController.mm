@@ -88,10 +88,19 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.infoEntryView.textFieldTitle.delegate = self;
+    //category view tap detect
     self.infoEntryView.categoryView.userInteractionEnabled = YES;
     UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
     singleTapCategoryView.numberOfTapsRequired = 1;
     [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
+    
+    //drag view
+    self.infoEntryView.dragView.layer.cornerRadius = 3.f;
+    //drag container tap event (Phase 2 = Pan gesture)
+    UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
+    singleTapDragView.numberOfTapsRequired = 1;
+    [self.infoEntryView.dragContainerView addGestureRecognizer:singleTapDragView];
+    
     
     [self setupFitersMenu];
     self.state = BONotCroppedState;
@@ -110,6 +119,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)didSelectCateogry:(id)sender {
     NSLog(@"didSelectCateogry");
     [self performSegueWithIdentifier:@"category" sender:self];
+}
+- (void)didSelectDragView:(id)sender {
+    NSLog(@"didSelectDragView");
+    [self hideInfoEntryViewPartially];
 }
 - (IBAction)didTapCapturePhoto:(id)sender {
 	typeof (self) __weak welf = self;
@@ -186,6 +199,13 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)hideInfoEntryView {
     [self.view layoutIfNeeded];
     self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView);
+    [UIView animateWithDuration:.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+}
+- (void)hideInfoEntryViewPartially {
+    [self.view layoutIfNeeded];
+    self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView - 40);
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];

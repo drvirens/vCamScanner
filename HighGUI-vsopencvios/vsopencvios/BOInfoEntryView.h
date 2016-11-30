@@ -16,4 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewIcon;
 @property (weak, nonatomic) IBOutlet UIView *categoryView;
 
+@property (weak, nonatomic) IBOutlet UIView *dragContainerView;
+@property (weak, nonatomic) IBOutlet UIView *dragView;
+
 @end

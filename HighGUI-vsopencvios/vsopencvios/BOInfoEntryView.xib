@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BOInfoEntryView">
             <connections>
                 <outlet property="categoryView" destination="QSU-lK-ySH" id="P2o-JS-fle"/>
+                <outlet property="dragContainerView" destination="ZY3-3U-9ew" id="FUd-Qd-eFT"/>
+                <outlet property="dragView" destination="WUv-lJ-vGd" id="nf6-G4-Vyi"/>
                 <outlet property="imageViewIcon" destination="wZL-rm-fhl" id="ae6-ni-LTj"/>
                 <outlet property="labelSelectedCategoryName" destination="fCr-fp-Dvu" id="9Q3-L7-xi9"/>
                 <outlet property="seperatorLineView" destination="6Nz-A1-jh3" id="QBd-Py-KWl"/>
@@ -24,7 +26,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TaF-jW-Ne4">
-                    <rect key="frame" x="16" y="20" width="343" height="455"/>
+                    <rect key="frame" x="16" y="20" width="343" height="600"/>
                     <subviews>
                         <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Enter title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TQw-ym-d82">
                             <rect key="frame" x="25" y="73" width="294" height="30"/>
@@ -82,22 +84,62 @@
                                 <constraint firstItem="wZL-rm-fhl" firstAttribute="centerY" secondItem="QSU-lK-ySH" secondAttribute="centerY" id="hou-pY-fxp"/>
                             </constraints>
                         </view>
+                        <view hidden="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Y1-Ry-4LX">
+                            <rect key="frame" x="39" y="339" width="240" height="18"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </view>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZY3-3U-9ew">
+                            <rect key="frame" x="32" y="393" width="240" height="128"/>
+                            <subviews>
+                                <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WUv-lJ-vGd">
+                                    <rect key="frame" x="62" y="28" width="116" height="47"/>
+                                    <color key="backgroundColor" red="0.76357984290000003" green="0.76357984290000003" blue="0.76357984290000003" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="44" id="eFZ-BN-yO6"/>
+                                    </constraints>
+                                </view>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="WUv-lJ-vGd" firstAttribute="centerX" secondItem="ZY3-3U-9ew" secondAttribute="centerX" id="D3a-4A-Is8"/>
+                                <constraint firstAttribute="height" constant="12" id="DYT-8n-EVl"/>
+                                <constraint firstAttribute="bottom" secondItem="WUv-lJ-vGd" secondAttribute="bottom" constant="6" id="gf1-sE-zHh"/>
+                                <constraint firstItem="WUv-lJ-vGd" firstAttribute="top" secondItem="ZY3-3U-9ew" secondAttribute="top" id="ndF-CT-xTy"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k88-XT-d1i">
+                            <rect key="frame" x="51" y="549" width="240" height="28"/>
+                            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        </view>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="TQw-ym-d82" firstAttribute="top" secondItem="TaF-jW-Ne4" secondAttribute="top" id="2lw-XH-G7F"/>
                         <constraint firstItem="TQw-ym-d82" firstAttribute="leading" secondItem="TaF-jW-Ne4" secondAttribute="leading" constant="10" id="3cd-Xk-bZr"/>
                         <constraint firstAttribute="trailing" secondItem="QSU-lK-ySH" secondAttribute="trailing" id="4bt-hT-nsa"/>
+                        <constraint firstAttribute="trailing" secondItem="k88-XT-d1i" secondAttribute="trailing" id="GpY-uw-XQL"/>
+                        <constraint firstItem="ZY3-3U-9ew" firstAttribute="top" secondItem="0Y1-Ry-4LX" secondAttribute="bottom" id="HS2-Xl-cyf"/>
+                        <constraint firstItem="k88-XT-d1i" firstAttribute="top" secondItem="ZY3-3U-9ew" secondAttribute="bottom" id="KVd-2C-HO5"/>
+                        <constraint firstItem="k88-XT-d1i" firstAttribute="width" secondItem="0Y1-Ry-4LX" secondAttribute="width" id="KWQ-gC-CI6"/>
                         <constraint firstAttribute="trailing" secondItem="6Nz-A1-jh3" secondAttribute="trailing" id="Kls-yD-gzI"/>
+                        <constraint firstItem="0Y1-Ry-4LX" firstAttribute="top" secondItem="QSU-lK-ySH" secondAttribute="bottom" id="Osq-YO-73S"/>
                         <constraint firstItem="QSU-lK-ySH" firstAttribute="top" secondItem="6Nz-A1-jh3" secondAttribute="bottom" id="TXN-Og-3Ba"/>
+                        <constraint firstAttribute="trailing" secondItem="ZY3-3U-9ew" secondAttribute="trailing" id="YXZ-qa-Thp"/>
                         <constraint firstItem="QSU-lK-ySH" firstAttribute="leading" secondItem="TaF-jW-Ne4" secondAttribute="leading" id="asY-Eq-IPM"/>
                         <constraint firstItem="6Nz-A1-jh3" firstAttribute="top" secondItem="TQw-ym-d82" secondAttribute="bottom" id="bnM-XA-SUO"/>
                         <constraint firstAttribute="trailing" secondItem="TQw-ym-d82" secondAttribute="trailing" id="cje-93-E1F"/>
-                        <constraint firstAttribute="bottom" secondItem="QSU-lK-ySH" secondAttribute="bottom" id="iEV-8j-DRQ"/>
+                        <constraint firstItem="k88-XT-d1i" firstAttribute="leading" secondItem="TaF-jW-Ne4" secondAttribute="leading" id="dOp-AS-nFn"/>
+                        <constraint firstItem="0Y1-Ry-4LX" firstAttribute="leading" secondItem="TaF-jW-Ne4" secondAttribute="leading" id="eRh-cP-huO"/>
+                        <constraint firstItem="k88-XT-d1i" firstAttribute="height" secondItem="0Y1-Ry-4LX" secondAttribute="height" id="f3j-2x-yph"/>
                         <constraint firstItem="6Nz-A1-jh3" firstAttribute="top" secondItem="TQw-ym-d82" secondAttribute="bottom" id="kZw-nQ-v9x"/>
+                        <constraint firstItem="0Y1-Ry-4LX" firstAttribute="height" secondItem="6Nz-A1-jh3" secondAttribute="height" id="ldK-I2-zLe"/>
+                        <constraint firstItem="0Y1-Ry-4LX" firstAttribute="width" secondItem="6Nz-A1-jh3" secondAttribute="width" id="mFK-50-5OE"/>
+                        <constraint firstItem="ZY3-3U-9ew" firstAttribute="leading" secondItem="TaF-jW-Ne4" secondAttribute="leading" id="oiW-8x-H2I"/>
                         <constraint firstItem="6Nz-A1-jh3" firstAttribute="leading" secondItem="TaF-jW-Ne4" secondAttribute="leading" id="pLQ-C5-Eiw"/>
                         <constraint firstItem="TQw-ym-d82" firstAttribute="height" secondItem="QSU-lK-ySH" secondAttribute="height" id="rnD-ql-FF9"/>
                         <constraint firstItem="QSU-lK-ySH" firstAttribute="top" secondItem="6Nz-A1-jh3" secondAttribute="bottom" id="uuk-2V-ZRe"/>
+                        <constraint firstAttribute="trailing" secondItem="0Y1-Ry-4LX" secondAttribute="trailing" id="v6M-7i-5a7"/>
+                        <constraint firstAttribute="bottom" secondItem="k88-XT-d1i" secondAttribute="bottom" constant="5" id="vQV-WL-53Y"/>
                     </constraints>
                 </view>
             </subviews>
