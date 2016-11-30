@@ -244,15 +244,17 @@ static void* gUserLoadContext = &gUserLoadContext;
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
     label.text = filter.menuDisplayName;
+    label.textColor = [UIColor lightGrayColor];
     
     UIImageView* imageview = (UIImageView*)[cell viewWithTag:200];
     imageview.image = filter.menuThumbnail;
     
     if (self.currentlySelectedFilterMenu == nil) {
-        if (indexPath.item == 0) { //put first as selected
+        if (indexPath.item == 0) { //put first cell as selected by default
             self.currentlySelectedFilterMenu = cell;
-            cell.backgroundColor = SELECTED_FILTER_BACKGROUND_COLOR;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
+            label.textColor = [UIColor blackColor];
+            cell.layer.borderWidth = 3.f;
         }
     }
     
@@ -260,14 +262,23 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 #pragma mark - UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    //unselect current selection first
+    UILabel* label = nil;
     if (self.currentlySelectedFilterMenu) {
         self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
         self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
+        self.currentlySelectedFilterMenu.layer.borderWidth = 1.f;
+        
+        label = (UILabel*)[self.currentlySelectedFilterMenu viewWithTag:100];
+        label.textColor = [UIColor lightGrayColor];
     }
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     self.currentlySelectedFilterMenu = cell;
-    cell.backgroundColor = SELECTED_FILTER_BACKGROUND_COLOR;
     cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
+    cell.layer.borderWidth = 3.f;
+    
+    label = (UILabel*)[cell viewWithTag:100];
+    label.textColor = [UIColor blackColor];
     
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
     self.capturedImageView.image = filter.menuThumbnail;
