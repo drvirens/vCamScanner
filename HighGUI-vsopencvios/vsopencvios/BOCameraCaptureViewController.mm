@@ -18,6 +18,7 @@
 #import "BOCategoryTableViewController.h"
 #import "VSSettingsViewController.h"
 #import "VSCameraPermissionsViewController.h"
+#import "VSBranding.h"
 
 typedef enum BOState {
     BONotCroppedState,
@@ -100,6 +101,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self setupMiscGUI];
     
     [self setupFitersMenu];
@@ -108,6 +110,29 @@ static void* gUserLoadContext = &gUserLoadContext;
 	[self setupButton];
     
 	[self startCamera];
+    
+    [self decorateEntryInfoView];
+}
+- (void)decorateEntryInfoView {
+    //placeholder
+    NSDictionary* placeholderTextColor = @{
+                                           NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                           NSFontAttributeName : VS_FONT_VERYSMALL
+                                           };
+    NSAttributedString* placeHolder = [[NSAttributedString alloc] initWithString:@"ENTER TITLE" attributes:placeholderTextColor];
+    self.infoEntryView.textFieldTitle.attributedPlaceholder = placeHolder;
+    
+    //typed text
+    self.infoEntryView.textFieldTitle.font = VS_FONT_SMALL;
+    self.infoEntryView.textFieldTitle.textColor = [VSBranding vs_whiteColor];
+    
+    //category label
+    NSDictionary* labelCategory = @{
+                                   NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                   NSFontAttributeName : VS_FONT_VERYSMALL
+                                   };
+    NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
+    self.infoEntryView.labelSelectedCategoryName.attributedText = category;
 }
 - (void)setupMiscGUI {
     self.infoEntryView.textFieldTitle.delegate = self;

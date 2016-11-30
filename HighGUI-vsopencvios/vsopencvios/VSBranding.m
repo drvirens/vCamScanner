@@ -13,11 +13,11 @@
 static NSString* const kFontName = @"HelveticaNeue";
 
 static const CGFloat kFontExtraSmall	= 12.f;
-static const CGFloat kFontVerySmall		= 16.f;
-static const CGFloat kFontSmall			= 16.f;
+static const CGFloat kFontVerySmall		= 14.f;
+static const CGFloat kFontSmall			= 15.f;
 static const CGFloat kFontMedium		= 16.f;
-static const CGFloat kFontRegular		= 16.f;
-static const CGFloat kFontLarge			= 16.f;
+static const CGFloat kFontRegular		= 17.f;
+static const CGFloat kFontLarge			= 18.f;
 static const CGFloat kFontVeryLarge		= 40.f;
 
 @implementation VSBranding
