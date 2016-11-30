@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NaZ-yU-sAN">
-    <device id="retina4_7" orientation="portrait">
+    <device id="ipad9_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,7 +19,7 @@
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
@@ -36,7 +36,7 @@
                         <viewControllerLayoutGuide type="bottom" id="QQf-p6-fY7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="ByB-Qw-I9X">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gss-S8-HRN">
@@ -45,61 +45,6 @@
                                     <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xnd-F8-YHU">
                                         <rect key="frame" x="201" y="350" width="37" height="37"/>
                                     </activityIndicatorView>
-                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-hf-ive">
-                                        <rect key="frame" x="33" y="427" width="290" height="111"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
-                                                <rect key="frame" x="27" y="67" width="24" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="Mwn-VI-056"/>
-                                                    <constraint firstAttribute="height" constant="60" id="cDx-ld-vA5"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="ic_arrow_back_white"/>
-                                                <connections>
-                                                    <action selector="didSelectMenuGoBack:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="AbR-Aa-95r"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
-                                                <rect key="frame" x="260" y="64" width="30" height="30"/>
-                                                <state key="normal" backgroundImage="ic_check_white"/>
-                                                <connections>
-                                                    <action selector="didSelectMenuSelect:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="qeC-me-Fdi"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
-                                                <rect key="frame" x="98" y="64" width="30" height="30"/>
-                                                <state key="normal" backgroundImage="ic_rotate_left_white"/>
-                                                <connections>
-                                                    <action selector="didSelectMenuRotateLeft:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="W5l-67-erV"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
-                                                <rect key="frame" x="183" y="64" width="30" height="30"/>
-                                                <state key="normal" backgroundImage="ic_rotate_right_white"/>
-                                                <connections>
-                                                    <action selector="didSelectMenuRotateRight:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="dEe-DN-Dju"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" red="1" green="0.29803921568627451" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="centerY" secondItem="TES-53-N2P" secondAttribute="centerY" id="7ms-JM-pc5"/>
-                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="leading" secondItem="qzy-hf-ive" secondAttribute="leading" constant="15" id="Dpc-ub-oA9"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="leading" secondItem="6wW-au-21S" secondAttribute="trailing" constant="47" id="IsY-wJ-nzS"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="centerY" secondItem="6wW-au-21S" secondAttribute="centerY" id="L6X-6d-30g"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="NgS-FB-G4J"/>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="leading" secondItem="TES-53-N2P" secondAttribute="trailing" constant="47" id="X2j-tU-2Er"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="XTX-51-dT8"/>
-                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="XhJ-c1-9yX"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="centerY" secondItem="JfM-UP-FHL" secondAttribute="centerY" id="ZU3-Cg-aFQ"/>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="c07-dw-muC"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="dqm-bT-Jeu"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="leading" secondItem="JfM-UP-FHL" secondAttribute="trailing" constant="47" id="pLk-XO-Wfe"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="pPM-1b-oGw"/>
-                                            <constraint firstAttribute="height" constant="100" id="vmm-Ma-rk7"/>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="wlu-GV-Gbh"/>
-                                        </constraints>
-                                    </view>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UsK-Ud-WaM">
                                         <rect key="frame" x="69" y="21" width="134" height="117"/>
                                         <subviews>
@@ -121,6 +66,62 @@
                                         <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="150" id="6FO-VC-E5N"/>
+                                        </constraints>
+                                    </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-hf-ive">
+                                        <rect key="frame" x="23" y="395" width="224" height="111"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
+                                                <rect key="frame" x="11" y="43" width="24" height="24"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="60" id="Mwn-VI-056"/>
+                                                    <constraint firstAttribute="height" constant="60" id="cDx-ld-vA5"/>
+                                                </constraints>
+                                                <state key="normal" backgroundImage="ic_arrow_back_white"/>
+                                                <connections>
+                                                    <action selector="didSelectMenuGoBack:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="AbR-Aa-95r"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
+                                                <rect key="frame" x="55" y="38" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="ic_rotate_left_white"/>
+                                                <connections>
+                                                    <action selector="didSelectMenuRotateLeft:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="W5l-67-erV"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
+                                                <rect key="frame" x="104" y="37" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="ic_rotate_right_white"/>
+                                                <connections>
+                                                    <action selector="didSelectMenuRotateRight:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="dEe-DN-Dju"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
+                                                <rect key="frame" x="159" y="41" width="27" height="29"/>
+                                                <state key="normal" backgroundImage="ic_check_white"/>
+                                                <connections>
+                                                    <action selector="didSelectMenuSelect:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="qeC-me-Fdi"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <color key="backgroundColor" red="1" green="0.29803921568627451" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="6wW-au-21S" firstAttribute="centerY" secondItem="TES-53-N2P" secondAttribute="centerY" id="7ms-JM-pc5"/>
+                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="leading" secondItem="qzy-hf-ive" secondAttribute="leading" constant="15" id="Dpc-ub-oA9"/>
+                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="leading" secondItem="6wW-au-21S" secondAttribute="trailing" constant="47" id="IsY-wJ-nzS"/>
+                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="centerY" secondItem="6wW-au-21S" secondAttribute="centerY" id="L6X-6d-30g"/>
+                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="NgS-FB-G4J"/>
+                                            <constraint firstItem="6wW-au-21S" firstAttribute="leading" secondItem="TES-53-N2P" secondAttribute="trailing" constant="47" id="X2j-tU-2Er"/>
+                                            <constraint firstItem="TES-53-N2P" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="XTX-51-dT8"/>
+                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="XhJ-c1-9yX"/>
+                                            <constraint firstItem="TES-53-N2P" firstAttribute="centerY" secondItem="JfM-UP-FHL" secondAttribute="centerY" id="ZU3-Cg-aFQ"/>
+                                            <constraint firstItem="6wW-au-21S" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="c07-dw-muC"/>
+                                            <constraint firstAttribute="trailing" secondItem="dJb-o9-jb2" secondAttribute="trailing" priority="999" constant="10" id="d4Y-kb-Aes"/>
+                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="dqm-bT-Jeu"/>
+                                            <constraint firstItem="TES-53-N2P" firstAttribute="leading" secondItem="JfM-UP-FHL" secondAttribute="trailing" constant="47" id="pLk-XO-Wfe"/>
+                                            <constraint firstItem="TES-53-N2P" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="pPM-1b-oGw"/>
+                                            <constraint firstAttribute="height" constant="100" id="vmm-Ma-rk7"/>
+                                            <constraint firstItem="6wW-au-21S" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="wlu-GV-Gbh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -240,15 +241,15 @@
             <objects>
                 <tableViewController storyboardIdentifier="BOCategoryTableViewController" id="CIJ-lO-H30" customClass="BOCategoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" rowHeight="173" sectionHeaderHeight="18" sectionFooterHeight="18" id="rUy-5m-5JB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BOCategoryTableViewCell" rowHeight="173" id="Hwk-pZ-LlK" customClass="BOCategoryTableViewCell">
-                                <rect key="frame" x="0.0" y="56" width="375" height="173"/>
+                                <rect key="frame" x="0.0" y="56" width="768" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwk-pZ-LlK" id="5Wu-gg-Rz2">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="768" height="172"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zb-X4-DOH">
