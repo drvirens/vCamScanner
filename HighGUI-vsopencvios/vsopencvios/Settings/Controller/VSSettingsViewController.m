@@ -13,7 +13,7 @@
 
 static const CGFloat kCellHeight = 50.f;
 static NSString* const kTitleVehicle = @"Vehicle";
-static NSString* const kTitleAddPurpose = @"Add purpose";
+static NSString* const kTitleAddPurpose = @"Add Category";
 static NSString* const kSeguePurpose = @"seguePurpose";
 static NSString* const kSegueVehicle = @"segueVehicles";
 
@@ -100,12 +100,12 @@ static NSString* const kSegueVehicle = @"segueVehicles";
 	
 		//test+
 		//vehicles
-	{
-	NSMutableArray* vehicles = [NSMutableArray array];
-	VSMoreModel* moreModel = [[VSMoreModel alloc] initWithTitle:kTitleVehicle subTitle:@"Toyota Corolla" iconName:@"ic_keyboard_arrow_right_white"];
-	[vehicles addObject:moreModel];
-	[self.dataSrc addObject:vehicles];
-	}
+//	{
+//	NSMutableArray* vehicles = [NSMutableArray array];
+//	VSMoreModel* moreModel = [[VSMoreModel alloc] initWithTitle:kTitleVehicle subTitle:@"Toyota Corolla" iconName:@"ic_keyboard_arrow_right_white"];
+//	[vehicles addObject:moreModel];
+//	[self.dataSrc addObject:vehicles];
+//	}
 	
 		//purpose
 	{
@@ -117,18 +117,18 @@ static NSString* const kSegueVehicle = @"segueVehicles";
 
 		//sign out and auto-drive detect
 	{
-	NSMutableArray* app = [NSMutableArray array];
-	
-		//auto drive detect
-	VSMoreModel* autoDriveModel = [[VSMoreModel alloc] initWithTitle:@"Automatic Drive Detect" subTitle:@"" iconName:@"ic_keyboard_arrow_right_white"];
-	[app addObject:autoDriveModel];
-	
-		//signout
-	VSMoreModel* signOutModel = [[VSMoreModel alloc] initWithTitle:@"Sign out" subTitle:@"" iconName:nil];
-	[app addObject:signOutModel];
-
-	
-	[self.dataSrc addObject:app];
+//	NSMutableArray* app = [NSMutableArray array];
+//	
+//		//auto drive detect
+//	VSMoreModel* autoDriveModel = [[VSMoreModel alloc] initWithTitle:@"Automatic Drive Detect" subTitle:@"" iconName:@"ic_keyboard_arrow_right_white"];
+//	[app addObject:autoDriveModel];
+//	
+//		//signout
+//	VSMoreModel* signOutModel = [[VSMoreModel alloc] initWithTitle:@"Sign out" subTitle:@"" iconName:nil];
+//	[app addObject:signOutModel];
+//
+//	
+//	[self.dataSrc addObject:app];
 	}
 	
 		//rate me etc
