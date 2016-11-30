@@ -12,6 +12,7 @@
 
 @interface BOCategoryTableViewController ()
 @property (nonatomic) NSMutableArray* dataSource;
+@property (nonatomic) BOCategoryTableViewCell* currSelected;
 @end
 
 @implementation BOCategoryTableViewController
@@ -20,12 +21,30 @@
     [super viewDidLoad];
     [self setupDataSource];
     
+    self.title = @"Select Category";
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    //left bar button
+    UIImage* closeImg = [UIImage imageNamed:@"ic_close_white"];
+    closeImg = [closeImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:closeImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapOnCloseCateogryButton:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
+    
+    //right bar button
+    UIImage* selectImg = [UIImage imageNamed:@"ic_check_white"];
+    closeImg = [selectImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:selectImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapOnSelectCateogryButton:)];
+    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
+    
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
+}
+- (void)didTapOnCloseCateogryButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)didTapOnSelectCateogryButton:(id)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)setupDataSource {
     self.dataSource = [NSMutableArray array];
@@ -49,6 +68,9 @@
     [self.dataSource addObject:model];
     
     model = [[BOCategoryModel alloc] initWithName:@"Business Card" icon:@"ic_credit_card_white"];
+    [self.dataSource addObject:model];
+    
+    model = [[BOCategoryModel alloc] initWithName:@"Other" icon:@"ic_my_location_white"];
     [self.dataSource addObject:model];
 }
 
@@ -76,6 +98,15 @@
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 60.f;
+}
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.currSelected) {
+        [self.currSelected hideIcon];
+    }
+    BOCategoryTableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    self.currSelected = cell;
+    [cell showIcon];
 }
 
 - (BOOL)prefersStatusBarHidden {

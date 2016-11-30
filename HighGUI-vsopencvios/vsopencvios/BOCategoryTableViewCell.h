@@ -12,4 +12,6 @@
 
 @interface BOCategoryTableViewCell : UITableViewCell
 - (void)configure:(BOCategoryModel*)model;
+- (void)hideIcon;
+- (void)showIcon;
 @end

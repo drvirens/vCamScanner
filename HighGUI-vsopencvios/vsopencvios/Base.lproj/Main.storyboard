@@ -244,7 +244,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="BOCategoryTableViewCell" rowHeight="173" id="Hwk-pZ-LlK" customClass="BOCategoryTableViewCell">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="BOCategoryTableViewCell" rowHeight="173" id="Hwk-pZ-LlK" customClass="BOCategoryTableViewCell">
                                 <rect key="frame" x="0.0" y="56" width="375" height="173"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Hwk-pZ-LlK" id="5Wu-gg-Rz2">
@@ -252,11 +252,18 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zb-X4-DOH">
-                                            <rect key="frame" x="166" y="95" width="135" height="30"/>
+                                            <rect key="frame" x="166" y="95" width="76" height="30"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AJy-ot-tXW">
+                                            <rect key="frame" x="258" y="66" width="90" height="74"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="24" id="1Xa-pw-smC"/>
+                                                <constraint firstAttribute="height" constant="24" id="1Xu-ZH-PFk"/>
+                                            </constraints>
+                                        </imageView>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mIj-yJ-Mw3">
                                             <rect key="frame" x="36" y="66" width="83" height="88"/>
                                             <constraints>
@@ -267,15 +274,18 @@
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="mIj-yJ-Mw3" firstAttribute="centerY" secondItem="5Wu-gg-Rz2" secondAttribute="centerY" id="5jQ-KN-2NL"/>
+                                        <constraint firstAttribute="trailing" secondItem="AJy-ot-tXW" secondAttribute="trailing" constant="20" id="CFw-nZ-LzJ"/>
                                         <constraint firstItem="0zb-X4-DOH" firstAttribute="centerY" secondItem="mIj-yJ-Mw3" secondAttribute="centerY" id="Its-kN-xjY"/>
+                                        <constraint firstItem="AJy-ot-tXW" firstAttribute="leading" secondItem="0zb-X4-DOH" secondAttribute="trailing" constant="10" id="MCx-Dm-uJL"/>
                                         <constraint firstItem="mIj-yJ-Mw3" firstAttribute="leading" secondItem="5Wu-gg-Rz2" secondAttribute="leading" constant="20" id="Po6-Vr-Jnb"/>
                                         <constraint firstItem="0zb-X4-DOH" firstAttribute="leading" secondItem="mIj-yJ-Mw3" secondAttribute="trailing" constant="10" id="QSa-EY-ndH"/>
                                         <constraint firstItem="0zb-X4-DOH" firstAttribute="leading" secondItem="mIj-yJ-Mw3" secondAttribute="trailing" constant="10" id="ZhU-Zd-4zp"/>
-                                        <constraint firstAttribute="trailing" secondItem="0zb-X4-DOH" secondAttribute="trailing" constant="20" id="zET-LX-MCb"/>
+                                        <constraint firstItem="AJy-ot-tXW" firstAttribute="centerY" secondItem="0zb-X4-DOH" secondAttribute="centerY" id="aLu-uh-wJa"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="imageViewIcon" destination="mIj-yJ-Mw3" id="P1M-JS-ASo"/>
+                                    <outlet property="imageviewSelectedIcon" destination="AJy-ot-tXW" id="UaI-ng-t0T"/>
                                     <outlet property="labelCategoryName" destination="0zb-X4-DOH" id="f54-p4-H8R"/>
                                 </connections>
                             </tableViewCell>
@@ -286,7 +296,7 @@
                             <outlet property="delegate" destination="CIJ-lO-H30" id="ytm-1L-DpN"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vsL-Nx-ahJ"/>
+                    <navigationItem key="navigationItem" prompt="Choose one" id="vsL-Nx-ahJ"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjg-e6-DmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
