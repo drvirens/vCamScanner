@@ -57,6 +57,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (nonatomic) UIImage* image;
 @property (nonatomic) UIImage* cropImage;
+@property (nonatomic) UIImage* finalProcessedImage;
 
 @property (strong, nonatomic) MMCropView* croppedView;
 
@@ -360,6 +361,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
     self.capturedImageView.image = filter.menuThumbnail;
+    
+    self.finalProcessedImage = filter.menuThumbnail;
 }
 
 #pragma mark - UITextFieldDelegate
@@ -404,6 +407,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self hideInfoEntryView];
         [self hideFiltersView];
         [self transitMenuItemsToShareMode];
+    } else if (self.state == BOShareState) {
+        [self share:self];
     } else {
         [self doCropImage];
         [self transitMenuItemsToPreviewMode];
@@ -439,7 +444,20 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.menuButtonSelect.tintColor = [UIColor whiteColor];
     self.state = BOShareState;
 }
-
+- (void)share:(id)sender {
+    UIImage *image = self.finalProcessedImage;
+    if (image == nil) {
+        image = self.cropImage;
+    }
+    NSArray *activityItems = @[image];
+    UIActivityViewController *activityViewControntroller = [[UIActivityViewController alloc] initWithActivityItems:activityItems applicationActivities:nil];
+    activityViewControntroller.excludedActivityTypes = @[];
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        activityViewControntroller.popoverPresentationController.sourceView = self.view;
+        activityViewControntroller.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
+    }
+    [self presentViewController:activityViewControntroller animated:true completion:nil];
+}
 #pragma mark - image crop view
 - (void)prepareCropView {
     CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,

@@ -36,6 +36,8 @@
 	</array>
 	<key>NSCameraUsageDescription</key>
 	<string>We need access to camera to take pictures of the receipts</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>To store photos in Photo Library</string>
 	<key>UISupportedInterfaceOrientations~ipad</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
