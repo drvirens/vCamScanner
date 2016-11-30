@@ -24,7 +24,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource>
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -87,6 +87,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.infoEntryView.textFieldTitle.delegate = self;
+    
     [self setupFitersMenu];
     self.state = BONotCroppedState;
 	[self setupContainerView];
@@ -299,6 +301,12 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
     self.capturedImageView.image = filter.menuThumbnail;
+}
+
+#pragma mark - UITextFieldDelegate
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
 }
 
 #pragma mark - 4 menu buttons
