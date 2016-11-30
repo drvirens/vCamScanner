@@ -38,13 +38,13 @@
 	return YES;
 }
 
-#pragma mark - segue
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	if ([@"segueShowCamera" isEqualToString:segue.identifier] ) {
-		BOCameraCaptureViewController* cameravc = (BOCameraCaptureViewController*)[segue destinationViewController];
-		//cameravc.cameraController = self.cameraController;
-	} 
-}
+//#pragma mark - segue
+//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+//	if ([@"segueShowCamera" isEqualToString:segue.identifier] ) {
+//		BOCameraCaptureViewController* cameravc = (BOCameraCaptureViewController*)[segue destinationViewController];
+//		//cameravc.cameraController = self.cameraController;
+//	} 
+//}
 
 #pragma mark - button handlers
 - (IBAction)didTapOnCancelButton:(id)sender {
@@ -67,14 +67,23 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			typeof (self) __strong strongSelf = welf;
 			if (strongSelf) {
-					if (granted) {
-							//show camera vc
-						//[strongSelf performSegueWithIdentifier:@"segueShowCamera" sender:strongSelf];
-                        [self dismissViewControllerAnimated:YES completion:nil];
-					} else { //permission not granted
-							 //update the message that permission is needed
-						[strongSelf dismissViewControllerAnimated:YES completion:nil];
-					}
+//					if (granted) {
+//							//show camera vc
+//						//[strongSelf performSegueWithIdentifier:@"segueShowCamera" sender:strongSelf];
+//                        
+//                        if ([self.delegate respondsToSelector:@selector(vc:hasCameraPermissions:)]) {
+//                            [self.delegate vc:self hasCameraPermissions:YES];
+//                        }
+//                        [self dismissViewControllerAnimated:YES completion:nil];
+//					} else { //permission not granted
+//							 //update the message that permission is needed
+//						[strongSelf dismissViewControllerAnimated:YES completion:nil];
+//					}
+        
+                if ([self.delegate respondsToSelector:@selector(vc:hasCameraPermissions:)]) {
+                    [self.delegate vc:self hasCameraPermissions:granted];
+                }
+                [self dismissViewControllerAnimated:YES completion:nil];
 			}
 		});
 	}];

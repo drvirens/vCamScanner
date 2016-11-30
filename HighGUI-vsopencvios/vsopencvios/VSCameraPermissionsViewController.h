@@ -9,7 +9,13 @@
 #import <UIKit/UIKit.h>
 #import "BOCameraController.h"
 
+@class VSCameraPermissionsViewController;
+@protocol VSCameraPermissionsViewControllerDelegate <NSObject>
+- (void)vc:(VSCameraPermissionsViewController*)vc hasCameraPermissions:(BOOL)hasPermissions;
+@end
+
 @interface VSCameraPermissionsViewController : UIViewController
+@property (nonatomic, weak) id<VSCameraPermissionsViewControllerDelegate> delegate;
 @property (nonatomic) BOCameraController* cameraController;
 @property (nonatomic, copy) NSString* message;
 @property (nonatomic, copy) NSString* positiveBtnTitle;

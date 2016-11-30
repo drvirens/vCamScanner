@@ -19,7 +19,6 @@
 #import "VSSettingsViewController.h"
 #import "VSCameraPermissionsViewController.h"
 
-
 typedef enum BOState {
     BONotCroppedState,
     BOCroppedPreviewState,
@@ -28,7 +27,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, BOCategoryTableViewControllerDelegate>
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, BOCategoryTableViewControllerDelegate, VSCameraPermissionsViewControllerDelegate>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -508,6 +507,13 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.croppedView moveActivePointToLocation:posInStretch];
 }
 
+#pragma mark - VSCameraPermissionsViewControllerDelegate
+- (void)vc:(VSCameraPermissionsViewController *)vc hasCameraPermissions:(BOOL)hasPermissions {
+    NSLog(@"hasCameraPermissions");
+    if (hasPermissions) {
+        [self.cameraController startCameraInView:self.cameraView];
+    }
+}
 
 #pragma mark - show camera
 - (void)checkCameraPermissionsStatus {
@@ -523,6 +529,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSString* segueid = nil;
     if (status == VSCameraStatusAuthorized) {
         //segueid = @"segueCamera";
+        [self vc:nil hasCameraPermissions:YES];
+        return;
     } else {
         if (status == VSCameraStatusRestricted) {
             self.message = @"You do not have access to Camera (Parental Control or Company policy) :( \n\nContact admin for details.";
@@ -535,12 +543,6 @@ static void* gUserLoadContext = &gUserLoadContext;
             self.positiveBtnTitle = @"Proceed";
         }
         segueid = @"segueCameraPermissionsHeadsUp";
-    }
-    
-    //if sequeid is nil, permissions are already granted so just dismiss this screen
-    if (!segueid) {
-        [self dismissViewControllerAnimated:YES completion:nil];
-        return;
     }
     
     typeof (self) __weak welf = self;
@@ -574,12 +576,12 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([@"category" isEqualToString:segue.identifier]) {
-        
         UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
         BOCategoryTableViewController* destVC = (BOCategoryTableViewController*)[[navVC viewControllers] firstObject];
         destVC.delegateCategory = self;
     } else if ([@"segueCameraPermissionsHeadsUp" isEqualToString:segue.identifier]) {
         VSCameraPermissionsViewController* permissionsVC = (VSCameraPermissionsViewController*)[segue destinationViewController];
+        permissionsVC.delegate = self;
         permissionsVC.cameraController = self.cameraController;
         permissionsVC.message = self.message;
         permissionsVC.positiveBtnTitle = self.positiveBtnTitle;
