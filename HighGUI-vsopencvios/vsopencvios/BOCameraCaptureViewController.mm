@@ -16,6 +16,7 @@
 #import "BOFilterMenuModel.h"
 #import "BOInfoEntryView.h"
 #import "BOCategoryTableViewController.h"
+#import "VSSettingsViewController.h"
 
 
 typedef enum BOState {
@@ -147,6 +148,13 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.infoEntryView.textFieldTitle resignFirstResponder];
     }
 }
+- (IBAction)didTapSettingsButton:(id)sender {
+    UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Settings" bundle:nil];
+    VSSettingsViewController* settingsVC = (VSSettingsViewController*)[sb instantiateViewControllerWithIdentifier:@"VSSettingsViewController"];
+    UINavigationController* navc = [[UINavigationController alloc] initWithRootViewController:settingsVC];
+    [self presentViewController:navc animated:YES completion:nil];
+}
+
 - (IBAction)didTapCapturePhoto:(id)sender {
 	typeof (self) __weak welf = self;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {

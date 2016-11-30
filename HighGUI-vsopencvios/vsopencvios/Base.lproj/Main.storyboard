@@ -212,6 +212,9 @@
                                     <constraint firstAttribute="height" constant="50" id="UdW-vl-8XQ"/>
                                 </constraints>
                                 <state key="normal" backgroundImage="ic_settings_white"/>
+                                <connections>
+                                    <action selector="didTapSettingsButton:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="4xY-kC-NtS"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>

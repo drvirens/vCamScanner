@@ -155,4 +155,8 @@ static NSString* const kSegueVehicle = @"segueVehicles";
 		//test-
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return NO;
+}
+
 @end
