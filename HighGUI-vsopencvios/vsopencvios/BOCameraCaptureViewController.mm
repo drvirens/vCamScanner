@@ -119,6 +119,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     //typed text
     self.infoEntryView.textFieldTitle.font = VS_FONT_SMALL;
     self.infoEntryView.textFieldTitle.textColor = [VSBranding vs_whiteColor];
+    self.infoEntryView.textFieldTitle.text = nil;
 }
 - (void)clearCategoryText {
     //category label
