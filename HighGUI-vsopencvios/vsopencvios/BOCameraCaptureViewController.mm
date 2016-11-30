@@ -90,6 +90,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.textFieldTitle.delegate = self;
     self.infoEntryView.categoryView.userInteractionEnabled = YES;
     UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
+    singleTapCategoryView.numberOfTapsRequired = 1;
     [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
     
     [self setupFitersMenu];
@@ -108,6 +109,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)didSelectCateogry:(id)sender {
     NSLog(@"didSelectCateogry");
+    [self performSegueWithIdentifier:@"category" sender:self];
 }
 - (IBAction)didTapCapturePhoto:(id)sender {
 	typeof (self) __weak welf = self;

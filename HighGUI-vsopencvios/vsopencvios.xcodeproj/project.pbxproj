@@ -22,6 +22,8 @@
 		11303BC01DEE276500371BD5 /* BOFilterMenuModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */; };
 		11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */; };
 		11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */; };
+		11303BC81DEE6AE200371BD5 /* BOCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */; };
+		11303BCB1DEE6B4D00371BD5 /* BOCategoryModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -283,6 +285,10 @@
 		11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOInfoEntryView.xib; sourceTree = "<group>"; };
 		11303BC31DEE460000371BD5 /* BOInfoEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOInfoEntryView.h; sourceTree = "<group>"; };
 		11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOInfoEntryView.mm; sourceTree = "<group>"; };
+		11303BC61DEE6AE200371BD5 /* BOCategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCategoryTableViewCell.h; sourceTree = "<group>"; };
+		11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOCategoryTableViewCell.m; sourceTree = "<group>"; };
+		11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCategoryModel.h; sourceTree = "<group>"; };
+		11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOCategoryModel.mm; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -832,6 +838,10 @@
 				11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */,
 				11303BC31DEE460000371BD5 /* BOInfoEntryView.h */,
 				11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */,
+				11303BC61DEE6AE200371BD5 /* BOCategoryTableViewCell.h */,
+				11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */,
+				11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */,
+				11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1847,6 +1857,7 @@
 				B621FD3D1DEAA29D00E54A51 /* adaptiveskindetector.cpp in Sources */,
 				B621FDB11DEAA29E00E54A51 /* canny.cpp in Sources */,
 				B621FDDD1DEAA29E00E54A51 /* estimate.cpp in Sources */,
+				11303BCB1DEE6B4D00371BD5 /* BOCategoryModel.mm in Sources */,
 				11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */,
 				B621FDDA1DEAA29E00E54A51 /* data.cpp in Sources */,
 				B621FDCC1DEAA29E00E54A51 /* samplers.cpp in Sources */,
@@ -1902,6 +1913,7 @@
 				B621FDA71DEAA29E00E54A51 /* grfmt_tiff.cpp in Sources */,
 				B621FD5D1DEAA29D00E54A51 /* alloc.cpp in Sources */,
 				B621FD7E1DEAA29D00E54A51 /* dynamic.cpp in Sources */,
+				11303BC81DEE6AE200371BD5 /* BOCategoryTableViewCell.m in Sources */,
 				B621FDD21DEAA29E00E54A51 /* tables.cpp in Sources */,
 				B621FD8D1DEAA29D00E54A51 /* miniflann.cpp in Sources */,
 				B621FDFF1DEAA29E00E54A51 /* lkpyramid.cpp in Sources */,
