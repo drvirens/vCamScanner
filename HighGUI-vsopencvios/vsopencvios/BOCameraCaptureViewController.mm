@@ -84,13 +84,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic, copy) NSString* message;
 @property (nonatomic, copy) NSString* positiveBtnTitle;
 
-//upper view with scroll view in it - NOT USED CURRENTLY
-@property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
-@property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) IBOutlet UIImageView *scrollableImageView;
-
-
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -101,19 +94,20 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.state = BONotCroppedState;
     
+    [self clearTitle];
+    [self clearCategoryText];
     [self setupMiscGUI];
     
     [self setupFitersMenu];
-    self.state = BONotCroppedState;
+    
 	[self setupContainerView];
-	[self setupButton];
+	[self setupCameraButton];
     
 	[self startCamera];
-    
-    [self decorateEntryInfoView];
 }
-- (void)decorateEntryInfoView {
+- (void)clearTitle {
     //placeholder
     NSDictionary* placeholderTextColor = @{
                                            NSForegroundColorAttributeName : [UIColor darkGrayColor],
@@ -125,12 +119,13 @@ static void* gUserLoadContext = &gUserLoadContext;
     //typed text
     self.infoEntryView.textFieldTitle.font = VS_FONT_SMALL;
     self.infoEntryView.textFieldTitle.textColor = [VSBranding vs_whiteColor];
-    
+}
+- (void)clearCategoryText {
     //category label
     NSDictionary* labelCategory = @{
-                                   NSForegroundColorAttributeName : [UIColor darkGrayColor],
-                                   NSFontAttributeName : VS_FONT_VERYSMALL
-                                   };
+                                    NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                    NSFontAttributeName : VS_FONT_VERYSMALL
+                                    };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
     self.infoEntryView.labelSelectedCategoryName.attributedText = category;
 }
@@ -159,7 +154,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)setupContainerView {
 	self.containerCapturedView.hidden = YES;
 }
-- (void)setupButton {
+- (void)setupCameraButton {
 	self.buttonCameraCapture.layer.borderColor = [UIColor whiteColor].CGColor;
 	self.buttonCameraCapture.layer.borderWidth = 4.f;
 	self.buttonCameraCapture.layer.cornerRadius = kHeightCapturePhotoButton/2.f;
@@ -443,6 +438,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.currentlySelectedFilterMenu = nil;
     
     self.buttonSettings.hidden = NO;
+    [self clearTitle];
+    [self clearCategoryText];
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
