@@ -14,6 +14,7 @@
 #import "BOConstants.h"
 #import "BOFiltersView.h"
 #import "BOFilterMenuModel.h"
+#import "BOInfoEntryView.h"
 
 
 typedef enum BOState {
@@ -65,6 +66,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) NSMutableArray* dataSource;
 
 @property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewTopMarginLayoutConstraint;
+@property (weak, nonatomic) IBOutlet BOInfoEntryView *infoEntryView;
+
 
 //upper view with scroll view in it - NOT USED CURRENTLY
 @property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
@@ -168,6 +173,20 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     [self detectEdgesOnImageAndDisplay:self.image];
 }
+- (void)hideInfoEntryView {
+    [self.upperContainerCapturedView layoutIfNeeded];
+    self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView);
+    [UIView animateWithDuration:.25 animations:^{
+        [self.upperContainerCapturedView layoutIfNeeded];
+    }];
+}
+- (void)showInfoEntryView {
+    [self.upperContainerCapturedView layoutIfNeeded];
+    self.infoViewTopMarginLayoutConstraint.constant = 0;
+    [UIView animateWithDuration:.25 animations:^{
+        [self.upperContainerCapturedView layoutIfNeeded];
+    }];
+}
 - (void)hideFiltersView {
     [self.view layoutIfNeeded];
     self.bottomFiltersViewConstraint.constant = -(kFiltersViewBottomMargin + kHeightLowerView);
@@ -269,6 +288,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self transitMenuItemsToNotCroppedMode];
     if (self.state == BOCroppedPreviewState) {
         [self hideFiltersView];
+        [self hideInfoEntryView];
     }
     self.state = BONotCroppedState;
     
@@ -292,6 +312,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self transitMenuItemsToPreviewMode];
         [self populateFiltersMenu];
         [self showFiltersView];
+        [self showInfoEntryView];
     }
 }
 - (void)transitMenuItemsToPreviewMode {

@@ -12,3 +12,4 @@ const CGFloat kHeightLowerView = 100.f;
 const CGFloat kHeightCapturePhotoButton = 80.f;
 const CGFloat kFiltersViewBottomMargin = 200.f;
 const CGFloat kMarginBetweenFiltersViewAndImageView = 200.f;
+const CGFloat kTopMarginEntryView = 130.f;

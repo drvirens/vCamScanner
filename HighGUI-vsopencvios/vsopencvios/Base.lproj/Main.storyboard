@@ -116,6 +116,13 @@
                                             <constraint firstAttribute="bottom" secondItem="qAz-4v-fvp" secondAttribute="bottom" id="iqJ-7n-DYS"/>
                                         </constraints>
                                     </view>
+                                    <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-wF-pAH" customClass="BOInfoEntryView">
+                                        <rect key="frame" x="40" y="146" width="178" height="106"/>
+                                        <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="130" id="6FO-VC-E5N"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -123,8 +130,11 @@
                                     <constraint firstAttribute="bottom" secondItem="qzy-hf-ive" secondAttribute="bottom" constant="-120" id="Mx7-GE-0hq"/>
                                     <constraint firstItem="xnd-F8-YHU" firstAttribute="centerY" secondItem="gss-S8-HRN" secondAttribute="centerY" id="Nxo-Ws-kJh"/>
                                     <constraint firstItem="qzy-hf-ive" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="Qi4-mZ-CE8"/>
+                                    <constraint firstItem="GeH-wF-pAH" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="top" constant="-130" id="YNI-s6-tNN"/>
+                                    <constraint firstAttribute="trailing" secondItem="GeH-wF-pAH" secondAttribute="trailing" id="d4G-KT-QgP"/>
                                     <constraint firstItem="UsK-Ud-WaM" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="top" id="hoH-fV-uss"/>
                                     <constraint firstAttribute="trailing" secondItem="qzy-hf-ive" secondAttribute="trailing" id="nct-fg-a99"/>
+                                    <constraint firstItem="GeH-wF-pAH" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="sFI-Uv-44T"/>
                                     <constraint firstItem="UsK-Ud-WaM" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="sTa-Pz-lS2"/>
                                     <constraint firstItem="xnd-F8-YHU" firstAttribute="centerX" secondItem="gss-S8-HRN" secondAttribute="centerX" id="scQ-VL-ALM"/>
                                 </constraints>
@@ -208,6 +218,8 @@
                         <outlet property="capturedImageView" destination="qAz-4v-fvp" id="Aep-Ab-A5b"/>
                         <outlet property="containerCapturedView" destination="gss-S8-HRN" id="2JY-HO-V4h"/>
                         <outlet property="filtersMenuView" destination="mID-cY-RcA" id="bDX-L4-iB8"/>
+                        <outlet property="infoEntryView" destination="GeH-wF-pAH" id="sWf-IG-J6z"/>
+                        <outlet property="infoViewTopMarginLayoutConstraint" destination="YNI-s6-tNN" id="Q3a-Rk-oeo"/>
                         <outlet property="lowerContainerCapturedView" destination="qzy-hf-ive" id="Ht3-dR-g7G"/>
                         <outlet property="lowerContainerCapturedViewBottomLayout" destination="Mx7-GE-0hq" id="YWu-BI-6DF"/>
                         <outlet property="marginBetweenFiltersViewAndImageView" destination="HqN-hc-z6d" id="Noy-Sg-o6J"/>

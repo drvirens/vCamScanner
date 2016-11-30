@@ -20,6 +20,8 @@
 		11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBA1DED74DF00371BD5 /* BOFiltersView.m */; };
 		11303BBD1DED7FB800371BD5 /* BOFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */; };
 		11303BC01DEE276500371BD5 /* BOFilterMenuModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */; };
+		11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */; };
+		11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -278,6 +280,9 @@
 		11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOFilterCell.xib; sourceTree = "<group>"; };
 		11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFilterMenuModel.h; sourceTree = "<group>"; };
 		11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFilterMenuModel.mm; sourceTree = "<group>"; };
+		11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOInfoEntryView.xib; sourceTree = "<group>"; };
+		11303BC31DEE460000371BD5 /* BOInfoEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOInfoEntryView.h; sourceTree = "<group>"; };
+		11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOInfoEntryView.mm; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -824,6 +829,9 @@
 				11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */,
 				11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */,
 				11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */,
+				11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */,
+				11303BC31DEE460000371BD5 /* BOInfoEntryView.h */,
+				11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1753,6 +1761,7 @@
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
 				1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
+				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1784,6 +1793,7 @@
 				B621FDAD1DEAA29E00E54A51 /* window_gtk.cpp in Sources */,
 				B621FD731DEAA29D00E54A51 /* rand.cpp in Sources */,
 				B621FDDF1DEAA29E00E54A51 /* inner_functions.cpp in Sources */,
+				11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */,
 				B621FE021DEAA29E00E54A51 /* simpleflow.cpp in Sources */,
 				B621FD541DEAA29D00E54A51 /* polyfit.cpp in Sources */,
 				B621FD741DEAA29D00E54A51 /* stat.cpp in Sources */,
