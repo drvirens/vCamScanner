@@ -114,8 +114,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)setupButton {
 	self.buttonCameraCapture.layer.borderColor = [UIColor whiteColor].CGColor;
-	self.buttonCameraCapture.layer.borderWidth = 6.f;
-	self.buttonCameraCapture.layer.cornerRadius = kHeightCapturePhotoButton/2.f; //XXX hardcoded for now
+	self.buttonCameraCapture.layer.borderWidth = 4.f;
+	self.buttonCameraCapture.layer.cornerRadius = kHeightCapturePhotoButton/2.f;
 }
 - (void)didSelectCateogry:(id)sender {
     NSLog(@"didSelectCateogry");
@@ -417,7 +417,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
                                 self.capturedImageView.contentFrame.origin.y,
                                 self.capturedImageView.contentFrame.size.width,
-                                self.capturedImageView.contentFrame.size.height - kHeightLowerView);
+                                self.capturedImageView.contentFrame.size.height /* - kHeightLowerView */);
     self.croppedView= [[MMCropView alloc] initWithFrame:cropFrame];
     [self.upperContainerCapturedView addSubview:self.croppedView];
     
@@ -740,25 +740,5 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
         [alertView show];
     }
 }
-
-- (void)showCroppedImageinScrollView:(UIImage*)croppedImage {
-    //hide the other imageView
-    self.upperContainerCapturedView.hidden = YES;
-    self.upperContainerWithScroller.hidden = NO;
-    self.scrollableImageView.image = self.cropImage;
-}
-
-#pragma mark - UIScrollViewDelegate
-//- (UIView*)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-//    if (scrollView.tag == 69) {
-//        return self.contentView;
-//    }
-//    return nil;
-//}
-//- (void) scrollViewDidZoom:(UIScrollView *)scrollView {
-//    if (scrollView.tag == 69) {
-//        NSLog(@"did zoom");
-//    }
-//}
 
 @end
