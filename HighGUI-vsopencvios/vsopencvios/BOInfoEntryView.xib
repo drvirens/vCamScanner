@@ -96,15 +96,15 @@
                                     <color key="backgroundColor" red="0.76357984290000003" green="0.76357984290000003" blue="0.76357984290000003" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="width" constant="44" id="eFZ-BN-yO6"/>
+                                        <constraint firstAttribute="height" constant="6" id="tCY-U7-ln5"/>
                                     </constraints>
                                 </view>
                             </subviews>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstItem="WUv-lJ-vGd" firstAttribute="centerX" secondItem="ZY3-3U-9ew" secondAttribute="centerX" id="D3a-4A-Is8"/>
-                                <constraint firstAttribute="height" constant="12" id="DYT-8n-EVl"/>
-                                <constraint firstAttribute="bottom" secondItem="WUv-lJ-vGd" secondAttribute="bottom" constant="6" id="gf1-sE-zHh"/>
-                                <constraint firstItem="WUv-lJ-vGd" firstAttribute="top" secondItem="ZY3-3U-9ew" secondAttribute="top" id="ndF-CT-xTy"/>
+                                <constraint firstAttribute="height" constant="30" id="DYT-8n-EVl"/>
+                                <constraint firstItem="WUv-lJ-vGd" firstAttribute="top" secondItem="ZY3-3U-9ew" secondAttribute="top" constant="5" id="ndF-CT-xTy"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="k88-XT-d1i">

@@ -70,6 +70,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewTopMarginLayoutConstraint;
 @property (weak, nonatomic) IBOutlet BOInfoEntryView *infoEntryView;
 
+@property (nonatomic) BOOL entryInfoPartiallyHidden;
 
 //upper view with scroll view in it - NOT USED CURRENTLY
 @property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
@@ -122,7 +123,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)didSelectDragView:(id)sender {
     NSLog(@"didSelectDragView");
-    [self hideInfoEntryViewPartially];
+    if (self.entryInfoPartiallyHidden) {
+        [self showInfoEntryViewPartially];
+    } else {
+        [self hideInfoEntryViewPartially];
+    }
 }
 - (IBAction)didTapCapturePhoto:(id)sender {
 	typeof (self) __weak welf = self;
@@ -203,19 +208,28 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
 }
-- (void)hideInfoEntryViewPartially {
-    [self.view layoutIfNeeded];
-    self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView - 40);
-    [UIView animateWithDuration:.25 animations:^{
-        [self.view layoutIfNeeded];
-    }];
-}
 - (void)showInfoEntryView {
     [self.view layoutIfNeeded];
     self.infoViewTopMarginLayoutConstraint.constant = 0;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+}
+- (void)hideInfoEntryViewPartially {
+    [self.view layoutIfNeeded];
+    self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView - 40);
+    [UIView animateWithDuration:.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    self.entryInfoPartiallyHidden = YES;
+}
+- (void)showInfoEntryViewPartially {
+    [self.view layoutIfNeeded];
+    self.infoViewTopMarginLayoutConstraint.constant = 0;
+    [UIView animateWithDuration:.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    self.entryInfoPartiallyHidden = NO;
 }
 - (void)hideFiltersView {
     [self.view layoutIfNeeded];
