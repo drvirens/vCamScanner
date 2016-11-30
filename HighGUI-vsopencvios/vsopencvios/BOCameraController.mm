@@ -27,9 +27,59 @@
 	[self checkAuthorized:view];
 }
 
-- (void)stopCamera {
+- (void)stopPreview {
+    [self.session stopRunning];
+    self.session = nil;
+}
+- (void)checkAuthorizationWithCompletion:( void(^)(VSCameraStatus) )completion {
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (status) {
+        case AVAuthorizationStatusNotDetermined: {
+            [self statusNotDeterminedCompletion:completion];
+        } break;
+        case AVAuthorizationStatusRestricted: {
+            [self statusRestrictedCompletion:completion];
+        } break;
+        case AVAuthorizationStatusDenied: {
+            [self statusDeniedCompletion:completion];
+        } break;
+        case AVAuthorizationStatusAuthorized: {
+            [self statusAuthorizedCompletion:completion];
+        } break;
+    }
 }
 
+- (void)requestPermissionsWithCompletion:( void(^)(BOOL) )completion {
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        if (completion) {
+            completion(granted);
+        }
+    }];
+}
+
+#pragma mark - utils
+- (void)statusNotDeterminedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusInDetermined);
+    }
+}
+- (void)statusRestrictedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusRestricted);
+    }
+}
+- (void)statusDeniedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusDenied);
+    }
+}
+- (void)statusAuthorizedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusAuthorized);
+    }
+}
+
+#pragma mark - API
 - (void)capturePhotoWithCompletion:(CapturePhotoCompletion)completion {
 	if (!self.output) {
 		NSLog(@"no output created");

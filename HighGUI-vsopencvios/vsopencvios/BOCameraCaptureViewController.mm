@@ -17,6 +17,7 @@
 #import "BOInfoEntryView.h"
 #import "BOCategoryTableViewController.h"
 #import "VSSettingsViewController.h"
+#import "VSCameraPermissionsViewController.h"
 
 
 typedef enum BOState {
@@ -76,6 +77,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (nonatomic) BOOL entryInfoPartiallyHidden;
 
+//camera permissions
+@property (nonatomic, copy) NSString* message;
+@property (nonatomic, copy) NSString* positiveBtnTitle;
+
 //upper view with scroll view in it - NOT USED CURRENTLY
 @property (weak, nonatomic) IBOutlet UIView *upperContainerWithScroller;
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
@@ -93,7 +98,18 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    [self setupMiscGUI];
+    
+    [self setupFitersMenu];
+    self.state = BONotCroppedState;
+	[self setupContainerView];
+	[self setupButton];
+    
+	[self startCamera];
+}
+- (void)setupMiscGUI {
     self.infoEntryView.textFieldTitle.delegate = self;
+    
     //category view tap detect
     self.infoEntryView.categoryView.userInteractionEnabled = YES;
     UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
@@ -112,13 +128,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
     singleTapDragView.numberOfTapsRequired = 1;
     [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
-    
-    
-    [self setupFitersMenu];
-    self.state = BONotCroppedState;
-	[self setupContainerView];
-	[self setupButton];
-	[self startCamera];
 }
 - (void)setupContainerView {
 	self.containerCapturedView.hidden = YES;
@@ -501,8 +510,55 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 
 #pragma mark - show camera
+- (void)checkCameraPermissionsStatus {
+    typeof (self) __weak welf = self;
+    [self.cameraController checkAuthorizationWithCompletion:^(VSCameraStatus status) {
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf runCompletionWithStatus:status sender:self];
+        }
+    }];
+}
+- (void)runCompletionWithStatus:(VSCameraStatus)status sender:(id)sender {
+    NSString* segueid = nil;
+    if (status == VSCameraStatusAuthorized) {
+        //segueid = @"segueCamera";
+    } else {
+        if (status == VSCameraStatusRestricted) {
+            self.message = @"You do not have access to Camera (Parental Control or Company policy) :( \n\nContact admin for details.";
+            self.positiveBtnTitle = @"OK";
+        } else if (status == VSCameraStatusDenied) {
+            self.message = @"Please allow this app to access Camera to take pictures of Expense Receipts.";
+            self.positiveBtnTitle = @"Open Camera Settings"; //XXX constant
+        } else if (status == VSCameraStatusInDetermined) {
+            self.message = @"In order to take pictures of receipts, we need acceess to your camera.\n\nPlease tap Allow on next system dialog.";
+            self.positiveBtnTitle = @"Proceed";
+        }
+        segueid = @"segueCameraPermissionsHeadsUp";
+    }
+    
+    //if sequeid is nil, permissions are already granted so just dismiss this screen
+    if (!segueid) {
+        [self dismissViewControllerAnimated:YES completion:nil];
+        return;
+    }
+    
+    typeof (self) __weak welf = self;
+    dispatch_async(dispatch_get_main_queue(), ^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf performSegueWithIdentifier:segueid sender:sender];
+        }
+    });
+}
+
+/*
+ First check permissions status - show permissions VC if needed
+ */
 - (void)startCamera {
-	[self.cameraController startCameraInView:self.cameraView];
+    [self checkCameraPermissionsStatus];
+    
+	//[self.cameraController startCameraInView:self.cameraView];
 }
 - (BOCameraController*)cameraController {
 	if (!_cameraController) {
@@ -511,6 +567,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 	}
 	return _cameraController;
 }
+
+#pragma mark - view controller override
 - (BOOL)prefersStatusBarHidden {
 	return YES;
 }
@@ -520,6 +578,11 @@ static void* gUserLoadContext = &gUserLoadContext;
         UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
         BOCategoryTableViewController* destVC = (BOCategoryTableViewController*)[[navVC viewControllers] firstObject];
         destVC.delegateCategory = self;
+    } else if ([@"segueCameraPermissionsHeadsUp" isEqualToString:segue.identifier]) {
+        VSCameraPermissionsViewController* permissionsVC = (VSCameraPermissionsViewController*)[segue destinationViewController];
+        permissionsVC.cameraController = self.cameraController;
+        permissionsVC.message = self.message;
+        permissionsVC.positiveBtnTitle = self.positiveBtnTitle;
     }
 }
 #pragma mark - BOCategoryTableViewControllerDelegate
