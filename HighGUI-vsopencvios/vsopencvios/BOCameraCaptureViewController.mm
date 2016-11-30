@@ -89,6 +89,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
     self.infoEntryView.textFieldTitle.delegate = self;
     //category view tap detect
     self.infoEntryView.categoryView.userInteractionEnabled = YES;
@@ -103,6 +104,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
     singleTapDragView.numberOfTapsRequired = 1;
     [self.infoEntryView.dragContainerView addGestureRecognizer:singleTapDragView];
+    
+    //upper container captured view tap
+    UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
+    singleTapDragView.numberOfTapsRequired = 1;
+    [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
     
     
     [self setupFitersMenu];
@@ -129,6 +135,13 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self showInfoEntryViewPartially];
     } else {
         [self hideInfoEntryViewPartially];
+        [self.infoEntryView.textFieldTitle resignFirstResponder];
+    }
+}
+- (void)didTapOnUpperContainerCapturedView:(id)sender {
+    NSLog(@"didTapOnUpperContainerCapturedView");
+    if (self.state == BOCroppedPreviewState) {
+        NSLog(@"if keyboard is being shown hide it");
         [self.infoEntryView.textFieldTitle resignFirstResponder];
     }
 }
