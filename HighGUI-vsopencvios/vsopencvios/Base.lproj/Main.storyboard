@@ -73,60 +73,50 @@
                                         <rect key="frame" x="23" y="395" width="224" height="111"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
-                                                <rect key="frame" x="11" y="43" width="24" height="24"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="7h4-8q-onU"/>
-                                                    <constraint firstAttribute="height" constant="50" id="fCf-jt-yFz"/>
-                                                </constraints>
+                                                <rect key="frame" x="6" y="43" width="24" height="24"/>
                                                 <state key="normal" backgroundImage="ic_arrow_back_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuGoBack:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="AbR-Aa-95r"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
-                                                <rect key="frame" x="61" y="38" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="rNS-Ym-uK7"/>
-                                                    <constraint firstAttribute="height" constant="50" id="yaj-a8-UwG"/>
-                                                </constraints>
+                                                <rect key="frame" x="47" y="38" width="30" height="30"/>
                                                 <state key="normal" backgroundImage="ic_rotate_left_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuRotateLeft:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="W5l-67-erV"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
-                                                <rect key="frame" x="120" y="37" width="30" height="30"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="GFg-dQ-Ban"/>
-                                                    <constraint firstAttribute="height" constant="50" id="oIf-ti-VqJ"/>
-                                                </constraints>
-                                                <state key="normal" backgroundImage="ic_rotate_right_white"/>
-                                                <connections>
-                                                    <action selector="didSelectMenuRotateRight:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="dEe-DN-Dju"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
-                                                <rect key="frame" x="175" y="41" width="27" height="29"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="50" id="itU-ZK-17R"/>
-                                                    <constraint firstAttribute="height" constant="50" id="wLL-d0-ude"/>
-                                                </constraints>
+                                                <rect key="frame" x="189" y="41" width="27" height="29"/>
                                                 <state key="normal" backgroundImage="ic_check_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuSelect:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="qeC-me-Fdi"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
+                                                <rect key="frame" x="141" y="41" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="ic_rotate_right_white"/>
+                                                <connections>
+                                                    <action selector="didSelectMenuRotateRight:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="dEe-DN-Dju"/>
+                                                </connections>
+                                            </button>
+                                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dUl-Jg-2lo">
+                                                <rect key="frame" x="95" y="43" width="30" height="30"/>
+                                                <state key="normal" backgroundImage="ic_settings_white"/>
+                                            </button>
                                         </subviews>
-                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="TES-53-N2P" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="AR1-36-sKs"/>
+                                            <constraint firstItem="dUl-Jg-2lo" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="G5U-zk-foI"/>
                                             <constraint firstItem="dJb-o9-jb2" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="KOi-yH-GBH"/>
                                             <constraint firstItem="JfM-UP-FHL" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="Ku5-le-eUT"/>
-                                            <constraint firstAttribute="trailing" secondItem="TES-53-N2P" secondAttribute="trailing" multiplier="5:3" id="MbN-GL-0Ft"/>
-                                            <constraint firstAttribute="trailing" secondItem="6wW-au-21S" secondAttribute="trailing" multiplier="5:2" id="g55-iB-MEG"/>
-                                            <constraint firstAttribute="trailing" secondItem="JfM-UP-FHL" secondAttribute="trailing" multiplier="5:1" id="gJc-WJ-RFb"/>
+                                            <constraint firstAttribute="trailing" secondItem="TES-53-N2P" secondAttribute="trailing" multiplier="6:2" id="MbN-GL-0Ft"/>
+                                            <constraint firstAttribute="trailing" secondItem="dUl-Jg-2lo" secondAttribute="trailing" multiplier="6:3" id="elo-hK-Qom"/>
+                                            <constraint firstAttribute="trailing" secondItem="6wW-au-21S" secondAttribute="trailing" multiplier="6:4" id="g55-iB-MEG"/>
+                                            <constraint firstAttribute="trailing" secondItem="JfM-UP-FHL" secondAttribute="trailing" multiplier="6:1" id="gJc-WJ-RFb"/>
                                             <constraint firstItem="6wW-au-21S" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="ncF-ae-O7O"/>
-                                            <constraint firstAttribute="trailing" secondItem="dJb-o9-jb2" secondAttribute="trailing" multiplier="5:4" id="po9-1m-AcY"/>
+                                            <constraint firstAttribute="trailing" secondItem="dJb-o9-jb2" secondAttribute="trailing" multiplier="6:5" id="po9-1m-AcY"/>
                                             <constraint firstAttribute="height" constant="100" id="vmm-Ma-rk7"/>
                                         </constraints>
                                     </view>
@@ -335,5 +325,6 @@
         <image name="ic_photo_camera_white" width="24" height="24"/>
         <image name="ic_rotate_left_white" width="24" height="24"/>
         <image name="ic_rotate_right_white" width="24" height="24"/>
+        <image name="ic_settings_white" width="24" height="24"/>
     </resources>
 </document>
