@@ -8,8 +8,8 @@
 
 #import "BOConstants.h"
 
-const CGFloat kHeightLowerView = 100.f;
-const CGFloat kHeightCapturePhotoButton = 80.f;
+const CGFloat kHeightLowerView = 80.f;
+const CGFloat kHeightCapturePhotoButton = 60.f;
 const CGFloat kFiltersViewBottomMargin = 200.f;
 const CGFloat kMarginBetweenFiltersViewAndImageView = 200.f;
 const CGFloat kTopMarginEntryView = 150.f;
