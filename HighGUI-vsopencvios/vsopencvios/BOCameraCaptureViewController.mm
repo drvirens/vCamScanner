@@ -20,7 +20,8 @@
 
 typedef enum BOState {
     BONotCroppedState,
-    BOCroppedPreviewState
+    BOCroppedPreviewState,
+    BOShareState
 } BOState;
 
 static void* gUserLoadContext = &gUserLoadContext;
@@ -399,8 +400,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
     if (self.state == BOCroppedPreviewState) {
-        NSLog(@"BOCroppedPreviewState - present view controller for entering name and category");
-        //[self showFiltersView];
+        NSLog(@"BOCroppedPreviewState - show share state/view");
+        [self hideInfoEntryView];
+        [self hideFiltersView];
+        [self transitMenuItemsToShareMode];
     } else {
         [self doCropImage];
         [self transitMenuItemsToPreviewMode];
@@ -426,6 +429,15 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
     self.menuButtonSelect.tintColor = [UIColor whiteColor];
     self.state = BOCroppedPreviewState;
+}
+- (void)transitMenuItemsToShareMode {
+    self.menuButtonRotateLeft.hidden = YES;
+    self.menuButtonRotateRight.hidden = YES;
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_share_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
+    self.menuButtonSelect.tintColor = [UIColor whiteColor];
+    self.state = BOShareState;
 }
 
 #pragma mark - image crop view
