@@ -342,9 +342,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
     
-    cell.layer.cornerRadius = 0.f;
-    cell.layer.borderWidth = 0.f;
-    cell.layer.borderColor = [UIColor clearColor].CGColor;
+    //add gradient for labels/ bg view
+    UIView* maskView = (UIView*)[cell viewWithTag:69];
+    [self addGradient:maskView];
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
@@ -357,18 +357,35 @@ static void* gUserLoadContext = &gUserLoadContext;
         if (indexPath.item == 0) { //put first cell as selected by default
             self.currentlySelectedFilterMenu = cell;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
-            label.textColor = [UIColor blackColor];
+            //label.textColor = [UIColor blackColor];
             cell.layer.borderWidth = 3.f;
             cell.layer.cornerRadius = 3.f;
+            [self decorateSelectedCellLabel:label text:filter.menuDisplayName];
         }
     }
     
     return cell;
 }
+- (void)addGradient:(UIView*)view {
+    CAGradientLayer *gradient = [CAGradientLayer layer];
+    gradient.frame = view.bounds;
+    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor darkGrayColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
+    [view.layer insertSublayer:gradient atIndex:0];
+    //use startPoint and endPoint to change direction of gradient (http://stackoverflow.com/a/20387923/2057171)
+}
 - (void)decorateCellLabel:(UILabel*)label text:(NSString*)text {
     //category label
     NSDictionary* labelCategory = @{
-                                    NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                    NSForegroundColorAttributeName : [UIColor lightGrayColor],
+                                    NSFontAttributeName : VS_FONT_VERYSMALL
+                                    };
+    NSAttributedString* category = [[NSAttributedString alloc] initWithString:text attributes:labelCategory];
+    label.attributedText = category;
+}
+- (void)decorateSelectedCellLabel:(UILabel*)label text:(NSString*)text {
+    //category label
+    NSDictionary* labelCategory = @{
+                                    NSForegroundColorAttributeName : [UIColor whiteColor],
                                     NSFontAttributeName : VS_FONT_VERYSMALL
                                     };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:text attributes:labelCategory];
@@ -377,6 +394,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark - UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    BOFilterMenuModel* filter = self.dataSource[indexPath.item];
+    
     //unselect current selection first
     UILabel* label = nil;
     if (self.currentlySelectedFilterMenu) {
@@ -385,8 +404,10 @@ static void* gUserLoadContext = &gUserLoadContext;
         self.currentlySelectedFilterMenu.layer.cornerRadius = 0.f;
         
         label = (UILabel*)[self.currentlySelectedFilterMenu viewWithTag:100];
-        label.textColor = [UIColor lightGrayColor];
+        //label.textColor = [UIColor lightGrayColor];
+        [self decorateCellLabel:label text:filter.menuDisplayName];
     }
+    
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     self.currentlySelectedFilterMenu = cell;
     cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
@@ -394,10 +415,13 @@ static void* gUserLoadContext = &gUserLoadContext;
     cell.layer.cornerRadius = 3.f;
     
     label = (UILabel*)[cell viewWithTag:100];
-    label.textColor = [UIColor blackColor];
+    //label.textColor = [UIColor blackColor];
     
-    BOFilterMenuModel* filter = self.dataSource[indexPath.item];
+    
+    
     self.capturedImageView.image = filter.menuThumbnail;
+    
+    [self decorateSelectedCellLabel:label text:filter.menuDisplayName];
     
     self.finalProcessedImage = filter.menuThumbnail;
 }
