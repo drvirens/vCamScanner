@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -74,8 +75,8 @@
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
                                                 <rect key="frame" x="11" y="43" width="24" height="24"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="60" id="Mwn-VI-056"/>
-                                                    <constraint firstAttribute="height" constant="60" id="cDx-ld-vA5"/>
+                                                    <constraint firstAttribute="width" constant="50" id="7h4-8q-onU"/>
+                                                    <constraint firstAttribute="height" constant="50" id="fCf-jt-yFz"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="ic_arrow_back_white"/>
                                                 <connections>
@@ -83,45 +84,50 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
-                                                <rect key="frame" x="55" y="38" width="30" height="30"/>
+                                                <rect key="frame" x="61" y="38" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="rNS-Ym-uK7"/>
+                                                    <constraint firstAttribute="height" constant="50" id="yaj-a8-UwG"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="ic_rotate_left_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuRotateLeft:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="W5l-67-erV"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
-                                                <rect key="frame" x="104" y="37" width="30" height="30"/>
+                                                <rect key="frame" x="120" y="37" width="30" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="GFg-dQ-Ban"/>
+                                                    <constraint firstAttribute="height" constant="50" id="oIf-ti-VqJ"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="ic_rotate_right_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuRotateRight:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="dEe-DN-Dju"/>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
-                                                <rect key="frame" x="159" y="41" width="27" height="29"/>
+                                                <rect key="frame" x="175" y="41" width="27" height="29"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="50" id="itU-ZK-17R"/>
+                                                    <constraint firstAttribute="height" constant="50" id="wLL-d0-ude"/>
+                                                </constraints>
                                                 <state key="normal" backgroundImage="ic_check_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuSelect:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="qeC-me-Fdi"/>
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" red="1" green="0.29803921568627451" blue="0.30588235294117649" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="centerY" secondItem="TES-53-N2P" secondAttribute="centerY" id="7ms-JM-pc5"/>
-                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="leading" secondItem="qzy-hf-ive" secondAttribute="leading" constant="15" id="Dpc-ub-oA9"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="leading" secondItem="6wW-au-21S" secondAttribute="trailing" constant="47" id="IsY-wJ-nzS"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="centerY" secondItem="6wW-au-21S" secondAttribute="centerY" id="L6X-6d-30g"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="NgS-FB-G4J"/>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="leading" secondItem="TES-53-N2P" secondAttribute="trailing" constant="47" id="X2j-tU-2Er"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="XTX-51-dT8"/>
-                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="XhJ-c1-9yX"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="centerY" secondItem="JfM-UP-FHL" secondAttribute="centerY" id="ZU3-Cg-aFQ"/>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="c07-dw-muC"/>
-                                            <constraint firstAttribute="trailing" secondItem="dJb-o9-jb2" secondAttribute="trailing" priority="999" constant="10" id="d4Y-kb-Aes"/>
-                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="dqm-bT-Jeu"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="leading" secondItem="JfM-UP-FHL" secondAttribute="trailing" constant="47" id="pLk-XO-Wfe"/>
-                                            <constraint firstItem="TES-53-N2P" firstAttribute="height" secondItem="JfM-UP-FHL" secondAttribute="height" id="pPM-1b-oGw"/>
+                                            <constraint firstItem="TES-53-N2P" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="AR1-36-sKs"/>
+                                            <constraint firstItem="dJb-o9-jb2" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="KOi-yH-GBH"/>
+                                            <constraint firstItem="JfM-UP-FHL" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="Ku5-le-eUT"/>
+                                            <constraint firstAttribute="trailing" secondItem="TES-53-N2P" secondAttribute="trailing" multiplier="5:3" id="MbN-GL-0Ft"/>
+                                            <constraint firstAttribute="trailing" secondItem="6wW-au-21S" secondAttribute="trailing" multiplier="5:2" id="g55-iB-MEG"/>
+                                            <constraint firstAttribute="trailing" secondItem="JfM-UP-FHL" secondAttribute="trailing" multiplier="5:1" id="gJc-WJ-RFb"/>
+                                            <constraint firstItem="6wW-au-21S" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="ncF-ae-O7O"/>
+                                            <constraint firstAttribute="trailing" secondItem="dJb-o9-jb2" secondAttribute="trailing" multiplier="5:4" id="po9-1m-AcY"/>
                                             <constraint firstAttribute="height" constant="100" id="vmm-Ma-rk7"/>
-                                            <constraint firstItem="6wW-au-21S" firstAttribute="width" secondItem="JfM-UP-FHL" secondAttribute="width" id="wlu-GV-Gbh"/>
                                         </constraints>
                                     </view>
                                 </subviews>
