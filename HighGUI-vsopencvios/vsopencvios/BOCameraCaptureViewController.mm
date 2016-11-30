@@ -344,13 +344,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     cell.layer.cornerRadius = 0.f;
     cell.layer.borderWidth = 0.f;
-//    cell.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
     cell.layer.borderColor = [UIColor clearColor].CGColor;
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
-    label.text = filter.menuDisplayName;
-    label.textColor = [UIColor lightGrayColor];
+    [self decorateCellLabel:label text:filter.menuDisplayName];
     
     UIImageView* imageview = (UIImageView*)[cell viewWithTag:200];
     imageview.image = filter.menuThumbnail;
@@ -367,13 +365,21 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     return cell;
 }
+- (void)decorateCellLabel:(UILabel*)label text:(NSString*)text {
+    //category label
+    NSDictionary* labelCategory = @{
+                                    NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                    NSFontAttributeName : VS_FONT_VERYSMALL
+                                    };
+    NSAttributedString* category = [[NSAttributedString alloc] initWithString:text attributes:labelCategory];
+    label.attributedText = category;
+}
+
 #pragma mark - UICollectionViewDataSource
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     //unselect current selection first
     UILabel* label = nil;
     if (self.currentlySelectedFilterMenu) {
-        //self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
-        //self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
         self.currentlySelectedFilterMenu.layer.borderColor = [UIColor clearColor].CGColor;
         self.currentlySelectedFilterMenu.layer.borderWidth = 0.f;
         self.currentlySelectedFilterMenu.layer.cornerRadius = 0.f;

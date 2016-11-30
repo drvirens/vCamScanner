@@ -38,7 +38,7 @@
 }
 
 - (void)doCreateOriginal {
-    self.menuDisplayName = @"Original";
+    self.menuDisplayName = @"ORIGINAL";
     self.menuThumbnail = self.originalImage;
 }
 - (void)doCreateBlackWhite {
@@ -46,11 +46,11 @@
     self.menuThumbnail = [self blackandWhite:self.originalImage];
 }
 - (void)doCreateGray {
-    self.menuDisplayName = @"Gray";
+    self.menuDisplayName = @"GRAY";
     self.menuThumbnail = [self grayImage:self.originalImage];
 }
 - (void)doCreateMagic {
-    self.menuDisplayName = @"Magic";
+    self.menuDisplayName = @"MAGIC";
     self.menuThumbnail = [self magicColor:self.originalImage];
 }
 
