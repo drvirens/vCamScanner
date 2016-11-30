@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BOInfoEntryView">
             <connections>
+                <outlet property="categoryView" destination="QSU-lK-ySH" id="P2o-JS-fle"/>
                 <outlet property="imageViewIcon" destination="wZL-rm-fhl" id="ae6-ni-LTj"/>
                 <outlet property="labelSelectedCategoryName" destination="fCr-fp-Dvu" id="9Q3-L7-xi9"/>
                 <outlet property="seperatorLineView" destination="6Nz-A1-jh3" id="QBd-Py-KWl"/>

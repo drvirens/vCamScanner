@@ -1,18 +1,18 @@
 //
-//  BOEnterDetailsTableViewController.m
+//  BOCategoryTableViewController.m
 //  vsopencvios
 //
 //  Created by Virendra Shakya on 11/28/16.
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
-#import "BOEnterDetailsTableViewController.h"
+#import "BOCategoryTableViewController.h"
 
-@interface BOEnterDetailsTableViewController ()
+@interface BOCategoryTableViewController ()
 
 @end
 
-@implementation BOEnterDetailsTableViewController
+@implementation BOCategoryTableViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];

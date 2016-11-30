@@ -1,5 +1,5 @@
 //
-//  BOEnterDetailsTableViewController.h
+//  BOCategoryTableViewController.h
 //  vsopencvios
 //
 //  Created by Virendra Shakya on 11/28/16.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BOEnterDetailsTableViewController : UITableViewController
+@interface BOCategoryTableViewController : UITableViewController
 
 @end

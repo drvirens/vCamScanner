@@ -88,6 +88,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.infoEntryView.textFieldTitle.delegate = self;
+    self.infoEntryView.categoryView.userInteractionEnabled = YES;
+    UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
+    [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
     
     [self setupFitersMenu];
     self.state = BONotCroppedState;
@@ -102,6 +105,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 	self.buttonCameraCapture.layer.borderColor = [UIColor whiteColor].CGColor;
 	self.buttonCameraCapture.layer.borderWidth = 6.f;
 	self.buttonCameraCapture.layer.cornerRadius = kHeightCapturePhotoButton/2.f; //XXX hardcoded for now
+}
+- (void)didSelectCateogry:(id)sender {
+    NSLog(@"didSelectCateogry");
 }
 - (IBAction)didTapCapturePhoto:(id)sender {
 	typeof (self) __weak welf = self;

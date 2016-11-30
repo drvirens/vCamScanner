@@ -14,5 +14,6 @@
 @property (weak, nonatomic) IBOutlet UIView *seperatorLineView;
 @property (weak, nonatomic) IBOutlet UILabel *labelSelectedCategoryName;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewIcon;
+@property (weak, nonatomic) IBOutlet UIView *categoryView;
 
 @end

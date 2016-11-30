@@ -228,17 +228,17 @@
                         <outlet property="menuButtonRotateRight" destination="6wW-au-21S" id="7EN-cS-Vmf"/>
                         <outlet property="menuButtonSelect" destination="dJb-o9-jb2" id="iMe-rZ-dmP"/>
                         <outlet property="upperContainerCapturedView" destination="UsK-Ud-WaM" id="B1Z-j7-6Ht"/>
-                        <segue destination="ETr-of-Zi9" kind="presentation" identifier="enterDetails" id="qR2-Fb-Ep6"/>
+                        <segue destination="c4S-zv-uuH" kind="show" identifier="category" id="hC6-AN-OFv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="01L-b3-vww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2661.5999999999999" y="-327.88605697151428"/>
         </scene>
-        <!--Enter Details Table View Controller-->
+        <!--Category Table View Controller-->
         <scene sceneID="hyI-vY-abX">
             <objects>
-                <tableViewController storyboardIdentifier="BOEnterDetailsTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="CIJ-lO-H30" customClass="BOEnterDetailsTableViewController" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="BOCategoryTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="CIJ-lO-H30" customClass="BOCategoryTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="rUy-5m-5JB">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -290,25 +290,25 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gjg-e6-DmC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4767.1999999999998" y="-373.76311844077964"/>
+            <point key="canvasLocation" x="4600.8000000000002" y="-328.78560719640183"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="lQB-Qm-TPw">
+        <scene sceneID="1of-S5-FHd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="ETr-of-Zi9" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="c4S-zv-uuH" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gta-x2-P8y">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cqp-EA-dWh">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="CIJ-lO-H30" kind="relationship" relationship="rootViewController" id="oUy-d0-aRU"/>
+                        <segue destination="CIJ-lO-H30" kind="relationship" relationship="rootViewController" id="6Mk-qE-KLs"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="oRG-qr-lX4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Dcv-Yc-9PT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3828" y="-373.76311844077964"/>
+            <point key="canvasLocation" x="3661.5999999999999" y="-328.78560719640183"/>
         </scene>
     </scenes>
     <resources>
