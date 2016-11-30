@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1119732D1DDFDD1F0042C520 /* doc2.jpg */; };
 		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA11DED0BB800371BD5 /* MMCropView.m */; };
@@ -279,7 +278,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1119732D1DDFDD1F0042C520 /* doc2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = doc2.jpg; path = vsopencvios/Assets.xcassets/doc2.imageset/doc2.jpg; sourceTree = "<group>"; };
 		111973381DDFDF350042C520 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
 		111973391DDFDF350042C520 /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
 		1119733A1DDFDF350042C520 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
@@ -913,7 +911,6 @@
 		11B75AC31DDFD08D004EAB65 = {
 			isa = PBXGroup;
 			children = (
-				1119732D1DDFDD1F0042C520 /* doc2.jpg */,
 				11B75ACE1DDFD08D004EAB65 /* vsopencvios */,
 				11B75ACD1DDFD08D004EAB65 /* Products */,
 				117F1D0A1DE02939007233B0 /* Frameworks */,
@@ -1914,7 +1911,6 @@
 				11303BFF1DEECEB100371BD5 /* Settings.storyboard in Resources */,
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
 				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
-				1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
 				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
 			);
