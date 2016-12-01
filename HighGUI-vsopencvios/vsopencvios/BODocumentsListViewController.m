@@ -9,9 +9,9 @@
 #import "BODocumentsListViewController.h"
 #import "BODocumentView.h"
 
-@interface BODocumentsListViewController ()
+@interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-
+@property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
 @end
 
 @implementation BODocumentsListViewController
@@ -20,8 +20,10 @@
     [super viewDidLoad];
     self.title = @"Documents";
     [self setupGUI];
+    [self setupDataSrc];
 }
 
+#pragma mark - GUI
 - (void)setupGUI {
     //left bar button
     UIImage* closeImg = [UIImage imageNamed:@"ic_close_white"];
@@ -41,8 +43,43 @@
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 - (void)didTapOnSelectCateogryButton:(id)sender {
-    
     [self dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - Data Src
+- (void)setupDataSrc {
+    self.dataSrc = [NSMutableArray array];
+    //test+
+    NSMutableArray* recentlyScanned = [NSMutableArray array];
+    [recentlyScanned addObject:@"Recently Scanned 1"];
+    [recentlyScanned addObject:@"Recently Scanned 2"];
+    [recentlyScanned addObject:@"Recently Scanned 3"];
+    [self.dataSrc addObject:recentlyScanned];
+    
+    NSMutableArray* scanned = [NSMutableArray array];
+    [scanned addObject:@"Scanned1"];
+    [scanned addObject:@"Scanned2"];
+    [self.dataSrc addObject:scanned];
+    //test-
+}
+
+#pragma mark - UITableViewDataSource
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+    return self.dataSrc.count;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+    return self.dataSrc[section].count;
+}
+- (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return UITableViewCell.new;
+}
+
+#pragma mark - UITableViewDelegate
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 240.f;
+}
+- (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 240.f;
 }
 
 @end
