@@ -76,6 +76,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet BOInfoEntryView *infoEntryView;
 
 @property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
+@property (weak, nonatomic) IBOutlet UIButton *buttonShowAllDocuments;
 
 
 @property (nonatomic) BOOL entryInfoPartiallyHidden;
@@ -107,6 +108,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 	[self setupCameraButton];
     
     [self setupDefaultNextActionButton];
+    [self decorateSettingsButton];
+    [self decorateShowDocumentsButton];
     
 	[self startCamera];
 }
@@ -138,6 +141,18 @@ static void* gUserLoadContext = &gUserLoadContext;
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.infoEntryView.imageViewIcon.image = rightArrow;
     self.infoEntryView.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
+}
+- (void)decorateSettingsButton {
+    UIImage* settings = [UIImage imageNamed:@"ic_settings_white"];
+    settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.buttonSettings setImage:settings forState:UIControlStateNormal];
+    self.buttonSettings.tintColor = [VSBranding vs_brandRedColor];
+}
+- (void)decorateShowDocumentsButton {
+    UIImage* settings = [UIImage imageNamed:@"ic_view_list_white"];
+    settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.buttonShowAllDocuments setImage:settings forState:UIControlStateNormal];
+    self.buttonShowAllDocuments.tintColor = [VSBranding vs_brandRedColor];
 }
 - (void)setupMiscGUI {
     self.infoEntryView.textFieldTitle.delegate = self;
