@@ -284,11 +284,13 @@
                         <outlet property="lowerContainerCapturedView" destination="qzy-hf-ive" id="Ht3-dR-g7G"/>
                         <outlet property="lowerContainerCapturedViewBottomLayout" destination="Mx7-GE-0hq" id="YWu-BI-6DF"/>
                         <outlet property="marginBetweenFiltersViewAndImageView" destination="HqN-hc-z6d" id="Noy-Sg-o6J"/>
+                        <outlet property="maskViewRecentlyScanned" destination="BDA-k4-KGG" id="avt-5Z-AI4"/>
                         <outlet property="menuButtonBack" destination="JfM-UP-FHL" id="gKI-zT-dAm"/>
                         <outlet property="menuButtonRotateLeft" destination="TES-53-N2P" id="nIo-o4-FJv"/>
                         <outlet property="menuButtonRotateRight" destination="6wW-au-21S" id="7EN-cS-Vmf"/>
                         <outlet property="menuButtonSelect" destination="dJb-o9-jb2" id="iMe-rZ-dmP"/>
                         <outlet property="upperContainerCapturedView" destination="UsK-Ud-WaM" id="B1Z-j7-6Ht"/>
+                        <outlet property="viewRecentlyScanned" destination="fk5-X2-EJ7" id="zHF-dq-Zqf"/>
                         <segue destination="c4S-zv-uuH" kind="show" identifier="category" id="hC6-AN-OFv"/>
                         <segue destination="Weu-ig-NAe" kind="presentation" identifier="segueCameraPermissionsHeadsUp" id="r0B-Rn-Wfe"/>
                     </connections>

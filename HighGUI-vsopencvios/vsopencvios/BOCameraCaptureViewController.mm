@@ -29,7 +29,7 @@ typedef enum BOState {
 
 static void* gUserLoadContext = &gUserLoadContext;
 
-@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, BOCategoryTableViewControllerDelegate, VSCameraPermissionsViewControllerDelegate>
+@interface BOCameraCaptureViewController () <UICollectionViewDelegate, UICollectionViewDataSource, UITextFieldDelegate, BOCategoryTableViewControllerDelegate, VSCameraPermissionsViewControllerDelegate, BORecentlyScannedViewDelegate>
 @property (nonatomic) BOCameraController* cameraController;
 
 @property (weak, nonatomic) IBOutlet UIView *cameraView;
@@ -57,6 +57,24 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lowerContainerCapturedViewBottomLayout;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *marginBetweenFiltersViewAndImageView; //initially it is 200
 
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomFiltersViewConstraint;
+@property (weak, nonatomic) IBOutlet BOFiltersView *filtersMenuView;
+
+
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewTopMarginLayoutConstraint;
+@property (weak, nonatomic) IBOutlet BOInfoEntryView *infoEntryView;
+
+@property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
+@property (weak, nonatomic) IBOutlet UIButton *buttonShowAllDocuments;
+
+@property (weak, nonatomic) IBOutlet UIView *maskViewRecentlyScanned;
+@property (weak, nonatomic) IBOutlet BORecentlyScannedView *viewRecentlyScanned;
+
+
+@property (nonatomic) BOOL entryInfoPartiallyHidden;
+@property (nonatomic) NSMutableArray* dataSource;
+@property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
+
 
 @property (nonatomic) UIImage* image;
 @property (nonatomic) UIImage* cropImage;
@@ -65,22 +83,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (strong, nonatomic) MMCropView* croppedView;
 
 @property (nonatomic) BOState state;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *bottomFiltersViewConstraint;
-@property (weak, nonatomic) IBOutlet BOFiltersView *filtersMenuView;
-
-@property (nonatomic) NSMutableArray* dataSource;
-
-@property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
-
-@property (weak, nonatomic) IBOutlet NSLayoutConstraint *infoViewTopMarginLayoutConstraint;
-@property (weak, nonatomic) IBOutlet BOInfoEntryView *infoEntryView;
-
-@property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
-@property (weak, nonatomic) IBOutlet UIButton *buttonShowAllDocuments;
-
-
-@property (nonatomic) BOOL entryInfoPartiallyHidden;
 
 //camera permissions
 @property (nonatomic, copy) NSString* message;
@@ -98,6 +100,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     self.state = BONotCroppedState;
     
+    [self setupRecentlyScannedView];
+    [self hideRecentlyScannedView];
+    
     [self clearTitle];
     [self clearCategoryText];
     [self setupMiscGUI];
@@ -114,6 +119,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self setupFileSizeLabel];
     
 	[self startCamera];
+}
+- (void)setupRecentlyScannedView {
+    self.viewRecentlyScanned.delegate = self;
 }
 - (void)clearTitle {
     //placeholder
@@ -229,6 +237,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didTapCapturePhoto:(id)sender {
     //hide settings button
     self.buttonSettings.hidden = YES;
+    
+    [self hideRecentlyScannedView];
+    
 	typeof (self) __weak welf = self;
 	[self.cameraController capturePhotoWithCompletion:^(UIImage * image) {
 		NSLog(@"did capture ");
@@ -253,6 +264,20 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSLog(@"didTapShowAllDocumentsButton");
 }
 
+#pragma mark - BORecentlyScannedViewDelegate
+- (void)view:(BORecentlyScannedView*)view didTapCloseButton:(id)sender {
+    [self hideRecentlyScannedView];
+}
+- (void)view:(BORecentlyScannedView*)view didTapOnFirstScannedButton:(id)sender {
+    NSLog(@"didTapOnFirstScannedButton");
+}
+- (void)view:(BORecentlyScannedView*)view didTapOnSecondScannedButton:(id)sender {
+    NSLog(@"didTapOnSecondScannedButton");
+}
+- (void)view:(BORecentlyScannedView*)view didTapOnThirdScannedView:(id)sender {
+    NSLog(@"didTapOnThirdScannedView");
+}
+
 #pragma mark -
 - (void)detectEdgesOnImageAndDisplay:(UIImage*)image {
     [self prepareCropView];
@@ -269,6 +294,16 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)doShowCapturedImage {
     [self hideCameraOverlay];
+}
+
+#pragma mark - hide/show
+- (void)hideRecentlyScannedView {
+    self.maskViewRecentlyScanned.hidden = YES;
+    self.viewRecentlyScanned.hidden = YES;
+}
+- (void)showRecentlyScannedView {
+    self.maskViewRecentlyScanned.hidden = NO;
+    self.viewRecentlyScanned.hidden = NO;
 }
 - (void)hideCameraOverlay {
     [self.view layoutIfNeeded];
@@ -488,6 +523,10 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     [self.croppedView removeFromSuperview];
     self.croppedView = nil;
+    
+    if (self.state == BOShareState) {
+        [self showRecentlyScannedView];
+    }
     
     [self transitMenuItemsToNotCroppedMode];
     if (self.state == BOCroppedPreviewState) {
