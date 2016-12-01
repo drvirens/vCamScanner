@@ -334,6 +334,20 @@ static void* gUserLoadContext = &gUserLoadContext;
     }];
     self.entryInfoPartiallyHidden = NO;
 }
+- (void)hideInfoEntryViewPartiallyAndDisableDragger {
+    [self.view layoutIfNeeded];
+    self.infoViewTopMarginLayoutConstraint.constant = -(kTopMarginEntryView - 40);
+    [UIView animateWithDuration:.25 animations:^{
+        [self.view layoutIfNeeded];
+    }];
+    self.entryInfoPartiallyHidden = NO;
+    self.infoEntryView.userInteractionEnabled = NO;
+    
+    self.infoEntryView.dragView.hidden = YES;
+    self.infoEntryView.dragViewSmaller.hidden = YES;
+}
+
+
 - (void)hideFiltersView {
     [self.view layoutIfNeeded];
     self.bottomFiltersViewConstraint.constant = -(kFiltersViewBottomMargin + kHeightLowerView);
@@ -489,6 +503,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.buttonSettings.hidden = NO;
     [self clearTitle];
     [self clearCategoryText];
+    self.infoEntryView.userInteractionEnabled = YES;
+    self.infoEntryView.dragView.hidden = NO;
+    self.infoEntryView.dragViewSmaller.hidden = NO;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
@@ -497,7 +514,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuSelect:(id)sender {
     if (self.state == BOCroppedPreviewState) {
         NSLog(@"BOCroppedPreviewState - show share state/view");
-        [self hideInfoEntryView];
+        [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
         [self hideFiltersView];
         [self transitMenuItemsToShareMode];
     } else if (self.state == BOShareState) {
@@ -559,11 +576,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 #pragma mark - image crop view
 - (void)prepareCropView {
-//    CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
-//                                self.capturedImageView.contentFrame.origin.y,
-//                                self.capturedImageView.contentFrame.size.width,
-//                                self.capturedImageView.contentFrame.size.height /* - kHeightLowerView */);
-    
     CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
                                   self.capturedImageView.contentFrame.origin.y + kImageViewMargin,
                                   self.capturedImageView.contentFrame.size.width,
