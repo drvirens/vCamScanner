@@ -165,10 +165,16 @@ static void* gUserLoadContext = &gUserLoadContext;
 	self.containerCapturedView.hidden = YES;
 }
 - (void)setupCameraButton {
-	self.buttonCameraCapture.layer.borderColor = [UIColor whiteColor].CGColor;
-	self.buttonCameraCapture.layer.borderWidth = 4.f;
+	self.buttonCameraCapture.layer.borderColor = [VSBranding vs_brandRedColor].CGColor;
+	self.buttonCameraCapture.layer.borderWidth = 2.f;
 	self.buttonCameraCapture.layer.cornerRadius = kHeightCapturePhotoButton/2.f;
+    
+    UIImage* icon = [UIImage imageNamed:@"ic_camera_alt_white"];
+    icon = [icon imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.buttonCameraCapture setImage:icon forState:UIControlStateNormal];
+    self.buttonCameraCapture.tintColor = [VSBranding vs_brandRedColor];
 }
+
 - (void)didSelectCateogry:(id)sender {
     NSLog(@"didSelectCateogry");
     [self performSegueWithIdentifier:@"category" sender:self];
@@ -369,7 +375,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         if (indexPath.item == 0) { //put first cell as selected by default
             self.currentlySelectedFilterMenu = cell;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
-            cell.layer.borderWidth = 4.f;
+            cell.layer.borderWidth = 2.f;
             cell.layer.cornerRadius = 3.f;
             [self decorateSelectedCellLabel:label text:filter.menuDisplayName];
         }
@@ -421,7 +427,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     self.currentlySelectedFilterMenu = cell;
     cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
-    cell.layer.borderWidth = 4.f;
+    cell.layer.borderWidth = 2.f;
     cell.layer.cornerRadius = 3.f;
     
     label = (UILabel*)[cell viewWithTag:100];

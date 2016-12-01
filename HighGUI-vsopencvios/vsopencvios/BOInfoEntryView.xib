@@ -33,6 +33,7 @@
                             <rect key="frame" x="25" y="73" width="294" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="12"/>
                             <textInputTraits key="textInputTraits" autocapitalizationType="words" spellCheckingType="yes" enablesReturnKeyAutomatically="YES"/>
                         </textField>
                         <view hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Nz-A1-jh3">
@@ -64,7 +65,7 @@
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>
                                 <constraint firstItem="fCr-fp-Dvu" firstAttribute="centerY" secondItem="wZL-rm-fhl" secondAttribute="centerY" id="0Gb-rK-wVC"/>
-                                <constraint firstAttribute="trailing" secondItem="wZL-rm-fhl" secondAttribute="trailing" constant="5" id="31N-a6-XgZ"/>
+                                <constraint firstAttribute="trailing" secondItem="wZL-rm-fhl" secondAttribute="trailing" constant="20" id="31N-a6-XgZ"/>
                                 <constraint firstItem="wZL-rm-fhl" firstAttribute="centerY" secondItem="QSU-lK-ySH" secondAttribute="centerY" id="85L-Ev-4qw"/>
                                 <constraint firstItem="fCr-fp-Dvu" firstAttribute="centerX" secondItem="QSU-lK-ySH" secondAttribute="centerX" id="MIw-wm-5md"/>
                                 <constraint firstItem="wZL-rm-fhl" firstAttribute="centerY" secondItem="QSU-lK-ySH" secondAttribute="centerY" id="hou-pY-fxp"/>
