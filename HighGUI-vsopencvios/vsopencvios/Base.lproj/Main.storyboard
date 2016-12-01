@@ -125,12 +125,12 @@
                                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                             </imageView>
                                         </subviews>
-                                        <color key="backgroundColor" red="0.18828124999999996" green="0.18828124999999996" blue="0.18828124999999996" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.11764705882352941" green="0.11764705882352941" blue="0.11764705882352941" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="qAz-4v-fvp" secondAttribute="trailing" id="HeW-ns-lPf"/>
-                                            <constraint firstItem="qAz-4v-fvp" firstAttribute="top" secondItem="UsK-Ud-WaM" secondAttribute="top" id="I8K-b8-EqV"/>
+                                            <constraint firstItem="qAz-4v-fvp" firstAttribute="top" secondItem="UsK-Ud-WaM" secondAttribute="top" constant="20" id="I8K-b8-EqV"/>
                                             <constraint firstItem="qAz-4v-fvp" firstAttribute="leading" secondItem="UsK-Ud-WaM" secondAttribute="leading" id="UaO-mo-Kab"/>
-                                            <constraint firstAttribute="bottom" secondItem="qAz-4v-fvp" secondAttribute="bottom" id="iqJ-7n-DYS"/>
+                                            <constraint firstAttribute="bottom" secondItem="qAz-4v-fvp" secondAttribute="bottom" constant="20" id="iqJ-7n-DYS"/>
                                         </constraints>
                                     </view>
                                 </subviews>

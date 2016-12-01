@@ -11,6 +11,7 @@
 FOUNDATION_EXPORT const CGFloat kHeightLowerView;
 FOUNDATION_EXPORT const CGFloat kHeightCapturePhotoButton;
 FOUNDATION_EXPORT const CGFloat kFiltersViewBottomMargin;
+FOUNDATION_EXPORT const CGFloat kImageViewMargin;
 FOUNDATION_EXPORT const CGFloat kMarginBetweenFiltersViewAndImageView;
 FOUNDATION_EXPORT const CGFloat kTopMarginEntryView;
 

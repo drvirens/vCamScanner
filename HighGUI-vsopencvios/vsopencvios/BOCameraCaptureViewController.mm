@@ -140,6 +140,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)setupFileSizeLabel {
     self.infoEntryView.labelFileSize.textColor = [VSBranding vs_brandRedColor];
     self.infoEntryView.labelFileSize.font = VS_FONT_EXTRASMALL;
+    self.infoEntryView.labelFileSize.alpha = 0.5f;
 }
 - (void)decorateCategoryMoreIcon {
     UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];
@@ -360,7 +361,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)populateFiltersMenu {
     [self.dataSource removeAllObjects];
-    //test+
     //XXX - do on background thread
     BOFilterMenuModel* original = [[BOFilterMenuModel alloc] initWithFilterType:BOFilterTypeOriginal image:self.cropImage];
     BOFilterMenuModel* bw = [[BOFilterMenuModel alloc] initWithFilterType:BOFilterTypeBlackWhite image:self.cropImage];
@@ -371,7 +371,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.dataSource addObject:bw];
     [self.dataSource addObject:gray];
     [self.dataSource addObject:magic];
-    //test-
+
     [self.filtersMenuView.collectionView reloadData];
 }
 #pragma mark - UICollectionViewDelegate
@@ -387,9 +387,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     cell.layer.borderColor = [VSBranding vs_veryDarkGrayColor].CGColor;
     cell.layer.borderWidth = .5f;
     cell.layer.cornerRadius = 0.f;
-    
-    //add gradient for labels/ bg view
-    //[self addGradient:cell];
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
@@ -409,13 +406,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     }
     
     return cell;
-}
-- (void)addGradient:(UIView*)view {
-    CAGradientLayer *gradient = [CAGradientLayer layer];
-    gradient.frame = view.bounds;
-    gradient.colors = [NSArray arrayWithObjects:(id)[[UIColor darkGrayColor] CGColor], (id)[[UIColor blackColor] CGColor], nil];
-    [view.layer insertSublayer:gradient atIndex:0];
-    //use startPoint and endPoint to change direction of gradient (http://stackoverflow.com/a/20387923/2057171)
 }
 - (void)decorateCellLabel:(UILabel*)label text:(NSString*)text {
     //category label
@@ -569,10 +559,16 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 #pragma mark - image crop view
 - (void)prepareCropView {
+//    CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
+//                                self.capturedImageView.contentFrame.origin.y,
+//                                self.capturedImageView.contentFrame.size.width,
+//                                self.capturedImageView.contentFrame.size.height /* - kHeightLowerView */);
+    
     CGRect cropFrame = CGRectMake(self.capturedImageView.contentFrame.origin.x,
-                                self.capturedImageView.contentFrame.origin.y,
-                                self.capturedImageView.contentFrame.size.width,
-                                self.capturedImageView.contentFrame.size.height /* - kHeightLowerView */);
+                                  self.capturedImageView.contentFrame.origin.y + kImageViewMargin,
+                                  self.capturedImageView.contentFrame.size.width,
+                                  self.capturedImageView.contentFrame.size.height );
+    
     self.croppedView= [[MMCropView alloc] initWithFrame:cropFrame];
     [self.upperContainerCapturedView addSubview:self.croppedView];
     
