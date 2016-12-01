@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
+		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
+		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
 		11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA11DED0BB800371BD5 /* MMCropView.m */; };
 		11303BA71DED0BB800371BD5 /* MMOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */; };
 		11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA41DED0BB800371BD5 /* MTGeometry.c */; };
@@ -285,6 +287,9 @@
 		111973581DDFDF350042C520 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
+		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
+		1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BORecentlyScannedView.h; sourceTree = "<group>"; };
+		1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BORecentlyScannedView.m; sourceTree = "<group>"; };
 		11303BA01DED0BB800371BD5 /* MMCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCropView.h; sourceTree = "<group>"; };
 		11303BA11DED0BB800371BD5 /* MMCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCropView.m; sourceTree = "<group>"; };
 		11303BA21DED0BB800371BD5 /* MMOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOpenCVHelper.h; sourceTree = "<group>"; };
@@ -982,6 +987,9 @@
 				11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */,
 				11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */,
 				11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */,
+				1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */,
+				1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */,
+				1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1910,6 +1918,7 @@
 				11303BBD1DED7FB800371BD5 /* BOFilterCell.xib in Resources */,
 				11303BFF1DEECEB100371BD5 /* Settings.storyboard in Resources */,
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
+				1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */,
 				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
 				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
@@ -2110,6 +2119,7 @@
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
 				B621FDE01DEAA29E00E54A51 /* knearest.cpp in Sources */,
 				B621FDBB1DEAA29E00E54A51 /* featureselect.cpp in Sources */,
+				1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */,
 				B621FDA81DEAA29E00E54A51 /* ios_conversions.mm in Sources */,
 				B621FDE81DEAA29E00E54A51 /* datamatrix.cpp in Sources */,
 				11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */,
