@@ -186,6 +186,9 @@
                                             <constraint firstAttribute="height" constant="24" id="DZz-89-ZZ2"/>
                                         </constraints>
                                         <state key="normal" image="ic_view_list_white"/>
+                                        <connections>
+                                            <action selector="didTapShowAllDocumentsButton:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="Pol-H1-0ZC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>

@@ -210,6 +210,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.infoEntryView.textFieldTitle resignFirstResponder];
     }
 }
+
+#pragma mark - action handlers for main landing page in camera preview mode
 - (IBAction)didTapSettingsButton:(id)sender {
     UIStoryboard* sb = [UIStoryboard storyboardWithName:@"Settings" bundle:nil];
     VSSettingsViewController* settingsVC = (VSSettingsViewController*)[sb instantiateViewControllerWithIdentifier:@"VSSettingsViewController"];
@@ -240,6 +242,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     }
     [self.buttonFlash setImage:curr forState:UIControlStateNormal];
 }
+- (IBAction)didTapShowAllDocumentsButton:(id)sender {
+    NSLog(@"didTapShowAllDocumentsButton");
+}
+
+#pragma mark -
 - (void)detectEdgesOnImageAndDisplay:(UIImage*)image {
     [self prepareCropView];
 }
