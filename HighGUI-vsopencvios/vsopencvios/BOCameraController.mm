@@ -1,6 +1,6 @@
 //
 //  BOCameraController.m
-//  iSpyChallenge
+//  Bowen Swift
 //
 //  Created by Virendra Shakya on 8/15/16.
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import <AVFoundation/AVFoundation.h>
 #import "BOCameraController.h"
+#import "BOConstants.h"
 
 #define return_from_block return
 
@@ -15,6 +16,8 @@
 @property (nonatomic) AVCaptureSession* session;
 @property (nonatomic) AVCaptureStillImageOutput* output;
 @property (nonatomic, copy) CapturePhotoCompletion completion;
+@property (nonatomic) AVCaptureDevice* device;
+@property (nonatomic) BOOL toogleFlash;
 @end
 
 @implementation BOCameraController
@@ -24,9 +27,59 @@
 	[self checkAuthorized:view];
 }
 
-- (void)stopCamera {
+- (void)stopPreview {
+    [self.session stopRunning];
+    self.session = nil;
+}
+- (void)checkAuthorizationWithCompletion:( void(^)(VSCameraStatus) )completion {
+    AVAuthorizationStatus status = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
+    switch (status) {
+        case AVAuthorizationStatusNotDetermined: {
+            [self statusNotDeterminedCompletion:completion];
+        } break;
+        case AVAuthorizationStatusRestricted: {
+            [self statusRestrictedCompletion:completion];
+        } break;
+        case AVAuthorizationStatusDenied: {
+            [self statusDeniedCompletion:completion];
+        } break;
+        case AVAuthorizationStatusAuthorized: {
+            [self statusAuthorizedCompletion:completion];
+        } break;
+    }
 }
 
+- (void)requestPermissionsWithCompletion:( void(^)(BOOL) )completion {
+    [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo completionHandler:^(BOOL granted) {
+        if (completion) {
+            completion(granted);
+        }
+    }];
+}
+
+#pragma mark - utils
+- (void)statusNotDeterminedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusInDetermined);
+    }
+}
+- (void)statusRestrictedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusRestricted);
+    }
+}
+- (void)statusDeniedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusDenied);
+    }
+}
+- (void)statusAuthorizedCompletion:( void(^)(VSCameraStatus) )completion {
+    if (completion) {
+        completion(VSCameraStatusAuthorized);
+    }
+}
+
+#pragma mark - API
 - (void)capturePhotoWithCompletion:(CapturePhotoCompletion)completion {
 	if (!self.output) {
 		NSLog(@"no output created");
@@ -129,9 +182,9 @@
 	}
 	
 	AVCaptureSession* session = nil;
-	AVCaptureDevice* device = [self cameraForPosition:AVCaptureDevicePositionBack];
-	NSAssert(device != nil, @"device was nil");
-	if (!device) {
+	self.device = [self cameraForPosition:AVCaptureDevicePositionBack];
+	//NSAssert(self.device != nil, @"device was nil");
+	if (!self.device) {
 		return session;
 	}
 	
@@ -139,7 +192,7 @@
 	
 		//create input
 	NSError* err = nil;
-	AVCaptureDeviceInput* input = [[AVCaptureDeviceInput alloc] initWithDevice:device error:&err];
+	AVCaptureDeviceInput* input = [[AVCaptureDeviceInput alloc] initWithDevice:self.device error:&err];
 	if (err) {
 		NSLog(@"could not get input device ");
 		return session;
@@ -160,18 +213,18 @@
 	AVCaptureVideoPreviewLayer* video = [AVCaptureVideoPreviewLayer layerWithSession:session];
 	
 	dispatch_async(dispatch_get_main_queue(), ^{
-		CGRect r = [[UIScreen mainScreen] bounds];
-			r.size.height = r.size.height - 120 - 64 - 60;
-			UIView* cameraview = [[UIView alloc] initWithFrame:r];
-			//UIView* cameraview = [[UIView alloc] init];
+//		CGRect r = [[UIScreen mainScreen] bounds];
+//        r.size.height = r.size.height - kHeightLowerView;
+//        UIView* cameraview = [[UIView alloc] initWithFrame:r];
+        
+        UIView* cameraview = [[UIView alloc] init];
 		[view addSubview:cameraview];
 		
 		[cameraview.layer addSublayer:video];
 		
 		video.videoGravity = AVLayerVideoGravityResizeAspectFill;
 		video.frame = view.bounds;
-//		video.bounds = view.bounds;
-		video.position=CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
+//		video.position=CGPointMake(CGRectGetMidX(r), CGRectGetMidY(r));
 		
 		[view sendSubviewToBack:cameraview];
 	});
@@ -193,5 +246,22 @@
 	return camera;
 }
 
+- (BOOL)toggleCameraFlash {
+    if ([self.device hasTorch] && [self.device position] == AVCaptureDevicePositionBack) {
+        [self.device lockForConfiguration:nil];
+        
+        if(self.toogleFlash){
+            [self.device setTorchMode:AVCaptureTorchModeOff];
+        }
+        else{
+            [self.device setTorchMode:AVCaptureTorchModeOn];
+        }
+        
+        [self.device unlockForConfiguration];
+    }
+    
+    self.toogleFlash =! self.toogleFlash;
+    return self.toogleFlash;
+}
 
 @end

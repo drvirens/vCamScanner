@@ -7,8 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 1119732D1DDFDD1F0042C520 /* doc2.jpg */; };
 		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
+		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
+		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
+		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
+		11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA11DED0BB800371BD5 /* MMCropView.m */; };
+		11303BA71DED0BB800371BD5 /* MMOpenCVHelper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */; };
+		11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */ = {isa = PBXBuildFile; fileRef = 11303BA41DED0BB800371BD5 /* MTGeometry.c */; };
+		11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */; };
+		11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */; };
+		11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB11DED3B3800371BD5 /* BOConstants.mm */; };
+		11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.m */; };
+		11303BB81DED749700371BD5 /* BOFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BB61DED749700371BD5 /* BOFiltersView.xib */; };
+		11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBA1DED74DF00371BD5 /* BOFiltersView.m */; };
+		11303BBD1DED7FB800371BD5 /* BOFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */; };
+		11303BC01DEE276500371BD5 /* BOFilterMenuModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */; };
+		11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */; };
+		11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */; };
+		11303BC81DEE6AE200371BD5 /* BOCategoryTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */; };
+		11303BCB1DEE6B4D00371BD5 /* BOCategoryModel.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */; };
+		11303BF51DEECEB100371BD5 /* VSAddPurposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BCF1DEECEB100371BD5 /* VSAddPurposeViewController.m */; };
+		11303BF61DEECEB100371BD5 /* VSAddVehicleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BD11DEECEB100371BD5 /* VSAddVehicleViewController.m */; };
+		11303BF71DEECEB100371BD5 /* VSPurposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BD31DEECEB100371BD5 /* VSPurposeViewController.m */; };
+		11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BD51DEECEB100371BD5 /* VSSettingsViewController.m */; };
+		11303BF91DEECEB100371BD5 /* VSVehiclesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BD71DEECEB100371BD5 /* VSVehiclesViewController.m */; };
+		11303BFA1DEECEB100371BD5 /* VSAddVehicleDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BDA1DEECEB100371BD5 /* VSAddVehicleDataSource.m */; };
+		11303BFB1DEECEB100371BD5 /* VSMoreModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BDC1DEECEB100371BD5 /* VSMoreModel.m */; };
+		11303BFC1DEECEB100371BD5 /* VSPurposeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BDE1DEECEB100371BD5 /* VSPurposeModel.m */; };
+		11303BFD1DEECEB100371BD5 /* VSVehicleAddFieldModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BE01DEECEB100371BD5 /* VSVehicleAddFieldModel.m */; };
+		11303BFE1DEECEB100371BD5 /* VSVehicleModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BE21DEECEB100371BD5 /* VSVehicleModel.m */; };
+		11303BFF1DEECEB100371BD5 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11303BE31DEECEB100371BD5 /* Settings.storyboard */; };
+		11303C001DEECEB100371BD5 /* VSMoreCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BE61DEECEB100371BD5 /* VSMoreCell.m */; };
+		11303C011DEECEB100371BD5 /* VSPurposeAddFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BE81DEECEB100371BD5 /* VSPurposeAddFieldCell.m */; };
+		11303C021DEECEB100371BD5 /* VSPurposeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BEA1DEECEB100371BD5 /* VSPurposeCell.m */; };
+		11303C031DEECEB100371BD5 /* VSSettingsSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BEC1DEECEB100371BD5 /* VSSettingsSwitchCell.m */; };
+		11303C041DEECEB100371BD5 /* VSVehicleAddFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BEE1DEECEB100371BD5 /* VSVehicleAddFieldCell.m */; };
+		11303C051DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BF01DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.m */; };
+		11303C061DEECEB100371BD5 /* VSVehicleCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BF21DEECEB100371BD5 /* VSVehicleCell.m */; };
+		11303C071DEECEB100371BD5 /* VSSettingsConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BF41DEECEB100371BD5 /* VSSettingsConstants.m */; };
+		11303C0A1DEECEFF00371BD5 /* VSBranding.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303C091DEECEFF00371BD5 /* VSBranding.m */; };
+		11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303C0C1DEECF6F00371BD5 /* VSTextFieldView.m */; };
+		11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303C0D1DEECF6F00371BD5 /* VSTextFieldView.xib */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -241,12 +280,85 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1119732D1DDFDD1F0042C520 /* doc2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = doc2.jpg; path = vsopencvios/Assets.xcassets/doc2.imageset/doc2.jpg; sourceTree = "<group>"; };
 		111973381DDFDF350042C520 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
 		111973391DDFDF350042C520 /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
 		1119733A1DDFDF350042C520 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
 		1119733B1DDFDF350042C520 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
 		111973581DDFDF350042C520 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
+		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
+		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
+		1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BORecentlyScannedView.h; sourceTree = "<group>"; };
+		1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BORecentlyScannedView.m; sourceTree = "<group>"; };
+		11303BA01DED0BB800371BD5 /* MMCropView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMCropView.h; sourceTree = "<group>"; };
+		11303BA11DED0BB800371BD5 /* MMCropView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMCropView.m; sourceTree = "<group>"; };
+		11303BA21DED0BB800371BD5 /* MMOpenCVHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMOpenCVHelper.h; sourceTree = "<group>"; };
+		11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MMOpenCVHelper.mm; sourceTree = "<group>"; };
+		11303BA41DED0BB800371BD5 /* MTGeometry.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = MTGeometry.c; sourceTree = "<group>"; };
+		11303BA51DED0BB800371BD5 /* MTGeometry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MTGeometry.h; sourceTree = "<group>"; };
+		11303BAA1DED0D8900371BD5 /* UIImage+fixOrientation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+fixOrientation.h"; sourceTree = "<group>"; };
+		11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+fixOrientation.m"; sourceTree = "<group>"; };
+		11303BAC1DED0D8900371BD5 /* UIImageView+ContentFrame.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+ContentFrame.h"; sourceTree = "<group>"; };
+		11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+ContentFrame.m"; sourceTree = "<group>"; };
+		11303BB01DED3B3800371BD5 /* BOConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOConstants.h; sourceTree = "<group>"; };
+		11303BB11DED3B3800371BD5 /* BOConstants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOConstants.mm; sourceTree = "<group>"; };
+		11303BB31DED5DA800371BD5 /* BOCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCategoryTableViewController.h; sourceTree = "<group>"; };
+		11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOCategoryTableViewController.m; sourceTree = "<group>"; };
+		11303BB71DED749700371BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BOFiltersView.xib; sourceTree = "<group>"; };
+		11303BB91DED74DF00371BD5 /* BOFiltersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFiltersView.h; sourceTree = "<group>"; };
+		11303BBA1DED74DF00371BD5 /* BOFiltersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOFiltersView.m; sourceTree = "<group>"; };
+		11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOFilterCell.xib; sourceTree = "<group>"; };
+		11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFilterMenuModel.h; sourceTree = "<group>"; };
+		11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFilterMenuModel.mm; sourceTree = "<group>"; };
+		11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BOInfoEntryView.xib; sourceTree = "<group>"; };
+		11303BC31DEE460000371BD5 /* BOInfoEntryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOInfoEntryView.h; sourceTree = "<group>"; };
+		11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOInfoEntryView.mm; sourceTree = "<group>"; };
+		11303BC61DEE6AE200371BD5 /* BOCategoryTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCategoryTableViewCell.h; sourceTree = "<group>"; };
+		11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOCategoryTableViewCell.m; sourceTree = "<group>"; };
+		11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCategoryModel.h; sourceTree = "<group>"; };
+		11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOCategoryModel.mm; sourceTree = "<group>"; };
+		11303BCE1DEECEB100371BD5 /* VSAddPurposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSAddPurposeViewController.h; sourceTree = "<group>"; };
+		11303BCF1DEECEB100371BD5 /* VSAddPurposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSAddPurposeViewController.m; sourceTree = "<group>"; };
+		11303BD01DEECEB100371BD5 /* VSAddVehicleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSAddVehicleViewController.h; sourceTree = "<group>"; };
+		11303BD11DEECEB100371BD5 /* VSAddVehicleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSAddVehicleViewController.m; sourceTree = "<group>"; };
+		11303BD21DEECEB100371BD5 /* VSPurposeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPurposeViewController.h; sourceTree = "<group>"; };
+		11303BD31DEECEB100371BD5 /* VSPurposeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPurposeViewController.m; sourceTree = "<group>"; };
+		11303BD41DEECEB100371BD5 /* VSSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSSettingsViewController.h; sourceTree = "<group>"; };
+		11303BD51DEECEB100371BD5 /* VSSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSSettingsViewController.m; sourceTree = "<group>"; };
+		11303BD61DEECEB100371BD5 /* VSVehiclesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSVehiclesViewController.h; sourceTree = "<group>"; };
+		11303BD71DEECEB100371BD5 /* VSVehiclesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSVehiclesViewController.m; sourceTree = "<group>"; };
+		11303BD91DEECEB100371BD5 /* VSAddVehicleDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSAddVehicleDataSource.h; sourceTree = "<group>"; };
+		11303BDA1DEECEB100371BD5 /* VSAddVehicleDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSAddVehicleDataSource.m; sourceTree = "<group>"; };
+		11303BDB1DEECEB100371BD5 /* VSMoreModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSMoreModel.h; sourceTree = "<group>"; };
+		11303BDC1DEECEB100371BD5 /* VSMoreModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSMoreModel.m; sourceTree = "<group>"; };
+		11303BDD1DEECEB100371BD5 /* VSPurposeModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPurposeModel.h; sourceTree = "<group>"; };
+		11303BDE1DEECEB100371BD5 /* VSPurposeModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPurposeModel.m; sourceTree = "<group>"; };
+		11303BDF1DEECEB100371BD5 /* VSVehicleAddFieldModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSVehicleAddFieldModel.h; sourceTree = "<group>"; };
+		11303BE01DEECEB100371BD5 /* VSVehicleAddFieldModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSVehicleAddFieldModel.m; sourceTree = "<group>"; };
+		11303BE11DEECEB100371BD5 /* VSVehicleModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSVehicleModel.h; sourceTree = "<group>"; };
+		11303BE21DEECEB100371BD5 /* VSVehicleModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSVehicleModel.m; sourceTree = "<group>"; };
+		11303BE31DEECEB100371BD5 /* Settings.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		11303BE51DEECEB100371BD5 /* VSMoreCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSMoreCell.h; sourceTree = "<group>"; };
+		11303BE61DEECEB100371BD5 /* VSMoreCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSMoreCell.m; sourceTree = "<group>"; };
+		11303BE71DEECEB100371BD5 /* VSPurposeAddFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPurposeAddFieldCell.h; sourceTree = "<group>"; };
+		11303BE81DEECEB100371BD5 /* VSPurposeAddFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPurposeAddFieldCell.m; sourceTree = "<group>"; };
+		11303BE91DEECEB100371BD5 /* VSPurposeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSPurposeCell.h; sourceTree = "<group>"; };
+		11303BEA1DEECEB100371BD5 /* VSPurposeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSPurposeCell.m; sourceTree = "<group>"; };
+		11303BEB1DEECEB100371BD5 /* VSSettingsSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSSettingsSwitchCell.h; sourceTree = "<group>"; };
+		11303BEC1DEECEB100371BD5 /* VSSettingsSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSSettingsSwitchCell.m; sourceTree = "<group>"; };
+		11303BED1DEECEB100371BD5 /* VSVehicleAddFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSVehicleAddFieldCell.h; sourceTree = "<group>"; };
+		11303BEE1DEECEB100371BD5 /* VSVehicleAddFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSVehicleAddFieldCell.m; sourceTree = "<group>"; };
+		11303BEF1DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSVehicleAddFieldSwitchCell.h; sourceTree = "<group>"; };
+		11303BF01DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSVehicleAddFieldSwitchCell.m; sourceTree = "<group>"; };
+		11303BF11DEECEB100371BD5 /* VSVehicleCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSVehicleCell.h; sourceTree = "<group>"; };
+		11303BF21DEECEB100371BD5 /* VSVehicleCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSVehicleCell.m; sourceTree = "<group>"; };
+		11303BF31DEECEB100371BD5 /* VSSettingsConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSSettingsConstants.h; sourceTree = "<group>"; };
+		11303BF41DEECEB100371BD5 /* VSSettingsConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSSettingsConstants.m; sourceTree = "<group>"; };
+		11303C081DEECEFF00371BD5 /* VSBranding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSBranding.h; sourceTree = "<group>"; };
+		11303C091DEECEFF00371BD5 /* VSBranding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSBranding.m; sourceTree = "<group>"; };
+		11303C0B1DEECF6F00371BD5 /* VSTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTextFieldView.h; sourceTree = "<group>"; };
+		11303C0C1DEECF6F00371BD5 /* VSTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSTextFieldView.m; sourceTree = "<group>"; };
+		11303C0D1DEECF6F00371BD5 /* VSTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSTextFieldView.xib; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -696,6 +808,101 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
+		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
+			isa = PBXGroup;
+			children = (
+				11303BA01DED0BB800371BD5 /* MMCropView.h */,
+				11303BA11DED0BB800371BD5 /* MMCropView.m */,
+				11303BA21DED0BB800371BD5 /* MMOpenCVHelper.h */,
+				11303BA31DED0BB800371BD5 /* MMOpenCVHelper.mm */,
+				11303BA41DED0BB800371BD5 /* MTGeometry.c */,
+				11303BA51DED0BB800371BD5 /* MTGeometry.h */,
+			);
+			path = imageprocessing;
+			sourceTree = "<group>";
+		};
+		11303BA91DED0D8900371BD5 /* UIImageViewCategories */ = {
+			isa = PBXGroup;
+			children = (
+				11303BAA1DED0D8900371BD5 /* UIImage+fixOrientation.h */,
+				11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */,
+				11303BAC1DED0D8900371BD5 /* UIImageView+ContentFrame.h */,
+				11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */,
+			);
+			path = UIImageViewCategories;
+			sourceTree = "<group>";
+		};
+		11303BCC1DEECEB100371BD5 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				11303C0B1DEECF6F00371BD5 /* VSTextFieldView.h */,
+				11303C0C1DEECF6F00371BD5 /* VSTextFieldView.m */,
+				11303C0D1DEECF6F00371BD5 /* VSTextFieldView.xib */,
+				11303BCD1DEECEB100371BD5 /* Controller */,
+				11303BD81DEECEB100371BD5 /* Model */,
+				11303BE31DEECEB100371BD5 /* Settings.storyboard */,
+				11303BE41DEECEB100371BD5 /* View */,
+				11303BF31DEECEB100371BD5 /* VSSettingsConstants.h */,
+				11303BF41DEECEB100371BD5 /* VSSettingsConstants.m */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		11303BCD1DEECEB100371BD5 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				11303BCE1DEECEB100371BD5 /* VSAddPurposeViewController.h */,
+				11303BCF1DEECEB100371BD5 /* VSAddPurposeViewController.m */,
+				11303BD01DEECEB100371BD5 /* VSAddVehicleViewController.h */,
+				11303BD11DEECEB100371BD5 /* VSAddVehicleViewController.m */,
+				11303BD21DEECEB100371BD5 /* VSPurposeViewController.h */,
+				11303BD31DEECEB100371BD5 /* VSPurposeViewController.m */,
+				11303BD41DEECEB100371BD5 /* VSSettingsViewController.h */,
+				11303BD51DEECEB100371BD5 /* VSSettingsViewController.m */,
+				11303BD61DEECEB100371BD5 /* VSVehiclesViewController.h */,
+				11303BD71DEECEB100371BD5 /* VSVehiclesViewController.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		11303BD81DEECEB100371BD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				11303BD91DEECEB100371BD5 /* VSAddVehicleDataSource.h */,
+				11303BDA1DEECEB100371BD5 /* VSAddVehicleDataSource.m */,
+				11303BDB1DEECEB100371BD5 /* VSMoreModel.h */,
+				11303BDC1DEECEB100371BD5 /* VSMoreModel.m */,
+				11303BDD1DEECEB100371BD5 /* VSPurposeModel.h */,
+				11303BDE1DEECEB100371BD5 /* VSPurposeModel.m */,
+				11303BDF1DEECEB100371BD5 /* VSVehicleAddFieldModel.h */,
+				11303BE01DEECEB100371BD5 /* VSVehicleAddFieldModel.m */,
+				11303BE11DEECEB100371BD5 /* VSVehicleModel.h */,
+				11303BE21DEECEB100371BD5 /* VSVehicleModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		11303BE41DEECEB100371BD5 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				11303BE51DEECEB100371BD5 /* VSMoreCell.h */,
+				11303BE61DEECEB100371BD5 /* VSMoreCell.m */,
+				11303BE71DEECEB100371BD5 /* VSPurposeAddFieldCell.h */,
+				11303BE81DEECEB100371BD5 /* VSPurposeAddFieldCell.m */,
+				11303BE91DEECEB100371BD5 /* VSPurposeCell.h */,
+				11303BEA1DEECEB100371BD5 /* VSPurposeCell.m */,
+				11303BEB1DEECEB100371BD5 /* VSSettingsSwitchCell.h */,
+				11303BEC1DEECEB100371BD5 /* VSSettingsSwitchCell.m */,
+				11303BED1DEECEB100371BD5 /* VSVehicleAddFieldCell.h */,
+				11303BEE1DEECEB100371BD5 /* VSVehicleAddFieldCell.m */,
+				11303BEF1DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.h */,
+				11303BF01DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.m */,
+				11303BF11DEECEB100371BD5 /* VSVehicleCell.h */,
+				11303BF21DEECEB100371BD5 /* VSVehicleCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		117F1D0A1DE02939007233B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -709,7 +916,6 @@
 		11B75AC31DDFD08D004EAB65 = {
 			isa = PBXGroup;
 			children = (
-				1119732D1DDFDD1F0042C520 /* doc2.jpg */,
 				11B75ACE1DDFD08D004EAB65 /* vsopencvios */,
 				11B75ACD1DDFD08D004EAB65 /* Products */,
 				117F1D0A1DE02939007233B0 /* Frameworks */,
@@ -727,6 +933,13 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */,
+				1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */,
+				11303C081DEECEFF00371BD5 /* VSBranding.h */,
+				11303C091DEECEFF00371BD5 /* VSBranding.m */,
+				11303BCC1DEECEB100371BD5 /* Settings */,
+				11303BA91DED0D8900371BD5 /* UIImageViewCategories */,
+				11303B9F1DED0BB800371BD5 /* imageprocessing */,
 				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
 				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
 				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
@@ -757,6 +970,26 @@
 				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
+				11303BB01DED3B3800371BD5 /* BOConstants.h */,
+				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
+				11303BB31DED5DA800371BD5 /* BOCategoryTableViewController.h */,
+				11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.m */,
+				11303BB61DED749700371BD5 /* BOFiltersView.xib */,
+				11303BB91DED74DF00371BD5 /* BOFiltersView.h */,
+				11303BBA1DED74DF00371BD5 /* BOFiltersView.m */,
+				11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */,
+				11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */,
+				11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */,
+				11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */,
+				11303BC31DEE460000371BD5 /* BOInfoEntryView.h */,
+				11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */,
+				11303BC61DEE6AE200371BD5 /* BOCategoryTableViewCell.h */,
+				11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */,
+				11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */,
+				11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */,
+				1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */,
+				1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */,
+				1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1652,7 +1885,7 @@
 				TargetAttributes = {
 					11B75ACB1DDFD08D004EAB65 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = FJ585C7YHN;
+						DevelopmentTeam = F38H382JLK;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -1681,9 +1914,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */,
+				11303BB81DED749700371BD5 /* BOFiltersView.xib in Resources */,
+				11303BBD1DED7FB800371BD5 /* BOFilterCell.xib in Resources */,
+				11303BFF1DEECEB100371BD5 /* Settings.storyboard in Resources */,
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
-				1119732E1DDFDD1F0042C520 /* doc2.jpg in Resources */,
+				1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */,
+				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
+				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1707,14 +1945,18 @@
 				B621FD6C1DEAA29D00E54A51 /* matop.cpp in Sources */,
 				B621FD331DEAA29D00E54A51 /* fundam.cpp in Sources */,
 				B621FDE71DEAA29E00E54A51 /* cascadedetect.cpp in Sources */,
+				11303C0A1DEECEFF00371BD5 /* VSBranding.m in Sources */,
 				B621FDB21DEAA29E00E54A51 /* clahe.cpp in Sources */,
+				11303BFD1DEECEB100371BD5 /* VSVehicleAddFieldModel.m in Sources */,
 				B621FD401DEAA29D00E54A51 /* bowmsctrainer.cpp in Sources */,
 				11B75AD71DDFD08D004EAB65 /* ViewController.mm in Sources */,
 				B621FD681DEAA29D00E54A51 /* gpumat.cpp in Sources */,
+				11303BFB1DEECEB100371BD5 /* VSMoreModel.m in Sources */,
 				B621FDA01DEAA29E00E54A51 /* grfmt_bmp.cpp in Sources */,
 				B621FDAD1DEAA29E00E54A51 /* window_gtk.cpp in Sources */,
 				B621FD731DEAA29D00E54A51 /* rand.cpp in Sources */,
 				B621FDDF1DEAA29E00E54A51 /* inner_functions.cpp in Sources */,
+				11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */,
 				B621FE021DEAA29E00E54A51 /* simpleflow.cpp in Sources */,
 				B621FD541DEAA29D00E54A51 /* polyfit.cpp in Sources */,
 				B621FD741DEAA29D00E54A51 /* stat.cpp in Sources */,
@@ -1724,6 +1966,7 @@
 				B621FDC31DEAA29E00E54A51 /* hough.cpp in Sources */,
 				B621FDD01DEAA29E00E54A51 /* subdivision2d.cpp in Sources */,
 				B621FD8E1DEAA29D00E54A51 /* bitstrm.cpp in Sources */,
+				11303C021DEECEB100371BD5 /* VSPurposeCell.m in Sources */,
 				B621FD5A1DEAA29D00E54A51 /* spinimages.cpp in Sources */,
 				B621FD561DEAA29D00E54A51 /* retinacolor.cpp in Sources */,
 				B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */,
@@ -1733,6 +1976,7 @@
 				B621FE031DEAA29E00E54A51 /* tvl1flow.cpp in Sources */,
 				B621FD811DEAA29D00E54A51 /* fast_score.cpp in Sources */,
 				B621FD3A1DEAA29D00E54A51 /* stereobm.cpp in Sources */,
+				11303BF71DEECEB100371BD5 /* VSPurposeViewController.m in Sources */,
 				B621FD721DEAA29D00E54A51 /* persistence.cpp in Sources */,
 				B621FE011DEAA29E00E54A51 /* optflowgf.cpp in Sources */,
 				B621FDC11DEAA29E00E54A51 /* grabcut.cpp in Sources */,
@@ -1740,12 +1984,15 @@
 				B621FDA21DEAA29E00E54A51 /* grfmt_jpeg.cpp in Sources */,
 				B621FDB61DEAA29E00E54A51 /* corner.cpp in Sources */,
 				B621FD571DEAA29D00E54A51 /* retinafilter.cpp in Sources */,
+				11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */,
 				B621FD351DEAA29D00E54A51 /* p3p.cpp in Sources */,
 				B621FDE51DEAA29E00E54A51 /* testset.cpp in Sources */,
 				B621FDD91DEAA29E00E54A51 /* cnn.cpp in Sources */,
 				B621FDFB1DEAA29E00E54A51 /* bgfg_gaussmix2.cpp in Sources */,
 				B621FD3E1DEAA29D00E54A51 /* ba.cpp in Sources */,
+				11303C041DEECEB100371BD5 /* VSVehicleAddFieldCell.m in Sources */,
 				B621FDBA1DEAA29E00E54A51 /* emd.cpp in Sources */,
+				11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */,
 				B621FDF61DEAA29E00E54A51 /* resizeimg.cpp in Sources */,
 				B621FD441DEAA29D00E54A51 /* colortracker.cpp in Sources */,
 				B621FD5B1DEAA29D00E54A51 /* stereovar.cpp in Sources */,
@@ -1767,6 +2014,9 @@
 				B621FD3D1DEAA29D00E54A51 /* adaptiveskindetector.cpp in Sources */,
 				B621FDB11DEAA29E00E54A51 /* canny.cpp in Sources */,
 				B621FDDD1DEAA29E00E54A51 /* estimate.cpp in Sources */,
+				11303BCB1DEE6B4D00371BD5 /* BOCategoryModel.mm in Sources */,
+				11303C051DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.m in Sources */,
+				11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */,
 				B621FDDA1DEAA29E00E54A51 /* data.cpp in Sources */,
 				B621FDCC1DEAA29E00E54A51 /* samplers.cpp in Sources */,
 				B621FDBF1DEAA29E00E54A51 /* generalized_hough.cpp in Sources */,
@@ -1774,11 +2024,14 @@
 				B621FD551DEAA29D00E54A51 /* retina.cpp in Sources */,
 				B621FD931DEAA29E00E54A51 /* cap_dc1394.cpp in Sources */,
 				B621FD781DEAA29D00E54A51 /* blobdetector.cpp in Sources */,
+				11303BFC1DEECEB100371BD5 /* VSPurposeModel.m in Sources */,
+				11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */,
 				B621FD4F1DEAA29D00E54A51 /* logpolar_bsm.cpp in Sources */,
 				B621FDE31DEAA29E00E54A51 /* rtrees.cpp in Sources */,
 				B621FD631DEAA29D00E54A51 /* datastructs.cpp in Sources */,
 				B621FD821DEAA29D00E54A51 /* features2d_init.cpp in Sources */,
 				B621FDB81DEAA29E00E54A51 /* deriv.cpp in Sources */,
+				1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */,
 				B621FD961DEAA29E00E54A51 /* cap_ffmpeg.cpp in Sources */,
 				B621FD321DEAA29D00E54A51 /* epnp.cpp in Sources */,
 				B621FD991DEAA29E00E54A51 /* cap_ios_photo_camera.mm in Sources */,
@@ -1795,6 +2048,7 @@
 				B621FDC71DEAA29E00E54A51 /* moments.cpp in Sources */,
 				B621FD361DEAA29D00E54A51 /* polynom_solver.cpp in Sources */,
 				B621FD761DEAA29D00E54A51 /* tables.cpp in Sources */,
+				11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */,
 				B621FD431DEAA29D00E54A51 /* colormap.cpp in Sources */,
 				B621FD9C1DEAA29E00E54A51 /* cap_openni.cpp in Sources */,
 				B621FD4B1DEAA29D00E54A51 /* hybridtracker.cpp in Sources */,
@@ -1810,24 +2064,30 @@
 				B621FDE41DEAA29E00E54A51 /* svm.cpp in Sources */,
 				B621FD971DEAA29E00E54A51 /* cap_images.cpp in Sources */,
 				B621FD941DEAA29E00E54A51 /* cap_dc1394_v2.cpp in Sources */,
+				11303BA71DED0BB800371BD5 /* MMOpenCVHelper.mm in Sources */,
 				B621FD8A1DEAA29D00E54A51 /* orb.cpp in Sources */,
 				B621FDF51DEAA29E00E54A51 /* objdetect_init.cpp in Sources */,
+				11303BC01DEE276500371BD5 /* BOFilterMenuModel.mm in Sources */,
 				B621FDCA1DEAA29E00E54A51 /* pyramids.cpp in Sources */,
 				B621FD7C1DEAA29D00E54A51 /* detectors.cpp in Sources */,
 				B621FDA71DEAA29E00E54A51 /* grfmt_tiff.cpp in Sources */,
 				B621FD5D1DEAA29D00E54A51 /* alloc.cpp in Sources */,
 				B621FD7E1DEAA29D00E54A51 /* dynamic.cpp in Sources */,
+				11303BC81DEE6AE200371BD5 /* BOCategoryTableViewCell.m in Sources */,
 				B621FDD21DEAA29E00E54A51 /* tables.cpp in Sources */,
 				B621FD8D1DEAA29D00E54A51 /* miniflann.cpp in Sources */,
 				B621FDFF1DEAA29E00E54A51 /* lkpyramid.cpp in Sources */,
 				B621FD5C1DEAA29D00E54A51 /* algorithm.cpp in Sources */,
 				B621FDA91DEAA29E00E54A51 /* loadsave.cpp in Sources */,
+				11303C001DEECEB100371BD5 /* VSMoreCell.m in Sources */,
 				B621FD621DEAA29D00E54A51 /* copy.cpp in Sources */,
+				11303BF51DEECEB100371BD5 /* VSAddPurposeViewController.m in Sources */,
 				B621FDF71DEAA29E00E54A51 /* routine.cpp in Sources */,
 				B621FD411DEAA29D00E54A51 /* chamfermatching.cpp in Sources */,
 				B621FD4D1DEAA29D00E54A51 /* inputoutput.cpp in Sources */,
 				B621FDA51DEAA29E00E54A51 /* grfmt_pxm.cpp in Sources */,
 				B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */,
+				11303C011DEECEB100371BD5 /* VSPurposeAddFieldCell.m in Sources */,
 				B621FDA11DEAA29E00E54A51 /* grfmt_exr.cpp in Sources */,
 				B621FD691DEAA29D00E54A51 /* lapack.cpp in Sources */,
 				B621FD2F1DEAA29D00E54A51 /* calibration.cpp in Sources */,
@@ -1843,6 +2103,8 @@
 				B621FE041DEAA29E00E54A51 /* video_init.cpp in Sources */,
 				B621FD671DEAA29D00E54A51 /* glob.cpp in Sources */,
 				B621FDCF1DEAA29E00E54A51 /* smooth.cpp in Sources */,
+				11303C071DEECEB100371BD5 /* VSSettingsConstants.m in Sources */,
+				11303BF91DEECEB100371BD5 /* VSVehiclesViewController.m in Sources */,
 				B621FDED1DEAA29E00E54A51 /* hog.cpp in Sources */,
 				B621FD8F1DEAA29E00E54A51 /* cap.cpp in Sources */,
 				B621FD601DEAA29D00E54A51 /* cmdparser.cpp in Sources */,
@@ -1851,10 +2113,13 @@
 				B621FDD61DEAA29E00E54A51 /* utils.cpp in Sources */,
 				B621FD4C1DEAA29D00E54A51 /* imagelogpolprojection.cpp in Sources */,
 				B621FD9B1DEAA29E00E54A51 /* cap_libv4l.cpp in Sources */,
+				11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.m in Sources */,
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
+				11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */,
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
 				B621FDE01DEAA29E00E54A51 /* knearest.cpp in Sources */,
 				B621FDBB1DEAA29E00E54A51 /* featureselect.cpp in Sources */,
+				1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */,
 				B621FDA81DEAA29E00E54A51 /* ios_conversions.mm in Sources */,
 				B621FDE81DEAA29E00E54A51 /* datamatrix.cpp in Sources */,
 				11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */,
@@ -1874,10 +2139,13 @@
 				B621FDC41DEAA29E00E54A51 /* imgwarp.cpp in Sources */,
 				B621FD641DEAA29D00E54A51 /* drawing.cpp in Sources */,
 				B621FDB41DEAA29E00E54A51 /* contours.cpp in Sources */,
+				11303C031DEECEB100371BD5 /* VSSettingsSwitchCell.m in Sources */,
 				B621FD6B1DEAA29D00E54A51 /* matmul.cpp in Sources */,
 				B621FD4E1DEAA29D00E54A51 /* lda.cpp in Sources */,
 				B621FD891DEAA29D00E54A51 /* mser.cpp in Sources */,
+				11303BFA1DEECEB100371BD5 /* VSAddVehicleDataSource.m in Sources */,
 				B621FDDE1DEAA29E00E54A51 /* gbt.cpp in Sources */,
+				11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */,
 				B621FD531DEAA29D00E54A51 /* parvoretinafilter.cpp in Sources */,
 				B621FD381DEAA29D00E54A51 /* quadsubpix.cpp in Sources */,
 				B621FDBE1DEAA29E00E54A51 /* gabor.cpp in Sources */,
@@ -1885,12 +2153,14 @@
 				B621FDD41DEAA29E00E54A51 /* thresh.cpp in Sources */,
 				B621FDC51DEAA29E00E54A51 /* linefit.cpp in Sources */,
 				B621FD581DEAA29D00E54A51 /* rgbdodometry.cpp in Sources */,
+				11303BFE1DEECEB100371BD5 /* VSVehicleModel.m in Sources */,
 				B621FE001DEAA29E00E54A51 /* motempl.cpp in Sources */,
 				B621FD7B1DEAA29D00E54A51 /* descriptors.cpp in Sources */,
 				B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */,
 				B621FD9A1DEAA29E00E54A51 /* cap_ios_video_camera.mm in Sources */,
 				B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */,
 				B621FDAE1DEAA29E00E54A51 /* window_w32.cpp in Sources */,
+				11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */,
 				B621FDFA1DEAA29E00E54A51 /* bgfg_gaussmix.cpp in Sources */,
 				B621FDE91DEAA29E00E54A51 /* distancetransform.cpp in Sources */,
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
@@ -1908,11 +2178,13 @@
 				B621FDBD1DEAA29E00E54A51 /* floodfill.cpp in Sources */,
 				B621FD491DEAA29D00E54A51 /* fuzzymeanshifttracker.cpp in Sources */,
 				B621FD511DEAA29D00E54A51 /* octree.cpp in Sources */,
+				11303BF61DEECEB100371BD5 /* VSAddVehicleViewController.m in Sources */,
 				B621FDEC1DEAA29E00E54A51 /* haar.cpp in Sources */,
 				B621FD3B1DEAA29D00E54A51 /* stereosgbm.cpp in Sources */,
 				B621FDDB1DEAA29E00E54A51 /* em.cpp in Sources */,
 				B621FDF21DEAA29E00E54A51 /* lsvmtbbversion.cpp in Sources */,
 				B621FD341DEAA29D00E54A51 /* modelest.cpp in Sources */,
+				11303C061DEECEB100371BD5 /* VSVehicleCell.m in Sources */,
 				B621FD901DEAA29E00E54A51 /* cap_android.cpp in Sources */,
 				B621FD7D1DEAA29D00E54A51 /* draw.cpp in Sources */,
 				B621FDD81DEAA29E00E54A51 /* boost.cpp in Sources */,
@@ -1923,6 +2195,14 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		11303BB61DED749700371BD5 /* BOFiltersView.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11303BB71DED749700371BD5 /* Base */,
+			);
+			name = BOFiltersView.xib;
+			sourceTree = "<group>";
+		};
 		11B75AD81DDFD08D004EAB65 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2037,7 +2317,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				DEVELOPMENT_TEAM = FJ585C7YHN;
+				DEVELOPMENT_TEAM = F38H382JLK;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/vsopencvios/",
@@ -2057,6 +2337,7 @@
 					"$(SRCROOT)/vsopencvios/jpeg/include/ios",
 				);
 				INFOPLIST_FILE = vsopencvios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2076,7 +2357,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				DEVELOPMENT_TEAM = FJ585C7YHN;
+				DEVELOPMENT_TEAM = F38H382JLK;
 				ENABLE_BITCODE = NO;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/vsopencvios/",
@@ -2096,6 +2377,7 @@
 					"$(SRCROOT)/vsopencvios/jpeg/include/ios",
 				);
 				INFOPLIST_FILE = vsopencvios/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
