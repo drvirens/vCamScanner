@@ -54,26 +54,26 @@
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-hf-ive">
                                         <rect key="frame" x="11" y="395" width="256" height="111"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
-                                                <rect key="frame" x="78" y="39" width="18" height="20"/>
-                                                <state key="normal" backgroundImage="ic_rotate_left_white"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
+                                                <rect key="frame" x="75" y="37" width="24" height="24"/>
+                                                <state key="normal" image="ic_rotate_left_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuRotateLeft:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="W5l-67-erV"/>
                                                 </connections>
                                             </button>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-Bu-3xs">
+                                            <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-Bu-3xs">
                                                 <rect key="frame" x="213" y="8" width="20" height="20"/>
                                             </activityIndicatorView>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
-                                                <rect key="frame" x="230" y="38" width="18" height="20"/>
-                                                <state key="normal" backgroundImage="ic_check_white"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
+                                                <rect key="frame" x="227" y="36" width="24" height="24"/>
+                                                <state key="normal" image="ic_check_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuSelect:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="qeC-me-Fdi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
-                                                <rect key="frame" x="150" y="37" width="17" height="17"/>
-                                                <state key="normal" backgroundImage="ic_rotate_right_white"/>
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
+                                                <rect key="frame" x="147" y="34" width="24" height="24"/>
+                                                <state key="normal" image="ic_rotate_right_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuRotateRight:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="dEe-DN-Dju"/>
                                                 </connections>
@@ -92,7 +92,7 @@
                                             </button>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
                                                 <rect key="frame" x="8" y="36" width="24" height="24"/>
-                                                <state key="normal" backgroundImage="ic_close_white"/>
+                                                <state key="normal" image="ic_close_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuGoBack:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="AbR-Aa-95r"/>
                                                 </connections>
@@ -267,6 +267,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="0qb-vi-8hz"/>
                     <connections>
+                        <outlet property="activityIndicator" destination="aOG-Bu-3xs" id="u49-wS-i5k"/>
                         <outlet property="bottomFiltersViewConstraint" destination="dXr-Q9-DPa" id="s4S-Ph-FmE"/>
                         <outlet property="buttonCameraCapture" destination="8iD-3x-d4J" id="tns-ji-O5I"/>
                         <outlet property="buttonCameraCaptureBottomConstraint" destination="S2n-b5-hOu" id="AdP-Cs-PTm"/>

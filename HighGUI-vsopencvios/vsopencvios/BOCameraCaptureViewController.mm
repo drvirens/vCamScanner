@@ -49,9 +49,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet UIButton *menuButtonRotateLeft;
 @property (weak, nonatomic) IBOutlet UIButton *menuButtonRotateRight;
 @property (weak, nonatomic) IBOutlet UIButton *menuButtonSelect;
-
-
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityIndicator;
+
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *buttonCameraCaptureBottomConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *lowerContainerCapturedViewBottomLayout;
@@ -99,6 +98,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     [super viewDidLoad];
     
     self.state = BONotCroppedState;
+    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
+    self.activityIndicator.hidden = YES;
     
     [self setupRecentlyScannedView];
     [self hideRecentlyScannedView];
@@ -335,7 +336,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     }];
     
     self.containerCapturedView.hidden = NO;
-    self.activityIndicator.hidden = NO;
     self.cameraView.hidden = YES;
     
     [self detectEdgesOnImageAndDisplay:self.image];
@@ -514,11 +514,12 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
+    [self.activityIndicator stopAnimating];
+    
     [self hideBottomMenu];
     [self showCameraOverlay];
     
     self.containerCapturedView.hidden = YES;
-    self.activityIndicator.hidden = YES;
     self.cameraView.hidden = NO;
     
     [self.croppedView removeFromSuperview];
@@ -552,6 +553,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuRotateRight:(id)sender {
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
+    [self.activityIndicator startAnimating];
     if (self.state == BOCroppedPreviewState) {
         NSLog(@"BOCroppedPreviewState - show share state/view");
         [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
@@ -566,20 +568,21 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self showFiltersView];
         [self showInfoEntryView];
     }
+    [self.activityIndicator stopAnimating];
 }
 - (void)setupDefaultNextActionButton {
     UIImage* rightArrow = [UIImage imageNamed:@"ic_check_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
+    [self.menuButtonSelect setImage:rightArrow forState:UIControlStateNormal];
+//    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
 }
 - (void)transitMenuItemsToPreviewMode {
     self.menuButtonRotateLeft.hidden = YES;
     self.menuButtonRotateRight.hidden = YES;
     UIImage* rightArrow = [UIImage imageNamed:@"ic_arrow_forward_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
+    [self.menuButtonSelect setImage:rightArrow forState:UIControlStateNormal];
+//    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
     self.state = BOCroppedPreviewState;
 }
 - (void)transitMenuItemsToNotCroppedMode {
@@ -587,8 +590,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.menuButtonRotateRight.hidden = NO;
     UIImage* rightArrow = [UIImage imageNamed:@"ic_check_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
+    [self.menuButtonSelect setImage:rightArrow forState:UIControlStateNormal];
+//    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
     self.state = BOCroppedPreviewState;
 }
 - (void)transitMenuItemsToShareMode {
@@ -596,8 +599,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.menuButtonRotateRight.hidden = YES;
     UIImage* rightArrow = [UIImage imageNamed:@"ic_share_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
+    [self.menuButtonSelect setImage:rightArrow forState:UIControlStateNormal];
+//    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
     self.state = BOShareState;
 }
 - (void)share:(id)sender {
