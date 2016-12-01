@@ -248,6 +248,10 @@ static const CGFloat kFontVeryLarge		= 40.f;
 	return [UIColor colorWithRed:(45.f/255.f) green:(175.f/255.f) blue:(236.f/255.f) alpha:1.f];
 }
 
++ (UIColor*)vs_brandRedColor {
+    return [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f];
+}
+
 + (void)decorateCancelBtn:(UIBarButtonItem*)cancelBtn {
 	UIFont* fnt = VS_FONT_REGULAR;
 	UIColor* fgColor = [VSBranding vs_lightGrayColor];
@@ -269,4 +273,5 @@ static const CGFloat kFontVeryLarge		= 40.f;
 								 NSForegroundColorAttributeName:fgColor};
 	[disabledBtn setTitleTextAttributes:barBtnDick forState:UIControlStateNormal];
 }
+
 @end

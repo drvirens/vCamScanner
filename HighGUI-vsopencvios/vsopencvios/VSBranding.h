@@ -56,6 +56,7 @@
 + (UIColor*)vs_skyBlueColor;
 + (UIColor*)vs_greenColor;
 + (UIColor*)vs_redColor;
++ (UIColor*)vs_brandRedColor;
 
 	//font - summary
 	//deprecate+

@@ -1,10 +1,11 @@
 
 #import "MMCropView.h"
+#import "BOConstants.h"
 
 #define kCropButtonSize 30
 
 //#define COLOR_EDGE_DOTS [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f] //red
-#define COLOR_EDGE_DOTS [UIColor colorWithRed:16.f/255.f green:160.f/255.f blue:208.f/255.f alpha:1.f]
+//#define COLOR_EDGE_DOTS [UIColor colorWithRed:16.f/255.f green:160.f/255.f blue:208.f/255.f alpha:1.f]
 
 @implementation MMCropView
 @synthesize pointD = _pointD;
@@ -32,14 +33,14 @@
          _pointG=[[UIView alloc] init];
          _pointH=[[UIView alloc] init];
         
-//        _pointA.alpha=0.5;
-//        _pointB.alpha=0.5;
-//        _pointC.alpha=0.5;
-//        _pointD.alpha=0.5;
-//        _pointE.alpha=0.5;
-//        _pointF.alpha=0.5;
-//        _pointG.alpha=0.5;
-//        _pointH.alpha=0.5;
+        _pointA.alpha=0.75;
+        _pointB.alpha=0.75;
+        _pointC.alpha=0.75;
+        _pointD.alpha=0.75;
+        _pointE.alpha=0.75;
+        _pointF.alpha=0.75;
+        _pointG.alpha=0.75;
+        _pointH.alpha=0.75;
         
         _pointA.layer.cornerRadius = kCropButtonSize/2;
         _pointB.layer.cornerRadius = kCropButtonSize/2;

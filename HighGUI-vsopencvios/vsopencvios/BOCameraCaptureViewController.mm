@@ -99,11 +99,14 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self clearTitle];
     [self clearCategoryText];
     [self setupMiscGUI];
+    [self decorateCategoryMoreIcon];
     
     [self setupFitersMenu];
     
 	[self setupContainerView];
 	[self setupCameraButton];
+    
+    [self setupDefaultNextActionButton];
     
 	[self startCamera];
 }
@@ -129,6 +132,12 @@ static void* gUserLoadContext = &gUserLoadContext;
                                     };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
     self.infoEntryView.labelSelectedCategoryName.attributedText = category;
+}
+- (void)decorateCategoryMoreIcon {
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.infoEntryView.imageViewIcon.image = rightArrow;
+    self.infoEntryView.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
 }
 - (void)setupMiscGUI {
     self.infoEntryView.textFieldTitle.delegate = self;
@@ -478,13 +487,19 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self showInfoEntryView];
     }
 }
+- (void)setupDefaultNextActionButton {
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_check_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
+    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
+}
 - (void)transitMenuItemsToPreviewMode {
     self.menuButtonRotateLeft.hidden = YES;
     self.menuButtonRotateRight.hidden = YES;
     UIImage* rightArrow = [UIImage imageNamed:@"ic_arrow_forward_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [UIColor whiteColor];
+    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
     self.state = BOCroppedPreviewState;
 }
 - (void)transitMenuItemsToNotCroppedMode {
@@ -493,7 +508,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     UIImage* rightArrow = [UIImage imageNamed:@"ic_check_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [UIColor whiteColor];
+    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
     self.state = BOCroppedPreviewState;
 }
 - (void)transitMenuItemsToShareMode {
@@ -502,7 +517,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     UIImage* rightArrow = [UIImage imageNamed:@"ic_share_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.menuButtonSelect setBackgroundImage:rightArrow forState:UIControlStateNormal];
-    self.menuButtonSelect.tintColor = [UIColor whiteColor];
+    self.menuButtonSelect.tintColor = [VSBranding vs_brandRedColor];
     self.state = BOShareState;
 }
 - (void)share:(id)sender {

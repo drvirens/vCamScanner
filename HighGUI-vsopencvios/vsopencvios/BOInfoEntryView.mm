@@ -7,6 +7,7 @@
 //
 
 #import "BOInfoEntryView.h"
+#import "VSBranding.h"
 
 @interface BOInfoEntryView ()
 
