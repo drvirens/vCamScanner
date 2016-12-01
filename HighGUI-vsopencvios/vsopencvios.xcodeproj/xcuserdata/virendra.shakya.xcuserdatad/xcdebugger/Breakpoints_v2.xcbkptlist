@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vsopencvios/BOCameraCaptureViewController.mm"
-            timestampString = "502278127.291013"
+            timestampString = "502325880.605761"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "576"
-            endingLineNumber = "576"
+            startingLineNumber = "578"
+            endingLineNumber = "578"
             landmarkName = "-didSelectMenuSelect:"
             landmarkType = "7">
          </BreakpointContent>

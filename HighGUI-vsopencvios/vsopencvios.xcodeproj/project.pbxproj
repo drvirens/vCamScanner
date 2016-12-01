@@ -58,6 +58,9 @@
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
 		11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */; };
+		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */; };
+		11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */; };
+		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
 		B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FB9E1DEAA29D00E54A51 /* calibinit.cpp */; };
 		B621FD2F1DEAA29D00E54A51 /* calibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FB9F1DEAA29D00E54A51 /* calibration.cpp */; };
 		B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FBA01DEAA29D00E54A51 /* checkchessboard.cpp */; };
@@ -388,6 +391,11 @@
 		11B75DA21DDFD0E1004EAB65 /* opencv_modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv_modules.hpp; sourceTree = "<group>"; };
 		11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scannerLite.cpp; sourceTree = "<group>"; };
 		11B75DA41DDFD0E1004EAB65 /* scannerLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannerLite.h; sourceTree = "<group>"; };
+		11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentsListViewController.h; sourceTree = "<group>"; };
+		11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentsListViewController.m; sourceTree = "<group>"; };
+		11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BODocumentView.xib; sourceTree = "<group>"; };
+		11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentView.h; sourceTree = "<group>"; };
+		11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentView.m; sourceTree = "<group>"; };
 		B621FB9B1DEAA29D00E54A51 /* calib3d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = calib3d.hpp; sourceTree = "<group>"; };
 		B621FB9D1DEAA29D00E54A51 /* _modelest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _modelest.h; sourceTree = "<group>"; };
 		B621FB9E1DEAA29D00E54A51 /* calibinit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calibinit.cpp; sourceTree = "<group>"; };
@@ -990,6 +998,11 @@
 				1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */,
 				1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */,
 				1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */,
+				11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */,
+				11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */,
+				11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */,
+				11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */,
+				11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -1919,6 +1932,7 @@
 				11303BFF1DEECEB100371BD5 /* Settings.storyboard in Resources */,
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
 				1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */,
+				11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */,
 				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
 				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
@@ -2020,6 +2034,7 @@
 				B621FDDA1DEAA29E00E54A51 /* data.cpp in Sources */,
 				B621FDCC1DEAA29E00E54A51 /* samplers.cpp in Sources */,
 				B621FDBF1DEAA29E00E54A51 /* generalized_hough.cpp in Sources */,
+				11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.m in Sources */,
 				B621FD801DEAA29D00E54A51 /* fast.cpp in Sources */,
 				B621FD551DEAA29D00E54A51 /* retina.cpp in Sources */,
 				B621FD931DEAA29E00E54A51 /* cap_dc1394.cpp in Sources */,
@@ -2180,6 +2195,7 @@
 				B621FD511DEAA29D00E54A51 /* octree.cpp in Sources */,
 				11303BF61DEECEB100371BD5 /* VSAddVehicleViewController.m in Sources */,
 				B621FDEC1DEAA29E00E54A51 /* haar.cpp in Sources */,
+				11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */,
 				B621FD3B1DEAA29D00E54A51 /* stereosgbm.cpp in Sources */,
 				B621FDDB1DEAA29E00E54A51 /* em.cpp in Sources */,
 				B621FDF21DEAA29E00E54A51 /* lsvmtbbversion.cpp in Sources */,

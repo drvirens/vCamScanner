@@ -20,6 +20,7 @@
 #import "VSCameraPermissionsViewController.h"
 #import "VSBranding.h"
 #import "BORecentlyScannedView.h"
+#import "BODocumentsListViewController.h"
 
 typedef enum BOState {
     BONotCroppedState,
@@ -282,6 +283,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (IBAction)didTapShowAllDocumentsButton:(id)sender {
     NSLog(@"didTapShowAllDocumentsButton");
+    [self performSegueWithIdentifier:@"documents" sender:self];
 }
 
 #pragma mark - BORecentlyScannedViewDelegate
@@ -742,6 +744,10 @@ static void* gUserLoadContext = &gUserLoadContext;
         permissionsVC.cameraController = self.cameraController;
         permissionsVC.message = self.message;
         permissionsVC.positiveBtnTitle = self.positiveBtnTitle;
+    } else if ([@"documents" isEqualToString:segue.identifier]) {
+        UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
+        BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
+       // destVC.delegateCategory = self;
     }
 }
 #pragma mark - BOCategoryTableViewControllerDelegate
