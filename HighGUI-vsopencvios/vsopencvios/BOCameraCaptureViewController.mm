@@ -342,6 +342,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
     
+    cell.layer.borderColor = [VSBranding vs_veryDarkGrayColor].CGColor;
+    cell.layer.borderWidth = .5f;
+    cell.layer.cornerRadius = 0.f;
+    
     //add gradient for labels/ bg view
     [self addGradient:cell];
     
@@ -397,8 +401,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     //unselect current selection first
     UILabel* label = nil;
     if (self.currentlySelectedFilterMenu) {
-        self.currentlySelectedFilterMenu.layer.borderColor = [UIColor clearColor].CGColor;
-        self.currentlySelectedFilterMenu.layer.borderWidth = 0.f;
+        self.currentlySelectedFilterMenu.layer.borderColor = [VSBranding vs_veryDarkGrayColor].CGColor;
+        self.currentlySelectedFilterMenu.layer.borderWidth = .5f;
         self.currentlySelectedFilterMenu.layer.cornerRadius = 0.f;
         
         label = (UILabel*)[self.currentlySelectedFilterMenu viewWithTag:100];
@@ -446,7 +450,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.state = BONotCroppedState;
     
     if (self.currentlySelectedFilterMenu) {
-        self.currentlySelectedFilterMenu.backgroundColor = NORMAL_FILTER_BACKGROUND_COLOR;
         self.currentlySelectedFilterMenu.layer.borderColor = VERY_VERY_LIGHT_GRAY_COLOR.CGColor;
     }
     self.currentlySelectedFilterMenu = nil;
