@@ -347,7 +347,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     cell.layer.cornerRadius = 0.f;
     
     //add gradient for labels/ bg view
-    [self addGradient:cell];
+    //[self addGradient:cell];
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
@@ -360,7 +360,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         if (indexPath.item == 0) { //put first cell as selected by default
             self.currentlySelectedFilterMenu = cell;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
-            cell.layer.borderWidth = 3.f;
+            cell.layer.borderWidth = 4.f;
             cell.layer.cornerRadius = 3.f;
             [self decorateSelectedCellLabel:label text:filter.menuDisplayName];
         }
@@ -412,7 +412,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
     self.currentlySelectedFilterMenu = cell;
     cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
-    cell.layer.borderWidth = 3.f;
+    cell.layer.borderWidth = 4.f;
     cell.layer.cornerRadius = 3.f;
     
     label = (UILabel*)[cell viewWithTag:100];

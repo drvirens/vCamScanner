@@ -18,7 +18,10 @@ FOUNDATION_EXPORT const CGFloat kTopMarginEntryView;
 
 //[UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f] //red
 
-#define SELECTED_FILTER_BACKGROUND_COLOR [UIColor whiteColor]
+//#define SELECTED_FILTER_BACKGROUND_COLOR [UIColor whiteColor]
+
+#define SELECTED_FILTER_BACKGROUND_COLOR [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f] //red
+
 
 #define NORMAL_FILTER_BACKGROUND_COLOR [UIColor whiteColor]
 
