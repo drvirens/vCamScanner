@@ -41,7 +41,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gss-S8-HRN">
+                            <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gss-S8-HRN">
                                 <rect key="frame" x="84" y="28" width="275" height="631"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GeH-wF-pAH" customClass="BOInfoEntryView">
@@ -61,6 +61,9 @@
                                                     <action selector="didSelectMenuRotateLeft:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="W5l-67-erV"/>
                                                 </connections>
                                             </button>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" hidesWhenStopped="YES" animating="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-Bu-3xs">
+                                                <rect key="frame" x="213" y="8" width="20" height="20"/>
+                                            </activityIndicatorView>
                                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
                                                 <rect key="frame" x="230" y="38" width="18" height="20"/>
                                                 <state key="normal" backgroundImage="ic_check_white"/>
@@ -98,12 +101,14 @@
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
                                             <constraint firstItem="IxB-Yj-cdA" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="2n1-UB-ySI"/>
+                                            <constraint firstItem="aOG-Bu-3xs" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="31N-wg-Nlq"/>
                                             <constraint firstItem="TES-53-N2P" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="AR1-36-sKs"/>
                                             <constraint firstItem="dUl-Jg-2lo" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="G5U-zk-foI"/>
                                             <constraint firstItem="gh0-du-rN5" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="JXQ-Er-ut5"/>
                                             <constraint firstItem="dJb-o9-jb2" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="KOi-yH-GBH"/>
                                             <constraint firstItem="JfM-UP-FHL" firstAttribute="centerY" secondItem="qzy-hf-ive" secondAttribute="centerY" id="Ku5-le-eUT"/>
                                             <constraint firstAttribute="trailing" secondItem="TES-53-N2P" secondAttribute="trailing" multiplier="8:3" id="MbN-GL-0Ft"/>
+                                            <constraint firstAttribute="trailing" secondItem="aOG-Bu-3xs" secondAttribute="trailing" multiplier="8:7" id="Wrp-NY-bPW"/>
                                             <constraint firstAttribute="trailing" secondItem="dUl-Jg-2lo" secondAttribute="trailing" multiplier="8:4" id="elo-hK-Qom"/>
                                             <constraint firstAttribute="trailing" secondItem="6wW-au-21S" secondAttribute="trailing" multiplier="8:5" id="g55-iB-MEG"/>
                                             <constraint firstAttribute="trailing" secondItem="JfM-UP-FHL" secondAttribute="trailing" multiplier="8:1" id="gJc-WJ-RFb"/>
@@ -114,9 +119,6 @@
                                             <constraint firstAttribute="height" constant="80" id="vmm-Ma-rk7"/>
                                         </constraints>
                                     </view>
-                                    <activityIndicatorView hidden="YES" opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" misplaced="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="xnd-F8-YHU">
-                                        <rect key="frame" x="219" y="280" width="37" height="37"/>
-                                    </activityIndicatorView>
                                     <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UsK-Ud-WaM">
                                         <rect key="frame" x="48" y="131" width="134" height="117"/>
                                         <subviews>
@@ -138,7 +140,6 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="UsK-Ud-WaM" secondAttribute="trailing" id="MHn-IO-Iwb"/>
                                     <constraint firstAttribute="bottom" secondItem="qzy-hf-ive" secondAttribute="bottom" constant="-120" id="Mx7-GE-0hq"/>
-                                    <constraint firstItem="xnd-F8-YHU" firstAttribute="centerY" secondItem="gss-S8-HRN" secondAttribute="centerY" id="Nxo-Ws-kJh"/>
                                     <constraint firstItem="qzy-hf-ive" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="Qi4-mZ-CE8"/>
                                     <constraint firstItem="GeH-wF-pAH" firstAttribute="top" secondItem="gss-S8-HRN" secondAttribute="top" constant="-150" id="YNI-s6-tNN"/>
                                     <constraint firstAttribute="trailing" secondItem="GeH-wF-pAH" secondAttribute="trailing" id="d4G-KT-QgP"/>
@@ -146,7 +147,6 @@
                                     <constraint firstItem="UsK-Ud-WaM" firstAttribute="top" secondItem="GeH-wF-pAH" secondAttribute="bottom" constant="5" id="rUo-3a-Idx"/>
                                     <constraint firstItem="GeH-wF-pAH" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="sFI-Uv-44T"/>
                                     <constraint firstItem="UsK-Ud-WaM" firstAttribute="leading" secondItem="gss-S8-HRN" secondAttribute="leading" id="sTa-Pz-lS2"/>
-                                    <constraint firstItem="xnd-F8-YHU" firstAttribute="centerX" secondItem="gss-S8-HRN" secondAttribute="centerX" id="scQ-VL-ALM"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="yop-xH-tsR">
@@ -267,7 +267,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="0qb-vi-8hz"/>
                     <connections>
-                        <outlet property="activityIndicator" destination="xnd-F8-YHU" id="V6Y-6I-QTA"/>
                         <outlet property="bottomFiltersViewConstraint" destination="dXr-Q9-DPa" id="s4S-Ph-FmE"/>
                         <outlet property="buttonCameraCapture" destination="8iD-3x-d4J" id="tns-ji-O5I"/>
                         <outlet property="buttonCameraCaptureBottomConstraint" destination="S2n-b5-hOu" id="AdP-Cs-PTm"/>
