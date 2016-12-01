@@ -4,9 +4,6 @@
 
 #define kCropButtonSize 30
 
-//#define COLOR_EDGE_DOTS [UIColor colorWithRed:255.f/255.f green:76.f/255.f blue:78.f/255.f alpha:1.f] //red
-//#define COLOR_EDGE_DOTS [UIColor colorWithRed:16.f/255.f green:160.f/255.f blue:208.f/255.f alpha:1.f]
-
 @implementation MMCropView
 @synthesize pointD = _pointD;
 @synthesize pointC = _pointC;
@@ -185,7 +182,7 @@
 {
    
     [_pointD setFrame:CGRectMake(d.x - kCropButtonSize / 2, d.y - kCropButtonSize / 2, kCropButtonSize, kCropButtonSize)];
-    [_pointC setFrame:CGRectMake(c.x - kCropButtonSize / 2,c.y - kCropButtonSize / 2, kCropButtonSize, kCropButtonSize)];
+    [_pointC setFrame:CGRectMake(c.x - kCropButtonSize / 2, c.y - kCropButtonSize / 2, kCropButtonSize, kCropButtonSize)];
     [_pointB setFrame:CGRectMake(b.x - kCropButtonSize / 2, b.y - kCropButtonSize / 2, kCropButtonSize, kCropButtonSize)];
     [_pointA setFrame:CGRectMake(a.x - kCropButtonSize / 2, a.y - kCropButtonSize / 2, kCropButtonSize, kCropButtonSize)];
     
