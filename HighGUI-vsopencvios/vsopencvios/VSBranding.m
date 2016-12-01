@@ -224,6 +224,10 @@ static const CGFloat kFontVeryLarge		= 40.f;
 	return [UIColor colorWithRed:(108.f/255.f) green:(122.f/255.f) blue:(137.f/255.f) alpha:1.f];
 }
 
++ (UIColor*)vs_veryVeryDarkGrayColor {
+    return [UIColor colorWithRed:(40.f/255.f) green:(40.f/255.f) blue:(40.f/255.f) alpha:1.f];
+}
+
 + (UIColor*)vs_lightGrayColor {
 	return [UIColor colorWithRed:(236.f/255.f) green:(236.f/255.f) blue:(236.f/255.f) alpha:1.f];
 }

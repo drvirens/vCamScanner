@@ -110,13 +110,14 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self setupDefaultNextActionButton];
     [self decorateSettingsButton];
     [self decorateShowDocumentsButton];
+    [self setupFileSizeLabel];
     
 	[self startCamera];
 }
 - (void)clearTitle {
     //placeholder
     NSDictionary* placeholderTextColor = @{
-                                           NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                           NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
                                            NSFontAttributeName : VS_FONT_VERYSMALL
                                            };
     NSAttributedString* placeHolder = [[NSAttributedString alloc] initWithString:@"ENTER TITLE" attributes:placeholderTextColor];
@@ -124,17 +125,21 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     //typed text
     self.infoEntryView.textFieldTitle.font = VS_FONT_SMALL;
-    self.infoEntryView.textFieldTitle.textColor = [VSBranding vs_whiteColor];
+    self.infoEntryView.textFieldTitle.textColor = [UIColor darkGrayColor];
     self.infoEntryView.textFieldTitle.text = nil;
 }
 - (void)clearCategoryText {
     //category label
     NSDictionary* labelCategory = @{
-                                    NSForegroundColorAttributeName : [UIColor darkGrayColor],
+                                    NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
                                     NSFontAttributeName : VS_FONT_VERYSMALL
                                     };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
     self.infoEntryView.labelSelectedCategoryName.attributedText = category;
+}
+- (void)setupFileSizeLabel {
+    self.infoEntryView.labelFileSize.textColor = [VSBranding vs_brandRedColor];
+    self.infoEntryView.labelFileSize.font = VS_FONT_EXTRASMALL;
 }
 - (void)decorateCategoryMoreIcon {
     UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];

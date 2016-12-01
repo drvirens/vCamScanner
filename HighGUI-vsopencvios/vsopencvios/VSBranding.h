@@ -52,6 +52,7 @@
 + (UIColor*)travelBottomTextColor;
 + (UIColor*)vs_lightGrayColor;
 + (UIColor*)vs_veryDarkGrayColor;
++ (UIColor*)vs_veryVeryDarkGrayColor;
 + (UIColor*)vs_darkGrayColor;
 + (UIColor*)vs_skyBlueColor;
 + (UIColor*)vs_greenColor;
