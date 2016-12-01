@@ -22,36 +22,23 @@
                         <rect key="frame" x="17" y="8" width="67" height="179"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </imageView>
-                    <view alpha="0.5" tag="69" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jqU-dt-LxW">
-                        <rect key="frame" x="0.0" y="103" width="100" height="97"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTS-Sa-NDf">
-                                <rect key="frame" x="28" y="38" width="45" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="BTS-Sa-NDf" firstAttribute="leading" secondItem="jqU-dt-LxW" secondAttribute="leading" id="A0w-dC-pbH"/>
-                            <constraint firstItem="BTS-Sa-NDf" firstAttribute="top" secondItem="jqU-dt-LxW" secondAttribute="top" id="eFb-y4-dIx"/>
-                            <constraint firstAttribute="bottom" secondItem="BTS-Sa-NDf" secondAttribute="bottom" id="fVF-0P-vG7"/>
-                            <constraint firstAttribute="trailing" secondItem="BTS-Sa-NDf" secondAttribute="trailing" id="n1i-Y0-6A3"/>
-                            <constraint firstAttribute="height" constant="50" id="ndN-Wc-UcU"/>
-                        </constraints>
-                    </view>
+                    <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BTS-Sa-NDf">
+                        <rect key="frame" x="28" y="145" width="45" height="21"/>
+                        <fontDescription key="fontDescription" name="Noteworthy-Light" family="Noteworthy" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="jqU-dt-LxW" secondAttribute="trailing" id="075-NJ-5kK"/>
                 <constraint firstAttribute="trailing" secondItem="Yzr-Hq-ohE" secondAttribute="trailing" id="BMv-Xb-uUr"/>
                 <constraint firstItem="Yzr-Hq-ohE" firstAttribute="top" secondItem="v4k-G5-as6" secondAttribute="top" id="DVh-As-gW6"/>
-                <constraint firstAttribute="bottom" secondItem="jqU-dt-LxW" secondAttribute="bottom" id="EgH-VH-l5j"/>
+                <constraint firstAttribute="bottom" secondItem="BTS-Sa-NDf" secondAttribute="bottom" constant="12" id="NOy-bg-r2u"/>
                 <constraint firstAttribute="bottom" secondItem="Yzr-Hq-ohE" secondAttribute="bottom" id="UUg-ae-1Rt"/>
                 <constraint firstItem="Yzr-Hq-ohE" firstAttribute="leading" secondItem="v4k-G5-as6" secondAttribute="leading" id="eG2-zU-zXO"/>
-                <constraint firstItem="jqU-dt-LxW" firstAttribute="leading" secondItem="v4k-G5-as6" secondAttribute="leading" id="ych-eq-Cmy"/>
+                <constraint firstItem="BTS-Sa-NDf" firstAttribute="leading" secondItem="v4k-G5-as6" secondAttribute="leading" id="jBm-XN-itk"/>
+                <constraint firstAttribute="trailing" secondItem="BTS-Sa-NDf" secondAttribute="trailing" id="qnA-ED-IKN"/>
             </constraints>
             <size key="customSize" width="100" height="200"/>
             <point key="canvasLocation" x="76" y="191"/>

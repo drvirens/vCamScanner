@@ -343,8 +343,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     UICollectionViewCell* cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BOFilterCell" forIndexPath:indexPath];
     
     //add gradient for labels/ bg view
-    UIView* maskView = (UIView*)[cell viewWithTag:69];
-    [self addGradient:maskView];
+    [self addGradient:cell];
     
     UILabel* label = (UILabel*)[cell viewWithTag:100];
     BOFilterMenuModel* filter = self.dataSource[indexPath.item];
@@ -357,7 +356,6 @@ static void* gUserLoadContext = &gUserLoadContext;
         if (indexPath.item == 0) { //put first cell as selected by default
             self.currentlySelectedFilterMenu = cell;
             cell.layer.borderColor = SELECTED_FILTER_BACKGROUND_COLOR.CGColor;
-            //label.textColor = [UIColor blackColor];
             cell.layer.borderWidth = 3.f;
             cell.layer.cornerRadius = 3.f;
             [self decorateSelectedCellLabel:label text:filter.menuDisplayName];
@@ -377,7 +375,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     //category label
     NSDictionary* labelCategory = @{
                                     NSForegroundColorAttributeName : [UIColor lightGrayColor],
-                                    NSFontAttributeName : VS_FONT_VERYSMALL
+                                    NSFontAttributeName : VS_FONT_EXTRASMALL
                                     };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:text attributes:labelCategory];
     label.attributedText = category;
@@ -386,7 +384,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     //category label
     NSDictionary* labelCategory = @{
                                     NSForegroundColorAttributeName : [UIColor whiteColor],
-                                    NSFontAttributeName : VS_FONT_VERYSMALL
+                                    NSFontAttributeName : VS_FONT_EXTRASMALL
                                     };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:text attributes:labelCategory];
     label.attributedText = category;
@@ -404,8 +402,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         self.currentlySelectedFilterMenu.layer.cornerRadius = 0.f;
         
         label = (UILabel*)[self.currentlySelectedFilterMenu viewWithTag:100];
-        //label.textColor = [UIColor lightGrayColor];
-        [self decorateCellLabel:label text:filter.menuDisplayName];
+        [self decorateCellLabel:label text:label.text];
     }
     
     UICollectionViewCell* cell = [collectionView cellForItemAtIndexPath:indexPath];
@@ -415,13 +412,10 @@ static void* gUserLoadContext = &gUserLoadContext;
     cell.layer.cornerRadius = 3.f;
     
     label = (UILabel*)[cell viewWithTag:100];
-    //label.textColor = [UIColor blackColor];
-    
-    
     
     self.capturedImageView.image = filter.menuThumbnail;
     
-    [self decorateSelectedCellLabel:label text:filter.menuDisplayName];
+    [self decorateSelectedCellLabel:label text:label.text];
     
     self.finalProcessedImage = filter.menuThumbnail;
 }
