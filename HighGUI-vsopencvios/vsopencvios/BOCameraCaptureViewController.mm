@@ -941,7 +941,19 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
         NSLog(@"%f %f %f %f",ptBottomLeft.x,ptBottomRight.x,ptTopRight.x,ptTopLeft.x);
         cv::warpPerspective(original, undistorted, cv::getPerspectiveTransform(src, dst), cvSize(maxWidth, maxHeight));
         
-        [UIView transitionWithView:self.capturedImageView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+//        [UIView transitionWithView:self.capturedImageView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
+//            self.capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:undistorted];
+//            self.cropImage = self.capturedImageView.image;
+//            //         _sourceImageView.image = [MMOpenCVHelper UIImageFromCVMat:grayImage];//For gray image
+//            
+//            //viren+
+//            //[self showCroppedImageinScrollView:self.cropImage];
+//            //viren-
+//        } completion:^(BOOL finished) {
+//            self.croppedView.hidden = YES;
+//        }];
+        
+//        [UIView transitionWithView:self.capturedImageView duration:0.3 options:UIViewAnimationOptionTransitionCrossDissolve animations:^{
             self.capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:undistorted];
             self.cropImage = self.capturedImageView.image;
             //         _sourceImageView.image = [MMOpenCVHelper UIImageFromCVMat:grayImage];//For gray image
@@ -949,9 +961,10 @@ static cv::Mat debugSquares( std::vector<std::vector<cv::Point> > squares, cv::M
             //viren+
             //[self showCroppedImageinScrollView:self.cropImage];
             //viren-
-        } completion:^(BOOL finished) {
+//        } completion:^(BOOL finished) {
             self.croppedView.hidden = YES;
-        }];
+//        }];
+        
         original.release();
         undistorted.release();
     }
