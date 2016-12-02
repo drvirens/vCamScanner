@@ -312,7 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="205" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="olC-ZN-syM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="205" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="olC-ZN-syM">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -320,7 +320,7 @@
                                         <rect key="frame" x="0.0" y="56" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7EY-ux-Wv3" id="nq7-89-QnV">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Pcz-T4-Jzz">
@@ -340,7 +340,7 @@
                                         <rect key="frame" x="0.0" y="261" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aW2-5V-AwA" id="Rn1-BC-EVt">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="204"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="205"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYD-B8-spJ" customClass="BODocumentView">
@@ -349,9 +349,9 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KYD-B8-spJ" secondAttribute="bottom" id="0Vh-LF-LGQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="KYD-B8-spJ" secondAttribute="bottom" constant="5" id="0Vh-LF-LGQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="KYD-B8-spJ" secondAttribute="trailing" id="OO2-b5-xrb"/>
-                                                <constraint firstItem="KYD-B8-spJ" firstAttribute="top" secondItem="Rn1-BC-EVt" secondAttribute="top" id="Tpf-3J-Z0E"/>
+                                                <constraint firstItem="KYD-B8-spJ" firstAttribute="top" secondItem="Rn1-BC-EVt" secondAttribute="top" constant="5" id="Tpf-3J-Z0E"/>
                                                 <constraint firstItem="KYD-B8-spJ" firstAttribute="leading" secondItem="Rn1-BC-EVt" secondAttribute="leading" id="zfB-jx-X5Z"/>
                                             </constraints>
                                         </tableViewCellContentView>
