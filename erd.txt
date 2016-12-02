@@ -1,6 +1,9 @@
 ERD
 
 User
+	- userName
+	- email
+	- phoneNumber
 
 Document
 	- title
@@ -8,11 +11,26 @@ Document
 	- dateUpdated
 	- size
 	- originalPhotoHref
-	- modifiedPhotoHref
-	/* phase 2*/
-	- uploadDate
-	- isSecured
+	- modifiedPhotoHref         
+	- uploadDate           /* phase 2*/
+	- latitude             /* phase 2*/
+	- longitude            /* phase 2*/
+	- ocrTextHref          /* phase 2*/
+	- fileType             /* phase 2 - jpg, pdf etc */
+	
+Credentials
+	- ownerUser
 	- password
+	- thumbnail ??
 
 Category
+	- name
+	- iconName
+	- isCustom
+
+Filter
+	- name
+	- isFree
+	- inAppPurchasePrice
+	- 
 
