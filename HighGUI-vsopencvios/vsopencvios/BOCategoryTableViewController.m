@@ -26,7 +26,9 @@
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
-    
+    [self setupGUI];
+}
+- (void)setupGUI {
     //left bar button
     UIImage* closeImg = [UIImage imageNamed:@"ic_close_white"];
     closeImg = [closeImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
