@@ -7,23 +7,24 @@
 //
 
 #import "BOGradientLayerController.h"
+#import "VSBranding.h"
 
 @implementation BOGradientLayerController
 + (CAGradientLayer*)blackGradient {
     NSArray* colors = @[
-                        (id)[UIColor redColor].CGColor,
-                        (id)[UIColor greenColor].CGColor,
-                        (id)[UIColor blueColor].CGColor
+                        (id)[UIColor darkGrayColor].CGColor,
+                        //(id)[UIColor greenColor].CGColor,
+                        (id)[UIColor blackColor].CGColor
                         ];
     
     NSArray* locations = @[
-                           [NSNumber numberWithFloat:0.3f],
-                           [NSNumber numberWithFloat:0.5f],
+                           [NSNumber numberWithFloat:0.f],
+                           //[NSNumber numberWithFloat:0.5f],
                            [NSNumber numberWithFloat:1.f]
                            ];
     CAGradientLayer* ret = [CAGradientLayer layer];
     ret.colors = colors;
-    ret.locations = locations;
+    //ret.locations = locations;
     return ret;
 }
 @end
