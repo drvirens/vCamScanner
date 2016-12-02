@@ -336,7 +336,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" rowHeight="205" id="aW2-5V-AwA">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="BODocumentTableViewCell" rowHeight="205" id="aW2-5V-AwA" customClass="BODocumentTableViewCell">
                                         <rect key="frame" x="0.0" y="261" width="414" height="205"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aW2-5V-AwA" id="Rn1-BC-EVt">
@@ -345,7 +345,7 @@
                                             <subviews>
                                                 <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KYD-B8-spJ" customClass="BODocumentView">
                                                     <rect key="frame" x="75" y="26" width="240" height="128"/>
-                                                    <color key="backgroundColor" red="1" green="0.44220853770000002" blue="0.5527399999" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                 </view>
                                             </subviews>
                                             <constraints>
@@ -355,6 +355,9 @@
                                                 <constraint firstItem="KYD-B8-spJ" firstAttribute="leading" secondItem="Rn1-BC-EVt" secondAttribute="leading" id="zfB-jx-X5Z"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="documentView" destination="KYD-B8-spJ" id="epk-cO-eTG"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>

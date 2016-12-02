@@ -61,6 +61,8 @@
 		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */; };
 		11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */; };
 		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
+		11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */; };
+		11C99CC71DF0F3D10034D6C5 /* BODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */; };
 		B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FB9E1DEAA29D00E54A51 /* calibinit.cpp */; };
 		B621FD2F1DEAA29D00E54A51 /* calibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FB9F1DEAA29D00E54A51 /* calibration.cpp */; };
 		B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FBA01DEAA29D00E54A51 /* checkchessboard.cpp */; };
@@ -396,6 +398,10 @@
 		11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BODocumentView.xib; sourceTree = "<group>"; };
 		11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentView.h; sourceTree = "<group>"; };
 		11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentView.m; sourceTree = "<group>"; };
+		11C99CC21DF0EF450034D6C5 /* BODocumentTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentTableViewCell.h; sourceTree = "<group>"; };
+		11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentTableViewCell.m; sourceTree = "<group>"; };
+		11C99CC51DF0F3D10034D6C5 /* BODocumentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentModel.h; sourceTree = "<group>"; };
+		11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentModel.m; sourceTree = "<group>"; };
 		B621FB9B1DEAA29D00E54A51 /* calib3d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = calib3d.hpp; sourceTree = "<group>"; };
 		B621FB9D1DEAA29D00E54A51 /* _modelest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _modelest.h; sourceTree = "<group>"; };
 		B621FB9E1DEAA29D00E54A51 /* calibinit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calibinit.cpp; sourceTree = "<group>"; };
@@ -1003,6 +1009,10 @@
 				11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */,
 				11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */,
 				11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */,
+				11C99CC21DF0EF450034D6C5 /* BODocumentTableViewCell.h */,
+				11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */,
+				11C99CC51DF0F3D10034D6C5 /* BODocumentModel.h */,
+				11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -2161,6 +2171,7 @@
 				11303BFA1DEECEB100371BD5 /* VSAddVehicleDataSource.m in Sources */,
 				B621FDDE1DEAA29E00E54A51 /* gbt.cpp in Sources */,
 				11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */,
+				11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */,
 				B621FD531DEAA29D00E54A51 /* parvoretinafilter.cpp in Sources */,
 				B621FD381DEAA29D00E54A51 /* quadsubpix.cpp in Sources */,
 				B621FDBE1DEAA29E00E54A51 /* gabor.cpp in Sources */,
@@ -2204,6 +2215,7 @@
 				B621FD901DEAA29E00E54A51 /* cap_android.cpp in Sources */,
 				B621FD7D1DEAA29D00E54A51 /* draw.cpp in Sources */,
 				B621FDD81DEAA29E00E54A51 /* boost.cpp in Sources */,
+				11C99CC71DF0F3D10034D6C5 /* BODocumentModel.m in Sources */,
 				B621FDF91DEAA29E00E54A51 /* inpaint.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

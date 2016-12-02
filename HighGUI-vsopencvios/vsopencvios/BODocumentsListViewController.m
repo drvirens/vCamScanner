@@ -8,6 +8,7 @@
 
 #import "BODocumentsListViewController.h"
 #import "BODocumentView.h"
+#import "BODocumentTableViewCell.h"
 
 @interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -54,7 +55,9 @@
     [recentlyScanned addObject:@"Recently Scanned 1"];
     [recentlyScanned addObject:@"Recently Scanned 2"];
     [recentlyScanned addObject:@"Recently Scanned 3"];
-    [self.dataSrc addObject:recentlyScanned];
+    NSMutableArray* singleRow = [NSMutableArray array];
+    [singleRow addObject:recentlyScanned];
+    [self.dataSrc addObject:singleRow];
     
     NSMutableArray* scanned = [NSMutableArray array];
     [scanned addObject:@"Scanned1"];
@@ -71,15 +74,19 @@
     return self.dataSrc[section].count;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (indexPath.section == 1) {
+        BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
+        return cell;
+    }
     return UITableViewCell.new;
 }
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 240.f;
+    return 120;
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 240.f;
+    return 120;
 }
 
 @end

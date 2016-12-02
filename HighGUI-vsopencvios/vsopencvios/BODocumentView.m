@@ -10,5 +10,18 @@
 
 @implementation BODocumentView
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder {
+    if (self = [super initWithCoder:aDecoder]) {
+        [self commonInit];
+    }
+    return self;
+}
+
+- (void)commonInit {
+    NSString* nibnamed = NSStringFromClass([self class]);
+    BODocumentView* weakView = (BODocumentView*)[[[NSBundle mainBundle] loadNibNamed:nibnamed owner:self options:nil] firstObject];
+    [self addSubview:weakView];
+    weakView.frame = self.bounds;
+}
 
 @end
