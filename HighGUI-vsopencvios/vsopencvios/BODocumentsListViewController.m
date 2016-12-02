@@ -49,36 +49,6 @@ static const CGFloat kCellHeight = 140.f;
     [self dismissViewControllerAnimated:YES completion:nil];
 }
 
-#pragma mark - Data Src
-- (void)setupDataSrc {
-    self.dataSrc = [NSMutableArray array];
-    //test+
-    NSMutableArray* recentlyScanned = [NSMutableArray array];
-    [recentlyScanned addObject:@"Recently Scanned 1"];
-    [recentlyScanned addObject:@"Recently Scanned 2"];
-    [recentlyScanned addObject:@"Recently Scanned 3"];
-    NSMutableArray* singleRow = [NSMutableArray array];
-    [singleRow addObject:recentlyScanned];
-    [self.dataSrc addObject:singleRow];
-    
-    NSMutableArray* scanned = [NSMutableArray array];
-    
-    //receipt 1
-    BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-    [scanned addObject:model];
-    
-    //receipt 2
-    BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-    [scanned addObject:model2];
-    
-    //receipt 3
-    BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-    [scanned addObject:model3];
-
-    [self.dataSrc addObject:scanned];
-    //test-
-}
-
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return self.dataSrc.count;
@@ -105,4 +75,231 @@ static const CGFloat kCellHeight = 140.f;
     return kCellHeight;
 }
 
+
+#pragma mark - Data Src
+- (void)setupDataSrc {
+    self.dataSrc = [NSMutableArray array];
+    //test+
+    NSMutableArray* recentlyScanned = [NSMutableArray array];
+    [recentlyScanned addObject:@"Recently Scanned 1"];
+    [recentlyScanned addObject:@"Recently Scanned 2"];
+    [recentlyScanned addObject:@"Recently Scanned 3"];
+    NSMutableArray* singleRow = [NSMutableArray array];
+    [singleRow addObject:recentlyScanned];
+    [self.dataSrc addObject:singleRow];
+    
+    NSMutableArray* scanned = [NSMutableArray array];
+    
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    {
+        //receipt 1
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
+        [scanned addObject:model];
+        
+        //receipt 2
+        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+        [scanned addObject:model2];
+        
+        //receipt 3
+        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+        [scanned addObject:model3];
+    }
+    
+    [self.dataSrc addObject:scanned];
+    //test-
+}
 @end

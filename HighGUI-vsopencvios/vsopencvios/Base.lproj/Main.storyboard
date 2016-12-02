@@ -312,7 +312,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="205" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="olC-ZN-syM">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" allowsSelection="NO" rowHeight="205" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="olC-ZN-syM">
                                 <rect key="frame" x="0.0" y="64" width="414" height="672"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
@@ -349,9 +349,9 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="bottom" secondItem="KYD-B8-spJ" secondAttribute="bottom" constant="5" id="0Vh-LF-LGQ"/>
+                                                <constraint firstAttribute="bottom" secondItem="KYD-B8-spJ" secondAttribute="bottom" constant="1" id="0Vh-LF-LGQ"/>
                                                 <constraint firstAttribute="trailing" secondItem="KYD-B8-spJ" secondAttribute="trailing" id="OO2-b5-xrb"/>
-                                                <constraint firstItem="KYD-B8-spJ" firstAttribute="top" secondItem="Rn1-BC-EVt" secondAttribute="top" constant="5" id="Tpf-3J-Z0E"/>
+                                                <constraint firstItem="KYD-B8-spJ" firstAttribute="top" secondItem="Rn1-BC-EVt" secondAttribute="top" constant="1" id="Tpf-3J-Z0E"/>
                                                 <constraint firstItem="KYD-B8-spJ" firstAttribute="leading" secondItem="Rn1-BC-EVt" secondAttribute="leading" id="zfB-jx-X5Z"/>
                                             </constraints>
                                         </tableViewCellContentView>

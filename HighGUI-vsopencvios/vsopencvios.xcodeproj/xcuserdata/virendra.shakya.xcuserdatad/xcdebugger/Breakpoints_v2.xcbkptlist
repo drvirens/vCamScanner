@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "vsopencvios/BODocumentTableViewCell.m"
-            timestampString = "502337761.644702"
+            timestampString = "502339086.98506"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "-configure:"
             landmarkType = "7">
          </BreakpointContent>
