@@ -63,6 +63,7 @@
 		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
 		11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */; };
 		11C99CC71DF0F3D10034D6C5 /* BODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */; };
+		11C99CCA1DF1091A0034D6C5 /* BOGradientLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */; };
 		B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FB9E1DEAA29D00E54A51 /* calibinit.cpp */; };
 		B621FD2F1DEAA29D00E54A51 /* calibration.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FB9F1DEAA29D00E54A51 /* calibration.cpp */; };
 		B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FBA01DEAA29D00E54A51 /* checkchessboard.cpp */; };
@@ -402,6 +403,8 @@
 		11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentTableViewCell.m; sourceTree = "<group>"; };
 		11C99CC51DF0F3D10034D6C5 /* BODocumentModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentModel.h; sourceTree = "<group>"; };
 		11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentModel.m; sourceTree = "<group>"; };
+		11C99CC81DF1091A0034D6C5 /* BOGradientLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOGradientLayerController.h; sourceTree = "<group>"; };
+		11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOGradientLayerController.m; sourceTree = "<group>"; };
 		B621FB9B1DEAA29D00E54A51 /* calib3d.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = calib3d.hpp; sourceTree = "<group>"; };
 		B621FB9D1DEAA29D00E54A51 /* _modelest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = _modelest.h; sourceTree = "<group>"; };
 		B621FB9E1DEAA29D00E54A51 /* calibinit.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = calibinit.cpp; sourceTree = "<group>"; };
@@ -1013,6 +1016,8 @@
 				11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */,
 				11C99CC51DF0F3D10034D6C5 /* BODocumentModel.h */,
 				11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */,
+				11C99CC81DF1091A0034D6C5 /* BOGradientLayerController.h */,
+				11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -2144,6 +2149,7 @@
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
 				B621FDE01DEAA29E00E54A51 /* knearest.cpp in Sources */,
 				B621FDBB1DEAA29E00E54A51 /* featureselect.cpp in Sources */,
+				11C99CCA1DF1091A0034D6C5 /* BOGradientLayerController.m in Sources */,
 				1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */,
 				B621FDA81DEAA29E00E54A51 /* ios_conversions.mm in Sources */,
 				B621FDE81DEAA29E00E54A51 /* datamatrix.cpp in Sources */,

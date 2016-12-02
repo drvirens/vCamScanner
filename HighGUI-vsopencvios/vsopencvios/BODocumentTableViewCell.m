@@ -8,6 +8,7 @@
 
 #import "BODocumentTableViewCell.h"
 #import "BODocumentView.h"
+#import "BOGradientLayerController.h"
 
 @interface BODocumentTableViewCell ()
 @property (weak, nonatomic) IBOutlet BODocumentView *documentView;
@@ -17,6 +18,9 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+//    CAGradientLayer* blackGradient = [BOGradientLayerController blackGradient];
+//    blackGradient.frame = self.documentView.containerView.bounds;
+//    [self.documentView.containerView.layer insertSublayer:blackGradient atIndex:0];
 }
 + (NSString*)reuseID {
     return NSStringFromClass([self class]);
@@ -29,6 +33,14 @@
     self.documentView.containerImageView.image = icon;
     
     self.documentView.containerLabel.text = model.docTitle;
+    
+    
+}
+- (void)layoutSubviews {
+    [super layoutSubviews];
+    CAGradientLayer* blackGradient = [BOGradientLayerController blackGradient];
+    blackGradient.frame = self.documentView.containerView.bounds;
+    [self.documentView.containerView.layer insertSublayer:blackGradient atIndex:0];
 }
 
 @end
