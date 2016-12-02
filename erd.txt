@@ -1,0 +1,18 @@
+ERD
+
+User
+
+Document
+	- title
+	- dateCreated
+	- dateUpdated
+	- size
+	- originalPhotoHref
+	- modifiedPhotoHref
+	/* phase 2*/
+	- uploadDate
+	- isSecured
+	- password
+
+Category
+

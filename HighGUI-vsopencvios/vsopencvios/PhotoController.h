@@ -2,7 +2,6 @@
 //  PhotoController.h
 //  Bowen Swift
 //
-//  Created by Bennett Smith on 6/2/16.
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
