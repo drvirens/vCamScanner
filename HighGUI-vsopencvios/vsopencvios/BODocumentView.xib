@@ -57,8 +57,8 @@
                                 <constraint firstItem="5uG-yy-RdZ" firstAttribute="leading" secondItem="FZL-3Z-an4" secondAttribute="trailing" constant="10" id="33E-wF-xzg"/>
                                 <constraint firstItem="FZL-3Z-an4" firstAttribute="centerY" secondItem="6l4-O3-TzH" secondAttribute="centerY" id="R53-ux-yre"/>
                                 <constraint firstItem="FZL-3Z-an4" firstAttribute="centerY" secondItem="5uG-yy-RdZ" secondAttribute="centerY" id="jlA-FB-aem"/>
-                                <constraint firstAttribute="trailing" secondItem="5uG-yy-RdZ" secondAttribute="trailing" constant="100" id="wuD-bP-dBn"/>
-                                <constraint firstItem="FZL-3Z-an4" firstAttribute="leading" secondItem="6l4-O3-TzH" secondAttribute="leading" constant="100" id="y7r-YF-p9a"/>
+                                <constraint firstAttribute="trailing" secondItem="5uG-yy-RdZ" secondAttribute="trailing" constant="200" id="wuD-bP-dBn"/>
+                                <constraint firstItem="FZL-3Z-an4" firstAttribute="leading" secondItem="6l4-O3-TzH" secondAttribute="leading" constant="200" id="y7r-YF-p9a"/>
                             </constraints>
                         </view>
                     </subviews>

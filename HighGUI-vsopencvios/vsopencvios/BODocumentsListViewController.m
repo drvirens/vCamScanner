@@ -10,6 +10,8 @@
 #import "BODocumentView.h"
 #import "BODocumentTableViewCell.h"
 
+static const CGFloat kCellHeight = 140.f;
+
 @interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
@@ -60,8 +62,19 @@
     [self.dataSrc addObject:singleRow];
     
     NSMutableArray* scanned = [NSMutableArray array];
-    BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+    
+    //receipt 1
+    BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
     [scanned addObject:model];
+    
+    //receipt 2
+    BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+    [scanned addObject:model2];
+    
+    //receipt 3
+    BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
+    [scanned addObject:model3];
+
     [self.dataSrc addObject:scanned];
     //test-
 }
@@ -86,10 +99,10 @@
 
 #pragma mark - UITableViewDelegate
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
+    return kCellHeight;
 }
 - (CGFloat)tableView:(UITableView *)tableView estimatedHeightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 120;
+    return kCellHeight;
 }
 
 @end
