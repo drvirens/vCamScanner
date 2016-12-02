@@ -58,13 +58,10 @@ static const CGFloat kCellHeight = 140.f;
     return ret;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (indexPath.section == 1) {
-        BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
-        BODocumentModel* model = self.dataSrc[indexPath.section][indexPath.row];
-        [cell configure:model];
-        return cell;
-    }
-    return UITableViewCell.new;
+    BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
+    BODocumentModel* model = self.dataSrc[indexPath.section][indexPath.row];
+    [cell configure:model];
+    return cell;
 }
 
 #pragma mark - UITableViewDelegate
@@ -80,6 +77,8 @@ static const CGFloat kCellHeight = 140.f;
 - (void)setupDataSrc {
     self.dataSrc = [NSMutableArray array];
     //test+
+    /*
+     //recently scanned in Phase 2 or Phase 3
     NSMutableArray* recentlyScanned = [NSMutableArray array];
     [recentlyScanned addObject:@"Recently Scanned 1"];
     [recentlyScanned addObject:@"Recently Scanned 2"];
@@ -87,6 +86,7 @@ static const CGFloat kCellHeight = 140.f;
     NSMutableArray* singleRow = [NSMutableArray array];
     [singleRow addObject:recentlyScanned];
     [self.dataSrc addObject:singleRow];
+    */
     
     NSMutableArray* scanned = [NSMutableArray array];
     
