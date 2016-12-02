@@ -17,13 +17,13 @@
                         ];
     
     NSArray* locations = @[
-                           [NSNumber numberWithFloat:0.2f],
+                           [NSNumber numberWithFloat:0.3f],
                            [NSNumber numberWithFloat:0.5f],
-                           [NSNumber numberWithFloat:0.8f]
+                           [NSNumber numberWithFloat:1.f]
                            ];
     CAGradientLayer* ret = [CAGradientLayer layer];
     ret.colors = colors;
-    //ret.locations = locations;
+    ret.locations = locations;
     return ret;
 }
 @end
