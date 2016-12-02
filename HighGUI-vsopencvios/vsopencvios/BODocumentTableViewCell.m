@@ -16,14 +16,14 @@
 @implementation BODocumentTableViewCell
 - (void)awakeFromNib {
     [super awakeFromNib];
-    self.maskView.backgroundColor = [VSBranding vs_darkGrayColor];
-    self.maskView.alpha = .4f;
-    
-    CAGradientLayer* blackGradient = [BOGradientLayerController blackGradient];
-    blackGradient.frame = self.documentView.contentView.bounds;
-    [self.documentView.contentView.layer insertSublayer:blackGradient atIndex:0];
-    
-    self.documentView.contentView.alpha = .4f;
+    //self.maskView.backgroundColor = [UIColor clearColor];
+    //self.maskView.alpha = .4f;
+    /*
+    CAGradientLayer* blackGradient = [BOGradientLayerController greyGradient];
+    blackGradient.frame = self.documentView.maskView.bounds;
+    [self.documentView.maskView.layer insertSublayer:blackGradient atIndex:0];
+    */
+    //self.documentView.contentView.alpha = .4f;
 }
 - (void)prepareForReuse {
     NSLog(@"prepareForReuse is called ");
@@ -37,5 +37,9 @@
     UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
     self.documentView.containerImageView.image = icon;
     self.documentView.containerLabel.text = model.docTitle;
+    
+    //CAGradientLayer* blackGradient = [BOGradientLayerController greyGradient];
+    //blackGradient.frame = self.documentView.maskView.bounds;
+    //[self.documentView.maskView.layer insertSublayer:blackGradient atIndex:0];
 }
 @end
