@@ -60,8 +60,8 @@
     [self.dataSrc addObject:singleRow];
     
     NSMutableArray* scanned = [NSMutableArray array];
-    [scanned addObject:@"Scanned1"];
-    [scanned addObject:@"Scanned2"];
+    BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
+    [scanned addObject:model];
     [self.dataSrc addObject:scanned];
     //test-
 }
@@ -71,11 +71,14 @@
     return self.dataSrc.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.dataSrc[section].count;
+    NSInteger ret = self.dataSrc[section].count;
+    return ret;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     if (indexPath.section == 1) {
         BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
+        BODocumentModel* model = self.dataSrc[indexPath.section][indexPath.row];
+        [cell configure:model];
         return cell;
     }
     return UITableViewCell.new;

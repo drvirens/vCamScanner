@@ -9,9 +9,10 @@
 #import <Foundation/Foundation.h>
 
 @interface BODocumentModel : NSObject
+@property (nonatomic, copy, readonly) NSString* docImageName;
 @property (nonatomic, copy, readonly) NSString* docTitle;
 @property (nonatomic, copy, readonly) NSString* docCategoryIconName;
 @property (nonatomic, copy, readonly) NSDate* docDateCreated;
 
-- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSDate*)date;
+- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSDate*)date image:(NSString*)image;
 @end

@@ -18,18 +18,17 @@
 - (void)awakeFromNib {
     [super awakeFromNib];
 }
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated {
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
 + (NSString*)reuseID {
     return NSStringFromClass([self class]);
 }
 - (void)configure:(BODocumentModel*)model {
+    UIImage* img = [UIImage imageNamed:model.docImageName];
+    self.documentView.imageViewBackground.image = img;
     
+    UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
+    self.documentView.containerImageView.image = icon;
+    
+    self.documentView.containerLabel.text = model.docTitle;
 }
 
 @end
