@@ -242,7 +242,7 @@
         default:
             break;
     }
-    NSLog(@"deviceOrientationDidChange: %d", orientation);
+    NSLog(@"deviceOrientationDidChange: %ld", (long)orientation);
 
     [self updateOrientation];
 }

@@ -2,7 +2,6 @@
 //  PhotoController.m
 //  Bowen Swift
 //
-//  Created by Bennett Smith on 6/2/16.
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
@@ -65,7 +64,7 @@
     dispatch_once(&onceToken, ^{
         NSFileManager *fileManager = [NSFileManager defaultManager];
         photoStorageURL = [[fileManager URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-        photoStorageURL = [photoStorageURL URLByAppendingPathComponent:@"iSpyPhotos"];
+        photoStorageURL = [photoStorageURL URLByAppendingPathComponent:@"vDocScanner"];
     });
     return photoStorageURL;
 }

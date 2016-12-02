@@ -1269,7 +1269,7 @@ bool CvVideoWriter_AVFoundation::writeFrame(const IplImage* iplimage) {
     // writer status check
     if (![mMovieWriterInput isReadyForMoreMediaData] || mMovieWriter.status !=  AVAssetWriterStatusWriting ) {
         NSLog(@"[mMovieWriterInput isReadyForMoreMediaData] Not ready for media data or ...");
-        NSLog(@"mMovieWriter.status: %d. Error: %@", mMovieWriter.status, [mMovieWriter.error localizedDescription]);
+        NSLog(@"mMovieWriter.status: %ld. Error: %@", (long)mMovieWriter.status, [mMovieWriter.error localizedDescription]);
         [localpool drain];
         return false;
     }
