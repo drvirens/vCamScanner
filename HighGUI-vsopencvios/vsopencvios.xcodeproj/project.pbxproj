@@ -53,7 +53,6 @@
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
 		11B75AD11DDFD08D004EAB65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD01DDFD08D004EAB65 /* main.m */; };
 		11B75AD41DDFD08D004EAB65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD31DDFD08D004EAB65 /* AppDelegate.m */; };
-		11B75AD71DDFD08D004EAB65 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD61DDFD08D004EAB65 /* ViewController.mm */; };
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
@@ -372,8 +371,6 @@
 		11B75AD01DDFD08D004EAB65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11B75AD21DDFD08D004EAB65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		11B75AD31DDFD08D004EAB65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		11B75AD51DDFD08D004EAB65 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		11B75AD61DDFD08D004EAB65 /* ViewController.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		11B75AD91DDFD08D004EAB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B75ADE1DDFD08D004EAB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -980,8 +977,6 @@
 				11B75DA41DDFD0E1004EAB65 /* scannerLite.h */,
 				11B75AD21DDFD08D004EAB65 /* AppDelegate.h */,
 				11B75AD31DDFD08D004EAB65 /* AppDelegate.m */,
-				11B75AD51DDFD08D004EAB65 /* ViewController.h */,
-				11B75AD61DDFD08D004EAB65 /* ViewController.mm */,
 				11B75AD81DDFD08D004EAB65 /* Main.storyboard */,
 				11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */,
 				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
@@ -1978,7 +1973,6 @@
 				B621FDB21DEAA29E00E54A51 /* clahe.cpp in Sources */,
 				11303BFD1DEECEB100371BD5 /* VSVehicleAddFieldModel.m in Sources */,
 				B621FD401DEAA29D00E54A51 /* bowmsctrainer.cpp in Sources */,
-				11B75AD71DDFD08D004EAB65 /* ViewController.mm in Sources */,
 				B621FD681DEAA29D00E54A51 /* gpumat.cpp in Sources */,
 				11303BFB1DEECEB100371BD5 /* VSMoreModel.m in Sources */,
 				B621FDA01DEAA29E00E54A51 /* grfmt_bmp.cpp in Sources */,
