@@ -22,24 +22,12 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     self.photoController = [[PhotoController alloc] init];
     self.facade = [[BOFacade alloc] init];
-    self.locationController = nil; //[[BOLocationController alloc] init];
+    self.locationController = nil; //[[BOLocationController alloc] init]; // XXX - Location in Phase 2 - dont allocate else it will trigger location permissions
     
     UIViewController* rootVC = self.window.rootViewController;
     [rootVC injectFacadeInViewController:rootVC what:self.facade];
     
     return YES;
-}
-
-- (void)injectPropertiesInController:(UIViewController *)controller {
-    if ([controller respondsToSelector:@selector(setFacade:)]) {
-        [controller performSelector:@selector(setFacade:) withObject:self.facade];
-    }
-    if ([controller respondsToSelector:@selector(setPhotoController:)]) {
-        [controller performSelector:@selector(setPhotoController:) withObject:self.photoController];
-    }
-    if ([controller respondsToSelector:@selector(setLocationController:)]) {
-        [controller performSelector:@selector(setLocationController:) withObject:self.locationController];
-    }
 }
 
 @end
