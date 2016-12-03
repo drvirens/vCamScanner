@@ -14,6 +14,7 @@
 #include "model_immutable_login.hpp"
 #include "authenticator_impl.hpp"
 #include "user.hpp"
+#include "document.hpp"
 
 CAppServer::CAppServer(const string& aPath)
 	: iPath(aPath)
@@ -85,5 +86,13 @@ void CAppServer::authenticate(TLoginMessageLayout& aCredentials,
                               function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser)
 {
     iAuthenticator->authenticate(aCredentials, aSignalDidAuthenticateUser);
+}
+
+void CAppServer::addDocument(vsDocument& aDocument, function< void() > aSignalDidSaveDocuemnt)
+{
+    iRepository->put(aDocument, [](const vsModelBase& aPuttedModel)
+                            {
+                                LOG("\t Did successfully put the model [%s] \n", aPuttedModel.primaryKey().c_str());
+                            });
 }
 

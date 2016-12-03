@@ -24,12 +24,9 @@ CAuthenticator::~CAuthenticator()
 void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 			function<void(const EAuthenticationStatus&, const vsUser&)> aCompletionCB)
 	{ TRACE
-	
-	
 	vsUser objGetuser(credentials.userName());
 	iRepository->get(objGetuser, [&](const vsModelBase& aModel)
 		{
-		
 		EAuthenticationStatus status = EAuthenticationStatus_Success;
 		const vsUser& retUser = dynamic_cast<const vsUser&>(aModel) ;
 		LOG("\t did authenticate user dumped below: \n");
@@ -37,9 +34,6 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 		
 		aCompletionCB(status, retUser);
 		});
-
-	
-	
 	}
 
 

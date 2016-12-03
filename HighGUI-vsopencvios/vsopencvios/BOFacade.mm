@@ -42,6 +42,7 @@
     self.operationQueue = [[NSOperationQueue alloc] init];
 }
 
+// ALL APIs must be executed on background thread
 #pragma mark - APIs
 - (void)bootStrap {
     typeof (self) __weak welf = self;
@@ -78,7 +79,7 @@
 }
 
 
-#pragma mark - private
+#pragma mark - bootstrap
 - (void)doBootStrap {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *libraryDirectory = [paths objectAtIndex:0];
@@ -99,6 +100,7 @@
     app_->authenticate(credentials, blockAuthCompletion);
 }
 
+#pragma mark - Add Document
 - (void) doAddDocument:(UIImage*)image
  finalProcessedImage:(UIImage*)finalProcessedImage
            doctTitle:(NSString*)docTitle
@@ -136,11 +138,10 @@
     [operationLmdbPut addDependency:operationSaveFinalImage];
     [operationSaveFinalImage addDependency:operationSaveOriginalImage];
     
+    //add operations
     [self.operationQueue addOperation:operationSaveOriginalImage];
     [self.operationQueue addOperation:operationSaveFinalImage];
     [self.operationQueue addOperation:operationLmdbPut];
-    
-    //add operations
 }
 
 - (NSString*)saveImage:(UIImage*)image name:(NSString*)name {
@@ -158,6 +159,19 @@
 originalImageHref:(NSString*)originalImageHref
 finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
+    
+    string aTitle = [docTitle UTF8String];
+    vs_uint64_t aDateCreated = 0;
+    vs_uint64_t aDateUpdated = 0;
+    vs_uint64_t aSize = 0;
+    string aOriginalPhotoHref = [originalImageHref UTF8String];
+    string aModifiedLargePhotoHref = [finalImageHref UTF8String];
+    string aFileType = "jpeg";
+    vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aFileType);
+    
+    app_->addDocument(doc, []() {
+        LOG("added document");
+    });
 }
 
 @end

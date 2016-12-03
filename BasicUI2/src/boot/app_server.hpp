@@ -13,6 +13,8 @@
 #include <string>
 #include "sigslot.h"
 #include "auth_status.hpp"
+#include "chat_types.h"
+#include "document.hpp"
 
 class vsIRepository;
 class vsIKeyValueStore;
@@ -39,7 +41,7 @@ public:
     void authenticate(TLoginMessageLayout& aCredentials,
                       function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser);
         
-    void addDocument(const vsDocument& aDocument, function< void(const EAuthenticationStatus&) > aSignalDidSaveDocuemnt);
+    void addDocument(vsDocument& aDocument, function< void() > aSignalDidSaveDocuemnt);
         
 	signal1< shared_ptr<vsIRepository> > SignalDidCreateKeyStore;
 	
