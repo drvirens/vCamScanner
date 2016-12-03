@@ -24,6 +24,8 @@
     self.facade = [[BOFacade alloc] init];
     self.locationController = nil; //[[BOLocationController alloc] init]; // XXX - Location in Phase 2 - dont allocate else it will trigger location permissions
     
+    [self.facade bootStrap];
+    
     UIViewController* rootVC = self.window.rootViewController;
     [rootVC injectFacadeInViewController:rootVC what:self.facade];
     

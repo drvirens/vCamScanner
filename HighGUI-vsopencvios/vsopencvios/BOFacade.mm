@@ -6,6 +6,8 @@
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
+#include <string>
+
 #import "BOFacade.h"
 #include "app_server.hpp"
 #include "model_immutable_login.hpp"
@@ -30,7 +32,12 @@
     {
         LOG("dont care if it fails for now");
     };
-    TLoginMessageLayout credentials; // XXX
+    
+    string theUserName                     = "awesomeSauce";
+    string thePassword                     = "awesomesaucePassword";
+    string theSecurity                     = "SASL";
+    
+    TLoginMessageLayout credentials(theUserName, thePassword, theSecurity); // XXX
     app_->authenticate(credentials, blockAuthCompletion);
 }
 
