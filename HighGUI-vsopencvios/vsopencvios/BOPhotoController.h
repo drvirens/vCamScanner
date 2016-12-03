@@ -8,7 +8,7 @@
 #import <UIKit/UIKit.h>
 
 @interface BOPhotoController : NSObject
-- (void)addPhotoWithName:(NSString *)name image:(UIImage *)image;
+- (NSURL*)addPhotoWithName:(NSString *)name image:(UIImage *)image;
 - (void)removePhotoWithName:(NSString *)name;
 - (void)removeAllPhotos;
 - (UIImage *)photoWithName:(NSString *)name;

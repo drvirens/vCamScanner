@@ -26,10 +26,11 @@
     return self;
 }
 
-- (void)addPhotoWithName:(NSString *)name image:(UIImage *)image {
+- (NSURL*)addPhotoWithName:(NSString *)name image:(UIImage *)image {
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
     NSURL *photoURL = [self urlForPhotoWithName:name];
     [imageData writeToURL:photoURL atomically:YES];
+    return photoURL;
 }
 
 - (void)removePhotoWithName:(NSString *)name {

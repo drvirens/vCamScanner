@@ -111,7 +111,7 @@
     NSBlockOperation* operationSaveOriginalImage = [NSBlockOperation blockOperationWithBlock:^{
         typeof (self) __strong strongSelf = welf;
         if (strongSelf) {
-            strongSelf.originalImageHref = [strongSelf saveImage:image];
+            strongSelf.originalImageHref = [strongSelf saveImage:image name:@"original"];
         }
     }];
     
@@ -119,7 +119,7 @@
     NSBlockOperation* operationSaveFinalImage = [NSBlockOperation blockOperationWithBlock:^{
         typeof (self) __strong strongSelf = welf;
         if (strongSelf) {
-            strongSelf.finalImageHref = [strongSelf saveImage:finalProcessedImage];
+            strongSelf.finalImageHref = [strongSelf saveImage:finalProcessedImage name:@"finalProcessedImage"];
         }
     }];
     
@@ -143,8 +143,11 @@
     //add operations
 }
 
-- (NSString*)saveImage:(UIImage*)image {
+- (NSString*)saveImage:(UIImage*)image name:(NSString*)name {
     NSString* path = @"PATH";
+    NSString* n = [NSString stringWithFormat:@"poofie_%@", name];
+    NSURL* url = [self.photoController addPhotoWithName:n image:image];
+    path = [url absoluteString];
     return path;
 }
 
