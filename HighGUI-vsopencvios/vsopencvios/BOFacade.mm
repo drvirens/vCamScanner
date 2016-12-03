@@ -144,6 +144,7 @@
 }
 
 - (NSString*)saveImage:(UIImage*)image name:(NSString*)name {
+    NSLog(@"saveImage");
     NSString* path = @"PATH";
     NSString* n = [NSString stringWithFormat:@"poofie_%@", name];
     NSURL* url = [self.photoController addPhotoWithName:n image:image];
@@ -156,7 +157,7 @@
               fileSize:(NSInteger)fileSize
 originalImageHref:(NSString*)originalImageHref
 finalImageHref:(NSString*)finalImageHref {
-    NSLog(@"doAddDocument");
+    NSLog(@"insertDocument");
 }
 
 @end
