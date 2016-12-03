@@ -79,6 +79,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) UIImage* image;
 @property (nonatomic) UIImage* cropImage;
 @property (nonatomic) UIImage* finalProcessedImage;
+@property (nonatomic, copy) NSString* categoryName;
 
 @property (strong, nonatomic) MMCropView* croppedView;
 
@@ -568,6 +569,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.userInteractionEnabled = YES;
     self.infoEntryView.dragView.hidden = NO;
     self.infoEntryView.dragViewSmaller.hidden = NO;
+    
+    self.categoryName = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
 }
@@ -583,6 +586,14 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
         [self hideFiltersView];
         [self transitMenuItemsToShareMode];
+        
+        long fileSize = 0;
+        NSString* docTitle = self.infoEntryView.textFieldTitle.text;
+        [self.facade addDocument:self.image
+             finalProcessedImage:self.finalProcessedImage
+                       doctTitle:docTitle
+                    categoryName:self.categoryName
+                        fileSize:fileSize]; //XXX
     } else if (self.state == BOShareState) {
         [self share:self];
     } else {
@@ -753,6 +764,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 #pragma mark - BOCategoryTableViewControllerDelegate
 - (void)viewController:(BOCategoryTableViewController*)vc didSelectCategory:(NSString*)category {
     NSLog(@"didSelectCategory");
+    self.categoryName = category;
     self.infoEntryView.labelSelectedCategoryName.text = category;
 }
 

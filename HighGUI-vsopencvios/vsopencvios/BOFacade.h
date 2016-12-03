@@ -7,7 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 @interface BOFacade : NSObject
 - (void)bootStrap;
+
+- (void) addDocument:(UIImage*)image
+ finalProcessedImage:(UIImage*)finalProcessedImage
+           doctTitle:(NSString*)docTitle
+        categoryName:(NSString*)categoryName
+            fileSize:(NSInteger)fileSize;
 @end

@@ -1,17 +1,17 @@
 //
-//  PhotoController.m
+//  BOPhotoController.m
 //  Bowen Swift
 //
 //  Copyright © 2016 Virendra Shakya. All rights reserved.
 //
 
-#import "PhotoController.h"
+#import "BOPhotoController.h"
 
-@interface PhotoController()
+@interface BOPhotoController()
 - (NSURL *)urlForPhotoWithName:(NSString *)name;
 @end
 
-@implementation PhotoController
+@implementation BOPhotoController
 
 - (instancetype)init {
     self = [super init];
@@ -26,10 +26,11 @@
     return self;
 }
 
-- (void)addPhotoWithName:(NSString *)name image:(UIImage *)image {
+- (NSURL*)addPhotoWithName:(NSString *)name image:(UIImage *)image {
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
     NSURL *photoURL = [self urlForPhotoWithName:name];
     [imageData writeToURL:photoURL atomically:YES];
+    return photoURL;
 }
 
 - (void)removePhotoWithName:(NSString *)name {
