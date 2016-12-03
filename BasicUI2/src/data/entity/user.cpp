@@ -119,13 +119,6 @@ vsUser::~vsUser()
 	{ TRACE
 	}
 
-//TUID vsUser::uid() const
-//	{
-//	vsPrimaryKey pk(primaryKey());
-//	TUID u = pk.primaryKey();
-//	return u;
-//	}
-
 #if defined DEBUG
 void vsUser::debugDump() const
 	{

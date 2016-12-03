@@ -11,7 +11,6 @@
 
 #include <string>
 #include "base_model.hpp"
-//#include "adt.hpp"
 
 using namespace std;
 

@@ -7,7 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BOFacade.h"
+#import "PhotoController.h"
+#import "BOLocationController.h"
 
 @interface BODocumentsListViewController : UIViewController
-
+@property (nonatomic) BOFacade* facade;
+@property (nonatomic) PhotoController *photoController;
+@property (nonatomic, strong) BOLocationController *locationController;
 @end

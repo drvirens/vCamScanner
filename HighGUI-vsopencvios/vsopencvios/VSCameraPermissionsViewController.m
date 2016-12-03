@@ -11,13 +11,10 @@
 #import "BOCameraCaptureViewController.h"
 #import "VSBranding.h"
 
-
-
 @interface VSCameraPermissionsViewController ()
 @property (weak, nonatomic) IBOutlet UILabel *labelMessage;
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewIcon;
 @property (weak, nonatomic) IBOutlet UIButton *buttonPositive;
-
 @end
 
 @implementation VSCameraPermissionsViewController
@@ -37,14 +34,6 @@
 - (BOOL)prefersStatusBarHidden {
 	return YES;
 }
-
-//#pragma mark - segue
-//- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-//	if ([@"segueShowCamera" isEqualToString:segue.identifier] ) {
-//		BOCameraCaptureViewController* cameravc = (BOCameraCaptureViewController*)[segue destinationViewController];
-//		//cameravc.cameraController = self.cameraController;
-//	} 
-//}
 
 #pragma mark - button handlers
 - (IBAction)didTapOnCancelButton:(id)sender {

@@ -78,6 +78,11 @@
  *	  access to locks and lock file. Exceptions: On read-only filesystems
  *	  or with the #MDB_NOLOCK flag described under #mdb_env_open().
  *
+ *	- An LMDB configuration will often reserve considerable \b unused
+ *	  memory address space and maybe file size for future growth.
+ *	  This does not use actual memory or disk space, but users may need
+ *	  to understand the difference so they won't be scared off.
+ *
  *	- By default, in versions before 0.9.10, unused portions of the data
  *	  file might receive garbage data from memory freed by other code.
  *	  (This does not happen when using the #MDB_WRITEMAP flag.) As of
@@ -130,7 +135,7 @@
  *
  *	@author	Howard Chu, Symas Corporation.
  *
- *	@copyright Copyright 2011-2015 Howard Chu, Symas Corp. All rights reserved.
+ *	@copyright Copyright 2011-2016 Howard Chu, Symas Corp. All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
  * modification, are permitted only as authorized by the OpenLDAP
@@ -162,6 +167,7 @@
 
 #include <sys/types.h>
 #include <inttypes.h>
+#include <limits.h>
 
 #ifdef __cplusplus
 extern "C" {
@@ -174,11 +180,30 @@ typedef	int	mdb_mode_t;
 typedef	mode_t	mdb_mode_t;
 #endif
 
-#ifdef MDB_VL32
-typedef uint64_t	mdb_size_t;
-#define mdb_env_create	mdb_env_create_vl32	/**< Prevent mixing with non-VL32 builds */
+#ifdef _WIN32
+# define MDB_FMT_Z	"I"
 #else
+# define MDB_FMT_Z	"z"			/**< printf/scanf format modifier for size_t */
+#endif
+
+#ifndef MDB_VL32
+/** Unsigned type used for mapsize, entry counts and page/transaction IDs.
+ *
+ *	It is normally size_t, hence the name. Defining MDB_VL32 makes it
+ *	uint64_t, but do not try this unless you know what you are doing.
+ */
 typedef size_t	mdb_size_t;
+# define MDB_SIZE_MAX	SIZE_MAX	/**< max #mdb_size_t */
+/** #mdb_size_t printf formats, \b t = one of [diouxX] without quotes */
+# define MDB_PRIy(t)	MDB_FMT_Z #t
+/** #mdb_size_t scanf formats, \b t = one of [dioux] without quotes */
+# define MDB_SCNy(t)	MDB_FMT_Z #t
+#else
+typedef uint64_t	mdb_size_t;
+# define MDB_SIZE_MAX	UINT64_MAX
+# define MDB_PRIy(t)	PRI##t##64
+# define MDB_SCNy(t)	SCN##t##64
+# define mdb_env_create	mdb_env_create_vl32	/**< Prevent mixing with non-VL32 builds */
 #endif
 
 /** An abstraction for a file handle.
@@ -315,7 +340,8 @@ typedef void (MDB_rel_func)(MDB_val *item, void *oldptr, void *newptr, void *rel
 #define MDB_REVERSEKEY	0x02
 	/** use sorted duplicates */
 #define MDB_DUPSORT		0x04
-	/** numeric keys in native byte order: either unsigned int or size_t.
+	/** numeric keys in native byte order, either unsigned int or #mdb_size_t.
+	 *	(lmdb expects 32-bit int <= size_t <= 32/64-bit mdb_size_t.)
 	 *  The keys must all be of the same size. */
 #define MDB_INTEGERKEY	0x08
 	/** with #MDB_DUPSORT, sorted dup items have fixed size */
@@ -451,8 +477,10 @@ typedef enum MDB_cursor_op {
 #define MDB_BAD_VALSIZE		(-30781)
 	/** The specified DBI was changed unexpectedly */
 #define MDB_BAD_DBI		(-30780)
+	/** Unexpected problem - txn should abort */
+#define MDB_PROBLEM		(-30779)
 	/** The last defined error code */
-#define MDB_LAST_ERRCODE	MDB_BAD_DBI
+#define MDB_LAST_ERRCODE	MDB_PROBLEM
 /** @} */
 
 /** @brief Statistics for a database in the environment */
@@ -540,9 +568,11 @@ int  mdb_env_create(MDB_env **env);
 	 *		allowed. LMDB will still modify the lock file - except on read-only
 	 *		filesystems, where LMDB does not use locks.
 	 *	<li>#MDB_WRITEMAP
-	 *		Use a writeable memory map unless MDB_RDONLY is set. This is faster
-	 *		and uses fewer mallocs, but loses protection from application bugs
+	 *		Use a writeable memory map unless MDB_RDONLY is set. This uses
+	 *		fewer mallocs but loses protection from application bugs
 	 *		like wild pointer writes and other bad updates into the database.
+	 *		This may be slightly faster for DBs that fit entirely in RAM, but
+	 *		is slower for DBs larger than RAM.
 	 *		Incompatible with nested transactions.
 	 *		Do not mix processes with and without MDB_WRITEMAP on the same
 	 *		environment.  This can defeat durability (#mdb_env_sync etc).
@@ -681,6 +711,7 @@ int  mdb_env_copyfd(MDB_env *env, mdb_filehandle_t fd);
 	 *	<li>#MDB_CP_COMPACT - Perform compaction while copying: omit free
 	 *		pages and sequentially renumber all pages in output. This option
 	 *		consumes more CPU and runs more slowly than the default.
+	 *		Currently it fails if the environment has suffered a page leak.
 	 * </ul>
 	 * @return A non-zero error value on failure and 0 on success.
 	 */
@@ -1097,7 +1128,8 @@ int  mdb_txn_renew(MDB_txn *txn);
 	 *		keys must be unique and may have only a single data item.
 	 *	<li>#MDB_INTEGERKEY
 	 *		Keys are binary integers in native byte order, either unsigned int
-	 *		or size_t, and will be sorted as such.
+	 *		or #mdb_size_t, and will be sorted as such.
+	 *		(lmdb expects 32-bit int <= size_t <= 32/64-bit mdb_size_t.)
 	 *		The keys must all be of the same size.
 	 *	<li>#MDB_DUPFIXED
 	 *		This flag may only be used in combination with #MDB_DUPSORT. This option
@@ -1537,7 +1569,7 @@ int  mdb_cursor_del(MDB_cursor *cursor, unsigned int flags);
 	 *	<li>EINVAL - cursor is not initialized, or an invalid parameter was specified.
 	 * </ul>
 	 */
-int  mdb_cursor_count(MDB_cursor *cursor, size_t *countp);
+int  mdb_cursor_count(MDB_cursor *cursor, mdb_size_t *countp);
 
 	/** @brief Compare two data items according to a particular database.
 	 *
