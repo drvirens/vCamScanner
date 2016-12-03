@@ -14,14 +14,58 @@
 #include "trace.h"
 
 @interface BOFacade ()
-
+@property (nonatomic) NSOperationQueue* operationQueue;
 @end
 
 @implementation BOFacade {
     CAppServer* app_;
 }
 
+- (instancetype)init {
+    if (self = [super init]) {
+        _operationQueue = [[NSOperationQueue alloc] init];
+    }
+    return self;
+}
+
+#pragma mark - APIs
 - (void)bootStrap {
+    typeof (self) __weak welf = self;
+    NSBlockOperation* operation = [NSBlockOperation blockOperationWithBlock:^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf doBootStrap];
+        }
+    }];
+    
+    [self.operationQueue addOperation:operation];
+}
+
+- (void) addDocument:(UIImage*)image
+ finalProcessedImage:(UIImage*)finalProcessedImage
+           doctTitle:(NSString*)docTitle
+        categoryName:(NSString*)categoryName
+            fileSize:(NSInteger)fileSize {
+    NSLog(@"add document here");
+    
+    typeof (self) __weak welf = self;
+    NSBlockOperation* operation = [NSBlockOperation blockOperationWithBlock:^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf doAddDocument:image
+                  finalProcessedImage:finalProcessedImage
+                            doctTitle:docTitle
+                         categoryName:categoryName
+                             fileSize:fileSize];
+        }
+    }];
+    
+    [self.operationQueue addOperation:operation];
+}
+
+
+#pragma mark - private
+- (void)doBootStrap {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
     NSString *libraryDirectory = [paths objectAtIndex:0];
     string path = [libraryDirectory UTF8String];
@@ -37,8 +81,17 @@
     string thePassword                     = "awesomesaucePassword";
     string theSecurity                     = "SASL";
     
-    TLoginMessageLayout credentials(theUserName, thePassword, theSecurity); // XXX
+    TLoginMessageLayout credentials(theUserName, thePassword, theSecurity);
     app_->authenticate(credentials, blockAuthCompletion);
+}
+
+- (void) doAddDocument:(UIImage*)image
+ finalProcessedImage:(UIImage*)finalProcessedImage
+           doctTitle:(NSString*)docTitle
+        categoryName:(NSString*)categoryName
+            fileSize:(NSInteger)fileSize {
+    NSLog(@"doAddDocument");
+
 }
 
 @end
