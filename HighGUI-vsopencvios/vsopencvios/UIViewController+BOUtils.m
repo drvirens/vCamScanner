@@ -28,8 +28,8 @@
         [self inject:bottom what:what selector:setFacade];
         
         //photoController
-        SEL setPhotoController = NSSelectorFromString(@"setPhotoController:");
-        [self inject:bottom what:what selector:setPhotoController];
+        SEL setBOPhotoController = NSSelectorFromString(@"setBOPhotoController:");
+        [self inject:bottom what:what selector:setBOPhotoController];
         
         //locationController
         SEL setLocationController = NSSelectorFromString(@"setLocationController:");

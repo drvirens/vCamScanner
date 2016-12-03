@@ -9,11 +9,17 @@
 #include <string>
 
 #import "BOFacade.h"
+#import "BOPhotoController.h"
+#import "BOLocationController.h"
+
 #include "app_server.hpp"
 #include "model_immutable_login.hpp"
 #include "trace.h"
 
 @interface BOFacade ()
+@property (nonatomic) BOPhotoController *photoController;
+@property (nonatomic, strong) BOLocationController *locationController;
+
 @property (nonatomic) NSOperationQueue* operationQueue;
 @end
 
@@ -23,9 +29,15 @@
 
 - (instancetype)init {
     if (self = [super init]) {
-        _operationQueue = [[NSOperationQueue alloc] init];
+        [self commonInit];
     }
     return self;
+}
+
+- (void)commonInit {
+    self.locationController = nil; //[[BOLocationController alloc] init]; // XXX - Location in Phase 2 - dont allocate else it will trigger location permissions
+    self.photoController = [[BOPhotoController alloc] init];
+    self.operationQueue = [[NSOperationQueue alloc] init];
 }
 
 #pragma mark - APIs

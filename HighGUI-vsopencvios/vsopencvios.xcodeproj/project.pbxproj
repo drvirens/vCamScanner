@@ -307,7 +307,7 @@
 		B621FE091DEABAF400E54A51 /* BOCameraCaptureViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE061DEABAF400E54A51 /* BOCameraCaptureViewController.mm */; };
 		B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE081DEABAF400E54A51 /* BOCameraController.mm */; };
 		B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */; };
-		B621FE101DEABBE100E54A51 /* PhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* PhotoController.m */; };
+		B621FE101DEABBE100E54A51 /* BOPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */; };
 		B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */; };
 		B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */; };
 		B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */; };
@@ -843,8 +843,8 @@
 		B621FE081DEABAF400E54A51 /* BOCameraController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOCameraController.mm; sourceTree = "<group>"; };
 		B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOLocationController.h; sourceTree = "<group>"; };
 		B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLocationController.m; sourceTree = "<group>"; };
-		B621FE0E1DEABBE100E54A51 /* PhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotoController.h; sourceTree = "<group>"; };
-		B621FE0F1DEABBE100E54A51 /* PhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotoController.m; sourceTree = "<group>"; };
+		B621FE0E1DEABBE100E54A51 /* BOPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOPhotoController.h; sourceTree = "<group>"; };
+		B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOPhotoController.m; sourceTree = "<group>"; };
 		B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BOFileUtil.cpp; path = ../../BasicUI2/src/BOFileUtil.cpp; sourceTree = "<group>"; };
 		B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil_iOS.hpp; sourceTree = "<group>"; };
 		B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFileUtil_iOS.mm; sourceTree = "<group>"; };
@@ -1097,8 +1097,8 @@
 				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
 				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
 				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
-				B621FE0E1DEABBE100E54A51 /* PhotoController.h */,
-				B621FE0F1DEABBE100E54A51 /* PhotoController.m */,
+				B621FE0E1DEABBE100E54A51 /* BOPhotoController.h */,
+				B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */,
 				B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */,
 				B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */,
 				B621FE051DEABAF400E54A51 /* BOCameraCaptureViewController.h */,
@@ -2355,7 +2355,7 @@
 				B621FD661DEAA29D00E54A51 /* gl_core_3_1.cpp in Sources */,
 				B621FDC61DEAA29E00E54A51 /* matchcontours.cpp in Sources */,
 				B621FDAC1DEAA29E00E54A51 /* window_cocoa.mm in Sources */,
-				B621FE101DEABBE100E54A51 /* PhotoController.m in Sources */,
+				B621FE101DEABBE100E54A51 /* BOPhotoController.m in Sources */,
 				B621FDE61DEAA29E00E54A51 /* tree.cpp in Sources */,
 				B621FDC71DEAA29E00E54A51 /* moments.cpp in Sources */,
 				B621FD361DEAA29D00E54A51 /* polynom_solver.cpp in Sources */,
