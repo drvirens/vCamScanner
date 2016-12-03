@@ -17,6 +17,7 @@
 		111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */; };
 		111D56DF1DF2B3CB00534EF3 /* document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DD1DF2B3CB00534EF3 /* document.cpp */; };
 		111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E11DF2C24800534EF3 /* BOFacade.mm */; };
+		111D56E51DF2C6EF00534EF3 /* UIViewController+BOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -26,7 +27,7 @@
 		11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAB1DED0D8900371BD5 /* UIImage+fixOrientation.m */; };
 		11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BAD1DED0D8900371BD5 /* UIImageView+ContentFrame.m */; };
 		11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB11DED3B3800371BD5 /* BOConstants.mm */; };
-		11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.m */; };
+		11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.mm */; };
 		11303BB81DED749700371BD5 /* BOFiltersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BB61DED749700371BD5 /* BOFiltersView.xib */; };
 		11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303BBA1DED74DF00371BD5 /* BOFiltersView.m */; };
 		11303BBD1DED7FB800371BD5 /* BOFilterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */; };
@@ -66,7 +67,7 @@
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
 		11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */; };
-		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */; };
+		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */; };
 		11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */; };
 		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
 		11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */; };
@@ -336,6 +337,8 @@
 		111D56DE1DF2B3CB00534EF3 /* document.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document.hpp; sourceTree = "<group>"; };
 		111D56E01DF2C24800534EF3 /* BOFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFacade.h; sourceTree = "<group>"; };
 		111D56E11DF2C24800534EF3 /* BOFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFacade.mm; sourceTree = "<group>"; };
+		111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BOUtils.h"; sourceTree = "<group>"; };
+		111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BOUtils.m"; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -354,7 +357,7 @@
 		11303BB01DED3B3800371BD5 /* BOConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOConstants.h; sourceTree = "<group>"; };
 		11303BB11DED3B3800371BD5 /* BOConstants.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOConstants.mm; sourceTree = "<group>"; };
 		11303BB31DED5DA800371BD5 /* BOCategoryTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOCategoryTableViewController.h; sourceTree = "<group>"; };
-		11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOCategoryTableViewController.m; sourceTree = "<group>"; };
+		11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOCategoryTableViewController.mm; sourceTree = "<group>"; };
 		11303BB71DED749700371BD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/BOFiltersView.xib; sourceTree = "<group>"; };
 		11303BB91DED74DF00371BD5 /* BOFiltersView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFiltersView.h; sourceTree = "<group>"; };
 		11303BBA1DED74DF00371BD5 /* BOFiltersView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOFiltersView.m; sourceTree = "<group>"; };
@@ -438,7 +441,7 @@
 		11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scannerLite.cpp; sourceTree = "<group>"; };
 		11B75DA41DDFD0E1004EAB65 /* scannerLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannerLite.h; sourceTree = "<group>"; };
 		11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentsListViewController.h; sourceTree = "<group>"; };
-		11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentsListViewController.m; sourceTree = "<group>"; };
+		11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BODocumentsListViewController.mm; sourceTree = "<group>"; };
 		11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BODocumentView.xib; sourceTree = "<group>"; };
 		11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentView.h; sourceTree = "<group>"; };
 		11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentView.m; sourceTree = "<group>"; };
@@ -1070,6 +1073,8 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */,
+				111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */,
 				111D56E01DF2C24800534EF3 /* BOFacade.h */,
 				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
 				111D56B21DF2590700534EF3 /* boot */,
@@ -1117,7 +1122,7 @@
 				11303BB01DED3B3800371BD5 /* BOConstants.h */,
 				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
 				11303BB31DED5DA800371BD5 /* BOCategoryTableViewController.h */,
-				11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.m */,
+				11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.mm */,
 				11303BB61DED749700371BD5 /* BOFiltersView.xib */,
 				11303BB91DED74DF00371BD5 /* BOFiltersView.h */,
 				11303BBA1DED74DF00371BD5 /* BOFiltersView.m */,
@@ -1135,7 +1140,7 @@
 				1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */,
 				1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */,
 				11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */,
-				11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.m */,
+				11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */,
 				11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */,
 				11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */,
 				11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */,
@@ -2258,6 +2263,7 @@
 				11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */,
 				B621FE021DEAA29E00E54A51 /* simpleflow.cpp in Sources */,
 				B621FD541DEAA29D00E54A51 /* polyfit.cpp in Sources */,
+				111D56E51DF2C6EF00534EF3 /* UIViewController+BOUtils.m in Sources */,
 				B621FD741DEAA29D00E54A51 /* stat.cpp in Sources */,
 				B621FD701DEAA29D00E54A51 /* out.cpp in Sources */,
 				B621FDFE1DEAA29E00E54A51 /* kalman.cpp in Sources */,
@@ -2324,7 +2330,7 @@
 				B621FDDA1DEAA29E00E54A51 /* data.cpp in Sources */,
 				B621FDCC1DEAA29E00E54A51 /* samplers.cpp in Sources */,
 				B621FDBF1DEAA29E00E54A51 /* generalized_hough.cpp in Sources */,
-				11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.m in Sources */,
+				11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.mm in Sources */,
 				B621FD801DEAA29D00E54A51 /* fast.cpp in Sources */,
 				B621FD551DEAA29D00E54A51 /* retina.cpp in Sources */,
 				B621FD931DEAA29E00E54A51 /* cap_dc1394.cpp in Sources */,
@@ -2424,7 +2430,7 @@
 				11F25A271DF222E9003CB8EE /* base_model.cpp in Sources */,
 				B621FD9B1DEAA29E00E54A51 /* cap_libv4l.cpp in Sources */,
 				11F25A2E1DF222E9003CB8EE /* db_key_value_store_impl.cpp in Sources */,
-				11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.m in Sources */,
+				11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.mm in Sources */,
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
 				11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */,
 				111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */,

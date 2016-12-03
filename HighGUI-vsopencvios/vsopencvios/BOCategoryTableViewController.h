@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BOFacade.h"
+#import "PhotoController.h"
+#import "BOLocationController.h"
 
 @class BOCategoryTableViewController;
 @protocol BOCategoryTableViewControllerDelegate <NSObject>
@@ -14,5 +17,8 @@
 @end
 
 @interface BOCategoryTableViewController : UITableViewController
+@property (nonatomic) BOFacade* facade;
+@property (nonatomic) PhotoController *photoController;
+@property (nonatomic, strong) BOLocationController *locationController;
 @property (nonatomic, weak) id<BOCategoryTableViewControllerDelegate> delegateCategory;
 @end

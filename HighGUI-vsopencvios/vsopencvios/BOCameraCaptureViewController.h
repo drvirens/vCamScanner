@@ -7,11 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "BOFacade.h"
 #import "PhotoController.h"
 #import "BOLocationController.h"
  
 @interface BOCameraCaptureViewController : UIViewController
-//@property (nonatomic, strong) DataController *dataController;
-@property (nonatomic, strong) PhotoController *photoController;
+@property (nonatomic) BOFacade* facade;
+@property (nonatomic) PhotoController *photoController;
 @property (nonatomic, strong) BOLocationController *locationController;
 @end
