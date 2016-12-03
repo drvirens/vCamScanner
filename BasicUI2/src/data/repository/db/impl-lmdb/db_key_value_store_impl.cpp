@@ -117,6 +117,8 @@ void vsKeyValueStore::read(function<void(vsIKeyValueReader&)>& aTransaction)
 		scopedTxn.setStatus(MDB_SUCCESS);
 		aTransaction(*obj);
 		}
+    delete obj;
+    obj = 0;
 	}
 
 void vsKeyValueStore::readWrite(function<void(vsIKeyValueReaderWriter&)>& aTransaction)
