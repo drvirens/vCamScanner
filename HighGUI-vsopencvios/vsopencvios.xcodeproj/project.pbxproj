@@ -11,6 +11,10 @@
 		111D56B51DF2590700534EF3 /* app_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56B31DF2590700534EF3 /* app_server.cpp */; };
 		111D56C81DF2805500534EF3 /* mdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56BC1DF2805400534EF3 /* mdb.c */; };
 		111D56CD1DF2805500534EF3 /* midl.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56C11DF2805500534EF3 /* midl.c */; };
+		111D56D21DF28EEA00534EF3 /* authenticator_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56D01DF28EEA00534EF3 /* authenticator_impl.cpp */; };
+		111D56D81DF28F0700534EF3 /* auth_status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56D41DF28F0700534EF3 /* auth_status.cpp */; };
+		111D56D91DF28F0700534EF3 /* authenticator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56D61DF28F0700534EF3 /* authenticator.cpp */; };
+		111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -318,6 +322,14 @@
 		111D56BC1DF2805400534EF3 /* mdb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mdb.c; sourceTree = "<group>"; };
 		111D56C11DF2805500534EF3 /* midl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = midl.c; sourceTree = "<group>"; };
 		111D56C21DF2805500534EF3 /* midl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midl.h; sourceTree = "<group>"; };
+		111D56D01DF28EEA00534EF3 /* authenticator_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authenticator_impl.cpp; sourceTree = "<group>"; };
+		111D56D11DF28EEA00534EF3 /* authenticator_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = authenticator_impl.hpp; sourceTree = "<group>"; };
+		111D56D41DF28F0700534EF3 /* auth_status.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = auth_status.cpp; sourceTree = "<group>"; };
+		111D56D51DF28F0700534EF3 /* auth_status.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = auth_status.hpp; sourceTree = "<group>"; };
+		111D56D61DF28F0700534EF3 /* authenticator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authenticator.cpp; sourceTree = "<group>"; };
+		111D56D71DF28F0700534EF3 /* authenticator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = authenticator.hpp; sourceTree = "<group>"; };
+		111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = model_immutable_login.cpp; sourceTree = "<group>"; };
+		111D56DB1DF28F5900534EF3 /* model_immutable_login.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = model_immutable_login.hpp; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -896,6 +908,8 @@
 			children = (
 				111D56B31DF2590700534EF3 /* app_server.cpp */,
 				111D56B41DF2590700534EF3 /* app_server.hpp */,
+				111D56D01DF28EEA00534EF3 /* authenticator_impl.cpp */,
+				111D56D11DF28EEA00534EF3 /* authenticator_impl.hpp */,
 			);
 			name = boot;
 			path = ../../BasicUI2/src/boot;
@@ -910,6 +924,19 @@
 				111D56C21DF2805500534EF3 /* midl.h */,
 			);
 			path = lmdb;
+			sourceTree = "<group>";
+		};
+		111D56D31DF28F0700534EF3 /* auth */ = {
+			isa = PBXGroup;
+			children = (
+				111D56D41DF28F0700534EF3 /* auth_status.cpp */,
+				111D56D51DF28F0700534EF3 /* auth_status.hpp */,
+				111D56D61DF28F0700534EF3 /* authenticator.cpp */,
+				111D56D71DF28F0700534EF3 /* authenticator.hpp */,
+				111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */,
+				111D56DB1DF28F5900534EF3 /* model_immutable_login.hpp */,
+			);
+			path = auth;
 			sourceTree = "<group>";
 		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
@@ -1260,6 +1287,7 @@
 		11F25A391DF223E4003CB8EE /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				111D56D31DF28F0700534EF3 /* auth */,
 				11F25A3A1DF223E4003CB8EE /* repository */,
 			);
 			name = domain;
@@ -2387,7 +2415,9 @@
 				11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.m in Sources */,
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
 				11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */,
+				111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */,
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
+				111D56D91DF28F0700534EF3 /* authenticator.cpp in Sources */,
 				B621FDE01DEAA29E00E54A51 /* knearest.cpp in Sources */,
 				B621FDBB1DEAA29E00E54A51 /* featureselect.cpp in Sources */,
 				11C99CCA1DF1091A0034D6C5 /* BOGradientLayerController.m in Sources */,
@@ -2422,6 +2452,7 @@
 				11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */,
 				11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */,
 				B621FD531DEAA29D00E54A51 /* parvoretinafilter.cpp in Sources */,
+				111D56D81DF28F0700534EF3 /* auth_status.cpp in Sources */,
 				B621FD381DEAA29D00E54A51 /* quadsubpix.cpp in Sources */,
 				11F25A341DF222E9003CB8EE /* repository_impl.cpp in Sources */,
 				B621FDBE1DEAA29E00E54A51 /* gabor.cpp in Sources */,
@@ -2438,6 +2469,7 @@
 				B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */,
 				11F25A2D1DF222E9003CB8EE /* db_key_value_writer.cpp in Sources */,
 				B621FDAE1DEAA29E00E54A51 /* window_w32.cpp in Sources */,
+				111D56D21DF28EEA00534EF3 /* authenticator_impl.cpp in Sources */,
 				11F25A321DF222E9003CB8EE /* scoped_txn.cpp in Sources */,
 				11303BBB1DED74DF00371BD5 /* BOFiltersView.m in Sources */,
 				B621FDFA1DEAA29E00E54A51 /* bgfg_gaussmix.cpp in Sources */,

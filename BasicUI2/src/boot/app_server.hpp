@@ -12,9 +12,12 @@
 #include <memory>
 #include <string>
 #include "sigslot.h"
+#include "auth_status.hpp"
 
 class vsIRepository;
 class vsIKeyValueStore;
+class CAuthenticator;
+class vsUser;
 
 using namespace std;
 using namespace sigslot;
@@ -25,7 +28,9 @@ public:
 	CAppServer(const string& aPath);
 	virtual ~CAppServer();
 	void createRepository();
-    void addAwesomeSauceAndViren();
+    void addAwesomeSauceAndViren(); //for Phase 1 - this is hardCoded
+    void authenticate(function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser);
+        
 	void start();
 	void stop();
 	
@@ -44,6 +49,7 @@ private:
 	shared_ptr<vsIKeyValueStore> iKeyValueStore;
 	shared_ptr<vsIRepository> iRepository;
 	string iPath;
+    shared_ptr<CAuthenticator> iAuthenticator;
 	};
 
 #endif /* app_server_hpp */

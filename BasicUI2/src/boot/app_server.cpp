@@ -10,6 +10,10 @@
 #include "trace.h"
 #include "repository_impl.hpp"
 #include "user.hpp"
+#include "auth_status.hpp"
+#include "model_immutable_login.hpp"
+#include "authenticator_impl.hpp"
+#include "user.hpp"
 
 CAppServer::CAppServer(const string& aPath)
 	: iPath(aPath)
@@ -35,11 +39,13 @@ void CAppServer::construct(const string& aPath)
 
 void CAppServer::createRepository()
 	{
-        unsigned long size = 1 * 1024; // * 1024;
+    unsigned long size = 1 * 1024 * 1024;
 	ASSERT(iPath.length() > 0);
 	iKeyValueStore = make_shared< vsKeyValueStore >(iPath, size);
 	iRepository = make_shared<vsRepository>(*iKeyValueStore.get());
 	SignalDidCreateKeyStore(iRepository);
+        
+    iAuthenticator = make_shared<CAuthenticator>(*(iRepository.get()));
 	}
 
 void CAppServer::addAwesomeSauceAndViren()
@@ -75,5 +81,11 @@ void CAppServer::addUser(shared_ptr<vsIRepository> aKeyStoreRepositry,
                                 LOG("\t Did successfully put the model [%s] \n", aPuttedModel.primaryKey().c_str());
                             }
                             );
+}
+
+void CAppServer::authenticate(function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser)
+{
+    TLoginMessageLayout credentials; //XXX
+    iAuthenticator->authenticate(credentials, aSignalDidAuthenticateUser);
 }
 

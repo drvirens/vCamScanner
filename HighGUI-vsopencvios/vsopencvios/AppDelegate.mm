@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 //test+
 #include "app_server.hpp"
+#include "trace.h"
 #include "lmdb.h"
 //test-
 
@@ -76,6 +77,15 @@
     app_->createRepository();
     
     app_->addAwesomeSauceAndViren();
+    
+    auto blockAuthCompletion = [&](const EAuthenticationStatus& aEAuthenticationStatus,
+                                   const vsUser& aAuthenticatedUser)
+    {
+        //comletionAuthenticate(aEAuthenticationStatus, aAuthenticatedUser);
+        LOG("dont care if it fails for now");
+    };
+
+    app_->authenticate(blockAuthCompletion);
     
 //    [self testLMDB];
     return YES;
