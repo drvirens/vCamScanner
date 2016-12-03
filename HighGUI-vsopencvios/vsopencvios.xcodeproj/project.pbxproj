@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
+		111D56B51DF2590700534EF3 /* app_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56B31DF2590700534EF3 /* app_server.cpp */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -311,6 +312,8 @@
 		1119733A1DDFDF350042C520 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
 		1119733B1DDFDF350042C520 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
 		111973581DDFDF350042C520 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
+		111D56B31DF2590700534EF3 /* app_server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app_server.cpp; sourceTree = "<group>"; };
+		111D56B41DF2590700534EF3 /* app_server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app_server.hpp; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -888,6 +891,16 @@
 			path = ios;
 			sourceTree = "<group>";
 		};
+		111D56B21DF2590700534EF3 /* boot */ = {
+			isa = PBXGroup;
+			children = (
+				111D56B31DF2590700534EF3 /* app_server.cpp */,
+				111D56B41DF2590700534EF3 /* app_server.hpp */,
+			);
+			name = boot;
+			path = ../../BasicUI2/src/boot;
+			sourceTree = "<group>";
+		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1013,6 +1026,7 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				111D56B21DF2590700534EF3 /* boot */,
 				11F25A421DF22416003CB8EE /* utils */,
 				11F25A351DF223E4003CB8EE /* 3p */,
 				11F25A391DF223E4003CB8EE /* domain */,
@@ -2455,6 +2469,7 @@
 				11303C061DEECEB100371BD5 /* VSVehicleCell.m in Sources */,
 				B621FD901DEAA29E00E54A51 /* cap_android.cpp in Sources */,
 				B621FD7D1DEAA29D00E54A51 /* draw.cpp in Sources */,
+				111D56B51DF2590700534EF3 /* app_server.cpp in Sources */,
 				11F25A401DF223E4003CB8EE /* primary_key.cpp in Sources */,
 				B621FDD81DEAA29E00E54A51 /* boost.cpp in Sources */,
 				11C99CC71DF0F3D10034D6C5 /* BODocumentModel.m in Sources */,
