@@ -16,6 +16,7 @@
 		111D56D91DF28F0700534EF3 /* authenticator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56D61DF28F0700534EF3 /* authenticator.cpp */; };
 		111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */; };
 		111D56DF1DF2B3CB00534EF3 /* document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DD1DF2B3CB00534EF3 /* document.cpp */; };
+		111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E11DF2C24800534EF3 /* BOFacade.mm */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -333,6 +334,8 @@
 		111D56DB1DF28F5900534EF3 /* model_immutable_login.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = model_immutable_login.hpp; sourceTree = "<group>"; };
 		111D56DD1DF2B3CB00534EF3 /* document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document.cpp; sourceTree = "<group>"; };
 		111D56DE1DF2B3CB00534EF3 /* document.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document.hpp; sourceTree = "<group>"; };
+		111D56E01DF2C24800534EF3 /* BOFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFacade.h; sourceTree = "<group>"; };
+		111D56E11DF2C24800534EF3 /* BOFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFacade.mm; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -1067,6 +1070,8 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				111D56E01DF2C24800534EF3 /* BOFacade.h */,
+				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
 				111D56B21DF2590700534EF3 /* boot */,
 				11F25A421DF22416003CB8EE /* utils */,
 				11F25A351DF223E4003CB8EE /* 3p */,
@@ -2279,6 +2284,7 @@
 				B621FDA21DEAA29E00E54A51 /* grfmt_jpeg.cpp in Sources */,
 				B621FDB61DEAA29E00E54A51 /* corner.cpp in Sources */,
 				B621FD571DEAA29D00E54A51 /* retinafilter.cpp in Sources */,
+				111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */,
 				11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */,
 				B621FD351DEAA29D00E54A51 /* p3p.cpp in Sources */,
 				111D56C81DF2805500534EF3 /* mdb.c in Sources */,

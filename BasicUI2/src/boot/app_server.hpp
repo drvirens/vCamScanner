@@ -18,6 +18,8 @@ class vsIRepository;
 class vsIKeyValueStore;
 class CAuthenticator;
 class vsUser;
+class vsDocument;
+class TLoginMessageLayout;
 
 using namespace std;
 using namespace sigslot;
@@ -27,13 +29,18 @@ class CAppServer : public has_slots<>
 public:
 	CAppServer(const string& aPath);
 	virtual ~CAppServer();
-	void createRepository();
-    void addAwesomeSauceAndViren(); //for Phase 1 - this is hardCoded
-    void authenticate(function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser);
+    
+    void start();
+    void stop();
         
-	void start();
-	void stop();
-	
+	void createRepository();
+    void addAwesomeSauceAndViren(); // XXX - for Phase 1 - this is hardCoded
+        
+    void authenticate(TLoginMessageLayout& aCredentials,
+                      function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser);
+        
+    void addDocument(const vsDocument& aDocument, function< void(const EAuthenticationStatus&) > aSignalDidSaveDocuemnt);
+        
 	signal1< shared_ptr<vsIRepository> > SignalDidCreateKeyStore;
 	
 private:

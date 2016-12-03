@@ -22,7 +22,7 @@ using namespace std;
 	- dateUpdated          // When was this doc last updated? //
 	- size                 // size in bytes //
 	- originalPhotoHref    // local or cloud based file path to original pic - cloud-path is not for phase1 //
-	- modifiedLargePhotoHref        // local or cloud based file path to opencv processed file //
+	- modifiedLargePhotoHref // local or cloud based file path to opencv processed file //
 	- fileType             // this is needed for generating pdf etc later using ocr //
  ------:: Phase II ::-----
 	- modifiedMediumPhotoHref       // phase 2 - local or cloud based file path to opencv processed file //

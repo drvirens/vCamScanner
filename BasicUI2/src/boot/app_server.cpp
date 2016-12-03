@@ -81,9 +81,9 @@ void CAppServer::addUser(shared_ptr<vsIRepository> aKeyStoreRepositry,
                             });
 }
 
-void CAppServer::authenticate(function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser)
+void CAppServer::authenticate(TLoginMessageLayout& aCredentials,
+                              function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser)
 {
-    TLoginMessageLayout credentials; //XXX
-    iAuthenticator->authenticate(credentials, aSignalDidAuthenticateUser);
+    iAuthenticator->authenticate(aCredentials, aSignalDidAuthenticateUser);
 }
 
