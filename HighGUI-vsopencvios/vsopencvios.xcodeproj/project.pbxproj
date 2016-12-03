@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
 		111D56B51DF2590700534EF3 /* app_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56B31DF2590700534EF3 /* app_server.cpp */; };
+		111D56C81DF2805500534EF3 /* mdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56BC1DF2805400534EF3 /* mdb.c */; };
+		111D56CD1DF2805500534EF3 /* midl.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56C11DF2805500534EF3 /* midl.c */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -53,7 +55,7 @@
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
 		11B75AD11DDFD08D004EAB65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD01DDFD08D004EAB65 /* main.m */; };
-		11B75AD41DDFD08D004EAB65 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD31DDFD08D004EAB65 /* AppDelegate.m */; };
+		11B75AD41DDFD08D004EAB65 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */; };
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
@@ -76,8 +78,6 @@
 		11F25A2D1DF222E9003CB8EE /* db_key_value_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A161DF222E9003CB8EE /* db_key_value_writer.cpp */; };
 		11F25A2E1DF222E9003CB8EE /* db_key_value_store_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A191DF222E9003CB8EE /* db_key_value_store_impl.cpp */; };
 		11F25A2F1DF222E9003CB8EE /* db_table.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A1A1DF222E9003CB8EE /* db_table.cpp */; };
-		11F25A301DF222E9003CB8EE /* mdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A1E1DF222E9003CB8EE /* mdb.c */; };
-		11F25A311DF222E9003CB8EE /* midl.c in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A1F1DF222E9003CB8EE /* midl.c */; };
 		11F25A321DF222E9003CB8EE /* scoped_txn.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A211DF222E9003CB8EE /* scoped_txn.cpp */; };
 		11F25A331DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A231DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.cpp */; };
 		11F25A341DF222E9003CB8EE /* repository_impl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F25A251DF222E9003CB8EE /* repository_impl.cpp */; };
@@ -314,6 +314,10 @@
 		111973581DDFDF350042C520 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		111D56B31DF2590700534EF3 /* app_server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app_server.cpp; sourceTree = "<group>"; };
 		111D56B41DF2590700534EF3 /* app_server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app_server.hpp; sourceTree = "<group>"; };
+		111D56BB1DF2805400534EF3 /* lmdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmdb.h; sourceTree = "<group>"; };
+		111D56BC1DF2805400534EF3 /* mdb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mdb.c; sourceTree = "<group>"; };
+		111D56C11DF2805500534EF3 /* midl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = midl.c; sourceTree = "<group>"; };
+		111D56C21DF2805500534EF3 /* midl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midl.h; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -394,7 +398,7 @@
 		11B75ACC1DDFD08D004EAB65 /* vsopencvios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vsopencvios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B75AD01DDFD08D004EAB65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11B75AD21DDFD08D004EAB65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		11B75AD31DDFD08D004EAB65 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = AppDelegate.mm; sourceTree = "<group>"; };
 		11B75AD91DDFD08D004EAB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		11B75ADE1DDFD08D004EAB65 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -453,10 +457,6 @@
 		11F25A191DF222E9003CB8EE /* db_key_value_store_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db_key_value_store_impl.cpp; sourceTree = "<group>"; };
 		11F25A1A1DF222E9003CB8EE /* db_table.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db_table.cpp; sourceTree = "<group>"; };
 		11F25A1B1DF222E9003CB8EE /* db_table.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = db_table.hpp; sourceTree = "<group>"; };
-		11F25A1D1DF222E9003CB8EE /* lmdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmdb.h; sourceTree = "<group>"; };
-		11F25A1E1DF222E9003CB8EE /* mdb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mdb.c; sourceTree = "<group>"; };
-		11F25A1F1DF222E9003CB8EE /* midl.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = midl.c; sourceTree = "<group>"; };
-		11F25A201DF222E9003CB8EE /* midl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = midl.h; sourceTree = "<group>"; };
 		11F25A211DF222E9003CB8EE /* scoped_txn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scoped_txn.cpp; sourceTree = "<group>"; };
 		11F25A221DF222E9003CB8EE /* scoped_txn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = scoped_txn.hpp; sourceTree = "<group>"; };
 		11F25A231DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vs_db_key_value_reader_writer_impl.cpp; sourceTree = "<group>"; };
@@ -901,6 +901,17 @@
 			path = ../../BasicUI2/src/boot;
 			sourceTree = "<group>";
 		};
+		111D56BA1DF2805400534EF3 /* lmdb */ = {
+			isa = PBXGroup;
+			children = (
+				111D56BB1DF2805400534EF3 /* lmdb.h */,
+				111D56BC1DF2805400534EF3 /* mdb.c */,
+				111D56C11DF2805500534EF3 /* midl.c */,
+				111D56C21DF2805500534EF3 /* midl.h */,
+			);
+			path = lmdb;
+			sourceTree = "<group>";
+		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1062,7 +1073,7 @@
 				11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */,
 				11B75DA41DDFD0E1004EAB65 /* scannerLite.h */,
 				11B75AD21DDFD08D004EAB65 /* AppDelegate.h */,
-				11B75AD31DDFD08D004EAB65 /* AppDelegate.m */,
+				11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */,
 				11B75AD81DDFD08D004EAB65 /* Main.storyboard */,
 				11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */,
 				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
@@ -1216,27 +1227,16 @@
 		11F25A181DF222E9003CB8EE /* impl-lmdb */ = {
 			isa = PBXGroup;
 			children = (
+				111D56BA1DF2805400534EF3 /* lmdb */,
 				11F25A191DF222E9003CB8EE /* db_key_value_store_impl.cpp */,
 				11F25A1A1DF222E9003CB8EE /* db_table.cpp */,
 				11F25A1B1DF222E9003CB8EE /* db_table.hpp */,
-				11F25A1C1DF222E9003CB8EE /* lmdb */,
 				11F25A211DF222E9003CB8EE /* scoped_txn.cpp */,
 				11F25A221DF222E9003CB8EE /* scoped_txn.hpp */,
 				11F25A231DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.cpp */,
 				11F25A241DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.hpp */,
 			);
 			path = "impl-lmdb";
-			sourceTree = "<group>";
-		};
-		11F25A1C1DF222E9003CB8EE /* lmdb */ = {
-			isa = PBXGroup;
-			children = (
-				11F25A1D1DF222E9003CB8EE /* lmdb.h */,
-				11F25A1E1DF222E9003CB8EE /* mdb.c */,
-				11F25A1F1DF222E9003CB8EE /* midl.c */,
-				11F25A201DF222E9003CB8EE /* midl.h */,
-			);
-			path = lmdb;
 			sourceTree = "<group>";
 		};
 		11F25A351DF223E4003CB8EE /* 3p */ = {
@@ -2248,6 +2248,7 @@
 				B621FD571DEAA29D00E54A51 /* retinafilter.cpp in Sources */,
 				11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */,
 				B621FD351DEAA29D00E54A51 /* p3p.cpp in Sources */,
+				111D56C81DF2805500534EF3 /* mdb.c in Sources */,
 				B621FDE51DEAA29E00E54A51 /* testset.cpp in Sources */,
 				B621FDD91DEAA29E00E54A51 /* cnn.cpp in Sources */,
 				B621FDFB1DEAA29E00E54A51 /* bgfg_gaussmix2.cpp in Sources */,
@@ -2269,6 +2270,7 @@
 				B621FDDC1DEAA29E00E54A51 /* ertrees.cpp in Sources */,
 				B621FD8C1DEAA29D00E54A51 /* flann.cpp in Sources */,
 				B621FD6F1DEAA29D00E54A51 /* opengl_interop_deprecated.cpp in Sources */,
+				111D56CD1DF2805500534EF3 /* midl.c in Sources */,
 				B621FD471DEAA29D00E54A51 /* facerec.cpp in Sources */,
 				B621FD921DEAA29E00E54A51 /* cap_cmu.cpp in Sources */,
 				B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */,
@@ -2383,7 +2385,6 @@
 				B621FD9B1DEAA29E00E54A51 /* cap_libv4l.cpp in Sources */,
 				11F25A2E1DF222E9003CB8EE /* db_key_value_store_impl.cpp in Sources */,
 				11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.m in Sources */,
-				11F25A311DF222E9003CB8EE /* midl.c in Sources */,
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
 				11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */,
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
@@ -2401,7 +2402,7 @@
 				B621FD981DEAA29E00E54A51 /* cap_ios_abstract_camera.mm in Sources */,
 				B621FD4A1DEAA29D00E54A51 /* gencolors.cpp in Sources */,
 				B621FDEE1DEAA29E00E54A51 /* latentsvm.cpp in Sources */,
-				11B75AD41DDFD08D004EAB65 /* AppDelegate.m in Sources */,
+				11B75AD41DDFD08D004EAB65 /* AppDelegate.mm in Sources */,
 				B621FD7A1DEAA29D00E54A51 /* brisk.cpp in Sources */,
 				B621FDE21DEAA29E00E54A51 /* nbayes.cpp in Sources */,
 				B621FDA61DEAA29E00E54A51 /* grfmt_sunras.cpp in Sources */,
@@ -2426,7 +2427,6 @@
 				B621FDBE1DEAA29E00E54A51 /* gabor.cpp in Sources */,
 				B621FDFC1DEAA29E00E54A51 /* bgfg_gmg.cpp in Sources */,
 				B621FDD41DEAA29E00E54A51 /* thresh.cpp in Sources */,
-				11F25A301DF222E9003CB8EE /* mdb.c in Sources */,
 				11F259FF1DF2223F003CB8EE /* unpacker.cpp in Sources */,
 				B621FDC51DEAA29E00E54A51 /* linefit.cpp in Sources */,
 				B621FD581DEAA29D00E54A51 /* rgbdodometry.cpp in Sources */,

@@ -11,7 +11,7 @@
 /* $OpenLDAP$ */
 /* This work is part of OpenLDAP Software <http://www.openldap.org/>.
  *
- * Copyright 2000-2015 The OpenLDAP Foundation.
+ * Copyright 2000-2016 The OpenLDAP Foundation.
  * All rights reserved.
  *
  * Redistribution and use in source and binary forms, with or without
@@ -26,8 +26,7 @@
 #ifndef _MDB_MIDL_H_
 #define _MDB_MIDL_H_
 
-#include <stddef.h>
-#include <inttypes.h>
+#include "lmdb.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -43,11 +42,7 @@ extern "C" {
 	/** A generic unsigned ID number. These were entryIDs in back-bdb.
 	 *	Preferably it should have the same size as a pointer.
 	 */
-#ifdef MDB_VL32
-typedef uint64_t MDB_ID;
-#else
-typedef size_t MDB_ID;
-#endif
+typedef mdb_size_t MDB_ID;
 
 	/** An IDL is an ID List, a sorted array of IDs. The first
 	 * element of the array is a counter for how many actual
@@ -61,7 +56,7 @@ typedef MDB_ID *MDB_IDL;
  *   limiting factors: sizeof(ID), thread stack size
  */
 #ifdef MDB_VL32
-#define	MDB_IDL_LOGN	10	/* DB_SIZE is 2^10, UM_SIZE is 2^11 */
+#define	MDB_IDL_LOGN	14	/* DB_SIZE is 2^14, UM_SIZE is 2^15 */
 #else
 #define	MDB_IDL_LOGN	16	/* DB_SIZE is 2^16, UM_SIZE is 2^17 */
 #endif

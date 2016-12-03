@@ -49,8 +49,9 @@ void vsKeyValueStore::open(unsigned long aSize)
 		
 		status = mdb_env_set_maxdbs(iEnv, 64);
 		if (MDB_SUCCESS != status) { LOG("mdb_env_set_maxdbs failed: %d", status); break;}
-		
-		status = mdb_env_open(iEnv, iPath.c_str(), MDB_NOSYNC, 0664);
+
+        //status = mdb_env_open(iEnv, iPath.c_str(), MDB_NOSYNC, 0664);
+        status = mdb_env_open(iEnv, iPath.c_str(), MDB_NOLOCK, 0664); //for iOS use MDB_NOLOCK. MDB_NOSYNC crashes for Documents/ dir
 		if (MDB_SUCCESS != status) { LOG("mdb_env_open failed: %d", status); break;}
 		
 		int removeReaders = 0;

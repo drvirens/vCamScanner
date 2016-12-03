@@ -34,7 +34,7 @@ void CAppServer::construct(const string& aPath)
 
 void CAppServer::createRepository()
 	{
-	unsigned long size = 1 * 1024 * 1024;
+        unsigned long size = 1 * 1024; // * 1024;
 	ASSERT(iPath.length() > 0);
 	iKeyValueStore = make_shared< vsKeyValueStore >(iPath, size);
 	iRepository = make_shared<vsRepository>(*iKeyValueStore.get());
