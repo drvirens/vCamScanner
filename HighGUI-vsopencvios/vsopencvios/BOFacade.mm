@@ -21,6 +21,8 @@
 @property (nonatomic, strong) BOLocationController *locationController;
 
 @property (nonatomic) NSOperationQueue* operationQueue;
+@property (nonatomic, copy) NSString* originalImageHref;
+@property (nonatomic, copy) NSString* finalImageHref;
 @end
 
 @implementation BOFacade {
@@ -103,7 +105,55 @@
         categoryName:(NSString*)categoryName
             fileSize:(NSInteger)fileSize {
     NSLog(@"doAddDocument");
+    
+    //operation 1 = save original image on disc and get its path
+    typeof (self) __weak welf = self;
+    NSBlockOperation* operationSaveOriginalImage = [NSBlockOperation blockOperationWithBlock:^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            strongSelf.originalImageHref = [strongSelf saveImage:image];
+        }
+    }];
+    
+    //operation 2 = save finalImage on disc and get its path
+    NSBlockOperation* operationSaveFinalImage = [NSBlockOperation blockOperationWithBlock:^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            strongSelf.finalImageHref = [strongSelf saveImage:finalProcessedImage];
+        }
+    }];
+    
+    //operation 3 = insert entry of vsDocument in LMDB
+    NSBlockOperation* operationLmdbPut = [NSBlockOperation blockOperationWithBlock:^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf insertDocument:docTitle categoryName:categoryName fileSize:fileSize
+                     originalImageHref:self.originalImageHref finalImageHref:self.finalImageHref];
+        }
+    }];
+    
+    //add dependnecy : 3 -> 2 -> 1
+    [operationLmdbPut addDependency:operationSaveFinalImage];
+    [operationSaveFinalImage addDependency:operationSaveOriginalImage];
+    
+    [self.operationQueue addOperation:operationSaveOriginalImage];
+    [self.operationQueue addOperation:operationSaveFinalImage];
+    [self.operationQueue addOperation:operationLmdbPut];
+    
+    //add operations
+}
 
+- (NSString*)saveImage:(UIImage*)image {
+    NSString* path = @"PATH";
+    return path;
+}
+
+- (void) insertDocument:(NSString*)docTitle
+          categoryName:(NSString*)categoryName
+              fileSize:(NSInteger)fileSize
+originalImageHref:(NSString*)originalImageHref
+finalImageHref:(NSString*)finalImageHref {
+    NSLog(@"doAddDocument");
 }
 
 @end
