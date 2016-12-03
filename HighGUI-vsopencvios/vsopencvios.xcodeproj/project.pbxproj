@@ -15,6 +15,7 @@
 		111D56D81DF28F0700534EF3 /* auth_status.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56D41DF28F0700534EF3 /* auth_status.cpp */; };
 		111D56D91DF28F0700534EF3 /* authenticator.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56D61DF28F0700534EF3 /* authenticator.cpp */; };
 		111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */; };
+		111D56DF1DF2B3CB00534EF3 /* document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DD1DF2B3CB00534EF3 /* document.cpp */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -330,6 +331,8 @@
 		111D56D71DF28F0700534EF3 /* authenticator.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = authenticator.hpp; sourceTree = "<group>"; };
 		111D56DA1DF28F5900534EF3 /* model_immutable_login.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = model_immutable_login.cpp; sourceTree = "<group>"; };
 		111D56DB1DF28F5900534EF3 /* model_immutable_login.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = model_immutable_login.hpp; sourceTree = "<group>"; };
+		111D56DD1DF2B3CB00534EF3 /* document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document.cpp; sourceTree = "<group>"; };
+		111D56DE1DF2B3CB00534EF3 /* document.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document.hpp; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -1218,6 +1221,8 @@
 				11F25A081DF222E9003CB8EE /* base_model.hpp */,
 				11F25A091DF222E9003CB8EE /* user.cpp */,
 				11F25A0A1DF222E9003CB8EE /* user.hpp */,
+				111D56DD1DF2B3CB00534EF3 /* document.cpp */,
+				111D56DE1DF2B3CB00534EF3 /* document.hpp */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -2375,6 +2380,7 @@
 				B621FDFF1DEAA29E00E54A51 /* lkpyramid.cpp in Sources */,
 				11F25A2C1DF222E9003CB8EE /* db_key_value_store.cpp in Sources */,
 				B621FD5C1DEAA29D00E54A51 /* algorithm.cpp in Sources */,
+				111D56DF1DF2B3CB00534EF3 /* document.cpp in Sources */,
 				B621FDA91DEAA29E00E54A51 /* loadsave.cpp in Sources */,
 				11303C001DEECEB100371BD5 /* VSMoreCell.m in Sources */,
 				B621FD621DEAA29D00E54A51 /* copy.cpp in Sources */,
@@ -2668,6 +2674,11 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/ios",
 				);
+				OTHER_CFLAGS = (
+					"-Wno-shorten-64-to-32",
+					"-Wno-deprecated-register",
+					"-DDEBUG",
+				);
 				OTHER_LDFLAGS = (
 					"-ljpeg",
 					"-ObjC",
@@ -2707,6 +2718,11 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/ios",
+				);
+				OTHER_CFLAGS = (
+					"-Wno-shorten-64-to-32",
+					"-Wno-deprecated-register",
+					"-DDEBUG",
 				);
 				OTHER_LDFLAGS = (
 					"-ljpeg",

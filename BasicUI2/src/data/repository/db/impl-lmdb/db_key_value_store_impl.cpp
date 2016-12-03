@@ -113,8 +113,7 @@ void vsKeyValueStore::read(function<void(vsIKeyValueReader&)>& aTransaction)
 	vsIKeyValueReaderWriter* obj = new vsCKeyValueReaderWriter( *(iTable.get()), *txn );
 	if (obj)
 		{
-		//make sure to set status for scopedTxn here
-		scopedTxn.setStatus(MDB_SUCCESS);
+		scopedTxn.setStatus(MDB_SUCCESS); //make sure to set status for scopedTxn here
 		aTransaction(*obj);
 		}
     delete obj;
@@ -132,8 +131,7 @@ void vsKeyValueStore::readWrite(function<void(vsIKeyValueReaderWriter&)>& aTrans
 	vsIKeyValueReaderWriter* obj = new vsCKeyValueReaderWriter( *(iTable.get()), *txn );
 	if (obj)
 		{
-		//make sure to set status for scopedTxn here
-		scopedTxn.setStatus(MDB_SUCCESS);
+		scopedTxn.setStatus(MDB_SUCCESS); //make sure to set status for scopedTxn here
 		aTransaction(*obj);
 		}
 	}

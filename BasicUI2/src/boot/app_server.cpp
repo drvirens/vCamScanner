@@ -57,12 +57,11 @@ void CAppServer::addAwesomeSauceAndViren()
     string theSecurity				= "viren-security-plain";
     addUser(iRepository, theUserName, theFullName, theEMail, thePassword, theSecurity);
     
-    
-    theUserName				= "awesomeSauce";
-    theFullName				= "daniel watts";
-    theEMail				= "awesome@sauce.com";
-    thePassword				= "awesomesaucePassword";
-    theSecurity				= "SASL";
+    theUserName                     = "awesomeSauce";
+    theFullName                     = "daniel watts";
+    theEMail                        = "awesome@sauce.com";
+    thePassword                     = "awesomesaucePassword";
+    theSecurity                     = "SASL";
     addUser(iRepository, theUserName, theFullName, theEMail, thePassword, theSecurity);
 }
 
@@ -74,13 +73,12 @@ void CAppServer::addUser(shared_ptr<vsIRepository> aKeyStoreRepositry,
                                  string theSecurity)
 { TRACE
     long theCreationDate			= 0;
-    long theModificationDate	= 0;
+    long theModificationDate        = 0;
     vsUser user(theUserName, theFullName, theEMail, thePassword, theSecurity, theCreationDate, theModificationDate);
     aKeyStoreRepositry->put(user, [](const vsModelBase& aPuttedModel)
                             {
                                 LOG("\t Did successfully put the model [%s] \n", aPuttedModel.primaryKey().c_str());
-                            }
-                            );
+                            });
 }
 
 void CAppServer::authenticate(function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser)

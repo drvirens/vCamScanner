@@ -8,20 +8,21 @@ related to:
 		-Document (doc)
 
 Document
-	- title                /* User supplied or app-generated name of this document. Is displayed to user */
-	- dateCreated          /* When was this doc first created? */
-	- dateUpdated          /* When was this doc last updated? */
-	- size                 /* size in bytes */
-	- originalPhotoHref    /* local or cloud based file path to original pic - cloud-path is not for phase1 */
-	- modifiedLargePhotoHref        /* local or cloud based file path to opencv processed file */
-	- fileType             /* this is needed for generating pdf etc later using ocr */
+	- docID				   // Primary key
+	- title                // User supplied or app-generated name of this document. Is displayed to user //
+	- dateCreated          // When was this doc first created? //
+	- dateUpdated          // When was this doc last updated? //
+	- size                 // size in bytes //
+	- originalPhotoHref    // local or cloud based file path to original pic - cloud-path is not for phase1 //
+	- modifiedLargePhotoHref        // local or cloud based file path to opencv processed file //
+	- fileType             // this is needed for generating pdf etc later using ocr //
 ------:: Phase II ::-----	
-	- modifiedMediumPhotoHref       /* phase 2 - local or cloud based file path to opencv processed file */
-	- modifiedThumbnailPhotoHref    /* phase 2 - local or cloud based file path to opencv processed file */
-	- uploadDate           /* phase 2 - when was this doc uploaded to our backend? */
-	- latitude             /* phase 2 - where was this document scanned?  */
-	- longitude            /* phase 2 - where was this document scanned? */
-	- ocrTextHref          /* phase 2 - cache the ocr contents for faster processing */
+	- modifiedMediumPhotoHref       // phase 2 - local or cloud based file path to opencv processed file //
+	- modifiedThumbnailPhotoHref    // phase 2 - local or cloud based file path to opencv processed file //
+	- uploadDate           // phase 2 - when was this doc uploaded to our backend? //
+	- latitude             // phase 2 - where was this document scanned?  //
+	- longitude            // phase 2 - where was this document scanned? //
+	- ocrTextHref          // phase 2 - cache the ocr contents for faster processing //
 related to:
 		-Credentials (cred)
 		-User (owner)
