@@ -16,7 +16,6 @@
     self = [super initWithFrame:frame];
     if (self)
     {
-        
         //INIT
         self.points=[[NSMutableArray alloc] init];
         _pointA=[[UIView alloc] init];
@@ -326,7 +325,7 @@
         float alpha = atan2(cross, dot);
         
         
-        //        NSLog(@"%f", -1*(float) floor(alpha * 180. / 3.14 + 0.5));
+                NSLog(@"%f", -1*(float) floor(alpha * 180. / 3.14 + 0.5));
         
         
         
@@ -441,7 +440,7 @@
         
     }
     
-    //    NSLog(@"Last Call%d",previousIndex);
+        NSLog(@"Last Call%d",previousIndex);
     if(k>=2){
         
         [self swapTwoPoints];
@@ -461,7 +460,7 @@
     
     
     
-    //    NSLog(@"Horizontal%f %f",CGLinesIntersectAtPoint(line1, line2).x,CGLinesIntersectAtPoint(line1, line2).y);
+        NSLog(@"Horizontal%f %f",CGLinesIntersectAtPoint(line1, line2).x,CGLinesIntersectAtPoint(line1, line2).y);
     
     CGPoint temp=CGLinesIntersectAtPoint(line1, line2);
     if(temp.x!=INFINITY  && temp.y!=INFINITY){
@@ -478,7 +477,7 @@
     
     CGLine line4 = CGLineMake(CGPointMake([[self.points objectAtIndex:2] frame].origin.x, [[self.points objectAtIndex:2] frame].origin.y), CGPointMake([[self.points objectAtIndex:1] frame].origin.x, [[self.points objectAtIndex:1] frame].origin.y));
     
-    //     NSLog(@"Verical %f %f",CGLinesIntersectAtPoint(line3, line4).x,CGLinesIntersectAtPoint(line3, line4).y);
+         NSLog(@"Verical %f %f",CGLinesIntersectAtPoint(line3, line4).x,CGLinesIntersectAtPoint(line3, line4).y);
     
     CGPoint temp=CGLinesIntersectAtPoint(line3, line4);
     if(temp.x!=INFINITY  && temp.y!=INFINITY){
@@ -509,7 +508,7 @@
         
         CGRect extentedFrame = CGRectInset(point.frame, -20, -20);
         
-//        NSLog(@"For Point %d Location%f %f and Point %f %f",i,location.x,location.y,point.frame.origin.x,point.frame.origin.y);
+        NSLog(@"For Point %d Location%f %f and Point %f %f",i,location.x,location.y,point.frame.origin.x,point.frame.origin.y);
         if (CGRectContainsPoint(extentedFrame, location))
         {
             CGFloat distanceToThis = [self distanceBetween:point.frame.origin And:location];
@@ -559,7 +558,7 @@
         self.activePoint.frame = CGRectMake(locationPoint.x -kCropButtonSize/2, locationPoint.y -kCropButtonSize/2, kCropButtonSize, kCropButtonSize);
         [self cornerControlsMiddle];
         
-//        NSLog(@"Point D %f %f",_pointD.frame.origin.x,_pointD.frame.origin.y);
+        NSLog(@"Point D %f %f",_pointD.frame.origin.x,_pointD.frame.origin.y);
     }
     else{
         if(![self checkForNeighbouringPoints:currentIndex]){

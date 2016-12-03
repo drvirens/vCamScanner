@@ -577,34 +577,25 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuRotateRight:(id)sender {
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
+    
     self.menuButtonSelect.enabled = NO;
     [self.activityIndicator startAnimating];
-    
-{
-    if (self.state == BOCroppedPreviewState) {
-        NSLog(@"BOCroppedPreviewState - show share state/view");
-        [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
-        [self hideFiltersView];
-        [self transitMenuItemsToShareMode];
-        
-        long fileSize = 0;
-        NSString* docTitle = self.infoEntryView.textFieldTitle.text;
-        [self.facade addDocument:self.image
-             finalProcessedImage:self.finalProcessedImage
-                       doctTitle:docTitle
-                    categoryName:self.categoryName
-                        fileSize:fileSize]; //XXX
-    } else if (self.state == BOShareState) {
-        [self share:self];
-    } else {
-        [self doCropImage];
-        [self transitMenuItemsToPreviewMode];
-        [self populateFiltersMenu];
-        [self showFiltersView];
-        [self showInfoEntryView];
-    }
-}
-    
+            if (self.state == BOCroppedPreviewState) {
+                NSLog(@"BOCroppedPreviewState - show share state/view");
+                [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
+                [self hideFiltersView];
+                [self transitMenuItemsToShareMode];
+                
+                [self apiAddDocument];
+            } else if (self.state == BOShareState) {
+                [self share:self];
+            } else {
+                [self doCropImage];
+                [self transitMenuItemsToPreviewMode];
+                [self populateFiltersMenu];
+                [self showFiltersView];
+                [self showInfoEntryView];
+            }
     [self.activityIndicator stopAnimating];
     self.menuButtonSelect.enabled = YES;
 }
@@ -701,7 +692,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)runCompletionWithStatus:(VSCameraStatus)status sender:(id)sender {
     NSString* segueid = nil;
     if (status == VSCameraStatusAuthorized) {
-        //segueid = @"segueCamera";
         [self vc:nil hasCameraPermissions:YES];
         return;
     } else {
@@ -756,8 +746,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         permissionsVC.message = self.message;
         permissionsVC.positiveBtnTitle = self.positiveBtnTitle;
     } else if ([@"documents" isEqualToString:segue.identifier]) {
-        UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
-        BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
+        //UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
+        //BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
        // destVC.delegateCategory = self;
     }
 }
@@ -766,6 +756,17 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSLog(@"didSelectCategory");
     self.categoryName = category;
     self.infoEntryView.labelSelectedCategoryName.text = category;
+}
+
+#pragma mark - API calls
+- (void)apiAddDocument {
+    long fileSize = 0;
+    NSString* docTitle = self.infoEntryView.textFieldTitle.text;
+    [self.facade addDocument:self.image
+         finalProcessedImage:self.finalProcessedImage
+                   doctTitle:docTitle
+                categoryName:self.categoryName
+                    fileSize:fileSize]; //XXX
 }
 
 #pragma mark OpenCV
