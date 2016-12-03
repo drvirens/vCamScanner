@@ -25,6 +25,7 @@ public:
 	CAppServer(const string& aPath);
 	virtual ~CAppServer();
 	void createRepository();
+    void addAwesomeSauceAndViren();
 	void start();
 	void stop();
 	
@@ -32,6 +33,12 @@ public:
 	
 private:
 	void construct(const string& aPath);
+    void addUser(shared_ptr<vsIRepository> aKeyStoreRepositry,
+                 string theUserName,
+                 string theFullName,
+                 string theEMail,
+                 string thePassword,
+                 string theSecurity);
 	
 private:
 	shared_ptr<vsIKeyValueStore> iKeyValueStore;

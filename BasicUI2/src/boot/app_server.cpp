@@ -9,6 +9,7 @@
 #include "app_server.hpp"
 #include "trace.h"
 #include "repository_impl.hpp"
+#include "user.hpp"
 
 CAppServer::CAppServer(const string& aPath)
 	: iPath(aPath)
@@ -40,3 +41,39 @@ void CAppServer::createRepository()
 	iRepository = make_shared<vsRepository>(*iKeyValueStore.get());
 	SignalDidCreateKeyStore(iRepository);
 	}
+
+void CAppServer::addAwesomeSauceAndViren()
+{ TRACE
+    string theUserName				= "viren@india.com";
+    string theFullName				= "virendra shakya";
+    string theEMail					= "virendra@skully.com";
+    string thePassword				= "virenpassword";
+    string theSecurity				= "viren-security-plain";
+    addUser(iRepository, theUserName, theFullName, theEMail, thePassword, theSecurity);
+    
+    
+    theUserName				= "awesomeSauce";
+    theFullName				= "daniel watts";
+    theEMail				= "awesome@sauce.com";
+    thePassword				= "awesomesaucePassword";
+    theSecurity				= "SASL";
+    addUser(iRepository, theUserName, theFullName, theEMail, thePassword, theSecurity);
+}
+
+void CAppServer::addUser(shared_ptr<vsIRepository> aKeyStoreRepositry,
+                                 string theUserName,
+                                 string theFullName,
+                                 string theEMail,
+                                 string thePassword,
+                                 string theSecurity)
+{ TRACE
+    long theCreationDate			= 0;
+    long theModificationDate	= 0;
+    vsUser user(theUserName, theFullName, theEMail, thePassword, theSecurity, theCreationDate, theModificationDate);
+    aKeyStoreRepositry->put(user, [](const vsModelBase& aPuttedModel)
+                            {
+                                LOG("\t Did successfully put the model [%s] \n", aPuttedModel.primaryKey().c_str());
+                            }
+                            );
+}
+

@@ -75,6 +75,8 @@
     app_ = new CAppServer(path);
     app_->createRepository();
     
+    app_->addAwesomeSauceAndViren();
+    
 //    [self testLMDB];
     return YES;
 }
