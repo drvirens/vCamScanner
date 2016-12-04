@@ -12,7 +12,6 @@
 #include <opencv2/imgproc/imgproc.hpp>
 #include <opencv2/highgui/highgui.hpp>
 
-
 struct vsCGPoint {
     double x;
     double y;

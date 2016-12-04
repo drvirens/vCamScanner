@@ -8,13 +8,19 @@
 
 #include <string>
 
-#import "BOFacade.h"
-#import "BOPhotoController.h"
-#import "BOLocationController.h"
-
+#include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/highgui/highgui.hpp"
+#include "vsImageProcessor.hpp"
+#include "trace.h"
 #include "app_server.hpp"
 #include "model_immutable_login.hpp"
 #include "trace.h"
+
+#import "BOFacade.h"
+#import "BOPhotoController.h"
+#import "BOLocationController.h"
+#import "UIImageView+ContentFrame.h"
+#import "MMOpenCVHelper.h"
 
 @interface BOFacade ()
 @property (nonatomic) BOPhotoController *photoController;
@@ -172,6 +178,133 @@ finalImageHref:(NSString*)finalImageHref {
     app_->addDocument(doc, []() {
         LOG("added document");
     });
+}
+
+#pragma mark - openCV
+#pragma mark OpenCV
+- (void)apiDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView
+{
+    cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:capturedImageView.image];
+    CGSize targetSize = capturedImageView.contentSize;
+    cv::resize(original, original, cvSize(targetSize.width, targetSize.height));
+    
+    std::vector<std::vector<cv::Point>>squares;
+    std::vector<cv::Point> largest_square;
+    
+    vsImageProcessor::find_squares(original, squares);
+    vsImageProcessor::find_largest_square(squares, largest_square);
+    
+    if (largest_square.size() == 4)
+    {
+        // Manually sorting points, needs major improvement. Sorry.
+        NSMutableArray *points = [NSMutableArray array];
+        NSMutableDictionary *sortedPoints = [NSMutableDictionary dictionary];
+        
+        for (int i = 0; i < 4; i++)
+        {
+            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSValue valueWithCGPoint:CGPointMake(largest_square[i].x, largest_square[i].y)], @"point" , [NSNumber numberWithInt:(largest_square[i].x + largest_square[i].y)], @"value", nil];
+            [points addObject:dict];
+        }
+        
+        int min = [[points valueForKeyPath:@"@min.value"] intValue];
+        int max = [[points valueForKeyPath:@"@max.value"] intValue];
+        
+        int minIndex = 0;
+        int maxIndex = 0;
+        
+        int missingIndexOne = 0;
+        int missingIndexTwo = 0;
+        
+        for (int i = 0; i < 4; i++)
+        {
+            NSDictionary *dict = [points objectAtIndex:i];
+            
+            if ([[dict objectForKey:@"value"] intValue] == min)
+            {
+                [sortedPoints setObject:[dict objectForKey:@"point"] forKey:@"0"];
+                minIndex = i;
+                continue;
+            }
+            
+            if ([[dict objectForKey:@"value"] intValue] == max)
+            {
+                [sortedPoints setObject:[dict objectForKey:@"point"] forKey:@"2"];
+                maxIndex = i;
+                continue;
+            }
+            
+            NSLog(@"MSSSING %i", i);
+            
+            missingIndexOne = i;
+        }
+        
+        for (int i = 0; i < 4; i++)
+        {
+            if (missingIndexOne != i && minIndex != i && maxIndex != i)
+            {
+                missingIndexTwo = i;
+            }
+        }
+        
+        
+        if (largest_square[missingIndexOne].x < largest_square[missingIndexTwo].x)
+        {
+            //2nd Point Found
+            [sortedPoints setObject:[[points objectAtIndex:missingIndexOne] objectForKey:@"point"] forKey:@"3"];
+            [sortedPoints setObject:[[points objectAtIndex:missingIndexTwo] objectForKey:@"point"] forKey:@"1"];
+        }
+        else
+        {
+            //4rd Point Found
+            [sortedPoints setObject:[[points objectAtIndex:missingIndexOne] objectForKey:@"point"] forKey:@"1"];
+            [sortedPoints setObject:[[points objectAtIndex:missingIndexTwo] objectForKey:@"point"] forKey:@"3"];
+        }
+        
+        [croppedView topLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"0"] CGPointValue]];
+        [croppedView topRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"1"] CGPointValue]];
+        [croppedView bottomRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"2"] CGPointValue]];
+        [croppedView bottomLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"3"] CGPointValue]];
+        
+        NSLog(@"%@ Sorted Points",sortedPoints);
+    }
+    original.release();
+}
+
+- (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView image:(UIImage*)image {
+    UIImage* retImgae = nil;
+    if([croppedView frameEdited]){
+        double scaleFactor =  [capturedImageView contentScale];
+        
+        CGPoint thePtBottomLeft = [croppedView coordinatesForPoint:1 withScaleFactor:scaleFactor];
+        CGPoint thePtBottomRight = [croppedView coordinatesForPoint:2 withScaleFactor:scaleFactor];
+        CGPoint thePtTopRight = [croppedView coordinatesForPoint:3 withScaleFactor:scaleFactor];
+        CGPoint thePtTopLeft = [croppedView coordinatesForPoint:4 withScaleFactor:scaleFactor];
+        
+        cv::Mat* undistorted = 0; //output
+        cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:image];
+        
+        vsCGPoint ptBottomLeft = {thePtBottomLeft.x, thePtBottomLeft.y};
+        vsCGPoint ptBottomRight = {thePtBottomRight.x, thePtBottomRight.y};
+        vsCGPoint ptTopRight = {thePtTopRight.x, thePtTopRight.y};
+        vsCGPoint ptTopLeft = {thePtTopLeft.x, thePtTopLeft.y};
+        
+        vsImageProcessor::crop(original, scaleFactor, ptBottomLeft, ptBottomRight, ptTopRight, ptTopLeft, undistorted);
+        
+        capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:*undistorted];
+        //self.cropImage = capturedImageView.image;
+        retImgae = capturedImageView.image;
+        croppedView.hidden = YES;
+        
+        original.release();
+        undistorted->release();
+        delete undistorted;
+    }
+    else{
+        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"MMCamScanner" message:@"Invalid Rect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+    }
+    
+    return retImgae;
 }
 
 @end

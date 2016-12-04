@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
+#import "MMCropView.h"
+
 @interface BOFacade : NSObject
 - (void)bootStrap;
 
@@ -17,4 +19,11 @@
            doctTitle:(NSString*)docTitle
         categoryName:(NSString*)categoryName
             fileSize:(NSInteger)fileSize;
+
+- (void)apiDetectEdges:(UIImageView*)capturedImageView
+        croppedView:(MMCropView*)croppedView;
+
+- (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView
+            croppedView:(MMCropView*)croppedView
+                  image:(UIImage*)image;
 @end
