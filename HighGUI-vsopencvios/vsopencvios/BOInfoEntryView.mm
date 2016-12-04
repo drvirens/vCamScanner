@@ -60,7 +60,7 @@
     
     //also setup title label
     self.labelCategoryTItle.textColor = [UIColor darkGrayColor];
-    self.labelCategoryTItle.font = VS_FONT_REGULAR;
+    self.labelCategoryTItle.font = VS_FONT_MEDIUM;
     
     //and close icon
     [self decorateMiddleCloseIcon];
