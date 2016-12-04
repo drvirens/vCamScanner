@@ -183,12 +183,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 
-
 - (void)decorateSettingsButton {
-    UIImage* settings = [UIImage imageNamed:@"ic_settings_white"];
-    settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    [self.buttonSettings setImage:settings forState:UIControlStateNormal];
-    self.buttonSettings.tintColor = [VSBranding vs_brandRedColor];
+//    UIImage* settings = [UIImage imageNamed:@"ic_settings_white"];
+//    settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+//    [self.buttonSettings setImage:settings forState:UIControlStateNormal];
+//    self.buttonSettings.tintColor = [VSBranding vs_brandRedColor];
 }
 - (void)decorateShowDocumentsButton {
     UIImage* settings = [UIImage imageNamed:@"ic_view_list_white"];
@@ -245,7 +244,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.buttonCameraCapture.enabled = NO;
     
     //hide settings button
-    self.buttonSettings.hidden = YES;
+    //self.buttonSettings.hidden = YES;
     
     [self hideRecentlyScannedView];
     
@@ -568,7 +567,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     }
     self.currentlySelectedFilterMenu = nil;
     
-    self.buttonSettings.hidden = NO;
+    //self.buttonSettings.hidden = NO;
     [self clearTitle];
     [self clearCategoryText];
     [self.infoEntryView show];
