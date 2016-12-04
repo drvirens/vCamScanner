@@ -147,64 +147,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 #pragma mark - infoEntryView interactions
-/*
-- (void)clearTitle {
-    //placeholder
-    NSDictionary* placeholderTextColor = @{
-                                           NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
-                                           NSFontAttributeName : VS_FONT_VERYSMALL
-                                           };
-    NSAttributedString* placeHolder = [[NSAttributedString alloc] initWithString:@"ENTER TITLE" attributes:placeholderTextColor];
-    self.infoEntryView.textFieldTitle.attributedPlaceholder = placeHolder;
-    
-    //typed text
-    self.infoEntryView.textFieldTitle.font = VS_FONT_REGULAR;
-    self.infoEntryView.textFieldTitle.textColor = [UIColor darkGrayColor];
-    self.infoEntryView.textFieldTitle.text = nil;
-}
-- (void)clearCategoryText {
-    //category label
-    NSDictionary* labelCategory = @{
-                                    NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
-                                    NSFontAttributeName : VS_FONT_VERYSMALL
-                                    };
-    NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
-    self.infoEntryView.labelSelectedCategoryName.attributedText = category;
-}
-- (void)setupFileSizeLabel {
-    self.infoEntryView.labelFileSize.textColor = [VSBranding vs_brandRedColor];
-    self.infoEntryView.labelFileSize.font = VS_FONT_EXTRASMALL;
-    self.infoEntryView.labelFileSize.alpha = 0.5f;
-}
-- (void)decorateCategoryMoreIcon {
-    UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];
-    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.infoEntryView.imageViewIcon.image = rightArrow;
-    self.infoEntryView.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
-}
- - (void)setupMiscGUI {
- self.infoEntryView.textFieldTitle.delegate = self;
- 
- //category view tap detect
- self.infoEntryView.categoryView.userInteractionEnabled = YES;
- UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
- singleTapCategoryView.numberOfTapsRequired = 1;
- [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
- 
- //drag view
- self.infoEntryView.dragView.layer.cornerRadius = 2.5f;
- self.infoEntryView.dragViewSmaller.layer.cornerRadius = 2.f;
- //drag container tap event (Phase 2 = Pan gesture)
- UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
- singleTapDragView.numberOfTapsRequired = 1;
- [self.infoEntryView.dragContainerView addGestureRecognizer:singleTapDragView];
- 
- //upper container captured view tap
- UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
- singleTapDragView.numberOfTapsRequired = 1;
- [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
- }
- */
 - (void)setupFileSizeLabel {
     [self.infoEntryView setupFileSizeLabel];
 }
@@ -219,6 +161,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (void)setupMiscGUI {
     [self.infoEntryView setupMiscGUI:self selectorCateogry:@selector(didSelectCateogry:) selectorDragView:@selector(didSelectDragView:)];
+    
+    self.infoEntryView.labelCategoryTItle.text = nil;
     
     //upper container captured view tap
     UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
@@ -561,6 +505,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     [textField resignFirstResponder];
     return YES;
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.infoEntryView.labelCategoryTItle.text = textField.text;
+}
 
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
@@ -597,6 +544,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.userInteractionEnabled = YES;
     self.infoEntryView.dragView.hidden = NO;
     self.infoEntryView.dragViewSmaller.hidden = NO;
+    self.infoEntryView.labelCategoryTItle.text = nil;
     
     self.categoryName = nil;
 }
