@@ -19,6 +19,7 @@
 		111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E11DF2C24800534EF3 /* BOFacade.mm */; };
 		111D56E51DF2C6EF00534EF3 /* UIViewController+BOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */; };
 		111D56ED1DF3CC8100534EF3 /* vsImageProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56EB1DF3CC8100534EF3 /* vsImageProcessor.cpp */; };
+		111D56F01DF3DF4100534EF3 /* BODetectEdges.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -342,6 +343,8 @@
 		111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BOUtils.m"; sourceTree = "<group>"; };
 		111D56EB1DF3CC8100534EF3 /* vsImageProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vsImageProcessor.cpp; path = ../../BasicUI2/src/vsImageProcessor.cpp; sourceTree = "<group>"; };
 		111D56EC1DF3CC8100534EF3 /* vsImageProcessor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vsImageProcessor.hpp; path = ../../BasicUI2/src/vsImageProcessor.hpp; sourceTree = "<group>"; };
+		111D56EE1DF3DF4100534EF3 /* BODetectEdges.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODetectEdges.h; sourceTree = "<group>"; };
+		111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BODetectEdges.mm; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -1195,6 +1198,8 @@
 				11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
+				111D56EE1DF3DF4100534EF3 /* BODetectEdges.h */,
+				111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -2319,6 +2324,7 @@
 				11303C021DEECEB100371BD5 /* VSPurposeCell.m in Sources */,
 				B621FD5A1DEAA29D00E54A51 /* spinimages.cpp in Sources */,
 				B621FD561DEAA29D00E54A51 /* retinacolor.cpp in Sources */,
+				111D56F01DF3DF4100534EF3 /* BODetectEdges.mm in Sources */,
 				B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */,
 				B621FD871DEAA29D00E54A51 /* keypoint.cpp in Sources */,
 				B621FDF81DEAA29E00E54A51 /* denoising.cpp in Sources */,
