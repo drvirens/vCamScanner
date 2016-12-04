@@ -753,6 +753,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (void)doCropImage {
+    NSLog(@"-------------------> START: CROP IMAGE");
+    [self putUIInProcessingStart];
     typeof (self) __weak welf = self;
     [self.facade apiDoCropImage:self.capturedImageView
                                      croppedView:self.croppedView
@@ -773,6 +775,58 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self populateFiltersMenu];
     [self showFiltersView];
     [self showInfoEntryView];
+    
+    [self putUIInProcessingFinished];
+    NSLog(@"-------------------> END: CROP IMAGE");
+}
+
+#pragma mark - Activity indicator and disable other buttons
+- (void)putUIInProcessingStart {
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
+    
+    //hide right most button
+    self.menuButtonSelect.hidden = YES;
+    
+    //other menu buttons become disabled
+    
+    //right most menu button itself should be disabled to avoid two taps
+    self.menuButtonSelect.enabled = NO;
+    self.menuButtonSelect.alpha = 0.35f;
+    
+    //back button - left most
+    self.menuButtonBack.enabled = NO;
+    self.menuButtonBack.alpha = 0.35f;
+    
+    //left rotate button
+    self.menuButtonRotateLeft.enabled = NO;
+    self.menuButtonRotateLeft.alpha = 0.35f;
+    
+    //right rotate button
+    self.menuButtonRotateRight.enabled = NO;
+    self.menuButtonRotateRight.alpha = 0.35f;
+}
+
+- (void)putUIInProcessingFinished {
+    self.activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
+    
+    self.menuButtonSelect.hidden = NO;
+    
+    self.menuButtonSelect.enabled = YES;
+    self.menuButtonSelect.alpha = 1.f;
+    
+    //back button - left most
+    self.menuButtonBack.enabled = YES;
+    self.menuButtonBack.alpha = 1.f;
+    
+    //left rotate button
+    self.menuButtonRotateLeft.enabled = YES;
+    self.menuButtonRotateLeft.alpha = 1.f;
+    
+    //right rotate button
+    self.menuButtonRotateRight.enabled = YES;
+    self.menuButtonRotateRight.alpha = 1.f;
 }
 
 @end
