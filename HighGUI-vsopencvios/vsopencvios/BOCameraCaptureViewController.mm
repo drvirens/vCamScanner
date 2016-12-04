@@ -558,27 +558,27 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.categoryName = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
+    
 }
 - (IBAction)didSelectMenuRotateRight:(id)sender {
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
-    
-//    self.menuButtonSelect.enabled = NO;
-//    [self.activityIndicator startAnimating];
             if (self.state == BOCroppedPreviewState) {
                 NSLog(@"BOCroppedPreviewState - show share state/view");
+                [self putUIInProcessingStart];
+                
                 [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
                 [self hideFiltersView];
                 [self transitMenuItemsToShareMode];
                 
-                [self apiAddDocument];
+                [self putUIInProcessingFinished];
+                
+                [self apiAddDocument]; //this is fire and forget
             } else if (self.state == BOShareState) {
                 [self share:self];
             } else {
                 [self doCropImage];
             }
-//    [self.activityIndicator stopAnimating];
-//    self.menuButtonSelect.enabled = YES;
 }
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
@@ -605,6 +605,10 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.state = BOShareState;
 }
 - (void)share:(id)sender {
+    NSLog(@"---------------------------------- Start of share");
+    [self putUIInProcessingStart];
+    
+    
     UIImage *image = self.finalProcessedImage;
     if (image == nil) {
         image = self.cropImage;
@@ -616,7 +620,10 @@ static void* gUserLoadContext = &gUserLoadContext;
         activityViewControntroller.popoverPresentationController.sourceView = self.view;
         activityViewControntroller.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
     }
-    [self presentViewController:activityViewControntroller animated:true completion:nil];
+    [self presentViewController:activityViewControntroller animated:true completion:^{
+        NSLog(@"---------------------------------- END of share");
+        [self putUIInProcessingFinished];
+    }];
 }
 #pragma mark - image crop view
 - (void)prepareCropView {
