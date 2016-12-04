@@ -57,12 +57,26 @@
     self.labelFileSize.textColor = [VSBranding vs_brandRedColor];
     self.labelFileSize.font = VS_FONT_EXTRASMALL;
     self.labelFileSize.alpha = 0.5f;
+    
+    //also setup title label
+    self.labelCategoryTItle.textColor = [UIColor darkGrayColor];
+    self.labelCategoryTItle.font = VS_FONT_EXTRASMALL;
+    self.labelCategoryTItle.alpha = 0.5f;
+    
+    //and close icon
+    [self decorateMiddleCloseIcon];
+}
+- (void)decorateMiddleCloseIcon {
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_close_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.imageViewCloseIcon.image = rightArrow;
+    self.imageViewCloseIcon.tintColor = self.dragView.backgroundColor;
 }
 - (void)decorateCategoryMoreIcon {
     UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.imageViewIcon.image = rightArrow;
-    self.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
+    self.imageViewIcon.tintColor = self.dragView.backgroundColor;
 }
 - (void)setupMiscGUI:(id<UITextFieldDelegate>)delegate selectorCateogry:(SEL)didSelectCateogry selectorDragView:(SEL)didSelectDragView {
     self.textFieldTitle.delegate = delegate;

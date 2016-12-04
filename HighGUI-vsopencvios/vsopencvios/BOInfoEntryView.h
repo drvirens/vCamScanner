@@ -21,9 +21,10 @@
 @property (weak, nonatomic) IBOutlet UIView *dragViewSmaller;
 @property (weak, nonatomic) IBOutlet UILabel *labelFileSize;
 
-@property (weak, nonatomic) IBOutlet UIButton *imageViewCloseIcon;
+//@property (weak, nonatomic) IBOutlet UIButton *imageViewCloseIcon;
 @property (weak, nonatomic) IBOutlet UIImageView *categoryIcon;
 @property (weak, nonatomic) IBOutlet UILabel *labelCategoryTItle;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewCloseIcon;
 
 - (void)clearTitle;
 - (void)clearCategoryText;
