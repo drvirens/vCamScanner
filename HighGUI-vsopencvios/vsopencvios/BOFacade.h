@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
 #import "MMCropView.h"
 
 @interface BOFacade : NSObject
@@ -25,5 +24,6 @@
 
 - (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView
             croppedView:(MMCropView*)croppedView
-                  image:(UIImage*)image;
+                  image:(UIImage*)image
+                completion:( void(^)(UIImage*) )completion;
 @end

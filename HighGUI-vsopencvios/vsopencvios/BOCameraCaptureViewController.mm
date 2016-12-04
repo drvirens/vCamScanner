@@ -558,31 +558,27 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.categoryName = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
+    
 }
 - (IBAction)didSelectMenuRotateRight:(id)sender {
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
-    
-    self.menuButtonSelect.enabled = NO;
-    [self.activityIndicator startAnimating];
             if (self.state == BOCroppedPreviewState) {
                 NSLog(@"BOCroppedPreviewState - show share state/view");
+                [self putUIInProcessingStart];
+                
                 [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
                 [self hideFiltersView];
                 [self transitMenuItemsToShareMode];
                 
-                [self apiAddDocument];
+                [self putUIInProcessingFinished];
+                
+                [self apiAddDocument]; //this is fire and forget
             } else if (self.state == BOShareState) {
                 [self share:self];
             } else {
                 [self doCropImage];
-                [self transitMenuItemsToPreviewMode];
-                [self populateFiltersMenu];
-                [self showFiltersView];
-                [self showInfoEntryView];
             }
-    [self.activityIndicator stopAnimating];
-    self.menuButtonSelect.enabled = YES;
 }
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
@@ -609,6 +605,10 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.state = BOShareState;
 }
 - (void)share:(id)sender {
+    NSLog(@"---------------------------------- Start of share");
+    [self putUIInProcessingStart];
+    
+    
     UIImage *image = self.finalProcessedImage;
     if (image == nil) {
         image = self.cropImage;
@@ -620,7 +620,10 @@ static void* gUserLoadContext = &gUserLoadContext;
         activityViewControntroller.popoverPresentationController.sourceView = self.view;
         activityViewControntroller.popoverPresentationController.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/4, 0, 0);
     }
-    [self presentViewController:activityViewControntroller animated:true completion:nil];
+    [self presentViewController:activityViewControntroller animated:true completion:^{
+        NSLog(@"---------------------------------- END of share");
+        [self putUIInProcessingFinished];
+    }];
 }
 #pragma mark - image crop view
 - (void)prepareCropView {
@@ -636,12 +639,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     singlePan.maximumNumberOfTouches = 1;
     [self.croppedView addGestureRecognizer:singlePan];
     
-    //[self setCropUI];
     [self.upperContainerCapturedView bringSubviewToFront:self.croppedView];
     
     [self detectEdges];
     _initialRect = self.capturedImageView.frame;
-    final_Rect =self.capturedImageView.frame;
+    final_Rect = self.capturedImageView.frame;
 }
 -(void)singlePan:(UIPanGestureRecognizer *)gesture{
     CGPoint posInStretch = [gesture locationInView:self.croppedView];
@@ -704,8 +706,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)startCamera {
     [self checkCameraPermissionsStatus];
-    
-	//[self.cameraController startCameraInView:self.cameraView];
 }
 - (BOCameraController*)cameraController {
 	if (!_cameraController) {
@@ -760,7 +760,80 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (void)doCropImage {
-    self.cropImage = [self.facade apiDoCropImage:self.capturedImageView croppedView:self.croppedView image:self.image];
+    NSLog(@"-------------------> START: CROP IMAGE");
+    [self putUIInProcessingStart];
+    typeof (self) __weak welf = self;
+    [self.facade apiDoCropImage:self.capturedImageView
+                                     croppedView:self.croppedView
+                                           image:self.image completion:^(UIImage* aCroppedImage) {
+                                               typeof (self) __strong strongSelf = welf;
+                                               if (strongSelf) {
+                                                   [strongSelf runCropCompletionWithCroppedImage:aCroppedImage];
+                                               }
+                                           }];
+}
+
+- (void)runCropCompletionWithCroppedImage:(UIImage*)aCroppedImage {
+    self.cropImage = aCroppedImage;
+    self.capturedImageView.image = aCroppedImage;
+    self.croppedView.hidden = YES;
+    
+    [self transitMenuItemsToPreviewMode];
+    [self populateFiltersMenu];
+    [self showFiltersView];
+    [self showInfoEntryView];
+    
+    [self putUIInProcessingFinished];
+    NSLog(@"-------------------> END: CROP IMAGE");
+}
+
+#pragma mark - Activity indicator and disable other buttons
+- (void)putUIInProcessingStart {
+    self.activityIndicator.hidden = NO;
+    [self.activityIndicator startAnimating];
+    
+    //hide right most button
+    self.menuButtonSelect.hidden = YES;
+    
+    //other menu buttons become disabled
+    
+    //right most menu button itself should be disabled to avoid two taps
+    self.menuButtonSelect.enabled = NO;
+    self.menuButtonSelect.alpha = 0.35f;
+    
+    //back button - left most
+    self.menuButtonBack.enabled = NO;
+    self.menuButtonBack.alpha = 0.35f;
+    
+    //left rotate button
+    self.menuButtonRotateLeft.enabled = NO;
+    self.menuButtonRotateLeft.alpha = 0.35f;
+    
+    //right rotate button
+    self.menuButtonRotateRight.enabled = NO;
+    self.menuButtonRotateRight.alpha = 0.35f;
+}
+
+- (void)putUIInProcessingFinished {
+    self.activityIndicator.hidden = YES;
+    [self.activityIndicator stopAnimating];
+    
+    self.menuButtonSelect.hidden = NO;
+    
+    self.menuButtonSelect.enabled = YES;
+    self.menuButtonSelect.alpha = 1.f;
+    
+    //back button - left most
+    self.menuButtonBack.enabled = YES;
+    self.menuButtonBack.alpha = 1.f;
+    
+    //left rotate button
+    self.menuButtonRotateLeft.enabled = YES;
+    self.menuButtonRotateLeft.alpha = 1.f;
+    
+    //right rotate button
+    self.menuButtonRotateRight.enabled = YES;
+    self.menuButtonRotateRight.alpha = 1.f;
 }
 
 @end
