@@ -81,5 +81,40 @@
     singleTapDragView.numberOfTapsRequired = 1;
     [self.dragContainerView addGestureRecognizer:singleTapDragView];
 }
-
+- (void)hideTitle {
+    self.labelCategoryTItle.hidden = YES;
+    self.categoryIcon.hidden = YES;
+}
+- (void)showTitle {
+    self.labelCategoryTItle.hidden = NO;
+    self.categoryIcon.hidden = NO;
+}
+- (void)hide {
+    self.userInteractionEnabled = NO;
+    [self showTitle];
+    
+    [self hideDragView];
+}
+- (void)show {
+    self.userInteractionEnabled = YES;
+    [self hideTitle];
+    
+    [self showDragView];
+}
+- (void)hideDragView {
+    self.dragView.hidden = YES;
+    self.dragViewSmaller.hidden = YES;
+}
+- (void)showDragView {
+    self.dragView.hidden = NO;
+    self.dragViewSmaller.hidden = NO;
+}
+- (void)showCloseIconOnDragger:(BOOL)showCloseButton {
+    self.imageViewCloseIcon.hidden = !showCloseButton;
+    if (showCloseButton) {
+        [self hideDragView];
+    } else {
+        [self showDragView];
+    }
+}
 @end

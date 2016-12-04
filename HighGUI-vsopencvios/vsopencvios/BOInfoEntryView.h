@@ -30,5 +30,7 @@
 - (void)setupFileSizeLabel;
 - (void)decorateCategoryMoreIcon;
 - (void)setupMiscGUI:(id<UITextFieldDelegate>)delegate selectorCateogry:(SEL)didSelectCateogry selectorDragView:(SEL)didSelectDragView;
-
+- (void)hide;
+- (void)show;
+- (void)showCloseIconOnDragger:(BOOL)showCloseButton;
 @end

@@ -163,6 +163,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.infoEntryView setupMiscGUI:self selectorCateogry:@selector(didSelectCateogry:) selectorDragView:@selector(didSelectDragView:)];
     
     self.infoEntryView.labelCategoryTItle.text = nil;
+    [self.infoEntryView show];
     
     //upper container captured view tap
     UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
@@ -340,6 +341,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    [self showCloseIconOnDragger:NO];
 }
 - (void)showInfoEntryView {
     [self.view layoutIfNeeded];
@@ -347,6 +349,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    [self showCloseIconOnDragger:YES];
 }
 - (void)hideInfoEntryViewPartially {
     [self.view layoutIfNeeded];
@@ -355,6 +358,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
     self.entryInfoPartiallyHidden = YES;
+    [self showCloseIconOnDragger:NO];
 }
 - (void)showInfoEntryViewPartially {
     [self.view layoutIfNeeded];
@@ -363,6 +367,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
     self.entryInfoPartiallyHidden = NO;
+    [self showCloseIconOnDragger:YES];
 }
 - (void)hideInfoEntryViewPartiallyAndDisableDragger {
     [self.view layoutIfNeeded];
@@ -371,10 +376,11 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
     self.entryInfoPartiallyHidden = NO;
-    self.infoEntryView.userInteractionEnabled = NO;
-    
-    self.infoEntryView.dragView.hidden = YES;
-    self.infoEntryView.dragViewSmaller.hidden = YES;
+    [self.infoEntryView hide];
+    self.infoEntryView.imageViewCloseIcon.hidden = YES;
+}
+- (void)showCloseIconOnDragger:(BOOL)showCloseButton {
+    [self.infoEntryView showCloseIconOnDragger:showCloseButton];
 }
 
 
@@ -541,9 +547,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.buttonSettings.hidden = NO;
     [self clearTitle];
     [self clearCategoryText];
-    self.infoEntryView.userInteractionEnabled = YES;
-    self.infoEntryView.dragView.hidden = NO;
-    self.infoEntryView.dragViewSmaller.hidden = NO;
+    [self.infoEntryView show];
     self.infoEntryView.labelCategoryTItle.text = nil;
     
     self.categoryName = nil;
