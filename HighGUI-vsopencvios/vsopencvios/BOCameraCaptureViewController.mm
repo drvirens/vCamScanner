@@ -145,6 +145,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)setupRecentlyScannedView {
     self.viewRecentlyScanned.delegate = self;
 }
+
+#pragma mark - infoEntryView interactions
+/*
 - (void)clearTitle {
     //placeholder
     NSDictionary* placeholderTextColor = @{
@@ -155,7 +158,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.textFieldTitle.attributedPlaceholder = placeHolder;
     
     //typed text
-    self.infoEntryView.textFieldTitle.font = VS_FONT_SMALL;
+    self.infoEntryView.textFieldTitle.font = VS_FONT_REGULAR;
     self.infoEntryView.textFieldTitle.textColor = [UIColor darkGrayColor];
     self.infoEntryView.textFieldTitle.text = nil;
 }
@@ -179,6 +182,52 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.imageViewIcon.image = rightArrow;
     self.infoEntryView.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
 }
+ - (void)setupMiscGUI {
+ self.infoEntryView.textFieldTitle.delegate = self;
+ 
+ //category view tap detect
+ self.infoEntryView.categoryView.userInteractionEnabled = YES;
+ UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
+ singleTapCategoryView.numberOfTapsRequired = 1;
+ [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
+ 
+ //drag view
+ self.infoEntryView.dragView.layer.cornerRadius = 2.5f;
+ self.infoEntryView.dragViewSmaller.layer.cornerRadius = 2.f;
+ //drag container tap event (Phase 2 = Pan gesture)
+ UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
+ singleTapDragView.numberOfTapsRequired = 1;
+ [self.infoEntryView.dragContainerView addGestureRecognizer:singleTapDragView];
+ 
+ //upper container captured view tap
+ UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
+ singleTapDragView.numberOfTapsRequired = 1;
+ [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
+ }
+ */
+- (void)setupFileSizeLabel {
+    [self.infoEntryView setupFileSizeLabel];
+}
+- (void)decorateCategoryMoreIcon {
+    [self.infoEntryView decorateCategoryMoreIcon];
+}
+- (void)clearTitle {
+    [self.infoEntryView clearTitle];
+}
+- (void)clearCategoryText {
+    [self.infoEntryView clearCategoryText];
+}
+- (void)setupMiscGUI {
+    [self.infoEntryView setupMiscGUI:self selectorCateogry:@selector(didSelectCateogry:) selectorDragView:@selector(didSelectDragView:)];
+    
+    //upper container captured view tap
+    UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
+    upperContainerCapturedViewTapped.numberOfTapsRequired = 1;
+    [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
+}
+
+
+
 - (void)decorateSettingsButton {
     UIImage* settings = [UIImage imageNamed:@"ic_settings_white"];
     settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -191,28 +240,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.buttonShowAllDocuments setImage:settings forState:UIControlStateNormal];
     self.buttonShowAllDocuments.tintColor = [VSBranding vs_brandRedColor];
 }
-- (void)setupMiscGUI {
-    self.infoEntryView.textFieldTitle.delegate = self;
-    
-    //category view tap detect
-    self.infoEntryView.categoryView.userInteractionEnabled = YES;
-    UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
-    singleTapCategoryView.numberOfTapsRequired = 1;
-    [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
-    
-    //drag view
-    self.infoEntryView.dragView.layer.cornerRadius = 2.5f;
-    self.infoEntryView.dragViewSmaller.layer.cornerRadius = 2.f;
-    //drag container tap event (Phase 2 = Pan gesture)
-    UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
-    singleTapDragView.numberOfTapsRequired = 1;
-    [self.infoEntryView.dragContainerView addGestureRecognizer:singleTapDragView];
-    
-    //upper container captured view tap
-    UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
-    singleTapDragView.numberOfTapsRequired = 1;
-    [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
-}
+
 - (void)setupContainerView {
 	self.containerCapturedView.hidden = YES;
 }

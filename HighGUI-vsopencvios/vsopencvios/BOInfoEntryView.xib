@@ -12,11 +12,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BOInfoEntryView">
             <connections>
+                <outlet property="categoryIcon" destination="7Ne-b9-w0i" id="LIO-3K-D85"/>
                 <outlet property="categoryView" destination="QSU-lK-ySH" id="P2o-JS-fle"/>
                 <outlet property="dragContainerView" destination="ZY3-3U-9ew" id="FUd-Qd-eFT"/>
                 <outlet property="dragView" destination="WUv-lJ-vGd" id="nf6-G4-Vyi"/>
                 <outlet property="dragViewSmaller" destination="kJz-cG-r0E" id="W2y-5W-ZbH"/>
+                <outlet property="imageViewCloseIcon" destination="Q5m-cD-wF7" id="sIM-ru-m9C"/>
                 <outlet property="imageViewIcon" destination="wZL-rm-fhl" id="ae6-ni-LTj"/>
+                <outlet property="labelCategoryTItle" destination="7xt-dM-DIf" id="tDj-mW-wTp"/>
                 <outlet property="labelFileSize" destination="WwQ-Hb-FrH" id="BrZ-7N-DR2"/>
                 <outlet property="labelSelectedCategoryName" destination="fCr-fp-Dvu" id="9Q3-L7-xi9"/>
                 <outlet property="seperatorLineView" destination="6Nz-A1-jh3" id="QBd-Py-KWl"/>
