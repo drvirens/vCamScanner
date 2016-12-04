@@ -96,9 +96,14 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) UIImage* rightArrow;
 @property (nonatomic) UIImage* rightShareIcon;
 
+//original transform
+@property (nonatomic) CATransform3D transformCapturedImageView;
+@property (nonatomic) CATransform3D transformCroppedView;
+
 @end
 
 @implementation BOCameraCaptureViewController {
+    CGFloat _rotateSlider;
     CGRect _initialRect;
     CGRect final_Rect;
 }
@@ -127,6 +132,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self decorateSettingsButton];
     [self decorateShowDocumentsButton];
     [self setupFileSizeLabel];
+    
+    self.transformCapturedImageView = self.capturedImageView.layer.transform;
+    self.transformCroppedView = self.croppedView.layer.transform;
     
 	[self startCamera];
 }
@@ -233,6 +241,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (IBAction)didTapCapturePhoto:(id)sender {
+    self.buttonCameraCapture.alpha = 0.35f;
+    self.buttonCameraCapture.enabled = NO;
+    
     //hide settings button
     self.buttonSettings.hidden = YES;
     
@@ -244,6 +255,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 		welf.image = image;
         welf.capturedImageView.image = image;
 		[welf showCapturedImageLoading];
+        
 	}];
 }
 - (IBAction)didTapOnToggleFlashButton:(id)sender {
@@ -335,6 +347,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     self.containerCapturedView.hidden = NO;
     self.cameraView.hidden = YES;
+    
+    self.buttonCameraCapture.alpha = 1.f;
+    self.buttonCameraCapture.enabled = YES;
     
     [self detectEdgesOnImageAndDisplay:self.image];
 }
@@ -533,6 +548,10 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.croppedView removeFromSuperview];
     self.croppedView = nil;
     
+    //if (self.hasRotated) {
+        self.capturedImageView.layer.transform = self.transformCapturedImageView;
+    //}
+    
     if (self.state == BOShareState) {
         [self showRecentlyScannedView];
     }
@@ -558,9 +577,22 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.categoryName = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
+    CGFloat value = (int)floorf((_rotateSlider + 1)*2) - 1;
     
+    if(value>4){ value -= 4; }
+    _rotateSlider = value / 2 - 1;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self rotateStateDidChange];
+    }];
 }
 - (IBAction)didSelectMenuRotateRight:(id)sender {
+    CGFloat value = (int)floorf((_rotateSlider + 1)*2) + 1;
+    
+    if(value>4){ value -= 4; }
+    _rotateSlider = value / 2 - 1;
+    [UIView animateWithDuration:0.5 animations:^{
+        [self rotateStateDidChange];
+    }];
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
             if (self.state == BOCroppedPreviewState) {
@@ -642,8 +674,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.upperContainerCapturedView bringSubviewToFront:self.croppedView];
     
     [self detectEdges];
-    _initialRect = self.capturedImageView.frame;
-    final_Rect = self.capturedImageView.frame;
 }
 -(void)singlePan:(UIPanGestureRecognizer *)gesture{
     CGPoint posInStretch = [gesture locationInView:self.croppedView];
@@ -756,7 +786,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark OpenCV
 - (void)detectEdges {
-    [self.facade apiDetectEdges:self.capturedImageView croppedView:self.croppedView];
+    typeof (self) __weak welf = self;
+    [self.facade apiDetectEdges:self.capturedImageView croppedView:self.croppedView completion:^{
+        _initialRect = welf.capturedImageView.frame;
+        final_Rect = welf.capturedImageView.frame;
+    }];
 }
 
 - (void)doCropImage {
@@ -834,6 +868,40 @@ static void* gUserLoadContext = &gUserLoadContext;
     //right rotate button
     self.menuButtonRotateRight.enabled = YES;
     self.menuButtonRotateRight.alpha = 1.f;
+}
+
+#pragma mark Roate left and right
+- (CATransform3D)rotateTransform:(CATransform3D)initialTransform clockwise:(BOOL)clockwise
+{
+    CGFloat arg = _rotateSlider*M_PI;
+    if(!clockwise){
+        arg *= -1;
+    }
+    
+    CATransform3D transform = initialTransform;
+    transform = CATransform3DRotate(transform, arg, 0, 0, 1);
+    transform = CATransform3DRotate(transform, 0*M_PI, 0, 1, 0);
+    transform = CATransform3DRotate(transform, 0*M_PI, 1, 0, 0);
+    
+    return transform;
+}
+
+- (void)rotateStateDidChange
+{
+    CATransform3D transform = [self rotateTransform:CATransform3DIdentity clockwise:YES];
+    
+    CGFloat arg = _rotateSlider*M_PI;
+    CGFloat Wnew = fabs(_initialRect.size.width * cos(arg)) + fabs(_initialRect.size.height * sin(arg));
+    CGFloat Hnew = fabs(_initialRect.size.width * sin(arg)) + fabs(_initialRect.size.height * cos(arg));
+    
+    CGFloat Rw = final_Rect.size.width / Wnew;
+    CGFloat Rh = final_Rect.size.height / Hnew;
+    CGFloat scale = MIN(Rw, Rh) * 1;
+    transform = CATransform3DScale(transform, scale, scale, 1);
+    self.capturedImageView.layer.transform = transform;
+    self.croppedView.layer.transform = transform;
+    
+    //    NSLog(@"%@",_sourceImageView);
 }
 
 @end

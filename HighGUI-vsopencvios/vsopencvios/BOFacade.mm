@@ -185,11 +185,13 @@ finalImageHref:(NSString*)finalImageHref {
 
 #pragma mark - detect edge
 
-- (void)apiDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView {
+- (void)apiDetectEdges:(UIImageView*)capturedImageView
+           croppedView:(MMCropView*)croppedView
+            completion:( void(^)() )completion {
     if (!self.detectEdgesAlgorithm) {
         self.detectEdgesAlgorithm = [[BODetectEdges alloc] init];
     }
-    [self.detectEdgesAlgorithm apiDetectEdges:capturedImageView croppedView:croppedView];
+    [self.detectEdgesAlgorithm apiDetectEdges:capturedImageView croppedView:croppedView completion:completion];
 }
 
 #pragma mark - crop image
