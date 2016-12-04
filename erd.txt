@@ -1,4 +1,57 @@
-ERD
+Schema/relationships/entities
+
+
+Example:
+
+
+{
+//users
+	"drvirens" : {
+				 Viren Shakya
+				 drvirens@yahoo.com
+				 cocksucker
+				 [ doc1 doc2 doc3 doc4 ] // array if DocumentIds
+				 [ customCategory1 customCategory2 customCategory3] //custom categories created by user
+				 },
+				 
+	"awesomeSauce" : {
+				 Daniel Watts
+				 dan@yahoo.com
+				 sauce
+				 [ doc11 doc21 doc31 doc41 ] // array if DocumentIds
+				 }
+		
+		
+//documents		 
+    "doc1" : {
+			 Lyft Lunch Receipt //title
+			 Dec 01, 2016       //creation date
+			 Dec 01, 2016       //last updated date
+			 34590              //size in bytes
+			 /var/ori_doc1.jpg  //originalPhotoHref
+			 /var/pro_doc1.jpg  //modifiedLargePhotoHref
+			 jpeg               //file type
+			 doc1CategoryID     //categoryID
+			 doc1PasswordID     //credentialsID //phase 2
+			 }
+			 
+//categoreis
+	"doc1CategoryID" : {
+					   Travel     //name
+					   travel.png //icon name
+	                   },
+	"customCategory1" : {
+					   GayPorn     //name
+					   gay.png     //icon name
+	                   },		   
+}
+
+
+
+
+
+
+--------------------------------
 
 User
 	- userName
@@ -6,6 +59,7 @@ User
 	- phoneNumber
 related to:
 		-Document (doc)
+		-Category (cat) //custom categories created by this user
 
 Document
 	- docID				   // Primary key

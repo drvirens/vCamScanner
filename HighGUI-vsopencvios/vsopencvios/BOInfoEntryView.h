@@ -21,4 +21,17 @@
 @property (weak, nonatomic) IBOutlet UIView *dragViewSmaller;
 @property (weak, nonatomic) IBOutlet UILabel *labelFileSize;
 
+//@property (weak, nonatomic) IBOutlet UIButton *imageViewCloseIcon;
+@property (weak, nonatomic) IBOutlet UIImageView *categoryIcon;
+@property (weak, nonatomic) IBOutlet UILabel *labelCategoryTItle;
+@property (weak, nonatomic) IBOutlet UIImageView *imageViewCloseIcon;
+
+- (void)clearTitle;
+- (void)clearCategoryText;
+- (void)setupFileSizeLabel;
+- (void)decorateCategoryMoreIcon;
+- (void)setupMiscGUI:(id<UITextFieldDelegate>)delegate selectorCateogry:(SEL)didSelectCateogry selectorDragView:(SEL)didSelectDragView;
+- (void)hide;
+- (void)show;
+- (void)showCloseIconOnDragger:(BOOL)showCloseButton;
 @end

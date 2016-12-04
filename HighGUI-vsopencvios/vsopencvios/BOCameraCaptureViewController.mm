@@ -145,40 +145,34 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)setupRecentlyScannedView {
     self.viewRecentlyScanned.delegate = self;
 }
-- (void)clearTitle {
-    //placeholder
-    NSDictionary* placeholderTextColor = @{
-                                           NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
-                                           NSFontAttributeName : VS_FONT_VERYSMALL
-                                           };
-    NSAttributedString* placeHolder = [[NSAttributedString alloc] initWithString:@"ENTER TITLE" attributes:placeholderTextColor];
-    self.infoEntryView.textFieldTitle.attributedPlaceholder = placeHolder;
-    
-    //typed text
-    self.infoEntryView.textFieldTitle.font = VS_FONT_SMALL;
-    self.infoEntryView.textFieldTitle.textColor = [UIColor darkGrayColor];
-    self.infoEntryView.textFieldTitle.text = nil;
-}
-- (void)clearCategoryText {
-    //category label
-    NSDictionary* labelCategory = @{
-                                    NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
-                                    NSFontAttributeName : VS_FONT_VERYSMALL
-                                    };
-    NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
-    self.infoEntryView.labelSelectedCategoryName.attributedText = category;
-}
+
+#pragma mark - infoEntryView interactions
 - (void)setupFileSizeLabel {
-    self.infoEntryView.labelFileSize.textColor = [VSBranding vs_brandRedColor];
-    self.infoEntryView.labelFileSize.font = VS_FONT_EXTRASMALL;
-    self.infoEntryView.labelFileSize.alpha = 0.5f;
+    [self.infoEntryView setupFileSizeLabel];
 }
 - (void)decorateCategoryMoreIcon {
-    UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];
-    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.infoEntryView.imageViewIcon.image = rightArrow;
-    self.infoEntryView.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
+    [self.infoEntryView decorateCategoryMoreIcon];
 }
+- (void)clearTitle {
+    [self.infoEntryView clearTitle];
+}
+- (void)clearCategoryText {
+    [self.infoEntryView clearCategoryText];
+}
+- (void)setupMiscGUI {
+    [self.infoEntryView setupMiscGUI:self selectorCateogry:@selector(didSelectCateogry:) selectorDragView:@selector(didSelectDragView:)];
+    
+    self.infoEntryView.labelCategoryTItle.text = nil;
+    [self.infoEntryView show];
+    
+    //upper container captured view tap
+    UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
+    upperContainerCapturedViewTapped.numberOfTapsRequired = 1;
+    [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
+}
+
+
+
 - (void)decorateSettingsButton {
     UIImage* settings = [UIImage imageNamed:@"ic_settings_white"];
     settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -191,28 +185,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.buttonShowAllDocuments setImage:settings forState:UIControlStateNormal];
     self.buttonShowAllDocuments.tintColor = [VSBranding vs_brandRedColor];
 }
-- (void)setupMiscGUI {
-    self.infoEntryView.textFieldTitle.delegate = self;
-    
-    //category view tap detect
-    self.infoEntryView.categoryView.userInteractionEnabled = YES;
-    UITapGestureRecognizer* singleTapCategoryView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectCateogry:)];
-    singleTapCategoryView.numberOfTapsRequired = 1;
-    [self.infoEntryView.categoryView addGestureRecognizer:singleTapCategoryView];
-    
-    //drag view
-    self.infoEntryView.dragView.layer.cornerRadius = 2.5f;
-    self.infoEntryView.dragViewSmaller.layer.cornerRadius = 2.f;
-    //drag container tap event (Phase 2 = Pan gesture)
-    UITapGestureRecognizer* singleTapDragView = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didSelectDragView:)];
-    singleTapDragView.numberOfTapsRequired = 1;
-    [self.infoEntryView.dragContainerView addGestureRecognizer:singleTapDragView];
-    
-    //upper container captured view tap
-    UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
-    singleTapDragView.numberOfTapsRequired = 1;
-    [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
-}
+
 - (void)setupContainerView {
 	self.containerCapturedView.hidden = YES;
 }
@@ -368,6 +341,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    [self showCloseIconOnDragger:NO];
 }
 - (void)showInfoEntryView {
     [self.view layoutIfNeeded];
@@ -375,6 +349,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [UIView animateWithDuration:.25 animations:^{
         [self.view layoutIfNeeded];
     }];
+    [self showCloseIconOnDragger:YES];
 }
 - (void)hideInfoEntryViewPartially {
     [self.view layoutIfNeeded];
@@ -383,6 +358,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
     self.entryInfoPartiallyHidden = YES;
+    [self showCloseIconOnDragger:NO];
 }
 - (void)showInfoEntryViewPartially {
     [self.view layoutIfNeeded];
@@ -391,6 +367,7 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
     self.entryInfoPartiallyHidden = NO;
+    [self showCloseIconOnDragger:YES];
 }
 - (void)hideInfoEntryViewPartiallyAndDisableDragger {
     [self.view layoutIfNeeded];
@@ -399,10 +376,11 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self.view layoutIfNeeded];
     }];
     self.entryInfoPartiallyHidden = NO;
-    self.infoEntryView.userInteractionEnabled = NO;
-    
-    self.infoEntryView.dragView.hidden = YES;
-    self.infoEntryView.dragViewSmaller.hidden = YES;
+    [self.infoEntryView hide];
+    self.infoEntryView.imageViewCloseIcon.hidden = YES;
+}
+- (void)showCloseIconOnDragger:(BOOL)showCloseButton {
+    [self.infoEntryView showCloseIconOnDragger:showCloseButton];
 }
 
 
@@ -533,6 +511,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     [textField resignFirstResponder];
     return YES;
 }
+- (void)textFieldDidEndEditing:(UITextField *)textField {
+    self.infoEntryView.labelCategoryTItle.text = textField.text;
+}
 
 #pragma mark - 4 menu buttons
 - (IBAction)didSelectMenuGoBack:(id)sender {
@@ -566,9 +547,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.buttonSettings.hidden = NO;
     [self clearTitle];
     [self clearCategoryText];
-    self.infoEntryView.userInteractionEnabled = YES;
-    self.infoEntryView.dragView.hidden = NO;
-    self.infoEntryView.dragViewSmaller.hidden = NO;
+    [self.infoEntryView show];
+    self.infoEntryView.labelCategoryTItle.text = nil;
     
     self.categoryName = nil;
 }
@@ -577,34 +557,25 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuRotateRight:(id)sender {
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
+    
     self.menuButtonSelect.enabled = NO;
     [self.activityIndicator startAnimating];
-    
-{
-    if (self.state == BOCroppedPreviewState) {
-        NSLog(@"BOCroppedPreviewState - show share state/view");
-        [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
-        [self hideFiltersView];
-        [self transitMenuItemsToShareMode];
-        
-        long fileSize = 0;
-        NSString* docTitle = self.infoEntryView.textFieldTitle.text;
-        [self.facade addDocument:self.image
-             finalProcessedImage:self.finalProcessedImage
-                       doctTitle:docTitle
-                    categoryName:self.categoryName
-                        fileSize:fileSize]; //XXX
-    } else if (self.state == BOShareState) {
-        [self share:self];
-    } else {
-        [self doCropImage];
-        [self transitMenuItemsToPreviewMode];
-        [self populateFiltersMenu];
-        [self showFiltersView];
-        [self showInfoEntryView];
-    }
-}
-    
+            if (self.state == BOCroppedPreviewState) {
+                NSLog(@"BOCroppedPreviewState - show share state/view");
+                [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
+                [self hideFiltersView];
+                [self transitMenuItemsToShareMode];
+                
+                [self apiAddDocument];
+            } else if (self.state == BOShareState) {
+                [self share:self];
+            } else {
+                [self doCropImage];
+                [self transitMenuItemsToPreviewMode];
+                [self populateFiltersMenu];
+                [self showFiltersView];
+                [self showInfoEntryView];
+            }
     [self.activityIndicator stopAnimating];
     self.menuButtonSelect.enabled = YES;
 }
@@ -701,7 +672,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)runCompletionWithStatus:(VSCameraStatus)status sender:(id)sender {
     NSString* segueid = nil;
     if (status == VSCameraStatusAuthorized) {
-        //segueid = @"segueCamera";
         [self vc:nil hasCameraPermissions:YES];
         return;
     } else {
@@ -756,8 +726,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         permissionsVC.message = self.message;
         permissionsVC.positiveBtnTitle = self.positiveBtnTitle;
     } else if ([@"documents" isEqualToString:segue.identifier]) {
-        UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
-        BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
+        //UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
+        //BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
        // destVC.delegateCategory = self;
     }
 }
@@ -766,6 +736,17 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSLog(@"didSelectCategory");
     self.categoryName = category;
     self.infoEntryView.labelSelectedCategoryName.text = category;
+}
+
+#pragma mark - API calls
+- (void)apiAddDocument {
+    long fileSize = 0;
+    NSString* docTitle = self.infoEntryView.textFieldTitle.text;
+    [self.facade addDocument:self.image
+         finalProcessedImage:self.finalProcessedImage
+                   doctTitle:docTitle
+                categoryName:self.categoryName
+                    fileSize:fileSize]; //XXX
 }
 
 #pragma mark OpenCV
