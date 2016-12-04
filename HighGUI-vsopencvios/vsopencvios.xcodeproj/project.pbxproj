@@ -948,6 +948,112 @@
 			path = auth;
 			sourceTree = "<group>";
 		};
+		111D56E61DF3C83B00534EF3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
+				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
+				11303C081DEECEFF00371BD5 /* VSBranding.h */,
+				11303C091DEECEFF00371BD5 /* VSBranding.m */,
+				11303BB01DED3B3800371BD5 /* BOConstants.h */,
+				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
+				11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */,
+				11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */,
+				11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */,
+				11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */,
+				11C99CC51DF0F3D10034D6C5 /* BODocumentModel.h */,
+				11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */,
+				11C99CC81DF1091A0034D6C5 /* BOGradientLayerController.h */,
+				11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */,
+				111D56E01DF2C24800534EF3 /* BOFacade.h */,
+				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
+				B621FE0E1DEABBE100E54A51 /* BOPhotoController.h */,
+				B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */,
+				B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */,
+				B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */,
+				B621FE071DEABAF400E54A51 /* BOCameraController.h */,
+				B621FE081DEABAF400E54A51 /* BOCameraController.mm */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		111D56E71DF3C84B00534EF3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				11B75AD81DDFD08D004EAB65 /* Main.storyboard */,
+				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
+				11303BB61DED749700371BD5 /* BOFiltersView.xib */,
+				11303BB91DED74DF00371BD5 /* BOFiltersView.h */,
+				11303BBA1DED74DF00371BD5 /* BOFiltersView.m */,
+				11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */,
+				11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */,
+				11303BC31DEE460000371BD5 /* BOInfoEntryView.h */,
+				11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */,
+				11303BC61DEE6AE200371BD5 /* BOCategoryTableViewCell.h */,
+				11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */,
+				1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */,
+				1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */,
+				1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */,
+				11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */,
+				11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */,
+				11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */,
+				11C99CC21DF0EF450034D6C5 /* BODocumentTableViewCell.h */,
+				11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		111D56E81DF3C85300534EF3 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */,
+				111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */,
+				1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */,
+				1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */,
+				B621FE051DEABAF400E54A51 /* BOCameraCaptureViewController.h */,
+				B621FE061DEABAF400E54A51 /* BOCameraCaptureViewController.mm */,
+				11303BB31DED5DA800371BD5 /* BOCategoryTableViewController.h */,
+				11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.mm */,
+				11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */,
+				11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		111D56E91DF3C85C00534EF3 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+				11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */,
+				11B75DA41DDFD0E1004EAB65 /* scannerLite.h */,
+				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
+				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
+				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
+				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
+				111D56B21DF2590700534EF3 /* boot */,
+				11F25A421DF22416003CB8EE /* utils */,
+				11F25A351DF223E4003CB8EE /* 3p */,
+				11F25A391DF223E4003CB8EE /* domain */,
+				11F25A051DF222E9003CB8EE /* data */,
+				11F259F41DF2223F003CB8EE /* core */,
+				11F259F21DF22201003CB8EE /* log */,
+			);
+			name = shared;
+			sourceTree = "<group>";
+		};
+		111D56EA1DF3CA3C00534EF3 /* cv */ = {
+			isa = PBXGroup;
+			children = (
+				11303BA91DED0D8900371BD5 /* UIImageViewCategories */,
+				11303B9F1DED0BB800371BD5 /* imageprocessing */,
+				B621FB961DEAA29D00E54A51 /* modules */,
+				1119732F1DDFDF350042C520 /* jpeg */,
+				11B75AE61DDFD0E1004EAB65 /* cvconfig.h */,
+				11B75D941DDFD0E1004EAB65 /* opencv */,
+				11B75DA01DDFD0E1004EAB65 /* opencv2 */,
+			);
+			name = cv;
+			sourceTree = "<group>";
+		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,83 +1179,17 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
-				111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */,
-				111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */,
-				111D56E01DF2C24800534EF3 /* BOFacade.h */,
-				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
-				111D56B21DF2590700534EF3 /* boot */,
-				11F25A421DF22416003CB8EE /* utils */,
-				11F25A351DF223E4003CB8EE /* 3p */,
-				11F25A391DF223E4003CB8EE /* domain */,
-				11F25A051DF222E9003CB8EE /* data */,
-				11F259F41DF2223F003CB8EE /* core */,
-				11F259F21DF22201003CB8EE /* log */,
-				1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */,
-				1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */,
-				11303C081DEECEFF00371BD5 /* VSBranding.h */,
-				11303C091DEECEFF00371BD5 /* VSBranding.m */,
+				111D56EA1DF3CA3C00534EF3 /* cv */,
 				11303BCC1DEECEB100371BD5 /* Settings */,
-				11303BA91DED0D8900371BD5 /* UIImageViewCategories */,
-				11303B9F1DED0BB800371BD5 /* imageprocessing */,
-				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
-				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
-				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
-				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
-				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
-				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
-				B621FE0E1DEABBE100E54A51 /* BOPhotoController.h */,
-				B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */,
-				B621FE0B1DEABB4B00E54A51 /* BOLocationController.h */,
-				B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */,
-				B621FE051DEABAF400E54A51 /* BOCameraCaptureViewController.h */,
-				B621FE061DEABAF400E54A51 /* BOCameraCaptureViewController.mm */,
-				B621FE071DEABAF400E54A51 /* BOCameraController.h */,
-				B621FE081DEABAF400E54A51 /* BOCameraController.mm */,
-				B621FB961DEAA29D00E54A51 /* modules */,
-				1119732F1DDFDF350042C520 /* jpeg */,
-				11B75AE61DDFD0E1004EAB65 /* cvconfig.h */,
-				11B75D941DDFD0E1004EAB65 /* opencv */,
-				11B75DA01DDFD0E1004EAB65 /* opencv2 */,
-				11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */,
-				11B75DA41DDFD0E1004EAB65 /* scannerLite.h */,
+				111D56E91DF3C85C00534EF3 /* shared */,
+				111D56E81DF3C85300534EF3 /* controller */,
+				111D56E71DF3C84B00534EF3 /* view */,
+				111D56E61DF3C83B00534EF3 /* model */,
 				11B75AD21DDFD08D004EAB65 /* AppDelegate.h */,
 				11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */,
-				11B75AD81DDFD08D004EAB65 /* Main.storyboard */,
 				11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */,
-				11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
-				11303BB01DED3B3800371BD5 /* BOConstants.h */,
-				11303BB11DED3B3800371BD5 /* BOConstants.mm */,
-				11303BB31DED5DA800371BD5 /* BOCategoryTableViewController.h */,
-				11303BB41DED5DA800371BD5 /* BOCategoryTableViewController.mm */,
-				11303BB61DED749700371BD5 /* BOFiltersView.xib */,
-				11303BB91DED74DF00371BD5 /* BOFiltersView.h */,
-				11303BBA1DED74DF00371BD5 /* BOFiltersView.m */,
-				11303BBC1DED7FB800371BD5 /* BOFilterCell.xib */,
-				11303BBE1DEE276500371BD5 /* BOFilterMenuModel.h */,
-				11303BBF1DEE276500371BD5 /* BOFilterMenuModel.mm */,
-				11303BC11DEE45E500371BD5 /* BOInfoEntryView.xib */,
-				11303BC31DEE460000371BD5 /* BOInfoEntryView.h */,
-				11303BC41DEE460000371BD5 /* BOInfoEntryView.mm */,
-				11303BC61DEE6AE200371BD5 /* BOCategoryTableViewCell.h */,
-				11303BC71DEE6AE200371BD5 /* BOCategoryTableViewCell.m */,
-				11303BC91DEE6B4D00371BD5 /* BOCategoryModel.h */,
-				11303BCA1DEE6B4D00371BD5 /* BOCategoryModel.mm */,
-				1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */,
-				1121FC2C1DEFF8D400085925 /* BORecentlyScannedView.h */,
-				1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */,
-				11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */,
-				11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */,
-				11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */,
-				11C99CBF1DF0E15B0034D6C5 /* BODocumentView.h */,
-				11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */,
-				11C99CC21DF0EF450034D6C5 /* BODocumentTableViewCell.h */,
-				11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */,
-				11C99CC51DF0F3D10034D6C5 /* BODocumentModel.h */,
-				11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */,
-				11C99CC81DF1091A0034D6C5 /* BOGradientLayerController.h */,
-				11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
