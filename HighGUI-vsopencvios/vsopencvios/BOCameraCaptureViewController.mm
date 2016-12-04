@@ -194,7 +194,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     UIImage* settings = [UIImage imageNamed:@"ic_view_list_white"];
     settings = [settings imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     [self.buttonShowAllDocuments setImage:settings forState:UIControlStateNormal];
-    self.buttonShowAllDocuments.tintColor = [VSBranding vs_brandRedColor];
+    self.buttonShowAllDocuments.tintColor = [VSBranding vs_whiteColor];
 }
 
 - (void)setupContainerView {
