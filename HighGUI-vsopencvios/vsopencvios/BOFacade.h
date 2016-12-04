@@ -20,7 +20,8 @@
             fileSize:(NSInteger)fileSize;
 
 - (void)apiDetectEdges:(UIImageView*)capturedImageView
-        croppedView:(MMCropView*)croppedView;
+           croppedView:(MMCropView*)croppedView
+            completion:( void(^)() )completion;
 
 - (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView
             croppedView:(MMCropView*)croppedView

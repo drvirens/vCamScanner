@@ -233,6 +233,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (IBAction)didTapCapturePhoto:(id)sender {
+    self.buttonCameraCapture.alpha = 0.35f;
+    self.buttonCameraCapture.enabled = NO;
+    
     //hide settings button
     self.buttonSettings.hidden = YES;
     
@@ -244,6 +247,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 		welf.image = image;
         welf.capturedImageView.image = image;
 		[welf showCapturedImageLoading];
+        
 	}];
 }
 - (IBAction)didTapOnToggleFlashButton:(id)sender {
@@ -335,6 +339,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     self.containerCapturedView.hidden = NO;
     self.cameraView.hidden = YES;
+    
+    self.buttonCameraCapture.alpha = 1.f;
+    self.buttonCameraCapture.enabled = YES;
     
     [self detectEdgesOnImageAndDisplay:self.image];
 }
@@ -642,8 +649,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.upperContainerCapturedView bringSubviewToFront:self.croppedView];
     
     [self detectEdges];
-    _initialRect = self.capturedImageView.frame;
-    final_Rect = self.capturedImageView.frame;
+//    _initialRect = self.capturedImageView.frame;
+//    final_Rect = self.capturedImageView.frame;
 }
 -(void)singlePan:(UIPanGestureRecognizer *)gesture{
     CGPoint posInStretch = [gesture locationInView:self.croppedView];
@@ -756,7 +763,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark OpenCV
 - (void)detectEdges {
-    [self.facade apiDetectEdges:self.capturedImageView croppedView:self.croppedView];
+    typeof (self) __weak welf = self;
+    [self.facade apiDetectEdges:self.capturedImageView croppedView:self.croppedView completion:^{
+        _initialRect = welf.capturedImageView.frame;
+        final_Rect = welf.capturedImageView.frame;
+    }];
 }
 
 - (void)doCropImage {

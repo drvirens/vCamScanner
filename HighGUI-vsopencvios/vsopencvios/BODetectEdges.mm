@@ -19,6 +19,7 @@
 @property (nonatomic) NSOperationQueue* operationQueue;
 @property (nonatomic) NSOperationQueue* mainQueue;
 @property (nonatomic) NSMutableDictionary *sortedPoints;
+@property (nonatomic, copy) void(^completion)();
 @end
 
 @implementation BODetectEdges {
@@ -42,8 +43,11 @@
 }
 
 #pragma mark - openCV
-- (void)apiDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView {
+- (void)apiDetectEdges:(UIImageView*)capturedImageView
+           croppedView:(MMCropView*)croppedView
+            completion:( void(^)() )completion {
     self.croppedView = croppedView;
+    self.completion = completion;
     
     typeof (self) __weak welf = self;
     NSBlockOperation* detectEdgesBlock = [NSBlockOperation blockOperationWithBlock:^{
@@ -147,6 +151,10 @@
 
 - (void)operationReleaseResources {
     original.release();
+    
+    if (self.completion) {
+        [self.mainQueue addOperationWithBlock:self.completion];
+    }
 }
 
 

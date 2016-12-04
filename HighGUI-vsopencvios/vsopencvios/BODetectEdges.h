@@ -13,5 +13,7 @@
 @interface BODetectEdges : NSObject
 @property (nonatomic) MMCropView* croppedView;
 
-- (void)apiDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView;
+- (void)apiDetectEdges:(UIImageView*)capturedImageView
+           croppedView:(MMCropView*)croppedView
+            completion:( void(^)() )completion;
 @end
