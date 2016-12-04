@@ -704,8 +704,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)startCamera {
     [self checkCameraPermissionsStatus];
-    
-	//[self.cameraController startCameraInView:self.cameraView];
 }
 - (BOCameraController*)cameraController {
 	if (!_cameraController) {
@@ -761,6 +759,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)doCropImage {
     self.cropImage = [self.facade apiDoCropImage:self.capturedImageView croppedView:self.croppedView image:self.image];
+    self.croppedView.hidden = YES;
 }
 
 @end

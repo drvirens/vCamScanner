@@ -192,89 +192,6 @@ finalImageHref:(NSString*)finalImageHref {
     [self.detectEdgesAlgorithm apiDetectEdges:capturedImageView croppedView:croppedView];
 }
 
-
-#if 0
-- (void)apiDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView {
-    //
-    // -------------------------------------------------------------------------------- operationDetectEdges
-    //
-    cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:capturedImageView.image];
-    CGSize targetSize = capturedImageView.contentSize;
-    
-    cv::resize(original, original, cvSize(targetSize.width, targetSize.height));
-    std::vector<std::vector<cv::Point>>squares;
-    std::vector<cv::Point> largest_square;
-    
-    vsImageProcessor::find_squares(original, squares);
-    vsImageProcessor::find_largest_square(squares, largest_square);
-    
-    if (largest_square.size() == 4) {
-        // Manually sorting points, needs major improvement. Sorry.
-        NSMutableArray *points = [NSMutableArray array];
-        NSMutableDictionary *sortedPoints = [NSMutableDictionary dictionary];
-        
-        for (int i = 0; i < 4; i++) {
-            NSDictionary *dict = [NSDictionary dictionaryWithObjectsAndKeys:[NSValue valueWithCGPoint:CGPointMake(largest_square[i].x, largest_square[i].y)], @"point" , [NSNumber numberWithInt:(largest_square[i].x + largest_square[i].y)], @"value", nil];
-            [points addObject:dict];
-        }
-        
-        int min = [[points valueForKeyPath:@"@min.value"] intValue];
-        int max = [[points valueForKeyPath:@"@max.value"] intValue];
-        int minIndex = 0;
-        int maxIndex = 0;
-        int missingIndexOne = 0;
-        int missingIndexTwo = 0;
-        
-        for (int i = 0; i < 4; i++) {
-            NSDictionary *dict = [points objectAtIndex:i];
-            if ([[dict objectForKey:@"value"] intValue] == min) {
-                [sortedPoints setObject:[dict objectForKey:@"point"] forKey:@"0"];
-                minIndex = i;
-                continue;
-            }
-            if ([[dict objectForKey:@"value"] intValue] == max) {
-                [sortedPoints setObject:[dict objectForKey:@"point"] forKey:@"2"];
-                maxIndex = i;
-                continue;
-            }
-            NSLog(@"MSSSING %i", i);
-            missingIndexOne = i;
-        }
-        
-        for (int i = 0; i < 4; i++) {
-            if (missingIndexOne != i && minIndex != i && maxIndex != i) {
-                missingIndexTwo = i;
-            }
-        }
-        
-        if (largest_square[missingIndexOne].x < largest_square[missingIndexTwo].x) {
-            //2nd Point Found
-            [sortedPoints setObject:[[points objectAtIndex:missingIndexOne] objectForKey:@"point"] forKey:@"3"];
-            [sortedPoints setObject:[[points objectAtIndex:missingIndexTwo] objectForKey:@"point"] forKey:@"1"];
-        } else {
-            //4rd Point Found
-            [sortedPoints setObject:[[points objectAtIndex:missingIndexOne] objectForKey:@"point"] forKey:@"1"];
-            [sortedPoints setObject:[[points objectAtIndex:missingIndexTwo] objectForKey:@"point"] forKey:@"3"];
-        }
-        
-        //
-        // -------------------------------------------------------------------------------- Main thread
-        //
-        [croppedView topLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"0"] CGPointValue]];
-        [croppedView topRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"1"] CGPointValue]];
-        [croppedView bottomRightCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"2"] CGPointValue]];
-        [croppedView bottomLeftCornerToCGPoint:[(NSValue *)[sortedPoints objectForKey:@"3"] CGPointValue]];
-        
-        NSLog(@"%@ Sorted Points",sortedPoints);
-    }
-    
-    //
-    // -------------------------------------------------------------------------------- operationRelease
-    //
-    original.release();
-}
-#endif
-
 - (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView image:(UIImage*)image {
     UIImage* retImgae = nil;
     if([croppedView frameEdited]){
@@ -298,7 +215,7 @@ finalImageHref:(NSString*)finalImageHref {
         capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:*undistorted];
         //self.cropImage = capturedImageView.image;
         retImgae = capturedImageView.image;
-        croppedView.hidden = YES;
+//        croppedView.hidden = YES;
         
         original.release();
         undistorted->release();
