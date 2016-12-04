@@ -183,7 +183,7 @@ finalImageHref:(NSString*)finalImageHref {
     });
 }
 
-#pragma mark - openCV
+#pragma mark - detect edge
 
 - (void)apiDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView {
     if (!self.detectEdgesAlgorithm) {
@@ -192,41 +192,65 @@ finalImageHref:(NSString*)finalImageHref {
     [self.detectEdgesAlgorithm apiDetectEdges:capturedImageView croppedView:croppedView];
 }
 
-- (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView image:(UIImage*)image {
+#pragma mark - crop image
+- (UIImage*)apiDoCropImage:(UIImageView*)capturedImageView
+               croppedView:(MMCropView*)croppedView
+                     image:(UIImage*)image
+                completion:( void(^)(UIImage*) )completion {
     UIImage* retImgae = nil;
-    if([croppedView frameEdited]){
-        double scaleFactor =  [capturedImageView contentScale];
+    if([croppedView frameEdited]) {
         
-        CGPoint thePtBottomLeft = [croppedView coordinatesForPoint:1 withScaleFactor:scaleFactor];
-        CGPoint thePtBottomRight = [croppedView coordinatesForPoint:2 withScaleFactor:scaleFactor];
-        CGPoint thePtTopRight = [croppedView coordinatesForPoint:3 withScaleFactor:scaleFactor];
-        CGPoint thePtTopLeft = [croppedView coordinatesForPoint:4 withScaleFactor:scaleFactor];
-        
-        cv::Mat* undistorted = 0; //output
-        cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:image];
-        
-        vsCGPoint ptBottomLeft = {thePtBottomLeft.x, thePtBottomLeft.y};
-        vsCGPoint ptBottomRight = {thePtBottomRight.x, thePtBottomRight.y};
-        vsCGPoint ptTopRight = {thePtTopRight.x, thePtTopRight.y};
-        vsCGPoint ptTopLeft = {thePtTopLeft.x, thePtTopLeft.y};
-        
-        vsImageProcessor::crop(original, scaleFactor, ptBottomLeft, ptBottomRight, ptTopRight, ptTopLeft, undistorted);
-        
-        capturedImageView.image=[MMOpenCVHelper UIImageFromCVMat:*undistorted];
-        //self.cropImage = capturedImageView.image;
-        retImgae = capturedImageView.image;
-//        croppedView.hidden = YES;
-        
-        original.release();
-        undistorted->release();
-        delete undistorted;
+        typeof (self) __weak welf = self;
+        NSBlockOperation* cropBlock = [NSBlockOperation blockOperationWithBlock:^{
+            typeof (self) __strong strongSelf = welf;
+            if (strongSelf) {
+                [strongSelf operationDoCropImage:capturedImageView croppedView:croppedView image:image completion:completion];
+            }
+        }];
+        [self.operationQueue addOperation:cropBlock];
     }
     else{
-        UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"MMCamScanner" message:@"Invalid Rect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alertView show];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            UIAlertView  *alertView = [[UIAlertView alloc] initWithTitle:@"MMCamScanner" message:@"Invalid Rect" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+            [alertView show];
+        });
     }
     
     return retImgae;
+}
+
+- (void)operationDoCropImage:(UIImageView*)capturedImageView
+               croppedView:(MMCropView*)croppedView
+                     image:(UIImage*)image
+                completion:( void(^)(UIImage*) )completion {
+    double scaleFactor =  [capturedImageView contentScale];
+    
+    CGPoint thePtBottomLeft = [croppedView coordinatesForPoint:1 withScaleFactor:scaleFactor];
+    CGPoint thePtBottomRight = [croppedView coordinatesForPoint:2 withScaleFactor:scaleFactor];
+    CGPoint thePtTopRight = [croppedView coordinatesForPoint:3 withScaleFactor:scaleFactor];
+    CGPoint thePtTopLeft = [croppedView coordinatesForPoint:4 withScaleFactor:scaleFactor];
+    
+    cv::Mat* undistorted = NULL; //output
+    cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:image];
+    
+    vsCGPoint ptBottomLeft = {thePtBottomLeft.x, thePtBottomLeft.y};
+    vsCGPoint ptBottomRight = {thePtBottomRight.x, thePtBottomRight.y};
+    vsCGPoint ptTopRight = {thePtTopRight.x, thePtTopRight.y};
+    vsCGPoint ptTopLeft = {thePtTopLeft.x, thePtTopLeft.y};
+    
+    vsImageProcessor::crop(original, scaleFactor, ptBottomLeft, ptBottomRight, ptTopRight, ptTopLeft, undistorted);
+    
+    UIImage* theCroppedImage = [MMOpenCVHelper UIImageFromCVMat:*undistorted];
+    
+    original.release();
+    undistorted->release();
+    delete undistorted;
+    
+    if (completion) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            completion(theCroppedImage);
+        });
+    }
 }
 
 @end

@@ -563,8 +563,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
     
-    self.menuButtonSelect.enabled = NO;
-    [self.activityIndicator startAnimating];
+//    self.menuButtonSelect.enabled = NO;
+//    [self.activityIndicator startAnimating];
             if (self.state == BOCroppedPreviewState) {
                 NSLog(@"BOCroppedPreviewState - show share state/view");
                 [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
@@ -576,13 +576,9 @@ static void* gUserLoadContext = &gUserLoadContext;
                 [self share:self];
             } else {
                 [self doCropImage];
-                [self transitMenuItemsToPreviewMode];
-                [self populateFiltersMenu];
-                [self showFiltersView];
-                [self showInfoEntryView];
             }
-    [self.activityIndicator stopAnimating];
-    self.menuButtonSelect.enabled = YES;
+//    [self.activityIndicator stopAnimating];
+//    self.menuButtonSelect.enabled = YES;
 }
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
@@ -636,12 +632,11 @@ static void* gUserLoadContext = &gUserLoadContext;
     singlePan.maximumNumberOfTouches = 1;
     [self.croppedView addGestureRecognizer:singlePan];
     
-    //[self setCropUI];
     [self.upperContainerCapturedView bringSubviewToFront:self.croppedView];
     
     [self detectEdges];
     _initialRect = self.capturedImageView.frame;
-    final_Rect =self.capturedImageView.frame;
+    final_Rect = self.capturedImageView.frame;
 }
 -(void)singlePan:(UIPanGestureRecognizer *)gesture{
     CGPoint posInStretch = [gesture locationInView:self.croppedView];
@@ -758,8 +753,26 @@ static void* gUserLoadContext = &gUserLoadContext;
 }
 
 - (void)doCropImage {
-    self.cropImage = [self.facade apiDoCropImage:self.capturedImageView croppedView:self.croppedView image:self.image];
+    typeof (self) __weak welf = self;
+    [self.facade apiDoCropImage:self.capturedImageView
+                                     croppedView:self.croppedView
+                                           image:self.image completion:^(UIImage* aCroppedImage) {
+                                               typeof (self) __strong strongSelf = welf;
+                                               if (strongSelf) {
+                                                   [strongSelf runCropCompletionWithCroppedImage:aCroppedImage];
+                                               }
+                                           }];
+}
+
+- (void)runCropCompletionWithCroppedImage:(UIImage*)aCroppedImage {
+    self.cropImage = aCroppedImage;
+    self.capturedImageView.image = aCroppedImage;
     self.croppedView.hidden = YES;
+    
+    [self transitMenuItemsToPreviewMode];
+    [self populateFiltersMenu];
+    [self showFiltersView];
+    [self showInfoEntryView];
 }
 
 @end
