@@ -512,7 +512,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     return YES;
 }
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    self.infoEntryView.labelCategoryTItle.text = textField.text;
+    NSString* capsText = textField.text;
+    capsText = [capsText uppercaseString];
+    self.infoEntryView.labelCategoryTItle.text = capsText;
 }
 
 #pragma mark - 4 menu buttons
