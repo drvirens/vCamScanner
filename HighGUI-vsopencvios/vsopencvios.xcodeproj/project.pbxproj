@@ -18,6 +18,7 @@
 		111D56DF1DF2B3CB00534EF3 /* document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56DD1DF2B3CB00534EF3 /* document.cpp */; };
 		111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E11DF2C24800534EF3 /* BOFacade.mm */; };
 		111D56E51DF2C6EF00534EF3 /* UIViewController+BOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */; };
+		111D56ED1DF3CC8100534EF3 /* vsImageProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56EB1DF3CC8100534EF3 /* vsImageProcessor.cpp */; };
 		1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */; };
 		1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */; };
 		1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1121FC2D1DEFF8D400085925 /* BORecentlyScannedView.m */; };
@@ -339,6 +340,8 @@
 		111D56E11DF2C24800534EF3 /* BOFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFacade.mm; sourceTree = "<group>"; };
 		111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BOUtils.h"; sourceTree = "<group>"; };
 		111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+BOUtils.m"; sourceTree = "<group>"; };
+		111D56EB1DF3CC8100534EF3 /* vsImageProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = vsImageProcessor.cpp; path = ../../BasicUI2/src/vsImageProcessor.cpp; sourceTree = "<group>"; };
+		111D56EC1DF3CC8100534EF3 /* vsImageProcessor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = vsImageProcessor.hpp; path = ../../BasicUI2/src/vsImageProcessor.hpp; sourceTree = "<group>"; };
 		1121FC211DEF55B800085925 /* VSCameraPermissionsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = VSCameraPermissionsViewController.h; path = vsopencvios/VSCameraPermissionsViewController.h; sourceTree = SOURCE_ROOT; };
 		1121FC221DEF55B800085925 /* VSCameraPermissionsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = VSCameraPermissionsViewController.m; path = vsopencvios/VSCameraPermissionsViewController.m; sourceTree = SOURCE_ROOT; };
 		1121FC2A1DEFF65D00085925 /* BORecentlyScannedView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BORecentlyScannedView.xib; sourceTree = "<group>"; };
@@ -1036,6 +1039,8 @@
 				11F25A051DF222E9003CB8EE /* data */,
 				11F259F41DF2223F003CB8EE /* core */,
 				11F259F21DF22201003CB8EE /* log */,
+				111D56EB1DF3CC8100534EF3 /* vsImageProcessor.cpp */,
+				111D56EC1DF3CC8100534EF3 /* vsImageProcessor.hpp */,
 			);
 			name = shared;
 			sourceTree = "<group>";
@@ -2331,6 +2336,7 @@
 				B621FDB61DEAA29E00E54A51 /* corner.cpp in Sources */,
 				B621FD571DEAA29D00E54A51 /* retinafilter.cpp in Sources */,
 				111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */,
+				111D56ED1DF3CC8100534EF3 /* vsImageProcessor.cpp in Sources */,
 				11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */,
 				B621FD351DEAA29D00E54A51 /* p3p.cpp in Sources */,
 				111D56C81DF2805500534EF3 /* mdb.c in Sources */,
