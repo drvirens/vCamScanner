@@ -948,6 +948,34 @@
 			path = auth;
 			sourceTree = "<group>";
 		};
+		111D56E61DF3C83B00534EF3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		111D56E71DF3C84B00534EF3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		111D56E81DF3C85300534EF3 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		111D56E91DF3C85C00534EF3 /* shared */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = shared;
+			sourceTree = "<group>";
+		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,6 +1101,10 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				111D56E91DF3C85C00534EF3 /* shared */,
+				111D56E81DF3C85300534EF3 /* controller */,
+				111D56E71DF3C84B00534EF3 /* view */,
+				111D56E61DF3C83B00534EF3 /* model */,
 				111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */,
 				111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */,
 				111D56E01DF2C24800534EF3 /* BOFacade.h */,
