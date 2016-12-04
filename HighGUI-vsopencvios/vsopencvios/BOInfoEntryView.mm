@@ -60,11 +60,13 @@
     
     //also setup title label
     self.labelCategoryTItle.textColor = [UIColor darkGrayColor];
-    self.labelCategoryTItle.font = VS_FONT_EXTRASMALL;
-    self.labelCategoryTItle.alpha = 0.5f;
+    self.labelCategoryTItle.font = VS_FONT_REGULAR;
     
     //and close icon
     [self decorateMiddleCloseIcon];
+    
+    //and category icon
+    [self decorateCategoryIcon];
 }
 - (void)decorateMiddleCloseIcon {
     UIImage* rightArrow = [UIImage imageNamed:@"ic_close_white"];
@@ -77,7 +79,12 @@
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.imageViewIcon.image = rightArrow;
     self.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
-//    self.imageViewIcon.alpha = .7f;
+}
+- (void)decorateCategoryIcon {
+    UIImage* rightArrow = [UIImage imageNamed:@"ic_event_note_white"];
+    rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+    self.categoryIcon.image = rightArrow;
+    self.categoryIcon.tintColor = [UIColor darkGrayColor];
 }
 - (void)setupMiscGUI:(id<UITextFieldDelegate>)delegate selectorCateogry:(SEL)didSelectCateogry selectorDragView:(SEL)didSelectDragView {
     self.textFieldTitle.delegate = delegate;
