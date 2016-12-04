@@ -76,7 +76,8 @@
     UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.imageViewIcon.image = rightArrow;
-    self.imageViewIcon.tintColor = self.dragView.backgroundColor;
+    self.imageViewIcon.tintColor = [VSBranding vs_brandRedColor];
+//    self.imageViewIcon.alpha = .7f;
 }
 - (void)setupMiscGUI:(id<UITextFieldDelegate>)delegate selectorCateogry:(SEL)didSelectCateogry selectorDragView:(SEL)didSelectDragView {
     self.textFieldTitle.delegate = delegate;
