@@ -46,7 +46,6 @@
     self.croppedView = croppedView;
     
     typeof (self) __weak welf = self;
-    //detect edges
     NSBlockOperation* detectEdgesBlock = [NSBlockOperation blockOperationWithBlock:^{
         typeof (self) __strong strongSelf = welf;
         if (strongSelf) {
@@ -58,10 +57,6 @@
 }
 
 - (void)operationDetectEdges:(UIImageView*)capturedImageView croppedView:(MMCropView*)croppedView {
-    //
-    // -------------------------------------------------------------------------------- operationDetectEdges
-    //
-//    cv::Mat original = [MMOpenCVHelper cvMatFromUIImage:capturedImageView.image];
     original = [MMOpenCVHelper cvMatFromUIImage:capturedImageView.image];
     CGSize targetSize = capturedImageView.contentSize;
     
@@ -148,7 +143,6 @@
         }
     }];
     [self.operationQueue addOperation:releaseResourceBlock];
-
 }
 
 - (void)operationReleaseResources {
