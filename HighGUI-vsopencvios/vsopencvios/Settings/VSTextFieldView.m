@@ -21,7 +21,7 @@ static NSString* const kWrongMark = @"ic_close_white";
 
 @implementation VSTextFieldView
 - (instancetype)initWithCoder:(NSCoder *)aDecoder {
-	if ([super initWithCoder:aDecoder]) {
+	if (self = [super initWithCoder:aDecoder]) {
 		[self commonInit];
 	}
 	return self;
