@@ -8,16 +8,16 @@
 
 #import "BODocCache.h"
 
-static const NSInteger kCacheSize;
+static const NSInteger kCacheSize = 3;
 
 @interface BOQueue : NSObject
-@property (nonatomic, readonly) NSInteger count;
+@property(nonatomic, readonly) NSMutableArray* data;
 - (void)enqueue:(id)obj;
 - (id)dequeue;
 - (NSArray*)all;
 @end
 @interface BOQueue ()
-@property NSMutableArray* data;
+@property(nonatomic, readwrite) NSMutableArray* data;
 @end
 @implementation BOQueue
 - (instancetype)init {
@@ -59,7 +59,7 @@ static const NSInteger kCacheSize;
     [self.queue enqueue:model];
 }
 - (BOOL)hasReachedCapacity {
-    return (self.queue.count == kCacheSize);
+    return (self.queue.data.count == kCacheSize);
 }
 - (void)evict {
     id ret = [self.queue dequeue];

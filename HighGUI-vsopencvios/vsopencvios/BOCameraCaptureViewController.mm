@@ -24,6 +24,7 @@
 #import "VSBranding.h"
 #import "BORecentlyScannedView.h"
 #import "BODocumentsListViewController.h"
+#import "BODocCache.h"
 
 typedef enum BOState {
     BONotCroppedState,
@@ -100,6 +101,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) CATransform3D transformCapturedImageView;
 @property (nonatomic) CATransform3D transformCroppedView;
 
+@property (nonatomic) BODocCache* docCache;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -111,6 +113,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.docCache = [[BODocCache alloc] init];
     self.state = BONotCroppedState;
     
     [self setupRightButton];
@@ -774,13 +777,29 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark - API calls
 - (void)apiAddDocument {
-    long fileSize = 0;
-    NSString* docTitle = self.infoEntryView.textFieldTitle.text;
-    [self.facade addDocument:self.image
-         finalProcessedImage:self.finalProcessedImage
+    //and then in local storage (LMDB)
+    long        fileSize            = 0; // XXX
+    NSString*   docTitle            = self.infoEntryView.textFieldTitle.text;
+    UIImage*    originalImage       = self.image;
+    UIImage*    finalProcessedImage = self.finalProcessedImage;
+    NSString*   categoryName        = self.categoryName;
+    
+    //add it in cache first...
+    [self addInCache:docTitle finalProcessedImage:finalProcessedImage];
+    
+
+    [self.facade addDocument:originalImage
+         finalProcessedImage:finalProcessedImage
                    doctTitle:docTitle
-                categoryName:self.categoryName
-                    fileSize:fileSize]; //XXX
+                categoryName:categoryName
+                    fileSize:fileSize];
+}
+- (void)addInCache:(NSString*)docTitle
+finalProcessedImage:(UIImage*)finalProcessedImage {
+    NSDate* now = [NSDate date];
+    NSString* formattedTime = nil;
+    BORecentDocModel* model = [[BORecentDocModel alloc] initWithTitle:docTitle timeFormatted:formattedTime thumbnail:finalProcessedImage createdDate:now];
+    [self.docCache addModel:model];
 }
 
 #pragma mark OpenCV
