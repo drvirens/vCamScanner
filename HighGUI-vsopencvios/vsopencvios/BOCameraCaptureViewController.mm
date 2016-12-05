@@ -311,26 +311,34 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)populateRecentlyScannedView {
     NSArray<BORecentDocModel*>* recentlyScannedDocs = [self.docCache all];
-    [recentlyScannedDocs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//    [recentlyScannedDocs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+//        BORecentDocModel* m = (BORecentDocModel*)obj;
+//        [self populateOneRecentlyScannedViewWithModel:m idx:idx];
+//    }];
+    [recentlyScannedDocs enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(BORecentDocModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         BORecentDocModel* m = (BORecentDocModel*)obj;
-        UIButton* btn = nil;
-        UILabel* label = nil;
-        if (idx == 0) {
-            btn = self.viewRecentlyScanned.firstScannedView;
-            label = self.viewRecentlyScanned.firstScannedTime;
-        } else if (idx == 1) {
-            btn = self.viewRecentlyScanned.secondScannedView;
-            label = self.viewRecentlyScanned.secondScannedTime;
-        } else if (idx == 2) {
-            btn = self.viewRecentlyScanned.thirdScannedView;
-            label = self.viewRecentlyScanned.thirdScannedTime;
-        }
-        [btn setBackgroundImage:nil forState:UIControlStateNormal];
-        [btn setImage:nil forState:UIControlStateNormal];
-        btn.backgroundColor = [UIColor clearColor];
-        [btn setImage:m.thumbnail forState:UIControlStateNormal];
-        label.text = @"dan's dick";// m.timeFormatted;
+        [self populateOneRecentlyScannedViewWithModel:m idx:idx];
     }];
+}
+
+- (void)populateOneRecentlyScannedViewWithModel:(BORecentDocModel*)m idx:(NSUInteger)idx {
+    UIButton* btn = nil;
+    UILabel* label = nil;
+    if (idx == 2) {
+        btn = self.viewRecentlyScanned.firstScannedView;
+        label = self.viewRecentlyScanned.firstScannedTime;
+    } else if (idx == 1) {
+        btn = self.viewRecentlyScanned.secondScannedView;
+        label = self.viewRecentlyScanned.secondScannedTime;
+    } else if (idx == 0) {
+        btn = self.viewRecentlyScanned.thirdScannedView;
+        label = self.viewRecentlyScanned.thirdScannedTime;
+    }
+    [btn setBackgroundImage:nil forState:UIControlStateNormal];
+    [btn setImage:nil forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor clearColor];
+    [btn setImage:m.thumbnail forState:UIControlStateNormal];
+    label.text = m.timeFormatted;
 }
 
 #pragma mark - hide/show
