@@ -127,7 +127,6 @@
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
-		11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */; };
 		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */; };
 		11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */; };
 		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
@@ -369,9 +368,6 @@
 		B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE081DEABAF400E54A51 /* BOCameraController.mm */; };
 		B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */; };
 		B621FE101DEABBE100E54A51 /* BOPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */; };
-		B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */; };
-		B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */; };
-		B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -570,8 +566,6 @@
 		11B75D9F1DDFD0E1004EAB65 /* ml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		11B75DA11DDFD0E1004EAB65 /* opencv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv.hpp; sourceTree = "<group>"; };
 		11B75DA21DDFD0E1004EAB65 /* opencv_modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv_modules.hpp; sourceTree = "<group>"; };
-		11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scannerLite.cpp; sourceTree = "<group>"; };
-		11B75DA41DDFD0E1004EAB65 /* scannerLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannerLite.h; sourceTree = "<group>"; };
 		11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentsListViewController.h; sourceTree = "<group>"; };
 		11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BODocumentsListViewController.mm; sourceTree = "<group>"; };
 		11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BODocumentView.xib; sourceTree = "<group>"; };
@@ -977,12 +971,6 @@
 		B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLocationController.m; sourceTree = "<group>"; };
 		B621FE0E1DEABBE100E54A51 /* BOPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOPhotoController.h; sourceTree = "<group>"; };
 		B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOPhotoController.m; sourceTree = "<group>"; };
-		B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BOFileUtil.cpp; path = ../../BasicUI2/src/BOFileUtil.cpp; sourceTree = "<group>"; };
-		B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil_iOS.hpp; sourceTree = "<group>"; };
-		B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFileUtil_iOS.mm; sourceTree = "<group>"; };
-		B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOFileUtil.h; path = ../../BasicUI2/inc/BOFileUtil.h; sourceTree = "<group>"; };
-		B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_utils_wrapper.h; path = ../../BasicUI2/inc/file_utils_wrapper.h; sourceTree = "<group>"; };
-		B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file_utils_wrapper.cpp; path = ../../BasicUI2/src/file_utils_wrapper.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1038,8 +1026,10 @@
 		111D56E61DF3C83B00534EF3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
-				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
+				111D56E01DF2C24800534EF3 /* BOFacade.h */,
+				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
+				111D56EE1DF3DF4100534EF3 /* BODetectEdges.h */,
+				111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */,
 				11303C081DEECEFF00371BD5 /* VSBranding.h */,
 				11303C091DEECEFF00371BD5 /* VSBranding.m */,
 				11303BB01DED3B3800371BD5 /* BOConstants.h */,
@@ -1108,12 +1098,6 @@
 		111D56E91DF3C85C00534EF3 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */,
-				11B75DA41DDFD0E1004EAB65 /* scannerLite.h */,
-				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
-				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
-				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
-				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
 				111D56B21DF2590700534EF3 /* boot */,
 				11F25A421DF22416003CB8EE /* utils */,
 				11F25A351DF223E4003CB8EE /* 3p */,
@@ -1351,15 +1335,11 @@
 				111D56E81DF3C85300534EF3 /* controller */,
 				111D56E71DF3C84B00534EF3 /* view */,
 				111D56E61DF3C83B00534EF3 /* model */,
-				111D56E01DF2C24800534EF3 /* BOFacade.h */,
-				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
 				11B75AD21DDFD08D004EAB65 /* AppDelegate.h */,
 				11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */,
 				11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
-				111D56EE1DF3DF4100534EF3 /* BODetectEdges.h */,
-				111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -2454,7 +2434,6 @@
 				B621FD751DEAA29D00E54A51 /* system.cpp in Sources */,
 				B621FD481DEAA29D00E54A51 /* featuretracker.cpp in Sources */,
 				B621FD791DEAA29D00E54A51 /* brief.cpp in Sources */,
-				B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */,
 				B621FD6C1DEAA29D00E54A51 /* matop.cpp in Sources */,
 				B621FD331DEAA29D00E54A51 /* fundam.cpp in Sources */,
 				B621FDE71DEAA29E00E54A51 /* cascadedetect.cpp in Sources */,
@@ -2552,7 +2531,6 @@
 				111D56CD1DF2805500534EF3 /* midl.c in Sources */,
 				B621FD471DEAA29D00E54A51 /* facerec.cpp in Sources */,
 				B621FD921DEAA29E00E54A51 /* cap_cmu.cpp in Sources */,
-				B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */,
 				B621FDE11DEAA29E00E54A51 /* ml_init.cpp in Sources */,
 				B621FDFD1DEAA29E00E54A51 /* camshift.cpp in Sources */,
 				B621FD3D1DEAA29D00E54A51 /* adaptiveskindetector.cpp in Sources */,
@@ -2652,7 +2630,6 @@
 				B621FD411DEAA29D00E54A51 /* chamfermatching.cpp in Sources */,
 				B621FD4D1DEAA29D00E54A51 /* inputoutput.cpp in Sources */,
 				B621FDA51DEAA29E00E54A51 /* grfmt_pxm.cpp in Sources */,
-				B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */,
 				115294901DF52082009EF4F9 /* jutils.c in Sources */,
 				11303C011DEECEB100371BD5 /* VSPurposeAddFieldCell.m in Sources */,
 				B621FDA11DEAA29E00E54A51 /* grfmt_exr.cpp in Sources */,
@@ -2700,7 +2677,6 @@
 				115294941DF52082009EF4F9 /* rdppm.c in Sources */,
 				B621FDA81DEAA29E00E54A51 /* ios_conversions.mm in Sources */,
 				B621FDE81DEAA29E00E54A51 /* datamatrix.cpp in Sources */,
-				11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */,
 				B621FDC21DEAA29E00E54A51 /* histogram.cpp in Sources */,
 				B621FDB91DEAA29E00E54A51 /* distransform.cpp in Sources */,
 				B621FD451DEAA29D00E54A51 /* contrib_init.cpp in Sources */,
