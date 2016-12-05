@@ -34,7 +34,7 @@
     //Output:
     //Time Ago: 4 seconds ago
     //Time Ago: 4s
-    return timeAgoDate.timeAgoSinceNow;
+    return timeAgoDate.shortTimeAgoSinceNow;
 }
 - (void)computeTime {
     NSString* ago = [self timeAgo:_createdDate];

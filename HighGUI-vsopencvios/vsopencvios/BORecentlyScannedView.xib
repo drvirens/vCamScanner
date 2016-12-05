@@ -27,23 +27,23 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3s ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkt-dk-Q61">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkt-dk-Q61">
                     <rect key="frame" x="43" y="375" width="52" height="19"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3m ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsF-yi-68P">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lsF-yi-68P">
                     <rect key="frame" x="140" y="374" width="58" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3d ago" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkQ-N3-7co">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GkQ-N3-7co">
                     <rect key="frame" x="230" y="373" width="54" height="21"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <view clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Be9-mh-bpp">
@@ -121,19 +121,19 @@
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint firstItem="gkt-dk-Q61" firstAttribute="top" secondItem="Be9-mh-bpp" secondAttribute="bottom" constant="2" id="0P1-6S-Vli"/>
+                <constraint firstItem="gkt-dk-Q61" firstAttribute="top" secondItem="Be9-mh-bpp" secondAttribute="bottom" constant="5" id="0P1-6S-Vli"/>
                 <constraint firstAttribute="trailing" secondItem="IJB-C0-KrD" secondAttribute="trailing" constant="20" id="38w-Ih-qcG"/>
                 <constraint firstItem="Be9-mh-bpp" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="6lc-TX-Eqg"/>
                 <constraint firstItem="lsF-yi-68P" firstAttribute="centerX" secondItem="Dp1-YM-imf" secondAttribute="centerX" id="BaW-hv-OBH"/>
                 <constraint firstAttribute="trailing" secondItem="Be9-mh-bpp" secondAttribute="trailing" id="Fbt-if-w04"/>
-                <constraint firstAttribute="bottom" secondItem="lsF-yi-68P" secondAttribute="bottom" constant="10" id="GH1-p8-hSJ"/>
-                <constraint firstItem="GkQ-N3-7co" firstAttribute="top" secondItem="Be9-mh-bpp" secondAttribute="bottom" constant="2" id="Ido-Zz-W3u"/>
-                <constraint firstItem="lsF-yi-68P" firstAttribute="top" secondItem="Be9-mh-bpp" secondAttribute="bottom" constant="2" id="U4P-Dp-Qxw"/>
+                <constraint firstAttribute="bottom" secondItem="lsF-yi-68P" secondAttribute="bottom" constant="5" id="GH1-p8-hSJ"/>
+                <constraint firstItem="GkQ-N3-7co" firstAttribute="top" secondItem="Be9-mh-bpp" secondAttribute="bottom" constant="5" id="Ido-Zz-W3u"/>
+                <constraint firstItem="lsF-yi-68P" firstAttribute="top" secondItem="Be9-mh-bpp" secondAttribute="bottom" constant="5" id="U4P-Dp-Qxw"/>
                 <constraint firstItem="Be9-mh-bpp" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="VHf-TQ-Jgj"/>
                 <constraint firstItem="gkt-dk-Q61" firstAttribute="centerX" secondItem="a2s-dT-FoE" secondAttribute="centerX" id="cTd-JZ-1JP"/>
-                <constraint firstAttribute="bottom" secondItem="gkt-dk-Q61" secondAttribute="bottom" constant="10" id="dDS-Y9-MTd"/>
+                <constraint firstAttribute="bottom" secondItem="gkt-dk-Q61" secondAttribute="bottom" constant="5" id="dDS-Y9-MTd"/>
                 <constraint firstItem="GkQ-N3-7co" firstAttribute="centerX" secondItem="9x0-rW-xNH" secondAttribute="centerX" id="kWp-Cb-QHU"/>
-                <constraint firstAttribute="bottom" secondItem="GkQ-N3-7co" secondAttribute="bottom" constant="10" id="q8j-Ex-33K"/>
+                <constraint firstAttribute="bottom" secondItem="GkQ-N3-7co" secondAttribute="bottom" constant="5" id="q8j-Ex-33K"/>
                 <constraint firstItem="IJB-C0-KrD" firstAttribute="centerY" secondItem="Be9-mh-bpp" secondAttribute="centerY" id="t4s-4p-YkW"/>
             </constraints>
             <point key="canvasLocation" x="68.5" y="25.5"/>
