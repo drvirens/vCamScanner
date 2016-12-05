@@ -16,4 +16,5 @@
 @property (nonatomic, readonly) NSDate* createdDate; //for sorting
 
 - (instancetype)initWithTitle:(NSString*)docTitle timeFormatted:(NSString*)timeFormatted thumbnail:(UIImage*)thumbnail createdDate:(NSDate*)createdDate;
+- (void)computeTime;
 @end

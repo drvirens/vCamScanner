@@ -311,12 +311,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 - (void)populateRecentlyScannedView {
     NSArray<BORecentDocModel*>* recentlyScannedDocs = [self.docCache all];
-//    [recentlyScannedDocs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-//        BORecentDocModel* m = (BORecentDocModel*)obj;
-//        [self populateOneRecentlyScannedViewWithModel:m idx:idx];
-//    }];
     [recentlyScannedDocs enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(BORecentDocModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         BORecentDocModel* m = (BORecentDocModel*)obj;
+        [m computeTime];
         [self populateOneRecentlyScannedViewWithModel:m idx:idx];
     }];
 }
@@ -629,22 +626,22 @@ static void* gUserLoadContext = &gUserLoadContext;
     }];
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
-            if (self.state == BOCroppedPreviewState) {
-                NSLog(@"BOCroppedPreviewState - show share state/view");
-                [self putUIInProcessingStart];
-                
-                [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
-                [self hideFiltersView];
-                [self transitMenuItemsToShareMode];
-                
-                [self putUIInProcessingFinished];
-                
-                [self apiAddDocument]; //this is fire and forget
-            } else if (self.state == BOShareState) {
-                [self share:self];
-            } else {
-                [self doCropImage];
-            }
+    if (self.state == BOCroppedPreviewState) {
+        NSLog(@"BOCroppedPreviewState - show share state/view");
+        [self putUIInProcessingStart];
+        
+        [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
+        [self hideFiltersView];
+        [self transitMenuItemsToShareMode];
+        
+        [self putUIInProcessingFinished];
+        
+        [self apiAddDocument]; //this is fire and forget
+    } else if (self.state == BOShareState) {
+        [self share:self];
+    } else {
+        [self doCropImage];
+    }
 }
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
