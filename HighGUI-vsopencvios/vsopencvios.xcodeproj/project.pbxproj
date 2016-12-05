@@ -128,6 +128,7 @@
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
+		118BD8231DF612980031A52D /* PSPDFUIKitMainThreadGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = 118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */; };
 		11B75AD11DDFD08D004EAB65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD01DDFD08D004EAB65 /* main.m */; };
 		11B75AD41DDFD08D004EAB65 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */; };
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
@@ -574,6 +575,7 @@
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFUIKitMainThreadGuard.m; sourceTree = "<group>"; };
 		11B75ACC1DDFD08D004EAB65 /* vsopencvios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vsopencvios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B75AD01DDFD08D004EAB65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11B75AD21DDFD08D004EAB65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1366,6 +1368,7 @@
 		115294A41DF55465009EF4F9 /* 3p */ = {
 			isa = PBXGroup;
 			children = (
+				118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */,
 				11E0D3E41DF560860075AC0F /* NYTPhotoViewer */,
 				115294AB1DF554BC009EF4F9 /* DTError.h */,
 				115294AC1DF554BC009EF4F9 /* DTError.m */,
@@ -2960,6 +2963,7 @@
 				11E0D4051DF560860075AC0F /* NYTPhotoDismissalInteractionController.m in Sources */,
 				B621FD3B1DEAA29D00E54A51 /* stereosgbm.cpp in Sources */,
 				B621FDDB1DEAA29E00E54A51 /* em.cpp in Sources */,
+				118BD8231DF612980031A52D /* PSPDFUIKitMainThreadGuard.m in Sources */,
 				B621FDF21DEAA29E00E54A51 /* lsvmtbbversion.cpp in Sources */,
 				B621FD341DEAA29D00E54A51 /* modelest.cpp in Sources */,
 				11303C061DEECEB100371BD5 /* VSVehicleCell.m in Sources */,

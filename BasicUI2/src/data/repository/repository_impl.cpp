@@ -58,6 +58,7 @@ vsValueRecord::vsValueRecord(vs_uint32_t aModelSize,
 	: iModelSize(aModelSize)
 	, iModelType(aModelType)
 	, iActualRecordDump(aActualRecordDump)
+    , iShouldDelete(false)
 	{ TRACE
 	iRecordSize = sizeof(vs_uint32_t)		+ //how big is this record?
 								sizeof(vs_uint8_t)		+ //what kind of record is stored here?
