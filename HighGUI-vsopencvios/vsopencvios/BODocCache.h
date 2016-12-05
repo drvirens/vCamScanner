@@ -12,4 +12,5 @@
 
 @interface BODocCache : NSObject
 - (void)addModel:(BORecentDocModel*)model;
+- (NSArray<BORecentDocModel*>*)all;
 @end

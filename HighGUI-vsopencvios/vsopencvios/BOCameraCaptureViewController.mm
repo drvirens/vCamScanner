@@ -80,7 +80,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
 
 
-@property (nonatomic) UIImage* image;
+@property (nonatomic) UIImage* image; //original image
 @property (nonatomic) UIImage* cropImage;
 @property (nonatomic) UIImage* finalProcessedImage;
 @property (nonatomic, copy) NSString* categoryName;
@@ -309,6 +309,30 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self hideCameraOverlay];
 }
 
+- (void)populateRecentlyScannedView {
+    NSArray<BORecentDocModel*>* recentlyScannedDocs = [self.docCache all];
+    [recentlyScannedDocs enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        BORecentDocModel* m = (BORecentDocModel*)obj;
+        UIButton* btn = nil;
+        UILabel* label = nil;
+        if (idx == 0) {
+            btn = self.viewRecentlyScanned.firstScannedView;
+            label = self.viewRecentlyScanned.firstScannedTime;
+        } else if (idx == 1) {
+            btn = self.viewRecentlyScanned.secondScannedView;
+            label = self.viewRecentlyScanned.secondScannedTime;
+        } else if (idx == 2) {
+            btn = self.viewRecentlyScanned.thirdScannedView;
+            label = self.viewRecentlyScanned.thirdScannedTime;
+        }
+        [btn setBackgroundImage:nil forState:UIControlStateNormal];
+        [btn setImage:nil forState:UIControlStateNormal];
+        btn.backgroundColor = [UIColor clearColor];
+        [btn setImage:m.thumbnail forState:UIControlStateNormal];
+        label.text = @"dan's dick";// m.timeFormatted;
+    }];
+}
+
 #pragma mark - hide/show
 - (void)hideRecentlyScannedView {
     self.maskViewRecentlyScanned.hidden = YES;
@@ -317,6 +341,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)showRecentlyScannedView {
     self.maskViewRecentlyScanned.hidden = NO;
     self.viewRecentlyScanned.hidden = NO;
+    
+    [self populateRecentlyScannedView];
 }
 - (void)hideCameraOverlay {
     [self.view layoutIfNeeded];
@@ -550,9 +576,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.croppedView removeFromSuperview];
     self.croppedView = nil;
     
-    //if (self.hasRotated) {
-        self.capturedImageView.layer.transform = self.transformCapturedImageView;
-    //}
+    self.capturedImageView.layer.transform = self.transformCapturedImageView;
     
     if (self.state == BOShareState) {
         [self showRecentlyScannedView];
@@ -782,6 +806,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSString*   docTitle            = self.infoEntryView.textFieldTitle.text;
     UIImage*    originalImage       = self.image;
     UIImage*    finalProcessedImage = self.finalProcessedImage;
+    if (!finalProcessedImage) {
+        finalProcessedImage = self.cropImage;
+    }
     NSString*   categoryName        = self.categoryName;
     
     //add it in cache first...

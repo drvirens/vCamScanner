@@ -65,4 +65,7 @@ static const NSInteger kCacheSize = 3;
     id ret = [self.queue dequeue];
     NSLog(@"evicting %@", ret);
 }
+- (NSArray<BORecentDocModel*>*)all {
+    return [self.queue all];
+}
 @end

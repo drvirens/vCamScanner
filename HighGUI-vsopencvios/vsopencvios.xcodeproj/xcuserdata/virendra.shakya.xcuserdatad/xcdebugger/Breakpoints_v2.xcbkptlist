@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BODocCache.m"
-            timestampString = "502612785.326562"
+            filePath = "vsopencvios/BOCameraCaptureViewController.mm"
+            timestampString = "502614757.063577"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "-addModel:"
+            startingLineNumber = "328"
+            endingLineNumber = "328"
+            landmarkName = "-populateRecentlyScannedView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
