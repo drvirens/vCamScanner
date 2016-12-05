@@ -113,5 +113,10 @@ void UIImageToMat(const UIImage* image,
     CGContextDrawImage(contextRef, CGRectMake(0, 0, cols, rows),
                        image.CGImage);
     CGContextRelease(contextRef);
+    
+    // XXX - analyze gave the below error
+    /*
+     /Users/virendra.shakya/tizen-viren/github/testFlight/vCamScanner/BasicUI2/src/modules/highgui/src/ios_conversions.mm:116:5: Incorrect decrement of the reference count of an object that is not owned at this point by the caller
+     */
     CGColorSpaceRelease(colorSpace);
 }

@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		111973761DDFDF710042C520 /* libjpeg.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 111973581DDFDF350042C520 /* libjpeg.a */; };
 		111D56B51DF2590700534EF3 /* app_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56B31DF2590700534EF3 /* app_server.cpp */; };
 		111D56C81DF2805500534EF3 /* mdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56BC1DF2805400534EF3 /* mdb.c */; };
 		111D56CD1DF2805500534EF3 /* midl.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56C11DF2805500534EF3 /* midl.c */; };
@@ -60,6 +59,66 @@
 		11303C0A1DEECEFF00371BD5 /* VSBranding.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303C091DEECEFF00371BD5 /* VSBranding.m */; };
 		11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11303C0C1DEECF6F00371BD5 /* VSTextFieldView.m */; };
 		11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11303C0D1DEECF6F00371BD5 /* VSTextFieldView.xib */; };
+		115294621DF52082009EF4F9 /* cdjpeg.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152941B1DF52082009EF4F9 /* cdjpeg.c */; };
+		115294631DF52082009EF4F9 /* jaricom.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152941D1DF52082009EF4F9 /* jaricom.c */; };
+		115294641DF52082009EF4F9 /* jcapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152941E1DF52082009EF4F9 /* jcapimin.c */; };
+		115294651DF52082009EF4F9 /* jcapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152941F1DF52082009EF4F9 /* jcapistd.c */; };
+		115294661DF52082009EF4F9 /* jcarith.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294201DF52082009EF4F9 /* jcarith.c */; };
+		115294671DF52082009EF4F9 /* jccoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294211DF52082009EF4F9 /* jccoefct.c */; };
+		115294681DF52082009EF4F9 /* jccolor.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294221DF52082009EF4F9 /* jccolor.c */; };
+		115294691DF52082009EF4F9 /* jcdctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294231DF52082009EF4F9 /* jcdctmgr.c */; };
+		1152946A1DF52082009EF4F9 /* jchuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294241DF52082009EF4F9 /* jchuff.c */; };
+		1152946B1DF52082009EF4F9 /* jcinit.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294251DF52082009EF4F9 /* jcinit.c */; };
+		1152946C1DF52082009EF4F9 /* jcmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294261DF52082009EF4F9 /* jcmainct.c */; };
+		1152946D1DF52082009EF4F9 /* jcmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294271DF52082009EF4F9 /* jcmarker.c */; };
+		1152946E1DF52082009EF4F9 /* jcmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294281DF52082009EF4F9 /* jcmaster.c */; };
+		1152946F1DF52082009EF4F9 /* jcomapi.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294291DF52082009EF4F9 /* jcomapi.c */; };
+		115294701DF52082009EF4F9 /* jcparam.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152942B1DF52082009EF4F9 /* jcparam.c */; };
+		115294711DF52082009EF4F9 /* jcprepct.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152942C1DF52082009EF4F9 /* jcprepct.c */; };
+		115294721DF52082009EF4F9 /* jcsample.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152942D1DF52082009EF4F9 /* jcsample.c */; };
+		115294731DF52082009EF4F9 /* jctrans.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152942E1DF52082009EF4F9 /* jctrans.c */; };
+		115294741DF52082009EF4F9 /* jdapimin.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152942F1DF52082009EF4F9 /* jdapimin.c */; };
+		115294751DF52082009EF4F9 /* jdapistd.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294301DF52082009EF4F9 /* jdapistd.c */; };
+		115294761DF52082009EF4F9 /* jdarith.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294311DF52082009EF4F9 /* jdarith.c */; };
+		115294771DF52082009EF4F9 /* jdatadst.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294321DF52082009EF4F9 /* jdatadst.c */; };
+		115294781DF52082009EF4F9 /* jdatasrc.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294331DF52082009EF4F9 /* jdatasrc.c */; };
+		115294791DF52082009EF4F9 /* jdcoefct.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294341DF52082009EF4F9 /* jdcoefct.c */; };
+		1152947A1DF52082009EF4F9 /* jdcolor.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294351DF52082009EF4F9 /* jdcolor.c */; };
+		1152947B1DF52082009EF4F9 /* jddctmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294371DF52082009EF4F9 /* jddctmgr.c */; };
+		1152947C1DF52082009EF4F9 /* jdhuff.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294381DF52082009EF4F9 /* jdhuff.c */; };
+		1152947D1DF52082009EF4F9 /* jdinput.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294391DF52082009EF4F9 /* jdinput.c */; };
+		1152947E1DF52082009EF4F9 /* jdmainct.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152943A1DF52082009EF4F9 /* jdmainct.c */; };
+		1152947F1DF52082009EF4F9 /* jdmarker.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152943B1DF52082009EF4F9 /* jdmarker.c */; };
+		115294801DF52082009EF4F9 /* jdmaster.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152943C1DF52082009EF4F9 /* jdmaster.c */; };
+		115294811DF52082009EF4F9 /* jdmerge.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152943D1DF52082009EF4F9 /* jdmerge.c */; };
+		115294821DF52082009EF4F9 /* jdpostct.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152943E1DF52082009EF4F9 /* jdpostct.c */; };
+		115294831DF52082009EF4F9 /* jdsample.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152943F1DF52082009EF4F9 /* jdsample.c */; };
+		115294841DF52082009EF4F9 /* jdtrans.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294401DF52082009EF4F9 /* jdtrans.c */; };
+		115294851DF52082009EF4F9 /* jerror.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294411DF52082009EF4F9 /* jerror.c */; };
+		115294861DF52082009EF4F9 /* jfdctflt.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294431DF52082009EF4F9 /* jfdctflt.c */; };
+		115294871DF52082009EF4F9 /* jfdctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294441DF52082009EF4F9 /* jfdctfst.c */; };
+		115294881DF52082009EF4F9 /* jfdctint.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294451DF52082009EF4F9 /* jfdctint.c */; };
+		115294891DF52082009EF4F9 /* jidctflt.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294461DF52082009EF4F9 /* jidctflt.c */; };
+		1152948A1DF52082009EF4F9 /* jidctfst.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294471DF52082009EF4F9 /* jidctfst.c */; };
+		1152948B1DF52082009EF4F9 /* jidctint.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294481DF52082009EF4F9 /* jidctint.c */; };
+		1152948C1DF52082009EF4F9 /* jmemmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152944A1DF52082009EF4F9 /* jmemmgr.c */; };
+		1152948D1DF52082009EF4F9 /* jmemname.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152944B1DF52082009EF4F9 /* jmemname.c */; };
+		1152948E1DF52082009EF4F9 /* jquant1.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294501DF52082009EF4F9 /* jquant1.c */; };
+		1152948F1DF52082009EF4F9 /* jquant2.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294511DF52082009EF4F9 /* jquant2.c */; };
+		115294901DF52082009EF4F9 /* jutils.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294521DF52082009EF4F9 /* jutils.c */; };
+		115294911DF52082009EF4F9 /* rdbmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294541DF52082009EF4F9 /* rdbmp.c */; };
+		115294921DF52082009EF4F9 /* rdcolmap.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294551DF52082009EF4F9 /* rdcolmap.c */; };
+		115294931DF52082009EF4F9 /* rdgif.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294561DF52082009EF4F9 /* rdgif.c */; };
+		115294941DF52082009EF4F9 /* rdppm.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294571DF52082009EF4F9 /* rdppm.c */; };
+		115294951DF52082009EF4F9 /* rdrle.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294581DF52082009EF4F9 /* rdrle.c */; };
+		115294961DF52082009EF4F9 /* rdswitch.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294591DF52082009EF4F9 /* rdswitch.c */; };
+		115294971DF52082009EF4F9 /* rdtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945A1DF52082009EF4F9 /* rdtarga.c */; };
+		115294981DF52082009EF4F9 /* transupp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945B1DF52082009EF4F9 /* transupp.c */; };
+		115294991DF52082009EF4F9 /* wrbmp.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945D1DF52082009EF4F9 /* wrbmp.c */; };
+		1152949A1DF52082009EF4F9 /* wrgif.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945E1DF52082009EF4F9 /* wrgif.c */; };
+		1152949B1DF52082009EF4F9 /* wrppm.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945F1DF52082009EF4F9 /* wrppm.c */; };
+		1152949C1DF52082009EF4F9 /* wrrle.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294601DF52082009EF4F9 /* wrrle.c */; };
+		1152949D1DF52082009EF4F9 /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294611DF52082009EF4F9 /* wrtarga.c */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -68,7 +127,6 @@
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
-		11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */; };
 		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */; };
 		11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */; };
 		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
@@ -310,17 +368,9 @@
 		B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE081DEABAF400E54A51 /* BOCameraController.mm */; };
 		B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */; };
 		B621FE101DEABBE100E54A51 /* BOPhotoController.m in Sources */ = {isa = PBXBuildFile; fileRef = B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */; };
-		B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */; };
-		B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */; };
-		B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		111973381DDFDF350042C520 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
-		111973391DDFDF350042C520 /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
-		1119733A1DDFDF350042C520 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
-		1119733B1DDFDF350042C520 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
-		111973581DDFDF350042C520 /* libjpeg.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libjpeg.a; sourceTree = "<group>"; };
 		111D56B31DF2590700534EF3 /* app_server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app_server.cpp; sourceTree = "<group>"; };
 		111D56B41DF2590700534EF3 /* app_server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app_server.hpp; sourceTree = "<group>"; };
 		111D56BB1DF2805400534EF3 /* lmdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmdb.h; sourceTree = "<group>"; };
@@ -419,6 +469,78 @@
 		11303C0B1DEECF6F00371BD5 /* VSTextFieldView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VSTextFieldView.h; sourceTree = "<group>"; };
 		11303C0C1DEECF6F00371BD5 /* VSTextFieldView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VSTextFieldView.m; sourceTree = "<group>"; };
 		11303C0D1DEECF6F00371BD5 /* VSTextFieldView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VSTextFieldView.xib; sourceTree = "<group>"; };
+		1152941A1DF52082009EF4F9 /* cderror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cderror.h; sourceTree = "<group>"; };
+		1152941B1DF52082009EF4F9 /* cdjpeg.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = cdjpeg.c; sourceTree = "<group>"; };
+		1152941C1DF52082009EF4F9 /* cdjpeg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = cdjpeg.h; sourceTree = "<group>"; };
+		1152941D1DF52082009EF4F9 /* jaricom.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jaricom.c; sourceTree = "<group>"; };
+		1152941E1DF52082009EF4F9 /* jcapimin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcapimin.c; sourceTree = "<group>"; };
+		1152941F1DF52082009EF4F9 /* jcapistd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcapistd.c; sourceTree = "<group>"; };
+		115294201DF52082009EF4F9 /* jcarith.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcarith.c; sourceTree = "<group>"; };
+		115294211DF52082009EF4F9 /* jccoefct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jccoefct.c; sourceTree = "<group>"; };
+		115294221DF52082009EF4F9 /* jccolor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jccolor.c; sourceTree = "<group>"; };
+		115294231DF52082009EF4F9 /* jcdctmgr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcdctmgr.c; sourceTree = "<group>"; };
+		115294241DF52082009EF4F9 /* jchuff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jchuff.c; sourceTree = "<group>"; };
+		115294251DF52082009EF4F9 /* jcinit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcinit.c; sourceTree = "<group>"; };
+		115294261DF52082009EF4F9 /* jcmainct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcmainct.c; sourceTree = "<group>"; };
+		115294271DF52082009EF4F9 /* jcmarker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcmarker.c; sourceTree = "<group>"; };
+		115294281DF52082009EF4F9 /* jcmaster.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcmaster.c; sourceTree = "<group>"; };
+		115294291DF52082009EF4F9 /* jcomapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcomapi.c; sourceTree = "<group>"; };
+		1152942A1DF52082009EF4F9 /* jconfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jconfig.h; sourceTree = "<group>"; };
+		1152942B1DF52082009EF4F9 /* jcparam.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcparam.c; sourceTree = "<group>"; };
+		1152942C1DF52082009EF4F9 /* jcprepct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcprepct.c; sourceTree = "<group>"; };
+		1152942D1DF52082009EF4F9 /* jcsample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jcsample.c; sourceTree = "<group>"; };
+		1152942E1DF52082009EF4F9 /* jctrans.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jctrans.c; sourceTree = "<group>"; };
+		1152942F1DF52082009EF4F9 /* jdapimin.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdapimin.c; sourceTree = "<group>"; };
+		115294301DF52082009EF4F9 /* jdapistd.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdapistd.c; sourceTree = "<group>"; };
+		115294311DF52082009EF4F9 /* jdarith.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdarith.c; sourceTree = "<group>"; };
+		115294321DF52082009EF4F9 /* jdatadst.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdatadst.c; sourceTree = "<group>"; };
+		115294331DF52082009EF4F9 /* jdatasrc.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdatasrc.c; sourceTree = "<group>"; };
+		115294341DF52082009EF4F9 /* jdcoefct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdcoefct.c; sourceTree = "<group>"; };
+		115294351DF52082009EF4F9 /* jdcolor.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdcolor.c; sourceTree = "<group>"; };
+		115294361DF52082009EF4F9 /* jdct.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jdct.h; sourceTree = "<group>"; };
+		115294371DF52082009EF4F9 /* jddctmgr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jddctmgr.c; sourceTree = "<group>"; };
+		115294381DF52082009EF4F9 /* jdhuff.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdhuff.c; sourceTree = "<group>"; };
+		115294391DF52082009EF4F9 /* jdinput.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdinput.c; sourceTree = "<group>"; };
+		1152943A1DF52082009EF4F9 /* jdmainct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdmainct.c; sourceTree = "<group>"; };
+		1152943B1DF52082009EF4F9 /* jdmarker.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdmarker.c; sourceTree = "<group>"; };
+		1152943C1DF52082009EF4F9 /* jdmaster.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdmaster.c; sourceTree = "<group>"; };
+		1152943D1DF52082009EF4F9 /* jdmerge.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdmerge.c; sourceTree = "<group>"; };
+		1152943E1DF52082009EF4F9 /* jdpostct.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdpostct.c; sourceTree = "<group>"; };
+		1152943F1DF52082009EF4F9 /* jdsample.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdsample.c; sourceTree = "<group>"; };
+		115294401DF52082009EF4F9 /* jdtrans.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jdtrans.c; sourceTree = "<group>"; };
+		115294411DF52082009EF4F9 /* jerror.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jerror.c; sourceTree = "<group>"; };
+		115294421DF52082009EF4F9 /* jerror.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jerror.h; sourceTree = "<group>"; };
+		115294431DF52082009EF4F9 /* jfdctflt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jfdctflt.c; sourceTree = "<group>"; };
+		115294441DF52082009EF4F9 /* jfdctfst.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jfdctfst.c; sourceTree = "<group>"; };
+		115294451DF52082009EF4F9 /* jfdctint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jfdctint.c; sourceTree = "<group>"; };
+		115294461DF52082009EF4F9 /* jidctflt.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jidctflt.c; sourceTree = "<group>"; };
+		115294471DF52082009EF4F9 /* jidctfst.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jidctfst.c; sourceTree = "<group>"; };
+		115294481DF52082009EF4F9 /* jidctint.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jidctint.c; sourceTree = "<group>"; };
+		115294491DF52082009EF4F9 /* jinclude.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jinclude.h; sourceTree = "<group>"; };
+		1152944A1DF52082009EF4F9 /* jmemmgr.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jmemmgr.c; sourceTree = "<group>"; };
+		1152944B1DF52082009EF4F9 /* jmemname.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jmemname.c; sourceTree = "<group>"; };
+		1152944C1DF52082009EF4F9 /* jmemsys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmemsys.h; sourceTree = "<group>"; };
+		1152944D1DF52082009EF4F9 /* jmorecfg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jmorecfg.h; sourceTree = "<group>"; };
+		1152944E1DF52082009EF4F9 /* jpegint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpegint.h; sourceTree = "<group>"; };
+		1152944F1DF52082009EF4F9 /* jpeglib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jpeglib.h; sourceTree = "<group>"; };
+		115294501DF52082009EF4F9 /* jquant1.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jquant1.c; sourceTree = "<group>"; };
+		115294511DF52082009EF4F9 /* jquant2.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jquant2.c; sourceTree = "<group>"; };
+		115294521DF52082009EF4F9 /* jutils.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = jutils.c; sourceTree = "<group>"; };
+		115294531DF52082009EF4F9 /* jversion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jversion.h; sourceTree = "<group>"; };
+		115294541DF52082009EF4F9 /* rdbmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdbmp.c; sourceTree = "<group>"; };
+		115294551DF52082009EF4F9 /* rdcolmap.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdcolmap.c; sourceTree = "<group>"; };
+		115294561DF52082009EF4F9 /* rdgif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdgif.c; sourceTree = "<group>"; };
+		115294571DF52082009EF4F9 /* rdppm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdppm.c; sourceTree = "<group>"; };
+		115294581DF52082009EF4F9 /* rdrle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdrle.c; sourceTree = "<group>"; };
+		115294591DF52082009EF4F9 /* rdswitch.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdswitch.c; sourceTree = "<group>"; };
+		1152945A1DF52082009EF4F9 /* rdtarga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rdtarga.c; sourceTree = "<group>"; };
+		1152945B1DF52082009EF4F9 /* transupp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = transupp.c; sourceTree = "<group>"; };
+		1152945C1DF52082009EF4F9 /* transupp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = transupp.h; sourceTree = "<group>"; };
+		1152945D1DF52082009EF4F9 /* wrbmp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrbmp.c; sourceTree = "<group>"; };
+		1152945E1DF52082009EF4F9 /* wrgif.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrgif.c; sourceTree = "<group>"; };
+		1152945F1DF52082009EF4F9 /* wrppm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrppm.c; sourceTree = "<group>"; };
+		115294601DF52082009EF4F9 /* wrrle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrrle.c; sourceTree = "<group>"; };
+		115294611DF52082009EF4F9 /* wrtarga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrtarga.c; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -444,8 +566,6 @@
 		11B75D9F1DDFD0E1004EAB65 /* ml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		11B75DA11DDFD0E1004EAB65 /* opencv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv.hpp; sourceTree = "<group>"; };
 		11B75DA21DDFD0E1004EAB65 /* opencv_modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv_modules.hpp; sourceTree = "<group>"; };
-		11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scannerLite.cpp; sourceTree = "<group>"; };
-		11B75DA41DDFD0E1004EAB65 /* scannerLite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = scannerLite.h; sourceTree = "<group>"; };
 		11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentsListViewController.h; sourceTree = "<group>"; };
 		11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BODocumentsListViewController.mm; sourceTree = "<group>"; };
 		11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BODocumentView.xib; sourceTree = "<group>"; };
@@ -851,12 +971,6 @@
 		B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOLocationController.m; sourceTree = "<group>"; };
 		B621FE0E1DEABBE100E54A51 /* BOPhotoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOPhotoController.h; sourceTree = "<group>"; };
 		B621FE0F1DEABBE100E54A51 /* BOPhotoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOPhotoController.m; sourceTree = "<group>"; };
-		B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = BOFileUtil.cpp; path = ../../BasicUI2/src/BOFileUtil.cpp; sourceTree = "<group>"; };
-		B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BOFileUtil_iOS.hpp; sourceTree = "<group>"; };
-		B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFileUtil_iOS.mm; sourceTree = "<group>"; };
-		B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BOFileUtil.h; path = ../../BasicUI2/inc/BOFileUtil.h; sourceTree = "<group>"; };
-		B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = file_utils_wrapper.h; path = ../../BasicUI2/inc/file_utils_wrapper.h; sourceTree = "<group>"; };
-		B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = file_utils_wrapper.cpp; path = ../../BasicUI2/src/file_utils_wrapper.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -867,57 +981,12 @@
 				117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */,
 				117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */,
 				117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */,
-				111973761DDFDF710042C520 /* libjpeg.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1119732F1DDFDF350042C520 /* jpeg */ = {
-			isa = PBXGroup;
-			children = (
-				111973311DDFDF350042C520 /* include */,
-				1119734C1DDFDF350042C520 /* prebuilt */,
-			);
-			path = jpeg;
-			sourceTree = "<group>";
-		};
-		111973311DDFDF350042C520 /* include */ = {
-			isa = PBXGroup;
-			children = (
-				111973371DDFDF350042C520 /* ios */,
-			);
-			path = include;
-			sourceTree = "<group>";
-		};
-		111973371DDFDF350042C520 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				111973381DDFDF350042C520 /* jconfig.h */,
-				111973391DDFDF350042C520 /* jerror.h */,
-				1119733A1DDFDF350042C520 /* jmorecfg.h */,
-				1119733B1DDFDF350042C520 /* jpeglib.h */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
-		1119734C1DDFDF350042C520 /* prebuilt */ = {
-			isa = PBXGroup;
-			children = (
-				111973571DDFDF350042C520 /* ios */,
-			);
-			path = prebuilt;
-			sourceTree = "<group>";
-		};
-		111973571DDFDF350042C520 /* ios */ = {
-			isa = PBXGroup;
-			children = (
-				111973581DDFDF350042C520 /* libjpeg.a */,
-			);
-			path = ios;
-			sourceTree = "<group>";
-		};
 		111D56B21DF2590700534EF3 /* boot */ = {
 			isa = PBXGroup;
 			children = (
@@ -957,8 +1026,10 @@
 		111D56E61DF3C83B00534EF3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				B621FE181DEAD3FF00E54A51 /* BOFileUtil_iOS.hpp */,
-				B621FE1A1DEAD42000E54A51 /* BOFileUtil_iOS.mm */,
+				111D56E01DF2C24800534EF3 /* BOFacade.h */,
+				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
+				111D56EE1DF3DF4100534EF3 /* BODetectEdges.h */,
+				111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */,
 				11303C081DEECEFF00371BD5 /* VSBranding.h */,
 				11303C091DEECEFF00371BD5 /* VSBranding.m */,
 				11303BB01DED3B3800371BD5 /* BOConstants.h */,
@@ -1027,12 +1098,6 @@
 		111D56E91DF3C85C00534EF3 /* shared */ = {
 			isa = PBXGroup;
 			children = (
-				11B75DA31DDFD0E1004EAB65 /* scannerLite.cpp */,
-				11B75DA41DDFD0E1004EAB65 /* scannerLite.h */,
-				B621FE211DEBC8EB00E54A51 /* file_utils_wrapper.cpp */,
-				B621FE201DEBC8D500E54A51 /* file_utils_wrapper.h */,
-				B621FE1C1DEAE6B800E54A51 /* BOFileUtil.h */,
-				B621FE151DEAD20F00E54A51 /* BOFileUtil.cpp */,
 				111D56B21DF2590700534EF3 /* boot */,
 				11F25A421DF22416003CB8EE /* utils */,
 				11F25A351DF223E4003CB8EE /* 3p */,
@@ -1049,10 +1114,10 @@
 		111D56EA1DF3CA3C00534EF3 /* cv */ = {
 			isa = PBXGroup;
 			children = (
+				115294191DF52082009EF4F9 /* libjpeg */,
 				11303BA91DED0D8900371BD5 /* UIImageViewCategories */,
 				11303B9F1DED0BB800371BD5 /* imageprocessing */,
 				B621FB961DEAA29D00E54A51 /* modules */,
-				1119732F1DDFDF350042C520 /* jpeg */,
 				11B75AE61DDFD0E1004EAB65 /* cvconfig.h */,
 				11B75D941DDFD0E1004EAB65 /* opencv */,
 				11B75DA01DDFD0E1004EAB65 /* opencv2 */,
@@ -1155,6 +1220,85 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		115294191DF52082009EF4F9 /* libjpeg */ = {
+			isa = PBXGroup;
+			children = (
+				1152941A1DF52082009EF4F9 /* cderror.h */,
+				1152941B1DF52082009EF4F9 /* cdjpeg.c */,
+				1152941C1DF52082009EF4F9 /* cdjpeg.h */,
+				1152941D1DF52082009EF4F9 /* jaricom.c */,
+				1152941E1DF52082009EF4F9 /* jcapimin.c */,
+				1152941F1DF52082009EF4F9 /* jcapistd.c */,
+				115294201DF52082009EF4F9 /* jcarith.c */,
+				115294211DF52082009EF4F9 /* jccoefct.c */,
+				115294221DF52082009EF4F9 /* jccolor.c */,
+				115294231DF52082009EF4F9 /* jcdctmgr.c */,
+				115294241DF52082009EF4F9 /* jchuff.c */,
+				115294251DF52082009EF4F9 /* jcinit.c */,
+				115294261DF52082009EF4F9 /* jcmainct.c */,
+				115294271DF52082009EF4F9 /* jcmarker.c */,
+				115294281DF52082009EF4F9 /* jcmaster.c */,
+				115294291DF52082009EF4F9 /* jcomapi.c */,
+				1152942A1DF52082009EF4F9 /* jconfig.h */,
+				1152942B1DF52082009EF4F9 /* jcparam.c */,
+				1152942C1DF52082009EF4F9 /* jcprepct.c */,
+				1152942D1DF52082009EF4F9 /* jcsample.c */,
+				1152942E1DF52082009EF4F9 /* jctrans.c */,
+				1152942F1DF52082009EF4F9 /* jdapimin.c */,
+				115294301DF52082009EF4F9 /* jdapistd.c */,
+				115294311DF52082009EF4F9 /* jdarith.c */,
+				115294321DF52082009EF4F9 /* jdatadst.c */,
+				115294331DF52082009EF4F9 /* jdatasrc.c */,
+				115294341DF52082009EF4F9 /* jdcoefct.c */,
+				115294351DF52082009EF4F9 /* jdcolor.c */,
+				115294361DF52082009EF4F9 /* jdct.h */,
+				115294371DF52082009EF4F9 /* jddctmgr.c */,
+				115294381DF52082009EF4F9 /* jdhuff.c */,
+				115294391DF52082009EF4F9 /* jdinput.c */,
+				1152943A1DF52082009EF4F9 /* jdmainct.c */,
+				1152943B1DF52082009EF4F9 /* jdmarker.c */,
+				1152943C1DF52082009EF4F9 /* jdmaster.c */,
+				1152943D1DF52082009EF4F9 /* jdmerge.c */,
+				1152943E1DF52082009EF4F9 /* jdpostct.c */,
+				1152943F1DF52082009EF4F9 /* jdsample.c */,
+				115294401DF52082009EF4F9 /* jdtrans.c */,
+				115294411DF52082009EF4F9 /* jerror.c */,
+				115294421DF52082009EF4F9 /* jerror.h */,
+				115294431DF52082009EF4F9 /* jfdctflt.c */,
+				115294441DF52082009EF4F9 /* jfdctfst.c */,
+				115294451DF52082009EF4F9 /* jfdctint.c */,
+				115294461DF52082009EF4F9 /* jidctflt.c */,
+				115294471DF52082009EF4F9 /* jidctfst.c */,
+				115294481DF52082009EF4F9 /* jidctint.c */,
+				115294491DF52082009EF4F9 /* jinclude.h */,
+				1152944A1DF52082009EF4F9 /* jmemmgr.c */,
+				1152944B1DF52082009EF4F9 /* jmemname.c */,
+				1152944C1DF52082009EF4F9 /* jmemsys.h */,
+				1152944D1DF52082009EF4F9 /* jmorecfg.h */,
+				1152944E1DF52082009EF4F9 /* jpegint.h */,
+				1152944F1DF52082009EF4F9 /* jpeglib.h */,
+				115294501DF52082009EF4F9 /* jquant1.c */,
+				115294511DF52082009EF4F9 /* jquant2.c */,
+				115294521DF52082009EF4F9 /* jutils.c */,
+				115294531DF52082009EF4F9 /* jversion.h */,
+				115294541DF52082009EF4F9 /* rdbmp.c */,
+				115294551DF52082009EF4F9 /* rdcolmap.c */,
+				115294561DF52082009EF4F9 /* rdgif.c */,
+				115294571DF52082009EF4F9 /* rdppm.c */,
+				115294581DF52082009EF4F9 /* rdrle.c */,
+				115294591DF52082009EF4F9 /* rdswitch.c */,
+				1152945A1DF52082009EF4F9 /* rdtarga.c */,
+				1152945B1DF52082009EF4F9 /* transupp.c */,
+				1152945C1DF52082009EF4F9 /* transupp.h */,
+				1152945D1DF52082009EF4F9 /* wrbmp.c */,
+				1152945E1DF52082009EF4F9 /* wrgif.c */,
+				1152945F1DF52082009EF4F9 /* wrppm.c */,
+				115294601DF52082009EF4F9 /* wrrle.c */,
+				115294611DF52082009EF4F9 /* wrtarga.c */,
+			);
+			path = libjpeg;
+			sourceTree = "<group>";
+		};
 		117F1D0A1DE02939007233B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1191,15 +1335,11 @@
 				111D56E81DF3C85300534EF3 /* controller */,
 				111D56E71DF3C84B00534EF3 /* view */,
 				111D56E61DF3C83B00534EF3 /* model */,
-				111D56E01DF2C24800534EF3 /* BOFacade.h */,
-				111D56E11DF2C24800534EF3 /* BOFacade.mm */,
 				11B75AD21DDFD08D004EAB65 /* AppDelegate.h */,
 				11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */,
 				11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */,
 				11B75AE01DDFD08D004EAB65 /* Info.plist */,
 				11B75ACF1DDFD08D004EAB65 /* Supporting Files */,
-				111D56EE1DF3DF4100534EF3 /* BODetectEdges.h */,
-				111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */,
 			);
 			path = vsopencvios;
 			sourceTree = "<group>";
@@ -2236,7 +2376,7 @@
 				TargetAttributes = {
 					11B75ACB1DDFD08D004EAB65 = {
 						CreatedOnToolsVersion = 8.2;
-						DevelopmentTeam = F38H382JLK;
+						DevelopmentTeam = FJ585C7YHN;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -2288,12 +2428,12 @@
 				B621FDEB1DEAA29E00E54A51 /* fft.cpp in Sources */,
 				B621FDC81DEAA29E00E54A51 /* morph.cpp in Sources */,
 				B621FDA41DEAA29E00E54A51 /* grfmt_png.cpp in Sources */,
+				1152946A1DF52082009EF4F9 /* jchuff.c in Sources */,
 				B621FD9F1DEAA29E00E54A51 /* grfmt_base.cpp in Sources */,
 				B621FDC91DEAA29E00E54A51 /* phasecorr.cpp in Sources */,
 				B621FD751DEAA29D00E54A51 /* system.cpp in Sources */,
 				B621FD481DEAA29D00E54A51 /* featuretracker.cpp in Sources */,
 				B621FD791DEAA29D00E54A51 /* brief.cpp in Sources */,
-				B621FE161DEAD20F00E54A51 /* BOFileUtil.cpp in Sources */,
 				B621FD6C1DEAA29D00E54A51 /* matop.cpp in Sources */,
 				B621FD331DEAA29D00E54A51 /* fundam.cpp in Sources */,
 				B621FDE71DEAA29E00E54A51 /* cascadedetect.cpp in Sources */,
@@ -2301,10 +2441,12 @@
 				11F25A3F1DF223E4003CB8EE /* MurmurHash3.c in Sources */,
 				B621FDB21DEAA29E00E54A51 /* clahe.cpp in Sources */,
 				11303BFD1DEECEB100371BD5 /* VSVehicleAddFieldModel.m in Sources */,
+				1152946C1DF52082009EF4F9 /* jcmainct.c in Sources */,
 				B621FD401DEAA29D00E54A51 /* bowmsctrainer.cpp in Sources */,
 				B621FD681DEAA29D00E54A51 /* gpumat.cpp in Sources */,
 				11303BFB1DEECEB100371BD5 /* VSMoreModel.m in Sources */,
 				B621FDA01DEAA29E00E54A51 /* grfmt_bmp.cpp in Sources */,
+				1152947A1DF52082009EF4F9 /* jdcolor.c in Sources */,
 				B621FDAD1DEAA29E00E54A51 /* window_gtk.cpp in Sources */,
 				11F259FD1DF2223F003CB8EE /* circular_buffer.cpp in Sources */,
 				B621FD731DEAA29D00E54A51 /* rand.cpp in Sources */,
@@ -2312,9 +2454,12 @@
 				B621FDDF1DEAA29E00E54A51 /* inner_functions.cpp in Sources */,
 				11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */,
 				B621FE021DEAA29E00E54A51 /* simpleflow.cpp in Sources */,
+				115294751DF52082009EF4F9 /* jdapistd.c in Sources */,
 				B621FD541DEAA29D00E54A51 /* polyfit.cpp in Sources */,
+				115294981DF52082009EF4F9 /* transupp.c in Sources */,
 				111D56E51DF2C6EF00534EF3 /* UIViewController+BOUtils.m in Sources */,
 				B621FD741DEAA29D00E54A51 /* stat.cpp in Sources */,
+				115294991DF52082009EF4F9 /* wrbmp.c in Sources */,
 				B621FD701DEAA29D00E54A51 /* out.cpp in Sources */,
 				B621FDFE1DEAA29E00E54A51 /* kalman.cpp in Sources */,
 				B621FDCE1DEAA29E00E54A51 /* shapedescr.cpp in Sources */,
@@ -2322,10 +2467,13 @@
 				B621FDD01DEAA29E00E54A51 /* subdivision2d.cpp in Sources */,
 				B621FD8E1DEAA29D00E54A51 /* bitstrm.cpp in Sources */,
 				11303C021DEECEB100371BD5 /* VSPurposeCell.m in Sources */,
+				115294681DF52082009EF4F9 /* jccolor.c in Sources */,
+				115294721DF52082009EF4F9 /* jcsample.c in Sources */,
 				B621FD5A1DEAA29D00E54A51 /* spinimages.cpp in Sources */,
 				B621FD561DEAA29D00E54A51 /* retinacolor.cpp in Sources */,
 				111D56F01DF3DF4100534EF3 /* BODetectEdges.mm in Sources */,
 				B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */,
+				115294701DF52082009EF4F9 /* jcparam.c in Sources */,
 				B621FD871DEAA29D00E54A51 /* keypoint.cpp in Sources */,
 				B621FDF81DEAA29E00E54A51 /* denoising.cpp in Sources */,
 				B621FD7F1DEAA29D00E54A51 /* evaluation.cpp in Sources */,
@@ -2337,15 +2485,20 @@
 				B621FE011DEAA29E00E54A51 /* optflowgf.cpp in Sources */,
 				B621FDC11DEAA29E00E54A51 /* grabcut.cpp in Sources */,
 				B621FD951DEAA29E00E54A51 /* cap_dshow.cpp in Sources */,
+				115294811DF52082009EF4F9 /* jdmerge.c in Sources */,
 				11F259FE1DF2223F003CB8EE /* packer.cpp in Sources */,
 				B621FDA21DEAA29E00E54A51 /* grfmt_jpeg.cpp in Sources */,
 				B621FDB61DEAA29E00E54A51 /* corner.cpp in Sources */,
 				B621FD571DEAA29D00E54A51 /* retinafilter.cpp in Sources */,
+				115294761DF52082009EF4F9 /* jdarith.c in Sources */,
 				111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */,
 				111D56ED1DF3CC8100534EF3 /* vsImageProcessor.cpp in Sources */,
 				11303C0E1DEECF6F00371BD5 /* VSTextFieldView.m in Sources */,
+				1152948D1DF52082009EF4F9 /* jmemname.c in Sources */,
+				115294661DF52082009EF4F9 /* jcarith.c in Sources */,
 				B621FD351DEAA29D00E54A51 /* p3p.cpp in Sources */,
 				111D56C81DF2805500534EF3 /* mdb.c in Sources */,
+				115294821DF52082009EF4F9 /* jdpostct.c in Sources */,
 				B621FDE51DEAA29E00E54A51 /* testset.cpp in Sources */,
 				B621FDD91DEAA29E00E54A51 /* cnn.cpp in Sources */,
 				B621FDFB1DEAA29E00E54A51 /* bgfg_gaussmix2.cpp in Sources */,
@@ -2353,7 +2506,9 @@
 				11303C041DEECEB100371BD5 /* VSVehicleAddFieldCell.m in Sources */,
 				B621FDBA1DEAA29E00E54A51 /* emd.cpp in Sources */,
 				11303BA81DED0BB800371BD5 /* MTGeometry.c in Sources */,
+				115294731DF52082009EF4F9 /* jctrans.c in Sources */,
 				B621FDF61DEAA29E00E54A51 /* resizeimg.cpp in Sources */,
+				1152947B1DF52082009EF4F9 /* jddctmgr.c in Sources */,
 				B621FD441DEAA29D00E54A51 /* colortracker.cpp in Sources */,
 				B621FD5B1DEAA29D00E54A51 /* stereovar.cpp in Sources */,
 				B621FDF01DEAA29E00E54A51 /* linemod.cpp in Sources */,
@@ -2362,20 +2517,26 @@
 				B621FD9E1DEAA29E00E54A51 /* cap_v4l.cpp in Sources */,
 				B621FD881DEAA29D00E54A51 /* matchers.cpp in Sources */,
 				B621FDD71DEAA29E00E54A51 /* ann_mlp.cpp in Sources */,
+				115294891DF52082009EF4F9 /* jidctflt.c in Sources */,
 				11F25A331DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.cpp in Sources */,
 				B621FD501DEAA29D00E54A51 /* magnoretinafilter.cpp in Sources */,
 				B621FDDC1DEAA29E00E54A51 /* ertrees.cpp in Sources */,
+				1152947E1DF52082009EF4F9 /* jdmainct.c in Sources */,
 				B621FD8C1DEAA29D00E54A51 /* flann.cpp in Sources */,
 				B621FD6F1DEAA29D00E54A51 /* opengl_interop_deprecated.cpp in Sources */,
+				115294691DF52082009EF4F9 /* jcdctmgr.c in Sources */,
+				115294671DF52082009EF4F9 /* jccoefct.c in Sources */,
+				1152946B1DF52082009EF4F9 /* jcinit.c in Sources */,
+				115294881DF52082009EF4F9 /* jfdctint.c in Sources */,
 				111D56CD1DF2805500534EF3 /* midl.c in Sources */,
 				B621FD471DEAA29D00E54A51 /* facerec.cpp in Sources */,
 				B621FD921DEAA29E00E54A51 /* cap_cmu.cpp in Sources */,
-				B621FE221DEBC8EB00E54A51 /* file_utils_wrapper.cpp in Sources */,
 				B621FDE11DEAA29E00E54A51 /* ml_init.cpp in Sources */,
 				B621FDFD1DEAA29E00E54A51 /* camshift.cpp in Sources */,
 				B621FD3D1DEAA29D00E54A51 /* adaptiveskindetector.cpp in Sources */,
 				B621FDB11DEAA29E00E54A51 /* canny.cpp in Sources */,
 				B621FDDD1DEAA29E00E54A51 /* estimate.cpp in Sources */,
+				1152949D1DF52082009EF4F9 /* wrtarga.c in Sources */,
 				11303BCB1DEE6B4D00371BD5 /* BOCategoryModel.mm in Sources */,
 				11303C051DEECEB100371BD5 /* VSVehicleAddFieldSwitchCell.m in Sources */,
 				11303BAF1DED0D8900371BD5 /* UIImageView+ContentFrame.m in Sources */,
@@ -2383,21 +2544,29 @@
 				B621FDCC1DEAA29E00E54A51 /* samplers.cpp in Sources */,
 				B621FDBF1DEAA29E00E54A51 /* generalized_hough.cpp in Sources */,
 				11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.mm in Sources */,
+				1152949A1DF52082009EF4F9 /* wrgif.c in Sources */,
 				B621FD801DEAA29D00E54A51 /* fast.cpp in Sources */,
+				115294841DF52082009EF4F9 /* jdtrans.c in Sources */,
 				B621FD551DEAA29D00E54A51 /* retina.cpp in Sources */,
 				B621FD931DEAA29E00E54A51 /* cap_dc1394.cpp in Sources */,
 				B621FD781DEAA29D00E54A51 /* blobdetector.cpp in Sources */,
 				11303BFC1DEECEB100371BD5 /* VSPurposeModel.m in Sources */,
+				115294771DF52082009EF4F9 /* jdatadst.c in Sources */,
 				11303BA61DED0BB800371BD5 /* MMCropView.m in Sources */,
 				B621FD4F1DEAA29D00E54A51 /* logpolar_bsm.cpp in Sources */,
 				B621FDE31DEAA29E00E54A51 /* rtrees.cpp in Sources */,
+				115294951DF52082009EF4F9 /* rdrle.c in Sources */,
 				B621FD631DEAA29D00E54A51 /* datastructs.cpp in Sources */,
 				B621FD821DEAA29D00E54A51 /* features2d_init.cpp in Sources */,
+				115294621DF52082009EF4F9 /* cdjpeg.c in Sources */,
 				B621FDB81DEAA29E00E54A51 /* deriv.cpp in Sources */,
 				11F25A281DF222E9003CB8EE /* user.cpp in Sources */,
 				1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */,
 				B621FD961DEAA29E00E54A51 /* cap_ffmpeg.cpp in Sources */,
+				1152948A1DF52082009EF4F9 /* jidctfst.c in Sources */,
 				B621FD321DEAA29D00E54A51 /* epnp.cpp in Sources */,
+				1152946D1DF52082009EF4F9 /* jcmarker.c in Sources */,
+				115294791DF52082009EF4F9 /* jdcoefct.c in Sources */,
 				B621FD991DEAA29E00E54A51 /* cap_ios_photo_camera.mm in Sources */,
 				B621FD771DEAA29D00E54A51 /* bagofwords.cpp in Sources */,
 				B621FD371DEAA29D00E54A51 /* posit.cpp in Sources */,
@@ -2405,17 +2574,24 @@
 				B621FD591DEAA29D00E54A51 /* selfsimilarity.cpp in Sources */,
 				B621FD651DEAA29D00E54A51 /* dxt.cpp in Sources */,
 				B621FD661DEAA29D00E54A51 /* gl_core_3_1.cpp in Sources */,
+				1152948C1DF52082009EF4F9 /* jmemmgr.c in Sources */,
+				115294741DF52082009EF4F9 /* jdapimin.c in Sources */,
 				B621FDC61DEAA29E00E54A51 /* matchcontours.cpp in Sources */,
+				115294871DF52082009EF4F9 /* jfdctfst.c in Sources */,
 				B621FDAC1DEAA29E00E54A51 /* window_cocoa.mm in Sources */,
 				B621FE101DEABBE100E54A51 /* BOPhotoController.m in Sources */,
 				B621FDE61DEAA29E00E54A51 /* tree.cpp in Sources */,
+				115294921DF52082009EF4F9 /* rdcolmap.c in Sources */,
+				1152947F1DF52082009EF4F9 /* jdmarker.c in Sources */,
 				B621FDC71DEAA29E00E54A51 /* moments.cpp in Sources */,
 				B621FD361DEAA29D00E54A51 /* polynom_solver.cpp in Sources */,
 				B621FD761DEAA29D00E54A51 /* tables.cpp in Sources */,
+				115294961DF52082009EF4F9 /* rdswitch.c in Sources */,
 				11303BB21DED3B3800371BD5 /* BOConstants.mm in Sources */,
 				B621FD431DEAA29D00E54A51 /* colormap.cpp in Sources */,
 				B621FD9C1DEAA29E00E54A51 /* cap_openni.cpp in Sources */,
 				B621FD4B1DEAA29D00E54A51 /* hybridtracker.cpp in Sources */,
+				1152946F1DF52082009EF4F9 /* jcomapi.c in Sources */,
 				B621FDD31DEAA29E00E54A51 /* templmatch.cpp in Sources */,
 				B621FD461DEAA29D00E54A51 /* detection_based_tracker.cpp in Sources */,
 				B621FD911DEAA29E00E54A51 /* cap_avfoundation.mm in Sources */,
@@ -2424,6 +2600,7 @@
 				B621FD421DEAA29D00E54A51 /* chowliutree.cpp in Sources */,
 				B621FD611DEAA29D00E54A51 /* convert.cpp in Sources */,
 				B621FDAB1DEAA29E00E54A51 /* window.cpp in Sources */,
+				1152946E1DF52082009EF4F9 /* jcmaster.c in Sources */,
 				B621FDEF1DEAA29E00E54A51 /* latentsvmdetector.cpp in Sources */,
 				B621FDE41DEAA29E00E54A51 /* svm.cpp in Sources */,
 				B621FD971DEAA29E00E54A51 /* cap_images.cpp in Sources */,
@@ -2453,14 +2630,16 @@
 				B621FD411DEAA29D00E54A51 /* chamfermatching.cpp in Sources */,
 				B621FD4D1DEAA29D00E54A51 /* inputoutput.cpp in Sources */,
 				B621FDA51DEAA29E00E54A51 /* grfmt_pxm.cpp in Sources */,
-				B621FE1B1DEAD42000E54A51 /* BOFileUtil_iOS.mm in Sources */,
+				115294901DF52082009EF4F9 /* jutils.c in Sources */,
 				11303C011DEECEB100371BD5 /* VSPurposeAddFieldCell.m in Sources */,
 				B621FDA11DEAA29E00E54A51 /* grfmt_exr.cpp in Sources */,
 				B621FD691DEAA29D00E54A51 /* lapack.cpp in Sources */,
 				B621FD2F1DEAA29D00E54A51 /* calibration.cpp in Sources */,
 				B621FD831DEAA29D00E54A51 /* freak.cpp in Sources */,
+				1152948E1DF52082009EF4F9 /* jquant1.c in Sources */,
 				B621FD3F1DEAA29D00E54A51 /* basicretinafilter.cpp in Sources */,
 				B621FDC01DEAA29E00E54A51 /* geometry.cpp in Sources */,
+				115294861DF52082009EF4F9 /* jfdctflt.c in Sources */,
 				B621FDA31DEAA29E00E54A51 /* grfmt_jpeg2000.cpp in Sources */,
 				B621FDF11DEAA29E00E54A51 /* lsvmparser.cpp in Sources */,
 				B621FD9D1DEAA29E00E54A51 /* cap_pvapi.cpp in Sources */,
@@ -2472,6 +2651,7 @@
 				B621FDCF1DEAA29E00E54A51 /* smooth.cpp in Sources */,
 				11303C071DEECEB100371BD5 /* VSSettingsConstants.m in Sources */,
 				11303BF91DEECEB100371BD5 /* VSVehiclesViewController.m in Sources */,
+				115294631DF52082009EF4F9 /* jaricom.c in Sources */,
 				B621FDED1DEAA29E00E54A51 /* hog.cpp in Sources */,
 				B621FD8F1DEAA29E00E54A51 /* cap.cpp in Sources */,
 				B621FD601DEAA29D00E54A51 /* cmdparser.cpp in Sources */,
@@ -2493,37 +2673,44 @@
 				11C99CCA1DF1091A0034D6C5 /* BOGradientLayerController.m in Sources */,
 				1121FC2E1DEFF8D400085925 /* BORecentlyScannedView.m in Sources */,
 				11F25A2F1DF222E9003CB8EE /* db_table.cpp in Sources */,
+				115294911DF52082009EF4F9 /* rdbmp.c in Sources */,
+				115294941DF52082009EF4F9 /* rdppm.c in Sources */,
 				B621FDA81DEAA29E00E54A51 /* ios_conversions.mm in Sources */,
 				B621FDE81DEAA29E00E54A51 /* datamatrix.cpp in Sources */,
-				11B75F8C1DDFD0E2004EAB65 /* scannerLite.cpp in Sources */,
 				B621FDC21DEAA29E00E54A51 /* histogram.cpp in Sources */,
 				B621FDB91DEAA29E00E54A51 /* distransform.cpp in Sources */,
 				B621FD451DEAA29D00E54A51 /* contrib_init.cpp in Sources */,
 				B621FD981DEAA29E00E54A51 /* cap_ios_abstract_camera.mm in Sources */,
 				B621FD4A1DEAA29D00E54A51 /* gencolors.cpp in Sources */,
 				B621FDEE1DEAA29E00E54A51 /* latentsvm.cpp in Sources */,
+				115294641DF52082009EF4F9 /* jcapimin.c in Sources */,
 				11B75AD41DDFD08D004EAB65 /* AppDelegate.mm in Sources */,
 				B621FD7A1DEAA29D00E54A51 /* brisk.cpp in Sources */,
 				B621FDE21DEAA29E00E54A51 /* nbayes.cpp in Sources */,
 				B621FDA61DEAA29E00E54A51 /* grfmt_sunras.cpp in Sources */,
 				B621FDB71DEAA29E00E54A51 /* cornersubpix.cpp in Sources */,
 				11F25A2A1DF222E9003CB8EE /* db_key_value_reader.cpp in Sources */,
+				115294831DF52082009EF4F9 /* jdsample.c in Sources */,
 				B621FDD51DEAA29E00E54A51 /* undistort.cpp in Sources */,
 				B621FDF41DEAA29E00E54A51 /* normal_lut.i in Sources */,
+				115294651DF52082009EF4F9 /* jcapistd.c in Sources */,
 				B621FDC41DEAA29E00E54A51 /* imgwarp.cpp in Sources */,
 				B621FD641DEAA29D00E54A51 /* drawing.cpp in Sources */,
 				B621FDB41DEAA29E00E54A51 /* contours.cpp in Sources */,
 				11303C031DEECEB100371BD5 /* VSSettingsSwitchCell.m in Sources */,
 				B621FD6B1DEAA29D00E54A51 /* matmul.cpp in Sources */,
+				115294711DF52082009EF4F9 /* jcprepct.c in Sources */,
 				B621FD4E1DEAA29D00E54A51 /* lda.cpp in Sources */,
 				B621FD891DEAA29D00E54A51 /* mser.cpp in Sources */,
 				11303BFA1DEECEB100371BD5 /* VSAddVehicleDataSource.m in Sources */,
 				B621FDDE1DEAA29E00E54A51 /* gbt.cpp in Sources */,
+				1152947C1DF52082009EF4F9 /* jdhuff.c in Sources */,
 				11303BAE1DED0D8900371BD5 /* UIImage+fixOrientation.m in Sources */,
 				11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */,
 				B621FD531DEAA29D00E54A51 /* parvoretinafilter.cpp in Sources */,
 				111D56D81DF28F0700534EF3 /* auth_status.cpp in Sources */,
 				B621FD381DEAA29D00E54A51 /* quadsubpix.cpp in Sources */,
+				115294801DF52082009EF4F9 /* jdmaster.c in Sources */,
 				11F25A341DF222E9003CB8EE /* repository_impl.cpp in Sources */,
 				B621FDBE1DEAA29E00E54A51 /* gabor.cpp in Sources */,
 				B621FDFC1DEAA29E00E54A51 /* bgfg_gmg.cpp in Sources */,
@@ -2534,9 +2721,12 @@
 				11303BFE1DEECEB100371BD5 /* VSVehicleModel.m in Sources */,
 				B621FE001DEAA29E00E54A51 /* motempl.cpp in Sources */,
 				B621FD7B1DEAA29D00E54A51 /* descriptors.cpp in Sources */,
+				1152948F1DF52082009EF4F9 /* jquant2.c in Sources */,
 				B621FE0D1DEABB4B00E54A51 /* BOLocationController.m in Sources */,
+				115294781DF52082009EF4F9 /* jdatasrc.c in Sources */,
 				B621FD9A1DEAA29E00E54A51 /* cap_ios_video_camera.mm in Sources */,
 				B621FD301DEAA29D00E54A51 /* checkchessboard.cpp in Sources */,
+				1152947D1DF52082009EF4F9 /* jdinput.c in Sources */,
 				11F25A2D1DF222E9003CB8EE /* db_key_value_writer.cpp in Sources */,
 				B621FDAE1DEAA29E00E54A51 /* window_w32.cpp in Sources */,
 				111D56D21DF28EEA00534EF3 /* authenticator_impl.cpp in Sources */,
@@ -2546,8 +2736,10 @@
 				B621FDE91DEAA29E00E54A51 /* distancetransform.cpp in Sources */,
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
 				B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */,
+				1152948B1DF52082009EF4F9 /* jidctint.c in Sources */,
 				B621FDB01DEAA29E00E54A51 /* approx.cpp in Sources */,
 				B621FD521DEAA29D00E54A51 /* openfabmap.cpp in Sources */,
+				115294931DF52082009EF4F9 /* rdgif.c in Sources */,
 				11B75AD11DDFD08D004EAB65 /* main.m in Sources */,
 				B621FDAA1DEAA29E00E54A51 /* utils.cpp in Sources */,
 				B621FDEA1DEAA29E00E54A51 /* featurepyramid.cpp in Sources */,
@@ -2562,6 +2754,7 @@
 				B621FD511DEAA29D00E54A51 /* octree.cpp in Sources */,
 				11303BF61DEECEB100371BD5 /* VSAddVehicleViewController.m in Sources */,
 				11F25A291DF222E9003CB8EE /* db_data.cpp in Sources */,
+				1152949C1DF52082009EF4F9 /* wrrle.c in Sources */,
 				B621FDEC1DEAA29E00E54A51 /* haar.cpp in Sources */,
 				11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */,
 				B621FD3B1DEAA29D00E54A51 /* stereosgbm.cpp in Sources */,
@@ -2573,7 +2766,10 @@
 				B621FD7D1DEAA29D00E54A51 /* draw.cpp in Sources */,
 				111D56B51DF2590700534EF3 /* app_server.cpp in Sources */,
 				11F25A401DF223E4003CB8EE /* primary_key.cpp in Sources */,
+				115294971DF52082009EF4F9 /* rdtarga.c in Sources */,
 				B621FDD81DEAA29E00E54A51 /* boost.cpp in Sources */,
+				1152949B1DF52082009EF4F9 /* wrppm.c in Sources */,
+				115294851DF52082009EF4F9 /* jerror.c in Sources */,
 				11C99CC71DF0F3D10034D6C5 /* BODocumentModel.m in Sources */,
 				B621FDF91DEAA29E00E54A51 /* inpaint.cpp in Sources */,
 			);
@@ -2633,6 +2829,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_BITCODE = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2649,7 +2846,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = (
@@ -2685,6 +2882,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_BITCODE = NO;
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2695,7 +2893,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				OTHER_CFLAGS = (
 					"-Wno-shorten-64-to-32",
@@ -2712,8 +2910,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				DEVELOPMENT_TEAM = F38H382JLK;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = FJ585C7YHN;
+				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/vsopencvios/",
 					"$(SRCROOT)/vsopencvios/modules",
@@ -2729,25 +2927,18 @@
 					"$(SRCROOT)/vsopencvios/modules/objdetect/include",
 					"$(SRCROOT)/vsopencvios/modules/photo/include",
 					"$(SRCROOT)/vsopencvios/modules/video/include",
-					"$(SRCROOT)/vsopencvios/jpeg/include/ios",
 				);
 				INFOPLIST_FILE = vsopencvios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = (
 					"-Wno-shorten-64-to-32",
 					"-Wno-deprecated-register",
 					"-DDEBUG",
 				);
-				OTHER_LDFLAGS = (
-					"-ljpeg",
-					"-ObjC",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chartboost.vsopencvios;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tevsoftware.mobile.ios.vDocumentScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -2757,8 +2948,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = NO;
-				DEVELOPMENT_TEAM = F38H382JLK;
-				ENABLE_BITCODE = NO;
+				DEVELOPMENT_TEAM = FJ585C7YHN;
+				ENABLE_BITCODE = YES;
 				HEADER_SEARCH_PATHS = (
 					"$(SRCROOT)/vsopencvios/",
 					"$(SRCROOT)/vsopencvios/modules",
@@ -2774,25 +2965,18 @@
 					"$(SRCROOT)/vsopencvios/modules/objdetect/include",
 					"$(SRCROOT)/vsopencvios/modules/photo/include",
 					"$(SRCROOT)/vsopencvios/modules/video/include",
-					"$(SRCROOT)/vsopencvios/jpeg/include/ios",
 				);
 				INFOPLIST_FILE = vsopencvios/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/vsopencvios/jpeg/prebuilt/ios",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				OTHER_CFLAGS = (
 					"-Wno-shorten-64-to-32",
 					"-Wno-deprecated-register",
 					"-DDEBUG",
 				);
-				OTHER_LDFLAGS = (
-					"-ljpeg",
-					"-ObjC",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.chartboost.vsopencvios;
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = com.tevsoftware.mobile.ios.vDocumentScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;

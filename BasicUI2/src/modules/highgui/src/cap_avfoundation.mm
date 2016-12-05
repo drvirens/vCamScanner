@@ -638,7 +638,7 @@ bool CvCaptureCAM::setProperty(int property_id, double value) {
 @implementation CaptureDelegate
 
 - (id)init {
-    [super init];
+    self = [super init];
     newFrame = 0;
     imagedata = NULL;
     bgr_imagedata = NULL;

@@ -129,6 +129,15 @@
             }
         }];
         [self.mainQueue addOperation:updateGUIBlock];
+    } else {
+        typeof (self) __weak welf = self;
+        NSBlockOperation* releaseResourceBlock = [NSBlockOperation blockOperationWithBlock:^{
+            typeof (self) __strong strongSelf = welf;
+            if (strongSelf) {
+                [strongSelf operationReleaseResources];
+            }
+        }];
+        [self.operationQueue addOperation:releaseResourceBlock];
     }
 }
 
