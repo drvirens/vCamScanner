@@ -139,6 +139,19 @@
 		11C99CC41DF0EF450034D6C5 /* BODocumentTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */; };
 		11C99CC71DF0F3D10034D6C5 /* BODocumentModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */; };
 		11C99CCA1DF1091A0034D6C5 /* BOGradientLayerController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */; };
+		11E0D4031DF560860075AC0F /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E0D3E51DF560860075AC0F /* Info.plist */; };
+		11E0D4041DF560860075AC0F /* NYTPhotoCaptionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3E71DF560860075AC0F /* NYTPhotoCaptionView.m */; };
+		11E0D4051DF560860075AC0F /* NYTPhotoDismissalInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3E91DF560860075AC0F /* NYTPhotoDismissalInteractionController.m */; };
+		11E0D4061DF560860075AC0F /* NYTPhotosDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3EB1DF560860075AC0F /* NYTPhotosDataSource.m */; };
+		11E0D4071DF560860075AC0F /* NYTPhotosOverlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3ED1DF560860075AC0F /* NYTPhotosOverlayView.m */; };
+		11E0D4081DF560860075AC0F /* NYTPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3EF1DF560860075AC0F /* NYTPhotosViewController.m */; };
+		11E0D4091DF560860075AC0F /* NYTPhotoTransitionAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3F11DF560860075AC0F /* NYTPhotoTransitionAnimator.m */; };
+		11E0D40A1DF560860075AC0F /* NYTPhotoTransitionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3F31DF560860075AC0F /* NYTPhotoTransitionController.m */; };
+		11E0D40B1DF560860075AC0F /* NYTPhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3F51DF560860075AC0F /* NYTPhotoViewController.m */; };
+		11E0D40C1DF560860075AC0F /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E0D3F61DF560860075AC0F /* NYTPhotoViewer.bundle */; };
+		11E0D40D1DF560860075AC0F /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3FA1DF560860075AC0F /* NYTScalingImageView.m */; };
+		11E0D40E1DF560860075AC0F /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */; };
+		11E0D4121DF561370075AC0F /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */; };
 		11F259FD1DF2223F003CB8EE /* circular_buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F259F61DF2223F003CB8EE /* circular_buffer.cpp */; };
 		11F259FE1DF2223F003CB8EE /* packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F259F81DF2223F003CB8EE /* packer.cpp */; };
 		11F259FF1DF2223F003CB8EE /* unpacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F259FB1DF2223F003CB8EE /* unpacker.cpp */; };
@@ -594,6 +607,36 @@
 		11C99CC61DF0F3D10034D6C5 /* BODocumentModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocumentModel.m; sourceTree = "<group>"; };
 		11C99CC81DF1091A0034D6C5 /* BOGradientLayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOGradientLayerController.h; sourceTree = "<group>"; };
 		11C99CC91DF1091A0034D6C5 /* BOGradientLayerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOGradientLayerController.m; sourceTree = "<group>"; };
+		11E0D3E51DF560860075AC0F /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11E0D3E61DF560860075AC0F /* NYTPhotoCaptionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionView.h; sourceTree = "<group>"; };
+		11E0D3E71DF560860075AC0F /* NYTPhotoCaptionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoCaptionView.m; sourceTree = "<group>"; };
+		11E0D3E81DF560860075AC0F /* NYTPhotoDismissalInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoDismissalInteractionController.h; sourceTree = "<group>"; };
+		11E0D3E91DF560860075AC0F /* NYTPhotoDismissalInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoDismissalInteractionController.m; sourceTree = "<group>"; };
+		11E0D3EA1DF560860075AC0F /* NYTPhotosDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosDataSource.h; sourceTree = "<group>"; };
+		11E0D3EB1DF560860075AC0F /* NYTPhotosDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosDataSource.m; sourceTree = "<group>"; };
+		11E0D3EC1DF560860075AC0F /* NYTPhotosOverlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosOverlayView.h; sourceTree = "<group>"; };
+		11E0D3ED1DF560860075AC0F /* NYTPhotosOverlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosOverlayView.m; sourceTree = "<group>"; };
+		11E0D3EE1DF560860075AC0F /* NYTPhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewController.h; sourceTree = "<group>"; };
+		11E0D3EF1DF560860075AC0F /* NYTPhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotosViewController.m; sourceTree = "<group>"; };
+		11E0D3F01DF560860075AC0F /* NYTPhotoTransitionAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoTransitionAnimator.h; sourceTree = "<group>"; };
+		11E0D3F11DF560860075AC0F /* NYTPhotoTransitionAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionAnimator.m; sourceTree = "<group>"; };
+		11E0D3F21DF560860075AC0F /* NYTPhotoTransitionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoTransitionController.h; sourceTree = "<group>"; };
+		11E0D3F31DF560860075AC0F /* NYTPhotoTransitionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoTransitionController.m; sourceTree = "<group>"; };
+		11E0D3F41DF560860075AC0F /* NYTPhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewController.h; sourceTree = "<group>"; };
+		11E0D3F51DF560860075AC0F /* NYTPhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTPhotoViewController.m; sourceTree = "<group>"; };
+		11E0D3F61DF560860075AC0F /* NYTPhotoViewer.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = NYTPhotoViewer.bundle; sourceTree = "<group>"; };
+		11E0D3F71DF560860075AC0F /* NYTPhotoViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewer.h; sourceTree = "<group>"; };
+		11E0D3F81DF560860075AC0F /* NYTPhotoViewerCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoViewerCore.h; sourceTree = "<group>"; };
+		11E0D3F91DF560860075AC0F /* NYTScalingImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTScalingImageView.h; sourceTree = "<group>"; };
+		11E0D3FA1DF560860075AC0F /* NYTScalingImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTScalingImageView.m; sourceTree = "<group>"; };
+		11E0D3FC1DF560860075AC0F /* NYTPhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhoto.h; sourceTree = "<group>"; };
+		11E0D3FD1DF560860075AC0F /* NYTPhotoCaptionViewLayoutWidthHinting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoCaptionViewLayoutWidthHinting.h; sourceTree = "<group>"; };
+		11E0D3FE1DF560860075AC0F /* NYTPhotoContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotoContainer.h; sourceTree = "<group>"; };
+		11E0D3FF1DF560860075AC0F /* NYTPhotosViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewControllerDataSource.h; sourceTree = "<group>"; };
+		11E0D4011DF560860075AC0F /* NSBundle+NYTPhotoViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+NYTPhotoViewer.h"; sourceTree = "<group>"; };
+		11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+NYTPhotoViewer.m"; sourceTree = "<group>"; };
+		11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
+		11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
 		11F259F31DF22201003CB8EE /* trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trace.h; sourceTree = "<group>"; };
 		11F259F51DF2223F003CB8EE /* chat_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chat_types.h; sourceTree = "<group>"; };
 		11F259F61DF2223F003CB8EE /* circular_buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circular_buffer.cpp; sourceTree = "<group>"; };
@@ -1323,6 +1366,7 @@
 		115294A41DF55465009EF4F9 /* 3p */ = {
 			isa = PBXGroup;
 			children = (
+				11E0D3E41DF560860075AC0F /* NYTPhotoViewer */,
 				115294AB1DF554BC009EF4F9 /* DTError.h */,
 				115294AC1DF554BC009EF4F9 /* DTError.m */,
 				115294A81DF5549D009EF4F9 /* DTConstants.h */,
@@ -1363,6 +1407,7 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				11E0D40F1DF561370075AC0F /* test */,
 				115294DD1DF55A09009EF4F9 /* DateTools.bundle */,
 				115294A41DF55465009EF4F9 /* 3p */,
 				111D56EA1DF3CA3C00534EF3 /* cv */,
@@ -1413,6 +1458,66 @@
 				11B75DA21DDFD0E1004EAB65 /* opencv_modules.hpp */,
 			);
 			path = opencv2;
+			sourceTree = "<group>";
+		};
+		11E0D3E41DF560860075AC0F /* NYTPhotoViewer */ = {
+			isa = PBXGroup;
+			children = (
+				11E0D3E51DF560860075AC0F /* Info.plist */,
+				11E0D3E61DF560860075AC0F /* NYTPhotoCaptionView.h */,
+				11E0D3E71DF560860075AC0F /* NYTPhotoCaptionView.m */,
+				11E0D3E81DF560860075AC0F /* NYTPhotoDismissalInteractionController.h */,
+				11E0D3E91DF560860075AC0F /* NYTPhotoDismissalInteractionController.m */,
+				11E0D3EA1DF560860075AC0F /* NYTPhotosDataSource.h */,
+				11E0D3EB1DF560860075AC0F /* NYTPhotosDataSource.m */,
+				11E0D3EC1DF560860075AC0F /* NYTPhotosOverlayView.h */,
+				11E0D3ED1DF560860075AC0F /* NYTPhotosOverlayView.m */,
+				11E0D3EE1DF560860075AC0F /* NYTPhotosViewController.h */,
+				11E0D3EF1DF560860075AC0F /* NYTPhotosViewController.m */,
+				11E0D3F01DF560860075AC0F /* NYTPhotoTransitionAnimator.h */,
+				11E0D3F11DF560860075AC0F /* NYTPhotoTransitionAnimator.m */,
+				11E0D3F21DF560860075AC0F /* NYTPhotoTransitionController.h */,
+				11E0D3F31DF560860075AC0F /* NYTPhotoTransitionController.m */,
+				11E0D3F41DF560860075AC0F /* NYTPhotoViewController.h */,
+				11E0D3F51DF560860075AC0F /* NYTPhotoViewController.m */,
+				11E0D3F61DF560860075AC0F /* NYTPhotoViewer.bundle */,
+				11E0D3F71DF560860075AC0F /* NYTPhotoViewer.h */,
+				11E0D3F81DF560860075AC0F /* NYTPhotoViewerCore.h */,
+				11E0D3F91DF560860075AC0F /* NYTScalingImageView.h */,
+				11E0D3FA1DF560860075AC0F /* NYTScalingImageView.m */,
+				11E0D3FB1DF560860075AC0F /* Protocols */,
+				11E0D4001DF560860075AC0F /* Resource Loading */,
+			);
+			path = NYTPhotoViewer;
+			sourceTree = "<group>";
+		};
+		11E0D3FB1DF560860075AC0F /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				11E0D3FC1DF560860075AC0F /* NYTPhoto.h */,
+				11E0D3FD1DF560860075AC0F /* NYTPhotoCaptionViewLayoutWidthHinting.h */,
+				11E0D3FE1DF560860075AC0F /* NYTPhotoContainer.h */,
+				11E0D3FF1DF560860075AC0F /* NYTPhotosViewControllerDataSource.h */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		11E0D4001DF560860075AC0F /* Resource Loading */ = {
+			isa = PBXGroup;
+			children = (
+				11E0D4011DF560860075AC0F /* NSBundle+NYTPhotoViewer.h */,
+				11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */,
+			);
+			path = "Resource Loading";
+			sourceTree = "<group>";
+		};
+		11E0D40F1DF561370075AC0F /* test */ = {
+			isa = PBXGroup;
+			children = (
+				11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */,
+				11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */,
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 		11F259F21DF22201003CB8EE /* log */ = {
@@ -2489,7 +2594,9 @@
 				1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */,
 				11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */,
 				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
+				11E0D4031DF560860075AC0F /* Info.plist in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
+				11E0D40C1DF560860075AC0F /* NYTPhotoViewer.bundle in Resources */,
 				115294DE1DF55A09009EF4F9 /* DateTools.bundle in Resources */,
 				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
 			);
@@ -2516,6 +2623,7 @@
 				B621FD331DEAA29D00E54A51 /* fundam.cpp in Sources */,
 				B621FDE71DEAA29E00E54A51 /* cascadedetect.cpp in Sources */,
 				11303C0A1DEECEFF00371BD5 /* VSBranding.m in Sources */,
+				11E0D4041DF560860075AC0F /* NYTPhotoCaptionView.m in Sources */,
 				11F25A3F1DF223E4003CB8EE /* MurmurHash3.c in Sources */,
 				B621FDB21DEAA29E00E54A51 /* clahe.cpp in Sources */,
 				11303BFD1DEECEB100371BD5 /* VSVehicleAddFieldModel.m in Sources */,
@@ -2530,8 +2638,10 @@
 				B621FD731DEAA29D00E54A51 /* rand.cpp in Sources */,
 				11F25A2B1DF222E9003CB8EE /* db_key_value_reader_writer.cpp in Sources */,
 				B621FDDF1DEAA29E00E54A51 /* inner_functions.cpp in Sources */,
+				11E0D40E1DF560860075AC0F /* NSBundle+NYTPhotoViewer.m in Sources */,
 				11303BC51DEE460000371BD5 /* BOInfoEntryView.mm in Sources */,
 				B621FE021DEAA29E00E54A51 /* simpleflow.cpp in Sources */,
+				11E0D4081DF560860075AC0F /* NYTPhotosViewController.m in Sources */,
 				115294751DF52082009EF4F9 /* jdapistd.c in Sources */,
 				B621FD541DEAA29D00E54A51 /* polyfit.cpp in Sources */,
 				115294981DF52082009EF4F9 /* transupp.c in Sources */,
@@ -2556,6 +2666,7 @@
 				B621FDF81DEAA29E00E54A51 /* denoising.cpp in Sources */,
 				B621FD7F1DEAA29D00E54A51 /* evaluation.cpp in Sources */,
 				B621FE031DEAA29E00E54A51 /* tvl1flow.cpp in Sources */,
+				11E0D4071DF560860075AC0F /* NYTPhotosOverlayView.m in Sources */,
 				B621FD811DEAA29D00E54A51 /* fast_score.cpp in Sources */,
 				B621FD3A1DEAA29D00E54A51 /* stereobm.cpp in Sources */,
 				11303BF71DEECEB100371BD5 /* VSPurposeViewController.m in Sources */,
@@ -2603,6 +2714,7 @@
 				1152947E1DF52082009EF4F9 /* jdmainct.c in Sources */,
 				B621FD8C1DEAA29D00E54A51 /* flann.cpp in Sources */,
 				B621FD6F1DEAA29D00E54A51 /* opengl_interop_deprecated.cpp in Sources */,
+				11E0D40D1DF560860075AC0F /* NYTScalingImageView.m in Sources */,
 				115294691DF52082009EF4F9 /* jcdctmgr.c in Sources */,
 				115294671DF52082009EF4F9 /* jccoefct.c in Sources */,
 				1152946B1DF52082009EF4F9 /* jcinit.c in Sources */,
@@ -2675,11 +2787,13 @@
 				B621FD461DEAA29D00E54A51 /* detection_based_tracker.cpp in Sources */,
 				B621FD911DEAA29E00E54A51 /* cap_avfoundation.mm in Sources */,
 				B621FDB51DEAA29E00E54A51 /* convhull.cpp in Sources */,
+				11E0D40B1DF560860075AC0F /* NYTPhotoViewController.m in Sources */,
 				115294A01DF52903009EF4F9 /* BORecentDocModel.m in Sources */,
 				B621FD3C1DEAA29D00E54A51 /* triangulate.cpp in Sources */,
 				B621FD421DEAA29D00E54A51 /* chowliutree.cpp in Sources */,
 				B621FD611DEAA29D00E54A51 /* convert.cpp in Sources */,
 				B621FDAB1DEAA29E00E54A51 /* window.cpp in Sources */,
+				11E0D40A1DF560860075AC0F /* NYTPhotoTransitionController.m in Sources */,
 				1152946E1DF52082009EF4F9 /* jcmaster.c in Sources */,
 				B621FDEF1DEAA29E00E54A51 /* latentsvmdetector.cpp in Sources */,
 				B621FDE41DEAA29E00E54A51 /* svm.cpp in Sources */,
@@ -2747,6 +2861,7 @@
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
 				11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */,
 				111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */,
+				11E0D4091DF560860075AC0F /* NYTPhotoTransitionAnimator.m in Sources */,
 				B621FDCD1DEAA29E00E54A51 /* segmentation.cpp in Sources */,
 				111D56D91DF28F0700534EF3 /* authenticator.cpp in Sources */,
 				B621FDE01DEAA29E00E54A51 /* knearest.cpp in Sources */,
@@ -2819,6 +2934,7 @@
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
 				B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */,
 				1152948B1DF52082009EF4F9 /* jidctint.c in Sources */,
+				11E0D4121DF561370075AC0F /* NYTExamplePhoto.m in Sources */,
 				115294AD1DF554BC009EF4F9 /* DTError.m in Sources */,
 				B621FDB01DEAA29E00E54A51 /* approx.cpp in Sources */,
 				B621FD521DEAA29D00E54A51 /* openfabmap.cpp in Sources */,
@@ -2832,6 +2948,7 @@
 				B621FD6E1DEAA29D00E54A51 /* opengl_interop.cpp in Sources */,
 				B621FDCB1DEAA29E00E54A51 /* rotcalipers.cpp in Sources */,
 				11F25A411DF223E4003CB8EE /* repository.cpp in Sources */,
+				11E0D4061DF560860075AC0F /* NYTPhotosDataSource.m in Sources */,
 				B621FDBD1DEAA29E00E54A51 /* floodfill.cpp in Sources */,
 				B621FD491DEAA29D00E54A51 /* fuzzymeanshifttracker.cpp in Sources */,
 				B621FD511DEAA29D00E54A51 /* octree.cpp in Sources */,
@@ -2840,6 +2957,7 @@
 				1152949C1DF52082009EF4F9 /* wrrle.c in Sources */,
 				B621FDEC1DEAA29E00E54A51 /* haar.cpp in Sources */,
 				11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */,
+				11E0D4051DF560860075AC0F /* NYTPhotoDismissalInteractionController.m in Sources */,
 				B621FD3B1DEAA29D00E54A51 /* stereosgbm.cpp in Sources */,
 				B621FDDB1DEAA29E00E54A51 /* em.cpp in Sources */,
 				B621FDF21DEAA29E00E54A51 /* lsvmtbbversion.cpp in Sources */,
