@@ -119,6 +119,12 @@
 		1152949B1DF52082009EF4F9 /* wrppm.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945F1DF52082009EF4F9 /* wrppm.c */; };
 		1152949C1DF52082009EF4F9 /* wrrle.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294601DF52082009EF4F9 /* wrrle.c */; };
 		1152949D1DF52082009EF4F9 /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294611DF52082009EF4F9 /* wrtarga.c */; };
+		115294A01DF52903009EF4F9 /* BORecentDocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1152949F1DF52903009EF4F9 /* BORecentDocModel.m */; };
+		115294A31DF52AFE009EF4F9 /* BODocCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294A21DF52AFE009EF4F9 /* BODocCache.m */; };
+		115294A71DF55465009EF4F9 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294A61DF55465009EF4F9 /* NSDate+DateTools.m */; };
+		115294AA1DF5549D009EF4F9 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294A91DF5549D009EF4F9 /* DTConstants.m */; };
+		115294AD1DF554BC009EF4F9 /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294AC1DF554BC009EF4F9 /* DTError.m */; };
+		115294DE1DF55A09009EF4F9 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 115294DD1DF55A09009EF4F9 /* DateTools.bundle */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -541,6 +547,17 @@
 		1152945F1DF52082009EF4F9 /* wrppm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrppm.c; sourceTree = "<group>"; };
 		115294601DF52082009EF4F9 /* wrrle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrrle.c; sourceTree = "<group>"; };
 		115294611DF52082009EF4F9 /* wrtarga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrtarga.c; sourceTree = "<group>"; };
+		1152949E1DF52903009EF4F9 /* BORecentDocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BORecentDocModel.h; sourceTree = "<group>"; };
+		1152949F1DF52903009EF4F9 /* BORecentDocModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BORecentDocModel.m; sourceTree = "<group>"; };
+		115294A11DF52AFE009EF4F9 /* BODocCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocCache.h; sourceTree = "<group>"; };
+		115294A21DF52AFE009EF4F9 /* BODocCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocCache.m; sourceTree = "<group>"; };
+		115294A51DF55465009EF4F9 /* NSDate+DateTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+DateTools.h"; sourceTree = "<group>"; };
+		115294A61DF55465009EF4F9 /* NSDate+DateTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDate+DateTools.m"; sourceTree = "<group>"; };
+		115294A81DF5549D009EF4F9 /* DTConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTConstants.h; sourceTree = "<group>"; };
+		115294A91DF5549D009EF4F9 /* DTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTConstants.m; sourceTree = "<group>"; };
+		115294AB1DF554BC009EF4F9 /* DTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTError.h; sourceTree = "<group>"; };
+		115294AC1DF554BC009EF4F9 /* DTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTError.m; sourceTree = "<group>"; };
+		115294DD1DF55A09009EF4F9 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -1048,6 +1065,10 @@
 				B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */,
 				B621FE071DEABAF400E54A51 /* BOCameraController.h */,
 				B621FE081DEABAF400E54A51 /* BOCameraController.mm */,
+				1152949E1DF52903009EF4F9 /* BORecentDocModel.h */,
+				1152949F1DF52903009EF4F9 /* BORecentDocModel.m */,
+				115294A11DF52AFE009EF4F9 /* BODocCache.h */,
+				115294A21DF52AFE009EF4F9 /* BODocCache.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -1299,6 +1320,19 @@
 			path = libjpeg;
 			sourceTree = "<group>";
 		};
+		115294A41DF55465009EF4F9 /* 3p */ = {
+			isa = PBXGroup;
+			children = (
+				115294AB1DF554BC009EF4F9 /* DTError.h */,
+				115294AC1DF554BC009EF4F9 /* DTError.m */,
+				115294A81DF5549D009EF4F9 /* DTConstants.h */,
+				115294A91DF5549D009EF4F9 /* DTConstants.m */,
+				115294A51DF55465009EF4F9 /* NSDate+DateTools.h */,
+				115294A61DF55465009EF4F9 /* NSDate+DateTools.m */,
+			);
+			path = 3p;
+			sourceTree = "<group>";
+		};
 		117F1D0A1DE02939007233B0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -1329,6 +1363,8 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				115294DD1DF55A09009EF4F9 /* DateTools.bundle */,
+				115294A41DF55465009EF4F9 /* 3p */,
 				111D56EA1DF3CA3C00534EF3 /* cv */,
 				11303BCC1DEECEB100371BD5 /* Settings */,
 				111D56E91DF3C85C00534EF3 /* shared */,
@@ -2388,6 +2424,47 @@
 			knownRegions = (
 				en,
 				Base,
+				am,
+				ar,
+				bg,
+				ca,
+				cs,
+				cy,
+				da,
+				de,
+				es,
+				eu,
+				fi,
+				fr,
+				gre,
+				gu,
+				he,
+				hi,
+				hr,
+				hu,
+				id,
+				is,
+				it,
+				ja,
+				ko,
+				lv,
+				ms,
+				nb,
+				nl,
+				pl,
+				"pt-PT",
+				pt,
+				ro,
+				ru,
+				sk,
+				sl,
+				sv,
+				th,
+				tr,
+				uk,
+				vi,
+				"zh-Hans",
+				"zh-Hant",
 			);
 			mainGroup = 11B75AC31DDFD08D004EAB65;
 			productRefGroup = 11B75ACD1DDFD08D004EAB65 /* Products */;
@@ -2413,6 +2490,7 @@
 				11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */,
 				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
+				115294DE1DF55A09009EF4F9 /* DateTools.bundle in Resources */,
 				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2514,6 +2592,7 @@
 				B621FDF01DEAA29E00E54A51 /* linemod.cpp in Sources */,
 				B621FD391DEAA29D00E54A51 /* solvepnp.cpp in Sources */,
 				B621FD6A1DEAA29D00E54A51 /* mathfuncs.cpp in Sources */,
+				115294A31DF52AFE009EF4F9 /* BODocCache.m in Sources */,
 				B621FD9E1DEAA29E00E54A51 /* cap_v4l.cpp in Sources */,
 				B621FD881DEAA29D00E54A51 /* matchers.cpp in Sources */,
 				B621FDD71DEAA29E00E54A51 /* ann_mlp.cpp in Sources */,
@@ -2596,6 +2675,7 @@
 				B621FD461DEAA29D00E54A51 /* detection_based_tracker.cpp in Sources */,
 				B621FD911DEAA29E00E54A51 /* cap_avfoundation.mm in Sources */,
 				B621FDB51DEAA29E00E54A51 /* convhull.cpp in Sources */,
+				115294A01DF52903009EF4F9 /* BORecentDocModel.m in Sources */,
 				B621FD3C1DEAA29D00E54A51 /* triangulate.cpp in Sources */,
 				B621FD421DEAA29D00E54A51 /* chowliutree.cpp in Sources */,
 				B621FD611DEAA29D00E54A51 /* convert.cpp in Sources */,
@@ -2643,6 +2723,7 @@
 				B621FDA31DEAA29E00E54A51 /* grfmt_jpeg2000.cpp in Sources */,
 				B621FDF11DEAA29E00E54A51 /* lsvmparser.cpp in Sources */,
 				B621FD9D1DEAA29E00E54A51 /* cap_pvapi.cpp in Sources */,
+				115294AA1DF5549D009EF4F9 /* DTConstants.m in Sources */,
 				B621FD6D1DEAA29D00E54A51 /* matrix.cpp in Sources */,
 				B621FD311DEAA29D00E54A51 /* circlesgrid.cpp in Sources */,
 				B621FD8B1DEAA29D00E54A51 /* stardetector.cpp in Sources */,
@@ -2717,6 +2798,7 @@
 				B621FDD41DEAA29E00E54A51 /* thresh.cpp in Sources */,
 				11F259FF1DF2223F003CB8EE /* unpacker.cpp in Sources */,
 				B621FDC51DEAA29E00E54A51 /* linefit.cpp in Sources */,
+				115294A71DF55465009EF4F9 /* NSDate+DateTools.m in Sources */,
 				B621FD581DEAA29D00E54A51 /* rgbdodometry.cpp in Sources */,
 				11303BFE1DEECEB100371BD5 /* VSVehicleModel.m in Sources */,
 				B621FE001DEAA29E00E54A51 /* motempl.cpp in Sources */,
@@ -2737,6 +2819,7 @@
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
 				B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */,
 				1152948B1DF52082009EF4F9 /* jidctint.c in Sources */,
+				115294AD1DF554BC009EF4F9 /* DTError.m in Sources */,
 				B621FDB01DEAA29E00E54A51 /* approx.cpp in Sources */,
 				B621FD521DEAA29D00E54A51 /* openfabmap.cpp in Sources */,
 				115294931DF52082009EF4F9 /* rdgif.c in Sources */,

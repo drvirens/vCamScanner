@@ -24,6 +24,7 @@
 #import "VSBranding.h"
 #import "BORecentlyScannedView.h"
 #import "BODocumentsListViewController.h"
+#import "BODocCache.h"
 
 typedef enum BOState {
     BONotCroppedState,
@@ -79,7 +80,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
 
 
-@property (nonatomic) UIImage* image;
+@property (nonatomic) UIImage* image; //original image
 @property (nonatomic) UIImage* cropImage;
 @property (nonatomic) UIImage* finalProcessedImage;
 @property (nonatomic, copy) NSString* categoryName;
@@ -100,6 +101,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) CATransform3D transformCapturedImageView;
 @property (nonatomic) CATransform3D transformCroppedView;
 
+@property (nonatomic) BODocCache* docCache;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -111,6 +113,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.docCache = [[BODocCache alloc] init];
     self.state = BONotCroppedState;
     
     [self setupRightButton];
@@ -306,6 +309,35 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self hideCameraOverlay];
 }
 
+- (void)populateRecentlyScannedView {
+    NSArray<BORecentDocModel*>* recentlyScannedDocs = [self.docCache all];
+    [recentlyScannedDocs enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(BORecentDocModel * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        BORecentDocModel* m = (BORecentDocModel*)obj;
+        [m computeTime];
+        [self populateOneRecentlyScannedViewWithModel:m idx:idx];
+    }];
+}
+
+- (void)populateOneRecentlyScannedViewWithModel:(BORecentDocModel*)m idx:(NSUInteger)idx {
+    UIButton* btn = nil;
+    UILabel* label = nil;
+    if (idx == 2) {
+        btn = self.viewRecentlyScanned.firstScannedView;
+        label = self.viewRecentlyScanned.firstScannedTime;
+    } else if (idx == 1) {
+        btn = self.viewRecentlyScanned.secondScannedView;
+        label = self.viewRecentlyScanned.secondScannedTime;
+    } else if (idx == 0) {
+        btn = self.viewRecentlyScanned.thirdScannedView;
+        label = self.viewRecentlyScanned.thirdScannedTime;
+    }
+    [btn setBackgroundImage:nil forState:UIControlStateNormal];
+    [btn setImage:nil forState:UIControlStateNormal];
+    btn.backgroundColor = [UIColor clearColor];
+    [btn setImage:m.thumbnail forState:UIControlStateNormal];
+    label.text = m.timeFormatted;
+}
+
 #pragma mark - hide/show
 - (void)hideRecentlyScannedView {
     self.maskViewRecentlyScanned.hidden = YES;
@@ -314,6 +346,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)showRecentlyScannedView {
     self.maskViewRecentlyScanned.hidden = NO;
     self.viewRecentlyScanned.hidden = NO;
+    
+    [self populateRecentlyScannedView];
 }
 - (void)hideCameraOverlay {
     [self.view layoutIfNeeded];
@@ -547,9 +581,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self.croppedView removeFromSuperview];
     self.croppedView = nil;
     
-    //if (self.hasRotated) {
-        self.capturedImageView.layer.transform = self.transformCapturedImageView;
-    //}
+    self.capturedImageView.layer.transform = self.transformCapturedImageView;
     
     if (self.state == BOShareState) {
         [self showRecentlyScannedView];
@@ -594,22 +626,22 @@ static void* gUserLoadContext = &gUserLoadContext;
     }];
 }
 - (IBAction)didSelectMenuSelect:(id)sender {
-            if (self.state == BOCroppedPreviewState) {
-                NSLog(@"BOCroppedPreviewState - show share state/view");
-                [self putUIInProcessingStart];
-                
-                [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
-                [self hideFiltersView];
-                [self transitMenuItemsToShareMode];
-                
-                [self putUIInProcessingFinished];
-                
-                [self apiAddDocument]; //this is fire and forget
-            } else if (self.state == BOShareState) {
-                [self share:self];
-            } else {
-                [self doCropImage];
-            }
+    if (self.state == BOCroppedPreviewState) {
+        NSLog(@"BOCroppedPreviewState - show share state/view");
+        [self putUIInProcessingStart];
+        
+        [self hideInfoEntryViewPartiallyAndDisableDragger]; //disable drag and remove the dragger - use
+        [self hideFiltersView];
+        [self transitMenuItemsToShareMode];
+        
+        [self putUIInProcessingFinished];
+        
+        [self apiAddDocument]; //this is fire and forget
+    } else if (self.state == BOShareState) {
+        [self share:self];
+    } else {
+        [self doCropImage];
+    }
 }
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
@@ -774,13 +806,32 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 #pragma mark - API calls
 - (void)apiAddDocument {
-    long fileSize = 0;
-    NSString* docTitle = self.infoEntryView.textFieldTitle.text;
-    [self.facade addDocument:self.image
-         finalProcessedImage:self.finalProcessedImage
+    //and then in local storage (LMDB)
+    long        fileSize            = 0; // XXX
+    NSString*   docTitle            = self.infoEntryView.textFieldTitle.text;
+    UIImage*    originalImage       = self.image;
+    UIImage*    finalProcessedImage = self.finalProcessedImage;
+    if (!finalProcessedImage) {
+        finalProcessedImage = self.cropImage;
+    }
+    NSString*   categoryName        = self.categoryName;
+    
+    //add it in cache first...
+    [self addInCache:docTitle finalProcessedImage:finalProcessedImage];
+    
+
+    [self.facade addDocument:originalImage
+         finalProcessedImage:finalProcessedImage
                    doctTitle:docTitle
-                categoryName:self.categoryName
-                    fileSize:fileSize]; //XXX
+                categoryName:categoryName
+                    fileSize:fileSize];
+}
+- (void)addInCache:(NSString*)docTitle
+finalProcessedImage:(UIImage*)finalProcessedImage {
+    NSDate* now = [NSDate date];
+    NSString* formattedTime = nil;
+    BORecentDocModel* model = [[BORecentDocModel alloc] initWithTitle:docTitle timeFormatted:formattedTime thumbnail:finalProcessedImage createdDate:now];
+    [self.docCache addModel:model];
 }
 
 #pragma mark OpenCV
