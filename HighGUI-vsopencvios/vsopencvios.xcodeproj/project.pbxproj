@@ -119,6 +119,8 @@
 		1152949B1DF52082009EF4F9 /* wrppm.c in Sources */ = {isa = PBXBuildFile; fileRef = 1152945F1DF52082009EF4F9 /* wrppm.c */; };
 		1152949C1DF52082009EF4F9 /* wrrle.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294601DF52082009EF4F9 /* wrrle.c */; };
 		1152949D1DF52082009EF4F9 /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 115294611DF52082009EF4F9 /* wrtarga.c */; };
+		115294A01DF52903009EF4F9 /* BORecentDocModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1152949F1DF52903009EF4F9 /* BORecentDocModel.m */; };
+		115294A31DF52AFE009EF4F9 /* BODocCache.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294A21DF52AFE009EF4F9 /* BODocCache.m */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -541,6 +543,10 @@
 		1152945F1DF52082009EF4F9 /* wrppm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrppm.c; sourceTree = "<group>"; };
 		115294601DF52082009EF4F9 /* wrrle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrrle.c; sourceTree = "<group>"; };
 		115294611DF52082009EF4F9 /* wrtarga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrtarga.c; sourceTree = "<group>"; };
+		1152949E1DF52903009EF4F9 /* BORecentDocModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BORecentDocModel.h; sourceTree = "<group>"; };
+		1152949F1DF52903009EF4F9 /* BORecentDocModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BORecentDocModel.m; sourceTree = "<group>"; };
+		115294A11DF52AFE009EF4F9 /* BODocCache.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocCache.h; sourceTree = "<group>"; };
+		115294A21DF52AFE009EF4F9 /* BODocCache.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BODocCache.m; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -1048,6 +1054,10 @@
 				B621FE0C1DEABB4B00E54A51 /* BOLocationController.m */,
 				B621FE071DEABAF400E54A51 /* BOCameraController.h */,
 				B621FE081DEABAF400E54A51 /* BOCameraController.mm */,
+				1152949E1DF52903009EF4F9 /* BORecentDocModel.h */,
+				1152949F1DF52903009EF4F9 /* BORecentDocModel.m */,
+				115294A11DF52AFE009EF4F9 /* BODocCache.h */,
+				115294A21DF52AFE009EF4F9 /* BODocCache.m */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -2514,6 +2524,7 @@
 				B621FDF01DEAA29E00E54A51 /* linemod.cpp in Sources */,
 				B621FD391DEAA29D00E54A51 /* solvepnp.cpp in Sources */,
 				B621FD6A1DEAA29D00E54A51 /* mathfuncs.cpp in Sources */,
+				115294A31DF52AFE009EF4F9 /* BODocCache.m in Sources */,
 				B621FD9E1DEAA29E00E54A51 /* cap_v4l.cpp in Sources */,
 				B621FD881DEAA29D00E54A51 /* matchers.cpp in Sources */,
 				B621FDD71DEAA29E00E54A51 /* ann_mlp.cpp in Sources */,
@@ -2596,6 +2607,7 @@
 				B621FD461DEAA29D00E54A51 /* detection_based_tracker.cpp in Sources */,
 				B621FD911DEAA29E00E54A51 /* cap_avfoundation.mm in Sources */,
 				B621FDB51DEAA29E00E54A51 /* convhull.cpp in Sources */,
+				115294A01DF52903009EF4F9 /* BORecentDocModel.m in Sources */,
 				B621FD3C1DEAA29D00E54A51 /* triangulate.cpp in Sources */,
 				B621FD421DEAA29D00E54A51 /* chowliutree.cpp in Sources */,
 				B621FD611DEAA29D00E54A51 /* convert.cpp in Sources */,
