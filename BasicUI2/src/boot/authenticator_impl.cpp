@@ -11,6 +11,7 @@
 #include "model_immutable_login.hpp"
 #include "repository.hpp"
 #include "trace.h"
+#include "document_record_creiterion.hpp"
 
 CAuthenticator::CAuthenticator(vsIRepository& avsIRepository)
 	{ TRACE
@@ -34,6 +35,17 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 		
 		aCompletionCB(status, retUser);
 		});
+        
+        //test+
+    vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion();
+    iRepository->getAll(*criteria,
+                        [&](const vsModelBase& aModel) {
+                            LOG("\n this record matched your criteria - we should store it in a vector \n");
+                        },
+                        [&](const vsModelBase& aModel) {
+                            LOG("\n COmpletion function -  \n");
+                        });
+        //test-
 	}
 
 

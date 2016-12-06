@@ -13,6 +13,7 @@
 using namespace std;
 
 class vsModelBase;
+class vsRecordCreiterion;
 
 class vsIRepository
 	{
@@ -24,6 +25,8 @@ public:
 	
 	//assume that aModels' primary key is correctly set by caller
 	virtual void get(vsModelBase& aPrimaryKeyedModel, function<void(const vsModelBase&)> aCompletionBlock) = 0;
+        
+    virtual void getAll(const vsRecordCreiterion& criteria, function<void(const vsModelBase&)> aPerRecordBlock, function<void(const vsModelBase&)> aCompletionBlock) = 0;
 	};
 
 #endif /* repository_hpp */

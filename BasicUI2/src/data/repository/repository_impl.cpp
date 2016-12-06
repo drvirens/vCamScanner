@@ -15,6 +15,7 @@
 #include "MurmurHash3.h"
 #include "trace.h"
 #include "primary_key.hpp"
+#include "record_criterion.hpp"
 
 // -----------------------------------------------------------------------------
 enum vsERepositoryRecordType
@@ -237,6 +238,17 @@ void vsRepository::get(vsModelBase& aPrimaryKeyedModel, function<void(const vsMo
 		};
 	iKeyValueStore->read(readBlock);
 	}
+
+void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(const vsModelBase&)> aPerRecordBlock, function<void(const vsModelBase&)> aCompletionBlock)
+    { TRACE
+    ASSERT(0 != iKeyValueStore);
+//    std::function<void(vsIKeyValueReader&)> readBlock = [&](vsIKeyValueReader& aReader)
+//        {
+//        doGet(criteria, aReader);
+//        aCompletionBlock(aPrimaryKeyedModel);
+//        };
+//    iKeyValueStore->read(readBlock);
+    }
 
 void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aReader)
 	{ TRACE
