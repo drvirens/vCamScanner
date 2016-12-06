@@ -9,6 +9,7 @@
 #include "vs_db_key_value_reader_writer_impl.hpp"
 #include "db_data.hpp"
 #include "trace.h"
+#include "db_cursor.hpp"
 
 vsCKeyValueReaderWriter::vsCKeyValueReaderWriter(vsTable& aTable, MDB_txn& aTransaction)
 	: iTransaction(&aTransaction)
@@ -51,6 +52,59 @@ bool vsCKeyValueReaderWriter::readRaw(const vsTData& aKey, vsTData& aValue)
 	ret = true;
 	return ret;
 	}
+    
+bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound, 
+                                        const vsTData& aKeyUpperBound, 
+                                        vsDirection aDirection,
+    function<void(const vsTData& /*aKey*/, const vsTData& /*aValue*/, bool& /*aStop*/)>& aBlock)
+    { TRACE
+    bool ret = false;
+    function<void(const vsCursor&)> cursorblock = [&](const vsCursor& aCursor)
+        {
+        LOG("inside lambda cursor bloc");
+        MDB_val upperBoundKey = 
+            {
+            .mv_data = aKeyUpperBound.data(),
+            .mv_size = aKeyUpperBound.length()
+            };
+            
+        MDB_val lowerBoundKey =
+            {
+            .mv_data = aKeyLowerBound.data(),
+            .mv_size = aKeyLowerBound.length()
+            };
+            
+        vs_uint8_t* positionedKey         = aKeyLowerBound.data();
+        vs_uint32_t       positionedKeyLen      = aKeyLowerBound.length();
+        
+        vs_uint8_t* positionedValue       = 0;
+        vs_uint32_t       positionedValueLen    = 0;
+        
+        bool status = aCursor.positionAt(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen, eCursorDirection::eCursorDirectionForward);
+        if (status)
+            {
+            LOG("positionAt success");
+            }
+        };
+    readWithCursor(cursorblock);
+    return ret;
+    }
+    
+bool vsCKeyValueReaderWriter::readWithCursor(function<void(const vsCursor&)>& aCursorBlock)
+    { TRACE
+    bool ret = false;
+    MDB_cursor* mdbCursor = 0;
+    int status = mdb_cursor_open(iTransaction, dbi(), &mdbCursor);
+    if (MDB_SUCCESS != status)
+        {
+        return ret;
+        }
+    vsCursor* cursor = new vsCursor(*iTable, mdbCursor);
+    aCursorBlock(*cursor);
+    mdb_cursor_close(mdbCursor);
+    ret = true;
+    return ret;
+    }
 
 void vsCKeyValueReaderWriter::writeRaw(const vsTData& aKey, const vsTData& aValue)
 	{ TRACE

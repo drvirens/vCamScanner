@@ -13,6 +13,7 @@
 #include "lmdb.h"
 #include "db_key_value_reader_writer.hpp"
 #include "db_table.hpp"
+#include "db_cursor.hpp"
 
 using namespace std;
 
@@ -24,6 +25,10 @@ public:
 	
 		//reader
 	virtual bool readRaw(const vsTData& aKey, vsTData& aValue);
+    virtual bool enumerate(const vsTData& aKeyLowerBound, 
+                           const vsTData& aKeyUpperBound, 
+                           vsDirection aDirection,
+                           function<void(const vsTData& /*aKey*/, const vsTData& /*aValue*/, bool& /*aStop*/)>& aBlock);
 	
 		//write
 	virtual void writeRaw(const vsTData& aKey, const vsTData& aValue);
@@ -32,6 +37,7 @@ public:
 	
 private:
 	const MDB_dbi& dbi() const;
+    bool readWithCursor(function<void(const vsCursor&)>& aCursorBlock);
 	
 private:
 	unique_ptr<vsTable> iTable;

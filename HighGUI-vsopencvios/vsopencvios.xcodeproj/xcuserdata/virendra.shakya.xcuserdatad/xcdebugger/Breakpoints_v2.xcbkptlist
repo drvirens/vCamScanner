@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vsopencvios/3p/NSDate+DateTools.m"
-            timestampString = "502618537.170307"
+            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
+            timestampString = "502694115.458225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-timeAgoSinceDate:format:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BODocumentsListViewController.mm"
-            timestampString = "502621682.304436"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "239"
+            endingLineNumber = "239"
+            landmarkName = "vsRepository::get(vsModelBase&amp; aPrimaryKeyedModel, function&lt;void(const vsModelBase&amp;)&gt; aCompletionBlock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,121 +25,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vsopencvios/3p/PSPDFUIKitMainThreadGuard.m"
-            timestampString = "502666418.351791"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "PSPDFAssertIfNotMainThread()"
-            landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502666858.816857"
+            timestampString = "502694116.779275"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "117"
-            endingLineNumber = "117"
-            landmarkName = "vsValueRecord::unPack(TUnPacker&amp; aUnpacker)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502666858.816857"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "73"
-            endingLineNumber = "73"
-            landmarkName = "vsValueRecord::vsValueRecord()"
+            startingLineNumber = "236"
+            endingLineNumber = "236"
+            landmarkName = "vsRepository::get(vsModelBase&amp; aPrimaryKeyedModel, function&lt;void(const vsModelBase&amp;)&gt; aCompletionBlock)"
             landmarkType = "7">
             <Locations>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "vsValueRecord::~vsValueRecord()"
+                  symbolName = "vsRepository::get(vsModelBase&amp;, std::__1::function&lt;void (vsModelBase const&amp;)&gt;)"
                   moduleName = "vsopencvios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/virendra.shakya/tizen-viren/github/testFlight/vCamScanner/BasicUI2/src/data/repository/repository_impl.cpp"
-                  timestampString = "502666858.888046"
+                  timestampString = "502695113.314153"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "16">
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "212">
                </Location>
                <Location
-                  shouldBeEnabled = "No"
+                  shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "vsRepository::doPut(vsModelBase&amp;, vsIKeyValueReaderWriter&amp;)"
+                  symbolName = "vsRepository::get(vsModelBase&amp;, std::__1::function&lt;void (vsModelBase const&amp;)&gt;)::$_1::operator()(vsIKeyValueReader&amp;) const"
                   moduleName = "vsopencvios"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/virendra.shakya/tizen-viren/github/testFlight/vCamScanner/BasicUI2/src/data/repository/repository_impl.cpp"
-                  timestampString = "502666858.889087"
+                  timestampString = "502695113.315502"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "404">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "vsRepository::doPut(vsModelBase&amp;, vsIKeyValueReaderWriter&amp;)"
-                  moduleName = "vsopencvios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/virendra.shakya/tizen-viren/github/testFlight/vCamScanner/BasicUI2/src/data/repository/repository_impl.cpp"
-                  timestampString = "502666858.89052"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "656">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "vsRepository::doGet(vsModelBase&amp;, vsIKeyValueReader&amp;)"
-                  moduleName = "vsopencvios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/virendra.shakya/tizen-viren/github/testFlight/vCamScanner/BasicUI2/src/data/repository/repository_impl.cpp"
-                  timestampString = "502666858.891746"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "316">
-               </Location>
-               <Location
-                  shouldBeEnabled = "No"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "vsRepository::doGet(vsModelBase&amp;, vsIKeyValueReader&amp;)"
-                  moduleName = "vsopencvios"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/virendra.shakya/tizen-viren/github/testFlight/vCamScanner/BasicUI2/src/data/repository/repository_impl.cpp"
-                  timestampString = "502666858.892858"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "76"
-                  endingLineNumber = "76"
-                  offsetFromSymbolStart = "552">
+                  startingLineNumber = "236"
+                  endingLineNumber = "236"
+                  offsetFromSymbolStart = "28">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -163,16 +70,48 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502666858.816857"
+            timestampString = "502694206.327136"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
-            landmarkName = "vsValueRecord::vsValueRecord(vs_uint32_t aModelSize, vsERepositoryRecordType aModelType, vs_uint8_t* aActualRecordDump)"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
+            landmarkName = "vsRepository::doGet(vsModelBase&amp; aPrimaryKeyedModel, vsIKeyValueReader&amp; aReader)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
+            timestampString = "502694210.868222"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "261"
+            endingLineNumber = "261"
+            landmarkName = "vsRepository::doGet(vsModelBase&amp; aPrimaryKeyedModel, vsIKeyValueReader&amp; aReader)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
+            timestampString = "502694381.056295"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "CAuthenticator::authenticate(const TLoginMessageLayout&amp; credentials, function&lt;void(const EAuthenticationStatus&amp;, const vsUser&amp;)&gt; aCompletionCB)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -183,11 +122,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
-            timestampString = "502668118.609928"
+            timestampString = "502695148.358473"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
             landmarkName = "vsCKeyValueReaderWriter::readRaw(const vsTData&amp; aKey, vsTData&amp; aValue)"
             landmarkType = "7">
          </BreakpointContent>
@@ -198,13 +137,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502668142.265576"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502753600.471464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "233"
-            endingLineNumber = "233"
-            landmarkName = "vsRepository::get(vsModelBase&amp; aPrimaryKeyedModel, function&lt;void(const vsModelBase&amp;)&gt; aCompletionBlock)"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "vsCKeyValueReaderWriter::readWithCursor(function&lt;void(const vsCursor&amp;)&gt;&amp; aCursorBlock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -214,13 +153,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502668143.382889"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502754562.847144"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "238"
-            endingLineNumber = "238"
-            landmarkName = "vsRepository::get(vsModelBase&amp; aPrimaryKeyedModel, function&lt;void(const vsModelBase&amp;)&gt; aCompletionBlock)"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -230,13 +169,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502669957.421815"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502754568.218341"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "265"
-            endingLineNumber = "265"
-            landmarkName = "vsRepository::doGet(vsModelBase&amp; aPrimaryKeyedModel, vsIKeyValueReader&amp; aReader)"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -246,125 +185,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502669963.713772"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502754572.449521"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "235"
-            endingLineNumber = "235"
-            landmarkName = "vsRepository::get(vsModelBase&amp; aPrimaryKeyedModel, function&lt;void(const vsModelBase&amp;)&gt; aCompletionBlock)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/db_key_value_store_impl.cpp"
-            timestampString = "502670067.134488"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "116"
-            endingLineNumber = "116"
-            landmarkName = "vsKeyValueStore::read(function&lt;void(vsIKeyValueReader&amp;)&gt;&amp; aTransaction)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/db_key_value_store_impl.cpp"
-            timestampString = "502670069.408783"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "119"
-            endingLineNumber = "119"
-            landmarkName = "vsKeyValueStore::read(function&lt;void(vsIKeyValueReader&amp;)&gt;&amp; aTransaction)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502670128.28678"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "248"
-            endingLineNumber = "248"
-            landmarkName = "vsRepository::doGet(vsModelBase&amp; aPrimaryKeyedModel, vsIKeyValueReader&amp; aReader)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502672430.514563"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "40"
-            endingLineNumber = "40"
-            landmarkName = "CAuthenticator::authenticate(const TLoginMessageLayout&amp; credentials, function&lt;void(const EAuthenticationStatus&amp;, const vsUser&amp;)&gt; aCompletionCB)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502672499.456199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "CAuthenticator::authenticate(const TLoginMessageLayout&amp; credentials, function&lt;void(const EAuthenticationStatus&amp;, const vsUser&amp;)&gt; aCompletionCB)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502672502.437822"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "46"
-            endingLineNumber = "46"
-            landmarkName = "CAuthenticator::authenticate(const TLoginMessageLayout&amp; credentials, function&lt;void(const EAuthenticationStatus&amp;, const vsUser&amp;)&gt; aCompletionCB)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502672515.542732"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
-            landmarkName = "vsRepository::getAll(const vsRecordCreiterion&amp; criteria, function&lt;void(const vsModelBase&amp;)&gt; aPerRecordBlock, function&lt;void(const vsModelBase&amp;)&gt; aCompletionBlock)"
+            startingLineNumber = "77"
+            endingLineNumber = "77"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

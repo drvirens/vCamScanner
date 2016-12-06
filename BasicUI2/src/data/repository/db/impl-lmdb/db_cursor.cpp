@@ -17,7 +17,7 @@ vsCursor::vsCursor(const vsTable& aTable, MDB_cursor* aCursor)
 vsCursor::~vsCursor()
     { TRACE
     }
-bool vsCursor::positionAt(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen, eCursorDirection direction)
+bool vsCursor::positionAt(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen, eCursorDirection direction) const
     { TRACE
     bool ret = true;
     if (!aKey || 0 == aKeyLen) 
@@ -77,7 +77,7 @@ bool vsCursor::positionAt(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** a
     
     return ret;
     }
-bool vsCursor::next(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen)
+bool vsCursor::next(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen) const
     { TRACE
     bool ret = true;
     if (!aKey || 0 == aKeyLen) 
@@ -118,7 +118,7 @@ bool vsCursor::next(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue,
     
     return ret;
     }
-bool vsCursor::prev(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen)
+bool vsCursor::prev(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen) const
     { TRACE
     bool ret = true;
     if (!aKey || 0 == aKeyLen) 

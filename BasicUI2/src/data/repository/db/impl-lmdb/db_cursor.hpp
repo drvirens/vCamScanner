@@ -21,10 +21,10 @@ typedef enum
 class vsCursor
     {
 public:
-    vsCursor(const vsTable& aTable, MDB_cursor* aCursor);
-    bool positionAt(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen, eCursorDirection direction);
-    bool next(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen);
-    bool prev(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen);
+    explicit vsCursor(const vsTable& aTable, MDB_cursor* aCursor);
+    bool positionAt(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen, eCursorDirection direction) const;
+    bool next(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen) const;
+    bool prev(vs_uint8_t ** aKey, uint32_t* aKeyLen, vs_uint8_t ** aValue, uint32_t* aValueLen) const;
     virtual ~vsCursor();
 private:
     const vsTable& iTbl; //using

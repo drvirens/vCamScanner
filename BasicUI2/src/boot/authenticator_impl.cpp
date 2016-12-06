@@ -39,10 +39,7 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
         //test+
     vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion();
     iRepository->getAll(*criteria,
-                        [&](const vsModelBase& aModel) {
-                            LOG("\n this record matched your criteria - we should store it in a vector \n");
-                        },
-                        [&](const vsModelBase& aModel) {
+                        [&](vector<const vsModelBase>&) {
                             LOG("\n COmpletion function -  \n");
                         });
         //test-

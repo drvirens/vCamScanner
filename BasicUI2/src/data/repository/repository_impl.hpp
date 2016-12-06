@@ -27,7 +27,7 @@ public:
 	virtual ~vsRepository();
 	virtual void put(vsModelBase& aModel, function<void(const vsModelBase&)> aCompletionBlock);
 	virtual void get(vsModelBase& aPrimaryKeyedModel, function<void(const vsModelBase&)> aCompletionBlock);
-    virtual void getAll(const vsRecordCreiterion& criteria, function<void(const vsModelBase&)> aPerRecordBlock, function<void(const vsModelBase&)> aCompletionBlock);
+    virtual void getAll(const vsRecordCreiterion& criteria, function<void(vector<const vsModelBase>&)> aCompletionBlock);
 	
 private:
 	void doPut(vsModelBase& aModel, vsIKeyValueReaderWriter& aReaderWriter);
