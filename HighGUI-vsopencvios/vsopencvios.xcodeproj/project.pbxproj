@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1116094F1DF7E334008F48AD /* linked_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1116094D1DF7E334008F48AD /* linked_list.cpp */; };
 		11161DF31DF6272E00381D85 /* record_criterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DF11DF6272E00381D85 /* record_criterion.cpp */; };
 		11161DF61DF62AE000381D85 /* document_record_creiterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */; };
 		11161DFE1DF63B7700381D85 /* db_cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DFC1DF63B7700381D85 /* db_cursor.cpp */; };
@@ -394,6 +395,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1116094D1DF7E334008F48AD /* linked_list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = linked_list.cpp; sourceTree = "<group>"; };
+		1116094E1DF7E334008F48AD /* linked_list.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = linked_list.hpp; sourceTree = "<group>"; };
 		11161DF11DF6272E00381D85 /* record_criterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = record_criterion.cpp; sourceTree = "<group>"; };
 		11161DF21DF6272E00381D85 /* record_criterion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = record_criterion.hpp; sourceTree = "<group>"; };
 		11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document_record_creiterion.cpp; sourceTree = "<group>"; };
@@ -1552,6 +1555,8 @@
 				11F259FA1DF2223F003CB8EE /* sigslot.h */,
 				11F259FB1DF2223F003CB8EE /* unpacker.cpp */,
 				11F259FC1DF2223F003CB8EE /* unpacker.hpp */,
+				1116094D1DF7E334008F48AD /* linked_list.cpp */,
+				1116094E1DF7E334008F48AD /* linked_list.hpp */,
 			);
 			name = core;
 			path = ../../BasicUI2/src/core;
@@ -2681,6 +2686,7 @@
 				B621FD2E1DEAA29D00E54A51 /* calibinit.cpp in Sources */,
 				115294701DF52082009EF4F9 /* jcparam.c in Sources */,
 				B621FD871DEAA29D00E54A51 /* keypoint.cpp in Sources */,
+				1116094F1DF7E334008F48AD /* linked_list.cpp in Sources */,
 				B621FDF81DEAA29E00E54A51 /* denoising.cpp in Sources */,
 				B621FD7F1DEAA29D00E54A51 /* evaluation.cpp in Sources */,
 				B621FE031DEAA29E00E54A51 /* tvl1flow.cpp in Sources */,

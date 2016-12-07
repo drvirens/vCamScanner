@@ -819,7 +819,6 @@ static void* gUserLoadContext = &gUserLoadContext;
     //add it in cache first...
     [self addInCache:docTitle finalProcessedImage:finalProcessedImage];
     
-
     [self.facade addDocument:originalImage
          finalProcessedImage:finalProcessedImage
                    doctTitle:docTitle

@@ -28,6 +28,7 @@ public:
 	virtual ~vsUser();
 	
 	//vsModelBase
+    virtual vsModelBase* copy();
 	virtual const string& primaryKey() const;
 	virtual const vs_int32_t recordSize() const;
 	virtual bool pack(TPacker& aPacker);
