@@ -288,7 +288,7 @@ void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vsLi
         LOG("\nenumerate callback\n");
         vsLinkedList<const vsModelBase>* collection = new vsLinkedList<const vsModelBase>();
         doEnumerate(*collection, criteria, aReader);
-        //aCompletionBlock(aPrimaryKeyedModel);
+        aCompletionBlock(*collection);
         };
     iKeyValueStore->enumnerate(theKeyLowerBound, theKeyUpperBound, theDirection, readBlock);
     }

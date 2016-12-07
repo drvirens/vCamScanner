@@ -49,7 +49,7 @@ void vsLinkedListBase::add(void* aData)
 void vsLinkedListBase::traverse(vsCallBack aCallback)
     {
     vsNode* tmp = iHead;
-    while (tmp->iNext)
+    while (tmp)
         {
         aCallback(tmp->iData);
         tmp = tmp->iNext;
