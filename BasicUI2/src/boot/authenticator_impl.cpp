@@ -50,7 +50,7 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
     vsIKeyValueReader::vsDirection theDirection = vsIKeyValueReader::vsDirectionForward;
     vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(theKeyLowerBound, theKeyUpperBound, theDirection);
     iRepository->getAll(*criteria,
-                        [&](vector<const vsModelBase>&) {
+                        [&](vsLinkedList<const vsModelBase>&) {
                             LOG("\n COmpletion function -  \n");
                         });
         //test-

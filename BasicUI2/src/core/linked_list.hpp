@@ -32,7 +32,7 @@ public:
     ~vsLinkedList() {}
     void add(T* aData)
         {
-        vsLinkedListBase::add(aData);
+        vsLinkedListBase::add( (void*)aData );
         }
     void traverse(vsCallBack aCallback)
         {

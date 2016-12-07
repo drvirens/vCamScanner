@@ -10,7 +10,8 @@
 #define repository_hpp
 
 #include <functional>
-#include <vector>
+#include "linked_list.hpp"
+
 using namespace std;
 
 class vsModelBase;
@@ -27,7 +28,7 @@ public:
 	//assume that aModels' primary key is correctly set by caller
 	virtual void get(vsModelBase& aPrimaryKeyedModel, function<void(const vsModelBase&)> aCompletionBlock) = 0;
         
-    virtual void getAll(const vsRecordCreiterion& criteria, function<void(vector<const vsModelBase>&)> aCompletionBlock) = 0;
+    virtual void getAll(const vsRecordCreiterion& criteria, function<void(vsLinkedList<const vsModelBase>&)> aCompletionBlock) = 0;
 	};
 
 #endif /* repository_hpp */

@@ -275,7 +275,7 @@ void vsRepository::get(vsModelBase& aPrimaryKeyedModel, function<void(const vsMo
 	iKeyValueStore->read(readBlock);
 	}
 
-void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vector<const vsModelBase>&)> aCompletionBlock)
+void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vsLinkedList<const vsModelBase>&)> aCompletionBlock)
     { TRACE
     ASSERT(0 != iKeyValueStore);
     
@@ -286,14 +286,14 @@ void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vect
     std::function<void(vsIKeyValueReader&)> readBlock = [&](vsIKeyValueReader& aReader)
         {
         LOG("\nenumerate callback\n");
-        vector<const vsModelBase> collection;
-        doEnumerate(collection, criteria, aReader);
+        vsLinkedList<const vsModelBase>* collection = new vsLinkedList<const vsModelBase>();
+        doEnumerate(*collection, criteria, aReader);
         //aCompletionBlock(aPrimaryKeyedModel);
         };
     iKeyValueStore->enumnerate(theKeyLowerBound, theKeyUpperBound, theDirection, readBlock);
     }
 #include "document.hpp"
-void vsRepository::doEnumerate(vector<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
+void vsRepository::doEnumerate(vsLinkedList<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
     { TRACE
     
     vsTData theKeyLowerBound = criteria.keyLowerBound();
@@ -307,8 +307,8 @@ void vsRepository::doEnumerate(vector<const vsModelBase>& collection, const vsRe
         
         //copy
         //vsDocument doc; // = model.copy(); //virtual copy constructor
-//        vsModelBase* doc = model.copy();
-//        collection.push_back(*doc);
+        vsModelBase* doc = model.copy();
+        collection.add(doc);
     };
     
     aReader.enumerate(theKeyLowerBound, theKeyUpperBound, theDirection, block);
