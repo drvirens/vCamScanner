@@ -85,6 +85,26 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
         
         
         bool continueSearch = true;
+        continueSearch = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+        if (continueSearch)
+            {
+            vsTData posKeyData;
+            posKeyData.setData(positionedKey);
+            posKeyData.setDataLength(positionedKeyLen);
+
+            vsTData posValueData;
+            posValueData.setData(positionedValue);
+            posValueData.setDataLength(positionedValueLen);
+
+            bool stop = false;
+            aBlock(posKeyData, posValueData, stop);
+
+            positionedKey         = posKeyData.data();
+            positionedKeyLen      = posKeyData.length();
+
+            positionedValue       = 0;
+            positionedValueLen    = 0;                    
+            }
         while (continueSearch) 
         {
         

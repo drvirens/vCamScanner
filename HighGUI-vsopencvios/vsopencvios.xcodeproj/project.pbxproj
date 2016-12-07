@@ -1201,6 +1201,7 @@
 				11B75DA01DDFD0E1004EAB65 /* opencv2 */,
 			);
 			name = cv;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
@@ -1425,7 +1426,6 @@
 				11E0D40F1DF561370075AC0F /* test */,
 				115294DD1DF55A09009EF4F9 /* DateTools.bundle */,
 				115294A41DF55465009EF4F9 /* 3p */,
-				111D56EA1DF3CA3C00534EF3 /* cv */,
 				11303BCC1DEECEB100371BD5 /* Settings */,
 				111D56E91DF3C85C00534EF3 /* shared */,
 				111D56E81DF3C85300534EF3 /* controller */,
@@ -1529,6 +1529,7 @@
 		11E0D40F1DF561370075AC0F /* test */ = {
 			isa = PBXGroup;
 			children = (
+				111D56EA1DF3CA3C00534EF3 /* cv */,
 				11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */,
 				11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */,
 			);

@@ -96,7 +96,6 @@
     app_ = new CAppServer(path);
     app_->createRepository();
     
-
     //app_->addAwesomeSauceAndViren();
     
     auto blockAuthCompletion = [&](const EAuthenticationStatus& aEAuthenticationStatus, const vsUser& aAuthenticatedUser)
@@ -158,11 +157,9 @@
 }
 
 - (NSString*)saveImage:(UIImage*)image name:(NSString*)name {
-    NSLog(@"saveImage");
-    NSString* path = @"PATH";
-    NSString* n = [NSString stringWithFormat:@"poofie_%@", name];
+    NSString* n = [NSString stringWithFormat:@"poofie_%@", name]; //XXX
     NSURL* url = [self.photoController addPhotoWithName:n image:image];
-    path = [url absoluteString];
+    NSString* path = [url absoluteString];
     return path;
 }
 
@@ -173,7 +170,6 @@ originalImageHref:(NSString*)originalImageHref
 finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
     
-    string primaryKey = "1";
     string aTitle = [docTitle UTF8String];
     vs_uint64_t aDateCreated = 0;
     vs_uint64_t aDateUpdated = 0;
