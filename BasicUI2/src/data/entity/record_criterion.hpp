@@ -31,6 +31,7 @@ public:
         }
     virtual ~vsRecordCreiterion(){}
     virtual bool fulfillsCriteria(const vsModelBase& retrievedRecord) = 0;
+    virtual vsModelBase& model() const = 0; //for which model are we running this query for
     
     const vsTData& keyLowerBound() const { return iKeyLowerBound; }
     const vsTData& keyUpperBound() const { return iKeyUpperBound; }

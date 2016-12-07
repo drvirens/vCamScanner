@@ -27,14 +27,14 @@ public:
 	virtual ~vsRepository();
 	virtual void put(vsModelBase& aModel, function<void(const vsModelBase&)> aCompletionBlock);
 	virtual void get(vsModelBase& aPrimaryKeyedModel, function<void(const vsModelBase&)> aCompletionBlock);
-    virtual void getAll(const vsRecordCreiterion& criteria, function<void(vector<const vsModelBase>&)> aCompletionBlock);
+    virtual void getAll(const vsRecordCreiterion& criteria, function<void(vsLinkedList<const vsModelBase>&)> aCompletionBlock);
 	
 private:
 	void doPut(vsModelBase& aModel, vsIKeyValueReaderWriter& aReaderWriter);
 	void packDBRecord(TPacker& aPacker, vs_int32_t aDbRecordSize, vs_uint8_t* aBuffer);
 	void createKey(vsModelBase& aModel, vs_uint64_t& aKeyStream);
 	void doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aReader);
-    void doEnumerate(vector<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader);
+    void doEnumerate(vsLinkedList<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader);
 	bool recordNotFound(vsTData& aValue) const;
 	
 private:

@@ -10,6 +10,7 @@
 #define document_record_creiterion_hpp
 
 #include "record_criterion.hpp"
+#include "document.hpp"
 
 class vsDocumentRecordCreiterion : public vsRecordCreiterion
     {
@@ -21,7 +22,11 @@ public:
         {
         }
     virtual bool fulfillsCriteria(const vsModelBase& retrievedRecord);
+    virtual vsModelBase& model() const;
     virtual ~vsDocumentRecordCreiterion();
+    
+private:
+    vsDocument iModel;
     };
 
 #endif /* document_record_creiterion_hpp */

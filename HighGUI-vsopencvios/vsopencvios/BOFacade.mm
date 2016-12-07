@@ -169,6 +169,7 @@ originalImageHref:(NSString*)originalImageHref
 finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
     
+    string primaryKey = "1";
     string aTitle = [docTitle UTF8String];
     vs_uint64_t aDateCreated = 0;
     vs_uint64_t aDateUpdated = 0;

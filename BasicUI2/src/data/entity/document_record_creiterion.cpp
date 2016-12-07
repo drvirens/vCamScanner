@@ -13,8 +13,15 @@ bool vsDocumentRecordCreiterion::fulfillsCriteria(const vsModelBase& retrievedRe
     { TRACE
     return true;
     }
+    
+vsModelBase& vsDocumentRecordCreiterion::model() const
+    { TRACE
+    return const_cast<vsDocument&>(iModel);
+    }
 
 vsDocumentRecordCreiterion::~vsDocumentRecordCreiterion()
     { TRACE
         
     }
+    
+    

@@ -14,6 +14,12 @@
 #include "ez_reader.hpp"
 #include "trace.h"
 
+vsModelBase* vsDocument::copy()
+    {
+    vsModelBase* obj = new vsDocument();
+    return obj;
+    }
+
 const string& vsDocument::primaryKey() const
 { TRACE
     return iDocID;
@@ -97,9 +103,22 @@ vsDocument::vsDocument(const string& aTitle,
 , iOriginalPhotoHref(aOriginalPhotoHref)
 , iModifiedLargePhotoHref(aModifiedLargePhotoHref)
 , iFileType(aFileType)
-{ TRACE
-    iDocID = "VirenDOcIDPrimaryKeyGenerate"; // XXX - generate doc id automatically
-}
+    { TRACE
+    iDocID = "1"; // XXX - generate doc id automatically
+    }
+
+vsDocument::vsDocument()
+: iTitle("")
+, iDateCreated(0)
+, iDateUpdated(0)
+, iSize(0)
+, iOriginalPhotoHref("")
+, iModifiedLargePhotoHref("")
+, iFileType("")
+    { TRACE
+    iDocID = "1"; // XXX - generate doc id automatically
+    }
+
 vsDocument::~vsDocument()
 { TRACE
 }

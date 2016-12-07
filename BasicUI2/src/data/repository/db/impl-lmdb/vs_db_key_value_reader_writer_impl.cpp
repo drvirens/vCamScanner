@@ -75,15 +75,23 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
             };
             
         vs_uint8_t* positionedKey         = aKeyLowerBound.data();
-        vs_uint32_t       positionedKeyLen      = aKeyLowerBound.length();
+        vs_uint32_t positionedKeyLen      = aKeyLowerBound.length();
         
         vs_uint8_t* positionedValue       = 0;
-        vs_uint32_t       positionedValueLen    = 0;
+        vs_uint32_t positionedValueLen    = 0;
         
         bool status = aCursor.positionAt(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen, eCursorDirection::eCursorDirectionForward);
         if (status)
             {
             LOG("\npositionAt success\n");
+            bool stop = false;
+            
+            vsTData retValue;
+            retValue.setData(positionedValue);
+            retValue.setDataLength(positionedValueLen);
+            
+            aBlock(aKeyLowerBound, retValue,stop);
+            
             MDB_val positionedKeyVal =
                 {
                 .mv_data = (vs_uint8_t*)positionedKey,

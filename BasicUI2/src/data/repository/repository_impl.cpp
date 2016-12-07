@@ -124,6 +124,42 @@ bool vsValueRecord::unPack(TUnPacker& aUnpacker)
 	}
 
 // -----------------------------------------------------------------------------
+static void doParse(vsTData dbKey, vsTData dbValue, vsModelBase& aPrimaryKeyedModel);
+static void doParse(vsTData dbKey, vsTData dbValue, vsModelBase& aPrimaryKeyedModel)
+    {
+    	//how big is the record? first 4 bytes will us that
+	TUnPacker recordUnPacker;
+	vs_int32_t bufLen = sizeof(vs_uint32_t);
+
+	recordUnPacker.setBuffer((vs_uint8_t*)dbValue.data());
+	recordUnPacker.setBufferLength((vs_int32_t)0);
+	recordUnPacker.setMaxLen(bufLen);
+	
+	vsValueRecord decoder;
+	bool ret = decoder.unPack(recordUnPacker);
+	ASSERT(ret);
+	if (!ret)
+		{
+		LOG("\t vsRepository::doGet: something went wrong while unpacking dbrecord \n");
+		return;
+		}
+		
+	//decoder has raw bytes for our actual model - unpack it now
+	vs_uint8_t* actualRecordDump = decoder.actualRecordDump();
+	vs_uint32_t modelSize = decoder.modelSize();
+	
+	ASSERT(0 != actualRecordDump);
+	ASSERT(modelSize > 0);
+	
+	TUnPacker modelDecoder;
+	modelDecoder.setBuffer((vs_uint8_t*)actualRecordDump);
+	modelDecoder.setBufferLength((vs_int32_t)0);
+	modelDecoder.setMaxLen(modelSize);
+	
+	aPrimaryKeyedModel.unPack(modelDecoder);
+    }
+    
+// -----------------------------------------------------------------------------
 vsRepository::vsRepository(vsIKeyValueStore& aKeyValueStore)
 	{ TRACE
 	iKeyValueStore.reset(&aKeyValueStore);
@@ -239,7 +275,7 @@ void vsRepository::get(vsModelBase& aPrimaryKeyedModel, function<void(const vsMo
 	iKeyValueStore->read(readBlock);
 	}
 
-void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vector<const vsModelBase>&)> aCompletionBlock)
+void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vsLinkedList<const vsModelBase>&)> aCompletionBlock)
     { TRACE
     ASSERT(0 != iKeyValueStore);
     
@@ -250,22 +286,29 @@ void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vect
     std::function<void(vsIKeyValueReader&)> readBlock = [&](vsIKeyValueReader& aReader)
         {
         LOG("\nenumerate callback\n");
-        vector<const vsModelBase> collection;
-        doEnumerate(collection, criteria, aReader);
-        //aCompletionBlock(aPrimaryKeyedModel);
+        vsLinkedList<const vsModelBase>* collection = new vsLinkedList<const vsModelBase>();
+        doEnumerate(*collection, criteria, aReader);
+        aCompletionBlock(*collection);
         };
     iKeyValueStore->enumnerate(theKeyLowerBound, theKeyUpperBound, theDirection, readBlock);
     }
-
-void vsRepository::doEnumerate(vector<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
+#include "document.hpp"
+void vsRepository::doEnumerate(vsLinkedList<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
     { TRACE
     
     vsTData theKeyLowerBound = criteria.keyLowerBound();
     vsTData theKeyUpperBound = criteria.keyUpperBound(); 
     vsIKeyValueReader::vsDirection theDirection = criteria.direction();
+    vsModelBase& model = criteria.model();
     
     function<void (const vsTData &, const vsTData &, bool &)> block = [&](const vsTData& aKey, const vsTData& aValue, bool& aStop) {
         LOG("\n what to do here? \n");
+        doParse(aKey, aValue, model);
+        
+        //copy
+        //vsDocument doc; // = model.copy(); //virtual copy constructor
+        vsModelBase* doc = model.copy();
+        collection.add(doc);
     };
     
     aReader.enumerate(theKeyLowerBound, theKeyUpperBound, theDirection, block);
@@ -292,37 +335,38 @@ void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aRe
 		}
 	
     //parse
+    doParse(dbKey, dbValue, aPrimaryKeyedModel);
     
-	//how big is the record? first 4 bytes will us that
-	TUnPacker recordUnPacker;
-	vs_int32_t bufLen = sizeof(vs_uint32_t);
-
-	recordUnPacker.setBuffer((vs_uint8_t*)dbValue.data());
-	recordUnPacker.setBufferLength((vs_int32_t)0);
-	recordUnPacker.setMaxLen(bufLen);
-	
-	vsValueRecord decoder;
-	bool ret = decoder.unPack(recordUnPacker);
-	ASSERT(ret);
-	if (!ret)
-		{
-		LOG("\t vsRepository::doGet: something went wrong while unpacking dbrecord \n");
-		return;
-		}
-		
-	//decoder has raw bytes for our actual model - unpack it now
-	vs_uint8_t* actualRecordDump = decoder.actualRecordDump();
-	vs_uint32_t modelSize = decoder.modelSize();
-	
-	ASSERT(0 != actualRecordDump);
-	ASSERT(modelSize > 0);
-	
-	TUnPacker modelDecoder;
-	modelDecoder.setBuffer((vs_uint8_t*)actualRecordDump);
-	modelDecoder.setBufferLength((vs_int32_t)0);
-	modelDecoder.setMaxLen(modelSize);
-	
-	aPrimaryKeyedModel.unPack(modelDecoder);
+//	//how big is the record? first 4 bytes will us that
+//	TUnPacker recordUnPacker;
+//	vs_int32_t bufLen = sizeof(vs_uint32_t);
+//
+//	recordUnPacker.setBuffer((vs_uint8_t*)dbValue.data());
+//	recordUnPacker.setBufferLength((vs_int32_t)0);
+//	recordUnPacker.setMaxLen(bufLen);
+//	
+//	vsValueRecord decoder;
+//	bool ret = decoder.unPack(recordUnPacker);
+//	ASSERT(ret);
+//	if (!ret)
+//		{
+//		LOG("\t vsRepository::doGet: something went wrong while unpacking dbrecord \n");
+//		return;
+//		}
+//		
+//	//decoder has raw bytes for our actual model - unpack it now
+//	vs_uint8_t* actualRecordDump = decoder.actualRecordDump();
+//	vs_uint32_t modelSize = decoder.modelSize();
+//	
+//	ASSERT(0 != actualRecordDump);
+//	ASSERT(modelSize > 0);
+//	
+//	TUnPacker modelDecoder;
+//	modelDecoder.setBuffer((vs_uint8_t*)actualRecordDump);
+//	modelDecoder.setBufferLength((vs_int32_t)0);
+//	modelDecoder.setMaxLen(modelSize);
+//	
+//	aPrimaryKeyedModel.unPack(modelDecoder);
 	}
 
 bool vsRepository::recordNotFound(vsTData& aValue) const

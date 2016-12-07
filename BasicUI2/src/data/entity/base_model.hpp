@@ -22,6 +22,8 @@ public:
 	vsModelBase();
 	virtual ~vsModelBase();
 	
+    virtual vsModelBase* copy() = 0; //virtual copy constructor
+    
 	virtual const string& primaryKey() const = 0;
 	virtual const vs_int32_t recordSize() const = 0;
 	virtual bool pack(TPacker& aPacker) = 0;

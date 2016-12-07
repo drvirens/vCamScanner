@@ -14,6 +14,13 @@
 #include "ez_reader.hpp"
 #include "trace.h"
 
+vsModelBase* vsUser::copy()
+    {
+    vsModelBase* obj = new vsUser("");
+    return obj;
+    }
+
+
 const string& vsUser::primaryKey() const
 	{ TRACE
 	return iUserName;

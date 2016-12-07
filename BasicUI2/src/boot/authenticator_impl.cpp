@@ -23,6 +23,14 @@ CAuthenticator::~CAuthenticator()
 	{ TRACE
 	}
 
+static void visitNode(void* aData)
+    {
+    vsDocument* doc = (vsDocument*)aData;
+    if (doc) 
+        {
+        LOG("\n got docuemnt \n");
+        }
+    }
 void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 			function<void(const EAuthenticationStatus&, const vsUser&)> aCompletionCB)
 	{ TRACE
@@ -50,8 +58,9 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
     vsIKeyValueReader::vsDirection theDirection = vsIKeyValueReader::vsDirectionForward;
     vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(theKeyLowerBound, theKeyUpperBound, theDirection);
     iRepository->getAll(*criteria,
-                        [&](vector<const vsModelBase>&) {
+                        [&](vsLinkedList<const vsModelBase>& aCollection) {
                             LOG("\n COmpletion function -  \n");
+                            aCollection.traverse(visitNode);
                         });
         //test-
 	}

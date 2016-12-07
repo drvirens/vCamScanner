@@ -15,17 +15,17 @@
 
 bool extractString(TUnPacker& aUnPacker, string& aStr)
 	{
-	vs_uint32_t userLen = 0;
-	if ( !(aUnPacker.readUint32(userLen)) )
+	vs_uint32_t objLen = 0;
+	if ( !(aUnPacker.readUint32(objLen)) )
 		{
 		LOG("\tcould not read the length\n");
 		return false;
 		}
-	ASSERT(userLen > 0 && userLen < 1000);
+	ASSERT(objLen >= 0 && objLen < 1000);
 	char* strPtr = (char*)(aUnPacker.buffer() + aUnPacker.bufferLength());
-	string userName(strPtr, userLen);
-	aStr = userName;
-	aUnPacker.setBufferLength(aUnPacker.bufferLength() + userLen);
+	string objName(strPtr, objLen);
+	aStr = objName;
+	aUnPacker.setBufferLength(aUnPacker.bufferLength() + objLen);
 	return true;
 	}
 
