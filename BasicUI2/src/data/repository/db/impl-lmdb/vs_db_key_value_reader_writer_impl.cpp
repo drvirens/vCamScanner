@@ -9,6 +9,7 @@
 #include "vs_db_key_value_reader_writer_impl.hpp"
 #include "db_data.hpp"
 #include "trace.h"
+#include "db_cursor.hpp"
 
 vsCKeyValueReaderWriter::vsCKeyValueReaderWriter(vsTable& aTable, MDB_txn& aTransaction)
 	: iTransaction(&aTransaction)
@@ -51,6 +52,89 @@ bool vsCKeyValueReaderWriter::readRaw(const vsTData& aKey, vsTData& aValue)
 	ret = true;
 	return ret;
 	}
+    
+bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound, 
+                                        const vsTData& aKeyUpperBound, 
+                                        vsDirection aDirection,
+    function<void(const vsTData& /*aKey*/, const vsTData& /*aValue*/, bool& /*aStop*/)>& aBlock)
+    { TRACE
+    bool ret = false;
+    function<void(const vsCursor&)> cursorblock = [&](const vsCursor& aCursor)
+        {
+        LOG("inside lambda cursor bloc");
+        MDB_val upperBoundKey = 
+            {
+            .mv_data = aKeyUpperBound.data(),
+            .mv_size = aKeyUpperBound.length()
+            };
+            
+        MDB_val lowerBoundKey =
+            {
+            .mv_data = aKeyLowerBound.data(),
+            .mv_size = aKeyLowerBound.length()
+            };
+            
+        vs_uint8_t* positionedKey         = aKeyLowerBound.data();
+        vs_uint32_t       positionedKeyLen      = aKeyLowerBound.length();
+        
+        vs_uint8_t* positionedValue       = 0;
+        vs_uint32_t       positionedValueLen    = 0;
+        
+        bool status = aCursor.positionAt(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen, eCursorDirection::eCursorDirectionForward);
+        if (status)
+            {
+            LOG("\npositionAt success\n");
+            MDB_val positionedKeyVal =
+                {
+                .mv_data = (vs_uint8_t*)positionedKey,
+                .mv_size = positionedKeyLen
+                };
+            bool continueSearch = true;
+            
+            int rc = mdb_cmp(iTransaction, dbi(), &lowerBoundKey, &positionedKeyVal);
+            if (0 == rc)
+                {
+                continueSearch = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+                }
+            if (continueSearch)
+                {
+                LOG("\n continueSearch \n");
+                int cmpResult = mdb_cmp(iTransaction, dbi(), &positionedKeyVal, &upperBoundKey);
+                if (0 == cmpResult)
+                    {
+                    LOG("\n mdb_cmp returned EQUAL \n");
+                    }
+                else if (cmpResult < 0)
+                    {
+                    LOG("\n mdb_cmp returned less than equal to 0 \n");
+                    }
+                else 
+                    {
+                    LOG("\n mdb_cmp returned greater than 0 \n");
+                    //no results found
+                    }
+                }
+            }
+        };
+    readWithCursor(cursorblock);
+    return ret;
+    }
+    
+bool vsCKeyValueReaderWriter::readWithCursor(function<void(const vsCursor&)>& aCursorBlock)
+    { TRACE
+    bool ret = false;
+    MDB_cursor* mdbCursor = 0;
+    int status = mdb_cursor_open(iTransaction, dbi(), &mdbCursor);
+    if (MDB_SUCCESS != status)
+        {
+        return ret;
+        }
+    vsCursor* cursor = new vsCursor(*iTable, mdbCursor);
+    aCursorBlock(*cursor);
+    mdb_cursor_close(mdbCursor);
+    ret = true;
+    return ret;
+    }
 
 void vsCKeyValueReaderWriter::writeRaw(const vsTData& aKey, const vsTData& aValue)
 	{ TRACE

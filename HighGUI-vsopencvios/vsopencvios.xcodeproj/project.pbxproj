@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		11161DF31DF6272E00381D85 /* record_criterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DF11DF6272E00381D85 /* record_criterion.cpp */; };
+		11161DF61DF62AE000381D85 /* document_record_creiterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */; };
+		11161DFE1DF63B7700381D85 /* db_cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DFC1DF63B7700381D85 /* db_cursor.cpp */; };
 		111D56B51DF2590700534EF3 /* app_server.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111D56B31DF2590700534EF3 /* app_server.cpp */; };
 		111D56C81DF2805500534EF3 /* mdb.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56BC1DF2805400534EF3 /* mdb.c */; };
 		111D56CD1DF2805500534EF3 /* midl.c in Sources */ = {isa = PBXBuildFile; fileRef = 111D56C11DF2805500534EF3 /* midl.c */; };
@@ -128,6 +131,7 @@
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
+		118BD8231DF612980031A52D /* PSPDFUIKitMainThreadGuard.m in Sources */ = {isa = PBXBuildFile; fileRef = 118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */; };
 		11B75AD11DDFD08D004EAB65 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD01DDFD08D004EAB65 /* main.m */; };
 		11B75AD41DDFD08D004EAB65 /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11B75AD31DDFD08D004EAB65 /* AppDelegate.mm */; };
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
@@ -390,6 +394,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		11161DF11DF6272E00381D85 /* record_criterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = record_criterion.cpp; sourceTree = "<group>"; };
+		11161DF21DF6272E00381D85 /* record_criterion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = record_criterion.hpp; sourceTree = "<group>"; };
+		11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document_record_creiterion.cpp; sourceTree = "<group>"; };
+		11161DF51DF62AE000381D85 /* document_record_creiterion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document_record_creiterion.hpp; sourceTree = "<group>"; };
+		11161DFC1DF63B7700381D85 /* db_cursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db_cursor.cpp; sourceTree = "<group>"; };
+		11161DFD1DF63B7700381D85 /* db_cursor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = db_cursor.hpp; sourceTree = "<group>"; };
 		111D56B31DF2590700534EF3 /* app_server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app_server.cpp; sourceTree = "<group>"; };
 		111D56B41DF2590700534EF3 /* app_server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app_server.hpp; sourceTree = "<group>"; };
 		111D56BB1DF2805400534EF3 /* lmdb.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lmdb.h; sourceTree = "<group>"; };
@@ -574,6 +584,7 @@
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPDFUIKitMainThreadGuard.m; sourceTree = "<group>"; };
 		11B75ACC1DDFD08D004EAB65 /* vsopencvios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = vsopencvios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11B75AD01DDFD08D004EAB65 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		11B75AD21DDFD08D004EAB65 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -1366,6 +1377,7 @@
 		115294A41DF55465009EF4F9 /* 3p */ = {
 			isa = PBXGroup;
 			children = (
+				118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */,
 				11E0D3E41DF560860075AC0F /* NYTPhotoViewer */,
 				115294AB1DF554BC009EF4F9 /* DTError.h */,
 				115294AC1DF554BC009EF4F9 /* DTError.m */,
@@ -1564,6 +1576,10 @@
 				11F25A0A1DF222E9003CB8EE /* user.hpp */,
 				111D56DD1DF2B3CB00534EF3 /* document.cpp */,
 				111D56DE1DF2B3CB00534EF3 /* document.hpp */,
+				11161DF11DF6272E00381D85 /* record_criterion.cpp */,
+				11161DF21DF6272E00381D85 /* record_criterion.hpp */,
+				11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */,
+				11161DF51DF62AE000381D85 /* document_record_creiterion.hpp */,
 			);
 			path = entity;
 			sourceTree = "<group>";
@@ -1589,9 +1605,9 @@
 				11F25A121DF222E9003CB8EE /* db_key_value_reader_writer.hpp */,
 				11F25A131DF222E9003CB8EE /* db_key_value_store.cpp */,
 				11F25A141DF222E9003CB8EE /* db_key_value_store.hpp */,
-				11F25A151DF222E9003CB8EE /* db_key_value_store_impl.hpp */,
 				11F25A161DF222E9003CB8EE /* db_key_value_writer.cpp */,
 				11F25A171DF222E9003CB8EE /* db_key_value_writer.hpp */,
+				11F25A151DF222E9003CB8EE /* db_key_value_store_impl.hpp */,
 				11F25A181DF222E9003CB8EE /* impl-lmdb */,
 			);
 			path = db;
@@ -1608,6 +1624,8 @@
 				11F25A221DF222E9003CB8EE /* scoped_txn.hpp */,
 				11F25A231DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.cpp */,
 				11F25A241DF222E9003CB8EE /* vs_db_key_value_reader_writer_impl.hpp */,
+				11161DFC1DF63B7700381D85 /* db_cursor.cpp */,
+				11161DFD1DF63B7700381D85 /* db_cursor.hpp */,
 			);
 			path = "impl-lmdb";
 			sourceTree = "<group>";
@@ -2754,6 +2772,7 @@
 				11F25A281DF222E9003CB8EE /* user.cpp in Sources */,
 				1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */,
 				B621FD961DEAA29E00E54A51 /* cap_ffmpeg.cpp in Sources */,
+				11161DFE1DF63B7700381D85 /* db_cursor.cpp in Sources */,
 				1152948A1DF52082009EF4F9 /* jidctfst.c in Sources */,
 				B621FD321DEAA29D00E54A51 /* epnp.cpp in Sources */,
 				1152946D1DF52082009EF4F9 /* jcmarker.c in Sources */,
@@ -2859,6 +2878,7 @@
 				11F25A2E1DF222E9003CB8EE /* db_key_value_store_impl.cpp in Sources */,
 				11303BB51DED5DA800371BD5 /* BOCategoryTableViewController.mm in Sources */,
 				B621FDAF1DEAA29E00E54A51 /* accum.cpp in Sources */,
+				11161DF31DF6272E00381D85 /* record_criterion.cpp in Sources */,
 				11303BF81DEECEB100371BD5 /* VSSettingsViewController.m in Sources */,
 				111D56DC1DF28F5900534EF3 /* model_immutable_login.cpp in Sources */,
 				11E0D4091DF560860075AC0F /* NYTPhotoTransitionAnimator.m in Sources */,
@@ -2874,6 +2894,7 @@
 				B621FDA81DEAA29E00E54A51 /* ios_conversions.mm in Sources */,
 				B621FDE81DEAA29E00E54A51 /* datamatrix.cpp in Sources */,
 				B621FDC21DEAA29E00E54A51 /* histogram.cpp in Sources */,
+				11161DF61DF62AE000381D85 /* document_record_creiterion.cpp in Sources */,
 				B621FDB91DEAA29E00E54A51 /* distransform.cpp in Sources */,
 				B621FD451DEAA29D00E54A51 /* contrib_init.cpp in Sources */,
 				B621FD981DEAA29E00E54A51 /* cap_ios_abstract_camera.mm in Sources */,
@@ -2960,6 +2981,7 @@
 				11E0D4051DF560860075AC0F /* NYTPhotoDismissalInteractionController.m in Sources */,
 				B621FD3B1DEAA29D00E54A51 /* stereosgbm.cpp in Sources */,
 				B621FDDB1DEAA29E00E54A51 /* em.cpp in Sources */,
+				118BD8231DF612980031A52D /* PSPDFUIKitMainThreadGuard.m in Sources */,
 				B621FDF21DEAA29E00E54A51 /* lsvmtbbversion.cpp in Sources */,
 				B621FD341DEAA29D00E54A51 /* modelest.cpp in Sources */,
 				11303C061DEECEB100371BD5 /* VSVehicleCell.m in Sources */,

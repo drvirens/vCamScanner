@@ -9,29 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vsopencvios/3p/NSDate+DateTools.m"
-            timestampString = "502618537.170307"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502766913.979587"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "185"
-            endingLineNumber = "185"
-            landmarkName = "-timeAgoSinceDate:format:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BODocumentsListViewController.mm"
-            timestampString = "502621682.304436"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "82"
-            endingLineNumber = "82"
-            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            startingLineNumber = "102"
+            endingLineNumber = "102"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

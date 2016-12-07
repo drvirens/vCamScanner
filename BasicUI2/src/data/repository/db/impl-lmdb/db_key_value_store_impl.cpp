@@ -116,9 +116,30 @@ void vsKeyValueStore::read(function<void(vsIKeyValueReader&)>& aTransaction)
 		scopedTxn.setStatus(MDB_SUCCESS); //make sure to set status for scopedTxn here
 		aTransaction(*obj);
 		}
-    delete obj;
-    obj = 0;
+//    delete obj;
+//    obj = 0;
 	}
+    
+void vsKeyValueStore::enumnerate(const vsTData& aKeyLowerBound, 
+                           const vsTData& aKeyUpperBound, 
+                           vsIKeyValueReader::vsDirection aDirection,
+                           function<void(vsIKeyValueReader&)>& aTransaction)
+    { TRACE
+	ASSERT(iTable);
+	if (!iTable) { return; }
+    
+    vsScopedTransaction scopedTxn(*iEnv);
+	MDB_txn* txn = scopedTxn.txn();
+	ASSERT(0 != iTable.get());
+	vsIKeyValueReaderWriter* obj = new vsCKeyValueReaderWriter( *(iTable.get()), *txn );
+	if (obj)
+		{
+		scopedTxn.setStatus(MDB_SUCCESS); //make sure to set status for scopedTxn here
+		aTransaction(*obj);
+		}
+//    delete obj;
+//    obj = 0;
+    }
 
 void vsKeyValueStore::readWrite(function<void(vsIKeyValueReaderWriter&)>& aTransaction)
 	{ TRACE

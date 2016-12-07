@@ -15,6 +15,7 @@
 #include "MurmurHash3.h"
 #include "trace.h"
 #include "primary_key.hpp"
+#include "record_criterion.hpp"
 
 // -----------------------------------------------------------------------------
 enum vsERepositoryRecordType
@@ -58,6 +59,7 @@ vsValueRecord::vsValueRecord(vs_uint32_t aModelSize,
 	: iModelSize(aModelSize)
 	, iModelType(aModelType)
 	, iActualRecordDump(aActualRecordDump)
+    , iShouldDelete(false)
 	{ TRACE
 	iRecordSize = sizeof(vs_uint32_t)		+ //how big is this record?
 								sizeof(vs_uint8_t)		+ //what kind of record is stored here?
@@ -237,14 +239,51 @@ void vsRepository::get(vsModelBase& aPrimaryKeyedModel, function<void(const vsMo
 	iKeyValueStore->read(readBlock);
 	}
 
+void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vector<const vsModelBase>&)> aCompletionBlock)
+    { TRACE
+    ASSERT(0 != iKeyValueStore);
+    
+    vsTData theKeyLowerBound = criteria.keyLowerBound();
+    vsTData theKeyUpperBound = criteria.keyUpperBound(); 
+    vsIKeyValueReader::vsDirection theDirection = criteria.direction();
+                           
+    std::function<void(vsIKeyValueReader&)> readBlock = [&](vsIKeyValueReader& aReader)
+        {
+        LOG("\nenumerate callback\n");
+        vector<const vsModelBase> collection;
+        doEnumerate(collection, criteria, aReader);
+        //aCompletionBlock(aPrimaryKeyedModel);
+        };
+    iKeyValueStore->enumnerate(theKeyLowerBound, theKeyUpperBound, theDirection, readBlock);
+    }
+
+void vsRepository::doEnumerate(vector<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
+    { TRACE
+    
+    vsTData theKeyLowerBound = criteria.keyLowerBound();
+    vsTData theKeyUpperBound = criteria.keyUpperBound(); 
+    vsIKeyValueReader::vsDirection theDirection = criteria.direction();
+    
+    function<void (const vsTData &, const vsTData &, bool &)> block = [&](const vsTData& aKey, const vsTData& aValue, bool& aStop) {
+        LOG("\n what to do here? \n");
+    };
+    
+    aReader.enumerate(theKeyLowerBound, theKeyUpperBound, theDirection, block);
+    }
+    
 void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aReader)
 	{ TRACE
+    
+    //create key
 	vsTData dbKey;
 	vsPrimaryKey pk(aPrimaryKeyedModel.primaryKey());
 	pk.wrappedPrimaryKey(dbKey);
 	dbKey.debugDump();
 
+    //value to accept in this
 	vsTData dbValue;
+    
+    //read raw
 	aReader.readRaw(dbKey, dbValue);
 	if (!recordNotFound(dbValue))
 		{
@@ -252,6 +291,8 @@ void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aRe
 		return;
 		}
 	
+    //parse
+    
 	//how big is the record? first 4 bytes will us that
 	TUnPacker recordUnPacker;
 	vs_int32_t bufLen = sizeof(vs_uint32_t);

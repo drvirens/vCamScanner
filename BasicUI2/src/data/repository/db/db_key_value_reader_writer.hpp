@@ -20,6 +20,8 @@ public:
 	
 	//reader
 	virtual bool readRaw(const vsTData& aKey, vsTData& aValue) = 0;
+    virtual bool enumerate(const vsTData& aKeyLowerBound, const vsTData& aKeyUpperBound, vsDirection aDirection,
+                            function<void(const vsTData& /*aKey*/, const vsTData& /*aValue*/, bool& /*aStop*/)>& aBlock) = 0;
 	
 	//write
 	virtual void writeRaw(const vsTData& aKey, const vsTData& aValue) = 0;

@@ -71,7 +71,7 @@ public:
 #endif
     
 private:
-    string iDocID;
+    string iDocID; //primary key
     string iTitle;
     vs_uint64_t iDateCreated;
     vs_uint64_t iDateUpdated;
