@@ -14,12 +14,6 @@
 #include "ez_reader.hpp"
 #include "trace.h"
 
-vsModelBase* vsDocument::copy()
-    {
-    vsModelBase* obj = new vsDocument();
-    return obj;
-    }
-
 const string& vsDocument::primaryKey() const
 { TRACE
     return iDocID;
@@ -108,7 +102,8 @@ vsDocument::vsDocument(const string& aTitle,
     }
 
 vsDocument::vsDocument()
-: iTitle("")
+: iDocID()
+, iTitle("")
 , iDateCreated(0)
 , iDateUpdated(0)
 , iSize(0)
@@ -118,6 +113,21 @@ vsDocument::vsDocument()
     { TRACE
     iDocID = "1"; // XXX - generate doc id automatically
     }
+
+vsModelBase* vsDocument::copy()
+    { TRACE
+    vsModelBase* obj = new vsDocument(
+                                        iTitle,
+                                        iDateCreated,
+                                        iDateUpdated,
+                                        iSize,
+                                        iOriginalPhotoHref,
+                                        iModifiedLargePhotoHref,
+                                        iFileType);
+    
+    return obj;
+    }
+
 
 vsDocument::~vsDocument()
 { TRACE

@@ -59,7 +59,7 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
     vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(theKeyLowerBound, theKeyUpperBound, theDirection);
     iRepository->getAll(*criteria,
                         [&](vsLinkedList<const vsModelBase>& aCollection) {
-                            LOG("\n COmpletion function -  \n");
+                            LOG("\n Completion function -  \n");
                             aCollection.traverse(visitNode);
                         });
         //test-
