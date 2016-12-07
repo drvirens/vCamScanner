@@ -10,6 +10,8 @@
 #define record_criterion_hpp
 
 #include "chat_types.h"
+#include "db_key_value_reader.hpp"
+#include "db_data.hpp"
 
 class vsModelBase;
 
@@ -19,15 +21,25 @@ class vsModelBase;
 class vsRecordCreiterion
     {
 public:
-//    explicit vsRecordCreiterion(vsModelBase& model)
-//        : iRecord(model)
-//        {
-//        }
+    explicit vsRecordCreiterion(const vsTData& aKeyLowerBound,
+                                const vsTData& aKeyUpperBound,
+                                const vsIKeyValueReader::vsDirection& aDirection)
+        : iKeyLowerBound(aKeyLowerBound)
+        , iKeyUpperBound(aKeyUpperBound)
+        , iDirection(aDirection)
+        {
+        }
     virtual ~vsRecordCreiterion(){}
     virtual bool fulfillsCriteria(const vsModelBase& retrievedRecord) = 0;
-        
-//private:
-//    vsModelBase& iRecord;
+    
+    const vsTData& keyLowerBound() const { return iKeyLowerBound; }
+    const vsTData& keyUpperBound() const { return iKeyUpperBound; }
+    const vsIKeyValueReader::vsDirection& direction() const { return iDirection; }
+    
+private:
+    const vsTData iKeyLowerBound;
+    const vsTData iKeyUpperBound;
+    const vsIKeyValueReader::vsDirection iDirection;
     };
 
 #endif /* record_criterion_hpp */

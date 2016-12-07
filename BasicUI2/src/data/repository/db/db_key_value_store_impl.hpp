@@ -24,6 +24,7 @@ public:
 	
 	//vsIKeyValueStore
 	virtual void read(function<void(vsIKeyValueReader&)>& aTransaction);
+    virtual void enumnerate(function<void(vsIKeyValueReader&)>& aTransaction);
 	virtual void readWrite(function<void(vsIKeyValueReaderWriter&)>& aTransaction);
 	virtual void sync();
 	

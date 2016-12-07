@@ -14,6 +14,12 @@
 class vsDocumentRecordCreiterion : public vsRecordCreiterion
     {
 public:
+    explicit vsDocumentRecordCreiterion(const vsTData& aKeyLowerBound,
+                                const vsTData& aKeyUpperBound,
+                                const vsIKeyValueReader::vsDirection& aDirection)
+        : vsRecordCreiterion(aKeyLowerBound, aKeyUpperBound, aDirection)
+        {
+        }
     virtual bool fulfillsCriteria(const vsModelBase& retrievedRecord);
     virtual ~vsDocumentRecordCreiterion();
     };
