@@ -53,6 +53,7 @@ bool vsCKeyValueReaderWriter::readRaw(const vsTData& aKey, vsTData& aValue)
 	return ret;
 	}
     
+    
 bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound, 
                                         const vsTData& aKeyUpperBound, 
                                         vsDirection aDirection,
@@ -62,17 +63,19 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
     function<void(const vsCursor&)> cursorblock = [&](const vsCursor& aCursor)
         {
         LOG("inside lambda cursor bloc");
-        MDB_val upperBoundKey = 
-            {
-            .mv_data = aKeyUpperBound.data(),
-            .mv_size = aKeyUpperBound.length()
-            };
-            
-        MDB_val lowerBoundKey =
-            {
-            .mv_data = aKeyLowerBound.data(),
-            .mv_size = aKeyLowerBound.length()
-            };
+        
+//        
+//        MDB_val upperBoundKey = 
+//            {
+//            .mv_data = aKeyUpperBound.data(),
+//            .mv_size = aKeyUpperBound.length()
+//            };
+//            
+//        MDB_val lowerBoundKey =
+//            {
+//            .mv_data = aKeyLowerBound.data(),
+//            .mv_size = aKeyLowerBound.length()
+//            };
             
         vs_uint8_t* positionedKey         = aKeyLowerBound.data();
         vs_uint32_t positionedKeyLen      = aKeyLowerBound.length();
@@ -80,6 +83,36 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
         vs_uint8_t* positionedValue       = 0;
         vs_uint32_t positionedValueLen    = 0;
         
+        
+        bool continueSearch = true;
+        while (continueSearch) 
+        {
+        
+            continueSearch = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+            if (!continueSearch)
+                {
+                break;
+                }
+            vsTData posKeyData;
+            posKeyData.setData(positionedKey);
+            posKeyData.setDataLength(positionedKeyLen);
+            
+            vsTData posValueData;
+            posValueData.setData(positionedValue);
+            posValueData.setDataLength(positionedValueLen);
+            
+            bool stop = false;
+            aBlock(posKeyData, posValueData, stop);
+
+            positionedKey         = posKeyData.data();
+            positionedKeyLen      = posKeyData.length();
+            
+            positionedValue       = 0;
+            positionedValueLen    = 0;
+        
+        } //while
+        
+        #if 0
         bool status = aCursor.positionAt(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen, eCursorDirection::eCursorDirectionForward);
         if (status)
             {
@@ -90,7 +123,7 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
             retValue.setData(positionedValue);
             retValue.setDataLength(positionedValueLen);
             
-            aBlock(aKeyLowerBound, retValue,stop);
+            aBlock(aKeyLowerBound, retValue, stop);
             
             MDB_val positionedKeyVal =
                 {
@@ -119,15 +152,190 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
                 else 
                     {
                     LOG("\n mdb_cmp returned greater than 0 \n");
-                    //no results found
-                    }
-                }
-            }
+                    
+                    //test 
+                    stop = false;
+                    
+                    vsTData posKeyData;
+                    posKeyData.setData(positionedKey);
+                    posKeyData.setDataLength(positionedKeyLen);
+                    
+                    vsTData posValueData;
+                    posValueData.setData(positionedValue);
+                    posValueData.setDataLength(positionedValueLen);
+                    
+                    
+                    aBlock(posKeyData, posValueData, stop);
+                    
+                    while (!stop)
+                        {
+                        bool trynext = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+                        if (!trynext)
+                            {
+                            break;
+                            }
+                        MDB_val positionedKeyVal =
+                            {
+                            .mv_data = (vs_uint8_t*)positionedKey,
+                            .mv_size = positionedKeyLen
+                            };
+                        int cmpResult = mdb_cmp(iTransaction, dbi(), &positionedKeyVal, &upperBoundKey);
+                        if (0 == cmpResult)
+                            {
+                            LOG("\n mdb_cmp returned EQUAL \n");
+                            }
+                        else if (cmpResult < 0)
+                            {
+                            LOG("\n mdb_cmp returned less than equal to 0 \n");
+                            }
+                        else 
+                            {
+                            LOG("\n mdb_cmp returned greater than 0 \n");
+                            vsTData posKeyData;
+                            posKeyData.setData(positionedKey);
+                            posKeyData.setDataLength(positionedKeyLen);
+                            
+                            vsTData posValueData;
+                            posValueData.setData(positionedValue);
+                            posValueData.setDataLength(positionedValueLen);
+                            
+                            aBlock(posKeyData, posValueData, stop);
+                            }
+                        } //end while
+                    } //last else
+                } //continueSearch
+            } //if
+            #endif
         };
     readWithCursor(cursorblock);
     return ret;
     }
     
+    
+//bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound, 
+//                                        const vsTData& aKeyUpperBound, 
+//                                        vsDirection aDirection,
+//    function<void(const vsTData& /*aKey*/, const vsTData& /*aValue*/, bool& /*aStop*/)>& aBlock)
+//    { TRACE
+//    bool ret = false;
+//    function<void(const vsCursor&)> cursorblock = [&](const vsCursor& aCursor)
+//        {
+//        LOG("inside lambda cursor bloc");
+//        MDB_val upperBoundKey = 
+//            {
+//            .mv_data = aKeyUpperBound.data(),
+//            .mv_size = aKeyUpperBound.length()
+//            };
+//            
+//        MDB_val lowerBoundKey =
+//            {
+//            .mv_data = aKeyLowerBound.data(),
+//            .mv_size = aKeyLowerBound.length()
+//            };
+//            
+//        vs_uint8_t* positionedKey         = aKeyLowerBound.data();
+//        vs_uint32_t positionedKeyLen      = aKeyLowerBound.length();
+//        
+//        vs_uint8_t* positionedValue       = 0;
+//        vs_uint32_t positionedValueLen    = 0;
+//        
+//        bool status = aCursor.positionAt(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen, eCursorDirection::eCursorDirectionForward);
+//        if (status)
+//            {
+//            LOG("\npositionAt success\n");
+//            bool stop = false;
+//            
+//            vsTData retValue;
+//            retValue.setData(positionedValue);
+//            retValue.setDataLength(positionedValueLen);
+//            
+//            aBlock(aKeyLowerBound, retValue, stop);
+//            
+//            MDB_val positionedKeyVal =
+//                {
+//                .mv_data = (vs_uint8_t*)positionedKey,
+//                .mv_size = positionedKeyLen
+//                };
+//            bool continueSearch = true;
+//            
+//            int rc = mdb_cmp(iTransaction, dbi(), &lowerBoundKey, &positionedKeyVal);
+//            if (0 == rc)
+//                {
+//                continueSearch = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+//                }
+//            if (continueSearch)
+//                {
+//                LOG("\n continueSearch \n");
+//                int cmpResult = mdb_cmp(iTransaction, dbi(), &positionedKeyVal, &upperBoundKey);
+//                if (0 == cmpResult)
+//                    {
+//                    LOG("\n mdb_cmp returned EQUAL \n");
+//                    }
+//                else if (cmpResult < 0)
+//                    {
+//                    LOG("\n mdb_cmp returned less than equal to 0 \n");
+//                    }
+//                else 
+//                    {
+//                    LOG("\n mdb_cmp returned greater than 0 \n");
+//                    
+//                    //test 
+//                    stop = false;
+//                    
+//                    vsTData posKeyData;
+//                    posKeyData.setData(positionedKey);
+//                    posKeyData.setDataLength(positionedKeyLen);
+//                    
+//                    vsTData posValueData;
+//                    posValueData.setData(positionedValue);
+//                    posValueData.setDataLength(positionedValueLen);
+//                    
+//                    
+//                    aBlock(posKeyData, posValueData, stop);
+//                    
+//                    while (!stop)
+//                        {
+//                        bool trynext = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+//                        if (!trynext)
+//                            {
+//                            break;
+//                            }
+//                        MDB_val positionedKeyVal =
+//                            {
+//                            .mv_data = (vs_uint8_t*)positionedKey,
+//                            .mv_size = positionedKeyLen
+//                            };
+//                        int cmpResult = mdb_cmp(iTransaction, dbi(), &positionedKeyVal, &upperBoundKey);
+//                        if (0 == cmpResult)
+//                            {
+//                            LOG("\n mdb_cmp returned EQUAL \n");
+//                            }
+//                        else if (cmpResult < 0)
+//                            {
+//                            LOG("\n mdb_cmp returned less than equal to 0 \n");
+//                            }
+//                        else 
+//                            {
+//                            LOG("\n mdb_cmp returned greater than 0 \n");
+//                            vsTData posKeyData;
+//                            posKeyData.setData(positionedKey);
+//                            posKeyData.setDataLength(positionedKeyLen);
+//                            
+//                            vsTData posValueData;
+//                            posValueData.setData(positionedValue);
+//                            posValueData.setDataLength(positionedValueLen);
+//                            
+//                            aBlock(posKeyData, posValueData, stop);
+//                            }
+//                        } //end while
+//                    }
+//                }
+//            }
+//        };
+//    readWithCursor(cursorblock);
+//    return ret;
+//    }
+//    
 bool vsCKeyValueReaderWriter::readWithCursor(function<void(const vsCursor&)>& aCursorBlock)
     { TRACE
     bool ret = false;

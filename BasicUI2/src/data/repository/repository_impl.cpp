@@ -292,7 +292,7 @@ void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vsLi
         };
     iKeyValueStore->enumnerate(theKeyLowerBound, theKeyUpperBound, theDirection, readBlock);
     }
-#include "document.hpp"
+
 void vsRepository::doEnumerate(vsLinkedList<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
     { TRACE
     
@@ -304,9 +304,6 @@ void vsRepository::doEnumerate(vsLinkedList<const vsModelBase>& collection, cons
     function<void (const vsTData &, const vsTData &, bool &)> block = [&](const vsTData& aKey, const vsTData& aValue, bool& aStop) {
         LOG("\n what to do here? \n");
         doParse(aKey, aValue, model);
-        
-        //copy
-        //vsDocument doc; // = model.copy(); //virtual copy constructor
         vsModelBase* doc = model.copy();
         collection.add(doc);
     };
