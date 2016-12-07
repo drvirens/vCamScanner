@@ -83,7 +83,37 @@ bool vsCKeyValueReaderWriter::enumerate(const vsTData& aKeyLowerBound,
         bool status = aCursor.positionAt(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen, eCursorDirection::eCursorDirectionForward);
         if (status)
             {
-            LOG("positionAt success");
+            LOG("\npositionAt success\n");
+            MDB_val positionedKeyVal =
+                {
+                .mv_data = (vs_uint8_t*)positionedKey,
+                .mv_size = positionedKeyLen
+                };
+            bool continueSearch = true;
+            
+            int rc = mdb_cmp(iTransaction, dbi(), &lowerBoundKey, &positionedKeyVal);
+            if (0 == rc)
+                {
+                continueSearch = aCursor.next(&positionedKey, &positionedKeyLen, &positionedValue, &positionedValueLen);
+                }
+            if (continueSearch)
+                {
+                LOG("\n continueSearch \n");
+                int cmpResult = mdb_cmp(iTransaction, dbi(), &positionedKeyVal, &upperBoundKey);
+                if (0 == cmpResult)
+                    {
+                    LOG("\n mdb_cmp returned EQUAL \n");
+                    }
+                else if (cmpResult < 0)
+                    {
+                    LOG("\n mdb_cmp returned less than equal to 0 \n");
+                    }
+                else 
+                    {
+                    LOG("\n mdb_cmp returned greater than 0 \n");
+                    //no results found
+                    }
+                }
             }
         };
     readWithCursor(cursorblock);
