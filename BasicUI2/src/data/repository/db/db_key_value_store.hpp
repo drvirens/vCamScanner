@@ -10,6 +10,8 @@
 #define db_key_value_store_hpp
 
 #include <functional>
+#include "db_data.hpp"
+#include "db_key_value_reader.hpp"
 using namespace std;
 
 class vsIKeyValueReader;
@@ -22,7 +24,10 @@ public:
 	virtual ~vsIKeyValueStore();
 	
 	virtual void read(function<void(vsIKeyValueReader&)>& aTransaction) = 0;
-    virtual void enumnerate(function<void(vsIKeyValueReader&)>& aTransaction) = 0;
+    virtual void enumnerate(const vsTData& aKeyLowerBound, 
+                           const vsTData& aKeyUpperBound, 
+                           vsIKeyValueReader::vsDirection aDirection,
+                           function<void(vsIKeyValueReader&)>& aTransaction) = 0;
 	virtual void readWrite(function<void(vsIKeyValueReaderWriter&)>& aTransaction) = 0;
 	virtual void sync() = 0;
 	};

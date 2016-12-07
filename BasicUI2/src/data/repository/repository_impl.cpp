@@ -250,12 +250,27 @@ void vsRepository::getAll(const vsRecordCreiterion& criteria, function<void(vect
     std::function<void(vsIKeyValueReader&)> readBlock = [&](vsIKeyValueReader& aReader)
         {
         LOG("\nenumerate callback\n");
-        //doEnumerate(criteria, aReader);
-//        aCompletionBlock(aPrimaryKeyedModel);
+        vector<const vsModelBase> collection;
+        doEnumerate(collection, criteria, aReader);
+        //aCompletionBlock(aPrimaryKeyedModel);
         };
-    iKeyValueStore->enumnerate(readBlock);
+    iKeyValueStore->enumnerate(theKeyLowerBound, theKeyUpperBound, theDirection, readBlock);
     }
 
+void vsRepository::doEnumerate(vector<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader) 
+    { TRACE
+    
+    vsTData theKeyLowerBound = criteria.keyLowerBound();
+    vsTData theKeyUpperBound = criteria.keyUpperBound(); 
+    vsIKeyValueReader::vsDirection theDirection = criteria.direction();
+    
+    function<void (const vsTData &, const vsTData &, bool &)> block = [&](const vsTData& aKey, const vsTData& aValue, bool& aStop) {
+        LOG("\n what to do here? \n");
+    };
+    
+    aReader.enumerate(theKeyLowerBound, theKeyUpperBound, theDirection, block);
+    }
+    
 void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aReader)
 	{ TRACE
     

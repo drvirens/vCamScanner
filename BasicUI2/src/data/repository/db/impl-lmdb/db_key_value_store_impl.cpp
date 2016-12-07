@@ -120,7 +120,10 @@ void vsKeyValueStore::read(function<void(vsIKeyValueReader&)>& aTransaction)
 //    obj = 0;
 	}
     
-void vsKeyValueStore::enumnerate(function<void(vsIKeyValueReader&)>& aTransaction)
+void vsKeyValueStore::enumnerate(const vsTData& aKeyLowerBound, 
+                           const vsTData& aKeyUpperBound, 
+                           vsIKeyValueReader::vsDirection aDirection,
+                           function<void(vsIKeyValueReader&)>& aTransaction)
     { TRACE
 	ASSERT(iTable);
 	if (!iTable) { return; }

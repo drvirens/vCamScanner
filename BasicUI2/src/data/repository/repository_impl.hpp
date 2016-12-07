@@ -34,6 +34,7 @@ private:
 	void packDBRecord(TPacker& aPacker, vs_int32_t aDbRecordSize, vs_uint8_t* aBuffer);
 	void createKey(vsModelBase& aModel, vs_uint64_t& aKeyStream);
 	void doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aReader);
+    void doEnumerate(vector<const vsModelBase>& collection, const vsRecordCreiterion& criteria, vsIKeyValueReader& aReader);
 	bool recordNotFound(vsTData& aValue) const;
 	
 private:
