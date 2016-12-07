@@ -118,8 +118,7 @@
            doctTitle:(NSString*)docTitle
         categoryName:(NSString*)categoryName
             fileSize:(NSInteger)fileSize {
-    NSLog(@"doAddDocument");
-    
+            
     //operation 1 = save original image on disc and get its path
     typeof (self) __weak welf = self;
     NSBlockOperation* operationSaveOriginalImage = [NSBlockOperation blockOperationWithBlock:^{
@@ -156,8 +155,11 @@
     [self.operationQueue addOperation:operationLmdbPut];
 }
 
-- (NSString*)saveImage:(UIImage*)image name:(NSString*)name {
-    NSString* n = [NSString stringWithFormat:@"poofie_%@", name]; //XXX
+- (NSString*)saveImage:(UIImage*)image name:(NSString*)originalOrProcessed {
+    string label = [originalOrProcessed UTF8String];
+    string imagename;
+    app_->generateImageName(label, imagename);
+    NSString* n = [NSString stringWithUTF8String:imagename.c_str()];
     NSURL* url = [self.photoController addPhotoWithName:n image:image];
     NSString* path = [url absoluteString];
     return path;
@@ -176,11 +178,12 @@ finalImageHref:(NSString*)finalImageHref {
     vs_uint64_t aSize = 0;
     string aOriginalPhotoHref = [originalImageHref UTF8String];
     string aModifiedLargePhotoHref = [finalImageHref UTF8String];
-    string aFileType = "jpeg";
+    string aFileType = "jpeg"; //XXX - can be different in future like PNG or tiff etc
     vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aFileType);
     
-    app_->addDocument(doc, []() {
-        LOG("added document");
+    app_->addDocument(doc, [](const vsDocument& savedDocument) {
+        string primaryKey = savedDocument.docID();
+        LOG("\n added document \n");
     });
 }
 

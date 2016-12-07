@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1116094F1DF7E334008F48AD /* linked_list.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1116094D1DF7E334008F48AD /* linked_list.cpp */; };
+		111609561DF8C3CB008F48AD /* time_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111609541DF8C3CB008F48AD /* time_utils.cpp */; };
 		11161DF31DF6272E00381D85 /* record_criterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DF11DF6272E00381D85 /* record_criterion.cpp */; };
 		11161DF61DF62AE000381D85 /* document_record_creiterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */; };
 		11161DFE1DF63B7700381D85 /* db_cursor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11161DFC1DF63B7700381D85 /* db_cursor.cpp */; };
@@ -397,6 +398,8 @@
 /* Begin PBXFileReference section */
 		1116094D1DF7E334008F48AD /* linked_list.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = linked_list.cpp; sourceTree = "<group>"; };
 		1116094E1DF7E334008F48AD /* linked_list.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = linked_list.hpp; sourceTree = "<group>"; };
+		111609541DF8C3CB008F48AD /* time_utils.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = time_utils.cpp; sourceTree = "<group>"; };
+		111609551DF8C3CB008F48AD /* time_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = time_utils.hpp; sourceTree = "<group>"; };
 		11161DF11DF6272E00381D85 /* record_criterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = record_criterion.cpp; sourceTree = "<group>"; };
 		11161DF21DF6272E00381D85 /* record_criterion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = record_criterion.hpp; sourceTree = "<group>"; };
 		11161DF41DF62AE000381D85 /* document_record_creiterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document_record_creiterion.cpp; sourceTree = "<group>"; };
@@ -1680,6 +1683,8 @@
 			children = (
 				11F25A431DF22416003CB8EE /* ez_reader.cpp */,
 				11F25A441DF22416003CB8EE /* ez_reader.hpp */,
+				111609541DF8C3CB008F48AD /* time_utils.cpp */,
+				111609551DF8C3CB008F48AD /* time_utils.hpp */,
 			);
 			name = utils;
 			path = ../../BasicUI2/src/utils;
@@ -2811,6 +2816,7 @@
 				1152946F1DF52082009EF4F9 /* jcomapi.c in Sources */,
 				B621FDD31DEAA29E00E54A51 /* templmatch.cpp in Sources */,
 				B621FD461DEAA29D00E54A51 /* detection_based_tracker.cpp in Sources */,
+				111609561DF8C3CB008F48AD /* time_utils.cpp in Sources */,
 				B621FD911DEAA29E00E54A51 /* cap_avfoundation.mm in Sources */,
 				B621FDB51DEAA29E00E54A51 /* convhull.cpp in Sources */,
 				11E0D40B1DF560860075AC0F /* NYTPhotoViewController.m in Sources */,
