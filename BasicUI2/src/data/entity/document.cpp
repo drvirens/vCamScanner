@@ -7,12 +7,22 @@
 //
 
 #include <strstream>
+#include <sstream>
 #include "document.hpp"
 #include "packer.hpp"
 #include "unpacker.hpp"
 #include "primary_key.hpp"
 #include "ez_reader.hpp"
 #include "trace.h"
+
+static int getLastUsedDocID();
+
+static int gTempDocID = 1;
+static int getLastUsedDocID()
+    {
+    int ret = gTempDocID++;
+    return ret;
+    }
 
 const string& vsDocument::primaryKey() const
 { TRACE
@@ -98,7 +108,10 @@ vsDocument::vsDocument(const string& aTitle,
 , iModifiedLargePhotoHref(aModifiedLargePhotoHref)
 , iFileType(aFileType)
     { TRACE
-    iDocID = "1"; // XXX - generate doc id automatically
+    int lastusedid = getLastUsedDocID();
+    stringstream ss;
+    ss << lastusedid;
+    iDocID = ss.str();
     }
 
 vsDocument::vsDocument()
@@ -111,12 +124,15 @@ vsDocument::vsDocument()
 , iModifiedLargePhotoHref("")
 , iFileType("")
     { TRACE
-    iDocID = "1"; // XXX - generate doc id automatically
+//    int lastusedid = getLastUsedDocID();
+//    stringstream ss;
+//    ss << lastusedid;
+//    iDocID = "69";
     }
 
 vsModelBase* vsDocument::copy()
     { TRACE
-    vsModelBase* obj = new vsDocument(
+    vsDocument* obj = new vsDocument(
                                         iTitle,
                                         iDateCreated,
                                         iDateUpdated,
@@ -124,10 +140,10 @@ vsModelBase* vsDocument::copy()
                                         iOriginalPhotoHref,
                                         iModifiedLargePhotoHref,
                                         iFileType);
+    obj->iDocID = iDocID;
     
     return obj;
     }
-
 
 vsDocument::~vsDocument()
 { TRACE

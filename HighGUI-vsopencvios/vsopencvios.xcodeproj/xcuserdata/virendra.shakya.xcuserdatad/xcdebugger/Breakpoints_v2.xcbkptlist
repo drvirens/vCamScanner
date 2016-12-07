@@ -9,12 +9,44 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502791346.153407"
+            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
+            timestampString = "502795781.226072"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "63"
-            endingLineNumber = "63"
+            startingLineNumber = "306"
+            endingLineNumber = "306"
+            landmarkName = "vsRepository::doEnumerate(vsLinkedList&lt;const vsModelBase&gt;&amp; collection, const vsRecordCreiterion&amp; criteria, vsIKeyValueReader&amp; aReader)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/data/entity/document.cpp"
+            timestampString = "502796165.383879"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "getLastUsedDocID()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
+            timestampString = "502796276.194966"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "CAuthenticator::authenticate(const TLoginMessageLayout&amp; credentials, function&lt;void(const EAuthenticationStatus&amp;, const vsUser&amp;)&gt; aCompletionCB)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +57,93 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502791352.516738"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502796296.920289"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
+            timestampString = "502796368.742607"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "28"
+            endingLineNumber = "28"
             landmarkName = "visitNode(void* aData)"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502796382.624191"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/vs_db_key_value_reader_writer_impl.cpp"
+            timestampString = "502796390.571984"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "vsCKeyValueReaderWriter::enumerate(const vsTData&amp; aKeyLowerBound, const vsTData&amp; aKeyUpperBound, vsDirection aDirection, function&lt;void(const vsTData&amp; /*aKey*/, const vsTData&amp; /*aValue*/, bool&amp; /*aStop*/)&gt;&amp; aBlock)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/lmdb/mdb.c"
+            timestampString = "502796793.062104"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "5497"
+            endingLineNumber = "5497"
+            landmarkName = "mdb_cmp_memn()"
+            landmarkType = "9">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "../BasicUI2/src/data/repository/db/impl-lmdb/lmdb/mdb.c"
+            timestampString = "502796808.305805"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10333"
+            endingLineNumber = "10333"
+            landmarkName = "mdb_default_cmp()"
             landmarkType = "9">
          </BreakpointContent>
       </BreakpointProxy>
