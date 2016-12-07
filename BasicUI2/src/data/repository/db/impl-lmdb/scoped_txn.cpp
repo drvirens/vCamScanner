@@ -26,9 +26,9 @@ vsScopedTransaction::~vsScopedTransaction()
 	}
 
 int vsScopedTransaction::open()
-	{ TRACE
+	{ TRACE 
 	int status = MDB_SUCCESS;
-	status = mdb_txn_begin(&iEnv, NULL, 0, &iTxn);
+	status = mdb_txn_begin(&iEnv, NULL, 0, &iTxn); //XXX: should be MDB_RDONLY for readonly operations like read or enumerate
 	if (MDB_SUCCESS != status)
 		{
 		LOG("mdb_txn_begin failed : [%d]", status);

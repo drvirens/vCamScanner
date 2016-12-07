@@ -34,6 +34,7 @@ static void visitNode(void* aData)
 void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 			function<void(const EAuthenticationStatus&, const vsUser&)> aCompletionCB)
 	{ TRACE
+    /*
 	vsUser objGetuser(credentials.userName());
 	iRepository->get(objGetuser, [&](const vsModelBase& aModel)
 		{
@@ -44,25 +45,28 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 		
 		aCompletionCB(status, retUser);
 		});
+        */
+        
         
         //test+
-    vsPrimaryKey docIDLower ("1"); //XXX - vsDocument should accept the docID from outside instead of generating automatically
+    vsPrimaryKey* docIDLower = new vsPrimaryKey("1"); //XXX - vsDocument should accept the docID from outside instead of generating automatically
     
-    vsTData theKeyLowerBound;
-    docIDLower.wrappedPrimaryKey(theKeyLowerBound);
+    vsTData* theKeyLowerBound = new vsTData();
+    docIDLower->wrappedPrimaryKey(*theKeyLowerBound);
     
-    vsPrimaryKey docIDUpper ("3");
-    vsTData theKeyUpperBound;
-    docIDUpper.wrappedPrimaryKey(theKeyUpperBound);
+    vsPrimaryKey* docIDUpper = new vsPrimaryKey("3");
+    vsTData* theKeyUpperBound = new vsTData();
+    docIDUpper->wrappedPrimaryKey(*theKeyUpperBound);
     
     vsIKeyValueReader::vsDirection theDirection = vsIKeyValueReader::vsDirectionForward;
-    vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(theKeyLowerBound, theKeyUpperBound, theDirection);
+    vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(*theKeyLowerBound, *theKeyUpperBound, theDirection);
     iRepository->getAll(*criteria,
                         [&](vsLinkedList<const vsModelBase>& aCollection) {
-                            LOG("\n COmpletion function -  \n");
+                            LOG("\n Completion function -  \n");
                             aCollection.traverse(visitNode);
                         });
         //test-
+        
 	}
 
 

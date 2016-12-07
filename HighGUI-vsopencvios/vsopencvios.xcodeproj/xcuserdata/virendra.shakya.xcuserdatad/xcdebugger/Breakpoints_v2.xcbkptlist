@@ -9,62 +9,14 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/data/repository/repository_impl.cpp"
-            timestampString = "502789391.909916"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "289"
-            endingLineNumber = "289"
-            landmarkName = "vsRepository::getAll(const vsRecordCreiterion&amp; criteria, function&lt;void(vsLinkedList&lt;const vsModelBase&gt;&amp;)&gt; aCompletionBlock)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502789579.971504"
+            timestampString = "502835172.419739"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "62"
-            endingLineNumber = "62"
-            landmarkName = "CAuthenticator::authenticate(const TLoginMessageLayout&amp; credentials, function&lt;void(const EAuthenticationStatus&amp;, const vsUser&amp;)&gt; aCompletionCB)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/boot/authenticator_impl.cpp"
-            timestampString = "502789563.012317"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "visitNode(void* aData)"
             landmarkType = "9">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/core/linked_list.cpp"
-            timestampString = "502789624.511028"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "52"
-            endingLineNumber = "52"
-            landmarkName = "vsLinkedListBase::traverse(vsCallBack aCallback)"
-            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

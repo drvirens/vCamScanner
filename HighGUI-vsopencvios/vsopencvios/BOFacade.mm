@@ -95,7 +95,10 @@
     string path = [libraryDirectory UTF8String];
     app_ = new CAppServer(path);
     app_->createRepository();
-    app_->addAwesomeSauceAndViren();
+    
+
+    //app_->addAwesomeSauceAndViren();
+    
     auto blockAuthCompletion = [&](const EAuthenticationStatus& aEAuthenticationStatus, const vsUser& aAuthenticatedUser)
     {
         LOG("dont care if it fails for now");
@@ -107,6 +110,7 @@
     
     TLoginMessageLayout credentials(theUserName, thePassword, theSecurity);
     app_->authenticate(credentials, blockAuthCompletion);
+
 }
 
 #pragma mark - Add Document
