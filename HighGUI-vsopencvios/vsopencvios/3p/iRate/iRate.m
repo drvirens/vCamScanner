@@ -1060,7 +1060,7 @@ static NSString *const iRateMacAppStoreURLFormat = @"macappstore://itunes.apple.
         self.checkingForAppStoreID = YES;
         if (!self.checkingForPrompt)
         {
-            [self checkForConnectivityInBackground];
+            //[self checkForConnectivityInBackground];
         }
         return;
     }

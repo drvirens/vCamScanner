@@ -102,6 +102,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) BODocCache* docCache;
 @property (nonatomic) NSString* docTitle;
 
+@property (nonatomic, strong) UIAlertView *alertView;
+
 //XXX - phase 2
 @property (weak, nonatomic) IBOutlet UIView *maskViewRecentlyScanned;
 @property (weak, nonatomic) IBOutlet BORecentlyScannedView *viewRecentlyScanned;
@@ -113,6 +115,64 @@ static void* gUserLoadContext = &gUserLoadContext;
     CGRect final_Rect;
 }
 
+#pragma mark - RATE ME
++ (void)initialize
+{
+    //set the bundle ID. normally you wouldn't need to do this
+    //as it is picked up automatically from your Info.plist file
+    //but we want to test with an app that's actually on the store
+    [iRate sharedInstance].applicationBundleID = @"com.tevsoftware.mobile.ios.vDocumentScanner";
+    [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
+
+    //enable preview mode
+    [iRate sharedInstance].previewMode = YES;
+}
+//in this example, we're implementing our own modal alert, so
+//we use the following delegate methods to intercept and override
+//the standard alert behavior
+
+- (BOOL)iRateShouldPromptForRating
+{
+    if (!self.alertView)
+    {
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"I'm a completely custom rating dialog. Awesome, right?" delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later", @"Open Web Page", nil];
+        
+        [self.alertView show];
+    }
+    return NO;
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.cancelButtonIndex)
+    {
+        //ignore this version
+        [iRate sharedInstance].declinedThisVersion = YES;
+    }
+    else if (buttonIndex == 1) // rate now
+    {
+        //mark as rated
+        [iRate sharedInstance].ratedThisVersion = YES;
+
+        //launch app store
+        [[iRate sharedInstance] openRatingsPageInAppStore];
+    }
+    else if (buttonIndex == 2) // maybe later
+    {
+        //remind later
+        [iRate sharedInstance].lastReminded = [NSDate date];
+    }
+    else if (buttonIndex == 3) // open web page
+    {
+        NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
+        [[UIApplication sharedApplication] openURL:url];
+    }
+    
+    self.alertView = nil;
+}
+
+
+#pragma mark - life cycle
 - (void)viewDidLoad {
     [super viewDidLoad];
     
