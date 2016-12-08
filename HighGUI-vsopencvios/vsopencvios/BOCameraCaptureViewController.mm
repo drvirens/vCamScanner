@@ -620,7 +620,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) - 1;
     
-    if(value>4){ value -= 4; }
+    if(value>4) { 
+        value -= 4; 
+    }
     _rotateSlider = value / 2 - 1;
     [UIView animateWithDuration:0.5 animations:^{
         [self rotateStateDidChange];
@@ -629,7 +631,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuRotateRight:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) + 1;
     
-    if(value>4){ value -= 4; }
+    if(value>4) { 
+        value -= 4; 
+    }
     _rotateSlider = value / 2 - 1;
     [UIView animateWithDuration:0.5 animations:^{
         [self rotateStateDidChange];
@@ -663,36 +667,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSData *imageData = UIImageJPEGRepresentation(img, 1.0f);
     NSUInteger fileSize = [imageData length]; //in bytes
     
-    NSString* sizeInStr = [self imageSizeInStringFormat:fileSize]; //XXX - shared code
+    NSString* sizeInStr = [self.facade imageSizeInStringFormat:fileSize]; //XXX - shared code
     
     self.infoEntryView.labelFileSize.text = sizeInStr;
-}
-- (NSString*)imageSizeInStringFormat:(NSUInteger)size {
-    NSString* ret = nil;
-    NSString* units = nil;
-    NSUInteger number = 0;
-    if (size < 1024) {
-        units = @"BYTES";
-        number = size;
-    } else {
-        NSUInteger kb = size / 1024;
-        if (kb < 1024) {
-            units = @"KB";
-            number = kb;
-        } else {
-            NSUInteger mb = size / (1024 * 1024);
-            if (mb < 1024) {
-                units = @"MB";
-                number = mb;
-            } else {
-                NSUInteger gb = size / (1024 * 1024 * 1024);
-                units = @"GB";
-                number = gb;
-            }
-        }
-    }
-    ret = [NSString stringWithFormat:@"%ld %@", number, units];
-    return ret;
 }
 
 - (void)setupDefaultNextActionButton {

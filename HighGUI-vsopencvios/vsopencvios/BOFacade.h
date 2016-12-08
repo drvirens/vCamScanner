@@ -27,4 +27,6 @@
             croppedView:(MMCropView*)croppedView
                   image:(UIImage*)image
                 completion:( void(^)(UIImage*) )completion;
+                
+- (NSString*)imageSizeInStringFormat:(NSUInteger)size;
 @end

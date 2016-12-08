@@ -263,4 +263,33 @@
     }
 }
 
+- (NSString*)imageSizeInStringFormat:(NSUInteger)size {
+    NSString* ret = nil;
+    NSString* units = nil;
+    NSUInteger number = 0;
+    if (size < 1024) {
+        units = @"BYTES";
+        number = size;
+    } else {
+        NSUInteger kb = size / 1024;
+        if (kb < 1024) {
+            units = @"KB";
+            number = kb;
+        } else {
+            NSUInteger mb = size / (1024 * 1024);
+            if (mb < 1024) {
+                units = @"MB";
+                number = mb;
+            } else {
+                NSUInteger gb = size / (1024 * 1024 * 1024);
+                units = @"GB";
+                number = gb;
+            }
+        }
+    }
+    ret = [NSString stringWithFormat:@"%ld %@", number, units];
+    return ret;
+}
+
+
 @end
