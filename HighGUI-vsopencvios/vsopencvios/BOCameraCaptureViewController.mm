@@ -26,6 +26,8 @@
 #import "BODocumentsListViewController.h"
 #import "BODocCache.h"
 
+#import "iRate.h"
+
 typedef enum BOState {
     BONotCroppedState,
     BOCroppedPreviewState,

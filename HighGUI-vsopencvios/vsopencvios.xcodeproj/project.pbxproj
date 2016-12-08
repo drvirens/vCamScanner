@@ -129,7 +129,6 @@
 		115294A71DF55465009EF4F9 /* NSDate+DateTools.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294A61DF55465009EF4F9 /* NSDate+DateTools.m */; };
 		115294AA1DF5549D009EF4F9 /* DTConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294A91DF5549D009EF4F9 /* DTConstants.m */; };
 		115294AD1DF554BC009EF4F9 /* DTError.m in Sources */ = {isa = PBXBuildFile; fileRef = 115294AC1DF554BC009EF4F9 /* DTError.m */; };
-		115294DE1DF55A09009EF4F9 /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 115294DD1DF55A09009EF4F9 /* DateTools.bundle */; };
 		117F1D0C1DE02939007233B0 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0B1DE02939007233B0 /* AVFoundation.framework */; };
 		117F1D0E1DE0294F007233B0 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0D1DE0294F007233B0 /* CoreMedia.framework */; };
 		117F1D101DE02961007233B0 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */; };
@@ -158,6 +157,10 @@
 		11E0D40D1DF560860075AC0F /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3FA1DF560860075AC0F /* NYTScalingImageView.m */; };
 		11E0D40E1DF560860075AC0F /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */; };
 		11E0D4121DF561370075AC0F /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */; };
+		11E3D6611DF8F58100A68CFF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E3D65D1DF8F58100A68CFF /* Info.plist */; };
+		11E3D6621DF8F58100A68CFF /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E3D65E1DF8F58100A68CFF /* iRate.bundle */; };
+		11E3D6631DF8F58100A68CFF /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E3D6601DF8F58100A68CFF /* iRate.m */; };
+		11E3D6651DF8F59D00A68CFF /* DateTools.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E3D6641DF8F59D00A68CFF /* DateTools.bundle */; };
 		11F259FD1DF2223F003CB8EE /* circular_buffer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F259F61DF2223F003CB8EE /* circular_buffer.cpp */; };
 		11F259FE1DF2223F003CB8EE /* packer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F259F81DF2223F003CB8EE /* packer.cpp */; };
 		11F259FF1DF2223F003CB8EE /* unpacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 11F259FB1DF2223F003CB8EE /* unpacker.cpp */; };
@@ -586,7 +589,6 @@
 		115294A91DF5549D009EF4F9 /* DTConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTConstants.m; sourceTree = "<group>"; };
 		115294AB1DF554BC009EF4F9 /* DTError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DTError.h; sourceTree = "<group>"; };
 		115294AC1DF554BC009EF4F9 /* DTError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DTError.m; sourceTree = "<group>"; };
-		115294DD1DF55A09009EF4F9 /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
 		117F1D0B1DE02939007233B0 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		117F1D0D1DE0294F007233B0 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		117F1D0F1DE02961007233B0 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
@@ -654,6 +656,11 @@
 		11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+NYTPhotoViewer.m"; sourceTree = "<group>"; };
 		11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
 		11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
+		11E3D65D1DF8F58100A68CFF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11E3D65E1DF8F58100A68CFF /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
+		11E3D65F1DF8F58100A68CFF /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
+		11E3D6601DF8F58100A68CFF /* iRate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = iRate.m; sourceTree = "<group>"; };
+		11E3D6641DF8F59D00A68CFF /* DateTools.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DateTools.bundle; sourceTree = "<group>"; };
 		11F259F31DF22201003CB8EE /* trace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = trace.h; sourceTree = "<group>"; };
 		11F259F51DF2223F003CB8EE /* chat_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chat_types.h; sourceTree = "<group>"; };
 		11F259F61DF2223F003CB8EE /* circular_buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circular_buffer.cpp; sourceTree = "<group>"; };
@@ -1204,7 +1211,6 @@
 				11B75DA01DDFD0E1004EAB65 /* opencv2 */,
 			);
 			name = cv;
-			path = ..;
 			sourceTree = "<group>";
 		};
 		11303B9F1DED0BB800371BD5 /* imageprocessing */ = {
@@ -1384,6 +1390,8 @@
 		115294A41DF55465009EF4F9 /* 3p */ = {
 			isa = PBXGroup;
 			children = (
+				11E3D6641DF8F59D00A68CFF /* DateTools.bundle */,
+				11E3D65C1DF8F58100A68CFF /* iRate */,
 				118BD8221DF612980031A52D /* PSPDFUIKitMainThreadGuard.m */,
 				11E0D3E41DF560860075AC0F /* NYTPhotoViewer */,
 				115294AB1DF554BC009EF4F9 /* DTError.h */,
@@ -1426,8 +1434,8 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				111D56EA1DF3CA3C00534EF3 /* cv */,
 				11E0D40F1DF561370075AC0F /* test */,
-				115294DD1DF55A09009EF4F9 /* DateTools.bundle */,
 				115294A41DF55465009EF4F9 /* 3p */,
 				11303BCC1DEECEB100371BD5 /* Settings */,
 				111D56E91DF3C85C00534EF3 /* shared */,
@@ -1532,11 +1540,21 @@
 		11E0D40F1DF561370075AC0F /* test */ = {
 			isa = PBXGroup;
 			children = (
-				111D56EA1DF3CA3C00534EF3 /* cv */,
 				11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */,
 				11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */,
 			);
 			path = test;
+			sourceTree = "<group>";
+		};
+		11E3D65C1DF8F58100A68CFF /* iRate */ = {
+			isa = PBXGroup;
+			children = (
+				11E3D65D1DF8F58100A68CFF /* Info.plist */,
+				11E3D65E1DF8F58100A68CFF /* iRate.bundle */,
+				11E3D65F1DF8F58100A68CFF /* iRate.h */,
+				11E3D6601DF8F58100A68CFF /* iRate.m */,
+			);
+			path = iRate;
 			sourceTree = "<group>";
 		};
 		11F259F21DF22201003CB8EE /* log */ = {
@@ -2621,13 +2639,15 @@
 				11303BFF1DEECEB100371BD5 /* Settings.storyboard in Resources */,
 				11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */,
 				1121FC2B1DEFF65D00085925 /* BORecentlyScannedView.xib in Resources */,
+				11E3D6611DF8F58100A68CFF /* Info.plist in Resources */,
 				11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */,
+				11E3D6621DF8F58100A68CFF /* iRate.bundle in Resources */,
 				11303C0F1DEECF6F00371BD5 /* VSTextFieldView.xib in Resources */,
 				11E0D4031DF560860075AC0F /* Info.plist in Resources */,
 				11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */,
 				11E0D40C1DF560860075AC0F /* NYTPhotoViewer.bundle in Resources */,
-				115294DE1DF55A09009EF4F9 /* DateTools.bundle in Resources */,
 				11303BC21DEE45E500371BD5 /* BOInfoEntryView.xib in Resources */,
+				11E3D6651DF8F59D00A68CFF /* DateTools.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2857,6 +2877,7 @@
 				B621FD4D1DEAA29D00E54A51 /* inputoutput.cpp in Sources */,
 				B621FDA51DEAA29E00E54A51 /* grfmt_pxm.cpp in Sources */,
 				115294901DF52082009EF4F9 /* jutils.c in Sources */,
+				11E3D6631DF8F58100A68CFF /* iRate.m in Sources */,
 				11303C011DEECEB100371BD5 /* VSPurposeAddFieldCell.m in Sources */,
 				B621FDA11DEAA29E00E54A51 /* grfmt_exr.cpp in Sources */,
 				B621FD691DEAA29D00E54A51 /* lapack.cpp in Sources */,
