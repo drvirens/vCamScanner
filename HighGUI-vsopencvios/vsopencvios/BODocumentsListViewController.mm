@@ -48,6 +48,9 @@ static const CGFloat kCellHeight = 140.f;
 
 #pragma mark - GUI
 - (void)setupGUI {
+    self.tableView.delegate = self;
+    self.tableView.dataSource = self;
+    
     //left bar button
     UIImage* closeImg = [UIImage imageNamed:@"ic_close_white"];
     closeImg = [closeImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -79,8 +82,6 @@ static const CGFloat kCellHeight = 140.f;
     return ret;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    //return [UITableViewCell new];//XXX test
-    
     BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
     BODocumentModel* model = self.dataSrc[indexPath.section][indexPath.row];
     [cell configure:model];
@@ -97,6 +98,7 @@ static const CGFloat kCellHeight = 140.f;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [self imageButtonTapped:nil];
 }
+
 
 //test+
 - (void)imageButtonTapped:(id)sender {
