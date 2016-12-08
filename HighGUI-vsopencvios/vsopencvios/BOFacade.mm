@@ -96,7 +96,6 @@
     app_ = new CAppServer(path);
     app_->createRepository();
     
-
     //app_->addAwesomeSauceAndViren();
     
     auto blockAuthCompletion = [&](const EAuthenticationStatus& aEAuthenticationStatus, const vsUser& aAuthenticatedUser)
@@ -119,8 +118,7 @@
            doctTitle:(NSString*)docTitle
         categoryName:(NSString*)categoryName
             fileSize:(NSInteger)fileSize {
-    NSLog(@"doAddDocument");
-    
+            
     //operation 1 = save original image on disc and get its path
     typeof (self) __weak welf = self;
     NSBlockOperation* operationSaveOriginalImage = [NSBlockOperation blockOperationWithBlock:^{
@@ -157,34 +155,39 @@
     [self.operationQueue addOperation:operationLmdbPut];
 }
 
-- (NSString*)saveImage:(UIImage*)image name:(NSString*)name {
-    NSLog(@"saveImage");
-    NSString* path = @"PATH";
-    NSString* n = [NSString stringWithFormat:@"poofie_%@", name];
+- (NSString*)saveImage:(UIImage*)image name:(NSString*)originalOrProcessed {
+    string label = [originalOrProcessed UTF8String];
+    string imagename;
+    app_->generateImageName(label, imagename);
+    NSString* n = [NSString stringWithUTF8String:imagename.c_str()];
     NSURL* url = [self.photoController addPhotoWithName:n image:image];
-    path = [url absoluteString];
+    NSString* path = [url absoluteString];
     return path;
 }
 
 - (void) insertDocument:(NSString*)docTitle
           categoryName:(NSString*)categoryName
-              fileSize:(NSInteger)fileSize
-originalImageHref:(NSString*)originalImageHref
-finalImageHref:(NSString*)finalImageHref {
+              fileSize:(NSInteger)fileSizeProcessed
+     originalImageHref:(NSString*)originalImageHref
+        finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
     
-    string primaryKey = "1";
     string aTitle = [docTitle UTF8String];
-    vs_uint64_t aDateCreated = 0;
-    vs_uint64_t aDateUpdated = 0;
-    vs_uint64_t aSize = 0;
+    
+    time_t rawtime;
+    time (&rawtime);
+    
+    vs_uint64_t aDateCreated = rawtime;
+    vs_uint64_t aDateUpdated = rawtime;
+    vs_uint64_t aSize = fileSizeProcessed;
     string aOriginalPhotoHref = [originalImageHref UTF8String];
     string aModifiedLargePhotoHref = [finalImageHref UTF8String];
-    string aFileType = "jpeg";
+    string aFileType = "jpeg"; //XXX - can be different in future like PNG or tiff etc
     vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aFileType);
     
-    app_->addDocument(doc, []() {
-        LOG("added document");
+    app_->addDocument(doc, [](const vsDocument& savedDocument) {
+        string primaryKey = savedDocument.docID();
+        LOG("\n added document \n");
     });
 }
 
@@ -258,6 +261,41 @@ finalImageHref:(NSString*)finalImageHref {
             completion(theCroppedImage);
         });
     }
+}
+
+- (NSString*)imageSizeInStringFormat:(NSUInteger)size {
+    NSString* ret = nil;
+    NSString* units = nil;
+    NSUInteger number = 0;
+    if (size < 1024) {
+        units = @"BYTES";
+        number = size;
+    } else {
+        NSUInteger kb = size / 1024;
+        if (kb < 1024) {
+            units = @"KB";
+            number = kb;
+        } else {
+            NSUInteger mb = size / (1024 * 1024);
+            if (mb < 1024) {
+                units = @"MB";
+                number = mb;
+            } else {
+                NSUInteger gb = size / (1024 * 1024 * 1024);
+                units = @"GB";
+                number = gb;
+            }
+        }
+    }
+    ret = [NSString stringWithFormat:@"%ld %@", number, units];
+    return ret;
+}
+
+- (NSString*)generateDefaultTitle {
+    string doctitle;
+    app_->generateDefaultDocTitle("doc", doctitle);
+    NSString* ret = [NSString stringWithUTF8String:doctitle.c_str()];
+    return ret;
 }
 
 @end

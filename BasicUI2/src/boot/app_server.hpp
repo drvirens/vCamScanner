@@ -41,7 +41,10 @@ public:
     void authenticate(TLoginMessageLayout& aCredentials,
                       function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser);
         
-    void addDocument(vsDocument& aDocument, function< void() > aSignalDidSaveDocuemnt);
+    void addDocument(vsDocument& aDocument, function< void(const vsDocument&) > aSignalDidSaveDocuemnt);
+    
+    void generateImageName(const string& aLabel, string& aOutput);
+    void generateDefaultDocTitle(const string& aLabel, string& aOutput);
         
 	signal1< shared_ptr<vsIRepository> > SignalDidCreateKeyStore;
 	
@@ -59,6 +62,7 @@ private:
 	shared_ptr<vsIRepository> iRepository;
 	string iPath;
     shared_ptr<CAuthenticator> iAuthenticator;
+    vs_int32_t iSessionID_;
 	};
 
 #endif /* app_server_hpp */

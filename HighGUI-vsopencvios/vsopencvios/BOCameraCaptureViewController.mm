@@ -71,10 +71,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
 @property (weak, nonatomic) IBOutlet UIButton *buttonShowAllDocuments;
 
-@property (weak, nonatomic) IBOutlet UIView *maskViewRecentlyScanned;
-@property (weak, nonatomic) IBOutlet BORecentlyScannedView *viewRecentlyScanned;
-
-
 @property (nonatomic) BOOL entryInfoPartiallyHidden;
 @property (nonatomic) NSMutableArray* dataSource;
 @property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
@@ -102,6 +98,11 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) CATransform3D transformCroppedView;
 
 @property (nonatomic) BODocCache* docCache;
+@property (nonatomic) NSString* docTitle;
+
+//XXX - phase 2
+@property (weak, nonatomic) IBOutlet UIView *maskViewRecentlyScanned;
+@property (weak, nonatomic) IBOutlet BORecentlyScannedView *viewRecentlyScanned;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -121,10 +122,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self setupRecentlyScannedView];
     [self hideRecentlyScannedView];
     
-    [self clearTitle];
-    [self clearCategoryText];
-    [self setupMiscGUI];
-    [self decorateCategoryMoreIcon];
+    [self setupInfoEntryView];
     
     [self setupFitersMenu];
     
@@ -134,7 +132,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self setupDefaultNextActionButton];
     [self decorateSettingsButton];
     [self decorateShowDocumentsButton];
-    [self setupFileSizeLabel];
+//    [self setupFileSizeLabel];
     
     self.transformCapturedImageView = self.capturedImageView.layer.transform;
     self.transformCroppedView = self.croppedView.layer.transform;
@@ -173,7 +171,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)clearCategoryText {
     [self.infoEntryView clearCategoryText];
 }
+
 - (void)setupMiscGUI {
+    self.infoEntryView.labelFileSize.text = nil;
     [self.infoEntryView setupMiscGUI:self selectorCateogry:@selector(didSelectCateogry:) selectorDragView:@selector(didSelectDragView:)];
     
     self.infoEntryView.labelCategoryTItle.text = nil;
@@ -183,6 +183,14 @@ static void* gUserLoadContext = &gUserLoadContext;
     UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
     upperContainerCapturedViewTapped.numberOfTapsRequired = 1;
     [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
+}
+
+- (void)setupInfoEntryView {
+    [self clearTitle];
+    [self clearCategoryText];
+    [self setupMiscGUI];
+    [self decorateCategoryMoreIcon];
+    [self setupFileSizeLabel];
 }
 
 
@@ -555,6 +563,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self decorateSelectedCellLabel:label text:label.text];
     
     self.finalProcessedImage = filter.menuThumbnail;
+    
+    [self displayFileSize];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -606,11 +616,15 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.labelCategoryTItle.text = nil;
     
     self.categoryName = nil;
+    self.infoEntryView.labelFileSize.text = nil;
+    self.docTitle = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) - 1;
     
-    if(value>4){ value -= 4; }
+    if(value>4) { 
+        value -= 4; 
+    }
     _rotateSlider = value / 2 - 1;
     [UIView animateWithDuration:0.5 animations:^{
         [self rotateStateDidChange];
@@ -619,7 +633,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (IBAction)didSelectMenuRotateRight:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) + 1;
     
-    if(value>4){ value -= 4; }
+    if(value>4) { 
+        value -= 4; 
+    }
     _rotateSlider = value / 2 - 1;
     [UIView animateWithDuration:0.5 animations:^{
         [self rotateStateDidChange];
@@ -634,6 +650,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self hideFiltersView];
         [self transitMenuItemsToShareMode];
         
+        [self displayFileSize];
+        
         [self putUIInProcessingFinished];
         
         [self apiAddDocument]; //this is fire and forget
@@ -643,6 +661,19 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self doCropImage];
     }
 }
+- (void)displayFileSize {
+    UIImage* img = self.finalProcessedImage;
+    if (!img) {
+        img = self.cropImage;
+    }
+    NSData *imageData = UIImageJPEGRepresentation(img, 1.0f);
+    NSUInteger fileSize = [imageData length]; //in bytes
+    
+    NSString* sizeInStr = [self.facade imageSizeInStringFormat:fileSize]; //XXX - shared code
+    
+    self.infoEntryView.labelFileSize.text = sizeInStr;
+}
+
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
 }
@@ -802,19 +833,30 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSLog(@"didSelectCategory");
     self.categoryName = category;
     self.infoEntryView.labelSelectedCategoryName.text = category;
+    self.infoEntryView.labelSelectedCategoryName.textColor = [UIColor whiteColor];
 }
 
 #pragma mark - API calls
 - (void)apiAddDocument {
     //and then in local storage (LMDB)
-    long        fileSize            = 0; // XXX
+    
     NSString*   docTitle            = self.infoEntryView.textFieldTitle.text;
     UIImage*    originalImage       = self.image;
     UIImage*    finalProcessedImage = self.finalProcessedImage;
     if (!finalProcessedImage) {
-        finalProcessedImage = self.cropImage;
+        finalProcessedImage         = self.cropImage;
     }
     NSString*   categoryName        = self.categoryName;
+    long        fileSize            = 0;
+    
+    NSData *imageData = UIImageJPEGRepresentation(finalProcessedImage, 1.0f);
+    fileSize = [imageData length];
+    
+    if (docTitle.length < 1) {
+        docTitle = [self.facade generateDefaultTitle];
+        self.docTitle = docTitle;
+        self.infoEntryView.labelCategoryTItle.text = docTitle;
+    }
     
     //add it in cache first...
     [self addInCache:docTitle finalProcessedImage:finalProcessedImage];
@@ -867,6 +909,8 @@ finalProcessedImage:(UIImage*)finalProcessedImage {
     [self showInfoEntryView];
     
     [self putUIInProcessingFinished];
+    
+    [self displayFileSize];
     NSLog(@"-------------------> END: CROP IMAGE");
 }
 

@@ -32,7 +32,7 @@
 - (void)clearTitle {
     //placeholder
     NSDictionary* placeholderTextColor = @{
-                                           NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
+                                           NSForegroundColorAttributeName : [UIColor darkGrayColor],
                                            NSFontAttributeName : VS_FONT_VERYSMALL
                                            };
     NSAttributedString* placeHolder = [[NSAttributedString alloc] initWithString:@"ENTER TITLE" attributes:placeholderTextColor];
@@ -40,13 +40,13 @@
     
     //typed text
     self.textFieldTitle.font = VS_FONT_REGULAR;
-    self.textFieldTitle.textColor = [UIColor darkGrayColor];
+    self.textFieldTitle.textColor = [UIColor whiteColor];
     self.textFieldTitle.text = nil;
 }
 - (void)clearCategoryText {
     //category label
     NSDictionary* labelCategory = @{
-                                    NSForegroundColorAttributeName : [VSBranding vs_veryVeryDarkGrayColor],
+                                    NSForegroundColorAttributeName : [UIColor darkGrayColor],
                                     NSFontAttributeName : VS_FONT_VERYSMALL
                                     };
     NSAttributedString* category = [[NSAttributedString alloc] initWithString:@"SELECT CATEGORY" attributes:labelCategory];
@@ -56,7 +56,7 @@
 - (void)setupFileSizeLabel {
     self.labelFileSize.textColor = [VSBranding vs_brandRedColor];
     self.labelFileSize.font = VS_FONT_EXTRASMALL;
-    self.labelFileSize.alpha = 0.5f;
+    self.labelFileSize.alpha = 0.8f;
     
     //also setup title label
     self.labelCategoryTItle.textColor = [UIColor darkGrayColor];
@@ -72,7 +72,7 @@
     UIImage* rightArrow = [UIImage imageNamed:@"ic_close_white"];
     rightArrow = [rightArrow imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.imageViewCloseIcon.image = rightArrow;
-    self.imageViewCloseIcon.tintColor = self.dragView.backgroundColor;
+    self.imageViewCloseIcon.tintColor = [UIColor darkGrayColor];
 }
 - (void)decorateCategoryMoreIcon {
     UIImage* rightArrow = [UIImage imageNamed:@"ic_keyboard_arrow_right_white"];

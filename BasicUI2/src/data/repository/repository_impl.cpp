@@ -333,37 +333,6 @@ void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aRe
 	
     //parse
     doParse(dbKey, dbValue, aPrimaryKeyedModel);
-    
-//	//how big is the record? first 4 bytes will us that
-//	TUnPacker recordUnPacker;
-//	vs_int32_t bufLen = sizeof(vs_uint32_t);
-//
-//	recordUnPacker.setBuffer((vs_uint8_t*)dbValue.data());
-//	recordUnPacker.setBufferLength((vs_int32_t)0);
-//	recordUnPacker.setMaxLen(bufLen);
-//	
-//	vsValueRecord decoder;
-//	bool ret = decoder.unPack(recordUnPacker);
-//	ASSERT(ret);
-//	if (!ret)
-//		{
-//		LOG("\t vsRepository::doGet: something went wrong while unpacking dbrecord \n");
-//		return;
-//		}
-//		
-//	//decoder has raw bytes for our actual model - unpack it now
-//	vs_uint8_t* actualRecordDump = decoder.actualRecordDump();
-//	vs_uint32_t modelSize = decoder.modelSize();
-//	
-//	ASSERT(0 != actualRecordDump);
-//	ASSERT(modelSize > 0);
-//	
-//	TUnPacker modelDecoder;
-//	modelDecoder.setBuffer((vs_uint8_t*)actualRecordDump);
-//	modelDecoder.setBufferLength((vs_int32_t)0);
-//	modelDecoder.setMaxLen(modelSize);
-//	
-//	aPrimaryKeyedModel.unPack(modelDecoder);
 	}
 
 bool vsRepository::recordNotFound(vsTData& aValue) const

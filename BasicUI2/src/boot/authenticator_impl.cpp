@@ -34,18 +34,18 @@ static void visitNode(void* aData)
 void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 			function<void(const EAuthenticationStatus&, const vsUser&)> aCompletionCB)
 	{ TRACE
-    /*
-	vsUser objGetuser(credentials.userName());
-	iRepository->get(objGetuser, [&](const vsModelBase& aModel)
-		{
-		EAuthenticationStatus status = EAuthenticationStatus_Success;
-		const vsUser& retUser = dynamic_cast<const vsUser&>(aModel) ;
-		LOG("\t did authenticate user dumped below: \n");
-		retUser.debugDump();
-		
-		aCompletionCB(status, retUser);
-		});
-        */
+    
+//	vsUser objGetuser(credentials.userName());
+//	iRepository->get(objGetuser, [&](const vsModelBase& aModel)
+//		{
+//		EAuthenticationStatus status = EAuthenticationStatus_Success;
+//		const vsUser& retUser = dynamic_cast<const vsUser&>(aModel) ;
+//		LOG("\t did authenticate user dumped below: \n");
+//		retUser.debugDump();
+//		
+//		aCompletionCB(status, retUser);
+//		});
+        
         
         
         //test+
@@ -60,6 +60,7 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
     
     vsIKeyValueReader::vsDirection theDirection = vsIKeyValueReader::vsDirectionForward;
     vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(*theKeyLowerBound, *theKeyUpperBound, theDirection);
+    
     iRepository->getAll(*criteria,
                         [&](vsLinkedList<const vsModelBase>& aCollection) {
                             LOG("\n Completion function -  \n");
