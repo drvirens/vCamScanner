@@ -121,10 +121,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self setupRecentlyScannedView];
     [self hideRecentlyScannedView];
     
-    [self clearTitle];
-    [self clearCategoryText];
-    [self setupMiscGUI];
-    [self decorateCategoryMoreIcon];
+    [self setupInfoEntryView];
     
     [self setupFitersMenu];
     
@@ -134,7 +131,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self setupDefaultNextActionButton];
     [self decorateSettingsButton];
     [self decorateShowDocumentsButton];
-    [self setupFileSizeLabel];
+//    [self setupFileSizeLabel];
     
     self.transformCapturedImageView = self.capturedImageView.layer.transform;
     self.transformCroppedView = self.croppedView.layer.transform;
@@ -173,7 +170,9 @@ static void* gUserLoadContext = &gUserLoadContext;
 - (void)clearCategoryText {
     [self.infoEntryView clearCategoryText];
 }
+
 - (void)setupMiscGUI {
+    self.infoEntryView.labelFileSize.text = nil;
     [self.infoEntryView setupMiscGUI:self selectorCateogry:@selector(didSelectCateogry:) selectorDragView:@selector(didSelectDragView:)];
     
     self.infoEntryView.labelCategoryTItle.text = nil;
@@ -183,6 +182,14 @@ static void* gUserLoadContext = &gUserLoadContext;
     UITapGestureRecognizer* upperContainerCapturedViewTapped = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(didTapOnUpperContainerCapturedView:)];
     upperContainerCapturedViewTapped.numberOfTapsRequired = 1;
     [self.upperContainerCapturedView addGestureRecognizer:upperContainerCapturedViewTapped];
+}
+
+- (void)setupInfoEntryView {
+    [self clearTitle];
+    [self clearCategoryText];
+    [self setupMiscGUI];
+    [self decorateCategoryMoreIcon];
+    [self setupFileSizeLabel];
 }
 
 
@@ -555,6 +562,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     [self decorateSelectedCellLabel:label text:label.text];
     
     self.finalProcessedImage = filter.menuThumbnail;
+    
+    [self displayFileSize];
 }
 
 #pragma mark - UITextFieldDelegate
@@ -606,6 +615,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.infoEntryView.labelCategoryTItle.text = nil;
     
     self.categoryName = nil;
+    self.infoEntryView.labelFileSize.text = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) - 1;
@@ -634,6 +644,8 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self hideFiltersView];
         [self transitMenuItemsToShareMode];
         
+        [self displayFileSize];
+        
         [self putUIInProcessingFinished];
         
         [self apiAddDocument]; //this is fire and forget
@@ -643,6 +655,46 @@ static void* gUserLoadContext = &gUserLoadContext;
         [self doCropImage];
     }
 }
+- (void)displayFileSize {
+    UIImage* img = self.finalProcessedImage;
+    if (!img) {
+        img = self.cropImage;
+    }
+    NSData *imageData = UIImageJPEGRepresentation(img, 1.0f);
+    NSUInteger fileSize = [imageData length]; //in bytes
+    
+    NSString* sizeInStr = [self imageSizeInStringFormat:fileSize]; //XXX - shared code
+    
+    self.infoEntryView.labelFileSize.text = sizeInStr;
+}
+- (NSString*)imageSizeInStringFormat:(NSUInteger)size {
+    NSString* ret = nil;
+    NSString* units = nil;
+    NSUInteger number = 0;
+    if (size < 1024) {
+        units = @"BYTES";
+        number = size;
+    } else {
+        NSUInteger kb = size / 1024;
+        if (kb < 1024) {
+            units = @"KB";
+            number = kb;
+        } else {
+            NSUInteger mb = size / (1024 * 1024);
+            if (mb < 1024) {
+                units = @"MB";
+                number = mb;
+            } else {
+                NSUInteger gb = size / (1024 * 1024 * 1024);
+                units = @"GB";
+                number = gb;
+            }
+        }
+    }
+    ret = [NSString stringWithFormat:@"%ld %@", number, units];
+    return ret;
+}
+
 - (void)setupDefaultNextActionButton {
     [self.menuButtonSelect setImage:self.rightImageCheck forState:UIControlStateNormal];
 }
@@ -807,14 +859,18 @@ static void* gUserLoadContext = &gUserLoadContext;
 #pragma mark - API calls
 - (void)apiAddDocument {
     //and then in local storage (LMDB)
-    long        fileSize            = 0; // XXX
+    
     NSString*   docTitle            = self.infoEntryView.textFieldTitle.text;
     UIImage*    originalImage       = self.image;
     UIImage*    finalProcessedImage = self.finalProcessedImage;
     if (!finalProcessedImage) {
-        finalProcessedImage = self.cropImage;
+        finalProcessedImage         = self.cropImage;
     }
     NSString*   categoryName        = self.categoryName;
+    long        fileSize            = 0;
+    
+    NSData *imageData = UIImageJPEGRepresentation(finalProcessedImage, 1.0f);
+    fileSize = [imageData length];
     
     //add it in cache first...
     [self addInCache:docTitle finalProcessedImage:finalProcessedImage];
@@ -867,6 +923,8 @@ finalProcessedImage:(UIImage*)finalProcessedImage {
     [self showInfoEntryView];
     
     [self putUIInProcessingFinished];
+    
+    [self displayFileSize];
     NSLog(@"-------------------> END: CROP IMAGE");
 }
 

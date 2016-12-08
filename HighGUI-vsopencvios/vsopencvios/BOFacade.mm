@@ -167,15 +167,19 @@
 
 - (void) insertDocument:(NSString*)docTitle
           categoryName:(NSString*)categoryName
-              fileSize:(NSInteger)fileSize
-originalImageHref:(NSString*)originalImageHref
-finalImageHref:(NSString*)finalImageHref {
+              fileSize:(NSInteger)fileSizeProcessed
+     originalImageHref:(NSString*)originalImageHref
+        finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
     
     string aTitle = [docTitle UTF8String];
-    vs_uint64_t aDateCreated = 0;
-    vs_uint64_t aDateUpdated = 0;
-    vs_uint64_t aSize = 0;
+    
+    time_t rawtime;
+    time (&rawtime);
+    
+    vs_uint64_t aDateCreated = rawtime;
+    vs_uint64_t aDateUpdated = rawtime;
+    vs_uint64_t aSize = fileSizeProcessed;
     string aOriginalPhotoHref = [originalImageHref UTF8String];
     string aModifiedLargePhotoHref = [finalImageHref UTF8String];
     string aFileType = "jpeg"; //XXX - can be different in future like PNG or tiff etc

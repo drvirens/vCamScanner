@@ -56,7 +56,7 @@
 - (void)setupFileSizeLabel {
     self.labelFileSize.textColor = [VSBranding vs_brandRedColor];
     self.labelFileSize.font = VS_FONT_EXTRASMALL;
-    self.labelFileSize.alpha = 0.5f;
+    self.labelFileSize.alpha = 0.8f;
     
     //also setup title label
     self.labelCategoryTItle.textColor = [UIColor darkGrayColor];
