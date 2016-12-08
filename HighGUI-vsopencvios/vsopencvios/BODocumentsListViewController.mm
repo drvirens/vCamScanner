@@ -54,7 +54,7 @@ static const CGFloat kCellHeight = 140.f;
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:closeImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapOnCloseCateogryButton:)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
 #if 0 //PHASE 2
-    //right bar button
+    //right bar button - search
     UIImage* selectImg = [UIImage imageNamed:@"ic_check_white"];
     closeImg = [selectImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:selectImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapOnSelectCateogryButton:)];
@@ -63,8 +63,8 @@ static const CGFloat kCellHeight = 140.f;
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 - (void)didTapOnCloseCateogryButton:(id)sender {
-   // [self dismissViewControllerAnimated:YES completion:nil];
-    [self imageButtonTapped:nil];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    //[self imageButtonTapped:nil];
 }
 - (void)didTapOnSelectCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];

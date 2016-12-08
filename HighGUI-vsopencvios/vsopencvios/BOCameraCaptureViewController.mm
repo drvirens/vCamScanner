@@ -125,7 +125,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
 
     //enable preview mode
-    [iRate sharedInstance].previewMode = YES;
+    [iRate sharedInstance].previewMode = NO;
 }
 //in this example, we're implementing our own modal alert, so
 //we use the following delegate methods to intercept and override
@@ -135,7 +135,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 {
     if (!self.alertView)
     {
-        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"I'm a completely custom rating dialog. Awesome, right?" delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later", @"Open Web Page", nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"Did you like the app? Please rate this app now." delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later" , @"Open Web Page", nil];
         
         [self.alertView show];
     }
@@ -680,6 +680,10 @@ static void* gUserLoadContext = &gUserLoadContext;
     self.categoryName = nil;
     self.infoEntryView.labelFileSize.text = nil;
     self.docTitle = nil;
+    
+    self.image = nil;
+    self.finalProcessedImage = nil;
+    self.cropImage = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) - 1;
@@ -734,6 +738,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSString* sizeInStr = [self.facade imageSizeInStringFormat:fileSize]; //XXX - shared code
     
     self.infoEntryView.labelFileSize.text = sizeInStr;
+    imageData = nil;
 }
 
 - (void)setupDefaultNextActionButton {
@@ -913,6 +918,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     NSData *imageData = UIImageJPEGRepresentation(finalProcessedImage, 1.0f);
     fileSize = [imageData length];
+    imageData = nil;
     
     if (docTitle.length < 1) {
         docTitle = [self.facade generateDefaultTitle];

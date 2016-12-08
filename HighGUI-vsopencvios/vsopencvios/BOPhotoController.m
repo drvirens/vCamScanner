@@ -30,6 +30,7 @@
     NSData *imageData = UIImageJPEGRepresentation(image, 1.0f);
     NSURL *photoURL = [self urlForPhotoWithName:name];
     [imageData writeToURL:photoURL atomically:YES];
+    imageData = nil;
     return photoURL;
 }
 
