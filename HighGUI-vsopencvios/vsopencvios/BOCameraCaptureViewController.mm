@@ -125,7 +125,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     [iRate sharedInstance].onlyPromptIfLatestVersion = NO;
 
     //enable preview mode
-    [iRate sharedInstance].previewMode = YES;
+    [iRate sharedInstance].previewMode = NO;
 }
 //in this example, we're implementing our own modal alert, so
 //we use the following delegate methods to intercept and override
@@ -135,7 +135,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 {
     if (!self.alertView)
     {
-        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"I'm a completely custom rating dialog. Awesome, right?" delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later", @"Open Web Page", nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"Did you like the app? Please rate this app now." delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later" , @"Open Web Page", nil];
         
         [self.alertView show];
     }
