@@ -291,5 +291,11 @@
     return ret;
 }
 
+- (NSString*)generateDefaultTitle {
+    string doctitle;
+    app_->generateDefaultDocTitle("doc", doctitle);
+    NSString* ret = [NSString stringWithUTF8String:doctitle.c_str()];
+    return ret;
+}
 
 @end

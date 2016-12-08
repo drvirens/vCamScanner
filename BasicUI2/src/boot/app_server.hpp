@@ -44,6 +44,7 @@ public:
     void addDocument(vsDocument& aDocument, function< void(const vsDocument&) > aSignalDidSaveDocuemnt);
     
     void generateImageName(const string& aLabel, string& aOutput);
+    void generateDefaultDocTitle(const string& aLabel, string& aOutput);
         
 	signal1< shared_ptr<vsIRepository> > SignalDidCreateKeyStore;
 	

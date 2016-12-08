@@ -102,6 +102,7 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (nonatomic) CATransform3D transformCroppedView;
 
 @property (nonatomic) BODocCache* docCache;
+@property (nonatomic) NSString* docTitle;
 @end
 
 @implementation BOCameraCaptureViewController {
@@ -616,6 +617,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     self.categoryName = nil;
     self.infoEntryView.labelFileSize.text = nil;
+    self.docTitle = nil;
 }
 - (IBAction)didSelectMenuRotateLeft:(id)sender {
     CGFloat value = (int)floorf((_rotateSlider + 1)*2) - 1;
@@ -849,6 +851,12 @@ static void* gUserLoadContext = &gUserLoadContext;
     
     NSData *imageData = UIImageJPEGRepresentation(finalProcessedImage, 1.0f);
     fileSize = [imageData length];
+    
+    if (docTitle.length < 1) {
+        docTitle = [self.facade generateDefaultTitle];
+        self.docTitle = docTitle;
+        self.infoEntryView.labelCategoryTItle.text = docTitle;
+    }
     
     //add it in cache first...
     [self addInCache:docTitle finalProcessedImage:finalProcessedImage];

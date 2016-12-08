@@ -102,13 +102,25 @@ void CAppServer::addDocument(vsDocument& aDocument, function< void(const vsDocum
     }
 
 void CAppServer::generateImageName(const string& aLabel, string& aOutput)
-    {TRACE
+    { TRACE
     string timeNow;
     ::currentTime(timeNow);
     stringstream ss;
     ss << "img_" << aLabel << "_" << iSessionID_++ << "_" << timeNow;
     aOutput = ss.str();
     }
-    
 
+void CAppServer::generateDefaultDocTitle(const string& aLabel, string& aOutput)
+    { TRACE
+    // Get current date/time, format is YYYY-MM-DD.HH:mm:ss
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+
+    stringstream ss;
+    ss << aLabel << "_" << buf;
+    aOutput = ss.str();
+    }
 
