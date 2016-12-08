@@ -854,6 +854,7 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSLog(@"didSelectCategory");
     self.categoryName = category;
     self.infoEntryView.labelSelectedCategoryName.text = category;
+    self.infoEntryView.labelSelectedCategoryName.textColor = [UIColor whiteColor];
 }
 
 #pragma mark - API calls
