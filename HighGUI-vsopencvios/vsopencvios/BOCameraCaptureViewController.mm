@@ -71,10 +71,6 @@ static void* gUserLoadContext = &gUserLoadContext;
 @property (weak, nonatomic) IBOutlet UIButton *buttonSettings;
 @property (weak, nonatomic) IBOutlet UIButton *buttonShowAllDocuments;
 
-@property (weak, nonatomic) IBOutlet UIView *maskViewRecentlyScanned;
-@property (weak, nonatomic) IBOutlet BORecentlyScannedView *viewRecentlyScanned;
-
-
 @property (nonatomic) BOOL entryInfoPartiallyHidden;
 @property (nonatomic) NSMutableArray* dataSource;
 @property (nonatomic) UICollectionViewCell* currentlySelectedFilterMenu;
@@ -103,6 +99,10 @@ static void* gUserLoadContext = &gUserLoadContext;
 
 @property (nonatomic) BODocCache* docCache;
 @property (nonatomic) NSString* docTitle;
+
+//XXX - phase 2
+@property (weak, nonatomic) IBOutlet UIView *maskViewRecentlyScanned;
+@property (weak, nonatomic) IBOutlet BORecentlyScannedView *viewRecentlyScanned;
 @end
 
 @implementation BOCameraCaptureViewController {
