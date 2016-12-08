@@ -186,11 +186,6 @@
                                     <constraint firstItem="Lwh-H6-yp5" firstAttribute="centerY" secondItem="waf-oh-nvb" secondAttribute="centerY" id="ffi-8A-lmF"/>
                                     <constraint firstItem="OZh-KD-Aa3" firstAttribute="centerY" secondItem="waf-oh-nvb" secondAttribute="centerY" id="xXZ-np-rJq"/>
                                 </constraints>
-                                <variation key="default">
-                                    <mask key="subviews">
-                                        <exclude reference="OZh-KD-Aa3"/>
-                                    </mask>
-                                </variation>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mID-cY-RcA" customClass="BOFiltersView">
                                 <rect key="frame" x="0.0" y="776" width="414" height="120"/>
