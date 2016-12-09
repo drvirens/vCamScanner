@@ -9,27 +9,15 @@
 #import "BODocumentsListViewController.h"
 #import "BODocumentView.h"
 #import "BODocumentTableViewCell.h"
-
 #import "NYTPhotosViewController.h"
-
-typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
-    NYTViewControllerPhotoIndexCustomEverything = 1,
-    NYTViewControllerPhotoIndexLongCaption = 2,
-    NYTViewControllerPhotoIndexDefaultLoadingSpinner = 3,
-    NYTViewControllerPhotoIndexNoReferenceView = 4,
-    NYTViewControllerPhotoIndexCustomMaxZoomScale = 5,
-    NYTViewControllerPhotoIndexGif = 6,
-    NYTViewControllerPhotoCount,
-};
 
 static const CGFloat kCellHeight = 140.f;
 
 @interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate, NYTPhotosViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
 @property (nonatomic, copy) NSArray<BODocumentModel*>* dataSrc;
-
 @property (nonatomic) NSArray *photos;
+@property (nonatomic) UITableViewCell* tappedView;
 @end
 
 @implementation BODocumentsListViewController
@@ -38,7 +26,6 @@ static const CGFloat kCellHeight = 140.f;
     [super viewDidLoad];
     self.title = @"Documents";
     
-    //self.photos = [[self class] newTestPhotos];
     [self setupGUI];
     [self setupDataSrc];
 }
@@ -54,7 +41,7 @@ static const CGFloat kCellHeight = 140.f;
 }
 - (void)didTapOnCloseCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    //[self imageButtonTapped:nil];
+    [self imageButtonTapped:nil];
 }
 - (void)didTapOnSelectCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -83,32 +70,23 @@ static const CGFloat kCellHeight = 140.f;
     return kCellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    [self imageButtonTapped:nil];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    [self imageButtonTapped:indexPath];
 }
 
 - (void)imageButtonTapped:(id)sender {
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:nil delegate:self];
+    NSIndexPath* indexpath = (NSIndexPath*)sender;
+    BODocumentModel* initialPhotoModel = self.dataSrc[indexpath.row];
+    
+    self.tappedView = [self.tableView cellForRowAtIndexPath:indexpath];
+    
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:initialPhotoModel delegate:self];
     [self presentViewController:photosViewController animated:YES completion:nil];
-//    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
 }
 
-//// This method simulates previously blank photos loading their images after some time.
-//- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithPhotos:(NSArray *)photos {
-//    CGFloat updateImageDelay = 5.0;
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        for (NYTExamplePhoto *photo in photos) {
-//            if (!photo.image && !photo.imageData) {
-//                photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-//                [photosViewController updateImageForPhoto:photo];
-//            }
-//        }
-//    });
-//}
-
 #pragma mark - NYTPhotosViewControllerDelegate
-
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    return nil;
+    return self.tappedView;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
@@ -143,15 +121,21 @@ static const CGFloat kCellHeight = 140.f;
     NSLog(@"Did Dismiss Photo Viewer: %@", photosViewController);
 }
 
-//test-
-
 #pragma mark - Data Src
 - (void)setupDataSrc {
+    typeof (self) __weak welf = self;
     [self.facade getAllDocuments:^(NSMutableArray* array) {
-        self.dataSrc = [NSArray arrayWithArray:array];
-        self.photos = self.dataSrc;
-        
-        [self.tableView reloadData];
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf populateData:array];
+        }
     }];
 }
+
+- (void)populateData:(NSMutableArray*)array {
+    self.dataSrc = [NSArray arrayWithArray:array];
+    self.photos = self.dataSrc;
+    [self.tableView reloadData];
+}
+
 @end
