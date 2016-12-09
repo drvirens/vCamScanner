@@ -40,7 +40,7 @@ static const CGFloat kCellHeight = 140.f;
 }
 - (void)didTapOnCloseCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    //[self imageButtonTapped:nil];
+    [self imageButtonTapped:nil];
 }
 - (void)didTapOnSelectCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -70,11 +70,14 @@ static const CGFloat kCellHeight = 140.f;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    [self imageButtonTapped:nil];
+    [self imageButtonTapped:indexPath];
 }
 
 - (void)imageButtonTapped:(id)sender {
-    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:nil delegate:self];
+    NSIndexPath* indexpath = (NSIndexPath*)sender;
+    BODocumentModel* initialPhotoModel = self.dataSrc[indexpath.row];
+    
+    NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:initialPhotoModel delegate:self];
     [self presentViewController:photosViewController animated:YES completion:nil];
 }
 
