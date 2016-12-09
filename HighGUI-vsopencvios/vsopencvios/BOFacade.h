@@ -32,4 +32,5 @@
 - (NSString*)generateDefaultTitle;
 
 - (void)getAllDocuments:( void(^)(NSMutableArray*) )block;
+- (NSURL *)urlForPhotoStorage;
 @end

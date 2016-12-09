@@ -340,6 +340,9 @@ static void deleteNode(void* aData) {
     });
 }
 
+- (NSURL *)urlForPhotoStorage {
+    return [self.photoController urlForPhotoStorage];
+}
 
 - (NSString*)imageSizeInStringFormat:(NSUInteger)size {
     NSString* ret = nil;

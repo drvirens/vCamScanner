@@ -24,12 +24,13 @@
     return NSStringFromClass([self class]);
 }
 - (void)configure:(BODocumentModel*)model {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
-    NSString *libraryDirectory = [paths objectAtIndex:0];
-    NSString* p = [libraryDirectory stringByAppendingPathComponent:model.docImageName];
+    NSURL* url = [self.facade urlForPhotoStorage];
+    NSString* u = [url absoluteString];
+//    NSString* p = [u stringByAppendingPathComponent:model.docImageName];
     
-    UIImage* img = nil;
-    img = [UIImage imageWithContentsOfFile:p];
+    NSString* finalpath = [NSString stringWithFormat:@"%@%@", u, model.docImageName];
+    
+    UIImage* img = [UIImage imageWithContentsOfFile:finalpath];
     self.documentView.imageViewBackground.image = img;
     UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
     self.documentView.containerImageView.image = icon;

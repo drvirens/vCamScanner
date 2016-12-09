@@ -73,6 +73,7 @@ static const CGFloat kCellHeight = 140.f;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
+    cell.facade = self.facade;
     BODocumentModel* model = self.dataSrc[indexPath.row];
     [cell configure:model];
     return cell;

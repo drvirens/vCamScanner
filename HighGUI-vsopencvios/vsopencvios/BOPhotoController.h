@@ -12,4 +12,5 @@
 - (void)removePhotoWithName:(NSString *)name;
 - (void)removeAllPhotos;
 - (UIImage *)photoWithName:(NSString *)name;
+- (NSURL *)urlForPhotoStorage;
 @end
