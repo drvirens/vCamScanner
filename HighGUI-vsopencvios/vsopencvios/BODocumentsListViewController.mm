@@ -12,23 +12,11 @@
 
 #import "NYTPhotosViewController.h"
 
-typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
-    NYTViewControllerPhotoIndexCustomEverything = 1,
-    NYTViewControllerPhotoIndexLongCaption = 2,
-    NYTViewControllerPhotoIndexDefaultLoadingSpinner = 3,
-    NYTViewControllerPhotoIndexNoReferenceView = 4,
-    NYTViewControllerPhotoIndexCustomMaxZoomScale = 5,
-    NYTViewControllerPhotoIndexGif = 6,
-    NYTViewControllerPhotoCount,
-};
-
 static const CGFloat kCellHeight = 140.f;
 
 @interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate, NYTPhotosViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-//@property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
 @property (nonatomic, copy) NSArray<BODocumentModel*>* dataSrc;
-
 @property (nonatomic) NSArray *photos;
 @end
 
@@ -38,7 +26,6 @@ static const CGFloat kCellHeight = 140.f;
     [super viewDidLoad];
     self.title = @"Documents";
     
-    //self.photos = [[self class] newTestPhotos];
     [self setupGUI];
     [self setupDataSrc];
 }
@@ -89,24 +76,9 @@ static const CGFloat kCellHeight = 140.f;
 - (void)imageButtonTapped:(id)sender {
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:nil delegate:self];
     [self presentViewController:photosViewController animated:YES completion:nil];
-//    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
 }
 
-//// This method simulates previously blank photos loading their images after some time.
-//- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithPhotos:(NSArray *)photos {
-//    CGFloat updateImageDelay = 5.0;
-//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-//        for (NYTExamplePhoto *photo in photos) {
-//            if (!photo.image && !photo.imageData) {
-//                photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-//                [photosViewController updateImageForPhoto:photo];
-//            }
-//        }
-//    });
-//}
-
 #pragma mark - NYTPhotosViewControllerDelegate
-
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
     return nil;
 }
@@ -142,8 +114,6 @@ static const CGFloat kCellHeight = 140.f;
 - (void)photosViewControllerDidDismiss:(NYTPhotosViewController *)photosViewController {
     NSLog(@"Did Dismiss Photo Viewer: %@", photosViewController);
 }
-
-//test-
 
 #pragma mark - Data Src
 - (void)setupDataSrc {
