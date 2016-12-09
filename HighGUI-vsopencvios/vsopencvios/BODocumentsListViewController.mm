@@ -69,6 +69,7 @@ static const CGFloat kCellHeight = 140.f;
     return kCellHeight;
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
     [self imageButtonTapped:nil];
 }
 
