@@ -916,6 +916,9 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSString*   categoryName        = self.categoryName;
     long        fileSize            = 0;
     
+    if (!categoryName) {
+        categoryName = @"Other";
+    }
     NSData *imageData = UIImageJPEGRepresentation(finalProcessedImage, 1.0f);
     fileSize = [imageData length];
     imageData = nil;

@@ -22,6 +22,7 @@
     self.documentView.imageViewBackground.image = nil;
     self.documentView.containerImageView.image = nil;
     self.documentView.containerLabel.text = nil;
+    self.documentView.categoryNameLabel.text = nil;
 }
 + (NSString*)reuseID {
     return NSStringFromClass([self class]);
@@ -43,5 +44,6 @@
     UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
     self.documentView.containerImageView.image = icon;
     self.documentView.containerLabel.text = model.docTitle;
+    self.documentView.categoryNameLabel.text = model.docCategoryName;
 }
 @end

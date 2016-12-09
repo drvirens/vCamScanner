@@ -178,7 +178,7 @@ static NSMutableArray* gArray = nil;
      originalImageHref:(NSString*)originalImageHref
         finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
-    
+    NSAssert(categoryName!=nil, @"categoryName cant be nil");
     string aTitle = [docTitle UTF8String];
     
     time_t rawtime;
@@ -287,7 +287,7 @@ static void visitNode(void* aData)
         LOG("\n got docuemnt \n");
         NSString* title = [NSString stringWithUTF8String:doc->title().c_str()];
         NSString* icon = @"ic_card_travel_white";
-        
+        NSString* category = [NSString stringWithUTF8String:doc->categoryName().c_str()];
         
         string processedfinalImage = doc->modifiedLargePhotoHref();
         NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
@@ -296,7 +296,8 @@ static void visitNode(void* aData)
         BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:title
                                                         icon:icon 
                                                         date:[NSDate date] 
-                                                        image:onlyImageName];
+                                                        image:onlyImageName
+                                                        docCategoryName:category];
         [gArray addObject:model];
         }
     }

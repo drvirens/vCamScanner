@@ -12,7 +12,8 @@
 @property (nonatomic, copy, readonly) NSString* docImageName;
 @property (nonatomic, copy, readonly) NSString* docTitle;
 @property (nonatomic, copy, readonly) NSString* docCategoryIconName;
+@property (nonatomic, copy, readonly) NSString* docCategoryName;
 @property (nonatomic, copy, readonly) NSDate* docDateCreated;
 
-- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSDate*)date image:(NSString*)image;
+- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSDate*)date image:(NSString*)image docCategoryName:(NSString*)docCategoryName;
 @end

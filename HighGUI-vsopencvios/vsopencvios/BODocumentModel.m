@@ -12,16 +12,18 @@
 @property (nonatomic, copy, readwrite) NSString* docImageName;
 @property (nonatomic, copy, readwrite) NSString* docTitle;
 @property (nonatomic, copy, readwrite) NSString* docCategoryIconName;
+@property (nonatomic, copy, readwrite) NSString* docCategoryName;
 @property (nonatomic, copy, readwrite) NSDate* docDateCreated;
 @end
 
 @implementation BODocumentModel
-- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSDate*)date image:(NSString*)image {
+- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSDate*)date image:(NSString*)image docCategoryName:(NSString*)docCategoryName {
     if (self = [super init]) {
         _docTitle = title;
         _docCategoryIconName = icon;
         _docDateCreated = date;
         _docImageName = image;
+        _docCategoryName = docCategoryName;
     }
     return self;
 }

@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BODocumentView">
             <connections>
+                <outlet property="categoryNameLabel" destination="cev-vf-qoG" id="Ydz-1W-edP"/>
                 <outlet property="containerImageView" destination="FZL-3Z-an4" id="x6M-Eu-Alc"/>
                 <outlet property="containerLabel" destination="5uG-yy-RdZ" id="vhV-VQ-7y0"/>
                 <outlet property="containerView" destination="6l4-O3-TzH" id="61Q-TA-lWQ"/>
