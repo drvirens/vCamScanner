@@ -8,7 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "BODocumentModel.h"
+#import "BOFacade.h"
 @interface BODocumentTableViewCell : UITableViewCell
+@property (nonatomic) BOFacade* facade;
 + (NSString*)reuseID;
 - (void)configure:(BODocumentModel*)model;
 @end

@@ -22,6 +22,9 @@
 #import "UIImageView+ContentFrame.h"
 #import "MMOpenCVHelper.h"
 #import "BODetectEdges.h"
+#import "BODocumentModel.h"
+
+static NSMutableArray* gArray = nil;
 
 @interface BOFacade ()
 @property (nonatomic) BOPhotoController *photoController;
@@ -32,10 +35,13 @@
 @property (nonatomic, copy) NSString* finalImageHref;
 
 @property (nonatomic) BODetectEdges* detectEdgesAlgorithm;
+
+@property (nonatomic) NSOperationQueue* mainQueue;
 @end
 
 @implementation BOFacade {
     CAppServer* app_;
+    vsLinkedList<const vsModelBase>* linkedlistAllDocs_;
 }
 
 - (instancetype)init {
@@ -49,6 +55,7 @@
     self.locationController = nil; //[[BOLocationController alloc] init]; // XXX - Location in Phase 2 - dont allocate else it will trigger location permissions
     self.photoController = [[BOPhotoController alloc] init];
     self.operationQueue = [[NSOperationQueue alloc] init];
+    self.mainQueue = [NSOperationQueue mainQueue];
 }
 
 // ALL APIs must be executed on background thread
@@ -171,7 +178,7 @@
      originalImageHref:(NSString*)originalImageHref
         finalImageHref:(NSString*)finalImageHref {
     NSLog(@"insertDocument");
-    
+    NSAssert(categoryName!=nil, @"categoryName cant be nil");
     string aTitle = [docTitle UTF8String];
     
     time_t rawtime;
@@ -182,8 +189,8 @@
     vs_uint64_t aSize = fileSizeProcessed;
     string aOriginalPhotoHref = [originalImageHref UTF8String];
     string aModifiedLargePhotoHref = [finalImageHref UTF8String];
-    string aFileType = "jpeg"; //XXX - can be different in future like PNG or tiff etc
-    vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aFileType);
+    string aCategoryName = [categoryName UTF8String];
+    vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aCategoryName);
     
     app_->addDocument(doc, [](const vsDocument& savedDocument) {
         string primaryKey = savedDocument.docID();
@@ -209,7 +216,6 @@
                 completion:( void(^)(UIImage*) )completion {
     UIImage* retImgae = nil;
     if([croppedView frameEdited]) {
-        
         typeof (self) __weak welf = self;
         NSBlockOperation* cropBlock = [NSBlockOperation blockOperationWithBlock:^{
             typeof (self) __strong strongSelf = welf;
@@ -261,6 +267,79 @@
             completion(theCroppedImage);
         });
     }
+}
+
+#pragma mark - get all documents
+static void visitNode(void* aData)
+    {    
+    vsDocument* doc = (vsDocument*)aData;
+    if (doc) 
+        {
+        LOG("\n got docuemnt \n");
+        NSString* title = [NSString stringWithUTF8String:doc->title().c_str()];
+        NSString* icon = @"ic_card_travel_white";
+        NSString* category = [NSString stringWithUTF8String:doc->categoryName().c_str()];
+        
+        string processedfinalImage = doc->modifiedLargePhotoHref();
+        NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
+        NSString* onlyImageName = [image lastPathComponent];
+        
+        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:title
+                                                        icon:icon 
+                                                        date:[NSDate date] 
+                                                        image:onlyImageName
+                                                        docCategoryName:category];
+        [gArray addObject:model];
+        }
+    }
+
+- (void)getAllDocuments:( void(^)(NSMutableArray*) )block {
+    typeof (self) __weak welf = self;
+    NSBlockOperation* getalldocsOperation = [NSBlockOperation blockOperationWithBlock:^{
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf doGetAllDocuments:block];
+        }
+    }];
+    [self.operationQueue addOperation:getalldocsOperation];
+}
+
+static void deleteNode(void* aData) {
+    vsDocument* doc = (vsDocument*)aData;
+    if (doc) {
+        delete doc;
+    }
+}
+
+- (void)doGetAllDocuments:( void(^)(NSMutableArray*) )block { TRACE
+    if (linkedlistAllDocs_) {
+        linkedlistAllDocs_->deleteAll(deleteNode);
+        delete linkedlistAllDocs_;
+        linkedlistAllDocs_ = 0;
+    }
+    linkedlistAllDocs_ = new vsLinkedList<const vsModelBase>();
+    
+    if (gArray) {
+        [gArray removeAllObjects];
+        gArray = nil;
+    }
+    gArray = [NSMutableArray array];
+    
+    app_->getAllDocuments(*linkedlistAllDocs_, [&]() {
+        linkedlistAllDocs_->traverse(visitNode);
+        
+        //run completion on main thread
+        if (block) {
+            NSBlockOperation* completion = [NSBlockOperation blockOperationWithBlock:^{
+                block(gArray);
+            }];
+            [self.mainQueue addOperation:completion];
+        }
+    });
+}
+
+- (NSURL *)urlForPhotoStorage {
+    return [self.photoController urlForPhotoStorage];
 }
 
 - (NSString*)imageSizeInStringFormat:(NSUInteger)size {

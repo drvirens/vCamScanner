@@ -38,6 +38,10 @@ public:
         {
         vsLinkedListBase::traverse(aCallback);
         }
+    void deleteAll( void(*cb)(void*) )
+        {
+        vsLinkedListBase::traverse(cb);
+        }
     };
 
 #endif /* linked_list_hpp */

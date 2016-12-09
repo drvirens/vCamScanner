@@ -23,7 +23,7 @@ using namespace std;
 	- size                 // size in bytes //
 	- originalPhotoHref    // local or cloud based file path to original pic - cloud-path is not for phase1 //
 	- modifiedLargePhotoHref // local or cloud based file path to opencv processed file //
-	- fileType             // this is needed for generating pdf etc later using ocr //
+	- categoryName             // this is needed for generating pdf etc later using ocr //
  ------:: Phase II ::-----
 	- modifiedMediumPhotoHref       // phase 2 - local or cloud based file path to opencv processed file //
 	- modifiedThumbnailPhotoHref    // phase 2 - local or cloud based file path to opencv processed file //
@@ -47,7 +47,7 @@ public:
                const vs_uint64_t& aSize,
                const string& aOriginalPhotoHref,
                const string& aModifiedLargePhotoHref,
-               const string& aFileType);
+               const string& aCategoryName);
     vsDocument();
     virtual ~vsDocument();
     
@@ -63,7 +63,7 @@ public:
     
     const string& originalPhotoHref() const { return iOriginalPhotoHref; }
     const string& modifiedLargePhotoHref() const { return iModifiedLargePhotoHref; }
-    const string& fileType() const { return iFileType; }
+    const string& categoryName() const { return iCategoryName; }
     
     vs_uint64_t dateCreated() const { return iDateCreated; }
     vs_uint64_t dateUpdated() const { return iDateUpdated; }
@@ -80,7 +80,7 @@ private:
     vs_uint64_t iSize;
     string iOriginalPhotoHref;
     string iModifiedLargePhotoHref;
-    string iFileType;
+    string iCategoryName;
 };
 
 #endif /* document_hpp */

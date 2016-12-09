@@ -19,15 +19,34 @@
 }
 - (void)prepareForReuse {
     NSLog(@"prepareForReuse is called ");
+    self.documentView.imageViewBackground.image = nil;
+    self.documentView.containerImageView.image = nil;
+    self.documentView.containerLabel.text = nil;
+    self.documentView.categoryNameLabel.text = nil;
 }
 + (NSString*)reuseID {
     return NSStringFromClass([self class]);
 }
 - (void)configure:(BODocumentModel*)model {
-    UIImage* img = [UIImage imageNamed:model.docImageName];
+    NSURL* url = [self.facade urlForPhotoStorage];
+    url = [url URLByAppendingPathComponent:model.docImageName];
+    NSString* finalpath = url.path;
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:url.path];
+    UIImage* img = nil;
+    if (fileExists) {
+        NSLog(@"fileExists");
+        img = [[UIImage alloc] initWithContentsOfFile:finalpath];
+    } else {
+        NSLog(@"fileDOES NOT Exists");
+    }
+
     self.documentView.imageViewBackground.image = img;
     UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
     self.documentView.containerImageView.image = icon;
     self.documentView.containerLabel.text = model.docTitle;
+    self.documentView.categoryNameLabel.text = model.docCategoryName;
+    
+    //decorate model
+    model.image = img;
 }
 @end

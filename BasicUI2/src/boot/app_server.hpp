@@ -15,6 +15,7 @@
 #include "auth_status.hpp"
 #include "chat_types.h"
 #include "document.hpp"
+#include "linked_list.hpp"
 
 class vsIRepository;
 class vsIKeyValueStore;
@@ -22,6 +23,7 @@ class CAuthenticator;
 class vsUser;
 class vsDocument;
 class TLoginMessageLayout;
+class vsRecordCreiterion;
 
 using namespace std;
 using namespace sigslot;
@@ -42,6 +44,8 @@ public:
                       function< void(const EAuthenticationStatus&, const vsUser&) > aSignalDidAuthenticateUser);
         
     void addDocument(vsDocument& aDocument, function< void(const vsDocument&) > aSignalDidSaveDocuemnt);
+    
+    void getAllDocuments(vsLinkedList<const vsModelBase>& aLinkedList, function<void()> aCompletion);
     
     void generateImageName(const string& aLabel, string& aOutput);
     void generateDefaultDocTitle(const string& aLabel, string& aOutput);

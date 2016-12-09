@@ -17,6 +17,8 @@
 #include "user.hpp"
 #include "document.hpp"
 #include "time_utils.hpp"
+#include "document_record_creiterion.hpp"
+#include "primary_key.hpp"
 
 using namespace std;
 
@@ -99,6 +101,30 @@ void CAppServer::addDocument(vsDocument& aDocument, function< void(const vsDocum
                             {
                                 LOG("\t Did successfully put the model [%s] \n", aPuttedModel.primaryKey().c_str());
                             });
+    }
+    
+void CAppServer::getAllDocuments(vsLinkedList<const vsModelBase>& aLinkedList,
+            function<void()> aCompletion)
+    { TRACE
+    vsPrimaryKey* docIDLower = new vsPrimaryKey("1"); //XXX - vsDocument should accept the docID from outside instead of generating automatically
+    
+    vsTData* theKeyLowerBound = new vsTData();
+    docIDLower->wrappedPrimaryKey(*theKeyLowerBound);
+    
+    vsPrimaryKey* docIDUpper = new vsPrimaryKey("3");
+    vsTData* theKeyUpperBound = new vsTData();
+    docIDUpper->wrappedPrimaryKey(*theKeyUpperBound);
+    
+    vsIKeyValueReader::vsDirection theDirection = vsIKeyValueReader::vsDirectionForward;
+    vsRecordCreiterion* criteria = new vsDocumentRecordCreiterion(*theKeyLowerBound, *theKeyUpperBound, theDirection);
+    
+    iRepository->getAll(*criteria,
+                        [&](vsLinkedList<const vsModelBase>& aCollection) {
+                            LOG("\n Completion function -  \n");
+//                            aCollection.traverse(visitNode);
+                            aLinkedList = aCollection;
+                            aCompletion();
+                        });
     }
 
 void CAppServer::generateImageName(const string& aLabel, string& aOutput)
