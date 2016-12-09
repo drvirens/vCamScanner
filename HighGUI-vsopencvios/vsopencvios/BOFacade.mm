@@ -284,7 +284,11 @@ static void visitNode(void* aData)
         NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
         NSString* onlyImageName = [image lastPathComponent];
         
-        NSString* dateCreated = @"Date Created";
+        char            dateTimeStr[32];
+        vs_uint64_t datecreated = doc->dateCreated();
+        time_t localNow = (time_t)datecreated;
+        strftime(dateTimeStr, sizeof(dateTimeStr), "%Y-%m-%d %H:%M:%S", localtime(&localNow));
+        NSString* dateCreated = [NSString stringWithUTF8String:dateTimeStr];
         
         BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:title
                                                         icon:icon 
