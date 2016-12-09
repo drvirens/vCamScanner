@@ -189,8 +189,8 @@ static NSMutableArray* gArray = nil;
     vs_uint64_t aSize = fileSizeProcessed;
     string aOriginalPhotoHref = [originalImageHref UTF8String];
     string aModifiedLargePhotoHref = [finalImageHref UTF8String];
-    string aFileType = [categoryName UTF8String];
-    vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aFileType);
+    string aCategoryName = [categoryName UTF8String];
+    vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aCategoryName);
     
     app_->addDocument(doc, [](const vsDocument& savedDocument) {
         string primaryKey = savedDocument.docID();

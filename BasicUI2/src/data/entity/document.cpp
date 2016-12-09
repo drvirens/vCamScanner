@@ -39,7 +39,7 @@ const vs_int32_t vsDocument::recordSize() const
                                              sizeof(iSize)         +
                                              iOriginalPhotoHref.length() + sizeof(vs_uint32_t) +
                                              iModifiedLargePhotoHref.length() + sizeof(vs_uint32_t) +
-                                             iFileType.length()	         + sizeof(vs_uint32_t));
+                                             iCategoryName.length()	         + sizeof(vs_uint32_t));
     
     return flatRecordSize;
 }
@@ -65,8 +65,8 @@ bool vsDocument::pack(TPacker& aPacker)
         if ( !(aPacker.writeUint32((vs_uint32_t)iModifiedLargePhotoHref.length())) ) {break;}
         if ( !(aPacker.writeChars((const vs_int8_t*)iModifiedLargePhotoHref.c_str(), (vs_uint32_t)iModifiedLargePhotoHref.length())) ) {break;}
         
-        if ( !(aPacker.writeUint32((vs_uint32_t)iFileType.length())) ) {break;}
-        if ( !(aPacker.writeChars((const vs_int8_t*)iFileType.c_str(), (vs_uint32_t)iFileType.length())) ) {break;}
+        if ( !(aPacker.writeUint32((vs_uint32_t)iCategoryName.length())) ) {break;}
+        if ( !(aPacker.writeChars((const vs_int8_t*)iCategoryName.c_str(), (vs_uint32_t)iCategoryName.length())) ) {break;}
         
         ret = true;
         break;
@@ -86,7 +86,7 @@ bool vsDocument::unPack(TUnPacker& aUnPacker)
         if (!extractInt64(aUnPacker,    iSize)) break;
         if (!extractString(aUnPacker,   iOriginalPhotoHref)) break;
         if (!extractString(aUnPacker,   iModifiedLargePhotoHref)) break;
-        if (!extractString(aUnPacker,   iFileType)) break;
+        if (!extractString(aUnPacker,   iCategoryName)) break;
         ret = true;
         break;
     }
@@ -99,14 +99,14 @@ vsDocument::vsDocument(const string& aTitle,
                        const vs_uint64_t& aSize,
                        const string& aOriginalPhotoHref,
                        const string& aModifiedLargePhotoHref,
-                       const string& aFileType)
+                       const string& aCategoryName)
 : iTitle(aTitle)
 , iDateCreated(aDateCreated)
 , iDateUpdated(aDateUpdated)
 , iSize(aSize)
 , iOriginalPhotoHref(aOriginalPhotoHref)
 , iModifiedLargePhotoHref(aModifiedLargePhotoHref)
-, iFileType(aFileType)
+, iCategoryName(aCategoryName)
     { TRACE
     int lastusedid = getLastUsedDocID();
     stringstream ss;
@@ -122,12 +122,8 @@ vsDocument::vsDocument()
 , iSize(0)
 , iOriginalPhotoHref("")
 , iModifiedLargePhotoHref("")
-, iFileType("")
+, iCategoryName("")
     { TRACE
-//    int lastusedid = getLastUsedDocID();
-//    stringstream ss;
-//    ss << lastusedid;
-//    iDocID = "69";
     }
 
 vsModelBase* vsDocument::copy()
@@ -139,7 +135,7 @@ vsModelBase* vsDocument::copy()
                                         iSize,
                                         iOriginalPhotoHref,
                                         iModifiedLargePhotoHref,
-                                        iFileType);
+                                        iCategoryName);
     obj->iDocID = iDocID;
     
     return obj;
@@ -153,7 +149,7 @@ vsDocument::~vsDocument()
 void vsDocument::debugDump() const
 {
     strstream s;
-    s << " iTitle:[" << iTitle << "], iDateCreated:[" << iDateCreated << "], iDateUpdated:[" << iDateUpdated << "], iSize:[" << iSize << "], iOriginalPhotoHref:[" << iOriginalPhotoHref << "], iModifiedLargePhotoHref:[" << iModifiedLargePhotoHref << "], iFileType:[" << iFileType << "]";
+    s << " iTitle:[" << iTitle << "], iDateCreated:[" << iDateCreated << "], iDateUpdated:[" << iDateUpdated << "], iSize:[" << iSize << "], iOriginalPhotoHref:[" << iOriginalPhotoHref << "], iModifiedLargePhotoHref:[" << iModifiedLargePhotoHref << "], iCategoryName:[" << iCategoryName << "]";
     string user = s.str();
     LOG("\t User = {%s} \n", user.c_str());
 }
