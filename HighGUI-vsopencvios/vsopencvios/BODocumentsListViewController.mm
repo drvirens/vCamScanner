@@ -68,8 +68,7 @@ static const CGFloat kCellHeight = 140.f;
     return self.dataSrc.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger ret = self.dataSrc.count;
-    return ret;
+    return 1;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
@@ -250,6 +249,7 @@ static const CGFloat kCellHeight = 140.f;
         [self.tableView reloadData];
     }];
     
+    #if 0
  
     NSMutableArray* scanned = [NSMutableArray array];
     
@@ -464,5 +464,7 @@ static const CGFloat kCellHeight = 140.f;
     
     //self.dataSrc = scanned;
     //test-
+    #endif
+    
 }
 @end
