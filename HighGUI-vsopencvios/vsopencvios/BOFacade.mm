@@ -284,9 +284,11 @@ static void visitNode(void* aData)
         NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
         NSString* onlyImageName = [image lastPathComponent];
         
+        NSString* dateCreated = @"Date Created";
+        
         BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:title
                                                         icon:icon 
-                                                        date:[NSDate date] 
+                                                        date:dateCreated
                                                         image:onlyImageName
                                                         docCategoryName:category];
         [gArray addObject:model];
