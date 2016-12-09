@@ -10,10 +10,7 @@
 #import "BODocumentView.h"
 #import "BODocumentTableViewCell.h"
 
-//test+
 #import "NYTPhotosViewController.h"
-#import "NYTExamplePhoto.h"
-//test-
 
 typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     NYTViewControllerPhotoIndexCustomEverything = 1,
@@ -89,79 +86,45 @@ static const CGFloat kCellHeight = 140.f;
     [self imageButtonTapped:nil];
 }
 
-
-//test+
 - (void)imageButtonTapped:(id)sender {
-//    self.photos = [[self class] newTestPhotos];
-    
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:nil delegate:self];
-    
     [self presentViewController:photosViewController animated:YES completion:nil];
-    
-    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
+//    [self updateImagesOnPhotosViewController:photosViewController afterDelayWithPhotos:self.photos];
 }
 
-// This method simulates previously blank photos loading their images after some time.
-- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithPhotos:(NSArray *)photos {
-    CGFloat updateImageDelay = 5.0;
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        for (NYTExamplePhoto *photo in photos) {
-            if (!photo.image && !photo.imageData) {
-                photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
-                [photosViewController updateImageForPhoto:photo];
-            }
-        }
-    });
-}
+//// This method simulates previously blank photos loading their images after some time.
+//- (void)updateImagesOnPhotosViewController:(NYTPhotosViewController *)photosViewController afterDelayWithPhotos:(NSArray *)photos {
+//    CGFloat updateImageDelay = 5.0;
+//    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(updateImageDelay * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//        for (NYTExamplePhoto *photo in photos) {
+//            if (!photo.image && !photo.imageData) {
+//                photo.image = [UIImage imageNamed:@"NYTimesBuilding"];
+//                [photosViewController updateImageForPhoto:photo];
+//            }
+//        }
+//    });
+//}
 
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexNoReferenceView]]) {
-        return nil;
-//    }
-    
-   // return self.imageButton; //XXX
     return nil;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
-//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
-//        UILabel *loadingLabel = [[UILabel alloc] init];
-//        loadingLabel.text = @"Custom Loading...";
-//        loadingLabel.textColor = [UIColor greenColor];
-//        return loadingLabel;
-//    }
-    
     return nil;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
-//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
-//        UILabel *label = [[UILabel alloc] init];
-//        label.text = @"Custom Caption View";
-//        label.textColor = [UIColor whiteColor];
-//        label.backgroundColor = [UIColor redColor];
-//        return label;
-//    }
-    
     return nil;
 }
 
 - (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
-//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
-        return 10.0f;
-//    }
-    
-//    return 1.0f;
+    return 10.0f;
 }
 
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
-//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
-        return @{NSForegroundColorAttributeName: [UIColor grayColor]};
-//    }
-    
-//    return nil;
+    return @{NSForegroundColorAttributeName: [UIColor grayColor]};
 }
 
 - (NSString *)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id<NYTPhoto>)photo atIndex:(NSUInteger)photoIndex totalPhotoCount:(NSUInteger)totalPhotoCount {
