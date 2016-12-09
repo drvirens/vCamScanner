@@ -9,7 +9,6 @@
 #import "BODocumentsListViewController.h"
 #import "BODocumentView.h"
 #import "BODocumentTableViewCell.h"
-
 #import "NYTPhotosViewController.h"
 
 static const CGFloat kCellHeight = 140.f;
