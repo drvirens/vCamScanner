@@ -19,6 +19,9 @@
 }
 - (void)prepareForReuse {
     NSLog(@"prepareForReuse is called ");
+    self.documentView.imageViewBackground.image = nil;
+    self.documentView.containerImageView.image = nil;
+    self.documentView.containerLabel.text = nil;
 }
 + (NSString*)reuseID {
     return NSStringFromClass([self class]);

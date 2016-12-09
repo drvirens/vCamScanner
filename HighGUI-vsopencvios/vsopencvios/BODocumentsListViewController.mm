@@ -30,7 +30,7 @@ static const CGFloat kCellHeight = 140.f;
 @interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate, NYTPhotosViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 //@property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
-@property (nonatomic) NSMutableArray<BODocumentModel*>* dataSrc;
+@property (nonatomic, copy) NSArray<BODocumentModel*>* dataSrc;
 
 @property (nonatomic) NSArray *photos;
 @end
@@ -65,10 +65,10 @@ static const CGFloat kCellHeight = 140.f;
 
 #pragma mark - UITableViewDataSource
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.dataSrc.count;
+    return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 1;
+    return self.dataSrc.count;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
@@ -242,10 +242,11 @@ static const CGFloat kCellHeight = 140.f;
 
 #pragma mark - Data Src
 - (void)setupDataSrc {
-    self.dataSrc = [NSMutableArray array];
+    //self.dataSrc = [NSMutableArray array];
     
     [self.facade getAllDocuments:^(NSMutableArray* array) {
-        self.dataSrc = array;
+        //self.dataSrc = array;
+        self.dataSrc = [NSArray arrayWithArray:array];
         [self.tableView reloadData];
     }];
     

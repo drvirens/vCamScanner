@@ -189,7 +189,7 @@ static NSMutableArray* gArray = nil;
     vs_uint64_t aSize = fileSizeProcessed;
     string aOriginalPhotoHref = [originalImageHref UTF8String];
     string aModifiedLargePhotoHref = [finalImageHref UTF8String];
-    string aFileType = "jpeg"; //XXX - can be different in future like PNG or tiff etc
+    string aFileType = [categoryName UTF8String];
     vsDocument doc(aTitle, aDateCreated, aDateUpdated, aSize, aOriginalPhotoHref, aModifiedLargePhotoHref, aFileType);
     
     app_->addDocument(doc, [](const vsDocument& savedDocument) {
@@ -277,9 +277,9 @@ static void visitNode(void* aData)
 //        gArray = nil;
 //        gArray = [NSMutableArray array];
 //    }
-    if (!gArray) {
-        gArray = [NSMutableArray array];
-    }
+//    if (!gArray) {
+//        gArray = [NSMutableArray array];
+//    }
     
     vsDocument* doc = (vsDocument*)aData;
     if (doc) 
@@ -326,6 +326,12 @@ static void deleteNode(void* aData) {
         linkedlistAllDocs_ = 0;
     }
     linkedlistAllDocs_ = new vsLinkedList<const vsModelBase>();
+    
+    if (gArray) {
+        [gArray removeAllObjects];
+        gArray = nil;
+    }
+    gArray = [NSMutableArray array];
     
     app_->getAllDocuments(*linkedlistAllDocs_, [&]() {
         linkedlistAllDocs_->traverse(visitNode);
