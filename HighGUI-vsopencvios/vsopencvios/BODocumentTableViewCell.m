@@ -45,5 +45,8 @@
     self.documentView.containerImageView.image = icon;
     self.documentView.containerLabel.text = model.docTitle;
     self.documentView.categoryNameLabel.text = model.docCategoryName;
+    
+    //decorate model
+    model.image = img;
 }
 @end

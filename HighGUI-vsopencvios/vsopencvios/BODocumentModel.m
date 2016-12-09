@@ -24,7 +24,20 @@
         _docDateCreated = date;
         _docImageName = image;
         _docCategoryName = docCategoryName;
+        
+        [self construct];
     }
     return self;
 }
+
+- (void)construct {
+    self.placeholderImage = [UIImage imageNamed:@"doc2.jpg"];
+    
+    NSString *caption = @"summary";
+      
+    self.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:self.docTitle attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+    self.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
+    self.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"NYT Building Photo Credit: Nic Lehoux" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
+}
+
 @end

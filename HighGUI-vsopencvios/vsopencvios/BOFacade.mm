@@ -271,16 +271,7 @@ static NSMutableArray* gArray = nil;
 
 #pragma mark - get all documents
 static void visitNode(void* aData)
-    {
-//    if (gArray) {
-//        [gArray removeAllObjects];
-//        gArray = nil;
-//        gArray = [NSMutableArray array];
-//    }
-//    if (!gArray) {
-//        gArray = [NSMutableArray array];
-//    }
-    
+    {    
     vsDocument* doc = (vsDocument*)aData;
     if (doc) 
         {

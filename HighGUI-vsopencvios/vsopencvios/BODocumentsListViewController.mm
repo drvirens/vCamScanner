@@ -41,7 +41,7 @@ static const CGFloat kCellHeight = 140.f;
     [super viewDidLoad];
     self.title = @"Documents";
     
-    self.photos = [[self class] newTestPhotos];
+    //self.photos = [[self class] newTestPhotos];
     [self setupGUI];
     [self setupDataSrc];
 }
@@ -114,116 +114,58 @@ static const CGFloat kCellHeight = 140.f;
     });
 }
 
-+ (NSArray *)newTestPhotos {
-    NSMutableArray *photos = [NSMutableArray array];
-    
-    for (NSUInteger i = 0; i < NYTViewControllerPhotoCount; i++) {
-        NYTExamplePhoto *photo = [[NYTExamplePhoto alloc] init];
-        
-        if (i == NYTViewControllerPhotoIndexGif) {
-            photo.imageData = [NSData dataWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"giphy" ofType:@"gif"]];
-        } else if (i == NYTViewControllerPhotoIndexCustomEverything || i == NYTViewControllerPhotoIndexDefaultLoadingSpinner) {
-            // no-op, left here for clarity:
-            photo.image = nil;
-        } else {
-            photo.image = [UIImage imageNamed:@"doc1.jpg"];
-        }
-        
-        if (i == NYTViewControllerPhotoIndexCustomEverything) {
-            photo.placeholderImage = [UIImage imageNamed:@"doc2.jpg"];
-        }
-        
-        NSString *caption = @"summary";
-        switch ((NYTViewControllerPhotoIndex)i) {
-            case NYTViewControllerPhotoIndexCustomEverything:
-                caption = @"photo with custom everything";
-                break;
-            case NYTViewControllerPhotoIndexLongCaption:
-                caption = @"photo with long caption. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum maximus laoreet vehicula. Maecenas elit quam, pellentesque at tempor vel, tempus non sem. Vestibulum ut aliquam elit. Vivamus rhoncus sapien turpis, at feugiat augue luctus id. Nulla mi urna, viverra sed augue malesuada, bibendum bibendum massa. Cras urna nibh, lacinia vitae feugiat eu, consectetur a tellus. Morbi venenatis nunc sit amet varius pretium. Duis eget sem nec nulla lobortis finibus. Nullam pulvinar gravida est eget tristique. Curabitur faucibus nisl eu diam ullamcorper, at pharetra eros dictum. Suspendisse nibh urna, ultrices a augue a, euismod mattis felis. Ut varius tortor ac efficitur pellentesque. Mauris sit amet rhoncus dolor. Proin vel porttitor mi. Pellentesque lobortis interdum turpis, vitae tincidunt purus vestibulum vel. Phasellus tincidunt vel mi sit amet congue.";
-                break;
-            case NYTViewControllerPhotoIndexDefaultLoadingSpinner:
-                caption = @"photo with loading spinner";
-                break;
-            case NYTViewControllerPhotoIndexNoReferenceView:
-                caption = @"photo without reference view";
-                break;
-            case NYTViewControllerPhotoIndexCustomMaxZoomScale:
-                caption = @"photo with custom maximum zoom scale";
-                break;
-            case NYTViewControllerPhotoIndexGif:
-                caption = @"animated GIF";
-                break;
-            case NYTViewControllerPhotoCount:
-                // this case statement intentionally left blank.
-                break;
-        }
-        
-        photo.attributedCaptionTitle = [[NSAttributedString alloc] initWithString:@(i + 1).stringValue attributes:@{NSForegroundColorAttributeName: [UIColor whiteColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
-        photo.attributedCaptionSummary = [[NSAttributedString alloc] initWithString:caption attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleBody]}];
-        photo.attributedCaptionCredit = [[NSAttributedString alloc] initWithString:@"NYT Building Photo Credit: Nic Lehoux" attributes:@{NSForegroundColorAttributeName: [UIColor grayColor], NSFontAttributeName: [UIFont preferredFontForTextStyle:UIFontTextStyleCaption1]}];
-        
-        [photos addObject:photo];
-    }
-    
-    return photos;
-}
-
 #pragma mark - NYTPhotosViewControllerDelegate
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexNoReferenceView]]) {
+//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexNoReferenceView]]) {
         return nil;
-    }
+//    }
     
    // return self.imageButton; //XXX
     return nil;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
-        UILabel *loadingLabel = [[UILabel alloc] init];
-        loadingLabel.text = @"Custom Loading...";
-        loadingLabel.textColor = [UIColor greenColor];
-        return loadingLabel;
-    }
+//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+//        UILabel *loadingLabel = [[UILabel alloc] init];
+//        loadingLabel.text = @"Custom Loading...";
+//        loadingLabel.textColor = [UIColor greenColor];
+//        return loadingLabel;
+//    }
     
     return nil;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController captionViewForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
-        UILabel *label = [[UILabel alloc] init];
-        label.text = @"Custom Caption View";
-        label.textColor = [UIColor whiteColor];
-        label.backgroundColor = [UIColor redColor];
-        return label;
-    }
+//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+//        UILabel *label = [[UILabel alloc] init];
+//        label.text = @"Custom Caption View";
+//        label.textColor = [UIColor whiteColor];
+//        label.backgroundColor = [UIColor redColor];
+//        return label;
+//    }
     
     return nil;
 }
 
 - (CGFloat)photosViewController:(NYTPhotosViewController *)photosViewController maximumZoomScaleForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
+//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomMaxZoomScale]]) {
         return 10.0f;
-    }
+//    }
     
-    return 1.0f;
+//    return 1.0f;
 }
 
 - (NSDictionary *)photosViewController:(NYTPhotosViewController *)photosViewController overlayTitleTextAttributesForPhoto:(id <NYTPhoto>)photo {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
+//    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
         return @{NSForegroundColorAttributeName: [UIColor grayColor]};
-    }
+//    }
     
-    return nil;
+//    return nil;
 }
 
 - (NSString *)photosViewController:(NYTPhotosViewController *)photosViewController titleForPhoto:(id<NYTPhoto>)photo atIndex:(NSUInteger)photoIndex totalPhotoCount:(NSUInteger)totalPhotoCount {
-    if ([photo isEqual:self.photos[NYTViewControllerPhotoIndexCustomEverything]]) {
-        return [NSString stringWithFormat:@"%lu/%lu", (unsigned long)photoIndex+1, (unsigned long)totalPhotoCount];
-    }
-    
-    return nil;
+    return [NSString stringWithFormat:@"%lu/%lu", (unsigned long)photoIndex+1, (unsigned long)totalPhotoCount];
 }
 
 - (void)photosViewController:(NYTPhotosViewController *)photosViewController didNavigateToPhoto:(id <NYTPhoto>)photo atIndex:(NSUInteger)photoIndex {
@@ -242,230 +184,11 @@ static const CGFloat kCellHeight = 140.f;
 
 #pragma mark - Data Src
 - (void)setupDataSrc {
-    //self.dataSrc = [NSMutableArray array];
-    
     [self.facade getAllDocuments:^(NSMutableArray* array) {
-        //self.dataSrc = array;
         self.dataSrc = [NSArray arrayWithArray:array];
+        self.photos = self.dataSrc;
+        
         [self.tableView reloadData];
     }];
-    
-    #if 0
- 
-    NSMutableArray* scanned = [NSMutableArray array];
-    
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    {
-        //receipt 1
-        BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc1.jpg"];
-        [scanned addObject:model];
-        
-        //receipt 2
-        BODocumentModel* model2 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 2" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc2.jpg"];
-        [scanned addObject:model2];
-        
-        //receipt 3
-        BODocumentModel* model3 = [[BODocumentModel alloc] initWithTitle:@"Lunch Receipt 3" icon:@"ic_card_travel_white" date:[NSDate date] image:@"doc3.jpg"];
-        [scanned addObject:model3];
-    }
-    
-    //self.dataSrc = scanned;
-    //test-
-    #endif
-    
 }
 @end
