@@ -890,9 +890,9 @@ static void* gUserLoadContext = &gUserLoadContext;
         permissionsVC.message = self.message;
         permissionsVC.positiveBtnTitle = self.positiveBtnTitle;
     } else if ([@"documents" isEqualToString:segue.identifier]) {
-        //UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
-        //BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
-       // destVC.delegateCategory = self;
+        UINavigationController* navVC = (UINavigationController*)[segue destinationViewController];
+        BODocumentsListViewController* destVC = (BODocumentsListViewController*)[[navVC viewControllers] firstObject];
+        destVC.facade = self.facade;
     }
 }
 #pragma mark - BOCategoryTableViewControllerDelegate

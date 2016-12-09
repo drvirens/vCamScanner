@@ -30,4 +30,6 @@
                 
 - (NSString*)imageSizeInStringFormat:(NSUInteger)size;
 - (NSString*)generateDefaultTitle;
+
+- (void)getAllDocuments:( void(^)(NSMutableArray*) )block;
 @end

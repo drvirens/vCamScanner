@@ -25,12 +25,12 @@ typedef NS_ENUM(NSUInteger, NYTViewControllerPhotoIndex) {
     NYTViewControllerPhotoCount,
 };
 
-
 static const CGFloat kCellHeight = 140.f;
 
 @interface BODocumentsListViewController () <UITableViewDataSource, UITableViewDelegate, NYTPhotosViewControllerDelegate>
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
-@property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
+//@property (nonatomic) NSMutableArray<NSMutableArray*>* dataSrc;
+@property (nonatomic) NSMutableArray<BODocumentModel*>* dataSrc;
 
 @property (nonatomic) NSArray *photos;
 @end
@@ -48,21 +48,11 @@ static const CGFloat kCellHeight = 140.f;
 
 #pragma mark - GUI
 - (void)setupGUI {
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    
-    //left bar button
+    //left close button
     UIImage* closeImg = [UIImage imageNamed:@"ic_close_white"];
     closeImg = [closeImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithImage:closeImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapOnCloseCateogryButton:)];
     self.navigationItem.leftBarButtonItem.tintColor = [UIColor lightGrayColor];
-#if 0 //PHASE 2
-    //right bar button - search
-    UIImage* selectImg = [UIImage imageNamed:@"ic_check_white"];
-    closeImg = [selectImg imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithImage:selectImg style:UIBarButtonItemStylePlain target:self action:@selector(didTapOnSelectCateogryButton:)];
-    self.navigationItem.leftBarButtonItem.tintColor = [UIColor redColor];
-#endif
     self.tableView.tableFooterView = [[UIView alloc] initWithFrame:CGRectZero];
 }
 - (void)didTapOnCloseCateogryButton:(id)sender {
@@ -78,12 +68,12 @@ static const CGFloat kCellHeight = 140.f;
     return self.dataSrc.count;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSInteger ret = self.dataSrc[section].count;
+    NSInteger ret = self.dataSrc.count;
     return ret;
 }
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     BODocumentTableViewCell* cell = (BODocumentTableViewCell*)[tableView dequeueReusableCellWithIdentifier:[BODocumentTableViewCell reuseID]];
-    BODocumentModel* model = self.dataSrc[indexPath.section][indexPath.row];
+    BODocumentModel* model = self.dataSrc[indexPath.row];
     [cell configure:model];
     return cell;
 }
@@ -253,6 +243,12 @@ static const CGFloat kCellHeight = 140.f;
 #pragma mark - Data Src
 - (void)setupDataSrc {
     self.dataSrc = [NSMutableArray array];
+    
+    [self.facade getAllDocuments:^(NSMutableArray* array) {
+        self.dataSrc = array;
+        [self.tableView reloadData];
+    }];
+    
     //test+
     /*
      //recently scanned in Phase 2 or Phase 3
@@ -476,7 +472,7 @@ static const CGFloat kCellHeight = 140.f;
         [scanned addObject:model3];
     }
     
-    [self.dataSrc addObject:scanned];
+    self.dataSrc = scanned;
     //test-
 }
 @end
