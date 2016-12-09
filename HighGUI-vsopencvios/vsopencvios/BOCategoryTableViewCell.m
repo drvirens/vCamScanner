@@ -8,6 +8,7 @@
 
 #import "BOCategoryTableViewCell.h"
 #import "BOConstants.h"
+#include "VSBranding.h"
 
 @interface BOCategoryTableViewCell ()
 @property (weak, nonatomic) IBOutlet UIImageView *imageViewIcon;
@@ -33,7 +34,7 @@
     UIImage* img = [UIImage imageNamed:model.categoryIcon];
     img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
     self.imageViewIcon.image = img;
-    self.imageViewIcon.tintColor = [UIColor redColor];
+    self.imageViewIcon.tintColor = [UIColor blackColor];
     
     UIImage* icon = [UIImage imageNamed:@"ic_check_white"];
     self.imageviewSelectedIcon.image = icon;

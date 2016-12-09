@@ -38,7 +38,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qzy-hf-ive">
                                         <rect key="frame" x="0.0" y="756" width="414" height="80"/>
                                         <subviews>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TES-53-N2P" customClass="BOButton">
                                                 <rect key="frame" x="131.33333333333334" y="28" width="24" height="24"/>
                                                 <state key="normal" image="ic_rotate_left_white"/>
                                                 <connections>
@@ -48,14 +48,14 @@
                                             <activityIndicatorView hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="aOG-Bu-3xs">
                                                 <rect key="frame" x="342.33333333333331" y="30" width="20" height="20"/>
                                             </activityIndicatorView>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dJb-o9-jb2" customClass="BOButton">
                                                 <rect key="frame" x="338.33333333333331" y="28" width="24" height="24"/>
                                                 <state key="normal" image="ic_check_white"/>
                                                 <connections>
                                                     <action selector="didSelectMenuSelect:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="qeC-me-Fdi"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6wW-au-21S" customClass="BOButton">
                                                 <rect key="frame" x="234.66666666666669" y="28" width="24.000000000000057" height="24"/>
                                                 <state key="normal" image="ic_rotate_right_white"/>
                                                 <connections>
@@ -74,7 +74,7 @@
                                                 <rect key="frame" x="79.666666666666671" y="28" width="24" height="24"/>
                                                 <state key="normal" backgroundImage="ic_settings_white"/>
                                             </button>
-                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL">
+                                            <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JfM-UP-FHL" customClass="BOButton">
                                                 <rect key="frame" x="27.666666666666664" y="28" width="23.999999999999993" height="24"/>
                                                 <state key="normal" image="ic_close_white"/>
                                                 <connections>
@@ -152,7 +152,7 @@
                                             <action selector="didTapCapturePhoto:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="7Su-Ci-j29"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-H6-yp5">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lwh-H6-yp5" customClass="BOButton">
                                         <rect key="frame" x="20" y="28" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="24" id="CoV-Vt-qK3"/>
@@ -163,7 +163,7 @@
                                             <action selector="didTapOnToggleFlashButton:" destination="NaZ-yU-sAN" eventType="touchUpInside" id="EdN-OR-gZa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZh-KD-Aa3">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OZh-KD-Aa3" customClass="BOButton">
                                         <rect key="frame" x="370" y="28" width="24" height="24"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="24" id="Bfq-Hu-qsa"/>
@@ -194,7 +194,7 @@
                                     <constraint firstAttribute="height" constant="120" id="e9L-kT-FmP"/>
                                 </constraints>
                             </view>
-                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXs-fW-DHV">
+                            <button hidden="YES" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eXs-fW-DHV" customClass="BOButton">
                                 <rect key="frame" x="20" y="40" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="30" id="R9j-uF-Aax"/>
