@@ -30,6 +30,10 @@ static const CGFloat kCellHeight = 140.f;
     [self setupDataSrc];
 }
 
+- (BOOL)prefersStatusBarHidden {
+    return YES;
+}
+
 #pragma mark - GUI
 - (void)setupGUI {
     //left close button
