@@ -25,12 +25,17 @@
 }
 - (void)configure:(BODocumentModel*)model {
     NSURL* url = [self.facade urlForPhotoStorage];
-    NSString* u = [url absoluteString];
-//    NSString* p = [u stringByAppendingPathComponent:model.docImageName];
-    
-    NSString* finalpath = [NSString stringWithFormat:@"%@%@", u, model.docImageName];
-    
-    UIImage* img = [UIImage imageWithContentsOfFile:finalpath];
+    url = [url URLByAppendingPathComponent:model.docImageName];
+    NSString* finalpath = url.path;
+    BOOL fileExists = [[NSFileManager defaultManager] fileExistsAtPath:url.path];
+    UIImage* img = nil;
+    if (fileExists) {
+        NSLog(@"fileExists");
+        img = [[UIImage alloc] initWithContentsOfFile:finalpath];
+    } else {
+        NSLog(@"fileDOES NOT Exists");
+    }
+
     self.documentView.imageViewBackground.image = img;
     UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
     self.documentView.containerImageView.image = icon;
