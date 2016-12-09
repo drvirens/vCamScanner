@@ -249,18 +249,7 @@ static const CGFloat kCellHeight = 140.f;
         [self.tableView reloadData];
     }];
     
-    //test+
-    /*
-     //recently scanned in Phase 2 or Phase 3
-    NSMutableArray* recentlyScanned = [NSMutableArray array];
-    [recentlyScanned addObject:@"Recently Scanned 1"];
-    [recentlyScanned addObject:@"Recently Scanned 2"];
-    [recentlyScanned addObject:@"Recently Scanned 3"];
-    NSMutableArray* singleRow = [NSMutableArray array];
-    [singleRow addObject:recentlyScanned];
-    [self.dataSrc addObject:singleRow];
-    */
-    
+ 
     NSMutableArray* scanned = [NSMutableArray array];
     
     {
@@ -472,7 +461,7 @@ static const CGFloat kCellHeight = 140.f;
         [scanned addObject:model3];
     }
     
-    self.dataSrc = scanned;
+    //self.dataSrc = scanned;
     //test-
 }
 @end

@@ -24,7 +24,12 @@
     return NSStringFromClass([self class]);
 }
 - (void)configure:(BODocumentModel*)model {
-    UIImage* img = [UIImage imageNamed:model.docImageName];
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
+    NSString *libraryDirectory = [paths objectAtIndex:0];
+    NSString* p = [libraryDirectory stringByAppendingPathComponent:model.docImageName];
+    
+    UIImage* img = nil;
+    img = [UIImage imageWithContentsOfFile:p];
     self.documentView.imageViewBackground.image = img;
     UIImage* icon = [UIImage imageNamed:model.docCategoryIconName];
     self.documentView.containerImageView.image = icon;

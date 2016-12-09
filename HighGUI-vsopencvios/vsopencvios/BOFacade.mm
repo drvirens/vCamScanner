@@ -291,10 +291,12 @@ static void visitNode(void* aData)
         
         string processedfinalImage = doc->modifiedLargePhotoHref();
         NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
+        NSString* onlyImageName = [image lastPathComponent];
+        
         BODocumentModel* model = [[BODocumentModel alloc] initWithTitle:title
                                                         icon:icon 
                                                         date:[NSDate date] 
-                                                        image:image];
+                                                        image:onlyImageName];
         [gArray addObject:model];
         }
     }
