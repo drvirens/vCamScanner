@@ -17,6 +17,7 @@ static const CGFloat kCellHeight = 140.f;
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, copy) NSArray<BODocumentModel*>* dataSrc;
 @property (nonatomic) NSArray *photos;
+@property (nonatomic) UITableViewCell* tappedView;
 @end
 
 @implementation BODocumentsListViewController
@@ -77,13 +78,15 @@ static const CGFloat kCellHeight = 140.f;
     NSIndexPath* indexpath = (NSIndexPath*)sender;
     BODocumentModel* initialPhotoModel = self.dataSrc[indexpath.row];
     
+    self.tappedView = [self.tableView cellForRowAtIndexPath:indexpath];
+    
     NYTPhotosViewController *photosViewController = [[NYTPhotosViewController alloc] initWithPhotos:self.photos initialPhoto:initialPhotoModel delegate:self];
     [self presentViewController:photosViewController animated:YES completion:nil];
 }
 
 #pragma mark - NYTPhotosViewControllerDelegate
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController referenceViewForPhoto:(id <NYTPhoto>)photo {
-    return nil;
+    return self.tappedView;
 }
 
 - (UIView *)photosViewController:(NYTPhotosViewController *)photosViewController loadingViewForPhoto:(id <NYTPhoto>)photo {
@@ -120,11 +123,19 @@ static const CGFloat kCellHeight = 140.f;
 
 #pragma mark - Data Src
 - (void)setupDataSrc {
+    typeof (self) __weak welf = self;
     [self.facade getAllDocuments:^(NSMutableArray* array) {
-        self.dataSrc = [NSArray arrayWithArray:array];
-        self.photos = self.dataSrc;
-        
-        [self.tableView reloadData];
+        typeof (self) __strong strongSelf = welf;
+        if (strongSelf) {
+            [strongSelf populateData:array];
+        }
     }];
 }
+
+- (void)populateData:(NSMutableArray*)array {
+    self.dataSrc = [NSArray arrayWithArray:array];
+    self.photos = self.dataSrc;
+    [self.tableView reloadData];
+}
+
 @end
