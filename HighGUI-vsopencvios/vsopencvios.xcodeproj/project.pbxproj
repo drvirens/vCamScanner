@@ -138,6 +138,7 @@
 		11B75ADA1DDFD08D004EAB65 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75AD81DDFD08D004EAB65 /* Main.storyboard */; };
 		11B75ADC1DDFD08D004EAB65 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADB1DDFD08D004EAB65 /* Assets.xcassets */; };
 		11B75ADF1DDFD08D004EAB65 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11B75ADD1DDFD08D004EAB65 /* LaunchScreen.storyboard */; };
+		11C607741DFB49F500EBD2EC /* BOButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C607731DFB49F500EBD2EC /* BOButton.m */; };
 		11C99CBC1DF0DF610034D6C5 /* BODocumentsListViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */; };
 		11C99CBE1DF0E1400034D6C5 /* BODocumentView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */; };
 		11C99CC11DF0E15B0034D6C5 /* BODocumentView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */; };
@@ -615,6 +616,8 @@
 		11B75D9F1DDFD0E1004EAB65 /* ml.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ml.h; sourceTree = "<group>"; };
 		11B75DA11DDFD0E1004EAB65 /* opencv.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv.hpp; sourceTree = "<group>"; };
 		11B75DA21DDFD0E1004EAB65 /* opencv_modules.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = opencv_modules.hpp; sourceTree = "<group>"; };
+		11C607721DFB49F500EBD2EC /* BOButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOButton.h; sourceTree = "<group>"; };
+		11C607731DFB49F500EBD2EC /* BOButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BOButton.m; sourceTree = "<group>"; };
 		11C99CBA1DF0DF610034D6C5 /* BODocumentsListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BODocumentsListViewController.h; sourceTree = "<group>"; };
 		11C99CBB1DF0DF610034D6C5 /* BODocumentsListViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BODocumentsListViewController.mm; sourceTree = "<group>"; };
 		11C99CBD1DF0E1400034D6C5 /* BODocumentView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BODocumentView.xib; sourceTree = "<group>"; };
@@ -1162,6 +1165,8 @@
 				11C99CC01DF0E15B0034D6C5 /* BODocumentView.m */,
 				11C99CC21DF0EF450034D6C5 /* BODocumentTableViewCell.h */,
 				11C99CC31DF0EF450034D6C5 /* BODocumentTableViewCell.m */,
+				11C607721DFB49F500EBD2EC /* BOButton.h */,
+				11C607731DFB49F500EBD2EC /* BOButton.m */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -2804,6 +2809,7 @@
 				11F25A281DF222E9003CB8EE /* user.cpp in Sources */,
 				1121FC231DEF55B800085925 /* VSCameraPermissionsViewController.m in Sources */,
 				B621FD961DEAA29E00E54A51 /* cap_ffmpeg.cpp in Sources */,
+				11C607741DFB49F500EBD2EC /* BOButton.m in Sources */,
 				11161DFE1DF63B7700381D85 /* db_cursor.cpp in Sources */,
 				1152948A1DF52082009EF4F9 /* jidctfst.c in Sources */,
 				B621FD321DEAA29D00E54A51 /* epnp.cpp in Sources */,
