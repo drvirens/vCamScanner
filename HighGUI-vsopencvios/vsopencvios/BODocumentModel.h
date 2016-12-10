@@ -15,6 +15,7 @@
 @property (nonatomic, copy, readonly) NSString* docCategoryIconName;
 @property (nonatomic, copy, readonly) NSString* docCategoryName;
 @property (nonatomic, copy, readonly) NSString* docDateCreated;
+@property (nonatomic, copy, readonly) NSString* docFileSize;
 
 #pragma mark - NYTPhoto
 @property (nonatomic) UIImage *image;
@@ -25,6 +26,6 @@
 @property (nonatomic) NSAttributedString *attributedCaptionCredit;
 
 
-- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSString*)date image:(NSString*)image docCategoryName:(NSString*)docCategoryName;
+- (instancetype)initWithTitle:(NSString*)title icon:(NSString*)icon date:(NSString*)date image:(NSString*)image docCategoryName:(NSString*)docCategoryName fileSize:(NSString*)fileSize;
 
 @end
