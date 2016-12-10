@@ -157,7 +157,6 @@
 		11E0D40C1DF560860075AC0F /* NYTPhotoViewer.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E0D3F61DF560860075AC0F /* NYTPhotoViewer.bundle */; };
 		11E0D40D1DF560860075AC0F /* NYTScalingImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D3FA1DF560860075AC0F /* NYTScalingImageView.m */; };
 		11E0D40E1DF560860075AC0F /* NSBundle+NYTPhotoViewer.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */; };
-		11E0D4121DF561370075AC0F /* NYTExamplePhoto.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */; };
 		11E3D6611DF8F58100A68CFF /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11E3D65D1DF8F58100A68CFF /* Info.plist */; };
 		11E3D6621DF8F58100A68CFF /* iRate.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 11E3D65E1DF8F58100A68CFF /* iRate.bundle */; };
 		11E3D6631DF8F58100A68CFF /* iRate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11E3D6601DF8F58100A68CFF /* iRate.m */; };
@@ -657,8 +656,6 @@
 		11E0D3FF1DF560860075AC0F /* NYTPhotosViewControllerDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTPhotosViewControllerDataSource.h; sourceTree = "<group>"; };
 		11E0D4011DF560860075AC0F /* NSBundle+NYTPhotoViewer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+NYTPhotoViewer.h"; sourceTree = "<group>"; };
 		11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+NYTPhotoViewer.m"; sourceTree = "<group>"; };
-		11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NYTExamplePhoto.h; sourceTree = "<group>"; };
-		11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NYTExamplePhoto.m; sourceTree = "<group>"; };
 		11E3D65D1DF8F58100A68CFF /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11E3D65E1DF8F58100A68CFF /* iRate.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = iRate.bundle; sourceTree = "<group>"; };
 		11E3D65F1DF8F58100A68CFF /* iRate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = iRate.h; sourceTree = "<group>"; };
@@ -1440,7 +1437,6 @@
 			isa = PBXGroup;
 			children = (
 				115294A41DF55465009EF4F9 /* 3p */,
-				11E0D40F1DF561370075AC0F /* test */,
 				111D56EA1DF3CA3C00534EF3 /* cv */,
 				111D56E91DF3C85C00534EF3 /* shared */,
 				11303BCC1DEECEB100371BD5 /* Settings */,
@@ -1540,15 +1536,6 @@
 				11E0D4021DF560860075AC0F /* NSBundle+NYTPhotoViewer.m */,
 			);
 			path = "Resource Loading";
-			sourceTree = "<group>";
-		};
-		11E0D40F1DF561370075AC0F /* test */ = {
-			isa = PBXGroup;
-			children = (
-				11E0D4101DF561370075AC0F /* NYTExamplePhoto.h */,
-				11E0D4111DF561370075AC0F /* NYTExamplePhoto.m */,
-			);
-			path = test;
 			sourceTree = "<group>";
 		};
 		11E3D65C1DF8F58100A68CFF /* iRate */ = {
@@ -2995,7 +2982,6 @@
 				B621FDD11DEAA29E00E54A51 /* sumpixels.cpp in Sources */,
 				B621FE0A1DEABAF400E54A51 /* BOCameraController.mm in Sources */,
 				1152948B1DF52082009EF4F9 /* jidctint.c in Sources */,
-				11E0D4121DF561370075AC0F /* NYTExamplePhoto.m in Sources */,
 				115294AD1DF554BC009EF4F9 /* DTError.m in Sources */,
 				B621FDB01DEAA29E00E54A51 /* approx.cpp in Sources */,
 				B621FD521DEAA29D00E54A51 /* openfabmap.cpp in Sources */,

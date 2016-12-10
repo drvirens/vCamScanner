@@ -26,6 +26,35 @@
 
 static NSMutableArray* gArray = nil;
 
+static NSString* doImageSizeInStringFormat(NSUInteger size) {
+    NSString* ret = nil;
+    NSString* units = nil;
+    NSUInteger number = 0;
+    if (size < 1024) {
+        units = @"BYTES";
+        number = size;
+    } else {
+        NSUInteger kb = size / 1024;
+        if (kb < 1024) {
+            units = @"KB";
+            number = kb;
+        } else {
+            NSUInteger mb = size / (1024 * 1024);
+            if (mb < 1024) {
+                units = @"MB";
+                number = mb;
+            } else {
+                NSUInteger gb = size / (1024 * 1024 * 1024);
+                units = @"GB";
+                number = gb;
+            }
+        }
+    }
+    ret = [NSString stringWithFormat:@"%ld %@", number, units];
+    return ret;
+}
+
+
 @interface BOFacade ()
 @property (nonatomic) BOPhotoController *photoController;
 @property (nonatomic, strong) BOLocationController *locationController;
@@ -279,10 +308,11 @@ static void visitNode(void* aData)
         NSString* title = [NSString stringWithUTF8String:doc->title().c_str()];
         NSString* icon = @"ic_card_travel_white";
         NSString* category = [NSString stringWithUTF8String:doc->categoryName().c_str()];
-        
         string processedfinalImage = doc->modifiedLargePhotoHref();
         NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
         NSString* onlyImageName = [image lastPathComponent];
+        NSUInteger fs = doc->size();
+        NSString* fileSize = doImageSizeInStringFormat(fs);
         
         char            dateTimeStr[32];
         vs_uint64_t datecreated = doc->dateCreated();
@@ -294,10 +324,19 @@ static void visitNode(void* aData)
                                                         icon:icon 
                                                         date:dateCreated
                                                         image:onlyImageName
-                                                        docCategoryName:category];
+                                                        docCategoryName:category
+                                                        fileSize:fileSize];
         [gArray addObject:model];
         }
     }
+    
+static bool compareNodes(void* a, void* b) { //returns a->data <= b->dat
+    bool ret = false;
+    vsDocument* A = (vsDocument*)a;
+    vsDocument* B = (vsDocument*)b;
+    ret = A->dateCreated() <= B->dateCreated();
+    return ret;
+}
 
 - (void)getAllDocuments:( void(^)(NSMutableArray*) )block {
     typeof (self) __weak welf = self;
@@ -332,7 +371,12 @@ static void deleteNode(void* aData) {
     gArray = [NSMutableArray array];
     
     app_->getAllDocuments(*linkedlistAllDocs_, [&]() {
+        //sort the list first
+        
+        linkedlistAllDocs_->mergeSort(compareNodes);
+    
         linkedlistAllDocs_->traverse(visitNode);
+        
         
         //run completion on main thread
         if (block) {
@@ -349,30 +393,7 @@ static void deleteNode(void* aData) {
 }
 
 - (NSString*)imageSizeInStringFormat:(NSUInteger)size {
-    NSString* ret = nil;
-    NSString* units = nil;
-    NSUInteger number = 0;
-    if (size < 1024) {
-        units = @"BYTES";
-        number = size;
-    } else {
-        NSUInteger kb = size / 1024;
-        if (kb < 1024) {
-            units = @"KB";
-            number = kb;
-        } else {
-            NSUInteger mb = size / (1024 * 1024);
-            if (mb < 1024) {
-                units = @"MB";
-                number = mb;
-            } else {
-                NSUInteger gb = size / (1024 * 1024 * 1024);
-                units = @"GB";
-                number = gb;
-            }
-        }
-    }
-    ret = [NSString stringWithFormat:@"%ld %@", number, units];
+    NSString* ret = doImageSizeInStringFormat(size);
     return ret;
 }
 
