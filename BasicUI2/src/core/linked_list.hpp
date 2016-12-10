@@ -12,6 +12,7 @@
 struct vsNode;
 
 typedef void(*vsCallBack)(void*);
+typedef bool(*vsCallBackCompare)(void*, void*); //returns a->data <= b->dat
 
 class vsLinkedListBase
     {
@@ -20,6 +21,7 @@ public:
     virtual ~vsLinkedListBase();
     void add(void* aData);
     void traverse(vsCallBack aCallback);
+    void mergeSort(vsCallBackCompare compare);
 private:
     vsNode* iHead;
     };
@@ -41,6 +43,10 @@ public:
     void deleteAll( void(*cb)(void*) )
         {
         vsLinkedListBase::traverse(cb);
+        }
+    void mergeSort(vsCallBackCompare compare)
+        {
+        vsLinkedListBase::mergeSort(compare);
         }
     };
 
