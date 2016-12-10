@@ -329,6 +329,14 @@ static void visitNode(void* aData)
         [gArray addObject:model];
         }
     }
+    
+static bool compareNodes(void* a, void* b) { //returns a->data <= b->dat
+    bool ret = false;
+    vsDocument* A = (vsDocument*)a;
+    vsDocument* B = (vsDocument*)b;
+    ret = A->dateCreated() <= B->dateCreated();
+    return ret;
+}
 
 - (void)getAllDocuments:( void(^)(NSMutableArray*) )block {
     typeof (self) __weak welf = self;
@@ -363,7 +371,12 @@ static void deleteNode(void* aData) {
     gArray = [NSMutableArray array];
     
     app_->getAllDocuments(*linkedlistAllDocs_, [&]() {
+        //sort the list first
+        
+        linkedlistAllDocs_->mergeSort(compareNodes);
+    
         linkedlistAllDocs_->traverse(visitNode);
+        
         
         //run completion on main thread
         if (block) {
