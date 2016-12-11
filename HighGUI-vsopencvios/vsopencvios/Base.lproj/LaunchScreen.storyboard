@@ -28,12 +28,12 @@
                                         <rect key="frame" x="20" y="28" width="24" height="24"/>
                                         <state key="normal" image="ic_flash_off_white"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-Bf-w9l">
-                                        <rect key="frame" x="285" y="18" width="25" height="34"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xZs-Bf-w9l">
+                                        <rect key="frame" x="331" y="28" width="24" height="24"/>
                                         <state key="normal" image="ic_view_list_white"/>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gu-AE-ZhP">
-                                        <rect key="frame" x="165" y="28" width="24" height="24"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9gu-AE-ZhP">
+                                        <rect key="frame" x="175.5" y="28" width="24" height="24"/>
                                         <state key="normal" image="ic_camera_alt_white">
                                             <color key="titleColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
