@@ -25,10 +25,10 @@
 	self.labelMessage.text = self.message;
 	[self.buttonPositive setTitle:self.positiveBtnTitle forState:UIControlStateNormal];
 	
-	UIImage* img = [UIImage imageNamed:@"ic_camera_alt_white"];
-	img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+	UIImage* img = [UIImage imageNamed:@"ic_photo_camera_white"];
+	//img = [img imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
 	self.imageViewIcon.image = img;
-	self.imageViewIcon.tintColor = [VSBranding vs_darkGrayColor];
+	//self.imageViewIcon.tintColor = [VSBranding vs_darkGrayColor];
 }
 
 - (BOOL)prefersStatusBarHidden {
