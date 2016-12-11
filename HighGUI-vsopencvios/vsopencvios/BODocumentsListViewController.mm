@@ -45,7 +45,6 @@ static const CGFloat kCellHeight = 140.f;
 }
 - (void)didTapOnCloseCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
-    [self imageButtonTapped:nil];
 }
 - (void)didTapOnSelectCateogryButton:(id)sender {
     [self dismissViewControllerAnimated:YES completion:nil];
@@ -138,6 +137,9 @@ static const CGFloat kCellHeight = 140.f;
 
 - (void)populateData:(NSMutableArray*)array {
     self.dataSrc = [NSArray arrayWithArray:array];
+    if (!self.dataSrc) {
+        self.dataSrc = [NSMutableArray array]; //dont crash
+    }
     self.photos = self.dataSrc;
     [self.tableView reloadData];
 }
