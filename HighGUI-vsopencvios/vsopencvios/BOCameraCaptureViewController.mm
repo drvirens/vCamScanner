@@ -135,7 +135,8 @@ static void* gUserLoadContext = &gUserLoadContext;
 {
     if (!self.alertView)
     {
-        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"Did you like the app? Please rate this app now." delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later" , @"Open Web Page", nil];
+        self.alertView = [[UIAlertView alloc] initWithTitle:@"Rate Me!" message:@"Did you like the app? Please rate this app now." delegate:self cancelButtonTitle:@"No Thanks" otherButtonTitles:@"Rate Now", @"Maybe Later" 
+        /*, @"Open Web Page" */, nil];
         
         [self.alertView show];
     }
@@ -164,8 +165,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     }
     else if (buttonIndex == 3) // open web page
     {
-        NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
-        [[UIApplication sharedApplication] openURL:url];
+//        NSURL *url = [NSURL URLWithString:@"http://www.apple.com"];
+//        [[UIApplication sharedApplication] openURL:url];
     }
     
     self.alertView = nil;
