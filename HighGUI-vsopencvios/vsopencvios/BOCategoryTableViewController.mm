@@ -55,28 +55,28 @@
 - (void)setupDataSource {
     self.dataSource = [NSMutableArray array];
     
-    BOCategoryModel* model = [[BOCategoryModel alloc] initWithName:@"Business Receipt" icon:@"ic_receipt_white"];
+    BOCategoryModel* model = [[BOCategoryModel alloc] initWithName:kCategoryNameReceipt icon:kCategoryNameReceiptIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"School" icon:@"ic_school_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameSchool icon:kCategoryNameSchoolIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"Travel" icon:@"ic_card_travel_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameTravel icon:kCategoryNameTravelIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"Whiteboard" icon:@"ic_developer_board_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameWhiteboard icon:kCategoryNameWhiteboardIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"Event Tickets" icon:@"ic_event_note_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameEventTicket icon:kCategoryNameEventTicketIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"Barcode" icon:@"ic_code_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameBarcode icon:kCategoryNameBarcodeIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"Business Card" icon:@"ic_credit_card_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameBusinessCard icon:kCategoryNameBusinessCardIcon];
     [self.dataSource addObject:model];
     
-    model = [[BOCategoryModel alloc] initWithName:@"Other" icon:@"ic_my_location_white"];
+    model = [[BOCategoryModel alloc] initWithName:kCategoryNameOther icon:kCategoryNameOtherIcon];
     [self.dataSource addObject:model];
 }
 
