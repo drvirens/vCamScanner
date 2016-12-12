@@ -822,6 +822,8 @@ static void* gUserLoadContext = &gUserLoadContext;
     NSLog(@"hasCameraPermissions");
     if (hasPermissions) {
         [self.cameraController startCameraInView:self.cameraView];
+    } else {
+        NSLog(@"TODO: Present the same view controller here or continue to show the same vc changing the message ");
     }
 }
 

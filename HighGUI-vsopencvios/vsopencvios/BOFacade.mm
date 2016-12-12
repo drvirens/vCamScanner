@@ -23,6 +23,7 @@
 #import "MMOpenCVHelper.h"
 #import "BODetectEdges.h"
 #import "BODocumentModel.h"
+#import "BOCategoryModel.h"
 
 static NSMutableArray* gArray = nil;
 
@@ -299,6 +300,31 @@ static NSString* doImageSizeInStringFormat(NSUInteger size) {
 }
 
 #pragma mark - get all documents
+static NSString* iconName(NSString* category) 
+    {
+    NSString* icon = nil;
+    if ([category isEqualToString:kCategoryNameReceipt]) {
+        icon = kCategoryNameReceiptIcon;
+    } else if ([category isEqualToString:kCategoryNameSchool]) {
+        icon = kCategoryNameSchoolIcon;
+    } else if ([category isEqualToString:kCategoryNameTravel]) {
+        icon = kCategoryNameTravelIcon;
+    } else if ([category isEqualToString:kCategoryNameWhiteboard]) {
+        icon = kCategoryNameWhiteboardIcon;
+    } else if ([category isEqualToString:kCategoryNameEventTicket]) {
+        icon = kCategoryNameEventTicketIcon;
+    } else if ([category isEqualToString:kCategoryNameBarcode]) {
+        icon = kCategoryNameBarcodeIcon;
+    } else if ([category isEqualToString:kCategoryNameBusinessCard]) {
+        icon = kCategoryNameBusinessCardIcon;
+    } else if ([category isEqualToString:kCategoryNameOther]) {
+        icon = kCategoryNameOtherIcon;
+    } else {
+        icon = kCategoryNameOtherIcon;
+    } 
+    return icon;
+    }
+    
 static void visitNode(void* aData)
     {    
     vsDocument* doc = (vsDocument*)aData;
@@ -306,8 +332,9 @@ static void visitNode(void* aData)
         {
         LOG("\n got docuemnt \n");
         NSString* title = [NSString stringWithUTF8String:doc->title().c_str()];
-        NSString* icon = @"ic_card_travel_white";
         NSString* category = [NSString stringWithUTF8String:doc->categoryName().c_str()];
+        NSString* icon = iconName(category);
+        
         string processedfinalImage = doc->modifiedLargePhotoHref();
         NSString* image = [NSString stringWithUTF8String:processedfinalImage.c_str()];
         NSString* onlyImageName = [image lastPathComponent];
@@ -334,7 +361,9 @@ static bool compareNodes(void* a, void* b) { //returns a->data <= b->dat
     bool ret = false;
     vsDocument* A = (vsDocument*)a;
     vsDocument* B = (vsDocument*)b;
-    ret = A->dateCreated() <= B->dateCreated();
+    if (A && B) {
+        ret = A->dateCreated() <= B->dateCreated();
+    }
     return ret;
 }
 

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NaZ-yU-sAN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11760" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NaZ-yU-sAN">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11755"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -430,7 +430,7 @@
                                 <rect key="frame" x="0.0" y="676" width="414" height="60"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCe-ic-WFg">
-                                        <rect key="frame" x="0.0" y="0.0" width="310.66666666666669" height="60"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                         <color key="backgroundColor" red="1" green="0.29803921570000003" blue="0.30588235289999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
                                         <state key="normal" title="Proceed">
@@ -440,29 +440,13 @@
                                             <action selector="didTapOnProceedButton:" destination="Weu-ig-NAe" eventType="touchUpInside" id="KoI-qc-dar"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2oI-GX-h9E">
-                                        <rect key="frame" x="310.66666666666674" y="0.0" width="103.33333333333331" height="60"/>
-                                        <color key="backgroundColor" red="0.80000000000000004" green="0.80000000000000004" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="20"/>
-                                        <state key="normal" title="Cancel">
-                                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="didTapOnCancelButton:" destination="Weu-ig-NAe" eventType="touchUpInside" id="FfN-Mk-NCt"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="fCe-ic-WFg" firstAttribute="width" secondItem="2oI-GX-h9E" secondAttribute="width" multiplier="3:1" id="8U4-BK-QUb"/>
                                     <constraint firstAttribute="bottom" secondItem="fCe-ic-WFg" secondAttribute="bottom" id="9oH-xv-cD4"/>
-                                    <constraint firstAttribute="bottom" secondItem="2oI-GX-h9E" secondAttribute="bottom" id="AaO-bM-u38"/>
-                                    <constraint firstItem="2oI-GX-h9E" firstAttribute="leading" secondItem="fCe-ic-WFg" secondAttribute="trailing" id="CJG-EJ-GjF"/>
                                     <constraint firstAttribute="height" constant="60" id="EQk-tF-ZUZ"/>
-                                    <constraint firstAttribute="trailing" secondItem="2oI-GX-h9E" secondAttribute="trailing" id="Nsf-Uc-kl4"/>
-                                    <constraint firstItem="2oI-GX-h9E" firstAttribute="leading" secondItem="fCe-ic-WFg" secondAttribute="trailing" id="Xj0-wX-2wd"/>
+                                    <constraint firstAttribute="trailing" secondItem="fCe-ic-WFg" secondAttribute="trailing" id="UP6-ec-dVd"/>
                                     <constraint firstItem="fCe-ic-WFg" firstAttribute="leading" secondItem="EUx-T7-HIC" secondAttribute="leading" id="btc-jj-8Zz"/>
-                                    <constraint firstItem="2oI-GX-h9E" firstAttribute="top" secondItem="EUx-T7-HIC" secondAttribute="top" id="r2Q-Qa-uQc"/>
                                     <constraint firstItem="fCe-ic-WFg" firstAttribute="top" secondItem="EUx-T7-HIC" secondAttribute="top" id="rg6-ub-VPE"/>
                                 </constraints>
                             </view>
