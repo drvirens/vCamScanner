@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "../BasicUI2/src/core/linked_list.cpp"
-            timestampString = "503130503.477967"
+            filePath = "vsopencvios/BOCameraController.mm"
+            timestampString = "503194292.361827"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "vsLinkedListBase::traverse(vsCallBack aCallback)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "-requestPermissionsWithCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BODocumentsListViewController.mm"
-            timestampString = "503131002.011293"
+            filePath = "vsopencvios/BOCameraController.mm"
+            timestampString = "503194306.85326"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "133"
-            endingLineNumber = "133"
-            landmarkName = "-setupDataSrc"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
+            landmarkName = "-requestPermissionsWithCompletion:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -41,45 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BOCategoryTableViewController.mm"
-            timestampString = "503130794.996475"
+            filePath = "vsopencvios/VSCameraPermissionsViewController.m"
+            timestampString = "503194511.892297"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "-didTapOnCloseCateogryButton:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BOCameraCaptureViewController.mm"
-            timestampString = "503130829.715249"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "900"
-            endingLineNumber = "900"
-            landmarkName = "-viewController:didSelectCategory:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "vsopencvios/BODocumentsListViewController.mm"
-            timestampString = "503131002.011293"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "139"
-            endingLineNumber = "139"
-            landmarkName = "-populateData:"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "-didTapOnProceedButton:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

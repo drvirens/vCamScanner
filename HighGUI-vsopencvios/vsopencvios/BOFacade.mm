@@ -361,7 +361,9 @@ static bool compareNodes(void* a, void* b) { //returns a->data <= b->dat
     bool ret = false;
     vsDocument* A = (vsDocument*)a;
     vsDocument* B = (vsDocument*)b;
-    ret = A->dateCreated() <= B->dateCreated();
+    if (A && B) {
+        ret = A->dateCreated() <= B->dateCreated();
+    }
     return ret;
 }
 
