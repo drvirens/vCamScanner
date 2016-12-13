@@ -14,23 +14,15 @@
 #include "primary_key.hpp"
 #include "ez_reader.hpp"
 #include "trace.h"
-
-static int getLastUsedDocID();
-
-static int gTempDocID = 1;
-static int getLastUsedDocID()
-    {
-    int ret = gTempDocID++;
-    return ret;
-    }
+#include "document_id.hpp"
 
 const string& vsDocument::primaryKey() const
-{ TRACE
+    { TRACE
     return iDocID;
-}
+    }
 
 const vs_int32_t vsDocument::recordSize() const
-{ TRACE
+    { TRACE
     vs_int32_t flatRecordSize = (vs_int32_t)(
                                              iDocID.length()	+ sizeof(vs_uint32_t) +
                                              iTitle.length()	+ sizeof(vs_uint32_t) +
@@ -42,10 +34,10 @@ const vs_int32_t vsDocument::recordSize() const
                                              iCategoryName.length()	         + sizeof(vs_uint32_t));
     
     return flatRecordSize;
-}
+    }
 
 bool vsDocument::pack(TPacker& aPacker)
-{ TRACE
+    { TRACE
     bool ret = false;
     while (true)
     {
@@ -72,13 +64,13 @@ bool vsDocument::pack(TPacker& aPacker)
         break;
     } //while
     return ret;
-}
+    }
 
 bool vsDocument::unPack(TUnPacker& aUnPacker)
-{ TRACE
+    { TRACE
     bool ret = false;
     while (true)
-    {
+        {
         if (!extractString(aUnPacker,   iDocID)) break;
         if (!extractString(aUnPacker,   iTitle)) break;
         if (!extractInt64(aUnPacker,    iDateCreated)) break;
@@ -89,9 +81,9 @@ bool vsDocument::unPack(TUnPacker& aUnPacker)
         if (!extractString(aUnPacker,   iCategoryName)) break;
         ret = true;
         break;
-    }
+        }
     return ret;
-}
+    }
 
 vsDocument::vsDocument(const string& aTitle,
                        const vs_uint64_t& aDateCreated,
@@ -108,10 +100,22 @@ vsDocument::vsDocument(const string& aTitle,
 , iModifiedLargePhotoHref(aModifiedLargePhotoHref)
 , iCategoryName(aCategoryName)
     { TRACE
-    int lastusedid = getLastUsedDocID();
-    stringstream ss;
-    ss << lastusedid;
-    iDocID = ss.str();
+    retrieveLastDocID(iDocID);
+    }
+    
+vsDocument::vsDocument(const vsDocument& rhs)
+    { TRACE
+    if (this != &rhs)
+        {
+        iDocID = rhs.iDocID;
+        iTitle = rhs.iTitle;
+        iDateCreated = rhs.iDateCreated;
+        iDateUpdated = rhs.iDateUpdated;
+        iSize = rhs.iSize;
+        iOriginalPhotoHref = rhs.iOriginalPhotoHref;
+        iModifiedLargePhotoHref = rhs.iModifiedLargePhotoHref;
+        iCategoryName = rhs.iCategoryName;
+        }
     }
 
 vsDocument::vsDocument()
@@ -128,29 +132,20 @@ vsDocument::vsDocument()
 
 vsModelBase* vsDocument::copy()
     { TRACE
-    vsDocument* obj = new vsDocument(
-                                        iTitle,
-                                        iDateCreated,
-                                        iDateUpdated,
-                                        iSize,
-                                        iOriginalPhotoHref,
-                                        iModifiedLargePhotoHref,
-                                        iCategoryName);
-    obj->iDocID = iDocID;
-    
+    vsDocument* obj = new vsDocument(*this);
     return obj;
     }
 
 vsDocument::~vsDocument()
-{ TRACE
-}
+    { TRACE
+    }
 
 #if defined DEBUG
 void vsDocument::debugDump() const
-{
+    {
     strstream s;
     s << " iTitle:[" << iTitle << "], iDateCreated:[" << iDateCreated << "], iDateUpdated:[" << iDateUpdated << "], iSize:[" << iSize << "], iOriginalPhotoHref:[" << iOriginalPhotoHref << "], iModifiedLargePhotoHref:[" << iModifiedLargePhotoHref << "], iCategoryName:[" << iCategoryName << "]";
     string user = s.str();
     LOG("\t User = {%s} \n", user.c_str());
-}
+    }
 #endif

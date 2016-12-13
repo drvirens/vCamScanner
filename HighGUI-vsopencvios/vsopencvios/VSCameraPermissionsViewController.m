@@ -56,13 +56,17 @@
 		dispatch_async(dispatch_get_main_queue(), ^{
 			typeof (self) __strong strongSelf = welf;
 			if (strongSelf) {        
-                if ([strongSelf.delegate respondsToSelector:@selector(vc:hasCameraPermissions:)]) {
-                    [strongSelf.delegate vc:strongSelf hasCameraPermissions:granted];
-                }
-                [strongSelf dismissViewControllerAnimated:YES completion:nil];
+                [strongSelf runCompletionDidTapOnProceedButton:granted];
 			}
 		});
 	}];
+}
+
+- (void)runCompletionDidTapOnProceedButton:(BOOL)granted {
+    if ([self.delegate respondsToSelector:@selector(vc:hasCameraPermissions:)]) {
+        [self.delegate vc:self hasCameraPermissions:granted];
+    }
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 

@@ -46,7 +46,7 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
 //		aCompletionCB(status, retUser);
 //		});
         
-        
+        #if 0
         
         //test+
     vsPrimaryKey* docIDLower = new vsPrimaryKey("1"); //XXX - vsDocument should accept the docID from outside instead of generating automatically
@@ -67,7 +67,7 @@ void CAuthenticator::authenticate(const TLoginMessageLayout& credentials,
                             aCollection.traverse(visitNode);
                         });
         //test-
-        
+        #endif
 	}
 
 

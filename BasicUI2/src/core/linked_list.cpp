@@ -20,19 +20,23 @@ public:
 vsNode(void* aData)
     : iData(aData)
     , iNext(0)
+    , iPrev(0)
     { TRACE }
 ~vsNode()
     { TRACE
     iData = 0;
     iNext = 0;
+    iPrev = 0;
     }
 public:
     void* iData;
     vsNode* iNext;
+    vsNode* iPrev;
     };
 // ---------------------------------------
 vsLinkedListBase::vsLinkedListBase()
     : iHead(0)
+    , iTail(0)
     { TRACE
     }
 vsLinkedListBase::~vsLinkedListBase()
@@ -44,10 +48,14 @@ void vsLinkedListBase::add(void* aData)
     if (!iHead)
         {
         iHead = node;
+        iTail = node;
         }
     else 
         {
+        iHead->iPrev = node;
+        node->iPrev = 0;
         node->iNext = iHead;
+        
         iHead = node;
         }
     }
@@ -60,10 +68,24 @@ void vsLinkedListBase::traverse(vsCallBack aCallback)
         tmp = tmp->iNext;
         }
     }
+void vsLinkedListBase::reverseTraverse(vsCallBack aCallback)
+    { TRACE
+    vsNode* tmp = iTail;
+    while (tmp)
+        {
+        aCallback(tmp->iData);
+        tmp = tmp->iPrev;
+        }
+    //vsLinkedListBase::traverse(aCallback);
+    }
     
 void vsLinkedListBase::mergeSort(vsCallBackCompare compare)
     { TRACE
     MergeSort(&iHead, compare);
+    }
+    
+void vsLinkedListBase::deleteAll( void(*cb)(void*) )
+    { TRACE
     }
     
 // --------------------------------------- sort
