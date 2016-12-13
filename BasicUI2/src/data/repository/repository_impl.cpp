@@ -16,6 +16,7 @@
 #include "trace.h"
 #include "primary_key.hpp"
 #include "record_criterion.hpp"
+#include "document_id.hpp"
 
 // -----------------------------------------------------------------------------
 enum vsERepositoryRecordType
@@ -259,6 +260,11 @@ void vsRepository::doPut(vsModelBase& aModel, vsIKeyValueReaderWriter& aReaderWr
 	
 	delete [] stream;
 	delete [] valStream;
+    
+    string primaryKey = aModel.primaryKey();
+    int pkInt = atoi(primaryKey.c_str());
+    setLastDocID(pkInt);
+    setNextDocID(pkInt);
 	}
 
 // -----------------------------------------------------------------------------

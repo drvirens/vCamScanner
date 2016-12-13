@@ -405,14 +405,18 @@ static void deleteNode(void* aData) {
         linkedlistAllDocs_->mergeSort(compareNodes);
     
         linkedlistAllDocs_->traverse(visitNode);
+        //linkedlistAllDocs_->reverseTraverse(visitNode);
         
         
         //run completion on main thread
         if (block) {
+            
             NSBlockOperation* completion = [NSBlockOperation blockOperationWithBlock:^{
-                block(gArray);
+                NSArray* reversedArray = [[gArray reverseObjectEnumerator] allObjects];
+                block(reversedArray);
             }];
             [self.mainQueue addOperation:completion];
+            
         }
     });
 }

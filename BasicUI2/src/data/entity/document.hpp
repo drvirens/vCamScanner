@@ -49,6 +49,7 @@ public:
                const string& aModifiedLargePhotoHref,
                const string& aCategoryName);
     vsDocument();
+    vsDocument(const vsDocument& rhs);
     virtual ~vsDocument();
     
     //vsModelBase

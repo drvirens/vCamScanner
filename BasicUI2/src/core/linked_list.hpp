@@ -21,9 +21,12 @@ public:
     virtual ~vsLinkedListBase();
     void add(void* aData);
     void traverse(vsCallBack aCallback);
+    void reverseTraverse(vsCallBack aCallback);
     void mergeSort(vsCallBackCompare compare);
+    void deleteAll( void(*cb)(void*) );
 private:
     vsNode* iHead;
+    vsNode* iTail;
     };
     
 template <typename T>
@@ -40,9 +43,13 @@ public:
         {
         vsLinkedListBase::traverse(aCallback);
         }
+    void reverseTraverse(vsCallBack aCallback)
+        {
+        vsLinkedListBase::reverseTraverse(aCallback);
+        }
     void deleteAll( void(*cb)(void*) )
         {
-        vsLinkedListBase::traverse(cb);
+        vsLinkedListBase::deleteAll(cb);
         }
     void mergeSort(vsCallBackCompare compare)
         {
