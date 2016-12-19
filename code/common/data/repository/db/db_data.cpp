@@ -27,7 +27,7 @@ vsTData::~vsTData()
 	iLength = 0;
 	}
 
-#if defined DEBUG
+#if 0
 void vsTData::debugDump() const
 	{
 	LOG("\n");

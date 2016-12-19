@@ -44,7 +44,7 @@ public:
 	
 	//TUID uid() const;
 	
-#if defined DEBUG
+#if 0
 	void debugDump() const;
 #endif
 	

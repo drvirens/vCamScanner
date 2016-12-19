@@ -126,7 +126,7 @@ vsUser::~vsUser()
 	{ TRACE
 	}
 
-#if defined DEBUG
+#if 0
 void vsUser::debugDump() const
 	{
 	strstream s;

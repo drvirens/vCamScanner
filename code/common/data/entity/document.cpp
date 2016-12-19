@@ -140,7 +140,7 @@ vsDocument::~vsDocument()
     { TRACE
     }
 
-#if defined DEBUG
+#if 0
 void vsDocument::debugDump() const
     {
     strstream s;
