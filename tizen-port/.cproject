@@ -117,6 +117,21 @@
 								</option>
 								<option id="gnu.cpp.compiler.option.include.paths.1125324382" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/data/repository/db/impl-lmdb/lmdb"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/calib3d/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/contrib/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/core/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/dynamicuda/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/features2d/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/flann/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/highgui/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/imgproc/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/ml/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/objdetect/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/photo/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/video/include"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common"/>
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/utils"/>
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/data/repository/db/impl-lmdb"/>
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/data/repository/db"/>
@@ -134,6 +149,7 @@
 									<listOptionValue builtIn="false" value="Native_API"/>
 								</option>
 								<option id="gnu.cpp.compiler.option.dialect.std.40993048" name="Language standard" superClass="gnu.cpp.compiler.option.dialect.std" value="gnu.cpp.compiler.dialect.c++11" valueType="enumerated"/>
+								<option id="gnu.cpp.compiler.option.preprocessor.def.1459165449" name="Defined symbols (-D)" superClass="gnu.cpp.compiler.option.preprocessor.def" valueType="definedSymbols"/>
 								<inputType id="cdt.managedbuild.tool.gnu.cpp.compiler.input.1229208199" superClass="cdt.managedbuild.tool.gnu.cpp.compiler.input"/>
 							</tool>
 							<tool command="clang" id="org.tizen.nativecore.tool.sbi.gnu.c.compiler.1442916228" name="C Compiler" superClass="org.tizen.nativecore.tool.sbi.gnu.c.compiler">

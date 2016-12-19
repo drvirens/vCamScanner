@@ -97,7 +97,12 @@
 /* IJG JPEG codec */
 #define HAVE_JPEG
 
-	//#define HAVE_TIZEN
+//viren : for iOS this must be disabled
+#if !defined __APPLE__
+#define HAVE_TIZEN
+#endif
+
+
 
 /* libpng/png.h needs to be included */
 //#define HAVE_LIBPNG_PNG_H

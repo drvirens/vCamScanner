@@ -25,32 +25,7 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>src/code</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
 			<name>src/common</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>src/code/.DS_Store</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/.DS_Store</location>
-		</link>
-		<link>
-			<name>src/code/common</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>src/code/ios</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>src/code/tizen</name>
 			<type>2</type>
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
@@ -128,16 +103,6 @@
 			<name>src/common/vsImageProcessor.hpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/vsImageProcessor.hpp</locationURI>
-		</link>
-		<link>
-			<name>src/code/common/.DS_Store</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/.DS_Store</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
 			<name>src/common/3p/murmurhash</name>
@@ -743,366 +708,6 @@
 			<name>src/common/utils/time_utils.hpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/utils/time_utils.hpp</locationURI>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/cderror.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/cderror.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/cdjpeg.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/cdjpeg.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/cdjpeg.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/cdjpeg.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jaricom.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jaricom.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcapimin.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcapimin.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcapistd.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcapistd.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcarith.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcarith.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jccoefct.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jccoefct.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jccolor.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jccolor.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcdctmgr.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcdctmgr.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jchuff.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jchuff.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcinit.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcinit.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcmainct.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcmainct.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcmarker.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcmarker.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcmaster.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcmaster.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcomapi.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcomapi.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jconfig.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jconfig.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcparam.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcparam.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcprepct.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcprepct.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jcsample.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jcsample.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jctrans.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jctrans.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdapimin.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdapimin.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdapistd.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdapistd.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdarith.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdarith.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdatadst.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdatadst.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdatasrc.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdatasrc.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdcoefct.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdcoefct.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdcolor.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdcolor.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdct.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdct.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jddctmgr.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jddctmgr.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdhuff.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdhuff.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdinput.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdinput.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdmainct.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdmainct.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdmarker.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdmarker.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdmaster.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdmaster.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdmerge.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdmerge.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdpostct.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdpostct.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdsample.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdsample.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jdtrans.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jdtrans.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jerror.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jerror.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jerror.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jerror.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jfdctflt.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jfdctflt.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jfdctfst.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jfdctfst.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jfdctint.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jfdctint.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jidctflt.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jidctflt.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jidctfst.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jidctfst.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jidctint.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jidctint.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jinclude.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jinclude.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jmemmgr.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jmemmgr.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jmemname.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jmemname.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jmemsys.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jmemsys.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jmorecfg.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jmorecfg.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jpegint.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jpegint.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jpeglib.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jpeglib.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jquant1.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jquant1.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jquant2.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jquant2.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jutils.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jutils.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/jversion.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/jversion.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdbmp.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdbmp.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdcolmap.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdcolmap.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdgif.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdgif.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdppm.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdppm.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdrle.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdrle.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdswitch.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdswitch.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/rdtarga.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/rdtarga.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/transupp.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/transupp.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/transupp.h</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/transupp.h</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/wrbmp.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/wrbmp.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/wrgif.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/wrgif.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/wrppm.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/wrppm.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/wrrle.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/wrrle.c</location>
-		</link>
-		<link>
-			<name>src/code/common/libjpeg/wrtarga.c</name>
-			<type>1</type>
-			<location>/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg/wrtarga.c</location>
 		</link>
 		<link>
 			<name>src/common/3p/murmurhash/MurmurHash3.c</name>
@@ -2040,11 +1645,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_android.cpp</locationURI>
 		</link>
 		<link>
-			<name>src/common/modules/highgui/src/cap_avfoundation.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_avfoundation.mm</locationURI>
-		</link>
-		<link>
 			<name>src/common/modules/highgui/src/cap_cmu.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_cmu.cpp</locationURI>
@@ -2083,21 +1683,6 @@
 			<name>src/common/modules/highgui/src/cap_images.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_images.cpp</locationURI>
-		</link>
-		<link>
-			<name>src/common/modules/highgui/src/cap_ios_abstract_camera.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_ios_abstract_camera.mm</locationURI>
-		</link>
-		<link>
-			<name>src/common/modules/highgui/src/cap_ios_photo_camera.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_ios_photo_camera.mm</locationURI>
-		</link>
-		<link>
-			<name>src/common/modules/highgui/src/cap_ios_video_camera.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/cap_ios_video_camera.mm</locationURI>
 		</link>
 		<link>
 			<name>src/common/modules/highgui/src/cap_libv4l.cpp</name>
@@ -2220,11 +1805,6 @@
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/grfmts.hpp</locationURI>
 		</link>
 		<link>
-			<name>src/common/modules/highgui/src/ios_conversions.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/ios_conversions.mm</locationURI>
-		</link>
-		<link>
 			<name>src/common/modules/highgui/src/loadsave.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/loadsave.cpp</locationURI>
@@ -2248,11 +1828,6 @@
 			<name>src/common/modules/highgui/src/window.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/window.cpp</locationURI>
-		</link>
-		<link>
-			<name>src/common/modules/highgui/src/window_cocoa.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/modules/highgui/src/window_cocoa.mm</locationURI>
 		</link>
 		<link>
 			<name>src/common/modules/highgui/src/window_gtk.cpp</name>
