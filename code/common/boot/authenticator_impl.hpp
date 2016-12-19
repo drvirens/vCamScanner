@@ -23,7 +23,7 @@ public:
 			function<void(const EAuthenticationStatus&, const vsUser&)> aCompletionCB);
 	
 private:
-	unique_ptr<vsIRepository> iRepository;
+	shared_ptr<vsIRepository> iRepository;
 	};
 
 #endif /* authenticator_impl_hpp */

@@ -40,7 +40,7 @@ private:
 private:
 	const string& iPath;
 	MDB_env* iEnv;
-	unique_ptr<vsTable> iTable;
+	shared_ptr<vsTable> iTable;
 	};
 
 #endif /* db_key_value_store_impl_hpp */

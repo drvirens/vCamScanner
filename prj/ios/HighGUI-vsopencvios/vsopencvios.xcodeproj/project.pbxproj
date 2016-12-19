@@ -404,7 +404,7 @@
 		111003541E07C734006C196D /* app_server.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = app_server.cpp; sourceTree = "<group>"; };
 		111003551E07C734006C196D /* app_server.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = app_server.hpp; sourceTree = "<group>"; };
 		111003561E07C734006C196D /* authenticator_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authenticator_impl.cpp; sourceTree = "<group>"; };
-		111003571E07C734006C196D /* authenticator_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = authenticator_impl.hpp; sourceTree = "<group>"; };
+		111003571E07C734006C196D /* authenticator_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; lineEnding = 0; path = authenticator_impl.hpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		111003591E07C734006C196D /* chat_types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = chat_types.h; sourceTree = "<group>"; };
 		1110035A1E07C734006C196D /* circular_buffer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = circular_buffer.cpp; sourceTree = "<group>"; };
 		1110035B1E07C734006C196D /* circular_buffer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = circular_buffer.hpp; sourceTree = "<group>"; };
@@ -436,7 +436,7 @@
 		111003791E07C734006C196D /* db_key_value_reader_writer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = db_key_value_reader_writer.hpp; sourceTree = "<group>"; };
 		1110037A1E07C734006C196D /* db_key_value_store.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db_key_value_store.cpp; sourceTree = "<group>"; };
 		1110037B1E07C734006C196D /* db_key_value_store.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = db_key_value_store.hpp; sourceTree = "<group>"; };
-		1110037C1E07C734006C196D /* db_key_value_store_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = db_key_value_store_impl.hpp; sourceTree = "<group>"; };
+		1110037C1E07C734006C196D /* db_key_value_store_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; lineEnding = 0; path = db_key_value_store_impl.hpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		1110037D1E07C734006C196D /* db_key_value_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db_key_value_writer.cpp; sourceTree = "<group>"; };
 		1110037E1E07C734006C196D /* db_key_value_writer.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = db_key_value_writer.hpp; sourceTree = "<group>"; };
 		111003801E07C734006C196D /* db_cursor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = db_cursor.cpp; sourceTree = "<group>"; };
@@ -451,9 +451,9 @@
 		1110038A1E07C734006C196D /* scoped_txn.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = scoped_txn.cpp; sourceTree = "<group>"; };
 		1110038B1E07C734006C196D /* scoped_txn.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = scoped_txn.hpp; sourceTree = "<group>"; };
 		1110038C1E07C734006C196D /* vs_db_key_value_reader_writer_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vs_db_key_value_reader_writer_impl.cpp; sourceTree = "<group>"; };
-		1110038D1E07C734006C196D /* vs_db_key_value_reader_writer_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vs_db_key_value_reader_writer_impl.hpp; sourceTree = "<group>"; };
+		1110038D1E07C734006C196D /* vs_db_key_value_reader_writer_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; lineEnding = 0; path = vs_db_key_value_reader_writer_impl.hpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		1110038E1E07C734006C196D /* repository_impl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = repository_impl.cpp; sourceTree = "<group>"; };
-		1110038F1E07C734006C196D /* repository_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = repository_impl.hpp; sourceTree = "<group>"; };
+		1110038F1E07C734006C196D /* repository_impl.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; lineEnding = 0; path = repository_impl.hpp; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.cpp; };
 		111003921E07C734006C196D /* auth_status.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = auth_status.cpp; sourceTree = "<group>"; };
 		111003931E07C734006C196D /* auth_status.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = auth_status.hpp; sourceTree = "<group>"; };
 		111003941E07C734006C196D /* authenticator.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = authenticator.cpp; sourceTree = "<group>"; };
