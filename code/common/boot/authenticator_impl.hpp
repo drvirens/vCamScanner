@@ -9,6 +9,9 @@
 #ifndef authenticator_impl_hpp
 #define authenticator_impl_hpp
 
+#include <memory>
+using namespace std;
+
 #include "authenticator.hpp"
 
 class vsIRepository;

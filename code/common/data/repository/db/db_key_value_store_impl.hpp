@@ -9,6 +9,7 @@
 #ifndef db_key_value_store_impl_hpp
 #define db_key_value_store_impl_hpp
 
+#include <memory>
 #include <string>
 #include "lmdb.h"
 #include "db_key_value_store.hpp"
