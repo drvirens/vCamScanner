@@ -9,6 +9,7 @@
 #ifndef db_key_value_store_impl_hpp
 #define db_key_value_store_impl_hpp
 
+#include <memory>
 #include <string>
 #include "lmdb.h"
 #include "db_key_value_store.hpp"
@@ -40,7 +41,7 @@ private:
 private:
 	const string& iPath;
 	MDB_env* iEnv;
-	unique_ptr<vsTable> iTable;
+	shared_ptr<vsTable> iTable;
 	};
 
 #endif /* db_key_value_store_impl_hpp */

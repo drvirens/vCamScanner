@@ -9,6 +9,9 @@
 #ifndef authenticator_impl_hpp
 #define authenticator_impl_hpp
 
+#include <memory>
+using namespace std;
+
 #include "authenticator.hpp"
 
 class vsIRepository;
@@ -23,7 +26,7 @@ public:
 			function<void(const EAuthenticationStatus&, const vsUser&)> aCompletionCB);
 	
 private:
-	unique_ptr<vsIRepository> iRepository;
+	shared_ptr<vsIRepository> iRepository;
 	};
 
 #endif /* authenticator_impl_hpp */

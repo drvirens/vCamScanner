@@ -40,7 +40,7 @@ private:
     bool readWithCursor(function<void(const vsCursor&)>& aCursorBlock);
 	
 private:
-	unique_ptr<vsTable> iTable;
+	shared_ptr<vsTable> iTable;
 	MDB_txn* iTransaction;
 	};
 

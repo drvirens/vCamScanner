@@ -29,7 +29,7 @@ bool vsCKeyValueReaderWriter::readRaw(const vsTData& aKey, vsTData& aValue)
 	
 	mdbKey.mv_data = aKey.data();
 	mdbKey.mv_size = aKey.length();
-	aKey.debugDump();
+	//aKey.debugDump();
 	int status = mdb_get(iTransaction, dbi(), &mdbKey, &mdbValue);
 	if (MDB_SUCCESS != status)
 		{

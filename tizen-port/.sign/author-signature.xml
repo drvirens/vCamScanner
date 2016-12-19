@@ -4,7 +4,7 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="bin%2Fvcamscannertizen">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>dCjCQA72vyGi+xLJER+a64dJtF1y33wBi5/Vg+B7erA=</DigestValue>
+<DigestValue>wTW62m4pQUq68DuwRtcOba0Gs0U2xASsMvdeahpUXuk=</DigestValue>
 </Reference>
 <Reference URI="shared%2Fres%2Fvcamscannertizen.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -23,9 +23,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-RInlu4SN9u+zKLkpCh/embjKQQdbVY6Qr/8HRh3JxMJGikSPWsMKZZZstP8FADLe6tbZAuuJNrkp
-0cyeM5ERsFWEn6W6SktCvprNnvQrDgpOx4OFStMeGaj5ZkIqKDK2tu8lMBW473fFM4w41TkW2irl
-lLCUysBJ2WvhPOY+x9Q=
+K+kgOvTUMNmY0Wv+eyeBXRLYPgVYKcOOmWwk6CFMbZD5e2KS+C8BwMBfXZlOdwknUJZfcYRBuITo
++0GR/l5r1h0VjFfEPgVkvKpgjj5jtt4XeytFcVxNKFyTEqp9oLKjH91wHUeTKL+jxRAeUH2W6xPc
+ddoKh5vSKbfq3mqA8fE=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

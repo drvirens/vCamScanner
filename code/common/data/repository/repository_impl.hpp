@@ -38,7 +38,7 @@ private:
 	bool recordNotFound(vsTData& aValue) const;
 	
 private:
-	unique_ptr<vsIKeyValueStore> iKeyValueStore;
+	shared_ptr<vsIKeyValueStore> iKeyValueStore;
 	};
 
 #endif /* repository_impl_hpp */

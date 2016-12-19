@@ -69,7 +69,7 @@ public:
     vs_uint64_t dateCreated() const { return iDateCreated; }
     vs_uint64_t dateUpdated() const { return iDateUpdated; }
     vs_uint64_t size() const { return iSize; }
-#if defined DEBUG
+#if 0
     void debugDump() const;
 #endif
     

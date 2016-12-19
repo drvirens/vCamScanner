@@ -28,7 +28,6 @@ int getLastUsedDocID()
         {
         ret = gTempDocID;
         }
-//    ret++;
     return ret;
     }
     
@@ -48,14 +47,5 @@ void setNextDocID(int docid)
     NSNumber* next = [NSNumber numberWithInt:i];
     [ud setObject:next forKey:kKeyLastDocId];
     [ud synchronize];
-    }
-
-        
-void retrieveLastDocID(string& docid)
-    { TRACE
-    int lastusedid = getLastUsedDocID();
-    stringstream ss;
-    ss << lastusedid;
-    docid = ss.str();
     }
 

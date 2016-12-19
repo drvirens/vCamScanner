@@ -21,7 +21,7 @@ public:
 	vs_uint32_t length() const { return iLength; }
 	void setData(vs_uint8_t* aData) { iData = aData; }
 	void setDataLength(vs_uint32_t aLen) { iLength = aLen; }
-#if defined DEBUG
+#if 0
 	void debugDump() const;
 #endif
 

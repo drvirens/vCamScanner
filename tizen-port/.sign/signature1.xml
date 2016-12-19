@@ -4,11 +4,11 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>/x8IZWR5AGhGav/lEJiRUXRZiKp1aJDJv185E+fFAoA=</DigestValue>
+<DigestValue>LOV6zS09qbxL2UNhfy6V9q9EnJuUuDGxxFuBBfrnU54=</DigestValue>
 </Reference>
 <Reference URI="bin%2Fvcamscannertizen">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>dCjCQA72vyGi+xLJER+a64dJtF1y33wBi5/Vg+B7erA=</DigestValue>
+<DigestValue>wTW62m4pQUq68DuwRtcOba0Gs0U2xASsMvdeahpUXuk=</DigestValue>
 </Reference>
 <Reference URI="shared%2Fres%2Fvcamscannertizen.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -27,9 +27,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-bbUKyVPLSwYOppH/IQ8wO4HbAdALGxtAkuenkFclTDVigRDhgJVkcNy7N6GYVWJKX9VQcoQ1zwSK
-A52Xxgfmrrq2jyi/5aBrNqTDTbVFN5hYswQfGDcM2Wp+fSaTS3JFazRC/VDFogWIvl6xM3ZAOOeR
-POcZ4pudFka4O5xdOZE=
+XOM4o8iwSHAb6CPYzslDB/9ofbYHcnTB2ftMilTPjjks0V8dhcVBwVh8QlcbdKxDUmEKpIaQkli5
+RZwjFQCVZUuouJiKI91bsv0C5RkvSSuusFb6vzCV1QDn464MMrT0Fi5qEdI+1hrqNwo3i6fVyiEs
+SENo42mU5J2YQt77hDQ=
 </SignatureValue>
 <KeyInfo>
 <X509Data>

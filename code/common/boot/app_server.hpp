@@ -11,6 +11,8 @@
 
 #include <memory>
 #include <string>
+#include <functional>
+
 #include "sigslot.h"
 #include "auth_status.hpp"
 #include "chat_types.h"

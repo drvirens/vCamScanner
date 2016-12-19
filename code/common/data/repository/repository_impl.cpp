@@ -251,7 +251,7 @@ void vsRepository::doPut(vsModelBase& aModel, vsIKeyValueReaderWriter& aReaderWr
 	vsTData dbKey;
 	vsPrimaryKey pk(aModel.primaryKey());
 	pk.wrappedPrimaryKey(dbKey);
-	dbKey.debugDump();
+	//dbKey.debugDump();
 	
 		//
 		//store dbKey and dbValue
@@ -324,7 +324,7 @@ void vsRepository::doGet(vsModelBase& aPrimaryKeyedModel, vsIKeyValueReader& aRe
 	vsTData dbKey;
 	vsPrimaryKey pk(aPrimaryKeyedModel.primaryKey());
 	pk.wrappedPrimaryKey(dbKey);
-	dbKey.debugDump();
+	//dbKey.debugDump();
 
     //value to accept in this
 	vsTData dbValue;
