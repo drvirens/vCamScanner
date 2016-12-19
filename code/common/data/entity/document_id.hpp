@@ -16,4 +16,7 @@ extern void setLastDocID(int docid);
 extern void setNextDocID(int docid);
 extern void retrieveLastDocID(string& docid);
 
+//private
+extern int getLastUsedDocID();
+
 #endif /* document_id_hpp */

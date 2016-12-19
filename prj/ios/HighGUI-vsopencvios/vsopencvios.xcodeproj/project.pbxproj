@@ -16,7 +16,7 @@
 		1110059C1E07C734006C196D /* unpacker.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111003611E07C734006C196D /* unpacker.cpp */; };
 		1110059D1E07C734006C196D /* base_model.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111003661E07C734006C196D /* base_model.cpp */; };
 		1110059E1E07C734006C196D /* document.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111003681E07C734006C196D /* document.cpp */; };
-		1110059F1E07C734006C196D /* document_id.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1110036B1E07C734006C196D /* document_id.mm */; };
+		1110059F1E07C734006C196D /* document_id.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1110036B1E07C734006C196D /* document_id.cpp */; };
 		111005A01E07C734006C196D /* document_record_creiterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1110036C1E07C734006C196D /* document_record_creiterion.cpp */; };
 		111005A11E07C734006C196D /* record_criterion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1110036E1E07C734006C196D /* record_criterion.cpp */; };
 		111005A21E07C734006C196D /* user.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111003701E07C734006C196D /* user.cpp */; };
@@ -312,6 +312,7 @@
 		111006C81E07C735006C196D /* ez_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111005901E07C734006C196D /* ez_reader.cpp */; };
 		111006C91E07C735006C196D /* time_utils.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111005921E07C734006C196D /* time_utils.cpp */; };
 		111006CA1E07C735006C196D /* vsImageProcessor.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 111005941E07C734006C196D /* vsImageProcessor.cpp */; };
+		111006CD1E086DA1006C196D /* document_id_IOS.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111006CC1E086DA1006C196D /* document_id_IOS.mm */; };
 		111D56E21DF2C24800534EF3 /* BOFacade.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E11DF2C24800534EF3 /* BOFacade.mm */; };
 		111D56E51DF2C6EF00534EF3 /* UIViewController+BOUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 111D56E41DF2C6EF00534EF3 /* UIViewController+BOUtils.m */; };
 		111D56F01DF3DF4100534EF3 /* BODetectEdges.mm in Sources */ = {isa = PBXBuildFile; fileRef = 111D56EF1DF3DF4100534EF3 /* BODetectEdges.mm */; };
@@ -421,7 +422,7 @@
 		111003681E07C734006C196D /* document.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document.cpp; sourceTree = "<group>"; };
 		111003691E07C734006C196D /* document.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document.hpp; sourceTree = "<group>"; };
 		1110036A1E07C734006C196D /* document_id.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document_id.hpp; sourceTree = "<group>"; };
-		1110036B1E07C734006C196D /* document_id.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = document_id.mm; sourceTree = "<group>"; };
+		1110036B1E07C734006C196D /* document_id.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document_id.cpp; sourceTree = "<group>"; };
 		1110036C1E07C734006C196D /* document_record_creiterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = document_record_creiterion.cpp; sourceTree = "<group>"; };
 		1110036D1E07C734006C196D /* document_record_creiterion.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = document_record_creiterion.hpp; sourceTree = "<group>"; };
 		1110036E1E07C734006C196D /* record_criterion.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = record_criterion.cpp; sourceTree = "<group>"; };
@@ -900,6 +901,7 @@
 		111005931E07C734006C196D /* time_utils.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = time_utils.hpp; sourceTree = "<group>"; };
 		111005941E07C734006C196D /* vsImageProcessor.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = vsImageProcessor.cpp; sourceTree = "<group>"; };
 		111005951E07C734006C196D /* vsImageProcessor.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vsImageProcessor.hpp; sourceTree = "<group>"; };
+		111006CC1E086DA1006C196D /* document_id_IOS.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = document_id_IOS.mm; sourceTree = "<group>"; };
 		111D56E01DF2C24800534EF3 /* BOFacade.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BOFacade.h; sourceTree = "<group>"; };
 		111D56E11DF2C24800534EF3 /* BOFacade.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = BOFacade.mm; sourceTree = "<group>"; };
 		111D56E31DF2C6EF00534EF3 /* UIViewController+BOUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+BOUtils.h"; sourceTree = "<group>"; };
@@ -1156,7 +1158,7 @@
 				111003681E07C734006C196D /* document.cpp */,
 				111003691E07C734006C196D /* document.hpp */,
 				1110036A1E07C734006C196D /* document_id.hpp */,
-				1110036B1E07C734006C196D /* document_id.mm */,
+				1110036B1E07C734006C196D /* document_id.cpp */,
 				1110036C1E07C734006C196D /* document_record_creiterion.cpp */,
 				1110036D1E07C734006C196D /* document_record_creiterion.hpp */,
 				1110036E1E07C734006C196D /* record_criterion.cpp */,
@@ -2205,6 +2207,15 @@
 			path = utils;
 			sourceTree = "<group>";
 		};
+		111006CB1E086DA1006C196D /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				111006CC1E086DA1006C196D /* document_id_IOS.mm */,
+			);
+			name = ios;
+			path = ../../../../code/ios;
+			sourceTree = "<group>";
+		};
 		111D56E61DF3C83B00534EF3 /* model */ = {
 			isa = PBXGroup;
 			children = (
@@ -2434,6 +2445,7 @@
 		11B75ACE1DDFD08D004EAB65 /* vsopencvios */ = {
 			isa = PBXGroup;
 			children = (
+				111006CB1E086DA1006C196D /* ios */,
 				1110034E1E07C734006C196D /* common */,
 				115294A41DF55465009EF4F9 /* 3p */,
 				111D56EA1DF3CA3C00534EF3 /* cv */,
@@ -2714,7 +2726,7 @@
 				1110067A1E07C735006C196D /* cornersubpix.cpp in Sources */,
 				11303C021DEECEB100371BD5 /* VSPurposeCell.m in Sources */,
 				111006631E07C735006C196D /* grfmt_bmp.cpp in Sources */,
-				1110059F1E07C734006C196D /* document_id.mm in Sources */,
+				1110059F1E07C734006C196D /* document_id.cpp in Sources */,
 				111D56F01DF3DF4100534EF3 /* BODetectEdges.mm in Sources */,
 				1110061A1E07C735006C196D /* retinafilter.cpp in Sources */,
 				111006AD1E07C735006C196D /* featurepyramid.cpp in Sources */,
@@ -2796,6 +2808,7 @@
 				111006371E07C735006C196D /* stat.cpp in Sources */,
 				111005E81E07C735006C196D /* rdrle.c in Sources */,
 				111005AB1E07C734006C196D /* mdb.c in Sources */,
+				111006CD1E086DA1006C196D /* document_id_IOS.mm in Sources */,
 				111006971E07C735006C196D /* thresh.cpp in Sources */,
 				111005AA1E07C734006C196D /* db_table.cpp in Sources */,
 				B621FE101DEABBE100E54A51 /* BOPhotoController.m in Sources */,

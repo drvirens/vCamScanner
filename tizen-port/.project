@@ -30,6 +30,11 @@
 			<locationURI>virtual:/virtual</locationURI>
 		</link>
 		<link>
+			<name>src/tizen</name>
+			<type>2</type>
+			<locationURI>virtual:/virtual</locationURI>
+		</link>
+		<link>
 			<name>src/common/.DS_Store</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/.DS_Store</locationURI>
@@ -103,6 +108,11 @@
 			<name>src/common/vsImageProcessor.hpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/vsImageProcessor.hpp</locationURI>
+		</link>
+		<link>
+			<name>src/tizen/document_id_TIZEN.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/code/tizen/document_id_TIZEN.cpp</locationURI>
 		</link>
 		<link>
 			<name>src/common/3p/murmurhash</name>
@@ -740,14 +750,14 @@
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/data/entity/document.hpp</locationURI>
 		</link>
 		<link>
+			<name>src/common/data/entity/document_id.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/code/common/data/entity/document_id.cpp</locationURI>
+		</link>
+		<link>
 			<name>src/common/data/entity/document_id.hpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/data/entity/document_id.hpp</locationURI>
-		</link>
-		<link>
-			<name>src/common/data/entity/document_id.mm</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/code/common/data/entity/document_id.mm</locationURI>
 		</link>
 		<link>
 			<name>src/common/data/entity/document_record_creiterion.cpp</name>
