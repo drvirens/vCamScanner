@@ -5,4 +5,7 @@
 		<icon>vcamscannertizen.png</icon>
 		<label>vcamscannertizen</label>
 	</ui-application>
+    <privileges>
+        <privilege>http://tizen.org/privilege/camera</privilege>
+    </privileges>
 </manifest>
