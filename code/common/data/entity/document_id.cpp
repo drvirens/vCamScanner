@@ -8,47 +8,8 @@
 
 
 #include <sstream>
-//#import <Foundation/Foundation.h>
 #include "document_id.hpp"
 #include "trace.h"
-
-//static NSString* const kKeyLastDocId = @"last_doc_id";
-//
-//static int gTempDocID = 1;
-//static int getLastUsedDocID()
-//    { TRACE
-//    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-//    NSNumber* numDocId = (NSNumber*)[ud objectForKey:kKeyLastDocId];
-//    int ret = 0;
-//    if (numDocId) 
-//        {
-//        ret = [numDocId intValue];
-//        }
-//    else 
-//        {
-//        ret = gTempDocID;
-//        }
-//    return ret;
-//    }
-//    
-//void setLastDocID(int docid)
-//    { TRACE
-//    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-//    NSNumber* numDocId = [NSNumber numberWithInt:docid];
-//    [ud setObject:numDocId forKey:kKeyLastDocId];
-//    [ud synchronize];
-//    }
-//void setNextDocID(int docid)
-//    { TRACE
-//    NSUserDefaults* ud = [NSUserDefaults standardUserDefaults];
-//    NSNumber* numDocId = [NSNumber numberWithInt:docid];
-//    int i = [numDocId intValue];
-//    i++;
-//    NSNumber* next = [NSNumber numberWithInt:i];
-//    [ud setObject:next forKey:kKeyLastDocId];
-//    [ud synchronize];
-//    }
-
         
 void retrieveLastDocID(string& docid)
     { TRACE

@@ -110,6 +110,16 @@
 			<locationURI>PARENT-1-PROJECT_LOC/code/common/vsImageProcessor.hpp</locationURI>
 		</link>
 		<link>
+			<name>src/tizen/MMOpenCVHelper-TIZEN.cpp</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/code/tizen/MMOpenCVHelper-TIZEN.cpp</locationURI>
+		</link>
+		<link>
+			<name>src/tizen/MMOpenCVHelper-TIZEN.h</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/code/tizen/MMOpenCVHelper-TIZEN.h</locationURI>
+		</link>
+		<link>
 			<name>src/tizen/document_id_TIZEN.cpp</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/code/tizen/document_id_TIZEN.cpp</locationURI>

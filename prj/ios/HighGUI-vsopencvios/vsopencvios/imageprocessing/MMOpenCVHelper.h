@@ -14,5 +14,4 @@
 + (cv::Mat)cvMatGrayFromUIImage:(UIImage *)image;
 + (cv::Mat)cvMatGrayFromAdjustedUIImage:(UIImage *)image;
 
-
 @end

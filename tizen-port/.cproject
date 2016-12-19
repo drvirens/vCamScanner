@@ -117,6 +117,7 @@
 								</option>
 								<option id="gnu.cpp.compiler.option.include.paths.1125324382" name="Include paths (-I)" superClass="gnu.cpp.compiler.option.include.paths" valueType="includePath">
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/data/repository/db/impl-lmdb/lmdb"/>
+									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/tizen"/>
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/libjpeg"/>
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/calib3d/include"/>
 									<listOptionValue builtIn="false" value="/Users/virendra.shakya/tizen-viren/github/release-ios-1.0.69/vCamScanner/code/common/modules/contrib/include"/>

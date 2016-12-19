@@ -4,11 +4,11 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="author-signature.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>l/NW95Kf4TxSPL8erpvyu/F07o1WwxBuWPQXzo44m/Y=</DigestValue>
+<DigestValue>gBDcpACZfqnwJunaPt6kSft3QmFzvvLIz9HIwHjtEf0=</DigestValue>
 </Reference>
 <Reference URI="bin%2Fvcamscannertizen">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>OlVmjN/5qho4Gi2hoMy5d6QGfKN7ci4WKP3CNjQD9y8=</DigestValue>
+<DigestValue>9L/59OirCFOgVABplc3FrEJvHU1+Yk4DA75zy0s05JI=</DigestValue>
 </Reference>
 <Reference URI="shared%2Fres%2Fvcamscannertizen.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -16,7 +16,7 @@
 </Reference>
 <Reference URI="tizen-manifest.xml">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>bVz8jCzTxjblUr8c7NP7FHS2Ue/wGIhGzbudX5FSI90=</DigestValue>
+<DigestValue>r7cSMgyV8TLfnOxStPKDKt+IzQMK+zb0rzq/MtNGB/Q=</DigestValue>
 </Reference>
 <Reference URI="#prop">
 <Transforms>
@@ -27,9 +27,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-OuZsEVi/0Exv1xaQ2lZw/ZYUOV5l+NIxShBkeW13AdI66JDdj8IYRmrKIIlzM/mz0+rn3NQCepq/
-lYVSNu7ghAjY3lDGAosmI58U+zfba2QetcvGeFb+uQ3IjvGknWb/mCjuj7WD2lIi/5p+efSTU+Un
-0g5QLcbcB/cFfYlMO3Q=
+H+Na5RU675mwULRXQDqHBz/edAN4IKBnu/RH1dCFmOhn6VXiu7qfdVnTE/8V5+EVkxPZxVRhx60f
+iQjI+Ftbhe2Rv3aeg+appwg7VEucmgx+Fm+V2t7/cYFwhxpIjJGaRXiYwIy+VeVi5KzCg3EXUfIa
+q/fF+ya5W79upFkFh7g=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
