@@ -4,7 +4,15 @@
 <SignatureMethod Algorithm="http://www.w3.org/2001/04/xmldsig-more#rsa-sha256"></SignatureMethod>
 <Reference URI="bin%2Fvcamscannertizen">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
-<DigestValue>9L/59OirCFOgVABplc3FrEJvHU1+Yk4DA75zy0s05JI=</DigestValue>
+<DigestValue>jinoGOoFlFjrfN6HM4pIl0Fh217TqVD9AmR/OHa+22Q=</DigestValue>
+</Reference>
+<Reference URI="res%2Fedje%2Fself-camera.edj">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>GJZbzXXXoSvEQW21o9939heIAvFFwfMWRUhhLhxb+P4=</DigestValue>
+</Reference>
+<Reference URI="res%2Fsounds%2Fsounds_count.mp3">
+<DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
+<DigestValue>BIrfTasIshnM0FKNodWbJmWfL14pmgpaJTFavImrc60=</DigestValue>
 </Reference>
 <Reference URI="shared%2Fres%2Fvcamscannertizen.png">
 <DigestMethod Algorithm="http://www.w3.org/2001/04/xmlenc#sha256"></DigestMethod>
@@ -23,9 +31,9 @@
 </Reference>
 </SignedInfo>
 <SignatureValue>
-NecrUb08PvtH58YSSnkEMiI2CLRYg16WbuDsecmRh5dmSOeCqZ4ReR86juwg5gZPThGC3x+PKEm7
-suNAwCf5I/0WCNZnfDnhRea0CkOHGERjeOPpc0zCz4CbxxWIY7xN1KiYS4i6sroDoggzNXg09l1M
-itEpBkfGGNr6pd2rp+Y=
+WJBNnqV7bZk1Hn3UA6NXwIkTsE0SHZgPMwVPhdnVJQ2DHCFNvFqcm0pxDdv/xk9YWR2hVEBWwhUF
+NojSF6M7SZHCyQSiPky7kZ+7ZOv0LT7WBQtdnVdOzeT9IkjAq+aS4TV4H0Qz4Nl3PYzXwetLDMei
+cm6gVjaUP9KLVZsJCdo=
 </SignatureValue>
 <KeyInfo>
 <X509Data>
