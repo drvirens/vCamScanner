@@ -42,6 +42,7 @@ static Eina_Bool _main_view_init_camera(main_view *view);
 static void _main_view_register_cbs(main_view *view);
 static void _main_view_thumbnail_load(main_view *view);
 static void _main_view_thumbnail_set(main_view *view, const char *file_path);
+static void _viren_main_view_thumbnail_set(main_view *view, const char *file_path);
 
 static void _main_view_start_timer(main_view *view);
 static void _main_view_stop_timer(main_view *view);
@@ -261,6 +262,14 @@ static void _main_view_thumbnail_set(main_view *view, const char *file_path)
 	elm_object_signal_emit(view->layout, "default", "gallery_button");
 }
 
+static void _viren_main_view_thumbnail_set(main_view *view, const char *file_path)
+{
+	Evas_Object *img = elm_image_add(view->layout);
+	elm_image_file_set(img, file_path, NULL);
+	elm_object_part_content_set(view->layout, "swallow_captured_image", img);
+	//elm_object_signal_emit(view->layout, "default", "gallery_button");
+}
+
 static void _main_view_start_timer(main_view *view)
 {
 	view->timer_count = view->selected_timer_interval;
@@ -416,6 +425,8 @@ static void _main_view_capture_cb(camera_image_data_s *image, camera_image_data_
 
 		fclose(file);
 		_main_view_thumbnail_set(view, filename);
+
+		_viren_main_view_thumbnail_set(view, filename);
 	}
 }
 

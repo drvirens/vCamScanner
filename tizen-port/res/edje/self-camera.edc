@@ -43,10 +43,8 @@ collections
 
    group
    {
-      /* TODO: Please replace embedded image files to your application image files. */
-      images {
-         image: "EDC_EDITOR_EMBEDDED_IMAGE.png" COMP;
-      }
+      
+            
       name: "layout";
       parts
       {
@@ -329,6 +327,92 @@ collections
                   //offset: -5 -5;
                   //to: gallery_button;
                }
+            }
+         }
+         part { name: "rect_menu_container";
+            type: RECT;
+            scale: 1;
+            description { state: "default" 0.0;
+               color: 0 136 170 255;
+               visible: 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.03 0.47;
+               rel2.relative: 0.96 0.85;
+            }
+         }
+         part { name: "image_menu_back";
+            type: IMAGE;
+            scale: 1;
+            description { state: "default" 0.0;
+               visible: 1;
+               /* TODO: Please replace embedded image files to your application image files. */
+               image.normal: "shutter.png";
+               //aspect: 1 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.07 0.59;
+               rel2.relative: 0.23 0.75;
+            }
+         }
+         part { name: "image_menu_next";
+            type: IMAGE;
+            scale: 1;
+            description { state: "default" 0.0;
+               visible: 1;
+               /* TODO: Please replace embedded image files to your application image files. */
+               image.normal: "shutter.png";
+               //aspect: 1 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.76 0.59;
+               rel2.relative: 0.90 0.74;
+            }
+         }
+         part { name: "image_menu_rotate_left";
+            type: IMAGE;
+            scale: 1;
+            description { state: "default" 0.0;
+               visible: 1;
+               /* TODO: Please replace embedded image files to your application image files. */
+               image.normal: "shutter.png";
+               //aspect: 1 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.31 0.60;
+               rel2.relative: 0.43 0.71;
+            }
+         }
+         part { name: "image_menu_rotate_right";
+            type: IMAGE;
+            scale: 1;
+            description { state: "default" 0.0;
+               visible: 1;
+               /* TODO: Please replace embedded image files to your application image files. */
+               image.normal: "shutter.png";
+               //aspect: 1 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.54 0.60;
+               rel2.relative: 0.67 0.73;
+            }
+         }
+         
+         part { name: "rect_vqrX";
+            type: RECT;
+            scale: 1;
+            description { state: "default" 0.0;
+               color: 0 136 170 45;
+               visible: 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.19 0.03;
+               rel2.relative: 0.91 0.41;
+            }
+         }
+         
+         part { name: "swallow_captured_image";
+            type: SWALLOW;
+            scale: 1;
+            description { state: "default" 0.0;
+               visible: 1;
+               align: 0.5 0.5;
+               rel1.relative: 0.25 0.09;
+               rel2.relative: 0.87 0.36;
             }
          }
       } //parts
