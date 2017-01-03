@@ -1,0 +1,14 @@
+This is a game based on the Red Riding Hood. The challenge is to kill all the black wolves and survive.
+
+Game rules are simple. You must only kill black wolf. If you kill white wolf, your health point will go down by one.
+If your health point becomes zero, then you lose.
+
+Tapping on left side of screen will make Red Riding Hood jump. Tapping on right side will emit weapons. 
+Moving the device on left or right side will make Red Riding Hood walk on the side of tilt. Thus, this game
+uses accelerometer.
+
+In short, to kill the black wolf, tap on right side of screen. 
+To avoid being hurt by black wolf, tap on left side to jump.
+To move, tilt the device on left or right side.
+
+

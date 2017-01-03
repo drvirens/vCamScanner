@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>MoveSpeed</key>
+	<string>1.0f</string>
+	<key>BackgroundImage</key>
+	<string>pauseBg.png</string>
+	<key>PluginBtnImages</key>
+	<string>PauseBtn.png</string>
+	<key>PluginButtonPreSize</key>
+	<string>{128,128}</string>
+	<key>BtnImageCols</key>
+	<string>3</string>
+	<key>BtnImageRows</key>
+	<string>4</string>
+	<key>BtnScale</key>
+	<string>0.5f</string>
+	<key>AlignItemsVerticallyWithMenu</key>
+	<string>5.0f</string>
+	<key>PausePluginTag</key>
+	<string>210</string>
+</dict>
+</plist>

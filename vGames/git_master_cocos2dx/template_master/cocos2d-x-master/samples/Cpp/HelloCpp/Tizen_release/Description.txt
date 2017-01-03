@@ -1,0 +1,9 @@
+How many times did you wake up late because you kept snoozing your alarm and then suddenly realized that it is very late already to start driving to work, or catch that bus?
+
+Well, now those days are gone. Introducing a very cool Puzzle Alarm. You must solve the puzzle presented by the app in order to stop the alarm. By the time you are done solving the puzzle, you are already hundred percent awake and will not go back to sleep. 
+
+The puzzle severity can be changed manually if you can not solve the puzzle quickly. Just tap on next puzzle and it will show you an alternative puzzle.
+
+Once the puzzle is solved, the app will also show you the forecast for your current location. 
+
+A must have app on your new Tizen device. Please send me feedback if you like the app or if you have any questions.

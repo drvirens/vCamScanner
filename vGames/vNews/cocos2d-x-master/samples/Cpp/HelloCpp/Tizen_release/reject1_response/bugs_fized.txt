@@ -1,0 +1,8 @@
+Bugs fixed:
+
+1) 2225720 Unused privilege is detected
+2) 2225779 Icon Image inconsistency
+
+Recommendation Issues not fixed 
+2226206 Back Key doesnt not function properly 
+Reason not fixed because I want user to get out of the Alarm app quickly. If the Alarm is ringing, then user should be able to stop the ringing Alarm VERY QUICKLY. 

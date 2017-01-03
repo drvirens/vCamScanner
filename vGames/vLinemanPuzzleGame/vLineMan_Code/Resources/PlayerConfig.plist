@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ImagePreSize</key>
+	<string>{63,63}</string>
+	<key>PlayerFileName</key>
+	<string>player.png</string>
+	<key>PlayerFileName2</key>
+	<string>player2.png</string>
+	<key>PlayerPosition</key>
+	<string>{150,100}</string>
+	<key>PlayerTag</key>
+	<string>100</string>
+	<key>PlayerZOrder</key>
+	<string>99</string>
+	<key>PlayerMoveSpeed</key>
+	<string>3.0f</string>
+</dict>
+</plist>

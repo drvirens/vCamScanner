@@ -1,0 +1,67 @@
+Twilio C++ client library
+=========================
+
+This is a simple Twilio C++ client library that facilitates
+sending SMS through Twilio's platform.
+
+Features
+========
+
+Currently this library only supports sending SMS via Twilio
+platform.
+
+Usage
+=====
+
+You should only include 'twilio.hh' in your source files.
+The rest of the files in this repository are helpers and
+could be used separately if you wish.
+
+You should add '-lcurl' to your linker flags to link against
+the curl library.
+
+Example
+=======
+
+#include <string>
+#include <iostream>
+
+#include "twilio.hh"
+
+using namespace std;
+using namespace databracket;
+
+int main(int argc, char** argv)
+{
+	string sid = "SID";
+	string autht = "AUTH TOKEN";
+	string from = "+1234567890";
+	string to = "+0987654321";
+	string body = "Look up and smile, I'm watching you :-)";
+	string cb = "http://www.example.com/callback.php";
+
+	twilio::restclient trc(sid, autht);
+
+	// To send SMS with no callback address.
+	twilio::response resp = trc.send_sms(to, from, body, true);
+
+	// To send SMS with a callback address.
+	//twilio::response resp_cb = trc.send_sms(to, from, body, cb, true);
+
+	string message = resp.message();
+	unsigned int code = resp.code();
+	twilio::http::status status = resp.http_status();
+
+	cout << "HTTP Status: " << status << endl;
+	cout << "Twilio Error Code: " << code << endl;
+	cout << "Twilio Error Message: " << message << endl;
+
+	return 0;
+}
+
+Copyright
+=========
+All files are under a BSD 3-clause license except for 'jsonxx.cc/hh'
+and 'xmlxx.cc/hh'.
+
+Author: Amr Ali <amr@databracket.com>

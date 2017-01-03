@@ -1,0 +1,24 @@
+dependencies: \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShaders.cpp \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShaders.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/proj.ios/../platform/ios/CCGL.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/proj.ios/../platform/CCPlatformMacros.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/proj.ios/../include/ccConfig.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/proj.ios/../platform/CCPlatformConfig.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/proj.ios/../platform/ios/CCPlatformDefine.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_Position_uColor_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_Position_uColor_vert.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionColor_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionColor_vert.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTexture_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTexture_vert.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTextureA8Color_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTextureA8Color_vert.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTextureColor_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTextureColor_vert.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTextureColorAlphaTest_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTexture_uColor_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionTexture_uColor_vert.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShaderEx_SwitchMask_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionColorLengthTexture_frag.h \
+  /Users/vshakya/Documents/vGames/git_master_cocos2dx/template_master/cocos2d-x-master/cocos2dx/shaders/ccShader_PositionColorLengthTexture_vert.h
